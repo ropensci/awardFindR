@@ -1,0 +1,73 @@
+#' Scrape the NSF api
+#'
+#' Query the NSF API for awards, get the XML response(s) and process it into a data.frame
+#'
+#' @param query Keyword to query, single string
+#' @param from Beginning date, mm/dd/yyyy format
+#' @param to End date, mm/dd/yyyy format
+#' @return A data.frame of raw NSF API output
+#' @examples
+#' nsf_get(query="Qualitative methods", from="01/01/1973", to="01/01/2020")
+nsf_get <- function(query, from, to) {
+
+  base_url <- 'https://api.nsf.gov/services/v1/awards.xml?'
+  output_data <- 'id,date,startDate,expDate,fundProgramName,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
+  cfda <- "47.076,47.075"
+
+  if(!is.null(query)) {
+    query <- gsub(" ", "+", query)
+    query <- paste0('&keyword="', query, '"&cfdaNumber=', cfda)
+  } else {
+    stop("No query")
+  }
+
+  # Collate URL
+  query_url <- paste0(base_url, query,  '&printFields=', output_data)
+  query_url <- paste0(query_url, '&dateStart=', from)
+  query_url <- paste0(query_url, '&dateEnd=', to)
+
+  # actually query the API
+  message(paste0("Grabbing URL: ", query_url, '&offset=', 1))
+  api <- xml2::read_xml(paste0(query_url, '&offset=', 1))
+
+  # API call produce an error? Print it
+  if(length(xml2::xml_find_first(api, "/response/serviceNotification") > 0)) {
+    stop(paste0(xml2::xml_text(xml2::xml_find_first(api, "//notificationType")),
+                ": ",
+                xml2::xml_text(xml2::xml_find_first(api, "//notificationMessage")))
+         )
+  }
+
+  # No results?
+  if (xml2::xml_length(api) == 0) {
+    return(NULL)
+  }
+
+  # Max results 25. Do we need to loop the query?
+  if(length(xml2::xml_find_all(api, xpath="/response/award"))==25) {
+  # We need to loop using different offsets
+    n <- 1
+    repeat {
+      start <- 1 + 25 * n
+      message(paste0("Grabbing URL: ", query_url, "&offset=", start))
+      extra <- xml2::read_xml(paste0(query_url, '&offset=', start))
+
+      # Are there no results left yet?
+      if (xml2::xml_length(extra) == 0) {
+        break
+      }
+
+      lapply(xml2::xml_children(extra),
+             function(x) xml2::xml_add_child(api, x))
+
+      n <- n + 1
+    }
+  }
+
+  # Convert internal XML tree to list
+  awards <- xml2::xml_find_all(api, "/response/award")
+  df <- xml2list_to_df(xml2::as_list(awards))
+
+  return(df)
+
+}
