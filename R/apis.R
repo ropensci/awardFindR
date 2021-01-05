@@ -1,8 +1,3 @@
-source("R/neh.R")
-source("R/sloan.R")
-source("R/nsf.R")
-source("R/fedreporter.R")
-
 #' Query static awards databases
 #'
 #' @param keywords Vector of keyword strings to search
@@ -62,7 +57,7 @@ static_scrape <- function(keywords, from, to,
     }
   }
 
-  full <- merge(neh, sloan, all=T)
+  full <- rbind.data.frame(neh, sloan)
   return(full)
 }
 

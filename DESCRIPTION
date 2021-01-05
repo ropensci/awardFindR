@@ -7,7 +7,7 @@ Maintainer: Michael McCall <mimccall@syr.edu>
 Description: Queries a number of scientific awards databases
     Collects relevant results based on keyword and date parameters,
     returns list of projects that fit those criteria.
-License: Currently reserved
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1

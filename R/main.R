@@ -1,6 +1,3 @@
-source("R/utils.R")
-source("R/apis.R")
-
 #' awardsBot QDR routine
 #'
 #' Performs default QDR award query of all awards databases.
@@ -10,12 +7,12 @@ source("R/apis.R")
 #' @export
 #'
 #' @examples results <- awardsBot(keywords="keywords.csv")
-awardsBot <- function(keywords="keywords.csv") {
+awardsBot <- function(keywords="data/keywords.csv") {
   stopifnot(file.exists(keywords))
   keywords <- read.csv(keywords,
                        header = FALSE,
                        stringsAsFactors = FALSE)$V1
-  #keywords <- c("qualitative", "case study") # Test terms, remove this line for full query
+  keywords <- c("focus group", "ethnography") # Test terms, remove this line for full query
   # Full keywords pull is API request heavy, do on weekends or outside 9-5 hours
 
   # Calculate previous two years
@@ -28,7 +25,7 @@ awardsBot <- function(keywords="keywords.csv") {
 
   # Run the API query routine
   apis <- lapply(keywords, api_scrape,
-                   from=twoyrago, to=today, sources=c("nih", "ies"))
+                   from=twoyrago, to=today, sources=c("nsf", "ies"))
   apis <- do.call(rbind.data.frame, apis)
 
   # Bind with the static results

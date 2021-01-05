@@ -119,5 +119,8 @@ sloan_query <- function(query, df, from, to) {
 sloan_search <- function(queries, from, to) {
   results <- lapply(queries, sloan_query, sloan_df(), from, to)
   results <- do.call(rbind.data.frame, results)
+  if (length(results)==0) {
+    return(NULL)
+  }
   return(results)
 }

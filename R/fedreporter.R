@@ -21,7 +21,6 @@ fedreporter_get <- function (query, from, to,
                       "$fy:", paste0(as.integer(from):as.integer(to), collapse=","))
 
   # Actually query the API
-  message(paste("Grabbing url:", query_url))
   api <- request_xml(query_url)
 
   # No results?
@@ -36,8 +35,6 @@ fedreporter_get <- function (query, from, to,
       xml2::xml_integer(xml2::xml_find_first(extra, "/SearchResultOfApiProject/TotalCount"))
 
     new_url <- paste0(query_url, "&offset=", offset)
-    message(paste0("Grabbing URL: ", new_url))
-
     # Fetch next page
     extra <- request_xml(new_url)
     # Add the items tag to existing internal XML tree
