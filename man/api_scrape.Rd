@@ -2,7 +2,7 @@
 % Please edit documentation in R/apis.R
 \name{api_scrape}
 \alias{api_scrape}
-\title{Scrape multiple scientific grant APIs for relevant projects}
+\title{Scrape various grant APIs by keyword and date}
 \usage{
 api_scrape(query, from, to, sources = c("nsf"))
 }
@@ -19,8 +19,10 @@ api_scrape(query, from, to, sources = c("nsf"))
 A data.frame in wide format
 }
 \description{
-Scrape multiple scientific grant APIs for relevant projects
+Scrape various grant APIs by keyword and date
 }
 \examples{
-api_scrape(query="Qualitative methods", from="1979-01-31", to="1980-01-31", sources=c("nsf", "nih"))
+api_scrape(query="Qualitative methods",
+from="1979-01-31", to="1980-01-31",
+sources=c("nsf", "nih"))
 }

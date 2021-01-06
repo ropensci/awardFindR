@@ -2,8 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{request_xml}
 \alias{request_xml}
-\title{Request XML specifically, instead of potentially, say, json
-Sets HTTP Accept header to application/xml}
+\title{Request XML specifically}
 \usage{
 request_xml(url)
 }
@@ -14,8 +13,8 @@ request_xml(url)
 The HTTP request response, hopefully in XML
 }
 \description{
-Request XML specifically, instead of potentially, say, json
-Sets HTTP Accept header to application/xml
+Sets HTTP Accept header to application/xml.
+This prevents some APIs from returning json by default
 }
 \examples{
 request_xml("http://someapi.org/api?parameters=foo")

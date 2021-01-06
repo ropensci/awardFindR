@@ -2,7 +2,7 @@
 % Please edit documentation in R/sloan.R
 \name{sloan_df}
 \alias{sloan_df}
-\title{Scrape the full Sloan grants database to a data.frame}
+\title{Scrape the Sloan grants database from html to a data.frame}
 \usage{
 sloan_df()
 }
@@ -10,7 +10,7 @@ sloan_df()
 A data.frame
 }
 \description{
-Scrape the full Sloan grants database to a data.frame
+Scrape the Sloan grants database from html to a data.frame
 }
 \examples{
 sloan <- sloan_df()

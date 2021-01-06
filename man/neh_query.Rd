@@ -4,20 +4,16 @@
 \alias{neh_query}
 \title{Query a NEH grant data.frame for a keyword}
 \usage{
-neh_query(query, df, from, to)
+neh_query(query, df)
 }
 \arguments{
-\item{query}{A single string keyword}
-
 \item{df}{A data.frame of NEH grant data to search through}
 
-\item{from}{Beginning year to search}
-
-\item{to}{Ending year to search}
+\item{keyword}{A single string keyword}
 }
 \value{
 A data.frame with the relevant results matching the keyword
 }
 \description{
-Query a NEH grant data.frame for a keyword
+Loop for neh_get(). Not intended to be run directly.
 }

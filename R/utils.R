@@ -3,7 +3,6 @@
 #' @param string a character string of ANY CaSe
 #'
 #' @return A Title Case Character String
-#' @export
 #'
 #' @examples title_case("foo bar")
 title_case <- function(string) {
@@ -21,7 +20,6 @@ title_case <- function(string) {
 #' @param xml2list List object, typically the result of xml2::as_list() function
 #'
 #' @return A data.frame
-#' @export
 #'
 #' @examples df <- xml2list_to_df(xml2list=xml2::as_list(xml))
 xml2list_to_df <- function(xml2list) {
@@ -41,13 +39,14 @@ xml2list_to_df <- function(xml2list) {
   return(df)
 }
 
-#' Request XML specifically, instead of potentially, say, json
-#' Sets HTTP Accept header to application/xml
+#' Request XML specifically
+#'
+#' Sets HTTP Accept header to application/xml.
+#' This prevents some APIs from returning json by default
 #'
 #' @param url URL to query
 #'
 #' @return The HTTP request response, hopefully in XML
-#' @export
 #'
 #' @examples request_xml("http://someapi.org/api?parameters=foo")
 request_xml <- function(url) {

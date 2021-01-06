@@ -2,23 +2,24 @@
 % Please edit documentation in R/neh.R
 \name{neh_get}
 \alias{neh_get}
-\title{Grab the NEH grants data and run a series of queries}
+\title{Grab the NEH grants data and loop the keyword queries}
 \usage{
-neh_get(queries, from, to)
+neh_get(keywords, from, to)
 }
 \arguments{
+\item{keywords}{Vector of strings to search for in the project description}
+
 \item{from}{Beginning year to search}
 
 \item{to}{Ending year to search}
-
-\item{keywords}{Vector of strings to search for in the project description}
 }
 \value{
-A subsetted data.frame with the relevant results from NEH
+A data.frame with the relevant results from NEH
 }
 \description{
-So that we don't keep redownloading the NEH csv file, this is a wrapper to loop neh_query
+So that we don't keep redownloading the NEH csv file, this is a wrapper to loop neh_query()
 }
 \examples{
-neh_get(c("focus groups", "ethnography"), 2018, 2020)
+neh_get(c("focus groups", "ethnography"),
+2018, 2020)
 }

@@ -2,16 +2,16 @@
 % Please edit documentation in R/apis.R
 \name{static_scrape}
 \alias{static_scrape}
-\title{Query static awards databases}
+\title{Download and query online static grant databases}
 \usage{
 static_scrape(keywords, from, to, sources = c("neh", "sloan"))
 }
 \arguments{
 \item{keywords}{Vector of keyword strings to search}
 
-\item{from}{Date object to begin search, only year is applied}
+\item{from}{Standard date format to begin search, only year is applied}
 
-\item{to}{Date object to end search, only year is applied}
+\item{to}{Standard date format to end search, only year is applied}
 
 \item{sources}{Vector of sources to search. Supports: NEH, Sloan}
 }
@@ -19,8 +19,10 @@ static_scrape(keywords, from, to, sources = c("neh", "sloan"))
 A harmonized data.frame
 }
 \description{
-Query static awards databases
+Download and query online static grant databases
 }
 \examples{
-static_scrape(c("qualitative data", "ethnography"), "2020-01-31", "2021-01-31", c("neh", "sloan"))
+static_scrape(c("qualitative data", "ethnography"),
+from="2020-01-31", to="2021-01-31",
+sources=c("neh", "sloan"))
 }

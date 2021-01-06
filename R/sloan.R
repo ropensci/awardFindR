@@ -1,4 +1,4 @@
-#' Extract the text details from a list object in the Sloan gronts database
+#' Extract details from a list in the Sloan grants database
 #'
 #' Internal function to extract text details in the Sloan routine.
 #' Passed internally by sloan_df in a loop. Not intended to be run directly.
@@ -53,7 +53,7 @@ sloan_df_details <- function(entry) {
   return(row)
 }
 
-#' Scrape the full Sloan grants database to a data.frame
+#' Scrape the Sloan grants database from html to a data.frame
 #'
 #' @return A data.frame
 #' @export
@@ -86,7 +86,7 @@ sloan_df <- function() {
 #' @param to Ending year to search (integer)
 #'
 #' @return A data.frame with the relevant results matching the keyword
-sloan_query <- function(query, df, from, to) {
+sloan_search_query <- function(query, df, from, to) {
   df <- subset(df, year >= from & year <= to)
 
   # grep the query in the description, subset to the hits
@@ -117,7 +117,7 @@ sloan_query <- function(query, df, from, to) {
 #'
 #' @examples sloan_search(c("qualitative data", "case studies"), 2018, 2020)
 sloan_search <- function(queries, from, to) {
-  results <- lapply(queries, sloan_query, sloan_df(), from, to)
+  results <- lapply(queries, sloan_search_query, sloan_df(), from, to)
   results <- do.call(rbind.data.frame, results)
   if (length(results)==0) {
     return(NULL)

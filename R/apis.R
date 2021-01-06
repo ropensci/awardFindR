@@ -1,13 +1,16 @@
-#' Query static awards databases
+#' Download and query online static grant databases
 #'
 #' @param keywords Vector of keyword strings to search
-#' @param from Date object to begin search, only year is applied
-#' @param to Date object to end search, only year is applied
+#' @param from Standard date format to begin search, only year is applied
+#' @param to Standard date format to end search, only year is applied
 #' @param sources Vector of sources to search. Supports: NEH, Sloan
 #'
 #' @return A harmonized data.frame
 #'
-#' @examples static_scrape(c("qualitative data", "ethnography"), "2020-01-31", "2021-01-31", c("neh", "sloan"))
+#' @examples
+#' static_scrape(c("qualitative data", "ethnography"),
+#' from="2020-01-31", to="2021-01-31",
+#' sources=c("neh", "sloan"))
 static_scrape <- function(keywords, from, to,
                           sources=c("neh", "sloan")) {
 
@@ -61,7 +64,7 @@ static_scrape <- function(keywords, from, to,
   return(full)
 }
 
-#' Scrape multiple scientific grant APIs for relevant projects
+#' Scrape various grant APIs by keyword and date
 #'
 #' @param query Keyword to search for, single string
 #' @param from Search beginning date, standard date format
@@ -70,7 +73,9 @@ static_scrape <- function(keywords, from, to,
 #' @return A data.frame in wide format
 #'
 #' @examples
-#' api_scrape(query="Qualitative methods", from="1979-01-31", to="1980-01-31", sources=c("nsf", "nih"))
+#' api_scrape(query="Qualitative methods",
+#' from="1979-01-31", to="1980-01-31",
+#' sources=c("nsf", "nih"))
 api_scrape <- function(query, from, to,
                        sources=c("nsf")) {
 

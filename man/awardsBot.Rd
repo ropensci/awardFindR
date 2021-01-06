@@ -4,7 +4,7 @@
 \alias{awardsBot}
 \title{awardsBot QDR routine}
 \usage{
-awardsBot(keywords = "keywords.csv")
+awardsBot(keywords = NULL)
 }
 \arguments{
 \item{keywords}{Path to csv file containing keywords to query. Defaults to keywords.csv}

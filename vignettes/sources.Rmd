@@ -1,0 +1,45 @@
+---
+title: "sources"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sources}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Because each source is served in a unique way and often requires complex looping, a variety of routines are associated with each. Most are not intended to be run independently. At the top level, all should return data.frames of keyword specified, date delimited searches, retaining as much potentially relevant information about each result as possible.
+
+Different grant databases are handled through two different routines, depending on which level we are running our keyword query. `api_scrape()` handles keyword queries at the API level, which requires multiple HTTP requests and URL manipulation. `static_scrape()` handles databases that are small enough to be searched locally, and thus can query all keywords at once. The Federal Reporter and NSF databases fall into the former category, while NEH and Sloan fall into the latter.
+
+## NSF
+
+The NSF API implementation loops through API calls until it's collected all the results for a keyword-date combo. All activity is handled by the `nsf_get()` routine.
+
+NSF operates through the `api_scrape()` routine.
+
+# Federal Reporter
+
+Like NSF, the Federal Reporter implementation loops through API calls until there are no more results for a specific keyword-date combo. The Federal Reporter API provides a number of sources, including NIH and IES. The `agency` parameter of `fedreporter_get()` is free-form and theoretically can include any agency that the Federal Reporter holds data for, though the `awardsBot()` routine only ever uses "nih" or "ies" as values. Ultimately, all activity is handled by the `fedreporter_get()` routine.
+
+The Federal Reporter operates through the `api_scrape()` routine.
+
+# NEH
+
+NEH provides all their grants in a single csv file, making this source the simplest implementation of all. `neh_get()` integrates fetching the most recent csv file from the internet and looping keyword queries through it.
+
+NEH operates through the `static_scrape()` routine.
+
+# Sloan
+
+Sloan querying is mainly implemented through one big HTML scrape. The Sloan website and its search function are really not tailored to usage like an API. It's simpler to grab the entire database at once and process it through a bunch of xpath queries afterward. The right http request will return all possible results. The `sloan_df()` function runs through this whole process, and returns a data.frame. 
+
+While the `sloan_df()` function can be run independently, `sloan_search()` is the intended top-level way to query the entire Sloan database within `static_scrape()` because it includes keyword searching and date-limiting. `sloan_df()` is run as part of that.
+
+Sloan operates through the `static_scrape()` routine.

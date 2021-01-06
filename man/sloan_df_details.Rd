@@ -2,7 +2,7 @@
 % Please edit documentation in R/sloan.R
 \name{sloan_df_details}
 \alias{sloan_df_details}
-\title{Extract the text details from a list object in the Sloan gronts database}
+\title{Extract details from a list in the Sloan grants database}
 \usage{
 sloan_df_details(entry)
 }
