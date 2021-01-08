@@ -86,7 +86,7 @@ sloan_df <- function() {
 #' @param to Ending year to search (integer)
 #'
 #' @return A data.frame with the relevant results matching the keyword
-sloan_search_query <- function(query, df, from, to) {
+sloan_get_query <- function(query, df, from, to) {
   df <- subset(df, year >= from & year <= to)
 
   # grep the query in the description, subset to the hits
@@ -113,11 +113,11 @@ sloan_search_query <- function(query, df, from, to) {
 #' @param from Beginning year to search
 #' @param to Ending year to search
 #'
-#' @return A data.frame with Sloan grants that match the keywords and date range
+#' @return A data.frame
 #'
 #' @examples sloan_search(c("qualitative data", "case studies"), 2018, 2020)
-sloan_search <- function(queries, from, to) {
-  results <- lapply(queries, sloan_search_query, sloan_df(), from, to)
+sloan_get <- function(queries, from, to) {
+  results <- lapply(queries, sloan_get_query, sloan_df(), from, to)
   results <- do.call(rbind.data.frame, results)
   if (length(results)==0) {
     return(NULL)

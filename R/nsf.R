@@ -3,10 +3,12 @@
 #' Query the NSF API for awards, get the XML response(s) and process it into a data.frame
 #'
 #' @param query Keyword to query, single string
-#' @param from Beginning date, mm/dd/yyyy format
-#' @param to End date, mm/dd/yyyy format
+#' @param from Beginning date, standard format
+#' @param to End date, standard format
 #' @return A data.frame of raw NSF API output
+#'
 #' @examples
+#' One query
 #' nsf_get(query="Qualitative methods", from="01/01/1973", to="01/01/2020")
 nsf_get <- function(query, from, to) {
 
@@ -23,8 +25,8 @@ nsf_get <- function(query, from, to) {
 
   # Collate URL
   query_url <- paste0(base_url, query,  '&printFields=', output_data)
-  query_url <- paste0(query_url, '&dateStart=', from)
-  query_url <- paste0(query_url, '&dateEnd=', to)
+  query_url <- paste0(query_url, '&dateStart=', format.Date(from, "%m/%d/%Y"))
+  query_url <- paste0(query_url, '&dateEnd=', format.Date(to, "%m/%d/%Y"))
 
   # actually query the API
   message(paste0("Grabbing URL: ", query_url, '&offset=', 1))

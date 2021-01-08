@@ -1,17 +1,18 @@
 #' Download and query online static grant databases
 #'
-#' @param keywords Vector of keyword strings to search
+#' @param queries Vector of keyword strings to search
 #' @param from Standard date format to begin search, only year is applied
 #' @param to Standard date format to end search, only year is applied
 #' @param sources Vector of sources to search. Supports: NEH, Sloan
 #'
-#' @return A harmonized data.frame
+#' @return A data.frame
+#' @export
 #'
 #' @examples
 #' static_scrape(c("qualitative data", "ethnography"),
 #' from="2020-01-31", to="2021-01-31",
 #' sources=c("neh", "sloan"))
-static_scrape <- function(keywords, from, to,
+static_scrape <- function(queries, from, to,
                           sources=c("neh", "sloan")) {
 
   # All implemented static sources only can accommodate year search terms
@@ -19,7 +20,7 @@ static_scrape <- function(keywords, from, to,
   to <- as.integer(format.Date(to, "%Y"))
 
   if ("neh" %in% sources) {
-    neh <- neh_get(keywords, from, to)
+    neh <- neh_get(queries, from, to)
 
     if (!is.null(neh)) {
       # Make a harmonized data.frame
@@ -40,7 +41,7 @@ static_scrape <- function(keywords, from, to,
   }
 
   if ("sloan" %in% sources) {
-    sloan <- sloan_search(keywords, from, to)
+    sloan <- sloan_get(queries, from, to)
 
     if (!is.null(sloan)) {
       # Make a harmonized data.frame
@@ -64,7 +65,7 @@ static_scrape <- function(keywords, from, to,
   return(full)
 }
 
-#' Scrape various grant APIs by keyword and date
+#' Query grant APIs for a single keyword
 #'
 #' @param query Keyword to search for, single string
 #' @param from Search beginning date, standard date format
@@ -73,35 +74,13 @@ static_scrape <- function(keywords, from, to,
 #' @return A data.frame in wide format
 #'
 #' @examples
-#' api_scrape(query="Qualitative methods",
-#' from="1979-01-31", to="1980-01-31",
-#' sources=c("nsf", "nih"))
-api_scrape <- function(query, from, to,
+#' api_scrape(query="Qualitative methods", from="1979-01-31", to="1980-01-31", sources=c("nsf", "nih"))
+api_scrape_keyword <- function(query, from, to,
                        sources=c("nsf")) {
-
-  # Check passed arguments for sanity
-  stopifnot(is.character(query))
-
-  # Standardize date format
-  from <- try(as.Date(from))
-  if ("try-error" %in% class(from) || is.na(from)) {
-    stop('"From" date invalid')
-  }
-
-  to <- try(as.Date(to))
-  if ("try-error" %in% class(to) || is.na(to)) {
-    stop('"To" date invalid')
-  }
-
-  if (from > to) {
-    stop("Ending date must be after beginning date")
-  }
 
   # Run source routines
   if("nsf" %in% sources) {
-    nsf <- nsf_get(query,
-                   format.Date(from, "%m/%d/%Y"),
-                   format.Date(to, "%m/%d/%Y"))
+    nsf <- nsf_get(query, from, to)
 
     # Empty results?
     if(!is.null(nsf)) {
@@ -202,4 +181,41 @@ api_scrape <- function(query, from, to,
   full$pi_name <- sapply(full$pi_name, title_case)
 
   return(full)
+}
+
+#' Search grant APIs by keywords and date
+#'
+#' @param queries Keywords to search for, vector
+#' @param from Search beginning date, standard date format
+#' @param to Search end date, standard date format
+#' @param sources vector of databases to query. Supported sources: nsf, nih, ies
+#' @return A data.frame in wide format
+#' @export
+#' @examples
+#' api_scrape(queries=c("ethnography", "case studies")
+#' from="1979-01-31", to="1980-01-31",
+#' sources=c("nsf", "nih", "ies"))
+api_scrape <- function(queries, from, to, sources) {
+  # Check passed arguments for sanity
+  stopifnot(is.character(queries))
+
+  # Standardize date format
+  from <- try(as.Date(from))
+  if ("try-error" %in% class(from) || is.na(from)) {
+    stop('"From" date invalid')
+  }
+
+  to <- try(as.Date(to))
+  if ("try-error" %in% class(to) || is.na(to)) {
+    stop('"To" date invalid')
+  }
+
+  if (from > to) {
+    stop("Ending date must be after beginning date")
+  }
+
+  results <- lapply(queries, api_scrape_keyword, from, to, sources)
+  results <- do.call(rbind.data.frame, results)
+  return(results)
+
 }

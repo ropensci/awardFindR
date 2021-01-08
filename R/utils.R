@@ -58,10 +58,11 @@ request_xml <- function(url) {
   # HTML entities (like "&#x19;") cause problems for the xml parser because of the ;
   # So we're just removing them if they exist (extremely rare)
   html_regexp <- "&#[a-z]+[0-9]+;"
-  if (grepl(html_regexp, httr::content(response, type="text"))) {
-    response <- xml2::read_xml(gsub(html_regexp, "", content(response, type="text")))
+  if (grepl(html_regexp, httr::content(response, type="text", encoding="UTF-8"))) {
+    response <- xml2::read_xml(gsub(html_regexp, "", content(response, type="text")),
+                               encoding="UTF-8")
   } else {
-    response <- xml2::read_xml(response$content)
+    response <- xml2::read_xml(response$content, encoding="UTF-8")
   }
   rm(html_regexp)
 

@@ -43,7 +43,8 @@ neh_get <- function(keywords, from, to) {
   message(paste("Grabbing url:", url))
   neh <- read.csv(url,
                   na.strings = c("NA", "NULL", "Unknown"),
-                  stringsAsFactors = FALSE)
+                  stringsAsFactors = FALSE,
+                  fileEncoding = "UTF-8-BOM")
 
   neh <- subset(neh, YearAwarded >= from & YearAwarded <= to)
 

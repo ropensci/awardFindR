@@ -22,13 +22,21 @@ Different grant databases are handled through two different routines, depending 
 
 The NSF API implementation loops through API calls until it's collected all the results for a keyword-date combo. All activity is handled by the `nsf_get()` routine.
 
-NSF operates through the `api_scrape()` routine.
+NSF operates through the `api_scrape()` routine. To fetch two years of data, where `keywords` is a character vector, run the following example:
+
+```
+api_scrape(queries=keywords, from="2018-01-01", to="2020-01-01", sources="nsf")
+```
 
 # Federal Reporter
 
 Like NSF, the Federal Reporter implementation loops through API calls until there are no more results for a specific keyword-date combo. The Federal Reporter API provides a number of sources, including NIH and IES. The `agency` parameter of `fedreporter_get()` is free-form and theoretically can include any agency that the Federal Reporter holds data for, though the `awardsBot()` routine only ever uses "nih" or "ies" as values. Ultimately, all activity is handled by the `fedreporter_get()` routine.
 
-The Federal Reporter operates through the `api_scrape()` routine.
+The Federal Reporter operates through the `api_scrape()` routine. To fetch two years of data for NIH and IES, where `keywords` is a character vector, run the following example:
+
+```
+api_scrape(queries=keywords, from="2018-01-01", to="2020-01-01", sources=c("nih", "ies"))
+```
 
 # NEH
 
@@ -40,6 +48,13 @@ NEH operates through the `static_scrape()` routine.
 
 Sloan querying is mainly implemented through one big HTML scrape. The Sloan website and its search function are really not tailored to usage like an API. It's simpler to grab the entire database at once and process it through a bunch of xpath queries afterward. The right http request will return all possible results. The `sloan_df()` function runs through this whole process, and returns a data.frame. 
 
-While the `sloan_df()` function can be run independently, `sloan_search()` is the intended top-level way to query the entire Sloan database within `static_scrape()` because it includes keyword searching and date-limiting. `sloan_df()` is run as part of that.
+While the `sloan_df()` function can be run independently to construct the a full data.frame from their website, like so
+
+```
+sloan <- sloan_df()
+```
 
 Sloan operates through the `static_scrape()` routine.
+
+```
+static_scrape(queries=keywords, from="2018-01-01", to="2020-01-01", sources="sloan")
