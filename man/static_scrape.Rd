@@ -4,10 +4,10 @@
 \alias{static_scrape}
 \title{Download and query online static grant databases}
 \usage{
-static_scrape(keywords, from, to, sources = c("neh", "sloan"))
+static_scrape(queries, from, to, sources)
 }
 \arguments{
-\item{keywords}{Vector of keyword strings to search}
+\item{queries}{Vector of keyword strings to search}
 
 \item{from}{Standard date format to begin search, only year is applied}
 
@@ -16,13 +16,8 @@ static_scrape(keywords, from, to, sources = c("neh", "sloan"))
 \item{sources}{Vector of sources to search. Supports: NEH, Sloan}
 }
 \value{
-A harmonized data.frame
+A data.frame
 }
 \description{
 Download and query online static grant databases
-}
-\examples{
-static_scrape(c("qualitative data", "ethnography"),
-from="2020-01-31", to="2021-01-31",
-sources=c("neh", "sloan"))
 }

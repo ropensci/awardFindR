@@ -4,10 +4,16 @@
 \alias{awardsBot}
 \title{awardsBot QDR routine}
 \usage{
-awardsBot(keywords = NULL)
+awardsBot(keywords = NULL, sources = NULL, from = NULL, to = NULL)
 }
 \arguments{
-\item{keywords}{Path to csv file containing keywords to query. Defaults to keywords.csv}
+\item{keywords}{Path to keywords csv file or vector of keywords. Defaults to data/keywords.csv}
+
+\item{sources}{A vector of sources to pull from. Supported: nsf, nih, ies, neh, sloan. Default: all}
+
+\item{from}{A date object to limit the search, defaults to two years ago.}
+
+\item{to}{A date object to limit the search, defaults to today}
 }
 \value{
 a data.frame
@@ -16,5 +22,16 @@ a data.frame
 Performs default QDR award query of all awards databases.
 }
 \examples{
-results <- awardsBot(keywords="keywords.csv")
+# Full pull of all keywords and sources
+\dontrun{full <- awardsBot()}
+
+# Specific keywords, all sources:
+\dontrun{specific <- awardsBot(keywords=c("ethnography", "case studies"))}
+
+# All keywords, specific sources:
+\dontrun{nsf <- awardsBot(sources="nsf")}
+\dontrun{some <- awardsBot(sources=c("nsf", "neh"))}
+
+# All keywords, all sources, specific date range:
+\dontrun{five_years <- awardsBot(from="2015-01-01", to="2020-01-01")}
 }

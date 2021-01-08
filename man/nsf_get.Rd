@@ -9,9 +9,9 @@ nsf_get(query, from, to)
 \arguments{
 \item{query}{Keyword to query, single string}
 
-\item{from}{Beginning date, mm/dd/yyyy format}
+\item{from}{Beginning date, standard format}
 
-\item{to}{End date, mm/dd/yyyy format}
+\item{to}{End date, standard format}
 }
 \value{
 A data.frame of raw NSF API output
@@ -20,5 +20,5 @@ A data.frame of raw NSF API output
 Query the NSF API for awards, get the XML response(s) and process it into a data.frame
 }
 \examples{
-nsf_get(query="Qualitative methods", from="01/01/1973", to="01/01/2020")
+\dontrun{nsf <- nsf_get(query="Qualitative methods", from="1973-01-01", to="2020-01-01")}
 }

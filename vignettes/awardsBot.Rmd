@@ -1,0 +1,52 @@
+---
+title: "awardsBot"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{awardsBot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+`awardsBot()` is meant to be the top-level function for interacting with grant databases.
+
+The simplest way to generate the dataset is to run the function with no arguments, as follows
+```
+grants <- awardsBot()
+```
+
+This pulls data from all supported databases, querying the results for each term in `data/keywords.csv` over the past two years. All these parameters are modifiable. For example, if we only wanted to search a few of the supported databases, we could run 
+```
+nsf <- awardsBot(sources="nsf")
+
+results <- awardsBot(sources=c("nsf", "ies"))
+```
+
+If we wanted to test different keywords, that parameter either accepts a file name or a character vector of keywords. For example:
+```
+new_terms <- awardsBot(keywords="qualitative data")
+
+new_terms <- awardsBot(keywords=c("qualitative data", "ethnography"))
+
+new terms <- awardsBot(keywods="new_terms.csv")
+```
+If you specify a .csv file, it should be a list of keywords, one string per line.
+
+We can change the date limitations on our search as well, like so
+```
+last_five_years <- awardsBot(from="2015-01-01", to="2020-01-01")
+
+last_year <- awardsBot(from="2019-01-01", to="2020-01-01")
+```
+We can also omit one of these terms. The `from` parameter defaults to two years ago, while the `to` parameter defaults to the current date. If we wanted to search all databases for all keywords from 2015 to the current date, for example, we would run
+```
+results <- awardsBot(from="2015-01-01")
+```
+
+Throughout this package, date parameters should adhere to unix standard format.

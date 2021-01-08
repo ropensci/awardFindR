@@ -2,11 +2,9 @@
 #'
 #' Loop for neh_get(). Not intended to be run directly.
 #'
-#' @param keyword A single string keyword
+#' @param query A single string keyword
 #' @param df A data.frame of NEH grant data to search through
-#'
 #' @return A data.frame with the relevant results matching the keyword
-#'
 neh_query <- function(query, df) {
   # grep the query in the description, subset to the hits
   hits <- grepl(query, df$ProjectDesc,
@@ -32,10 +30,10 @@ neh_query <- function(query, df) {
 #' @param to Ending year to search
 #'
 #' @return A data.frame with the relevant results from NEH
+#' @export
 #'
 #' @examples
-#' neh_get(c("focus groups", "ethnography"),
-#' 2018, 2020)
+#' \dontrun{neh_get(c("focus groups", "ethnography"), 2018, 2020)}
 neh_get <- function(keywords, from, to) {
   # This file is updated monthly, should hopefully be valid for the next decade?
   # See https://securegrants.neh.gov/open/data/
@@ -50,6 +48,10 @@ neh_get <- function(keywords, from, to) {
 
   results <- lapply(keywords, neh_query, neh)
   results <- do.call(rbind.data.frame, results)
+  # Did we get nothing after all these queries?
+  if (nrow(results)==0) {
+    return(NULL)
+  }
 
   # Some regex magic to make the "participant" field more applicable to our PI field
   results$pi <- sub(" \\[Project Director\\].*", "", results$Participants)

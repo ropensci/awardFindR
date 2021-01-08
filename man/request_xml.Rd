@@ -17,5 +17,5 @@ Sets HTTP Accept header to application/xml.
 This prevents some APIs from returning json by default
 }
 \examples{
-request_xml("http://someapi.org/api?parameters=foo")
+\dontrun{request_xml("http://someapi.org/api?parameters=foo")}
 }

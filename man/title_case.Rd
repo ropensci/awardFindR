@@ -16,5 +16,5 @@ A Title Case Character String
 Capitalize string to Title Case
 }
 \examples{
-title_case("foo bar")
+\dontrun{title_case("foo bar")}
 }

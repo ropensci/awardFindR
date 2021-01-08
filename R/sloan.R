@@ -4,7 +4,6 @@
 #' Passed internally by sloan_df in a loop. Not intended to be run directly.
 #'
 #' @param entry an xml2 node from a nodelist.
-#'
 #' @return a data.frame with a single entry
 sloan_df_details <- function(entry) {
   regexp <- "(\\n|\\t)"  # These html text nodes are full of ugly newlines and tabs
@@ -58,7 +57,7 @@ sloan_df_details <- function(entry) {
 #' @return A data.frame
 #' @export
 #'
-#' @examples sloan <- sloan_df()
+#' @examples \dontrun{sloan <- sloan_df()}
 sloan_df <- function() {
   # This URL will give us all the grants Sloan ever made in a single html return
   # up to 3000 results, there are 2131 as of writing but that parameter can be changed at the end here
@@ -84,7 +83,6 @@ sloan_df <- function() {
 #' @param df A data.frame passed by sloan_df
 #' @param from Beginning year to search (integer)
 #' @param to Ending year to search (integer)
-#'
 #' @return A data.frame with the relevant results matching the keyword
 sloan_get_query <- function(query, df, from, to) {
   df <- subset(df, year >= from & year <= to)
@@ -106,16 +104,14 @@ sloan_get_query <- function(query, df, from, to) {
 
 #' Search for a set of keywords in the Sloan grants database.
 #'
-#' This function will scrape and format the sloan data from the web
-#' This is the intended way to run the entire set of Sloan routines
+#' Scrape, format and search the Sloan grants database for a series of keywords
 #'
 #' @param queries vector of keywords to query
 #' @param from Beginning year to search
 #' @param to Ending year to search
-#'
 #' @return A data.frame
-#'
-#' @examples sloan_search(c("qualitative data", "case studies"), 2018, 2020)
+#' @export
+#' @examples \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}
 sloan_get <- function(queries, from, to) {
   results <- lapply(queries, sloan_get_query, sloan_df(), from, to)
   results <- do.call(rbind.data.frame, results)

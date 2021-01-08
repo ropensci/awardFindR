@@ -13,5 +13,5 @@ A data.frame
 Scrape the Sloan grants database from html to a data.frame
 }
 \examples{
-sloan <- sloan_df()
+\dontrun{sloan <- sloan_df()}
 }

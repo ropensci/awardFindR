@@ -22,5 +22,5 @@ A data.frame of raw Federal Reporter data from the API
 Query the Federal Reporter API for grants, get the XML response(s) and process it into a data.frame
 }
 \examples{
-fedreporter_get(query="Qualitative data", from=2018, to=2020, agency="nih")
+\dontrun{nih <- fedreporter_get(query="Qualitative data", from=2018, to=2020, agency="nih")}
 }

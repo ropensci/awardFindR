@@ -7,9 +7,9 @@
 neh_query(query, df)
 }
 \arguments{
-\item{df}{A data.frame of NEH grant data to search through}
+\item{query}{A single string keyword}
 
-\item{keyword}{A single string keyword}
+\item{df}{A data.frame of NEH grant data to search through}
 }
 \value{
 A data.frame with the relevant results matching the keyword

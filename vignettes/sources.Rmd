@@ -14,47 +14,48 @@ knitr::opts_chunk$set(
 )
 ```
 
-Because each source is served in a unique way and often requires complex looping, a variety of routines are associated with each. Most are not intended to be run independently. At the top level, all should return data.frames of keyword specified, date delimited searches, retaining as much potentially relevant information about each result as possible.
+Because each source is served in a unique way and often requires complex looping, routines are associated with each. At the top level, all should return data.frames of keyword specified, date delimited searches, retaining as much potentially relevant information about each result as possible.
 
-Different grant databases are handled through two different routines, depending on which level we are running our keyword query. `api_scrape()` handles keyword queries at the API level, which requires multiple HTTP requests and URL manipulation. `static_scrape()` handles databases that are small enough to be searched locally, and thus can query all keywords at once. The Federal Reporter and NSF databases fall into the former category, while NEH and Sloan fall into the latter.
+Different grant databases are handled through two different routines, depending on which level we are running our keyword query. The best way to get results is through the `awardsBot()` routine which returns a standardized data.frame that integrates multiple sources. If one is interested in the nuances of a specific data source, however, these functions provide lower-level access to the raw data returned from one specific source.
 
 ## NSF
 
-The NSF API implementation loops through API calls until it's collected all the results for a keyword-date combo. All activity is handled by the `nsf_get()` routine.
-
-NSF operates through the `api_scrape()` routine. To fetch two years of data, where `keywords` is a character vector, run the following example:
+The NSF API implementation loops through API calls until it's collected all the results for a keyword-date combo. All activity is handled by the `nsf_get()` routine. To get a raw NSF data.frame, we would run
 
 ```
-api_scrape(queries=keywords, from="2018-01-01", to="2020-01-01", sources="nsf")
+nsf <- nsf_get(query="keyword", from="2015-01-01", to="2020-01-01")
 ```
+
+Like the Federal Reporter, because of the nature of the API, the direct query function only handles one keyword at a time. Multiple keywords are handled at a higher level.
 
 # Federal Reporter
 
-Like NSF, the Federal Reporter implementation loops through API calls until there are no more results for a specific keyword-date combo. The Federal Reporter API provides a number of sources, including NIH and IES. The `agency` parameter of `fedreporter_get()` is free-form and theoretically can include any agency that the Federal Reporter holds data for, though the `awardsBot()` routine only ever uses "nih" or "ies" as values. Ultimately, all activity is handled by the `fedreporter_get()` routine.
-
-The Federal Reporter operates through the `api_scrape()` routine. To fetch two years of data for NIH and IES, where `keywords` is a character vector, run the following example:
+Like NSF, the Federal Reporter implementation loops through API calls until there are no more results for a specific keyword-date combo. The Federal Reporter API provides a number of sources, including NIH and IES. The `agency` parameter of `fedreporter_get()` is free-form and theoretically can include any agency that the Federal Reporter holds data for, though the `awardsBot()` routine only ever uses "nih" or "ies" as values. All activity is handled by the `fedreporter_get()` routine.
 
 ```
-api_scrape(queries=keywords, from="2018-01-01", to="2020-01-01", sources=c("nih", "ies"))
+nih <- fedreporter_get(query="keyword", from=2015, to=2020, agency="nih")
 ```
+
+Like NSF, because of the nature of the API, the direct query function only handles one keyword at a time. Multiple keywords are handled at a higher level.
 
 # NEH
 
-NEH provides all their grants in a single csv file, making this source the simplest implementation of all. `neh_get()` integrates fetching the most recent csv file from the internet and looping keyword queries through it.
-
-NEH operates through the `static_scrape()` routine.
+NEH provides all their grants in a single csv file, making this source the simplest implementation of all. `neh_get()` integrates fetching the most recent csv file from the internet and looping keyword queries through it. To directly query the NEH database for mulitple keywords over the past two years, for example, we could run the following:
+```
+neh <- neh_get(c("focus groups", "ethnography"), 2018, 2020)
+```
 
 # Sloan
 
 Sloan querying is mainly implemented through one big HTML scrape. The Sloan website and its search function are really not tailored to usage like an API. It's simpler to grab the entire database at once and process it through a bunch of xpath queries afterward. The right http request will return all possible results. The `sloan_df()` function runs through this whole process, and returns a data.frame. 
 
-While the `sloan_df()` function can be run independently to construct the a full data.frame from their website, like so
+The `sloan_df()` function can be run independently to construct the a full data.frame of all awards from their website, like so
 
 ```
 sloan <- sloan_df()
 ```
 
-Sloan operates through the `static_scrape()` routine.
-
+We can construct and query the Sloan database in one command, as so:
 ```
-static_scrape(queries=keywords, from="2018-01-01", to="2020-01-01", sources="sloan")
+sloan_results <- sloan_get(c("case studies", "qualitative data",), 2018, 2020)
+```

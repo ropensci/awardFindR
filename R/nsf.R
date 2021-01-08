@@ -6,14 +6,12 @@
 #' @param from Beginning date, standard format
 #' @param to End date, standard format
 #' @return A data.frame of raw NSF API output
-#'
-#' @examples
-#' One query
-#' nsf_get(query="Qualitative methods", from="01/01/1973", to="01/01/2020")
+#' @export
+#' @examples \dontrun{nsf <- nsf_get(query="Qualitative methods", from="1973-01-01", to="2020-01-01")}
 nsf_get <- function(query, from, to) {
-
   base_url <- 'https://api.nsf.gov/services/v1/awards.xml?'
-  output_data <- 'id,date,startDate,expDate,fundProgramName,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
+  output_data <- 'id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
+  output_data <- paste0(output_data, ",estimatedTotalAmt,fundProgramName") # Extra info
   cfda <- "47.076,47.075"
 
   if(!is.null(query)) {

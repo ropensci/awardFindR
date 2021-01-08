@@ -18,5 +18,5 @@ Employs maximalist merging of columns, adding NAs to any missing values.
 One way of replacing the XML::xmlToDataFrame function that no longer exists in xml2
 }
 \examples{
-df <- xml2list_to_df(xml2list=xml2::as_list(xml))
+\dontrun{df <- xml2list_to_df(xml2list=xml2::as_list(xml))}
 }

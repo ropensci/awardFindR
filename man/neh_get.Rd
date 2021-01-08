@@ -20,6 +20,5 @@ A data.frame with the relevant results from NEH
 So that we don't keep redownloading the NEH csv file, this is a wrapper to loop neh_query()
 }
 \examples{
-neh_get(c("focus groups", "ethnography"),
-2018, 2020)
+\dontrun{neh_get(c("focus groups", "ethnography"), 2018, 2020)}
 }
