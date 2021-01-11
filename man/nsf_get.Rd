@@ -20,5 +20,6 @@ A data.frame of raw NSF API output, or NULL if no results
 Query the NSF API for awards, get the XML response(s) and process it into a data.frame
 }
 \examples{
-nsf <- nsf_get(query="ethnography", from="2020-01-01", to="2020-02-01")
+nsf <- nsf_get(query="ethnography",
+from="2020-01-01", to="2020-02-01")
 }

@@ -33,7 +33,7 @@ neh_query <- function(query, df) {
 #' @export
 #'
 #' @examples
-#' \dontrun{neh <- neh_get(c("focus groups", "ethnography"), 2018, 2020)}
+#' neh <- neh_get(c("focus groups", "ethnography"), 2018, 2020)
 neh_get <- function(keywords, from, to) {
   # This file is updated monthly, should hopefully be valid for the next decade?
   # See https://securegrants.neh.gov/open/data/

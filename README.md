@@ -4,7 +4,7 @@ The QDR awardsBot scrapes a variety of grant databases for specific keywords.
 
 ## How the bot works
 
-The `awardsBot()` routine is meant to be the simplest way to reproduce the data collection. This routine uses they keywords listed in a .csv file (one term per line) and scrapes all supported databases. These queries are date-limited to the previous two years. **NOTE:** even though this only covers two years, this can be very heavy on API queries! Ideally, this shouldn't be run during business hours, or even during weekdays.
+The `awardsBot()` routine is meant to be the simplest way to reproduce the data collection. This routine either uses custom keywords or uses the keywords listed in a .csv file (one term per line) and scrapes all supported databases by default from Jan 1 2019 to today.
 
 `awardsBot()` has parameters to change sources, keywords and dates as search criteria. See included help and vignettes.
 

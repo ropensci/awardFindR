@@ -7,7 +7,8 @@
 #' @param to End date, standard format
 #' @return A data.frame of raw NSF API output, or NULL if no results
 #' @export
-#' @examples nsf <- nsf_get(query="ethnography", from="2020-01-01", to="2020-02-01")
+#' @examples nsf <- nsf_get(query="ethnography",
+#' from="2020-01-01", to="2020-02-01")
 nsf_get <- function(query, from, to) {
   base_url <- 'https://api.nsf.gov/services/v1/awards.xml?'
   output_data <- 'id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
