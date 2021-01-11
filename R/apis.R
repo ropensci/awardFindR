@@ -1,4 +1,9 @@
-#' Download and query online static grant databases
+#' Download and query online grant databases
+#'
+#' This functions as the glue code between individual API routines and the top level.
+#' After running each individual source routine,
+#' it renames columns in the data.frames so that we can rbind.data.frame() everything together.
+#' Intended to be run through the awardsBot() routine, which handles all input validation.
 #'
 #' @param queries Vector of keyword strings to search
 #' @param from Standard date format to begin search, only year is applied
@@ -75,11 +80,17 @@ award_scrape <- function(queries, from, to, sources) {
 
 #' Query grant APIs for a single keyword
 #'
+#' Large sources with complex APIs can only support on keyword at a time,
+#' and this is a limitation on the source routines, including NSF and the Federal Reporter.
+#' To remedy this, this function should to be looped in a wrapper for each individual keyword.
+#' Otherwise, this is equivalent in function to award_scrape,
+#' but providing support to different sources.
+#'
 #' @param query Keyword to search for, single string
 #' @param from Search beginning date, standard date format
 #' @param to Search end date, standard date format
 #' @param sources vector of databases to query. Supported sources: nsf, nih, ies
-#' @return A data.frame in wide format
+#' @return A data.frame
 award_scrape_api <- function(query, from, to, sources) {
 
   # Run source routines

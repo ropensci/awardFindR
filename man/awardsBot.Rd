@@ -2,16 +2,21 @@
 % Please edit documentation in R/main.R
 \name{awardsBot}
 \alias{awardsBot}
-\title{awardsBot QDR routine}
+\title{awardsBot grant search}
 \usage{
-awardsBot(keywords = NULL, sources = NULL, from = NULL, to = NULL)
+awardsBot(
+  keywords,
+  sources = c("neh", "sloan", "nsf", "nih", "ies"),
+  from = "2019-01-01",
+  to = Sys.Date()
+)
 }
 \arguments{
-\item{keywords}{Path to keywords csv file or vector of keywords. Defaults to data/keywords.csv}
+\item{keywords}{Path to keywords csv file (1 term per line) or vector of keywords.}
 
 \item{sources}{A vector of sources to pull from. Supported: nsf, nih, ies, neh, sloan. Default: all}
 
-\item{from}{A date object to limit the search, defaults to two years ago.}
+\item{from}{A date object to limit the search, defaults to Jan 1 2019}
 
 \item{to}{A date object to limit the search, defaults to today}
 }
@@ -19,19 +24,28 @@ awardsBot(keywords = NULL, sources = NULL, from = NULL, to = NULL)
 a data.frame
 }
 \description{
-Performs default QDR award query of all awards databases.
+Query a collection of online grant databases for awards.
+These queries can be limited by keyword, source and date terms.
 }
 \examples{
+# Results for "ethnography" from NSF between 1/1 and 2/1 2020
+awards <- awardsBot("ethnography", "nsf", "2020-01-01", "2020-02-01")
+
+# More intensive queries
+\dontrun{
 # Full pull of all keywords and sources
-\dontrun{full <- awardsBot()}
+full <- awardsBot(keywords="data/keywords.csv")
 
 # Specific keywords, all sources:
-\dontrun{specific <- awardsBot(keywords=c("ethnography", "case studies"))}
+specific <- awardsBot(keywords=c("ethnography", "case studies"))
 
 # All keywords, specific sources:
-\dontrun{nsf <- awardsBot(sources="nsf")}
-\dontrun{some <- awardsBot(sources=c("nsf", "neh"))}
+nsf <- awardsBot(keywords="data/keywords.csv", sources="nsf")
+nsf_and_neh <- awardsBot(keywords="data/keywords.csv",
+sources=c("nsf", "neh"))
 
-# All keywords, all sources, specific date range:
-\dontrun{five_years <- awardsBot(from="2015-01-01", to="2020-01-01")}
+# Specific keyword, all sources, specific date range:
+five_years <- awardsBot(keywords="qualitative",
+from="2015-01-01", to="2020-01-01")
+}
 }

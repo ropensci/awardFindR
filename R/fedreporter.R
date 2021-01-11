@@ -7,10 +7,10 @@
 #' @param to Ending fiscal year to search, integer
 #' @param agency Agency keyword for search criteria. Single term only. Defaults to "nih".
 #' @export
-#' @return A data.frame of raw Federal Reporter data from the API
+#' @return A data.frame from the API, or NULL if no results
 #'
 #' @examples
-#' # nih <- fedreporter_get(query="Qualitative data", from=2018, to=2020, agency="nih")
+#' nih <- fedreporter_get(query="ethnography", from=2020, to=2021, agency="nih")
 fedreporter_get <- function (query, from, to,
                              agency="nih") {
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'

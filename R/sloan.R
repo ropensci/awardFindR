@@ -58,7 +58,7 @@ sloan_df_details <- function(entry) {
 #' @export
 #'
 #' @examples
-#' # sloan <- sloan_df()
+#' \dontrun{sloan <- sloan_df()}
 sloan_df <- function() {
   # This URL will give us all the grants Sloan ever made in a single html return
   # up to 3000 results, there are 2131 as of writing but that parameter can be changed at the end here
@@ -71,6 +71,7 @@ sloan_df <- function() {
   awards <- xml2::xml_children(xml2::xml_find_first(response, "//ul[@class='data-list']"))
 
   # The sloan_df_details function does all the magic here
+  message("Processing Sloan HTML to data.frame...")
   awards <- lapply(awards, sloan_df_details)
   df <- do.call(rbind.data.frame, awards)
   return(df)
@@ -113,7 +114,7 @@ sloan_get_query <- function(query, df, from, to) {
 #' @return A data.frame
 #' @export
 #' @examples
-#' # sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)
+#' \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}
 sloan_get <- function(queries, from, to) {
   results <- lapply(queries, sloan_get_query, sloan_df(), from, to)
   results <- do.call(rbind.data.frame, results)

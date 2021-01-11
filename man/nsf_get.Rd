@@ -14,11 +14,11 @@ nsf_get(query, from, to)
 \item{to}{End date, standard format}
 }
 \value{
-A data.frame of raw NSF API output
+A data.frame of raw NSF API output, or NULL if no results
 }
 \description{
 Query the NSF API for awards, get the XML response(s) and process it into a data.frame
 }
 \examples{
-\dontrun{nsf <- nsf_get(query="Qualitative methods", from="1973-01-01", to="2020-01-01")}
+nsf <- nsf_get(query="ethnography", from="2020-01-01", to="2020-02-01")
 }
