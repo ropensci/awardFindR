@@ -11,21 +11,23 @@
 #'
 #' @examples
 #' # Full pull of all keywords and sources
-#' \dontrun{full <- awardsBot()}
+#' # full <- awardsBot()
 #'
 #' # Specific keywords, all sources:
-#' \dontrun{specific <- awardsBot(keywords=c("ethnography", "case studies"))}
+#' # specific <- awardsBot(keywords=c("ethnography", "case studies"))
 #'
 #' # All keywords, specific sources:
-#' \dontrun{nsf <- awardsBot(sources="nsf")}
-#' \dontrun{some <- awardsBot(sources=c("nsf", "neh"))}
+#' # nsf <- awardsBot(sources="nsf")
+#' # nsf_and_neh <- awardsBot(sources=c("nsf", "neh"))
 #'
 #' # All keywords, all sources, specific date range:
-#' \dontrun{five_years <- awardsBot(from="2015-01-01", to="2020-01-01")}
+#' # five_years <- awardsBot(from="2015-01-01", to="2020-01-01")
 awardsBot <- function(keywords=NULL, sources=NULL, from=NULL, to=NULL) {
   if (is.null(keywords)) {
     keywords <- "data/keywords.csv"
   }
+  # Check keywords for sanity
+  stopifnot(is.character(keywords))
 
   # Is an argument of length 1 a path or a keyword?
   if (length(keywords) == 1) {
@@ -37,9 +39,12 @@ awardsBot <- function(keywords=NULL, sources=NULL, from=NULL, to=NULL) {
   }
 
   # No sources argument? Pull everything supported
+  supported_sources <- c("nsf", "nih", "ies", "neh", "sloan")
   if (is.null(sources)) {
-    sources <- c("nsf", "nih", "ies", "neh", "sloan")
+    sources <- supported_sources
   }
+  # check sources for sanity
+  stopifnot(is.character(sources))
 
   # Calculate previous two years
   today <- Sys.Date()
@@ -69,22 +74,6 @@ awardsBot <- function(keywords=NULL, sources=NULL, from=NULL, to=NULL) {
     stop("Ending date must be after beginning date")
   }
 
-  # Run the static database queries first
-  if ("neh" %in% sources || "sloan" %in% sources) {
-    static <- static_scrape(keywords, from, to, sources)
-  } else {
-    static <- NULL
-  }
-
-  # Loop the API query routine through our keywords
-  if ("nsf" %in% sources || "nih" %in% sources || "ies" %in% sources) {
-    apis <- api_scrape(keywords, from, to, sources)
-  } else {
-    apis <- NULL
-  }
-
-  # Bind with the static results
-  awards <- rbind.data.frame(static, apis)
-
+  awards <- award_scrape(keywords, from, to, sources)
   return(awards)
 }

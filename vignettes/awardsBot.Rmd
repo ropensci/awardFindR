@@ -34,7 +34,7 @@ new_terms <- awardsBot(keywords="qualitative data")
 
 new_terms <- awardsBot(keywords=c("qualitative data", "ethnography"))
 
-new terms <- awardsBot(keywods="new_terms.csv")
+new terms <- awardsBot(keywords="new_terms.csv")
 ```
 If you specify a .csv file, it should be a list of keywords, one string per line.
 

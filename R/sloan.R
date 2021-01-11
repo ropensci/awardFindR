@@ -57,7 +57,8 @@ sloan_df_details <- function(entry) {
 #' @return A data.frame
 #' @export
 #'
-#' @examples \dontrun{sloan <- sloan_df()}
+#' @examples
+#' # sloan <- sloan_df()
 sloan_df <- function() {
   # This URL will give us all the grants Sloan ever made in a single html return
   # up to 3000 results, there are 2131 as of writing but that parameter can be changed at the end here
@@ -111,7 +112,8 @@ sloan_get_query <- function(query, df, from, to) {
 #' @param to Ending year to search
 #' @return A data.frame
 #' @export
-#' @examples \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}
+#' @examples
+#' # sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)
 sloan_get <- function(queries, from, to) {
   results <- lapply(queries, sloan_get_query, sloan_df(), from, to)
   results <- do.call(rbind.data.frame, results)

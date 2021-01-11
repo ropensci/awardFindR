@@ -5,14 +5,15 @@
 #' @param to Standard date format to end search, only year is applied
 #' @param sources Vector of sources to search. Supports: NEH, Sloan
 #' @return A data.frame
-static_scrape <- function(queries, from, to, sources) {
+award_scrape <- function(queries, from, to, sources) {
 
   # All implemented static sources only can accommodate year search terms
-  from <- as.integer(format.Date(from, "%Y"))
-  to <- as.integer(format.Date(to, "%Y"))
+  from_yr <- as.integer(format.Date(from, "%Y"))
+  to_yr <- as.integer(format.Date(to, "%Y"))
 
+  # start NEH block
   if ("neh" %in% sources) {
-    neh <- neh_get(queries, from, to)
+    neh <- neh_get(queries, from_yr, to_yr)
 
     if (!is.null(neh)) {
       # Make a harmonized data.frame
@@ -35,8 +36,9 @@ static_scrape <- function(queries, from, to, sources) {
     neh <- NULL
   }
 
+  # Start sloan block
   if ("sloan" %in% sources) {
-    sloan <- sloan_get(queries, from, to)
+    sloan <- sloan_get(queries, from_yr, to_yr)
 
     if (!is.null(sloan)) {
       # Make a harmonized data.frame
@@ -59,7 +61,14 @@ static_scrape <- function(queries, from, to, sources) {
     sloan <- NULL
   }
 
-  full <- rbind.data.frame(neh, sloan)
+  # Run the API queries, which require one term at a time
+  apis <- lapply(queries, award_scrape_api, from, to, sources)
+  apis <- do.call(rbind.data.frame, apis)
+
+  full <- rbind.data.frame(neh, sloan, apis)
+  if (nrow(full)==0) {
+    return(NULL)
+  }
 
   return(full)
 }
@@ -71,7 +80,7 @@ static_scrape <- function(queries, from, to, sources) {
 #' @param to Search end date, standard date format
 #' @param sources vector of databases to query. Supported sources: nsf, nih, ies
 #' @return A data.frame in wide format
-api_scrape_keyword <- function(query, from, to, sources) {
+award_scrape_api <- function(query, from, to, sources) {
 
   # Run source routines
   if("nsf" %in% sources) {
@@ -84,7 +93,7 @@ api_scrape_keyword <- function(query, from, to, sources) {
       nsf$directorate[nsf$cfdaNumber=="47.076"] <- "EHR"
 
       # Format of harmonized data.frame, should follow across sources
-      full <- with(nsf, data.frame(institution=awardeeName,
+      nsf <- with(nsf, data.frame(institution=awardeeName,
                                    pi_name=paste0(piLastName, ", ", piFirstName),
                                    pi_email=piEmail,
                                    start=as.Date(startDate, format="%m/%d/%Y"),
@@ -98,7 +107,10 @@ api_scrape_keyword <- function(query, from, to, sources) {
 
     } else {
       message(paste0("NOTICE (non-fatal): NSF query \"", query, "\" returned empty response"))
+      nsf <- NULL
     }
+  } else {
+    nsf <- NULL
   }
 
   # Start NIH block
@@ -113,8 +125,8 @@ api_scrape_keyword <- function(query, from, to, sources) {
       nih <- with(nih, data.frame(institution=OrgName,
                                   pi_name=ContactPi,
                                   pi_email=NA,
-                                  start=as.Date(BudgetStartDate),
-                                  end=as.Date(BudgetEndDate),
+                                  start=as.Date(BudgetStartDate), # Or ProjectStartDate??
+                                  end=as.Date(BudgetEndDate), # Or projectEndDate??
                                   program=Department,
                                   source="NIH",
                                   id=ProjectNumber,
@@ -122,16 +134,12 @@ api_scrape_keyword <- function(query, from, to, sources) {
                                   title=Title,
                                   stringsAsFactors = FALSE))
 
-      # Merge
-      if(exists("full")) {
-        full <- merge(full, nih, all=T)
-      } else {
-        full <- nih
-      }
-
     }  else {
       message(paste0("NOTICE (non-fatal): NIH query \"", query, "\" returned empty response"))
+      nih <- NULL
     }
+  } else {
+    nih <- NULL
   }
 
   # Start IES block
@@ -146,50 +154,28 @@ api_scrape_keyword <- function(query, from, to, sources) {
       ies <- with(ies, data.frame(institution=OrgName,
                                   pi_name=ContactPi,
                                   pi_email=NA,
-                                  start=as.Date(BudgetStartDate),
-                                  end=as.Date(BudgetEndDate),
+                                  start=as.Date(ProjectStartDate),
+                                  end=as.Date(ProjectEndDate),
                                   program=Department,
                                   source="IES",
                                   id=ProjectNumber,
                                   keyword=query,
                                   title=Title,
                                   stringsAsFactors = FALSE))
-
-      # Merge
-      if(exists("full")) {
-        full <- merge(full, ies, all=T)
-      } else {
-        full <- ies
-      }
-
     }  else {
       message(paste0("NOTICE (non-fatal): IES query \"", query, "\" returned empty response"))
+      ies <- NULL
     }
+  } else {
+    ies <- NULL
   }
 
-  # Did nothing work?
-  if (!exists("full")) {
+  full <- rbind.data.frame(nsf, nih, ies)
+  if (nrow(full)==0) {
     return(NULL)
   }
 
   full$institution <- sapply(as.character(full$institution), title_case)
   full$pi_name <- sapply(full$pi_name, title_case)
-
   return(full)
-}
-
-#' Search grant APIs by keywords and date
-#'
-#' @param queries Keywords to search for, vector
-#' @param from Search beginning date, standard date format
-#' @param to Search end date, standard date format
-#' @param sources vector of databases to query. Supported sources: nsf, nih, ies
-#' @return A data.frame in wide format
-api_scrape <- function(queries, from, to, sources) {
-  # Check passed arguments for sanity
-  stopifnot(is.character(queries))
-  results <- lapply(queries, api_scrape_keyword, from, to, sources)
-  results <- do.call(rbind.data.frame, results)
-  return(results)
-
 }

@@ -9,7 +9,8 @@
 #' @export
 #' @return A data.frame of raw Federal Reporter data from the API
 #'
-#' @examples \dontrun{nih <- fedreporter_get(query="Qualitative data", from=2018, to=2020, agency="nih")}
+#' @examples
+#' # nih <- fedreporter_get(query="Qualitative data", from=2018, to=2020, agency="nih")
 fedreporter_get <- function (query, from, to,
                              agency="nih") {
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'

@@ -2,7 +2,9 @@
 #'
 #' @param string a character string of ANY CaSe
 #' @return A Title Case Character String
-#' @examples \dontrun{title_case("foo bar")}
+#' @examples
+#' # Should output "Foo Bar"
+#' # title_case("foo BAR")
 title_case <- function(string) {
   c <- strsplit(tolower(string), " ")[[1]]
   paste(toupper(substring(c, 1,1)), substring(c, 2),
@@ -17,7 +19,8 @@ title_case <- function(string) {
 #'
 #' @param xml2list List object, typically the result of xml2::as_list() function
 #' @return A data.frame
-#' @examples \dontrun{df <- xml2list_to_df(xml2list=xml2::as_list(xml))}
+#' @examples
+#' # df <- xml2list_to_df(xml2list=xml2::as_list(xml))
 xml2list_to_df <- function(xml2list) {
   xml2list <- lapply(xml2list, unlist, recursive=F)
   xml2list <- lapply(xml2list, as.data.frame)
@@ -42,7 +45,8 @@ xml2list_to_df <- function(xml2list) {
 #'
 #' @param url URL to query
 #' @return The HTTP request response, hopefully in XML
-#' @examples \dontrun{request_xml("http://someapi.org/api?parameters=foo")}
+#' @examples
+#' # request_xml("http://someapi.org/api?parameters=foo")
 request_xml <- function(url) {
   message(paste("Grabbing url:", url))
   httr::with_config(httr::add_headers(Accept = "application/xml"), {
