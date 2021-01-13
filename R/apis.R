@@ -181,6 +181,7 @@ award_scrape_api <- function(query, from, to, sources) {
     ies <- NULL
   }
 
+  # Begin open philanthropy block
   if ("ophil" %in% sources) {
     ophil <- ophil_get(query,
                        format.Date(from, "%Y"),
@@ -202,8 +203,7 @@ award_scrape_api <- function(query, from, to, sources) {
                                   stringsAsFactors = FALSE))
     } else {
       message(paste0("NOTICE (non-fatal): Open Philanthropy query \"",
-                     query,
-                     "\" returned empty response"))
+                     query, "\" returned empty response"))
       ophil <- NULL
     }
   } else {

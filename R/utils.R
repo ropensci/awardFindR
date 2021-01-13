@@ -6,6 +6,9 @@
 #' # Should output "Foo Bar"
 #' \dontrun{title_case("foo BAR")}
 title_case <- function(string) {
+  if (is.na(string)) {
+    return(NA)
+  }
   c <- strsplit(tolower(string), " ")[[1]]
   paste(toupper(substring(c, 1,1)), substring(c, 2),
         sep="", collapse=" ")
