@@ -59,3 +59,12 @@ We can construct and query the Sloan database in one command, as so:
 ```
 sloan_results <- sloan_get(c("case studies", "qualitative data",), 2018, 2020)
 ```
+
+# Open Philanthrophy
+
+Open Philanthropy uses the web-based query framework to search the descriptions projects and return results. Each keyword search invokes a new HTTP request, which is then processed into a a data.frame through a few xpath queries on the HTML served.
+
+To query the database for the keyword "qualitative" for the years 2019-2020, we can execute the following:
+```
+ophil_get("qualitative", 2019, 2020)
+```

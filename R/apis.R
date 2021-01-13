@@ -181,7 +181,36 @@ award_scrape_api <- function(query, from, to, sources) {
     ies <- NULL
   }
 
-  full <- rbind.data.frame(nsf, nih, ies)
+  if ("ophil" %in% sources) {
+    ophil <- ophil_get(query,
+                       format.Date(from, "%Y"),
+                       format.Date(to, "%Y"))
+
+    # Make the harmonized data.frame
+    if (!is.null(ophil)) {
+      ophil <- with(ophil, data.frame(institution=grantee,
+                                  pi_name=NA,
+                                  pi_email=NA,
+                                  #start=month,
+                                  start=NA,
+                                  end=NA,
+                                  program=focus,
+                                  source="Open Philanthropy",
+                                  id=NA,
+                                  keyword=query,
+                                  title=title,
+                                  stringsAsFactors = FALSE))
+    } else {
+      message(paste0("NOTICE (non-fatal): Open Philanthropy query \"",
+                     query,
+                     "\" returned empty response"))
+      ophil <- NULL
+    }
+  } else {
+    ophil <- NULL
+  }
+
+  full <- rbind.data.frame(nsf, nih, ies, ophil)
   if (nrow(full)==0) {
     return(NULL)
   }

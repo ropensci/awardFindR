@@ -11,6 +11,17 @@ title_case <- function(string) {
         sep="", collapse=" ")
 }
 
+
+#' Substring from the right
+#'
+#' @param x Character string to substring from
+#' @param n Characters from the right to include
+#'
+#' @return Shortened character string
+substr_right <- function(x, n){
+  substr(x, nchar(x)-n+1, nchar(x))
+}
+
 #' xml2 list to data.frame
 #'
 #' Turns the result of an xml2::as_list() function into a data.frame.
