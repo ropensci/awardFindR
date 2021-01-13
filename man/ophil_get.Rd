@@ -4,14 +4,14 @@
 \alias{ophil_get}
 \title{Grab the Open Philanthropy grants data search for keyword-date combos}
 \usage{
-ophil_get(keyword, from, to)
+ophil_get(query, from, to)
 }
 \arguments{
+\item{query}{Keyword to search for in the project description, single string}
+
 \item{from}{Beginning year to search}
 
 \item{to}{Ending year to search}
-
-\item{keywords}{Keyword to search for in the project description, single string}
 }
 \value{
 A data.frame

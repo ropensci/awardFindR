@@ -1,6 +1,6 @@
-Package: awardsBot
+Package: awardFindR
 Type: Package
-Title: QDR awardsBot
+Title: QDR awardFindR
 Version: 0.1.0
 Author: Michael C. McCall
 Maintainer: Michael McCall <mimccall@syr.edu>

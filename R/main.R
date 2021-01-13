@@ -1,4 +1,4 @@
-#' awardsBot grant search
+#' awardFindR grant search
 #'
 #' Query a collection of online grant databases for awards.
 #' These queries can be limited by keyword, source and date terms.
@@ -12,26 +12,26 @@
 #'
 #' @examples
 #' # Results for "ethnography" from NSF between 1/1 and 2/1 2020
-#' awards <- awardsBot("ethnography", "nsf", "2020-01-01", "2020-02-01")
+#' awards <- awardFindR("ethnography", "nsf", "2020-01-01", "2020-02-01")
 #'
 #' # More intensive queries
 #' \dontrun{
 #' # Full pull of all keywords and sources
-#' full <- awardsBot(keywords="data/keywords.csv")
+#' full <- awardFindR(keywords="data/keywords.csv")
 #'
 #' # Specific keywords, all sources:
-#' specific <- awardsBot(keywords=c("ethnography", "case studies"))
+#' specific <- awardFindR(keywords=c("ethnography", "case studies"))
 #'
 #' # All keywords, specific sources:
-#' nsf <- awardsBot(keywords="data/keywords.csv", sources="nsf")
-#' nsf_and_neh <- awardsBot(keywords="data/keywords.csv",
+#' nsf <- awardFindR(keywords="data/keywords.csv", sources="nsf")
+#' nsf_and_neh <- awardFindR(keywords="data/keywords.csv",
 #' sources=c("nsf", "neh"))
 #'
 #' # Specific keyword, all sources, specific date range:
-#' five_years <- awardsBot(keywords="qualitative",
+#' five_years <- awardFindR(keywords="qualitative",
 #' from="2015-01-01", to="2020-01-01")
 #' }
-awardsBot <- function(keywords,
+awardFindR <- function(keywords,
                       sources=c("neh", "sloan", "nsf", "nih", "ies", "ophil"),
                       from="2019-01-01", to=Sys.Date()) {
 

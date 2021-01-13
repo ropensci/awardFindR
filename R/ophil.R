@@ -23,7 +23,7 @@ ophil_details <- function(entry) {
 
 #' Grab the Open Philanthropy grants data search for keyword-date combos
 #'
-#' @param keyword Keyword to search for in the project description, single string
+#' @param query Keyword to search for in the project description, single string
 #' @param from Beginning year to search
 #' @param to Ending year to search
 #'
@@ -32,10 +32,10 @@ ophil_details <- function(entry) {
 #'
 #' @example
 #' ophil <- ophil_get("qualitative", 2019, 2020)
-ophil_get <- function(keyword, from, to) {
+ophil_get <- function(query, from, to) {
   base_url <- "https://www.openphilanthropy.org/giving/grants?"
   query_url <- paste0(base_url,
-                      "keys=\"", xml2::url_escape(keyword), "\"")
+                      "keys=\"", xml2::url_escape(query), "\"")
 
   message(paste("Grabbing url:", query_url))
   response <- xml2::read_html(query_url)
@@ -59,13 +59,3 @@ ophil_get <- function(keyword, from, to) {
 
   return(df)
 }
-
-#ophil_csv <- function(keywords, from, to) {
-#  url <- "https://www.openphilanthropy.org/giving/grants/spreadsheet"
-#  message(paste("Grabbing url:", url))
-#  ophil <- read.csv(url,
-#                  na.strings = c("NA", "NULL", "Unknown"),
-#                  stringsAsFactors = FALSE,
-#                  fileEncoding = "UTF-8-BOM")
-
-#}
