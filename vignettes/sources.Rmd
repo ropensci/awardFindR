@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 Because each source is served in a unique way and often requires complex looping, routines are associated with each. At the top level, all should return data.frames of keyword specified, date delimited searches, retaining as much potentially relevant information about each result as possible.
 
-Different grant databases are handled through two different routines, depending on which level we are running our keyword query. The best way to get results is through the `awardsBot()` routine which returns a standardized data.frame that integrates multiple sources. If one is interested in the nuances of a specific data source, however, these functions provide lower-level access to the raw data returned from one specific source.
+Different grant databases are handled through two different routines, depending on which level we are running our keyword query. The best way to get results is through the `awardsFindR()` routine which returns a standardized data.frame that integrates multiple sources. If one is interested in the nuances of a specific data source, however, these functions provide lower-level access to the raw data returned from one specific source.
 
 ## NSF
 
@@ -30,7 +30,7 @@ Like the Federal Reporter, because of the nature of the API, the direct query fu
 
 # Federal Reporter
 
-Like NSF, the Federal Reporter implementation loops through API calls until there are no more results for a specific keyword-date combo. The Federal Reporter API provides a number of sources, including NIH and IES. The `agency` parameter of `fedreporter_get()` is free-form and theoretically can include any agency that the Federal Reporter holds data for, though the `awardsBot()` routine only ever uses "nih" or "ies" as values. All activity is handled by the `fedreporter_get()` routine.
+Like NSF, the Federal Reporter implementation loops through API calls until there are no more results for a specific keyword-date combo. The Federal Reporter API provides a number of sources, including NIH and IES. The `agency` parameter of `fedreporter_get()` is free-form and theoretically can include any agency that the Federal Reporter holds data for, though the `awardsFindR()` routine only ever uses "nih" or "ies" as values. All activity is handled by the `fedreporter_get()` routine.
 
 ```
 nih <- fedreporter_get(query="keyword", from=2015, to=2020, agency="nih")

@@ -22,5 +22,5 @@ A data.frame
 This functions as the glue code between individual API routines and the top level.
 After running each individual source routine,
 it renames columns in the data.frames so that we can rbind.data.frame() everything together.
-Intended to be run through the awardsBot() routine, which handles all input validation.
+Intended to be run through the awardFindR() routine, which handles all input validation.
 }

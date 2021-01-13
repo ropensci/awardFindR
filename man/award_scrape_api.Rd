@@ -22,6 +22,6 @@ A data.frame
 Large sources with complex APIs can only support on keyword at a time,
 and this is a limitation on the source routines, including NSF and the Federal Reporter.
 To remedy this, this function should to be looped in a wrapper for each individual keyword.
-Otherwise, this is equivalent in function to award_scrape,
+Otherwise, this is equivalent in function to award_scrape(),
 but providing support to different sources.
 }

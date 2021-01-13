@@ -3,7 +3,7 @@
 #' This functions as the glue code between individual API routines and the top level.
 #' After running each individual source routine,
 #' it renames columns in the data.frames so that we can rbind.data.frame() everything together.
-#' Intended to be run through the awardsBot() routine, which handles all input validation.
+#' Intended to be run through the awardFindR() routine, which handles all input validation.
 #'
 #' @param queries Vector of keyword strings to search
 #' @param from Standard date format to begin search, only year is applied
@@ -83,7 +83,7 @@ award_scrape <- function(queries, from, to, sources) {
 #' Large sources with complex APIs can only support on keyword at a time,
 #' and this is a limitation on the source routines, including NSF and the Federal Reporter.
 #' To remedy this, this function should to be looped in a wrapper for each individual keyword.
-#' Otherwise, this is equivalent in function to award_scrape,
+#' Otherwise, this is equivalent in function to award_scrape(),
 #' but providing support to different sources.
 #'
 #' @param query Keyword to search for, single string
