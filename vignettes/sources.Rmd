@@ -30,13 +30,23 @@ Like the Federal Reporter, because of the nature of the API, the direct query fu
 
 # Federal Reporter
 
-Like NSF, the Federal Reporter implementation loops through API calls until there are no more results for a specific keyword-date combo. The Federal Reporter API provides a number of sources, including NIH and IES. The `agency` parameter of `fedreporter_get()` is free-form and theoretically can include any agency that the Federal Reporter holds data for, though the `awardsFindR()` routine only ever uses "nih" or "ies" as values. All activity is handled by the `fedreporter_get()` routine.
+Like NSF, the Federal Reporter implementation loops through API calls until there are no more results for a specific keyword-date combo. The Federal Reporter API provides a number of sources, including USDA and DoD. The `agency` parameter of `fedreporter_get()` is free-form and theoretically can include any agency that the Federal Reporter holds data for. All activity is handled by the `fedreporter_get()` routine. Because of limitations in the API, we can only use fiscal years as our terms for limiting date ranges.
 
 ```
-nih <- fedreporter_get(query="keyword", from=2015, to=2020, agency="nih")
+fedreporter <- fedreporter_get(query="keyword", from=2015, to=2020, agency="usda,dod")
 ```
 
 Like NSF, because of the nature of the API, the direct query function only handles one keyword at a time. Multiple keywords are handled at a higher level.
+
+# NIH RePorter
+
+Like NSF and the Federal Reporter implementations, we query the NIH RePorter API through looped HTTP POST requests with a json payload until there are no more results.
+
+```
+nih <- nih_get(query="keyword", from="2018-01-01", to="2020-01-01")
+```
+
+Like NSF and the Federal Reporter, because of the nature of the API, the direct query function only handles one keyword at a time. Multiple keywords are handled at a higher level.
 
 # NEH
 

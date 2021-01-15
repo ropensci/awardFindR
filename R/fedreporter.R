@@ -5,17 +5,18 @@
 #' @param query Keyword, single string
 #' @param from Beginning fiscal year to search, integer
 #' @param to Ending fiscal year to search, integer
-#' @param agency Agency keyword for search criteria. Single term only. Defaults to "nih".
+#' @param agency Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,epa".
 #' @export
 #' @return A data.frame from the API, or NULL if no results
 #'
 #' @examples
 #' nih <- fedreporter_get(query="ethnography", from=2020, to=2021, agency="nih")
 fedreporter_get <- function (query, from, to,
-                             agency="nih") {
+                             agency="usda,dod,nasa,epa") {
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'
 
-  query_url <- paste0(base_url, "?query=agency:", toupper(agency),
+  query_url <- paste0(base_url,
+                      "?query=agency:", toupper(agency),
                       "$text:", xml2::url_escape(query), "$textFields:terms",
                       # Only date paramater available in the fedreporter query is by fiscal year :(
                       # Also, you can't use ranges, so this collates each consecutive year with commas

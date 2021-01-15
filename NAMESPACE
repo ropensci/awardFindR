@@ -3,6 +3,7 @@
 export(awardFindR)
 export(fedreporter_get)
 export(neh_get)
+export(nih_get)
 export(nsf_get)
 export(ophil_get)
 export(sloan_df)

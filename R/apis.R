@@ -124,61 +124,62 @@ award_scrape_api <- function(query, from, to, sources) {
     nsf <- NULL
   }
 
-  # Start NIH block
+
+  # Start nih block
   if ("nih" %in% sources) {
-    nih <- fedreporter_get(query,
-                           format.Date(from, "%Y"),
-                           format.Date(to, "%Y"),
-                           agency = "nih")
+    nih <- nih_get(query, from, to)
 
     # Make the harmonized data.frame
     if (!is.null(nih)) {
-      nih <- with(nih, data.frame(institution=OrgName,
-                                  pi_name=ContactPi,
-                                  pi_email=NA,
-                                  start=as.Date(BudgetStartDate), # Or ProjectStartDate??
-                                  end=as.Date(BudgetEndDate), # Or projectEndDate??
-                                  program=Department,
-                                  source="NIH",
-                                  id=ProjectNumber,
-                                  keyword=query,
-                                  title=Title,
-                                  stringsAsFactors = FALSE))
+      nih <- with(nih, data.frame(institution=org_name,
+                                        pi_name=contact_pi_name,
+                                        pi_email=NA,
+                                        start=as.Date(project_start_date),
+                                        end=as.Date(project_end_date),
+                                        program=agency_code,
+                                        source="NIH",
+                                        id=project_num,
+                                        keyword=query,
+                                        title=project_title,
+                                        stringsAsFactors = FALSE))
 
     }  else {
-      message(paste0("NOTICE (non-fatal): NIH query \"", query, "\" returned empty response"))
+      message(paste0("NOTICE (non-fatal): NIH RePorter query \"",
+                     query, "\" returned empty response"))
       nih <- NULL
     }
   } else {
     nih <- NULL
   }
 
-  # Start IES block
-  if ("ies" %in% sources) {
-    ies <- fedreporter_get(query,
-                           format.Date(from, "%Y"),
-                           format.Date(to, "%Y"),
-                           agency = "ies")
+
+  # Start fedreporter block
+  if ("fedreporter" %in% sources) {
+    fedreport <- fedreporter_get(query,
+                                 format.Date(from, "%Y"),
+                                 format.Date(to, "%Y"))
 
     # Make the harmonized data.frame
-    if (!is.null(ies)) {
-      ies <- with(ies, data.frame(institution=OrgName,
-                                  pi_name=ContactPi,
-                                  pi_email=NA,
-                                  start=as.Date(ProjectStartDate),
-                                  end=as.Date(ProjectEndDate),
-                                  program=Department,
-                                  source="IES",
-                                  id=ProjectNumber,
-                                  keyword=query,
-                                  title=Title,
-                                  stringsAsFactors = FALSE))
+    if (!is.null(fedreport)) {
+      fedreport <- with(fedreport, data.frame(institution=OrgName,
+                                              pi_name=ContactPi,
+                                              pi_email=NA,
+                                              start=as.Date(ProjectStartDate),
+                                              end=as.Date(ProjectEndDate),
+                                              program=Ic,
+                                              source=Agency,
+                                              id=ProjectNumber,
+                                              keyword=query,
+                                              title=Title,
+                                              stringsAsFactors = FALSE))
+
     }  else {
-      message(paste0("NOTICE (non-fatal): IES query \"", query, "\" returned empty response"))
-      ies <- NULL
+      message(paste0("NOTICE (non-fatal): Federal reporter query \"",
+                     query, "\" returned empty response"))
+      fedreport <- NULL
     }
   } else {
-    ies <- NULL
+    fedreport <- NULL
   }
 
   # Begin open philanthropy block
@@ -210,7 +211,7 @@ award_scrape_api <- function(query, from, to, sources) {
     ophil <- NULL
   }
 
-  full <- rbind.data.frame(nsf, nih, ies, ophil)
+  full <- rbind.data.frame(nsf, nih, fedreport, ophil)
   if (nrow(full)==0) {
     return(NULL)
   }
