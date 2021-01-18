@@ -72,7 +72,7 @@ awardFindR <- function(keywords,
   }
 
   # Run the routines in apis.R
-  awards <- award_scrape(keywords, from, to, sources)
+  awards <- award_scrape(keywords, sources, from, to)
 
   # Find, remove duplicates
   duplicates <- awards[duplicated(awards$id), ]

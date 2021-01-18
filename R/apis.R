@@ -10,7 +10,7 @@
 #' @param to Standard date format to end search, only year is applied
 #' @param sources Vector of sources to search. Supports: NEH, Sloan
 #' @return A data.frame
-award_scrape <- function(queries, from, to, sources) {
+award_scrape <- function(queries, sources, from, to) {
 
   # All implemented static sources only can accommodate year search terms
   from_yr <- as.integer(format.Date(from, "%Y"))
@@ -67,7 +67,7 @@ award_scrape <- function(queries, from, to, sources) {
   }
 
   # Run the API queries, which require one term at a time
-  apis <- lapply(queries, award_scrape_api, from, to, sources)
+  apis <- lapply(queries, award_scrape_api, sources, from, to)
   apis <- do.call(rbind.data.frame, apis)
 
   full <- rbind.data.frame(neh, sloan, apis)
@@ -91,7 +91,7 @@ award_scrape <- function(queries, from, to, sources) {
 #' @param to Search end date, standard date format
 #' @param sources vector of databases to query. Supported sources: nsf, nih, ies
 #' @return A data.frame
-award_scrape_api <- function(query, from, to, sources) {
+award_scrape_api <- function(query, sources, from, to) {
 
   # Run source routines
   if("nsf" %in% sources) {
@@ -152,7 +152,6 @@ award_scrape_api <- function(query, from, to, sources) {
     nih <- NULL
   }
 
-
   # Start fedreporter block
   if ("fedreporter" %in% sources) {
     fedreport <- fedreporter_get(query,
@@ -166,8 +165,8 @@ award_scrape_api <- function(query, from, to, sources) {
                                               pi_email=NA,
                                               start=as.Date(ProjectStartDate),
                                               end=as.Date(ProjectEndDate),
-                                              program=Ic,
-                                              source=Agency,
+                                              program=Agency,
+                                              source=Department,
                                               id=ProjectNumber,
                                               keyword=query,
                                               title=Title,
