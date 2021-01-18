@@ -4,7 +4,7 @@
 #' These queries can be limited by keyword, source and date terms.
 #'
 #' @param keywords Path to keywords csv file (1 term per line) or vector of keywords.
-#' @param sources A vector of sources to pull from. Supported: nsf, nih, ies, neh, sloan, ophil. Default: all
+#' @param sources A vector of sources to pull from. Supported: nsf, nih, fedreporter, neh, sloan, ophil. Default: all
 #' @param from A date object to limit the search, defaults to Jan 1 2019
 #' @param to A date object to limit the search, defaults to today
 #' @return a data.frame
@@ -73,5 +73,16 @@ awardFindR <- function(keywords,
 
   # Run the routines in apis.R
   awards <- award_scrape(keywords, from, to, sources)
+
+  # Find, remove duplicates
+  duplicates <- awards[duplicated(awards$id), ]
+  awards <- awards[!duplicated(awards$id), ]
+  # Merge keywords
+  for (n in 1:nrow(duplicates)) {
+    awards[awards$id==duplicates$id[n], ]$keyword <-
+      paste0(awards[awards$id==duplicates$id[n], ]$keyword, "; ",
+             duplicates$keyword[n])
+  }
+
   return(awards)
 }
