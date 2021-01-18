@@ -6,9 +6,9 @@
 #' Intended to be run through the awardFindR() routine, which handles all input validation.
 #'
 #' @param queries Vector of keyword strings to search
+#' @param sources Vector of sources to search
 #' @param from Standard date format to begin search, only year is applied
 #' @param to Standard date format to end search, only year is applied
-#' @param sources Vector of sources to search. Supports: NEH, Sloan
 #' @return A data.frame
 award_scrape <- function(queries, sources, from, to) {
 
@@ -87,9 +87,9 @@ award_scrape <- function(queries, sources, from, to) {
 #' but providing support to different sources.
 #'
 #' @param query Keyword to search for, single string
+#' #' @param sources vector of databases to query
 #' @param from Search beginning date, standard date format
 #' @param to Search end date, standard date format
-#' @param sources vector of databases to query. Supported sources: nsf, nih, ies
 #' @return A data.frame
 award_scrape_api <- function(query, sources, from, to) {
 

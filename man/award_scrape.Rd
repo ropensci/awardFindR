@@ -4,16 +4,16 @@
 \alias{award_scrape}
 \title{Download and query online grant databases}
 \usage{
-award_scrape(queries, from, to, sources)
+award_scrape(queries, sources, from, to)
 }
 \arguments{
 \item{queries}{Vector of keyword strings to search}
 
+\item{sources}{Vector of sources to search}
+
 \item{from}{Standard date format to begin search, only year is applied}
 
 \item{to}{Standard date format to end search, only year is applied}
-
-\item{sources}{Vector of sources to search. Supports: NEH, Sloan}
 }
 \value{
 A data.frame

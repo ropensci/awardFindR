@@ -4,7 +4,7 @@
 \alias{fedreporter_get}
 \title{Scrape data from the Federal Reporter}
 \usage{
-fedreporter_get(query, from, to, agency = "usda,dod,nasa,ahrq,fda,allcdc,epa")
+fedreporter_get(query, from, to, agency = "usda,dod,nasa,epa")
 }
 \arguments{
 \item{query}{Keyword, single string}
@@ -13,7 +13,7 @@ fedreporter_get(query, from, to, agency = "usda,dod,nasa,ahrq,fda,allcdc,epa")
 
 \item{to}{Ending fiscal year to search, integer}
 
-\item{agency}{Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,ahrq,fda,allcdc,epa".}
+\item{agency}{Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,epa".}
 }
 \value{
 A data.frame from the API, or NULL if no results

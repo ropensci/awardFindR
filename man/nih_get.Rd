@@ -17,5 +17,5 @@ nih_get(query, from, to)
 a data.frame of results
 }
 \description{
-Query NIH RePorter API
+Search for keyword-date queries from the NIH RePorter API.
 }

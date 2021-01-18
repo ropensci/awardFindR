@@ -14,7 +14,7 @@ awardFindR(
 \arguments{
 \item{keywords}{Path to keywords csv file (1 term per line) or vector of keywords.}
 
-\item{sources}{A vector of sources to pull from. Supported: nsf, nih, ies, neh, sloan, ophil. Default: all}
+\item{sources}{A vector of sources to pull from. Supported: nsf, nih, fedreporter, neh, sloan, ophil. Default: all}
 
 \item{from}{A date object to limit the search, defaults to Jan 1 2019}
 

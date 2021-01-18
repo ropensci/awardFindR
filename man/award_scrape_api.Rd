@@ -4,16 +4,15 @@
 \alias{award_scrape_api}
 \title{Query grant APIs for a single keyword}
 \usage{
-award_scrape_api(query, from, to, sources)
+award_scrape_api(query, sources, from, to)
 }
 \arguments{
-\item{query}{Keyword to search for, single string}
+\item{query}{Keyword to search for, single string
+#' @param sources vector of databases to query}
 
 \item{from}{Search beginning date, standard date format}
 
 \item{to}{Search end date, standard date format}
-
-\item{sources}{vector of databases to query. Supported sources: nsf, nih, ies}
 }
 \value{
 A data.frame

@@ -74,8 +74,12 @@ awardFindR <- function(keywords,
   # Run the routines in apis.R
   awards <- award_scrape(keywords, sources, from, to)
 
-  # Find, remove duplicates
+  # Find duplicates
   duplicates <- awards[duplicated(awards$id), ]
+  # No duplicates?
+  if (nrow(duplicates)==0) {
+    return(awards)
+  }
   awards <- awards[!duplicated(awards$id), ]
   # Merge keywords
   for (n in 1:nrow(duplicates)) {
