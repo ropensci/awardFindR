@@ -12,6 +12,15 @@ The `awardFindR()` routine is meant to be the simplest way to reproduce the data
 
 This package depends on `xml2` and `httr`.
 
+## Installation
+Install `awardFindR` directly from this repository using the `remotes` package
+```
+if (!require("remotes")) {
+  install.packages("remotes")
+}
+remotes::install_github("PESData/awardFindR")
+```
+
 ## Contributor guidelines
 
 ### Adding support for new sources
