@@ -73,6 +73,10 @@ awardFindR <- function(keywords,
 
   # Run the routines in apis.R
   awards <- award_scrape(keywords, sources, from, to)
+  if (is.null(awards)) {
+    message("No results from query, returning null value...")
+    return(NULL)
+  }
 
   # Find duplicates
   duplicates <- awards[duplicated(awards$id), ]

@@ -5,18 +5,26 @@
 #' @param entry an xml2 node from a nodelist.
 #' @return a data.frame with a single entry
 ophil_details <- function(entry) {
-  title <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[1], ".//a/text()"))
-  grantee <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[2], ".//a/text()"))
-  program <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[3], ".//a/text()"))
-  amount <- xml2::xml_text(xml2::xml_children(entry)[4])
-  date <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[5], ".//span/text()"))
+  fields <- xml2::xml_children(entry)
+  title <- xml2::xml_text(xml2::xml_find_all(fields[1], ".//a/text()"))
+  id <- xml2::xml_text(xml2::xml_find_all(fields[1], ".//a/@href"))
+
+  grantee <- xml2::xml_text(xml2::xml_find_all(fields[2], ".//a/text()"))
+  program <- xml2::xml_text(xml2::xml_find_all(fields[3], ".//a/text()"))
+
+  amount <- xml2::xml_text(fields[4])
+  amount <- gsub("^\\s+|\\s+$", "", amount)   # Remove trailing and leading whitespace
+  amount <- gsub("^\\$|,", "", amount) # Remove $ and , in amounts (i.e. $1,000,000)
+
+  date <- xml2::xml_text(xml2::xml_find_all(fields[5], ".//span/text()"))
 
   # Assemble it into a data.frame
   row <- data.frame(grantee=grantee,
                     month=date,
                     focus=program,
-                    amount=amount,
+                    amount=as.integer(amount),
                     title=title,
+                    id=id,
                     stringsAsFactors = FALSE)
   return(row)
 }

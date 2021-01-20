@@ -197,7 +197,7 @@ award_scrape_api <- function(query, sources, from, to) {
                                   end=NA,
                                   program=focus,
                                   source="Open Philanthropy",
-                                  id=NA,
+                                  id=id,
                                   keyword=query,
                                   title=title,
                                   stringsAsFactors = FALSE))
