@@ -35,26 +35,20 @@ awardFindR <- function(keywords,
                       sources=c("neh", "sloan", "nsf", "nih", "fedreporter", "ophil"),
                       from="2019-01-01", to=Sys.Date()) {
 
-    # Check keywords for sanity
+  # Check keywords for sanity
   stopifnot(is.character(keywords))
 
   # Is an argument of length 1 a path or a keyword?
   if (length(keywords) == 1) {
     if (file.exists(keywords)) {
-      keywords <- read.csv(keywords,
-                           header = FALSE,
-                           stringsAsFactors = FALSE)$V1
+      keywords <- utils::read.csv(keywords,
+                                  header = FALSE,
+                                  stringsAsFactors = FALSE)$V1
     }
   }
 
   # check sources for sanity
   stopifnot(is.character(sources))
-
-  # Calculate previous two years
-  #today <- Sys.Date()
-  #twoyrago <- as.POSIXlt(Sys.Date())
-  #twoyrago$year <- twoyrago$year-2
-  #twoyrago <- as.Date(twoyrago)
 
   # Validate dates
   from <- try(as.Date(from))
@@ -79,17 +73,15 @@ awardFindR <- function(keywords,
   }
 
   # Find duplicates
-  duplicates <- awards[duplicated(awards$id), ]
-  # No duplicates?
-  if (nrow(duplicates)==0) {
-    return(awards)
-  }
-  awards <- awards[!duplicated(awards$id), ]
-  # Merge keywords
-  for (n in 1:nrow(duplicates)) {
-    awards[awards$id==duplicates$id[n], ]$keyword <-
-      paste0(awards[awards$id==duplicates$id[n], ]$keyword, "; ",
-             duplicates$keyword[n])
+  if (any(duplicated(awards$id))) {
+    duplicates <- awards[duplicated(awards$id), ]
+    awards <- awards[!duplicated(awards$id), ]
+    # Merge keywords
+    for (n in 1:nrow(duplicates)) {
+      awards[awards$id==duplicates$id[n], ]$keyword <-
+        paste0(awards[awards$id==duplicates$id[n], ]$keyword, "; ",
+               duplicates$keyword[n])
+    }
   }
 
   return(awards)

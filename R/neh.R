@@ -39,10 +39,10 @@ neh_get <- function(keywords, from, to) {
   # See https://securegrants.neh.gov/open/data/
   url <- "https://securegrants.neh.gov/Open/data/NEH_Grants2020s.csv"
   message(paste("Grabbing url:", url))
-  neh <- read.csv(url,
-                  na.strings = c("NA", "NULL", "Unknown"),
-                  stringsAsFactors = FALSE,
-                  fileEncoding = "UTF-8-BOM")
+  neh <- utils::read.csv(url,
+                         na.strings = c("NA", "NULL", "Unknown"),
+                         stringsAsFactors = FALSE,
+                         fileEncoding = "UTF-8-BOM")
 
   neh <- subset(neh, YearAwarded >= from & YearAwarded <= to)
 
