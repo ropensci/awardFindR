@@ -24,11 +24,12 @@ award_scrape <- function(queries, sources, from, to) {
       # Make a harmonized data.frame
       neh <- with(neh, data.frame(institution=Institution,
                                   pi_name=pi,
-                                  pi_email=NA,
+                                  #pi_email=NA,
                                   start=as.Date(BeginGrant),
                                   end=as.Date(EndGrant),
                                   program=Program,
                                   source="NEH",
+                                  amount=as.integer(OriginalAmount),
                                   id=AppNumber,
                                   keyword=query,
                                   title=ProjectTitle,
@@ -49,11 +50,12 @@ award_scrape <- function(queries, sources, from, to) {
       # Make a harmonized data.frame
       sloan <- with(sloan, data.frame(institution=grantee,
                                       pi_name=pi,
-                                      pi_email=NA,
+                                      #pi_email=NA,
                                       start=NA,
                                       end=NA,
                                       program=program,
                                       source="Sloan",
+                                      amount=as.integer(amount),
                                       id=id,
                                       keyword=query,
                                       title=description,
@@ -66,11 +68,35 @@ award_scrape <- function(queries, sources, from, to) {
     sloan <- NULL
   }
 
+  # Start USAspending block
+  if ("usaspend" %in% sources) {
+    usa <- usaspend_get(queries, from, to)
+
+    if (!is.null(usa)) {
+      usa <- with(usa, data.frame(institution=Recipient.Name,
+                                  pi_name=NA,
+                                  start=as.Date(Start.Date),
+                                  end=as.Date(End.Date),
+                                  program=Awarding.Sub.Agency,
+                                  source="USAspending",
+                                  amount=Award.Amount,
+                                  id=Award.ID,
+                                  keyword=NA,
+                                  title=Description,
+                                  stringsAsFactors = FALSE))
+    } else {
+      message("NOTICE (non-fatal): No USAspending results at all")
+      usa <- NULL
+    }
+  } else {
+    usa <- NULL
+  }
+
   # Run the API queries, which require one term at a time
   apis <- lapply(queries, award_scrape_api, sources, from, to)
   apis <- do.call(rbind.data.frame, apis)
 
-  full <- rbind.data.frame(neh, sloan, apis)
+  full <- rbind.data.frame(neh, sloan, usa, apis)
   if (nrow(full)==0) {
     return(NULL)
   }
@@ -105,16 +131,18 @@ award_scrape_api <- function(query, sources, from, to) {
 
       # Format of harmonized data.frame, should follow across sources
       nsf <- with(nsf, data.frame(institution=awardeeName,
-                                   pi_name=paste0(piLastName, ", ", piFirstName),
-                                   pi_email=piEmail,
-                                   start=as.Date(startDate, format="%m/%d/%Y"),
-                                   end=as.Date(expDate, format="%m/%d/%Y"),
-                                   program=directorate,
-                                   source="NSF",
-                                   id=id,
-                                   keyword=query,
-                                   title=title,
-                                   stringsAsFactors = FALSE))
+                                  pi_name=paste0(piLastName, ", ", piFirstName),
+                                  #pi_email=piEmail,
+                                  start=as.Date(startDate, format="%m/%d/%Y"),
+                                  end=as.Date(expDate, format="%m/%d/%Y"),
+                                  program=directorate,
+                                  source="NSF",
+                                  # Lower levels deliver factors
+                                  amount=as.integer(as.character(estimatedTotalAmt)),
+                                  id=id,
+                                  keyword=query,
+                                  title=title,
+                                  stringsAsFactors = FALSE))
 
     } else {
       message(paste0("NOTICE (non-fatal): NSF query \"", query, "\" returned empty response"))
@@ -132,16 +160,17 @@ award_scrape_api <- function(query, sources, from, to) {
     # Make the harmonized data.frame
     if (!is.null(nih)) {
       nih <- with(nih, data.frame(institution=org_name,
-                                        pi_name=contact_pi_name,
-                                        pi_email=NA,
-                                        start=as.Date(project_start_date),
-                                        end=as.Date(project_end_date),
-                                        program=agency_code,
-                                        source="NIH",
-                                        id=project_num,
-                                        keyword=query,
-                                        title=project_title,
-                                        stringsAsFactors = FALSE))
+                                  pi_name=contact_pi_name,
+                                  #pi_email=NA,
+                                  start=as.Date(project_start_date),
+                                  end=as.Date(project_end_date),
+                                  program=agency_code,
+                                  source="NIH",
+                                  amount=as.integer(award_amount),
+                                  id=project_num,
+                                  keyword=query,
+                                  title=project_title,
+                                  stringsAsFactors = FALSE))
 
     }  else {
       message(paste0("NOTICE (non-fatal): NIH RePorter query \"",
@@ -162,11 +191,12 @@ award_scrape_api <- function(query, sources, from, to) {
     if (!is.null(fedreport)) {
       fedreport <- with(fedreport, data.frame(institution=OrgName,
                                               pi_name=ContactPi,
-                                              pi_email=NA,
+                                              #pi_email=NA,
                                               start=as.Date(ProjectStartDate),
                                               end=as.Date(ProjectEndDate),
                                               program=Agency,
                                               source=Department,
+                                              amount=as.integer(TotalCostAmount),
                                               id=ProjectNumber,
                                               keyword=query,
                                               title=Title,
@@ -191,12 +221,13 @@ award_scrape_api <- function(query, sources, from, to) {
     if (!is.null(ophil)) {
       ophil <- with(ophil, data.frame(institution=grantee,
                                   pi_name=NA,
-                                  pi_email=NA,
+                                  #pi_email=NA,
                                   #start=month,
                                   start=NA,
                                   end=NA,
                                   program=focus,
                                   source="Open Philanthropy",
+                                  amount=as.integer(amount),
                                   id=id,
                                   keyword=query,
                                   title=title,
