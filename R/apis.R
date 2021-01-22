@@ -101,6 +101,8 @@ award_scrape <- function(queries, sources, from, to) {
     return(NULL)
   }
 
+  full$institution <- sapply(as.character(full$institution), title_case)
+  full$pi_name <- sapply(full$pi_name, title_case)
   return(full)
 }
 
@@ -241,12 +243,36 @@ award_scrape_api <- function(query, sources, from, to) {
     ophil <- NULL
   }
 
-  full <- rbind.data.frame(nsf, nih, fedreport, ophil)
+  # Start Mellon block
+  if ("mellon" %in% sources) {
+    mellon <- mellon_get(query,
+                         format.Date(from, "%Y"),
+                         format.Date(to, "%Y"))
+
+    if (!is.null(mellon)) {
+      mellon <- with(mellon, data.frame(institution=institution,
+                                        pi_name=NA,
+                                        start=NA,
+                                        end=NA,
+                                        program=program,
+                                        source="Mellon",
+                                        amount=as.integer(amount),
+                                        id=id,
+                                        keyword=query,
+                                        title=description,
+                                        stringsAsFactors = FALSE))
+    } else {
+      message(paste0("NOTICE (non-fatal): Mellon query \"", query, "\" returned empty response"))
+      mellon <- NULL
+    }
+  } else {
+    mellon <- NULL
+  }
+
+  full <- rbind.data.frame(nsf, nih, fedreport, ophil, mellon)
   if (nrow(full)==0) {
     return(NULL)
   }
 
-  full$institution <- sapply(as.character(full$institution), title_case)
-  full$pi_name <- sapply(full$pi_name, title_case)
   return(full)
 }

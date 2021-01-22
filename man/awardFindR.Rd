@@ -6,7 +6,7 @@
 \usage{
 awardFindR(
   keywords,
-  sources = c("neh", "sloan", "nsf", "nih", "fedreporter", "ophil"),
+  sources = c("neh", "nsf", "nih", "usaspend", "fedreporter", "ophil", "mellon"),
   from = "2019-01-01",
   to = Sys.Date()
 )

@@ -32,7 +32,9 @@
 #' from="2015-01-01", to="2020-01-01")
 #' }
 awardFindR <- function(keywords,
-                      sources=c("neh", "sloan", "nsf", "nih", "fedreporter", "ophil"),
+                      sources=c("neh", "nsf", "nih",
+                                "usaspend", "fedreporter",
+                                "ophil", "mellon"),
                       from="2019-01-01", to=Sys.Date()) {
 
   # Check keywords for sanity
