@@ -11,6 +11,11 @@ sloan_df_details <- function(entry) {
   grantee <- gsub(regexp, "", grantee)
   grantee <- grantee[grantee!=""] # Some text nodes are just all "\n\t\n\n" for example
 
+  amount <- xml2::xml_text(xml2::xml_find_all(entry, ".//div[@class='amount']/text()"))
+  amount <- gsub(regexp, "", amount)
+  amount <- amount[amount!=""]
+  amount <- gsub("^\\$|,", "", amount) # Get rid of all the $ and commas
+
   year <- xml2::xml_text(xml2::xml_find_all(entry, ".//div[@class='year']/text()"))
   year <- gsub(regexp, "", year)
   year <- year[year!=""]
@@ -46,6 +51,7 @@ sloan_df_details <- function(entry) {
                     pi=categories[length(categories)],
                     year=year,
                     program=categories[1],
+                    amount=as.integer(amount),
                     id=id,
                     description=description,
                     stringsAsFactors = FALSE)

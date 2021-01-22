@@ -28,7 +28,7 @@ nih_get <- function(query, from, to) {
   include_fields=c("org_name", "project_num", "project_serial_num",
                    "project_start_date", "project_end_date",
                    "project_title", "agency_code",
-                   "contact_pi_name"), #, "principle_investigators"))
+                   "contact_pi_name", "award_amount"), #, "principle_investigators"))
   offset=0)
 
   message("Querying NIH RePORTER API...")
@@ -38,7 +38,8 @@ nih_get <- function(query, from, to) {
   if (response$meta$total == 0) {
     return(NULL)
   }
-  df <- do.call(rbind.data.frame, response$results)
+  df <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
+  df <- do.call(rbind.data.frame, df)
 
   # What is our current max?
   place <- response$meta$offset + response$meta$limit
@@ -54,7 +55,8 @@ nih_get <- function(query, from, to) {
     place <- response$meta$offset + response$meta$limit
 
     # Bind everything together
-    temp <- do.call(rbind.data.frame, response$results)
+    temp <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
+    temp <- do.call(rbind.data.frame, temp)
     df <- rbind.data.frame(df, temp)
   }
 
