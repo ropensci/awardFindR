@@ -2,6 +2,7 @@
 
 export(awardFindR)
 export(fedreporter_get)
+export(gates_get)
 export(mellon_get)
 export(neh_get)
 export(nih_get)
