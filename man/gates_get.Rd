@@ -9,9 +9,9 @@ gates_get(query, from, to)
 \arguments{
 \item{query}{Single keyword to query}
 
-\item{from}{Year to begin search}
+\item{from}{Date object to begin search}
 
-\item{to}{Year to end search}
+\item{to}{Date object to end search}
 }
 \value{
 a data.frame
@@ -20,5 +20,5 @@ a data.frame
 Query awards from the Bill & Melinda Gates Foundation
 }
 \examples{
-gates <- gates_get("qualitative", 2018, 2020)
+gates <- gates_get("qualitative", "2018-01-01", "2020-01-01")
 }

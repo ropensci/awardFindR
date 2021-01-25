@@ -4,7 +4,7 @@
 #' These queries can be limited by keyword, source and date terms.
 #'
 #' @param keywords Path to keywords csv file (1 term per line) or vector of keywords.
-#' @param sources A vector of sources to pull from. Supported: nsf, nih, fedreporter, neh, sloan, ophil. Default: all
+#' @param sources A vector of sources to pull from. Supported: fedreporter, gates, mellon, neh, nih, nsf, ophil, sloan, ssrc, usaspend. Default: all
 #' @param from A date object to limit the search, defaults to Jan 1 2019
 #' @param to A date object to limit the search, defaults to today
 #' @return a data.frame
@@ -32,9 +32,7 @@
 #' from="2015-01-01", to="2020-01-01")
 #' }
 awardFindR <- function(keywords,
-                      sources=c("neh", "nsf", "nih",
-                                "usaspend", "fedreporter",
-                                "ophil", "mellon"),
+                      sources=c("fedreporter", "gates", "mellon", "neh", "nih", "nsf", "ophil", "sloan", "ssrc", "usaspend"),
                       from="2019-01-01", to=Sys.Date()) {
 
   # Check keywords for sanity

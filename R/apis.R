@@ -23,7 +23,7 @@ award_scrape <- function(queries, sources, from, to) {
     if (!is.null(neh)) {
       # Make a harmonized data.frame
       neh <- with(neh, data.frame(institution=Institution,
-                                  pi_name=pi,
+                                  pi=pi,
                                   #pi_email=NA,
                                   start=as.Date(BeginGrant),
                                   end=as.Date(EndGrant),
@@ -49,7 +49,7 @@ award_scrape <- function(queries, sources, from, to) {
     if (!is.null(sloan)) {
       # Make a harmonized data.frame
       sloan <- with(sloan, data.frame(institution=grantee,
-                                      pi_name=pi,
+                                      pi=pi,
                                       #pi_email=NA,
                                       start=NA,
                                       end=NA,
@@ -74,7 +74,7 @@ award_scrape <- function(queries, sources, from, to) {
 
     if (!is.null(usa)) {
       usa <- with(usa, data.frame(institution=Recipient.Name,
-                                  pi_name=NA,
+                                  pi=NA,
                                   start=as.Date(Start.Date),
                                   end=as.Date(End.Date),
                                   program=Awarding.Sub.Agency,
@@ -102,7 +102,7 @@ award_scrape <- function(queries, sources, from, to) {
   }
 
   full$institution <- sapply(as.character(full$institution), title_case)
-  full$pi_name <- sapply(full$pi_name, title_case)
+  full$pi <- sapply(full$pi, title_case)
   return(full)
 }
 
@@ -133,7 +133,7 @@ award_scrape_api <- function(query, sources, from, to) {
 
       # Format of harmonized data.frame, should follow across sources
       nsf <- with(nsf, data.frame(institution=awardeeName,
-                                  pi_name=paste0(piLastName, ", ", piFirstName),
+                                  pi=paste0(piLastName, ", ", piFirstName),
                                   #pi_email=piEmail,
                                   start=as.Date(startDate, format="%m/%d/%Y"),
                                   end=as.Date(expDate, format="%m/%d/%Y"),
@@ -162,7 +162,7 @@ award_scrape_api <- function(query, sources, from, to) {
     # Make the harmonized data.frame
     if (!is.null(nih)) {
       nih <- with(nih, data.frame(institution=org_name,
-                                  pi_name=contact_pi_name,
+                                  pi=contact_pi_name,
                                   #pi_email=NA,
                                   start=as.Date(project_start_date),
                                   end=as.Date(project_end_date),
@@ -192,12 +192,12 @@ award_scrape_api <- function(query, sources, from, to) {
     # Make the harmonized data.frame
     if (!is.null(fedreport)) {
       fedreport <- with(fedreport, data.frame(institution=OrgName,
-                                              pi_name=ContactPi,
+                                              pi=ContactPi,
                                               #pi_email=NA,
                                               start=as.Date(ProjectStartDate),
                                               end=as.Date(ProjectEndDate),
                                               program=Agency,
-                                              source=Department,
+                                              source="Federal Reporter",
                                               amount=as.integer(TotalCostAmount),
                                               id=ProjectNumber,
                                               keyword=query,
@@ -213,6 +213,31 @@ award_scrape_api <- function(query, sources, from, to) {
     fedreport <- NULL
   }
 
+  # Begin SSRC block
+  if ("ssrc" %in% sources) {
+    ssrc <- ssrc_get(query,
+                     format.Date(from, "%Y"),
+                     format.Date(to, "%Y"))
+    if (!is.null(ssrc)) {
+      ssrc <- with(ssrc, data.frame(institution=institution,
+                                    pi=pi,
+                                    start=NA,
+                                    end=NA,
+                                    program=program,
+                                    source="SSRC",
+                                    amount=NA,
+                                    id=id,
+                                    keyword=query,
+                                    title=title,
+                                    stringsAsFactors = FALSE))
+    } else {
+      message(paste0("NOTICE (non-fatal): SSRC query \"", query, "\" returned empty response"))
+      ssrc <- NULL
+    }
+  } else {
+    ssrc <- NULL
+  }
+
   # Begin open philanthropy block
   if ("ophil" %in% sources) {
     ophil <- ophil_get(query,
@@ -222,7 +247,7 @@ award_scrape_api <- function(query, sources, from, to) {
     # Make the harmonized data.frame
     if (!is.null(ophil)) {
       ophil <- with(ophil, data.frame(institution=grantee,
-                                  pi_name=NA,
+                                  pi=NA,
                                   #pi_email=NA,
                                   #start=month,
                                   start=NA,
@@ -251,7 +276,7 @@ award_scrape_api <- function(query, sources, from, to) {
 
     if (!is.null(mellon)) {
       mellon <- with(mellon, data.frame(institution=institution,
-                                        pi_name=NA,
+                                        pi=NA,
                                         start=NA,
                                         end=NA,
                                         program=program,
@@ -269,7 +294,31 @@ award_scrape_api <- function(query, sources, from, to) {
     mellon <- NULL
   }
 
-  full <- rbind.data.frame(nsf, nih, fedreport, ophil, mellon)
+  # Start gates block
+  if ("gates" %in% sources) {
+    gates <- gates_get(query, from, to)
+
+    if (!is.null(gates)) {
+      gates <- with(gates, data.frame(institution=grantee,
+                                      pi=NA,
+                                      start=NA,
+                                      end=NA,
+                                      program=NA,
+                                      source="Gates",
+                                      amount=amount,
+                                      id=id,
+                                      keyword=query,
+                                      title=description,
+                                      stringsAsFactors = FALSE))
+    } else {
+      message(paste0("NOTICE (non-fatal): Mellon query \"", query, "\" returned empty response"))
+      gates <- NULL
+    }
+  } else {
+    gates <- NULL
+  }
+
+  full <- rbind.data.frame(nsf, nih, fedreport, ssrc, ophil, gates, mellon)
   if (nrow(full)==0) {
     return(NULL)
   }
