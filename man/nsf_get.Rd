@@ -4,10 +4,10 @@
 \alias{nsf_get}
 \title{Scrape the NSF api}
 \usage{
-nsf_get(query, from, to)
+nsf_get(keyword, from, to)
 }
 \arguments{
-\item{query}{Keyword to query, single string}
+\item{keyword}{Keyword to query, single string}
 
 \item{from}{Beginning date, standard format}
 
@@ -20,5 +20,5 @@ A data.frame of raw NSF API output, or NULL if no results
 Query the NSF API for awards, get the XML response(s) and process it into a data.frame
 }
 \examples{
-nsf <- nsf_get(query="ethnography", from="2020-01-01", to="2020-02-01")
+nsf <- nsf_get(keyword="ethnography", from="2020-01-01", to="2020-02-01")
 }

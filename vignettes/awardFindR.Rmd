@@ -25,7 +25,7 @@ This pulls data from all supported databases, querying the results for each term
 ```
 nsf <- awardFindR(keywords="data/keywords.csv", sources="nsf")
 
-results <- awardFindR(keywords="data/keywords.csv", sources=c("nsf", "ies"))
+results <- awardFindR(keywords="data/keywords.csv", sources=c("nsf", "nih"))
 ```
 
 If we wanted to test different keywords, that parameter either accepts a file name or a character vector of keywords. For example:
@@ -40,13 +40,13 @@ If you specify a .csv file, it should be a list of keywords, one string per line
 
 We can change the date limitations on our search as well, like so
 ```
-last_five_years <- awardFindR("keywords", from="2015-01-01", to="2020-01-01")
+last_five_years <- awardFindR("keywords", sources="nih", from="2015-01-01", to="2020-01-01")
 
-last_year <- awardFindR("keywords", from="2019-01-01", to="2020-01-01")
+last_year <- awardFindR("keywords", sources="nih", from="2019-01-01", to="2020-01-01")
 ```
 We can also omit one of these terms. The `from` parameter defaults to January 1 2019, while the `to` parameter defaults to the current date. If we wanted to search all databases for all keywords from 2015 to the current date, for example, we would run
 ```
-results <- awardFindR("keywords", from="2015-01-01")
+results <- awardFindR("keywords", sources="nih", from="2015-01-01")
 ```
 
 Throughout this package, date parameters should be able to be coerced into `Date()` objects. This means dates should adhere to a "yyyy-mm-dd" format if specificed as strings.

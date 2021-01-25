@@ -20,7 +20,7 @@ mellon_get_details <- function(entry) {
 
 #' Query the Andrew W. Mellon Foundation grant database
 #'
-#' @param query Keyword to query
+#' @param keyword Keyword to query
 #' @param from Year to begin search
 #' @param to Year to end search
 #'
@@ -29,11 +29,11 @@ mellon_get_details <- function(entry) {
 #'
 #' @examples
 #' mellon <- mellon_get("qualitative", 2013, 2021)
-mellon_get <- function(query, from, to) {
+mellon_get <- function(keyword, from, to) {
   base_url <- "https://mellon.org/grants/grants-database/advanced-search/?"
   query_url <- paste0(base_url,
                       "&year-start=", from, "&year-end=", to,
-                      "&q=", query,
+                      "&q=", keyword,
                       # Total grants are 17437 as of writing,
                       # and this figure below seems to be arbitrarily flexible
                       "&per_page=5000")

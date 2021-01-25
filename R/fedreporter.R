@@ -2,7 +2,7 @@
 #'
 #' Query the Federal Reporter API for grants, get the XML response(s) and process it into a data.frame
 #'
-#' @param query Keyword, single string
+#' @param keyword Keyword, single string
 #' @param from Beginning fiscal year to search, integer
 #' @param to Ending fiscal year to search, integer
 #' @param agency Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,epa".
@@ -10,14 +10,14 @@
 #' @return A data.frame from the API, or NULL if no results
 #'
 #' @examples
-#' nih <- fedreporter_get(query="ethnography", from=2020, to=2021, agency="nih")
-fedreporter_get <- function (query, from, to,
+#' federal <- fedreporter_get(keyword="ethnography", from=2020, to=2021, agency="nih")
+fedreporter_get <- function (keyword, from, to,
                              agency="usda,dod,nasa,epa") {
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'
 
   query_url <- paste0(base_url,
                       "?query=agency:", toupper(agency),
-                      "$text:", xml2::url_escape(query), "$textFields:terms",
+                      "$text:", xml2::url_escape(keyword), "$textFields:terms",
                       # Only date paramater available in the fedreporter query is by fiscal year :(
                       # Also, you can't use ranges, so this collates each consecutive year with commas
                       "$fy:", paste0(as.integer(from):as.integer(to), collapse=","))

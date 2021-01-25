@@ -4,10 +4,10 @@
 \alias{gates_get}
 \title{Query awards from the Bill & Melinda Gates Foundation}
 \usage{
-gates_get(query, from, to)
+gates_get(keyword, from, to)
 }
 \arguments{
-\item{query}{Single keyword to query}
+\item{keyword}{Single keyword to query}
 
 \item{from}{Date object to begin search}
 

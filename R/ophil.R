@@ -38,8 +38,7 @@ ophil_details <- function(entry) {
 #' @return A data.frame
 #' @export
 #'
-#' @example
-#' ophil <- ophil_get("qualitative", 2019, 2020)
+#' @examples ophil <- ophil_get("qualitative", 2019, 2020)
 ophil_get <- function(query, from, to) {
   base_url <- "https://www.openphilanthropy.org/giving/grants?"
   query_url <- paste0(base_url,

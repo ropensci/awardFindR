@@ -4,10 +4,10 @@
 \alias{fedreporter_get}
 \title{Scrape data from the Federal Reporter}
 \usage{
-fedreporter_get(query, from, to, agency = "usda,dod,nasa,epa")
+fedreporter_get(keyword, from, to, agency = "usda,dod,nasa,epa")
 }
 \arguments{
-\item{query}{Keyword, single string}
+\item{keyword}{Keyword, single string}
 
 \item{from}{Beginning fiscal year to search, integer}
 
@@ -22,5 +22,5 @@ A data.frame from the API, or NULL if no results
 Query the Federal Reporter API for grants, get the XML response(s) and process it into a data.frame
 }
 \examples{
-nih <- fedreporter_get(query="ethnography", from=2020, to=2021, agency="nih")
+federal <- fedreporter_get(keyword="ethnography", from=2020, to=2021, agency="nih")
 }

@@ -19,3 +19,6 @@ A data.frame
 \description{
 Grab the Open Philanthropy grants data search for keyword-date combos
 }
+\examples{
+ophil <- ophil_get("qualitative", 2019, 2020)
+}

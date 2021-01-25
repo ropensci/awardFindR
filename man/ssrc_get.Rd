@@ -2,7 +2,7 @@
 % Please edit documentation in R/ssrc.R
 \name{ssrc_get}
 \alias{ssrc_get}
-\title{Scrape SSRC awards}
+\title{Scrape SSRC fellowships and grants by keyword and date}
 \usage{
 ssrc_get(keyword, from, to)
 }
@@ -17,7 +17,7 @@ ssrc_get(keyword, from, to)
 a data.frame
 }
 \description{
-Scrape SSRC awards
+Scrape SSRC fellowships and grants by keyword and date
 }
 \examples{
 ssrc <- ssrc_get("qualitative", 2015, 2016)

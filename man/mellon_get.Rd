@@ -4,10 +4,10 @@
 \alias{mellon_get}
 \title{Query the Andrew W. Mellon Foundation grant database}
 \usage{
-mellon_get(query, from, to)
+mellon_get(keyword, from, to)
 }
 \arguments{
-\item{query}{Keyword to query}
+\item{keyword}{Keyword to query}
 
 \item{from}{Year to begin search}
 

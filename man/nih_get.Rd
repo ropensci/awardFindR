@@ -4,10 +4,10 @@
 \alias{nih_get}
 \title{Query NIH RePorter API}
 \usage{
-nih_get(query, from, to)
+nih_get(keyword, from, to)
 }
 \arguments{
-\item{query}{Keyword to query}
+\item{keyword}{Keyword to query}
 
 \item{from}{date object to begin search}
 
@@ -18,4 +18,7 @@ a data.frame of results
 }
 \description{
 Search for keyword-date queries from the NIH RePorter API.
+}
+\examples{
+nih <- nih_get("ethnography", "2019-01-01", "2019-05-01")
 }

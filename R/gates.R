@@ -1,6 +1,6 @@
 #' Query awards from the Bill & Melinda Gates Foundation
 #'
-#' @param query Single keyword to query
+#' @param keyword Single keyword to query
 #' @param from Date object to begin search
 #' @param to Date object to end search
 #'
@@ -9,11 +9,11 @@
 #'
 #' @examples
 #' gates <- gates_get("qualitative", "2018-01-01", "2020-01-01")
-gates_get <- function(query, from, to) {
+gates_get <- function(keyword, from, to) {
  url <- "https://www.gatesfoundation.org/services/gfo/search.ashx"
 
  payload <- list(fieldQueries="(@gfomediatype==\"Grant\")",
-                 freeTextQuery=query,
+                 freeTextQuery=keyword,
                  page="1",
                  resultsPerPage="100")
 

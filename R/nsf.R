@@ -2,24 +2,20 @@
 #'
 #' Query the NSF API for awards, get the XML response(s) and process it into a data.frame
 #'
-#' @param query Keyword to query, single string
+#' @param keyword Keyword to query, single string
 #' @param from Beginning date, standard format
 #' @param to End date, standard format
 #' @return A data.frame of raw NSF API output, or NULL if no results
 #' @export
-#' @examples nsf <- nsf_get(query="ethnography", from="2020-01-01", to="2020-02-01")
-nsf_get <- function(query, from, to) {
+#' @examples nsf <- nsf_get(keyword="ethnography", from="2020-01-01", to="2020-02-01")
+nsf_get <- function(keyword, from, to) {
   base_url <- 'https://api.nsf.gov/services/v1/awards.xml?'
   output_data <- 'id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
   output_data <- paste0(output_data, ",estimatedTotalAmt,fundProgramName") # Extra info
   cfda <- "47.076,47.075"
 
-  if(!is.null(query)) {
-    query <- gsub(" ", "+", query)
-    query <- paste0('&keyword="', query, '"&cfdaNumber=', cfda)
-  } else {
-    stop("No query")
-  }
+  keyword <- gsub(" ", "+", keyword)
+  query <- paste0('&keyword="', keyword, '"&cfdaNumber=', cfda)
 
   # Collate URL
   query_url <- paste0(base_url, query,  '&printFields=', output_data,

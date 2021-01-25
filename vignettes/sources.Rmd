@@ -22,8 +22,10 @@ Different grant databases are handled through two different routines, depending 
 
 The NSF API implementation loops through API calls until it's collected all the results for a keyword-date combo. All activity is handled by the `nsf_get()` routine. To get a raw NSF data.frame, we would run
 
-```
-nsf <- nsf_get(query="keyword", from="2015-01-01", to="2020-01-01")
+```{r}
+nsf <- awardFindR::nsf_get(keyword="ethnography", from="2015-01-01", to="2015-03-01")
+
+str(nsf)
 ```
 
 Like the Federal Reporter, because of the nature of the API, the direct query function only handles one keyword at a time. Multiple keywords are handled at a higher level.
@@ -32,30 +34,83 @@ Like the Federal Reporter, because of the nature of the API, the direct query fu
 
 Like NSF, the Federal Reporter implementation loops through API calls until there are no more results for a specific keyword-date combo. The Federal Reporter API provides a number of sources, including USDA and DoD. The `agency` parameter of `fedreporter_get()` is free-form and theoretically can include any agency that the Federal Reporter holds data for. All activity is handled by the `fedreporter_get()` routine. Because of limitations in the API, we can only use fiscal years as our terms for limiting date ranges.
 
-```
-fedreporter <- fedreporter_get(query="keyword", from=2015, to=2020, agency="usda,dod")
+```{r}
+fedreporter <- awardFindR::fedreporter_get(keyword="qualitative", from=2015, to=2020, agency="usda,dod")
+
+str(fedreporter)
 ```
 
 Like NSF, because of the nature of the API, the direct query function only handles one keyword at a time. Multiple keywords are handled at a higher level.
 
-# NIH RePorter
+## NIH RePORTER
 
-Like NSF and the Federal Reporter implementations, we query the NIH RePorter API through looped HTTP POST requests with a json payload until there are no more results.
+Like NSF and the Federal Reporter implementations, we query the NIH RePORTER API through looped HTTP POST requests with a json payload until there are no more results.
 
+```{r}
+nih <- awardFindR::nih_get(keyword="ethnography", from="2018-01-01", to="2018-04-01")
+
+str(nih)
 ```
-nih <- nih_get(query="keyword", from="2018-01-01", to="2020-01-01")
-```
 
-Like NSF and the Federal Reporter, because of the nature of the API, the direct query function only handles one keyword at a time. Multiple keywords are handled at a higher level.
+Again, like NSF and the Federal Reporter, because of the nature of the API, the direct query function only handles one keyword at a time. Multiple keywords are handled at a higher level.
 
-# NEH
+## NEH
 
 NEH provides all their grants in a single csv file, making this source the simplest implementation of all. `neh_get()` integrates fetching the most recent csv file from the internet and looping keyword queries through it. To directly query the NEH database for mulitple keywords over the past two years, for example, we could run the following:
-```
-neh <- neh_get(c("focus groups", "ethnography"), 2018, 2020)
+```{r}
+neh <- awardFindR::neh_get(keywords=c("interviews", "ethnography"), from=2018, to=2020)
+
+str(neh)
 ```
 
-# Sloan
+## SSRC
+
+SSRC runs HTML scrapes on the web-based search platform, paginating through results as needed.
+```{r}
+ssrc <- awardFindR::ssrc_get(keyword="qualitative", from=2015, to=2020)
+
+str(ssrc)
+```
+SSRC handles one keyword at a time.
+
+## Gates Foundation
+
+The Gates Foundation has an undocumented API that returns json based on a POST request.
+```{r}
+gates <- awardFindR::gates_get("qualitative", "2018-01-01", "2020-01-01")
+
+str(gates)
+```
+
+The Gates Foundation module handles one keyword at a time.
+
+## Open Philanthrophy
+
+Open Philanthropy uses the web-based query framework to search the descriptions projects and return results. Each keyword search invokes a new HTTP request, which is then processed into a a data.frame through a few xpath queries on the HTML served.
+
+To query the database for the keyword "qualitative" for the years 2019-2020, we can execute the following:
+```{r}
+ophil <- awardFindR::ophil_get("qualitative", 2019, 2020)
+
+str(ophil)
+```
+
+Open Philanthrophy only handles one keyword at a time.
+
+## Mellon Foundation
+
+The Mellon Foundation module uses the web-based query framework to search the descriptions projects and return results. Each keyword search invokes a new HTTP request, which is then processed into a a data.frame through a few xpath queries on the HTML served.
+
+To query the database for the keyword "qualitative" for the years 2019-2020, we can execute the following:
+```{r}
+mellon <- awardFindR::mellon_get(keyword="qualitative", 2014, 2020)
+
+str(mellon)
+```
+
+The Mellon Foundation only handles one keyword at a time.
+
+## Sloan
 
 Sloan querying is mainly implemented through one big HTML scrape. The Sloan website and its search function are really not tailored to usage like an API. It's simpler to grab the entire database at once and process it through a bunch of xpath queries afterward. The right http request will return all possible results. The `sloan_df()` function runs through this whole process, and returns a data.frame. 
 
@@ -65,16 +120,10 @@ The `sloan_df()` function can be run independently to construct the a full data.
 sloan <- sloan_df()
 ```
 
+*NOTE*: Because this processes _all_ the entries, this is very computationally-intensive! the `sloan_df()` routine has to run for all Sloan-related functions to work.
+
 We can construct and query the Sloan database in one command, as so:
 ```
 sloan_results <- sloan_get(c("case studies", "qualitative data",), 2018, 2020)
 ```
 
-# Open Philanthrophy
-
-Open Philanthropy uses the web-based query framework to search the descriptions projects and return results. Each keyword search invokes a new HTTP request, which is then processed into a a data.frame through a few xpath queries on the HTML served.
-
-To query the database for the keyword "qualitative" for the years 2019-2020, we can execute the following:
-```
-ophil_get("qualitative", 2019, 2020)
-```
