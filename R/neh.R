@@ -38,7 +38,7 @@ neh_get <- function(keywords, from, to) {
   # This file is updated monthly, should hopefully be valid for the next decade?
   # See https://securegrants.neh.gov/open/data/
   url <- "https://securegrants.neh.gov/Open/data/NEH_Grants2020s.csv"
-  message(paste("Grabbing url:", url))
+  message(paste("GET", url))
   neh <- utils::read.csv(url,
                          na.strings = c("NA", "NULL", "Unknown"),
                          stringsAsFactors = FALSE,

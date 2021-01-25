@@ -38,7 +38,7 @@ mellon_get <- function(query, from, to) {
                       # and this figure below seems to be arbitrarily flexible
                       "&per_page=5000")
 
-  message(paste("Grabbing url:", query_url))
+  message(paste("GET", query_url))
   response <- xml2::read_html(query_url)
 
   results <- xml2::xml_children(xml2::xml_find_first(response,

@@ -31,13 +31,13 @@ nih_get <- function(query, from, to) {
                    "contact_pi_name", "award_amount"), #, "principle_investigators"))
   offset=0)
 
-  message("Querying NIH RePORTER API...")
-  response <- httr::POST(url, body=payload, encode="json")
-  response <- httr::content(response)
+  # Query API
+  response <- post(url, payload)
   # No results?
   if (response$meta$total == 0) {
     return(NULL)
   }
+  # change NULL values to NA
   df <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
   df <- do.call(rbind.data.frame, df)
 
@@ -46,11 +46,8 @@ nih_get <- function(query, from, to) {
   # Do we need to loop with different offsets?
   while (place < response$meta$total) {
     payload$offset <- place
-    message(paste0("Querying NIH RePORTER API again at offset ", place, "..."))
-    response <- httr::POST(url,
-                           body=payload, encode="json")
-    response <- httr::content(response)
-
+    # Query again
+    response <- post(url, payload)
     # Record our new position
     place <- response$meta$offset + response$meta$limit
 

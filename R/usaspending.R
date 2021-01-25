@@ -36,9 +36,8 @@ usaspend_get <- function(queries, from, to) {
     limit=50, page=1, order="desc", subawards="false"
   )
 
-  message("Querying USAspending API...")
-  response <- httr::POST(url, body=payload, encode="json")
-  response <- httr::content(response)
+  # query API
+  response <- post(url, payload)
 
   awards <- response$results
   if (length(awards)==0) {

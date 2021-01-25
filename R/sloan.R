@@ -70,7 +70,7 @@ sloan_df <- function() {
   # up to 3000 results, there are 2131 as of writing but that parameter can be changed at the end here
   url <- "https://sloan.org/grants-database?dynamic=1&order_by=approved_at&order_by_direction=desc&limit=3000"
 
-  message(paste("Grabbing url:", url))
+  message(paste("GET", url))
   response <- xml2::read_html(url)
 
   # Everything important is a child of this ul tag

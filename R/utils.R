@@ -62,7 +62,7 @@ xml2list_to_df <- function(xml2list) {
 #' @examples
 #' \dontrun{request_xml("http://someapi.org/api.xml?parameters=foo")}
 request_xml <- function(url) {
-  message(paste("Grabbing url:", url))
+  message(paste("GET", url))
   httr::with_config(httr::add_headers(Accept = "application/xml"), {
     response <- httr::GET(url)
   })
@@ -79,4 +79,10 @@ request_xml <- function(url) {
   rm(html_regexp)
 
   return(response)
+}
+
+post <- function(url, payload) {
+  message(paste("POST", url))
+  response <- httr::POST(url, body=payload, encode="json")
+  httr::content(response)
 }

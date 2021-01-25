@@ -45,7 +45,7 @@ ophil_get <- function(query, from, to) {
   query_url <- paste0(base_url,
                       "keys=\"", xml2::url_escape(query), "\"")
 
-  message(paste("Grabbing url:", query_url))
+  message(paste("GET", query_url))
   response <- xml2::read_html(query_url)
 
   results <- xml2::xml_children(xml2::xml_find_first(response,

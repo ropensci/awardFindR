@@ -7,8 +7,7 @@
 #' @param to End date, standard format
 #' @return A data.frame of raw NSF API output, or NULL if no results
 #' @export
-#' @examples nsf <- nsf_get(query="ethnography",
-#' from="2020-01-01", to="2020-02-01")
+#' @examples nsf <- nsf_get(query="ethnography", from="2020-01-01", to="2020-02-01")
 nsf_get <- function(query, from, to) {
   base_url <- 'https://api.nsf.gov/services/v1/awards.xml?'
   output_data <- 'id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
@@ -28,7 +27,7 @@ nsf_get <- function(query, from, to) {
                       '&dateEnd=', format.Date(to, "%m/%d/%Y"))
 
   # actually query the API
-  message(paste0("Grabbing url: ", query_url, '&offset=', 1))
+  message(paste0("GET ", query_url, '&offset=', 1))
   api <- xml2::read_xml(paste0(query_url, '&offset=', 1))
 
   # API call produce an error? Print it
@@ -50,7 +49,7 @@ nsf_get <- function(query, from, to) {
     n <- 1
     repeat {
       start <- 1 + 25 * n
-      message(paste0("Grabbing URL: ", query_url, "&offset=", start))
+      message(paste0("GET ", query_url, "&offset=", start))
       extra <- xml2::read_xml(paste0(query_url, '&offset=', start))
 
       # Are there no results left yet?
