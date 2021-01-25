@@ -33,7 +33,7 @@ mellon_get <- function(keyword, from, to) {
   base_url <- "https://mellon.org/grants/grants-database/advanced-search/?"
   query_url <- paste0(base_url,
                       "&year-start=", from, "&year-end=", to,
-                      "&q=", keyword,
+                      "&q=", xml2::url_escape(keyword),
                       # Total grants are 17437 as of writing,
                       # and this figure below seems to be arbitrarily flexible
                       "&per_page=5000")
@@ -46,6 +46,7 @@ mellon_get <- function(keyword, from, to) {
 
   df <- lapply(results, mellon_get_details)
   df <- do.call(rbind.data.frame, df)
+  if (nrow(df)==0) return(NULL) # No results?
 
   df$amount <- gsub("^\\$|,", "", df$amount) # Remove $ and , in amounts (i.e. $1,000,000)
 
