@@ -37,7 +37,7 @@ usaspend_get <- function(queries, from, to) {
   )
 
   # query API
-  response <- post(url, payload)
+  response <- request(url, "post", payload)
 
   awards <- response$results
   if (length(awards)==0) {
@@ -50,9 +50,7 @@ usaspend_get <- function(queries, from, to) {
   # Need to loop queries?
   while (response$page_metadata$hasNext == TRUE) {
     payload$page <- response$page_metadata$page + 1
-    message(paste0("Querying USAspending API... (page ", payload$page, ")"))
-    response <- httr::POST(url, body=payload, encode="json")
-    response <- httr::content(response)
+    response <- request(url, "post", payload)
 
     temp <- response$results
     temp <- lapply(temp, lapply, function(x)ifelse(is.null(x), NA, x))

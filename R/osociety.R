@@ -16,8 +16,7 @@ osociety_get <- function(keyword, from, to) {
                   "&filter_year=", paste(from:to, collapse="%2C")) # URL escape
 
   url <- paste0(base_url, query)
-  message(paste("GET", url))
-  response <- xml2::read_html(url)
+  response <- request(url, "get")
 
   results <- xml2::xml_find_all(response, "//div[@data-grants-database-single]")
   if (length(results)==0) return(NULL) # No results?

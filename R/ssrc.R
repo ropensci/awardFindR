@@ -44,8 +44,7 @@ ssrc_get <- function(keyword, from, to) {
 
   url <- paste0(base_url, query)
 
-  message(paste("GET", url))
-  page <- xml2::read_html(url)
+  page <- request(url, "get")
 
   entries <- xml2::xml_find_all(page, "//li[@class='hit l-fellows-hit']")
   if (length(entries)==0) return(NULL)   # No results?

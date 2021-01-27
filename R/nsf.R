@@ -23,8 +23,7 @@ nsf_get <- function(keyword, from, to) {
                       '&dateEnd=', format.Date(to, "%m/%d/%Y"))
 
   # actually query the API
-  message(paste0("GET ", query_url, '&offset=', 1))
-  api <- xml2::read_xml(paste0(query_url, '&offset=', 1))
+  api <- request(paste0(query_url, '&offset=', 1), "get")
 
   # API call produce an error? Print it
   if(length(xml2::xml_find_first(api, "/response/serviceNotification") > 0)) {
@@ -45,8 +44,7 @@ nsf_get <- function(keyword, from, to) {
     n <- 1
     repeat {
       start <- 1 + 25 * n
-      message(paste0("GET ", query_url, "&offset=", start))
-      extra <- xml2::read_xml(paste0(query_url, '&offset=', start))
+      extra <- request(paste0(query_url, '&offset=', start), "get")
 
       # Are there no results left yet?
       if (xml2::xml_length(extra) == 0) {

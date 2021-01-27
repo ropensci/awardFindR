@@ -31,7 +31,7 @@ nih_get <- function(keyword, from, to) {
   offset=0)
 
   # Query API
-  response <- post(url, payload)
+  response <- request(url, "post", payload)
   # No results?
   if (response$meta$total == 0) {
     return(NULL)
@@ -46,7 +46,7 @@ nih_get <- function(keyword, from, to) {
   while (place < response$meta$total) {
     payload$offset <- place
     # Query again
-    response <- post(url, payload)
+    response <- request(url, "post", payload)
     # Record our new position
     place <- response$meta$offset + response$meta$limit
 

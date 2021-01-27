@@ -17,11 +17,12 @@ gates_get <- function(keyword, from, to) {
                  page="1",
                  resultsPerPage="100")
 
- response <- post(url, payload)
+ response <- request(url, "post", payload)
 
  df <- lapply(response$results, function(x) {
    x <- unlist(x, recursive=FALSE)
-   with(x, data.frame(amount, date, description, grantee, url, year, stringsAsFactors = FALSE))
+   with(x, data.frame(amount, date, description, grantee, url, year,
+                      stringsAsFactors = FALSE))
  })
  df <- do.call(rbind.data.frame, df)
 
@@ -31,6 +32,7 @@ gates_get <- function(keyword, from, to) {
  # Subset by date
  df$date <- as.Date(df$date)
  df <- subset(df, date >= from & date <= to)
+ if (nrow(df)==0) return(NULL) # No results?
 
  df$grantee[df$grantee==""] <- NA
 

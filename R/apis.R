@@ -11,8 +11,6 @@
 #' @param to Standard date format to end search, only year is applied
 #' @return A data.frame
 award_scrape <- function(queries, sources, from, to) {
-
-  # All implemented static sources only can accommodate year search terms
   from_yr <- as.integer(format.Date(from, "%Y"))
   to_yr <- as.integer(format.Date(to, "%Y"))
 
@@ -35,7 +33,7 @@ award_scrape <- function(queries, sources, from, to) {
                                   title=ProjectTitle,
                                   stringsAsFactors = FALSE))
     } else {
-      message("NOTICE (non-fatal): No NEH results at all")
+      #warning("No NEH results")
       neh <- NULL
     }
   } else {
@@ -61,7 +59,7 @@ award_scrape <- function(queries, sources, from, to) {
                                       title=description,
                                       stringsAsFactors = FALSE))
     } else {
-      message("NOTICE (non-fatal): No Sloan results at all")
+      #warning("No Sloan results")
       sloan <- NULL
     }
   } else {
@@ -85,7 +83,7 @@ award_scrape <- function(queries, sources, from, to) {
                                   title=Description,
                                   stringsAsFactors = FALSE))
     } else {
-      message("NOTICE (non-fatal): No USAspending results at all")
+      warning("No USAspending results")
       usa <- NULL
     }
   } else {
@@ -120,6 +118,8 @@ award_scrape <- function(queries, sources, from, to) {
 #' @param to Search end date, standard date format
 #' @return A data.frame
 award_scrape_api <- function(query, sources, from, to) {
+  from_yr <- as.integer(format.Date(from, "%Y"))
+  to_yr <- as.integer(format.Date(to, "%Y"))
 
   # Run source routines
   if("nsf" %in% sources) {
@@ -147,7 +147,7 @@ award_scrape_api <- function(query, sources, from, to) {
                                   stringsAsFactors = FALSE))
 
     } else {
-      message(paste0("NOTICE (non-fatal): NSF query \"", query, "\" returned empty response"))
+      warning(paste0("NSF query \"", query, "\" returned empty response"))
       nsf <- NULL
     }
   } else {
@@ -175,7 +175,7 @@ award_scrape_api <- function(query, sources, from, to) {
                                   stringsAsFactors = FALSE))
 
     }  else {
-      message(paste0("NOTICE (non-fatal): NIH RePorter query \"",
+      warning(paste0("NIH RePORTER query \"",
                      query, "\" returned empty response"))
       nih <- NULL
     }
@@ -185,9 +185,7 @@ award_scrape_api <- function(query, sources, from, to) {
 
   # Start fedreporter block
   if ("fedreporter" %in% sources) {
-    fedreport <- fedreporter_get(query,
-                                 format.Date(from, "%Y"),
-                                 format.Date(to, "%Y"))
+    fedreport <- fedreporter_get(query, from_yr, to_yr)
 
     # Make the harmonized data.frame
     if (!is.null(fedreport)) {
@@ -205,7 +203,7 @@ award_scrape_api <- function(query, sources, from, to) {
                                               stringsAsFactors = FALSE))
 
     }  else {
-      message(paste0("NOTICE (non-fatal): Federal reporter query \"",
+      warning(paste0("Federal Reporter query \"",
                      query, "\" returned empty response"))
       fedreport <- NULL
     }
@@ -215,9 +213,8 @@ award_scrape_api <- function(query, sources, from, to) {
 
   # Begin SSRC block
   if ("ssrc" %in% sources) {
-    ssrc <- ssrc_get(query,
-                     format.Date(from, "%Y"),
-                     format.Date(to, "%Y"))
+    ssrc <- ssrc_get(query, from_yr, to_yr)
+
     if (!is.null(ssrc)) {
       ssrc <- with(ssrc, data.frame(institution=institution,
                                     pi=pi_name,
@@ -231,7 +228,7 @@ award_scrape_api <- function(query, sources, from, to) {
                                     title=title,
                                     stringsAsFactors = FALSE))
     } else {
-      message(paste0("NOTICE (non-fatal): SSRC query \"", query, "\" returned empty response"))
+      warning(paste0("SSRC query \"", query, "\" returned empty response"))
       ssrc <- NULL
     }
   } else {
@@ -240,9 +237,7 @@ award_scrape_api <- function(query, sources, from, to) {
 
   # Begin open philanthropy block
   if ("ophil" %in% sources) {
-    ophil <- ophil_get(query,
-                       format.Date(from, "%Y"),
-                       format.Date(to, "%Y"))
+    ophil <- ophil_get(query, from_yr, to_yr)
 
     # Make the harmonized data.frame
     if (!is.null(ophil)) {
@@ -260,7 +255,7 @@ award_scrape_api <- function(query, sources, from, to) {
                                   title=title,
                                   stringsAsFactors = FALSE))
     } else {
-      message(paste0("NOTICE (non-fatal): Open Philanthropy query \"",
+      warning(paste0("Open Philanthropy query \"",
                      query, "\" returned empty response"))
       ophil <- NULL
     }
@@ -270,9 +265,7 @@ award_scrape_api <- function(query, sources, from, to) {
 
   # Start Mellon block
   if ("mellon" %in% sources) {
-    mellon <- mellon_get(query,
-                         format.Date(from, "%Y"),
-                         format.Date(to, "%Y"))
+    mellon <- mellon_get(query, from_yr, to_yr)
 
     if (!is.null(mellon)) {
       mellon <- with(mellon, data.frame(institution=institution,
@@ -287,7 +280,7 @@ award_scrape_api <- function(query, sources, from, to) {
                                         title=description,
                                         stringsAsFactors = FALSE))
     } else {
-      message(paste0("NOTICE (non-fatal): Mellon query \"", query, "\" returned empty response"))
+      warning(paste0("Mellon query \"", query, "\" returned empty response"))
       mellon <- NULL
     }
   } else {
@@ -311,7 +304,7 @@ award_scrape_api <- function(query, sources, from, to) {
                                       title=description,
                                       stringsAsFactors = FALSE))
     } else {
-      message(paste0("NOTICE (non-fatal): Mellon query \"", query, "\" returned empty response"))
+      warning(paste0("Gates query \"", query, "\" returned empty response"))
       gates <- NULL
     }
   } else {
@@ -320,9 +313,8 @@ award_scrape_api <- function(query, sources, from, to) {
 
   # Start Open Society block
   if ("osociety" %in% sources) {
-    osociety <- osociety_get(query,
-                             format.Date(from, "%Y"),
-                             format.Date(to, "%Y"))
+    osociety <- osociety_get(query, from_yr, to_yr)
+
     if (!is.null(osociety)) {
       osociety <- with(osociety, data.frame(institution=institution,
                                             pi=NA,
@@ -336,7 +328,7 @@ award_scrape_api <- function(query, sources, from, to) {
                                             title=description,
                                             stringsAsFactors = F))
     } else {
-      message(paste0("NOTICE (non-fatal): Open Society query \"", query, "\" returned empty response"))
+      warning(paste0("Open Society query \"", query, "\" returned empty response"))
       osociety <- NULL
     }
   } else {

@@ -1,26 +1,3 @@
-#' Query a NEH grant data.frame for a keyword
-#'
-#' Loop for neh_get(). Not intended to be run directly.
-#'
-#' @param query A single string keyword
-#' @param df A data.frame of NEH grant data to search through
-#' @return A data.frame with the relevant results matching the keyword
-neh_query <- function(query, df) {
-  # grep the query in the description, subset to the hits
-  hits <- grepl(query, df$ProjectDesc,
-                ignore.case=TRUE)
-  hits <- df[hits, ]
-
-  # Empty results?
-  if (nrow(hits)==0) {
-    message(paste("NOTICE (non-fatal) no NEH results for:", query))
-    return(NULL)
-  }
-
-  hits$query <- query
-  return(hits)
-}
-
 #' Grab the NEH grants data and loop the keyword queries
 #'
 #' So that we don't keep redownloading the NEH csv file, this is a wrapper to loop neh_query()
@@ -46,7 +23,23 @@ neh_get <- function(keywords, from, to) {
 
   neh <- subset(neh, YearAwarded >= from & YearAwarded <= to)
 
-  results <- lapply(keywords, neh_query, neh)
+  results <- lapply(keywords, function(query, df) {
+    # grep the query in the description, subset to the hits
+    hits <- grepl(query, df$ProjectDesc,
+                  ignore.case=TRUE)
+    hits <- df[hits, ]
+
+    # Empty results?
+    if (nrow(hits)==0) {
+      warning(paste("No NEH results for:", query))
+      return(NULL)
+    }
+
+    hits$query <- query
+    return(hits)
+  },
+  neh) # The df input is here at the end
+
   results <- do.call(rbind.data.frame, results)
   # Did we get nothing after all these queries?
   if (nrow(results)==0) {

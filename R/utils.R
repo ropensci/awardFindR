@@ -81,8 +81,23 @@ request_xml <- function(url) {
   return(response)
 }
 
-post <- function(url, payload) {
-  message(paste("POST", url))
-  response <- httr::POST(url, body=payload, encode="json")
+request <- function(url, method, payload=NULL) {
+  if (method=="post" & !is.null(payload)) {
+    message(paste("POST", url, "... "), appendLF=FALSE)
+    response <- httr::POST(url, body=payload, encode="json")
+  } else if (method=="get") {
+    message(paste("GET", url, "... "), appendLF=FALSE)
+    response <- httr::GET(url)
+  } else {
+    stop("Invalid request")
+  }
+
+  if (response$status_code==200) {
+    message("200 OK")
+  } else {
+    stop("HTTP error")
+  }
+
   httr::content(response)
 }
+

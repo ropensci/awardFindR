@@ -38,8 +38,7 @@ mellon_get <- function(keyword, from, to) {
                       # and this figure below seems to be arbitrarily flexible
                       "&per_page=5000")
 
-  message(paste("GET", query_url))
-  response <- xml2::read_html(query_url)
+  response <- request(query_url, "get")
 
   results <- xml2::xml_children(xml2::xml_find_first(response,
                                                      "//table[@class='grant-list']/tbody"))

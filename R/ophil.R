@@ -44,8 +44,7 @@ ophil_get <- function(query, from, to) {
   query_url <- paste0(base_url,
                       "keys=\"", xml2::url_escape(query), "\"")
 
-  message(paste("GET", query_url))
-  response <- xml2::read_html(query_url)
+  response <- request(query_url, "get")
 
   results <- xml2::xml_children(xml2::xml_find_first(response,
                                                      "//div[@class='view-content']/table/tbody"))
