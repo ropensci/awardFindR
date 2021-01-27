@@ -220,7 +220,7 @@ award_scrape_api <- function(query, sources, from, to) {
                      format.Date(to, "%Y"))
     if (!is.null(ssrc)) {
       ssrc <- with(ssrc, data.frame(institution=institution,
-                                    pi=pi,
+                                    pi=pi_name,
                                     start=NA,
                                     end=NA,
                                     program=program,
@@ -318,7 +318,32 @@ award_scrape_api <- function(query, sources, from, to) {
     gates <- NULL
   }
 
-  full <- rbind.data.frame(nsf, nih, fedreport, ssrc, ophil, gates, mellon)
+  # Start Open Society block
+  if ("osociety" %in% sources) {
+    osociety <- osociety_get(query,
+                             format.Date(from, "%Y"),
+                             format.Date(to, "%Y"))
+    if (!is.null(osociety)) {
+      osociety <- with(osociety, data.frame(institution=institution,
+                                            pi=NA,
+                                            start=NA,
+                                            end=NA,
+                                            program=program,
+                                            source="Open Society",
+                                            amount=amount,
+                                            id=id,
+                                            keyword=query,
+                                            title=description,
+                                            stringsAsFactors = F))
+    } else {
+      message(paste0("NOTICE (non-fatal): Open Society query \"", query, "\" returned empty response"))
+      osociety <- NULL
+    }
+  } else {
+    osociety <- NULL
+  }
+
+  full <- rbind.data.frame(nsf, nih, fedreport, ssrc, ophil, osociety, gates, mellon)
   if (nrow(full)==0) {
     return(NULL)
   }

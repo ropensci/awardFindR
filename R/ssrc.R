@@ -4,7 +4,7 @@
 #'
 #' @return A single line of a data.frame
 ssrc_get_details <- function(entry) {
-  pi <- xml2::xml_text(xml2::xml_find_first(entry, ".//h5/a/text()"))
+  pi_name <- xml2::xml_text(xml2::xml_find_first(entry, ".//h5/a/text()"))
   title <- xml2::xml_text(xml2::xml_find_first(entry, ".//p[@class='l-project-title']/em"))
   program <- xml2::xml_text(xml2::xml_find_first(entry, ".//dl[@class='l-inline-summary']/dd/a"))
 
@@ -20,7 +20,7 @@ ssrc_get_details <- function(entry) {
   id <- xml2::xml_text(xml2::xml_find_first(entry, ".//h5/a/@href"))
   id <- regmatches(id, regexpr("/([-A-Z0-9])+/$", id))
 
-  data.frame(pi, institution, title, program, id, stringsAsFactors = F)
+  data.frame(pi_name, institution, title, program, id, stringsAsFactors = F)
 }
 
 #' Scrape SSRC fellowships and grants by keyword and date
