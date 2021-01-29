@@ -68,21 +68,17 @@ awardFindR <- function(keywords,
   # Run the routines in apis.R
   awards <- award_scrape(keywords, sources, from, to)
   if (is.null(awards)) {
-    message("No results from query, returning null value...")
+    warning("No results from any sources")
     return(NULL)
   }
 
   # Find duplicates
-  if (any(duplicated(awards$id))) {
-    duplicates <- awards[duplicated(awards$id), ]
-    awards <- awards[!duplicated(awards$id), ]
-    # Merge keywords
-    for (n in 1:nrow(duplicates)) {
-      awards[awards$id==duplicates$id[n], ]$keyword <-
-        paste0(awards[awards$id==duplicates$id[n], ]$keyword, "; ",
-               duplicates$keyword[n])
-    }
-  }
+  duplicates <- stats::aggregate(keyword ~ id, data=awards,
+                          # Merge keywords
+                          FUN=function(x) paste(x, collapse="; "))
+  awards$keyword <- NULL # Reset keywords field
+  awards <- merge(awards, duplicates) # Replace with merged keywords
+  awards <- awards[!duplicated(awards$id), ] # Delete duplicates
 
   return(awards)
 }
