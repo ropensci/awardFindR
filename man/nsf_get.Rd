@@ -2,22 +2,24 @@
 % Please edit documentation in R/nsf.R
 \name{nsf_get}
 \alias{nsf_get}
-\title{Scrape the NSF api}
+\title{Search the NSF API}
 \usage{
-nsf_get(keyword, from, to)
+nsf_get(keyword, from, to, cfda = "47.076,47.075")
 }
 \arguments{
 \item{keyword}{Keyword to query, single string}
 
-\item{from}{Beginning date, standard format}
+\item{from}{Beginning date object}
 
-\item{to}{End date, standard format}
+\item{to}{End date object}
+
+\item{cfda}{Comma-separated CFDA codes to include, SBE and EHR only by default}
 }
 \value{
 A data.frame of raw NSF API output, or NULL if no results
 }
 \description{
-Query the NSF API for awards, get the XML response(s) and process it into a data.frame
+Query the NSF API for awards by keyword and date
 }
 \examples{
 nsf <- nsf_get(keyword="ethnography", from="2020-01-01", to="2020-02-01")

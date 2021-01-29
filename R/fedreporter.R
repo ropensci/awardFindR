@@ -23,40 +23,35 @@ fedreporter_get <- function (keyword, from, to,
                       "$fy:", paste0(as.integer(from):as.integer(to), collapse=","))
 
   # Actually query the API
-  api <- request_xml(query_url)
+  api <- request(query_url, "get")
 
-  # No results?
-  if (xml2::xml_integer(xml2::xml_find_first(api, "/SearchResultOfApiProject/TotalCount")) == 0) {
-    return(NULL)
-  }
+  if (api$totalCount==0) return(NULL) # No results?
+  df <- api$items
+  df <- lapply(df, lapply, function(x)ifelse(is.null(x), NA, x)) # NULL to NA
+  df <- do.call(rbind.data.frame, df)
 
-  # Max result count 50. Do we need to loop with different offsets?
-  extra <- api
-  while (xml2::xml_integer(xml2::xml_find_first(extra, '/SearchResultOfApiProject/TotalCount'))==50) {
-    offset <- xml2::xml_integer(xml2::xml_find_first(extra, "/SearchResultOfApiProject/Offset")) +
-      xml2::xml_integer(xml2::xml_find_first(extra, "/SearchResultOfApiProject/TotalCount"))
-
+  # Do we need to loop until we hit the limit?
+  while (api$offset+api$limit<api$totalCount) {
+    offset <- api$offset + api$limit # New offset
     new_url <- paste0(query_url, "&offset=", offset)
-    # Fetch next page
-    extra <- request_xml(new_url)
-    # Add the items tag to existing internal XML tree
-    xml2::xml_add_child(api, xml2::xml_find_first(extra, "/SearchResultOfApiProject/Items"))
+    api <- request(new_url, "get")
 
+    # Process list
+    temp <- api$items
+    temp <- lapply(temp, lapply, function(x)ifelse(is.null(x), NA, x)) # NULL to NA
+    temp <- do.call(rbind.data.frame, temp)
+
+    df <- rbind.data.frame(df, temp) # Merge
   }
-  rm(extra)
-
-  # Convert to data.frame
-  awards <- xml2::xml_find_all(api, "//ApiProject")
-  df <- xml2list_to_df(xml2::as_list(awards))
 
   # Find duplicates (renewals?)
   # Results seem to be returned from most to least recent, so we can just drop the duplicates
-  if (nchar(as.character(df$ProjectNumber[1])) > 14) {
+  if (nchar(as.character(df$projectNumber[1])) > 14) {
     # This is for NIH
-    df$id_main <- substr(df$ProjectNumber, 2, 12)
+    df$id_main <- substr(df$projectNumber, 2, 12)
   } else {
     # This works for DoD
-    df$id_main <- substr(df$ProjectNumber, 1, 8)
+    df$id_main <- substr(df$projectNumber, 1, 8)
   }
   df <- df[!duplicated(df$id_main), ]
   df$id_main <- NULL

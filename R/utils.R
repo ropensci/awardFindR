@@ -25,62 +25,13 @@ substr_right <- function(x, n){
   substr(x, nchar(x)-n+1, nchar(x))
 }
 
-#' xml2 list to data.frame
+#' Make an HTTP request
 #'
-#' Turns the result of an xml2::as_list() function into a data.frame.
-#' Employs maximalist merging of columns, adding NAs to any missing values.
-#' One way of replacing the XML::xmlToDataFrame function that no longer exists in xml2
+#' @param url URL
+#' @param method "get" or "post"
+#' @param payload list object to convert to json and send, only if method="post"
 #'
-#' @param xml2list List object, typically the result of xml2::as_list() function
-#' @return A data.frame
-#' @examples
-#' \dontrun{df <- xml2list_to_df(xml2list=xml2::as_list(xml))}
-xml2list_to_df <- function(xml2list) {
-  xml2list <- lapply(xml2list, unlist, recursive=F)
-  xml2list <- lapply(xml2list, as.data.frame)
-
-  # Find all unique column names
-  fields <- unique(unlist(lapply(xml2list, names)))
-
-  # Bind the lists into one data.frame and handle missing data
-  df <- do.call(rbind, lapply(xml2list, function(x) {
-    data.frame(c(x, sapply(setdiff(fields, names(x)),
-                           function(y) NA)),
-               stringsAsFactors = F)
-  }))
-
-  return(df)
-}
-
-#' Request XML specifically
-#'
-#' Sets HTTP Accept header to application/xml.
-#' This prevents some APIs from returning json by default
-#'
-#' @param url URL to query
-#' @return The HTTP request response, hopefully in XML
-#' @examples
-#' \dontrun{request_xml("http://someapi.org/api.xml?parameters=foo")}
-request_xml <- function(url) {
-  message(paste("GET", url))
-  httr::with_config(httr::add_headers(Accept = "application/xml"), {
-    response <- httr::GET(url)
-  })
-
-  # HTML entities (like "&#x19;") cause problems for the xml parser because of the ;
-  # So we're just removing them if they exist (extremely rare)
-  html_regexp <- "&#[a-z]+[0-9]+;"
-  if (grepl(html_regexp, httr::content(response, type="text", encoding="UTF-8"))) {
-    response <- xml2::read_xml(gsub(html_regexp, "", httr::content(response, type="text")),
-                               encoding="UTF-8")
-  } else {
-    response <- xml2::read_xml(response$content, encoding="UTF-8")
-  }
-  rm(html_regexp)
-
-  return(response)
-}
-
+#' @return Content of the HTTP response, as returned by httr::content()
 request <- function(url, method, payload=NULL) {
   if (method=="post" & !is.null(payload)) {
     message(paste("POST", url, "... "), appendLF=FALSE)
@@ -92,11 +43,9 @@ request <- function(url, method, payload=NULL) {
     stop("Invalid request")
   }
 
-  if (response$status_code==200) {
-    message("200 OK")
-  } else {
-    stop("HTTP error")
-  }
+  httr::message_for_status(response)
+  message() # Because the message above doesn't end w/ a newline
+  httr::warn_for_status(response)
 
   httr::content(response)
 }
