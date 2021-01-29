@@ -4,7 +4,7 @@
 \alias{award_scrape_api}
 \title{Query grant APIs for a single keyword}
 \usage{
-award_scrape_api(query, sources, from, to)
+award_scrape_api(query, sources, from, to, columns)
 }
 \arguments{
 \item{query}{Keyword to search for, single string

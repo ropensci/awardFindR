@@ -18,7 +18,7 @@ award_scrape <- function(queries, sources, from, to) {
                "start", "end",
                "program", "source",
                "amount", "id",
-               "keyword", "title")
+               "title", "keyword")
 
   if ("neh" %in% sources) {
     neh <- neh_get(queries, from_yr, to_yr)
@@ -27,9 +27,11 @@ award_scrape <- function(queries, sources, from, to) {
       neh <- neh[, c("Institution", "pi",
                      "BeginGrant", "EndGrant",
                      "Program", "source",
-                     "OriginalAmount", "AppNumber",
-                     "query", "ProjectTitle")]
+                     "AwardOutright", "AppNumber",
+                     "ProjectTitle", "query")]
       names(neh) <- columns
+      neh$start <- as.Date(neh$start)
+      neh$end <- as.Date(neh$end)
     }
   } else neh <- NULL
 
@@ -38,13 +40,13 @@ award_scrape <- function(queries, sources, from, to) {
 
     if (!is.null(sloan)) {
       sloan$source <- "Sloan"
-      sloan$start <- NA
-      sloan$end <- NA
+      sloan$start <- as.Date(NA)
+      sloan$end <- as.Date(NA)
       sloan <- sloan[, c("grantee", "pi",
                          "start", "end",
                          "program", "source",
                          "amount", "id",
-                         "query", "description")]
+                         "description", "query")]
       names(sloan) <- columns
     }
   } else sloan <- NULL
@@ -61,13 +63,14 @@ award_scrape <- function(queries, sources, from, to) {
                      "Start.Date", "End.Date",
                      "Awarding.Sub.Agency", "source",
                      "Award.Amount", "Award.ID",
-                     "keyword", "Description")]
+                     "Description", "keyword")]
       names(usa) <- columns
+      usa[] <- lapply(usa, function(x) if (is.factor(x)) as.character(x) else {x})
     }
   } else usa <- NULL
 
   # Run the API queries, which require one term at a time
-  apis <- lapply(queries, award_scrape_api, sources, from, to)
+  apis <- lapply(queries, award_scrape_api, sources, from, to, columns)
   apis <- do.call(rbind.data.frame, apis)
 
   full <- rbind.data.frame(neh, sloan, usa, apis)
@@ -77,6 +80,8 @@ award_scrape <- function(queries, sources, from, to) {
 
   full$institution <- sapply(as.character(full$institution), title_case)
   full$pi <- sapply(full$pi, title_case)
+  full$amount <- as.integer(full$amount)
+
   return(full)
 }
 
@@ -93,99 +98,65 @@ award_scrape <- function(queries, sources, from, to) {
 #' @param from Search beginning date, standard date format
 #' @param to Search end date, standard date format
 #' @return A data.frame
-award_scrape_api <- function(query, sources, from, to) {
+award_scrape_api <- function(query, sources, from, to, columns) {
   from_yr <- as.integer(format.Date(from, "%Y"))
   to_yr <- as.integer(format.Date(to, "%Y"))
+  columns <- columns[-length(columns)]
 
-  # Run source routines
   if("nsf" %in% sources) {
     nsf <- nsf_get(query, from, to)
+    if(is.null(nsf)) warning(paste0("NSF query \"", query, "\" returned empty response"))
+    else {
+      nsf$source <- "NSF"
+      nsf$pi <- with(nsf, paste0(piLastName, ", ", piFirstName))
+      nsf$startDate <- as.Date(nsf$startDate, format="%m/%d/%Y")
+      nsf$expDate <- as.Date(nsf$expDate, format="%m/%d/%Y")
 
-    # Empty results?
-    if(!is.null(nsf)) {
-
+      nsf$directorate <- NA
       nsf$directorate[nsf$cfdaNumber=="47.075"] <- "SBE"
       nsf$directorate[nsf$cfdaNumber=="47.076"] <- "EHR"
 
-      # Format of harmonized data.frame, should follow across sources
-      nsf <- with(nsf, data.frame(institution=awardeeName,
-                                  pi=paste0(piLastName, ", ", piFirstName),
-                                  #pi_email=piEmail,
-                                  start=as.Date(startDate, format="%m/%d/%Y"),
-                                  end=as.Date(expDate, format="%m/%d/%Y"),
-                                  program=directorate,
-                                  source="NSF",
-                                  # Lower levels deliver factors
-                                  amount=as.integer(as.character(estimatedTotalAmt)),
-                                  id=id,
-                                  keyword=query,
-                                  title=title,
-                                  stringsAsFactors = FALSE))
-
-    } else {
-      warning(paste0("NSF query \"", query, "\" returned empty response"))
-      nsf <- NULL
+      nsf <- nsf[, c("awardeeName", "pi",
+                     "startDate", "expDate",
+                     "directorate", "source",
+                     "estimatedTotalAmt", "id",
+                     "title")]
+      names(nsf) <- columns
+      #neh$amount <- as.integer(neh$amount)
     }
-  } else {
-    nsf <- NULL
-  }
-
+  } else nsf <- NULL
 
   # Start nih block
   if ("nih" %in% sources) {
     nih <- nih_get(query, from, to)
-
-    # Make the harmonized data.frame
-    if (!is.null(nih)) {
-      nih <- with(nih, data.frame(institution=org_name,
-                                  pi=contact_pi_name,
-                                  #pi_email=NA,
-                                  start=as.Date(project_start_date),
-                                  end=as.Date(project_end_date),
-                                  program=agency_code,
-                                  source="NIH",
-                                  amount=as.integer(award_amount),
-                                  id=project_num,
-                                  keyword=query,
-                                  title=project_title,
-                                  stringsAsFactors = FALSE))
-
-    }  else {
-      warning(paste0("NIH RePORTER query \"",
-                     query, "\" returned empty response"))
-      nih <- NULL
+    if (is.null(nih)) warning(paste0("NIH RePORTER query \"",
+                                     query, "\" returned empty response"))
+    else {
+      nih$source <- "NIH"
+      nih <- nih[, c("org_name", "contact_pi_name",
+                     "project_start_date", "project_end_date",
+                     "agency_code", "source",
+                     "award_amount", "project_num",
+                     "project_title")]
+      names(nih) <- columns
     }
-  } else {
-    nih <- NULL
-  }
+  } else nih <- NULL
 
   # Start fedreporter block
   if ("fedreporter" %in% sources) {
     fedreport <- fedreporter_get(query, from_yr, to_yr)
-
-    # Make the harmonized data.frame
-    if (!is.null(fedreport)) {
-      fedreport <- with(fedreport, data.frame(institution=orgName,
-                                              pi=contactPi,
-                                              #pi_email=NA,
-                                              start=as.Date(projectStartDate),
-                                              end=as.Date(projectEndDate),
-                                              program=agency,
-                                              source="Federal Reporter",
-                                              amount=as.integer(totalCostAmount),
-                                              id=projectNumber,
-                                              keyword=query,
-                                              title=title,
-                                              stringsAsFactors = FALSE))
-
-    }  else {
-      warning(paste0("Federal Reporter query \"",
-                     query, "\" returned empty response"))
-      fedreport <- NULL
+    if (is.null(fedreport)) warning(paste0("Federal Reporter query \"",
+                                           query, "\" returned empty response"))
+    else {
+      fedreport$source <- "Federal REPORTER"
+      fedreport <- fedreport[, c("orgName", "contactPi",
+                                 "projectStartDate", "projectEndDate",
+                                 "agency", "source",
+                                 "totalCostAmount", "projectNumber",
+                                 "title")]
+      names(fedreport) <- columns
     }
-  } else {
-    fedreport <- NULL
-  }
+  } else fedreport <- NULL
 
   # Begin SSRC block
   if ("ssrc" %in% sources) {
@@ -200,8 +171,8 @@ award_scrape_api <- function(query, sources, from, to) {
                                     source="SSRC",
                                     amount=NA,
                                     id=id,
-                                    keyword=query,
                                     title=title,
+                                    #keyword=query,
                                     stringsAsFactors = FALSE))
     } else {
       warning(paste0("SSRC query \"", query, "\" returned empty response"))
@@ -227,8 +198,8 @@ award_scrape_api <- function(query, sources, from, to) {
                                   source="Open Philanthropy",
                                   amount=as.integer(amount),
                                   id=id,
-                                  keyword=query,
                                   title=title,
+                                  #keyword=query,
                                   stringsAsFactors = FALSE))
     } else {
       warning(paste0("Open Philanthropy query \"",
@@ -252,8 +223,8 @@ award_scrape_api <- function(query, sources, from, to) {
                                         source="Mellon",
                                         amount=as.integer(amount),
                                         id=id,
-                                        keyword=query,
                                         title=description,
+                                        #keyword=query,
                                         stringsAsFactors = FALSE))
     } else {
       warning(paste0("Mellon query \"", query, "\" returned empty response"))
@@ -276,8 +247,8 @@ award_scrape_api <- function(query, sources, from, to) {
                                       source="Gates",
                                       amount=amount,
                                       id=id,
-                                      keyword=query,
                                       title=description,
+                                      #keyword=query,
                                       stringsAsFactors = FALSE))
     } else {
       warning(paste0("Gates query \"", query, "\" returned empty response"))
@@ -300,8 +271,8 @@ award_scrape_api <- function(query, sources, from, to) {
                                             source="Open Society",
                                             amount=amount,
                                             id=id,
-                                            keyword=query,
                                             title=description,
+                                            #keyword=query,
                                             stringsAsFactors = F))
     } else {
       warning(paste0("Open Society query \"", query, "\" returned empty response"))
@@ -315,6 +286,8 @@ award_scrape_api <- function(query, sources, from, to) {
   if (nrow(full)==0) {
     return(NULL)
   }
+
+  full$keyword <- query
 
   return(full)
 }

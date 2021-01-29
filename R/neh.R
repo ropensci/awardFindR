@@ -15,8 +15,14 @@ neh_get <- function(keywords, from, to) {
   # This file is updated monthly, should hopefully be valid for the next decade?
   # See https://securegrants.neh.gov/open/data/
   url <- "https://securegrants.neh.gov/Open/data/NEH_Grants2020s.csv"
-  message(paste("GET", url))
-  neh <- utils::read.csv(url,
+  message(paste("GET", url, "... "), appendLF = F)
+  response <- httr::GET(url)
+  httr::message_for_status(response)
+  message()
+  httr::stop_for_status(response)
+
+  response <- httr::content(response, as="text", encoding="UTF-8")
+  neh <- utils::read.csv(text=response,
                          na.strings = c("NA", "NULL", "Unknown"),
                          stringsAsFactors = FALSE,
                          fileEncoding = "UTF-8-BOM")

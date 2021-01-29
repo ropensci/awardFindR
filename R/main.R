@@ -35,6 +35,8 @@ awardFindR <- function(keywords,
                       sources=c("fedreporter", "gates", "mellon", "neh", "nih", "nsf", "ophil", "osociety", "sloan", "ssrc", "usaspend"),
                       from="2019-01-01", to=Sys.Date()) {
 
+  options(stringAsFactors=FALSE)
+
   # Check keywords for sanity
   stopifnot(is.character(keywords))
 
@@ -72,13 +74,14 @@ awardFindR <- function(keywords,
     return(NULL)
   }
 
-  # Find duplicates
-  duplicates <- stats::aggregate(keyword ~ id, data=awards,
-                          # Merge keywords
-                          FUN=function(x) paste(x, collapse="; "))
-  awards$keyword <- NULL # Reset keywords field
-  awards <- merge(awards, duplicates) # Replace with merged keywords
-  awards <- awards[!duplicated(awards$id), ] # Delete duplicates
+  if (any(duplicated(awards$id))) { # Find duplicates
+    duplicates <- stats::aggregate(keyword ~ id, data=awards,
+                                   # Merge keywords
+                                   FUN=function(x) paste(x, collapse="; "))
+    awards$keyword <- NULL # Reset keywords field
+    awards <- merge(awards, duplicates) # Replace with merged keywords
+    awards <- awards[!duplicated(awards$id), ] # Delete duplicates
+  }
 
   return(awards)
 }

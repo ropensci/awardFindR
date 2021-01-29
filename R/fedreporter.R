@@ -56,6 +56,8 @@ fedreporter_get <- function (keyword, from, to,
   df <- df[!duplicated(df$id_main), ]
   df$id_main <- NULL
 
+  df[] <- lapply(df, function(x) if (is.factor(x)) as.character(x) else {x}) # Remove factors
+
   return(df)
 
 }

@@ -38,6 +38,8 @@ nsf_get <- function(keyword, from, to, cfda="47.076,47.075") {
     df <- rbind.data.frame(df, temp)
   }
 
+  df[] <- lapply(df, function(x) if (is.factor(x)) as.character(x) else {x}) # Remove factors
+
   return(df)
 
 }
