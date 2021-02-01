@@ -25,6 +25,7 @@ gates_get <- function(keyword, from, to) {
                       stringsAsFactors = FALSE))
  })
  df <- do.call(rbind.data.frame, df)
+ if (nrow(df)==0) return(NULL) # No results at first?
 
  # Extract ID from the ending of the url
  df$id <- regmatches(df$url, regexpr("([-a-zA-Z0-9])+$", df$url))
@@ -32,7 +33,7 @@ gates_get <- function(keyword, from, to) {
  # Subset by date
  df$date <- as.Date(df$date)
  df <- subset(df, date >= from & date <= to)
- if (nrow(df)==0) return(NULL) # No results?
+ if (nrow(df)==0) return(NULL) # No results now?
 
  df$grantee[df$grantee==""] <- NA
 

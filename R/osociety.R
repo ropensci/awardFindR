@@ -26,6 +26,7 @@ osociety_get <- function(keyword, from, to) {
     institution <- gsub("^\\s+|\\s+$", "", institution)   # Remove trailing and leading whitespace
 
     id <- xml2::xml_text(xml2::xml_find_first(entry, ".//@id"))
+    year <- xml2::xml_integer(xml2::xml_find_first(entry, ".//span[@class='a-grantsDatabase__value']"))
 
     amount <- xml2::xml_text(xml2::xml_find_first(entry, ".//span[@class='a-grantsDatabase__value a-grantsDatabase__value--amount']"))
     amount <- gsub("^\\$|,", "", amount) # Remove $ and , in amounts (i.e. $1,000,000)
@@ -38,9 +39,8 @@ osociety_get <- function(keyword, from, to) {
     program <- info$value[info$name=="Referring Program"][1]
     description <- info$value[info$name=="Description"][1]
 
-    data.frame(institution, id, amount, program, description, stringsAsFactors = F)
+    data.frame(institution, year, id, amount, program, description, stringsAsFactors = F)
   })
 
-  results <- do.call(rbind.data.frame, results)
-  return(results)
+  do.call(rbind.data.frame, results)
 }

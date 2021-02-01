@@ -11,6 +11,7 @@
 #' @param to Standard date format to end search, only year is applied
 #' @return A data.frame
 award_scrape <- function(queries, sources, from, to) {
+  # Globals
   from_yr <- as.integer(format.Date(from, "%Y"))
   to_yr <- as.integer(format.Date(to, "%Y"))
 
@@ -69,225 +70,189 @@ award_scrape <- function(queries, sources, from, to) {
     }
   } else usa <- NULL
 
-  # Run the API queries, which require one term at a time
-  apis <- lapply(queries, award_scrape_api, sources, from, to, columns)
+  # Run the API queries which require one term at a time
+  apis <- lapply(queries, function(keyword, sources, from, to, columns) {
+    # Globals
+    from_yr <- as.integer(format.Date(from, "%Y"))
+    to_yr <- as.integer(format.Date(to, "%Y"))
+    columns <- columns[-length(columns)]
+
+    # NSF block
+    if("nsf" %in% sources) {
+      nsf <- nsf_get(keyword, from, to)
+      if(is.null(nsf)) warning(paste0("NSF query \"", keyword, "\" returned empty response"))
+      else {
+        nsf$source <- "NSF"
+        nsf$pi <- with(nsf, paste0(piLastName, ", ", piFirstName))
+        nsf$startDate <- as.Date(nsf$startDate, format="%m/%d/%Y")
+        nsf$expDate <- as.Date(nsf$expDate, format="%m/%d/%Y")
+
+        nsf$directorate <- NA
+        nsf$directorate[nsf$cfdaNumber=="47.075"] <- "SBE"
+        nsf$directorate[nsf$cfdaNumber=="47.076"] <- "EHR"
+
+        nsf <- nsf[, c("awardeeName", "pi",
+                       "startDate", "expDate",
+                       "directorate", "source",
+                       "fundsObligatedAmt", "id",
+                       "title")]
+        names(nsf) <- columns
+        #neh$amount <- as.integer(neh$amount)
+      }
+    } else nsf <- NULL
+
+    # Start nih block
+    if ("nih" %in% sources) {
+      nih <- nih_get(keyword, from, to)
+      if (is.null(nih)) warning(paste0("NIH RePORTER query \"",
+                                       keyword, "\" returned empty response"))
+      else {
+        nih$source <- "NIH"
+        nih <- nih[, c("org_name", "contact_pi_name",
+                       "project_start_date", "project_end_date",
+                       "agency_code", "source",
+                       "award_amount", "project_num", "project_title")]
+        names(nih) <- columns
+      }
+    } else nih <- NULL
+
+    # Start fedreporter block
+    if ("fedreporter" %in% sources) {
+      fedreport <- fedreporter_get(keyword, from_yr, to_yr)
+      if (is.null(fedreport)) warning(paste0("Federal Reporter query \"",
+                                             keyword, "\" returned empty response"))
+      else {
+        fedreport$source <- "Federal REPORTER"
+        fedreport <- fedreport[, c("orgName", "contactPi",
+                                   "projectStartDate", "projectEndDate",
+                                   "agency", "source",
+                                   "totalCostAmount", "projectNumber", "title")]
+        names(fedreport) <- columns
+      }
+    } else fedreport <- NULL
+
+    # Begin SSRC block
+    if ("ssrc" %in% sources) {
+      ssrc <- ssrc_get(keyword, from_yr, to_yr)
+
+      if (is.null(ssrc)) warning(paste0("SSRC query \"", keyword,
+                                        "\" returned empty response"))
+      else {
+        ssrc$source <- "SSRC"
+        ssrc$start <- NA
+        ssrc$end <- NA
+        ssrc$amount <- NA
+        ssrc <- ssrc[, c("institution", "pi_name", "start", "end",
+                         "program", "source", "amount", "id", "title")]
+        names(ssrc) <- columns
+      }
+    } else ssrc <- NULL
+
+    # Begin open philanthropy block
+    if ("ophil" %in% sources) {
+      ophil <- ophil_get(keyword, from_yr, to_yr)
+
+      if (is.null(ophil)) warning(paste0("Open Philanthropy query \"",
+                                         keyword, "\" returned empty response"))
+      else {
+        ophil$source <- "Open Philosophy"
+        ophil$pi <- NA
+        ophil$start <- NA
+        ophil$end <- NA
+        ophil <- ophil[, c("grantee", "pi", "start", "end", "focus", "source",
+                           "amount", "id", "title")]
+        names(ophil) <- columns
+      }
+    } else ophil <- NULL
+
+    # Start Mellon block
+    if ("mellon" %in% sources) {
+      mellon <- mellon_get(keyword, from_yr, to_yr)
+
+      if (is.null(mellon)) warning(paste0("Mellon query \"", keyword,
+                                          "\" returned empty response"))
+
+      else {
+        mellon$pi <- NA
+        mellon$start <- NA
+        mellon$end <- NA
+        mellon$source <- "Mellon"
+        mellon <- mellon[, c("institution", "pi", "start", "end",
+                             "program", "source", "amount", "id",
+                             "description")]
+        names(mellon) <- columns
+      }
+    } else mellon <- NULL
+
+    # Start gates block
+    if ("gates" %in% sources) {
+      gates <- gates_get(keyword, from, to)
+
+      if (is.null(gates)) warning(paste0("Gates query \"", keyword,
+                                         "\" returned empty response"))
+      else {
+        gates$pi <- NA
+        gates$start <- NA
+        gates$end <- NA
+        gates$program <- NA
+        gates$source <- "Gates"
+        gates <- gates[, c("grantee", "pi", "start", "end", "program",
+                           "source", "amount", "id", "description")]
+        names(gates) <- columns
+      }
+    } else gates <- NULL
+
+    # Start Open Society block
+    if ("osociety" %in% sources) {
+      osociety <- osociety_get(keyword, from_yr, to_yr)
+
+      if (is.null(osociety)) warning(paste0("Open Society query \"", keyword,
+                                            "\" returned empty response"))
+
+      else {
+        osociety$pi <- NA
+        osociety$start <- NA
+        osociety$end <- NA
+        osociety$source <- "Open Society"
+        osociety <- osociety[, c("institution", "pi", "start", "end",
+                                 "program", "source", "amount", "id",
+                                 "description")]
+        names(osociety) <- columns
+      }
+    } else osociety <- NULL
+
+    if ("carnegie" %in% sources) {
+      carnegie <- carnegie_get(keyword, from_yr, to_yr)
+      if (is.null(carnegie)) warning(paste0("Carnegie query \"", keyword,
+                                            "\" returtned empty response"))
+      else {
+        carnegie$pi <- NA
+        carnegie$start <- NA
+        carnegie$end <- NA
+        carnegie$source <- "Carnegie"
+        carnegie <- carnegie[, c("grantee", "pi", "start", "end", "program",
+                                 "source", "amount", "id", "title")]
+        names(carnegie) <- columns
+      }
+    } else carnegie <- NULL
+
+    full <- rbind.data.frame(nsf, nih, fedreport,
+                             ssrc, ophil, osociety,
+                             gates, mellon, carnegie)
+    if (nrow(full)==0) return(NULL)
+
+    full$keyword <- keyword
+
+    return(full)
+  }, sources, from, to, columns)
   apis <- do.call(rbind.data.frame, apis)
 
   full <- rbind.data.frame(neh, sloan, usa, apis)
-  if (nrow(full)==0) {
-    return(NULL)
-  }
+  if (nrow(full)==0) return(NULL)
 
   full$institution <- sapply(as.character(full$institution), title_case)
   full$pi <- sapply(full$pi, title_case)
   full$amount <- as.integer(full$amount)
-
-  return(full)
-}
-
-#' Query grant APIs for a single keyword
-#'
-#' Large sources with complex APIs can only support on keyword at a time,
-#' and this is a limitation on the source routines, including NSF and the Federal Reporter.
-#' To remedy this, this function should to be looped in a wrapper for each individual keyword.
-#' Otherwise, this is equivalent in function to award_scrape(),
-#' but providing support to different sources.
-#'
-#' @param query Keyword to search for, single string
-#' #' @param sources vector of databases to query
-#' @param from Search beginning date, standard date format
-#' @param to Search end date, standard date format
-#' @return A data.frame
-award_scrape_api <- function(query, sources, from, to, columns) {
-  from_yr <- as.integer(format.Date(from, "%Y"))
-  to_yr <- as.integer(format.Date(to, "%Y"))
-  columns <- columns[-length(columns)]
-
-  if("nsf" %in% sources) {
-    nsf <- nsf_get(query, from, to)
-    if(is.null(nsf)) warning(paste0("NSF query \"", query, "\" returned empty response"))
-    else {
-      nsf$source <- "NSF"
-      nsf$pi <- with(nsf, paste0(piLastName, ", ", piFirstName))
-      nsf$startDate <- as.Date(nsf$startDate, format="%m/%d/%Y")
-      nsf$expDate <- as.Date(nsf$expDate, format="%m/%d/%Y")
-
-      nsf$directorate <- NA
-      nsf$directorate[nsf$cfdaNumber=="47.075"] <- "SBE"
-      nsf$directorate[nsf$cfdaNumber=="47.076"] <- "EHR"
-
-      nsf <- nsf[, c("awardeeName", "pi",
-                     "startDate", "expDate",
-                     "directorate", "source",
-                     "estimatedTotalAmt", "id",
-                     "title")]
-      names(nsf) <- columns
-      #neh$amount <- as.integer(neh$amount)
-    }
-  } else nsf <- NULL
-
-  # Start nih block
-  if ("nih" %in% sources) {
-    nih <- nih_get(query, from, to)
-    if (is.null(nih)) warning(paste0("NIH RePORTER query \"",
-                                     query, "\" returned empty response"))
-    else {
-      nih$source <- "NIH"
-      nih <- nih[, c("org_name", "contact_pi_name",
-                     "project_start_date", "project_end_date",
-                     "agency_code", "source",
-                     "award_amount", "project_num",
-                     "project_title")]
-      names(nih) <- columns
-    }
-  } else nih <- NULL
-
-  # Start fedreporter block
-  if ("fedreporter" %in% sources) {
-    fedreport <- fedreporter_get(query, from_yr, to_yr)
-    if (is.null(fedreport)) warning(paste0("Federal Reporter query \"",
-                                           query, "\" returned empty response"))
-    else {
-      fedreport$source <- "Federal REPORTER"
-      fedreport <- fedreport[, c("orgName", "contactPi",
-                                 "projectStartDate", "projectEndDate",
-                                 "agency", "source",
-                                 "totalCostAmount", "projectNumber",
-                                 "title")]
-      names(fedreport) <- columns
-    }
-  } else fedreport <- NULL
-
-  # Begin SSRC block
-  if ("ssrc" %in% sources) {
-    ssrc <- ssrc_get(query, from_yr, to_yr)
-
-    if (!is.null(ssrc)) {
-      ssrc <- with(ssrc, data.frame(institution=institution,
-                                    pi=pi_name,
-                                    start=NA,
-                                    end=NA,
-                                    program=program,
-                                    source="SSRC",
-                                    amount=NA,
-                                    id=id,
-                                    title=title,
-                                    #keyword=query,
-                                    stringsAsFactors = FALSE))
-    } else {
-      warning(paste0("SSRC query \"", query, "\" returned empty response"))
-      ssrc <- NULL
-    }
-  } else {
-    ssrc <- NULL
-  }
-
-  # Begin open philanthropy block
-  if ("ophil" %in% sources) {
-    ophil <- ophil_get(query, from_yr, to_yr)
-
-    # Make the harmonized data.frame
-    if (!is.null(ophil)) {
-      ophil <- with(ophil, data.frame(institution=grantee,
-                                  pi=NA,
-                                  #pi_email=NA,
-                                  #start=month,
-                                  start=NA,
-                                  end=NA,
-                                  program=focus,
-                                  source="Open Philanthropy",
-                                  amount=as.integer(amount),
-                                  id=id,
-                                  title=title,
-                                  #keyword=query,
-                                  stringsAsFactors = FALSE))
-    } else {
-      warning(paste0("Open Philanthropy query \"",
-                     query, "\" returned empty response"))
-      ophil <- NULL
-    }
-  } else {
-    ophil <- NULL
-  }
-
-  # Start Mellon block
-  if ("mellon" %in% sources) {
-    mellon <- mellon_get(query, from_yr, to_yr)
-
-    if (!is.null(mellon)) {
-      mellon <- with(mellon, data.frame(institution=institution,
-                                        pi=NA,
-                                        start=NA,
-                                        end=NA,
-                                        program=program,
-                                        source="Mellon",
-                                        amount=as.integer(amount),
-                                        id=id,
-                                        title=description,
-                                        #keyword=query,
-                                        stringsAsFactors = FALSE))
-    } else {
-      warning(paste0("Mellon query \"", query, "\" returned empty response"))
-      mellon <- NULL
-    }
-  } else {
-    mellon <- NULL
-  }
-
-  # Start gates block
-  if ("gates" %in% sources) {
-    gates <- gates_get(query, from, to)
-
-    if (!is.null(gates)) {
-      gates <- with(gates, data.frame(institution=grantee,
-                                      pi=NA,
-                                      start=NA,
-                                      end=NA,
-                                      program=NA,
-                                      source="Gates",
-                                      amount=amount,
-                                      id=id,
-                                      title=description,
-                                      #keyword=query,
-                                      stringsAsFactors = FALSE))
-    } else {
-      warning(paste0("Gates query \"", query, "\" returned empty response"))
-      gates <- NULL
-    }
-  } else {
-    gates <- NULL
-  }
-
-  # Start Open Society block
-  if ("osociety" %in% sources) {
-    osociety <- osociety_get(query, from_yr, to_yr)
-
-    if (!is.null(osociety)) {
-      osociety <- with(osociety, data.frame(institution=institution,
-                                            pi=NA,
-                                            start=NA,
-                                            end=NA,
-                                            program=program,
-                                            source="Open Society",
-                                            amount=amount,
-                                            id=id,
-                                            title=description,
-                                            #keyword=query,
-                                            stringsAsFactors = F))
-    } else {
-      warning(paste0("Open Society query \"", query, "\" returned empty response"))
-      osociety <- NULL
-    }
-  } else {
-    osociety <- NULL
-  }
-
-  full <- rbind.data.frame(nsf, nih, fedreport, ssrc, ophil, osociety, gates, mellon)
-  if (nrow(full)==0) {
-    return(NULL)
-  }
-
-  full$keyword <- query
 
   return(full)
 }

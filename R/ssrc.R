@@ -12,6 +12,8 @@ ssrc_get_details <- function(entry) {
   data <- data.frame(label=xml2::xml_text(xml2::xml_find_all(data, ".//dt/text()")),
                      data=xml2::xml_text(xml2::xml_find_all(data, ".//dd")))
 
+  year <- as.character(data$data[as.character(data$label)=="Year "])
+
   institution <- data$data[as.character(data$label)=="University/Institution (at time of award)"]
   if (length(institution)==0) {
     institution <- xml2::xml_text(xml2::xml_find_first(entry, ".//p[@class='l-institution']"))
@@ -20,7 +22,7 @@ ssrc_get_details <- function(entry) {
   id <- xml2::xml_text(xml2::xml_find_first(entry, ".//h5/a/@href"))
   id <- regmatches(id, regexpr("/([-A-Z0-9])+/$", id))
 
-  data.frame(pi_name, institution, title, program, id, stringsAsFactors = F)
+  data.frame(pi_name, institution, year, title, program, id, stringsAsFactors = F)
 }
 
 #' Scrape SSRC fellowships and grants by keyword and date
@@ -55,8 +57,7 @@ ssrc_get <- function(keyword, from, to) {
     n <- 2
     repeat {
       url <- paste0(base_url, query, "&p=", n)
-      message(paste("GET", url))
-      page <- xml2::read_html(url)
+      page <- request(url, "get")
 
       entries <- xml2::xml_find_all(page, "//li[@class='hit l-fellows-hit']")
       if (length(entries)==0) break

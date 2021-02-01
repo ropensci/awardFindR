@@ -12,7 +12,7 @@
 nsf_get <- function(keyword, from, to, cfda="47.076,47.075") {
   base_url <- 'https://api.nsf.gov/services/v1/awards.json?'
   output_data <- 'id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
-  output_data <- paste0(output_data, ",estimatedTotalAmt,fundProgramName") # Extra info
+  output_data <- paste0(output_data, ",fundsObligatedAmt,fundProgramName") # Extra info
 
   keyword <- gsub(" ", "+", keyword)
   query <- paste0('&keyword="', keyword, '"&cfdaNumber=', cfda)
@@ -38,7 +38,8 @@ nsf_get <- function(keyword, from, to, cfda="47.076,47.075") {
     df <- rbind.data.frame(df, temp)
   }
 
-  df[] <- lapply(df, function(x) if (is.factor(x)) as.character(x) else {x}) # Remove factors
+  # Remove factors
+  df[] <- lapply(df, function(x) if (is.factor(x)) as.character(x) else {x})
 
   return(df)
 

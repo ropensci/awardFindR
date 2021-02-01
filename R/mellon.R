@@ -11,7 +11,7 @@ mellon_get_details <- function(entry) {
   fields <- c("institution", "description",
               "date", "amount",
               "location", "program")
-  df <- as.data.frame(text)
+  df <- as.data.frame(text, stringsAsFactors=F)
   names(df) <- fields
   df$id <- id
 
@@ -48,6 +48,9 @@ mellon_get <- function(keyword, from, to) {
   if (nrow(df)==0) return(NULL) # No results?
 
   df$amount <- gsub("^\\$|,", "", df$amount) # Remove $ and , in amounts (i.e. $1,000,000)
+  df$amount <- as.integer(df$amount)
+
+  df$date <- as.Date(df$date, format="%m/%d/%y")
 
   return(df)
 }
