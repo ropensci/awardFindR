@@ -2,22 +2,22 @@
 % Please edit documentation in R/usaspending.R
 \name{usaspend_get}
 \alias{usaspend_get}
-\title{Query the USAspending database}
+\title{Search the USAspending database}
 \usage{
-usaspend_get(queries, from, to)
+usaspend_get(keywords, from_date, to_date)
 }
 \arguments{
-\item{queries}{Vector of keywords to search}
+\item{keywords}{Vector of keywords to search}
 
-\item{from}{Beginning date object to search}
+\item{from_date}{Beginning date object to search}
 
-\item{to}{Ending date object to search}
+\item{to_date}{Ending date object to search}
 }
 \value{
 a data.frame
 }
 \description{
-Query the USAspending database
+Search the USAspending database
 }
 \examples{
 # Single keyword

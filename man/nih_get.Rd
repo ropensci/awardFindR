@@ -2,22 +2,22 @@
 % Please edit documentation in R/nih.R
 \name{nih_get}
 \alias{nih_get}
-\title{Query NIH RePorter API}
+\title{Search NIH RePORTER}
 \usage{
-nih_get(keyword, from, to)
+nih_get(keyword, from_date, to_date)
 }
 \arguments{
 \item{keyword}{Keyword to query}
 
-\item{from}{date object to begin search}
+\item{from_date}{Date object to begin search}
 
-\item{to}{date object to end search}
+\item{to_date}{Date object to end search}
 }
 \value{
-a data.frame of results
+a data.frame
 }
 \description{
-Search for keyword-date queries from the NIH RePorter API.
+Search NIH RePORTER
 }
 \examples{
 nih <- nih_get("ethnography", "2019-01-01", "2019-05-01")

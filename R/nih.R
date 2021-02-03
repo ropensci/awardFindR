@@ -1,23 +1,19 @@
-#' Query NIH RePorter API
-#'
-#' Search for keyword-date queries from the NIH RePorter API.
+#' Search NIH RePORTER
 #'
 #' @param keyword Keyword to query
-#' @param from date object to begin search
-#' @param to  date object to end search
-#'
-#' @return a data.frame of results
+#' @param from_date Date object to begin search
+#' @param to_date Date object to end search
+#' @return a data.frame
 #' @export
-#'
 #' @examples nih <- nih_get("ethnography", "2019-01-01", "2019-05-01")
-nih_get <- function(keyword, from, to) {
+nih_get <- function(keyword, from_date, to_date) {
   url <- "https://api.reporter.nih.gov/v1/projects/Search"
 
   # httr encodes all this into json for a POST request
   payload <- list(criteria=list(
     award=list(award_notice_date=list(
-        from_date=from,
-        to_date=to)),
+        from_date=from_date,
+        to_date=to_date)),
     exclude_subprojects="true",
     advanced_text_search=list(
       search_text=keyword,
@@ -58,6 +54,8 @@ nih_get <- function(keyword, from, to) {
 
   # Remove duplicates
   df <- df[!duplicated(df$project_serial_num), ]
-  df[] <- lapply(df, function(x) if (is.factor(x)) as.character(x) else {x})
+  # Remove factors
+  df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x))
+
   return(df)
 }

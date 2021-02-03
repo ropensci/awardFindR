@@ -1,19 +1,17 @@
-#' Query the USAspending database
+#' Search the USAspending database
 #'
-#' @param queries Vector of keywords to search
-#' @param from Beginning date object to search
-#' @param to Ending date object to search
-#'
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
 #' @return a data.frame
 #' @export
-#'
 #' @examples
 #' # Single keyword
 #' results <- usaspend_get("interview", "2018-01-01", "2020-01-01")
 #'
 #' # Multiple keywords
 #' results <- usaspend_get(c("qualitative", "interview"), "2019-01-01", "2020-01-01")
-usaspend_get <- function(queries, from, to) {
+usaspend_get <- function(keywords, from_date, to_date) {
   url <- "https://api.usaspending.gov/api/v2/search/spending_by_award/"
 
   payload <- list(
@@ -29,10 +27,10 @@ usaspend_get <- function(queries, from, to) {
         list(name="Department of Education", tier="toptier", type="awarding"),
         list(name="Department of the Interior", tier="toptier", type="awarding")),
       award_type_codes=c("02", "03", "04", "05"), # Only grants
-      keywords=as.list(queries),
+      keywords=as.list(keywords),
       recipient_type_names=list("higher_education"),
       # An array syntax quirk in the API demands this double list(list())
-      time_period=list(list(start_date=from, end_date=to))),
+      time_period=list(list(start_date=from_date, end_date=to_date))),
     limit=50, page=1, order="desc", subawards="false"
   )
 
@@ -40,9 +38,8 @@ usaspend_get <- function(queries, from, to) {
   response <- request(url, "post", payload)
 
   awards <- response$results
-  if (length(awards)==0) {
-    return(NULL)
-  }
+  if (length(awards)==0) return(NULL)
+
   # Replace NULL with NA
   awards <- lapply(awards, lapply, function(x)ifelse(is.null(x), NA, x))
   awards <- do.call(rbind.data.frame, awards)
@@ -59,7 +56,8 @@ usaspend_get <- function(queries, from, to) {
     awards <- rbind.data.frame(awards, temp)
   }
 
-  awards[] <- lapply(awards, function(x) if (is.factor(x)) as.character(x) else {x})
+  awards[] <- lapply(awards, function(x) ifelse(is.factor(x),
+                                                as.character(x), x)) # No factors
 
   return(awards)
 }

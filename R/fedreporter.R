@@ -1,17 +1,15 @@
-#' Scrape data from the Federal Reporter
-#'
-#' Query the Federal Reporter API for grants, get the XML response(s) and process it into a data.frame
+#' Search awards from the Federal Reporter
 #'
 #' @param keyword Keyword, single string
-#' @param from Beginning fiscal year to search, integer
-#' @param to Ending fiscal year to search, integer
+#' @param from_year Beginning fiscal year to search, integer
+#' @param to_year Ending fiscal year to search, integer
 #' @param agency Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,epa".
 #' @export
-#' @return A data.frame from the API, or NULL if no results
+#' @return A data.frame
 #'
 #' @examples
-#' federal <- fedreporter_get(keyword="ethnography", from=2020, to=2021, agency="nih")
-fedreporter_get <- function (keyword, from, to,
+#' federal <- fedreporter_get(keyword="ethnography", from_year=2020, to_year=2021, agency="nih")
+fedreporter_get <- function (keyword, from_year, to_year,
                              agency="usda,dod,nasa,epa") {
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'
 
@@ -20,7 +18,7 @@ fedreporter_get <- function (keyword, from, to,
                       "$text:", xml2::url_escape(keyword), "$textFields:terms",
                       # Only date paramater available in the fedreporter query is by fiscal year :(
                       # Also, you can't use ranges, so this collates each consecutive year with commas
-                      "$fy:", paste0(as.integer(from):as.integer(to), collapse=","))
+                      "$fy:", paste0(as.integer(from_year):as.integer(to_year), collapse=","))
 
   # Actually query the API
   api <- request(query_url, "get")
@@ -56,7 +54,7 @@ fedreporter_get <- function (keyword, from, to,
   df <- df[!duplicated(df$id_main), ]
   df$id_main <- NULL
 
-  df[] <- lapply(df, function(x) if (is.factor(x)) as.character(x) else {x}) # Remove factors
+  df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x)) # Remove factors
 
   return(df)
 

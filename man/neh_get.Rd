@@ -4,14 +4,14 @@
 \alias{neh_get}
 \title{Grab the NEH grants data and loop the keyword queries}
 \usage{
-neh_get(keywords, from, to)
+neh_get(keywords, from_year, to_year)
 }
 \arguments{
 \item{keywords}{Vector of strings to search for in the project description}
 
-\item{from}{Beginning year to search}
+\item{from_year}{Beginning year to search}
 
-\item{to}{Ending year to search}
+\item{to_year}{Ending year to search}
 }
 \value{
 A data.frame with the relevant results from NEH

@@ -1,7 +1,5 @@
 #' Extract details from SSRC webpage entry
-#'
 #' @param entry XML object passed by ssrc_get()
-#'
 #' @return A single line of a data.frame
 ssrc_get_details <- function(entry) {
   pi_name <- xml2::xml_text(xml2::xml_find_first(entry, ".//h5/a/text()"))
@@ -25,24 +23,21 @@ ssrc_get_details <- function(entry) {
   data.frame(pi_name, institution, year, title, program, id, stringsAsFactors = F)
 }
 
-#' Scrape SSRC fellowships and grants by keyword and date
+#' Search SSRC fellowships and grants by keyword and date
 #'
 #' @param keyword Keyword to query, single string
-#' @param from Year to begin search, integer
-#' @param to Year to end search, integer
-#'
+#' @param from_year Year to begin search, integer
+#' @param to_year Year to end search, integer
 #' @return a data.frame
 #' @export
-#'
-#' @examples
-#' ssrc <- ssrc_get("qualitative", 2015, 2016)
-ssrc_get <- function(keyword, from, to) {
+#' @examples ssrc <- ssrc_get("qualitative", 2015, 2016)
+ssrc_get <- function(keyword, from_year, to_year) {
   base_url <- "https://www.ssrc.org/search/?"
 
   query <- "t=fellows&=&sort=relevance&fellowship="
   query <- paste0(query, "&q=", keyword)
   # Have to collate years to search by date
-  for (year in from:to) query <- paste0(query, "&year[]=", year)
+  for (year in from_year:to_year) query <- paste0(query, "&year[]=", year)
 
   url <- paste0(base_url, query)
 

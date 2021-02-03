@@ -1,14 +1,12 @@
 #' Search MacArthur foundation for awards
 #'
 #' @param keyword Keyword to query, single string
-#' @param from Date object to begin search
-#' @param to Date object to end search
-#'
+#' @param from_date Date object to begin search
+#' @param to_date Date object to end search
 #' @return a data.frame
 #' @export
-#'
 #' @examples macarthur <- macarthur_get("qualitative", "1999-01-01", "2020-01-01")
-macarthur_get <- function(keyword, from, to) {
+macarthur_get <- function(keyword, from_date, to_date) {
   url <- "https://searchg2.crownpeak.net/live-macfound-rt/select?"
   parameters <- paste0("q=", keyword, "&wt=xml&start=0&rows=100")
   # I really don't know what most of this does below, but it was part of the
@@ -44,7 +42,7 @@ macarthur_get <- function(keyword, from, to) {
   df$start <- as.Date(substr(df$start, 1, 10))
   df$end <- as.Date(substr(df$end, 1, 10))
 
-  df <- subset(df, approved > from & approved < to) # Date limit
+  df <- subset(df, approved > from_date & approved < to_date) # Date limit
   if (nrow(df)==0) return(NULL) # No results after date limiting?
   df$year <- format.Date(df$approved, "%Y")
   return(df)

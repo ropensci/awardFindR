@@ -2,25 +2,25 @@
 % Please edit documentation in R/fedreporter.R
 \name{fedreporter_get}
 \alias{fedreporter_get}
-\title{Scrape data from the Federal Reporter}
+\title{Search awards from the Federal Reporter}
 \usage{
-fedreporter_get(keyword, from, to, agency = "usda,dod,nasa,epa")
+fedreporter_get(keyword, from_year, to_year, agency = "usda,dod,nasa,epa")
 }
 \arguments{
 \item{keyword}{Keyword, single string}
 
-\item{from}{Beginning fiscal year to search, integer}
+\item{from_year}{Beginning fiscal year to search, integer}
 
-\item{to}{Ending fiscal year to search, integer}
+\item{to_year}{Ending fiscal year to search, integer}
 
 \item{agency}{Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,epa".}
 }
 \value{
-A data.frame from the API, or NULL if no results
+A data.frame
 }
 \description{
-Query the Federal Reporter API for grants, get the XML response(s) and process it into a data.frame
+Search awards from the Federal Reporter
 }
 \examples{
-federal <- fedreporter_get(keyword="ethnography", from=2020, to=2021, agency="nih")
+federal <- fedreporter_get(keyword="ethnography", from_year=2020, to_year=2021, agency="nih")
 }

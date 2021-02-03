@@ -2,7 +2,8 @@
 % Please edit documentation in R/mellon.R
 \name{mellon_get_details}
 \alias{mellon_get_details}
-\title{Parse the fields of an entry in the Mellon grant database}
+\title{Parse the fields of an entry in the Mellon grant database
+Internal use only}
 \usage{
 mellon_get_details(entry)
 }
@@ -13,5 +14,6 @@ mellon_get_details(entry)
 a single row data.frame
 }
 \description{
+Parse the fields of an entry in the Mellon grant database
 Internal use only
 }

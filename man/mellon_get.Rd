@@ -2,22 +2,22 @@
 % Please edit documentation in R/mellon.R
 \name{mellon_get}
 \alias{mellon_get}
-\title{Query the Andrew W. Mellon Foundation grant database}
+\title{Search the Andrew W. Mellon Foundation grant database}
 \usage{
-mellon_get(keyword, from, to)
+mellon_get(keyword, from_year, to_year)
 }
 \arguments{
 \item{keyword}{Keyword to query}
 
-\item{from}{Year to begin search}
+\item{from_year}{Year to begin search}
 
-\item{to}{Year to end search}
+\item{to_year}{Year to end search}
 }
 \value{
 a data.frame
 }
 \description{
-Query the Andrew W. Mellon Foundation grant database
+Search the Andrew W. Mellon Foundation grant database
 }
 \examples{
 mellon <- mellon_get("qualitative", 2013, 2021)

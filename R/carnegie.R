@@ -1,19 +1,19 @@
 #' Get Carnegie awards
 #'
 #' @param keyword Keyword to query, single string
-#' @param from Year to begin search, integer
-#' @param to Year to end search, integer
+#' @param from_year Year to begin search, integer
+#' @param to_year Year to end search, integer
 #'
 #' @return a data.frame
 #' @export
 #'
 #' @examples
 #' carnegie <- carnegie_get("qualitative data", 2016, 2017)
-carnegie_get <- function(keyword, from, to) {
+carnegie_get <- function(keyword, from_year, to_year) {
   base_url <- "https://www.carnegie.org/grants/grants-database/"
   query <- paste0("?q=", xml2::url_escape(keyword), "&per_page=104")
   url <- paste0(base_url, query)
-  for (n in from:to) url <- paste0(url, "&y=", n)
+  for (n in from_year:to_year) url <- paste0(url, "&y=", n)
 
   response <- request(url, "get")
   awards <- xml2::xml_find_all(response, "//tbody/tr[@data-url]")

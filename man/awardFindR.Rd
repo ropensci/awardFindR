@@ -6,8 +6,8 @@
 \usage{
 awardFindR(
   keywords,
-  sources = c("fedreporter", "gates", "mellon", "carnegie", "neh", "nih", "nsf",
-    "ophil", "osociety", "sloan", "ssrc", "usaspend"),
+  sources = c("fedreporter", "gates", "mellon", "carnegie", "macarthur", "neh", "nih",
+    "nsf", "ophil", "osociety", "sloan", "ssrc", "usaspend"),
   from = "2019-01-01",
   to = Sys.Date()
 )
@@ -15,7 +15,7 @@ awardFindR(
 \arguments{
 \item{keywords}{Path to keywords csv file (1 term per line) or vector of keywords.}
 
-\item{sources}{A vector of sources to pull from. Supported: fedreporter, gates, mellon, neh, nih, nsf, ophil, osociety, sloan, ssrc, usaspend. Default: all}
+\item{sources}{A vector of sources to pull from. Supported: fedreporter, gates, mellon, neh, nih, nsf, ophil, osociety, sloan, ssrc, usaspend, carnegie, macarthur. Default: all}
 
 \item{from}{A date object to limit the search, defaults to Jan 1 2019}
 

@@ -4,7 +4,7 @@
 #' These queries can be limited by keyword, source and date terms.
 #'
 #' @param keywords Path to keywords csv file (1 term per line) or vector of keywords.
-#' @param sources A vector of sources to pull from. Supported: fedreporter, gates, mellon, neh, nih, nsf, ophil, osociety, sloan, ssrc, usaspend. Default: all
+#' @param sources A vector of sources to pull from. Supported: fedreporter, gates, mellon, neh, nih, nsf, ophil, osociety, sloan, ssrc, usaspend, carnegie, macarthur. Default: all
 #' @param from A date object to limit the search, defaults to Jan 1 2019
 #' @param to A date object to limit the search, defaults to today
 #' @return a data.frame
@@ -53,19 +53,11 @@ awardFindR <- function(keywords,
   stopifnot(is.character(sources))
 
   # Validate dates
-  from <- try(as.Date(from))
-  if ("try-error" %in% class(from) || is.na(from)) {
-    stop('"From" date invalid')
-  }
-
-  to <- try(as.Date(to))
-  if ("try-error" %in% class(to) || is.na(to)) {
-    stop('"To" date invalid')
-  }
-
-  if (from > to) {
-    stop("Ending date must be after beginning date")
-  }
+  from <- try(as.Date(from, format="%Y-%m-%d"))
+  to <- try(as.Date(to, format="%Y-%m-%d"))
+  if ("try-error" %in% class(from) || is.na(from)) stop('"From" date invalid')
+  if ("try-error" %in% class(to) || is.na(to)) stop('"To" date invalid')
+  if (from > to) stop("Ending date must be after beginning date")
 
   # Run the routines in apis.R
   awards <- award_scrape(keywords, sources, from, to)

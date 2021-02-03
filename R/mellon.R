@@ -1,12 +1,10 @@
 #' Parse the fields of an entry in the Mellon grant database
-#'
 #' Internal use only
-#'
 #' @param entry XML element
-#'
 #' @return a single row data.frame
 mellon_get_details <- function(entry) {
-  id <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[2], ".//a/@href"))
+  id <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[2],
+                                          ".//a/@href"))
   text <- lapply(xml2::xml_children(entry), xml2::xml_text)
   fields <- c("institution", "description",
               "date", "amount",
@@ -18,21 +16,19 @@ mellon_get_details <- function(entry) {
   return(df)
 }
 
-#' Query the Andrew W. Mellon Foundation grant database
+#' Search the Andrew W. Mellon Foundation grant database
 #'
 #' @param keyword Keyword to query
-#' @param from Year to begin search
-#' @param to Year to end search
-#'
+#' @param from_year Year to begin search
+#' @param to_year Year to end search
 #' @return a data.frame
 #' @export
-#'
 #' @examples
 #' mellon <- mellon_get("qualitative", 2013, 2021)
-mellon_get <- function(keyword, from, to) {
+mellon_get <- function(keyword, from_year, to_year) {
   base_url <- "https://mellon.org/grants/grants-database/advanced-search/?"
   query_url <- paste0(base_url,
-                      "&year-start=", from, "&year-end=", to,
+                      "&year-start=", from_year, "&year-end=", to_year,
                       "&q=", xml2::url_escape(keyword),
                       # Total grants are 17437 as of writing,
                       # and this figure below seems to be arbitrarily flexible

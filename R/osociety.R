@@ -1,19 +1,17 @@
 #' Query and scrape Open Society foundation awards
 #'
 #' @param keyword Keyword, single string
-#' @param from Year to begin search, integer
-#' @param to Year to end search, integer
-#'
+#' @param from_year Year to begin search, integer
+#' @param to_year Year to end search, integer
 #' @return a data.frame
 #' @export
-#'
-#' @examples
-#' osociety <- osociety_get("qualitative", 2016, 2019)
-osociety_get <- function(keyword, from, to) {
+#' @examples osociety <- osociety_get("qualitative", 2016, 2019)
+osociety_get <- function(keyword, from_year, to_year) {
   base_url <- "https://www.opensocietyfoundations.org/grants/past?"
   query <- paste0("xhr=1&", # filter_program=open-society-fellowship%2Chesp%2Cscholarship-programs&",
                   "filter_keyword=", keyword,
-                  "&filter_year=", paste(from:to, collapse="%2C")) # URL escape
+                  "&filter_year=",
+                  paste(from_year:to_year, collapse="%2C")) # URL escape
 
   url <- paste0(base_url, query)
   response <- request(url, "get")

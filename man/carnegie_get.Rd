@@ -4,14 +4,14 @@
 \alias{carnegie_get}
 \title{Get Carnegie awards}
 \usage{
-carnegie_get(keyword, from, to)
+carnegie_get(keyword, from_year, to_year)
 }
 \arguments{
 \item{keyword}{Keyword to query, single string}
 
-\item{from}{Year to begin search, integer}
+\item{from_year}{Year to begin search, integer}
 
-\item{to}{Year to end search, integer}
+\item{to_year}{Year to end search, integer}
 }
 \value{
 a data.frame

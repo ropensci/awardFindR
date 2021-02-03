@@ -3,15 +3,15 @@
 #' So that we don't keep redownloading the NEH csv file, this is a wrapper to loop neh_query()
 #'
 #' @param keywords Vector of strings to search for in the project description
-#' @param from Beginning year to search
-#' @param to Ending year to search
+#' @param from_year Beginning year to search
+#' @param to_year Ending year to search
 #'
 #' @return A data.frame with the relevant results from NEH
 #' @export
 #'
 #' @examples
 #' neh <- neh_get(c("focus groups", "ethnography"), 2018, 2020)
-neh_get <- function(keywords, from, to) {
+neh_get <- function(keywords, from_year, to_year) {
   # This file is updated monthly, should hopefully be valid for the next decade?
   # See https://securegrants.neh.gov/open/data/
   url <- "https://securegrants.neh.gov/Open/data/NEH_Grants2020s.csv"
@@ -27,7 +27,7 @@ neh_get <- function(keywords, from, to) {
                          stringsAsFactors = FALSE,
                          fileEncoding = "UTF-8-BOM")
 
-  neh <- subset(neh, YearAwarded >= from & YearAwarded <= to)
+  neh <- subset(neh, YearAwarded >= from_year & YearAwarded <= to_year)
 
   results <- lapply(keywords, function(query, df) {
     # grep the query in the description, subset to the hits

@@ -4,14 +4,14 @@
 \alias{sloan_get}
 \title{Search for a set of keywords in the Sloan grants database.}
 \usage{
-sloan_get(queries, from, to)
+sloan_get(keywords, from_year, to_year)
 }
 \arguments{
-\item{queries}{vector of keywords to query}
+\item{keywords}{vector of keywords to query}
 
-\item{from}{Beginning year to search}
+\item{from_year}{Beginning year to search}
 
-\item{to}{Ending year to search}
+\item{to_year}{Ending year to search}
 }
 \value{
 A data.frame

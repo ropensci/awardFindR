@@ -2,7 +2,6 @@
 #'
 #' @return A data.frame
 #' @export
-#'
 #' @examples
 #' \dontrun{sloan <- sloan_df()}
 sloan_df <- function() {
@@ -87,38 +86,35 @@ sloan_df <- function() {
 #'
 #' Scrape, format and search the Sloan grants database for a series of keywords
 #'
-#' @param queries vector of keywords to query
-#' @param from Beginning year to search
-#' @param to Ending year to search
+#' @param keywords vector of keywords to query
+#' @param from_year Beginning year to search
+#' @param to_year Ending year to search
 #' @return A data.frame
 #' @export
 #' @examples
 #' \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}
-sloan_get <- function(queries, from, to) {
-  results <- lapply(queries, function(query, df, from, to) {
+sloan_get <- function(keywords, from_year, to_year) {
+  results <- lapply(keywords, function(keyword, df, from, to) {
     df <- subset(df, year >= from & year <= to)
 
-    # grep the query in the description, subset to the hits
-    hits <- grepl(query, df$description,
-                  ignore.case=TRUE)
+    # grep the keyword in the description, subset to the hits
+    hits <- grepl(keyword, df$description, ignore.case=TRUE)
     hits <- df[hits, ]
 
     # Empty results?
     if (nrow(hits)==0) {
-      warning(paste("No Sloan results for:", query))
+      warning(paste("No Sloan results for:", keyword))
       return(NULL)
     }
 
-    hits$query <- query
+    hits$query <- keyword
     return(hits)
   },
-  sloan_df(), from, to) # Extra data here at the end
+  sloan_df(), from_year, to_year) # Extra data here at the end
 
   results <- do.call(rbind.data.frame, results)
 
-  if (length(results)==0) {
-    return(NULL)
-  }
+  if (nrow(results)==0) return(NULL)
 
   return(results)
 }

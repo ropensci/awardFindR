@@ -2,22 +2,22 @@
 % Please edit documentation in R/ssrc.R
 \name{ssrc_get}
 \alias{ssrc_get}
-\title{Scrape SSRC fellowships and grants by keyword and date}
+\title{Search SSRC fellowships and grants by keyword and date}
 \usage{
-ssrc_get(keyword, from, to)
+ssrc_get(keyword, from_year, to_year)
 }
 \arguments{
 \item{keyword}{Keyword to query, single string}
 
-\item{from}{Year to begin search, integer}
+\item{from_year}{Year to begin search, integer}
 
-\item{to}{Year to end search, integer}
+\item{to_year}{Year to end search, integer}
 }
 \value{
 a data.frame
 }
 \description{
-Scrape SSRC fellowships and grants by keyword and date
+Search SSRC fellowships and grants by keyword and date
 }
 \examples{
 ssrc <- ssrc_get("qualitative", 2015, 2016)

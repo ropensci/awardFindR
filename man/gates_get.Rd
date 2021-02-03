@@ -4,14 +4,14 @@
 \alias{gates_get}
 \title{Query awards from the Bill & Melinda Gates Foundation}
 \usage{
-gates_get(keyword, from, to)
+gates_get(keyword, from_date, to_date)
 }
 \arguments{
 \item{keyword}{Single keyword to query}
 
-\item{from}{Date object to begin search}
+\item{from_date}{Date object to begin search}
 
-\item{to}{Date object to end search}
+\item{to_date}{Date object to end search}
 }
 \value{
 a data.frame
