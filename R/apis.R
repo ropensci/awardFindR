@@ -242,9 +242,22 @@ award_scrape <- function(queries, sources, from, to) {
       }
     } else carnegie <- NULL
 
+    if ("macarthur" %in% sources) {
+      macarthur <- macarthur_get(keyword, from, to)
+      if (is.null(macarthur)) warning(paste0("MacArthur query \"", keyword,
+                                             "\" returned empty response"))
+      else {
+        macarthur$source <- "MacArthur"
+        macarthur$pi <- NA
+        macarthur <- macarthur[, c("grantee", "pi", "year", "start", "end",
+                                   "program", "source", "amount", "id", "title")]
+        names(macarthur) <- columns
+      }
+    } else macarthur <- NULL
+
     full <- rbind.data.frame(nsf, nih, fedreport,
                              ssrc, ophil, osociety,
-                             gates, mellon, carnegie)
+                             gates, mellon, carnegie, macarthur)
     if (nrow(full)==0) return(NULL)
 
     full$keyword <- keyword
@@ -252,6 +265,8 @@ award_scrape <- function(queries, sources, from, to) {
     return(full)
   }, sources, from, to, columns)
   apis <- do.call(rbind.data.frame, apis)
+
+  # Leaving the lapply loop now, back to the main function!
 
   full <- rbind.data.frame(neh, sloan, usa, apis)
   if (nrow(full)==0) return(NULL)
