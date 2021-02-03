@@ -15,7 +15,7 @@ award_scrape <- function(queries, sources, from, to) {
   from_yr <- as.integer(format.Date(from, "%Y"))
   to_yr <- as.integer(format.Date(to, "%Y"))
 
-  columns <- c("institution", "pi",
+  columns <- c("institution", "pi", "year",
                "start", "end",
                "program", "source",
                "amount", "id",
@@ -25,7 +25,7 @@ award_scrape <- function(queries, sources, from, to) {
     neh <- neh_get(queries, from_yr, to_yr)
     if (!is.null(neh)) {
       neh$source <- "NEH"
-      neh <- neh[, c("Institution", "pi",
+      neh <- neh[, c("Institution", "pi", "YearAwarded",
                      "BeginGrant", "EndGrant",
                      "Program", "source",
                      "AwardOutright", "AppNumber",
@@ -43,7 +43,7 @@ award_scrape <- function(queries, sources, from, to) {
       sloan$source <- "Sloan"
       sloan$start <- as.Date(NA)
       sloan$end <- as.Date(NA)
-      sloan <- sloan[, c("grantee", "pi",
+      sloan <- sloan[, c("grantee", "pi", "year",
                          "start", "end",
                          "program", "source",
                          "amount", "id",
@@ -60,7 +60,8 @@ award_scrape <- function(queries, sources, from, to) {
       usa$source <- "USAspending"
       usa$keyword <- NA
       usa$pi <- NA
-      usa <- usa[, c("Recipient.Name", "pi",
+      usa$year <- format.Date(usa$Start.Date, "%Y")
+      usa <- usa[, c("Recipient.Name", "pi", "year",
                      "Start.Date", "End.Date",
                      "Awarding.Sub.Agency", "source",
                      "Award.Amount", "Award.ID",
@@ -84,6 +85,9 @@ award_scrape <- function(queries, sources, from, to) {
       else {
         nsf$source <- "NSF"
         nsf$pi <- with(nsf, paste0(piLastName, ", ", piFirstName))
+        nsf$date <- as.Date(nsf$date, format="%m/%d/%Y")
+        nsf$year <- format.Date(nsf$date, format="%Y")
+
         nsf$startDate <- as.Date(nsf$startDate, format="%m/%d/%Y")
         nsf$expDate <- as.Date(nsf$expDate, format="%m/%d/%Y")
 
@@ -91,7 +95,7 @@ award_scrape <- function(queries, sources, from, to) {
         nsf$directorate[nsf$cfdaNumber=="47.075"] <- "SBE"
         nsf$directorate[nsf$cfdaNumber=="47.076"] <- "EHR"
 
-        nsf <- nsf[, c("awardeeName", "pi",
+        nsf <- nsf[, c("awardeeName", "pi", "year",
                        "startDate", "expDate",
                        "directorate", "source",
                        "fundsObligatedAmt", "id",
@@ -108,7 +112,7 @@ award_scrape <- function(queries, sources, from, to) {
                                        keyword, "\" returned empty response"))
       else {
         nih$source <- "NIH"
-        nih <- nih[, c("org_name", "contact_pi_name",
+        nih <- nih[, c("org_name", "contact_pi_name", "fiscal_year",
                        "project_start_date", "project_end_date",
                        "agency_code", "source",
                        "award_amount", "project_num", "project_title")]
@@ -123,7 +127,7 @@ award_scrape <- function(queries, sources, from, to) {
                                              keyword, "\" returned empty response"))
       else {
         fedreport$source <- "Federal REPORTER"
-        fedreport <- fedreport[, c("orgName", "contactPi",
+        fedreport <- fedreport[, c("orgName", "contactPi", "fy",
                                    "projectStartDate", "projectEndDate",
                                    "agency", "source",
                                    "totalCostAmount", "projectNumber", "title")]
@@ -142,7 +146,7 @@ award_scrape <- function(queries, sources, from, to) {
         ssrc$start <- NA
         ssrc$end <- NA
         ssrc$amount <- NA
-        ssrc <- ssrc[, c("institution", "pi_name", "start", "end",
+        ssrc <- ssrc[, c("institution", "pi_name", "year", "start", "end",
                          "program", "source", "amount", "id", "title")]
         names(ssrc) <- columns
       }
@@ -159,8 +163,8 @@ award_scrape <- function(queries, sources, from, to) {
         ophil$pi <- NA
         ophil$start <- NA
         ophil$end <- NA
-        ophil <- ophil[, c("grantee", "pi", "start", "end", "focus", "source",
-                           "amount", "id", "title")]
+        ophil <- ophil[, c("grantee", "pi", "year", "start", "end",
+                           "focus", "source", "amount", "id", "title")]
         names(ophil) <- columns
       }
     } else ophil <- NULL
@@ -177,7 +181,8 @@ award_scrape <- function(queries, sources, from, to) {
         mellon$start <- NA
         mellon$end <- NA
         mellon$source <- "Mellon"
-        mellon <- mellon[, c("institution", "pi", "start", "end",
+        mellon$year <- format.Date(mellon$date, "%Y")
+        mellon <- mellon[, c("institution", "pi", "year", "start", "end",
                              "program", "source", "amount", "id",
                              "description")]
         names(mellon) <- columns
@@ -196,7 +201,8 @@ award_scrape <- function(queries, sources, from, to) {
         gates$end <- NA
         gates$program <- NA
         gates$source <- "Gates"
-        gates <- gates[, c("grantee", "pi", "start", "end", "program",
+        gates$year <- format.Date(gates$date, "%Y")
+        gates <- gates[, c("grantee", "pi", "year", "start", "end", "program",
                            "source", "amount", "id", "description")]
         names(gates) <- columns
       }
@@ -214,7 +220,7 @@ award_scrape <- function(queries, sources, from, to) {
         osociety$start <- NA
         osociety$end <- NA
         osociety$source <- "Open Society"
-        osociety <- osociety[, c("institution", "pi", "start", "end",
+        osociety <- osociety[, c("institution", "pi", "year", "start", "end",
                                  "program", "source", "amount", "id",
                                  "description")]
         names(osociety) <- columns
@@ -230,8 +236,8 @@ award_scrape <- function(queries, sources, from, to) {
         carnegie$start <- NA
         carnegie$end <- NA
         carnegie$source <- "Carnegie"
-        carnegie <- carnegie[, c("grantee", "pi", "start", "end", "program",
-                                 "source", "amount", "id", "title")]
+        carnegie <- carnegie[, c("grantee", "pi", "year", "start", "end",
+                                 "program", "source", "amount", "id", "title")]
         names(carnegie) <- columns
       }
     } else carnegie <- NULL

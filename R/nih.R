@@ -25,7 +25,7 @@ nih_get <- function(keyword, from, to) {
       search_field="terms")
   ),
   include_fields=c("org_name", "project_num", "project_serial_num",
-                   "project_start_date", "project_end_date",
+                   "fiscal_year", "project_start_date", "project_end_date",
                    "project_title", "agency_code",
                    "contact_pi_name", "award_amount"), #, "principle_investigators"))
   offset=0)
@@ -58,5 +58,6 @@ nih_get <- function(keyword, from, to) {
 
   # Remove duplicates
   df <- df[!duplicated(df$project_serial_num), ]
+  df[] <- lapply(df, function(x) if (is.factor(x)) as.character(x) else {x})
   return(df)
 }

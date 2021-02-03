@@ -59,5 +59,7 @@ usaspend_get <- function(queries, from, to) {
     awards <- rbind.data.frame(awards, temp)
   }
 
+  awards[] <- lapply(awards, function(x) if (is.factor(x)) as.character(x) else {x})
+
   return(awards)
 }
