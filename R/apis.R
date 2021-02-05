@@ -41,8 +41,8 @@ award_scrape <- function(queries, sources, from, to) {
 
     if (!is.null(sloan)) {
       sloan$source <- "Sloan"
-      sloan$start <- as.Date(NA)
-      sloan$end <- as.Date(NA)
+      sloan$start <- NA
+      sloan$end <- NA
       sloan <- sloan[, c("grantee", "pi", "year",
                          "start", "end",
                          "program", "source",
@@ -52,10 +52,10 @@ award_scrape <- function(queries, sources, from, to) {
     }
   } else sloan <- NULL
 
-  if ("usaspend" %in% sources) {
+  if ("usaspending" %in% sources) {
     usa <- usaspend_get(queries, from, to)
 
-    if (is.null(usa)) warning("No USAspending results")
+    if (is.null(usa)) message("No USAspending results")
     else {
       usa$source <- "USAspending"
       usa$keyword <- NA
@@ -81,15 +81,15 @@ award_scrape <- function(queries, sources, from, to) {
     # NSF block
     if("nsf" %in% sources) {
       nsf <- nsf_get(keyword, from, to)
-      if(is.null(nsf)) warning(paste0("NSF query \"", keyword, "\" returned empty response"))
+      if(is.null(nsf)) message(paste0("NSF query \"", keyword, "\" returned empty response"))
       else {
         nsf$source <- "NSF"
         nsf$pi <- with(nsf, paste0(piLastName, ", ", piFirstName))
-        nsf$date <- as.Date(nsf$date, format="%m/%d/%Y")
+        nsf$date <- as.character(as.Date(nsf$date, format="%m/%d/%Y"))
         nsf$year <- format.Date(nsf$date, format="%Y")
 
-        nsf$startDate <- as.Date(nsf$startDate, format="%m/%d/%Y")
-        nsf$expDate <- as.Date(nsf$expDate, format="%m/%d/%Y")
+        nsf$startDate <- as.character(as.Date(nsf$startDate, format="%m/%d/%Y"))
+        nsf$expDate <- as.character(as.Date(nsf$expDate, format="%m/%d/%Y"))
 
         nsf$directorate <- NA
         nsf$directorate[nsf$cfdaNumber=="47.075"] <- "SBE"
@@ -108,7 +108,7 @@ award_scrape <- function(queries, sources, from, to) {
     # Start nih block
     if ("nih" %in% sources) {
       nih <- nih_get(keyword, from, to)
-      if (is.null(nih)) warning(paste0("NIH RePORTER query \"",
+      if (is.null(nih)) message(paste0("NIH RePORTER query \"",
                                        keyword, "\" returned empty response"))
       else {
         nih$source <- "NIH"
@@ -123,7 +123,7 @@ award_scrape <- function(queries, sources, from, to) {
     # Start fedreporter block
     if ("fedreporter" %in% sources) {
       fedreport <- fedreporter_get(keyword, from_yr, to_yr)
-      if (is.null(fedreport)) warning(paste0("Federal Reporter query \"",
+      if (is.null(fedreport)) message(paste0("Federal Reporter query \"",
                                              keyword, "\" returned empty response"))
       else {
         fedreport$source <- "Federal REPORTER"
@@ -139,7 +139,7 @@ award_scrape <- function(queries, sources, from, to) {
     if ("ssrc" %in% sources) {
       ssrc <- ssrc_get(keyword, from_yr, to_yr)
 
-      if (is.null(ssrc)) warning(paste0("SSRC query \"", keyword,
+      if (is.null(ssrc)) message(paste0("SSRC query \"", keyword,
                                         "\" returned empty response"))
       else {
         ssrc$source <- "SSRC"
@@ -156,7 +156,7 @@ award_scrape <- function(queries, sources, from, to) {
     if ("ophil" %in% sources) {
       ophil <- ophil_get(keyword, from_yr, to_yr)
 
-      if (is.null(ophil)) warning(paste0("Open Philanthropy query \"",
+      if (is.null(ophil)) message(paste0("Open Philanthropy query \"",
                                          keyword, "\" returned empty response"))
       else {
         ophil$source <- "Open Philosophy"
@@ -173,7 +173,7 @@ award_scrape <- function(queries, sources, from, to) {
     if ("mellon" %in% sources) {
       mellon <- mellon_get(keyword, from_yr, to_yr)
 
-      if (is.null(mellon)) warning(paste0("Mellon query \"", keyword,
+      if (is.null(mellon)) message(paste0("Mellon query \"", keyword,
                                           "\" returned empty response"))
 
       else {
@@ -193,7 +193,7 @@ award_scrape <- function(queries, sources, from, to) {
     if ("gates" %in% sources) {
       gates <- gates_get(keyword, from, to)
 
-      if (is.null(gates)) warning(paste0("Gates query \"", keyword,
+      if (is.null(gates)) message(paste0("Gates query \"", keyword,
                                          "\" returned empty response"))
       else {
         gates$pi <- NA
@@ -212,7 +212,7 @@ award_scrape <- function(queries, sources, from, to) {
     if ("osociety" %in% sources) {
       osociety <- osociety_get(keyword, from_yr, to_yr)
 
-      if (is.null(osociety)) warning(paste0("Open Society query \"", keyword,
+      if (is.null(osociety)) message(paste0("Open Society query \"", keyword,
                                             "\" returned empty response"))
 
       else {
@@ -229,7 +229,7 @@ award_scrape <- function(queries, sources, from, to) {
 
     if ("carnegie" %in% sources) {
       carnegie <- carnegie_get(keyword, from_yr, to_yr)
-      if (is.null(carnegie)) warning(paste0("Carnegie query \"", keyword,
+      if (is.null(carnegie)) message(paste0("Carnegie query \"", keyword,
                                             "\" returtned empty response"))
       else {
         carnegie$pi <- NA
@@ -244,7 +244,7 @@ award_scrape <- function(queries, sources, from, to) {
 
     if ("macarthur" %in% sources) {
       macarthur <- macarthur_get(keyword, from, to)
-      if (is.null(macarthur)) warning(paste0("MacArthur query \"", keyword,
+      if (is.null(macarthur)) message(paste0("MacArthur query \"", keyword,
                                              "\" returned empty response"))
       else {
         macarthur$source <- "MacArthur"

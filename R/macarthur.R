@@ -8,7 +8,7 @@
 #' @examples macarthur <- macarthur_get("qualitative", "1999-01-01", "2020-01-01")
 macarthur_get <- function(keyword, from_date, to_date) {
   url <- "https://searchg2.crownpeak.net/live-macfound-rt/select?"
-  parameters <- paste0("q=", keyword, "&wt=xml&start=0&rows=100")
+  parameters <- paste0("q=", xml2::url_escape(keyword), "&wt=xml&start=0&rows=100")
   # I really don't know what most of this does below, but it was part of the
   # web interface's API query, so I'm leaving it in for now.
   extra <- "&echoParams=explicit&fl=*&defType=edismax&fq=custom_s_template:%22grant%20detail%22&sort=score%20desc&qf=custom_t_title%20custom_t_description%20custom_t_name&indent=true&json.wrf=searchg2_5445608496089546"
@@ -38,12 +38,12 @@ macarthur_get <- function(keyword, from_date, to_date) {
   df <- do.call(rbind.data.frame, results)
 
   #scrap the exact time and format as date
-  df$approved <- as.Date(substr(df$approved, 1, 10))
-  df$start <- as.Date(substr(df$start, 1, 10))
-  df$end <- as.Date(substr(df$end, 1, 10))
+  df$approved <- substr(df$approved, 1, 10)
+  df$start <- substr(df$start, 1, 10)
+  df$end <- substr(df$end, 1, 10)
 
   approved <- NULL # For R CMD check
-  df <- subset(df, approved > from_date & approved < to_date) # Date limit
+  df <- subset(df, as.Date(approved) > from_date & as.Date(approved) < to_date) # Date limit
   if (nrow(df)==0) return(NULL) # No results after date limiting?
   df$year <- format.Date(df$approved, "%Y")
   return(df)

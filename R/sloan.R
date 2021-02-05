@@ -36,20 +36,15 @@ sloan_df <- function(generate=FALSE) {
     year <- xml2::xml_text(xml2::xml_find_all(entry, ".//div[@class='year']/text()"))
     year <- gsub(regexp, "", year)
     year <- year[year!=""]
-    if (length(year)==0) { # One recent case with no year entry was causing problems
-      year <- NA
-    } else {
-      year <- as.integer(year)
-    }
+    # One recent case with no year entry was causing problems
+    if (length(year)==0) year <- NA else year <- as.integer(year)
 
     # Sloan program, subprogram and PI name are in this unstructured list section
     categories <- xml2::xml_text(xml2::xml_find_all(entry, ".//ul[@class='col']/li/text()"))
     categories <- gsub(regexp, "", categories)
     categories <- categories[categories!=""]
     # No point keeping an entry with no info here? Was messing everything up and only excludes 3 cases
-    if (length(categories)==0) {
-      return(NULL)
-    }
+    if (length(categories)==0) return(NULL)
     # I expect the first element in "categories" to be the program and the last to be the PI name.
     # Trying to get more specific than this is bound to cause problems since the numbers of nodes differ
     # This is mainly a problem when trying to specifically pick out the sub-program, so I omitted
@@ -101,14 +96,14 @@ sloan_get <- function(keywords, from_year, to_year, generate=FALSE) {
 
     # Empty results?
     if (nrow(hits)==0) {
-      warning(paste("No Sloan results for:", keyword))
+      message(paste("No Sloan results for:", keyword))
       return(NULL)
     }
 
     hits$query <- keyword
     return(hits)
   },
-  sloan_df(generate), from_year, to_year) # Extra data here at the end
+  sloan_df(generate), from_year, to_year) # the lapply function arguments here
 
   results <- do.call(rbind.data.frame, results)
 

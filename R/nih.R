@@ -55,7 +55,7 @@ nih_get <- function(keyword, from_date, to_date) {
   # Remove duplicates
   df <- df[!duplicated(df$project_serial_num), ]
   # Remove factors
-  df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x))
+  df[] <- lapply(df, as.character)
 
   return(df)
 }

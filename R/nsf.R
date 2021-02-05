@@ -37,7 +37,7 @@ nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
   }
 
   # Remove factors
-  df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x))
+  df[] <- lapply(df, as.character)
 
   return(df)
 }
