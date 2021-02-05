@@ -42,6 +42,7 @@ macarthur_get <- function(keyword, from_date, to_date) {
   df$start <- as.Date(substr(df$start, 1, 10))
   df$end <- as.Date(substr(df$end, 1, 10))
 
+  approved <- NULL # For R CMD check
   df <- subset(df, approved > from_date & approved < to_date) # Date limit
   if (nrow(df)==0) return(NULL) # No results after date limiting?
   df$year <- format.Date(df$approved, "%Y")

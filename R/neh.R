@@ -27,6 +27,7 @@ neh_get <- function(keywords, from_year, to_year) {
                          stringsAsFactors = FALSE,
                          fileEncoding = "UTF-8-BOM")
 
+  YearAwarded <- NULL # For R CMD check
   neh <- subset(neh, YearAwarded >= from_year & YearAwarded <= to_year)
 
   results <- lapply(keywords, function(query, df) {
@@ -37,7 +38,7 @@ neh_get <- function(keywords, from_year, to_year) {
 
     # Empty results?
     if (nrow(hits)==0) {
-      warning(paste("No NEH results for:", query))
+      message(paste("No NEH results for:", query))
       return(NULL)
     }
 
@@ -48,9 +49,7 @@ neh_get <- function(keywords, from_year, to_year) {
 
   results <- do.call(rbind.data.frame, results)
   # Did we get nothing after all these queries?
-  if (nrow(results)==0) {
-    return(NULL)
-  }
+  if (nrow(results)==0) return(NULL)
 
   # Some regex magic to make the "participant" field more applicable to our PI field
   results$pi <- sub(" \\[Project Director\\].*", "", results$Participants)

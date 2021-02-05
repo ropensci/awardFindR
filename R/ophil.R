@@ -39,6 +39,7 @@ ophil_get <- function(keyword, from_year, to_year) {
   df <- do.call(rbind.data.frame, df)
 
   df$year <- as.integer(substr_right(df$month, 4))
+  year <- NULL # For R CMD check
   df <- subset(df, year >= from_year & year <= to_year)
   if (nrow(df)==0) return(NULL) # No results in the date range?
 
