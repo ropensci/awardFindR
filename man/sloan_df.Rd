@@ -4,7 +4,10 @@
 \alias{sloan_df}
 \title{Scrape the Sloan grants database from html to a data.frame}
 \usage{
-sloan_df()
+sloan_df(generate = FALSE)
+}
+\arguments{
+\item{generate}{Should we generate a new data.frame from the web? TRUE/FALSE}
 }
 \value{
 A data.frame
@@ -13,5 +16,6 @@ A data.frame
 Scrape the Sloan grants database from html to a data.frame
 }
 \examples{
-\dontrun{sloan <- sloan_df()}
+# Make a new version of the sloan data.frame
+\dontrun{sloan <- sloan_df(generate=T)}
 }

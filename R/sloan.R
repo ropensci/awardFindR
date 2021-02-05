@@ -1,17 +1,15 @@
 #' Scrape the Sloan grants database from html to a data.frame
 #'
+#' @param generate Should we generate a new data.frame from the web? TRUE/FALSE
 #' @return A data.frame
 #' @export
 #' @examples
-#' \dontrun{sloan <- sloan_df()}
-sloan_df <- function() {
+#' # Make a new version of the sloan data.frame
+#' \dontrun{sloan <- sloan_df(generate=T)}
+sloan_df <- function(generate=FALSE) {
 
-  # Have we already generated a file?
-  if (file.exists("data/sloan.Rdata")) {
-    message("Loading cached Sloan data...")
-    load("data/sloan.Rdata")
-    return(sloan)
-  }
+  # Should we use the generated file?
+  if (generate==FALSE) return(sloan)
 
   # This URL will give us all the grants Sloan ever made in a single html return
   # up to 3000 results, there are 2131 as of writing but that parameter can be changed at the end here
@@ -77,8 +75,6 @@ sloan_df <- function() {
   })
   sloan <- do.call(rbind.data.frame, awards)
 
-  save(sloan, file="data/sloan.Rdata")
-
   return(sloan)
 }
 
@@ -89,12 +85,14 @@ sloan_df <- function() {
 #' @param keywords vector of keywords to query
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
+#' @param generate Should we generate a new data.frame from the web? TRUE/FALSE
 #' @return A data.frame
 #' @export
 #' @examples
 #' \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}
-sloan_get <- function(keywords, from_year, to_year) {
+sloan_get <- function(keywords, from_year, to_year, generate=FALSE) {
   results <- lapply(keywords, function(keyword, df, from, to) {
+    year <- NULL # For R CMD check
     df <- subset(df, year >= from & year <= to)
 
     # grep the keyword in the description, subset to the hits
@@ -110,7 +108,7 @@ sloan_get <- function(keywords, from_year, to_year) {
     hits$query <- keyword
     return(hits)
   },
-  sloan_df(), from_year, to_year) # Extra data here at the end
+  sloan_df(generate), from_year, to_year) # Extra data here at the end
 
   results <- do.call(rbind.data.frame, results)
 
