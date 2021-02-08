@@ -1,12 +1,9 @@
-#' Get Carnegie awards
-#'
+#' Search Carnegie awards
 #' @param keyword Keyword to query, single string
 #' @param from_year Year to begin search, integer
 #' @param to_year Year to end search, integer
-#'
 #' @return a data.frame
 #' @export
-#'
 #' @examples
 #' carnegie <- carnegie_get("qualitative data", 2016, 2017)
 carnegie_get <- function(keyword, from_year, to_year) {
@@ -43,4 +40,19 @@ carnegie_get <- function(keyword, from_year, to_year) {
   })
 
   do.call(rbind.data.frame, awards)
+}
+
+#' Standardize Carnegie awards search results
+#' @param keyword Keyword to query, single string
+#' @param from_year Year to begin search, integer
+#' @param to_year Year to end search, integer
+#' @return a standardized data.frame
+carnegie_standardize <- function(keyword, from_year, to_year) {
+  carnegie <- carnegie_get(keyword, from_year, to_year)
+  if (is.null(carnegie)) return(NULL)
+  with(carnegie, data.frame(
+    institution=grantee, pi=NA, year, start=NA, end=NA,
+    program, amount, id, title, source="Carnegie",
+    stringsAsFactors = F
+  ))
 }

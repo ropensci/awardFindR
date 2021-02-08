@@ -1,12 +1,10 @@
 #' Search awards from the Federal Reporter
-#'
 #' @param keyword Keyword, single string
 #' @param from_year Beginning fiscal year to search, integer
 #' @param to_year Ending fiscal year to search, integer
 #' @param agency Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,epa".
 #' @export
 #' @return A data.frame
-#'
 #' @examples
 #' federal <- fedreporter_get(keyword="ethnography", from_year=2020, to_year=2021, agency="nih")
 fedreporter_get <- function (keyword, from_year, to_year,
@@ -29,7 +27,7 @@ fedreporter_get <- function (keyword, from_year, to_year,
   df <- do.call(rbind.data.frame, df)
 
   # Do we need to loop until we hit the limit?
-  while (api$offset+api$limit<api$totalCount) {
+  while (api$offset+api$limit < api$totalCount) {
     offset <- api$offset + api$limit # New offset
     new_url <- paste0(query_url, "&offset=", offset)
     api <- request(new_url, "get")
@@ -57,5 +55,21 @@ fedreporter_get <- function (keyword, from_year, to_year,
   df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x)) # Remove factors
 
   return(df)
+}
 
+#' Standardize award results from the Federal Reporter
+#' @param keyword Keyword, single string
+#' @param from_year Beginning fiscal year to search, integer
+#' @param to_year Ending fiscal year to search, integer
+#' @return A standardized data.frame
+fedreporter_stardardize <- function(keyword, from_year, to_year) {
+  federal <- fedreporter_get(keyword, from_year, to_year)
+  if (is.null(federal)) return(NULL)
+  with(federal, data.frame(
+    institution=orgName, pi=contactPi, year=fy,
+    start=substr(projectStartDate, 1, 10), end=substr(projectEndDate, 1, 10),
+    program=agency, amount=totalCostAmount, id=projectNumber, title,
+    source="Federal Reporter",
+    stringsAsFactors = FALSE
+  ))
 }

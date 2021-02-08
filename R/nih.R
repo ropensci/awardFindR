@@ -1,5 +1,4 @@
 #' Search NIH RePORTER
-#'
 #' @param keyword Keyword to query
 #' @param from_date Date object to begin search
 #' @param to_date Date object to end search
@@ -26,12 +25,8 @@ nih_get <- function(keyword, from_date, to_date) {
                    "contact_pi_name", "award_amount"), #, "principle_investigators"))
   offset=0)
 
-  # Query API
-  response <- request(url, "post", payload)
-  # No results?
-  if (response$meta$total == 0) {
-    return(NULL)
-  }
+  response <- request(url, "post", payload) # Query API
+  if (response$meta$total == 0) return(NULL) # No results?
   # change NULL values to NA
   df <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
   df <- do.call(rbind.data.frame, df)
@@ -41,10 +36,8 @@ nih_get <- function(keyword, from_date, to_date) {
   # Do we need to loop with different offsets?
   while (place < response$meta$total) {
     payload$offset <- place
-    # Query again
-    response <- request(url, "post", payload)
-    # Record our new position
-    place <- response$meta$offset + response$meta$limit
+    response <- request(url, "post", payload) # Query again
+    place <- response$meta$offset + response$meta$limit # New position
 
     # Bind everything together
     temp <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
@@ -58,4 +51,20 @@ nih_get <- function(keyword, from_date, to_date) {
   df[] <- lapply(df, as.character)
 
   return(df)
+}
+
+#' Standardize NIH RePORTER results
+#' @param keyword Keyword to query
+#' @param from_date Date object to begin search
+#' @param to_date Date object to end search
+#' @return a standardized data.frame
+nih_standardize <- function(keyword, from_date, to_date) {
+  nih <- nih_get(keyword, from_date, to_date)
+  if (is.null(nih)) return(NULL)
+  with(nih, data.frame(
+    institution=org_name, pi=contact_pi_name, year=fiscal_year,
+    start=project_start_date, end=project_end_date,
+    program=agency_code, amount=award_amount, id=project_num,
+    title=project_title, source="NIH"
+  ))
 }

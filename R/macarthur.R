@@ -22,7 +22,7 @@ macarthur_get <- function(keyword, from_date, to_date) {
   results <- xml2::xml_children(xml2::xml_children(response)[2])
   results <- lapply(results, function(x) {
     id <- xml2::xml_text(xml2::xml_find_first(x, ".//str[@name='id']"))
-    grantee <- xml2::xml_text(xml2::xml_find_first(x, ".//str[@name='custom_s_name']"))
+    institution <- xml2::xml_text(xml2::xml_find_first(x, ".//str[@name='custom_s_name']"))
     title <- xml2::xml_text(xml2::xml_find_first(x, ".//str[@name='custom_s_title']"))
     program <- xml2::xml_text(xml2::xml_find_first(x, ".//str[@name='custom_s_program_area_code']"))
 
@@ -32,7 +32,7 @@ macarthur_get <- function(keyword, from_date, to_date) {
     start <- xml2::xml_text(xml2::xml_find_first(x, ".//str[@name='custom_s_start_date']"))
     end <- xml2::xml_text(xml2::xml_find_first(x, ".//str[@name='custom_s_end_date']"))
 
-    data.frame(id, grantee, approved, start, end, amount, program, title,
+    data.frame(id, institution, approved, start, end, amount, program, title,
                stringsAsFactors = F)
   })
   df <- do.call(rbind.data.frame, results)
@@ -45,6 +45,18 @@ macarthur_get <- function(keyword, from_date, to_date) {
   approved <- NULL # For R CMD check
   df <- subset(df, as.Date(approved) > from_date & as.Date(approved) < to_date) # Date limit
   if (nrow(df)==0) return(NULL) # No results after date limiting?
+
   df$year <- format.Date(df$approved, "%Y")
   return(df)
+}
+
+macarthur_standardize <- function(keyword, from_date, to_date) {
+  macarthur <- macarthur_get(keyword, from_date, to_date)
+  if (is.null(macarthur)) return(NULL)
+  with(macarthur, data.frame(
+    institution, pi=NA, year=format.Date(approved, "%Y"),
+    start=substr(start, 1, 10), end=substr(end, 1, 10),
+    program, amount, id, title, source="MacArthur", # keyword,
+    stringsAsFactors = FALSE
+  ))
 }

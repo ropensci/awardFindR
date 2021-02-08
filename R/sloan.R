@@ -59,24 +59,15 @@ sloan_df <- function(generate=FALSE) {
     id <- as.integer(id)
 
     # Assemble it into a data.frame
-    data.frame(grantee=grantee,
-               pi=categories[length(categories)],
-               year=year,
-               program=categories[1],
-               amount=as.integer(amount),
-               id=id,
-               description=description,
+    data.frame(grantee, pi=categories[length(categories)],
+               year, program=categories[1], amount=as.integer(amount),
+               id, description,
                stringsAsFactors = FALSE)
   })
-  sloan <- do.call(rbind.data.frame, awards)
-
-  return(sloan)
+  do.call(rbind.data.frame, awards)
 }
 
 #' Search for a set of keywords in the Sloan grants database.
-#'
-#' Scrape, format and search the Sloan grants database for a series of keywords
-#'
 #' @param keywords vector of keywords to query
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
@@ -110,4 +101,20 @@ sloan_get <- function(keywords, from_year, to_year, generate=FALSE) {
   if (nrow(results)==0) return(NULL)
 
   return(results)
+}
+
+#' Standardize Sloan search
+#' @param keywords vector of keywords to query
+#' @param from_year Beginning year to search
+#' @param to_year Ending year to search
+#' @return A standardized data.frame
+sloan_standardize <- function(keywords, from_year, to_year) {
+  sloan <- sloan_get(keywords, from_year, to_year)
+  if (is.null(sloan)) return(NULL)
+  with(sloan, data.frame(
+    institution=grantee, pi, year,
+    start=NA, end=NA,
+    program, amount, id,
+    title=description, source="Sloan"
+  ))
 }
