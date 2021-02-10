@@ -48,7 +48,7 @@ gates_standardize <- function(keyword, from_date, to_date) {
    if (is.null(gates)) return(NULL)
    with(gates, data.frame(
       institution=grantee, pi=NA, year, start=NA, end=NA, program=NA,
-      amount, id, title=description, source="Gates",
+      amount, id, title=description, keyword, source="Gates",
       stringsAsFactors = FALSE
    ))
 }

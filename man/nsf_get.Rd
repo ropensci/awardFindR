@@ -16,7 +16,7 @@ nsf_get(keyword, from_date, to_date, cfda = "47.076,47.075")
 \item{cfda}{Comma-separated CFDA codes to include, SBE and EHR only by default}
 }
 \value{
-A data.frame of raw NSF API output, or NULL if no results
+A data.frame of raw NSF API output
 }
 \description{
 Search the NSF API for awards

@@ -1,23 +1,4 @@
-#' Parse the fields of an entry in the Mellon grant database
-#' Internal use only
-#' @param entry XML element
-#' @return a single row data.frame
-mellon_get_details <- function(entry) {
-  id <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[2],
-                                          ".//a/@href"))
-  text <- lapply(xml2::xml_children(entry), xml2::xml_text)
-  fields <- c("institution", "description",
-              "date", "amount",
-              "location", "program")
-  df <- as.data.frame(text, stringsAsFactors=F)
-  names(df) <- fields
-  df$id <- id
-
-  return(df)
-}
-
 #' Search the Andrew W. Mellon Foundation grant database
-#'
 #' @param keyword Keyword to query
 #' @param from_year Year to begin search
 #' @param to_year Year to end search
@@ -38,8 +19,20 @@ mellon_get <- function(keyword, from_year, to_year) {
 
   results <- xml2::xml_children(xml2::xml_find_first(response,
                                                      "//table[@class='grant-list']/tbody"))
+  # Loop through each entry
+  df <- lapply(results, function(entry) {
+    id <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[2],
+                                            ".//a/@href"))
+    text <- lapply(xml2::xml_children(entry), xml2::xml_text)
+    fields <- c("institution", "description",
+                "date", "amount",
+                "location", "program")
+    df <- as.data.frame(text, stringsAsFactors=F)
+    names(df) <- fields
+    df$id <- id
 
-  df <- lapply(results, mellon_get_details)
+    return(df)
+  })
   df <- do.call(rbind.data.frame, df)
   if (nrow(df)==0) return(NULL) # No results?
 
@@ -49,4 +42,19 @@ mellon_get <- function(keyword, from_year, to_year) {
   df$date <- as.Date(df$date, format="%m/%d/%y")
 
   return(df)
+}
+
+#' Standardize award results from Mellon
+#' @param keyword Keyword to query
+#' @param from_year Year to begin search
+#' @param to_year Year to end search
+#' @return a standardized data.frame
+mellon_standardize <- function(keyword, from_year, to_year) {
+  mellon <- mellon_get(keyword, from_year, to_year)
+  if (is.null(mellon)) return(NULL)
+  with(mellon, data.frame(
+    institution, pi=NA, year=format.Date(date, "%Y"), start=NA, end=NA,
+    program, amount, id, title=description, keyword, source="Mellon",
+    stringsAsFactors = FALSE
+  ))
 }

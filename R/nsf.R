@@ -60,9 +60,8 @@ nsf_standardize <- function(keyword, from_date, to_date) {
     year=format.Date(as.Date(date, format="%m/%d/%Y"), format="%Y"),
     start=as.character(as.Date(nsf$startDate, format="%m/%d/%Y")),
     end=as.character(as.Date(nsf$expDate, format="%m/%d/%Y")),
-    program=directorate, amount=fundsObligatedAmt, id=id, title=title,
-    source="NSF",
-    stringsAsFactors = FALSE
+    program=directorate, amount=fundsObligatedAmt, id=id, title=title, keyword,
+    source="NSF", stringsAsFactors = FALSE
   ))
 }
 

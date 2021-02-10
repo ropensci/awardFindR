@@ -52,7 +52,7 @@ carnegie_standardize <- function(keyword, from_year, to_year) {
   if (is.null(carnegie)) return(NULL)
   with(carnegie, data.frame(
     institution=grantee, pi=NA, year, start=NA, end=NA,
-    program, amount, id, title, source="Carnegie",
+    program, amount, id, title, keyword, source="Carnegie",
     stringsAsFactors = F
   ))
 }

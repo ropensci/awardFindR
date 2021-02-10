@@ -1,5 +1,4 @@
 #' Query and scrape Open Society foundation awards
-#'
 #' @param keyword Keyword, single string
 #' @param from_year Year to begin search, integer
 #' @param to_year Year to end search, integer
@@ -41,4 +40,19 @@ osociety_get <- function(keyword, from_year, to_year) {
   })
 
   do.call(rbind.data.frame, results)
+}
+
+#' Standardize Open Society foundation awards
+#' @param keyword Keyword, single string
+#' @param from_year Year to begin search, integer
+#' @param to_year Year to end search, integer
+#' @return a data.frame
+osociety_standardize <- function(keyword, from_year, to_year) {
+  osociety <- osociety_get(keyword, from_year, to_year)
+  if (is.null(osociety)) return(NULL)
+  with(osociety, data.frame(
+    institution, pi=NA, year, start=NA, end=NA, program,
+    amount=as.integer(amount), id, title=description, keyword,
+    source="Open Society", stringsAsFactors = FALSE
+  ))
 }

@@ -30,19 +30,19 @@ neh_get <- function(keywords, from_year, to_year) {
   YearAwarded <- NULL # For R CMD check
   neh <- subset(neh, YearAwarded >= from_year & YearAwarded <= to_year)
 
-  results <- lapply(keywords, function(query, df) {
+  results <- lapply(keywords, function(keyword, df) {
     # grep the query in the description, subset to the hits
-    hits <- grepl(query, df$ProjectDesc,
+    hits <- grepl(keyword, df$ProjectDesc,
                   ignore.case=TRUE)
     hits <- df[hits, ]
 
     # Empty results?
     if (nrow(hits)==0) {
-      message(paste("No NEH results for:", query))
+      message(paste("No NEH results for:", keyword))
       return(NULL)
     }
 
-    hits$query <- query
+    hits$keyword <- keyword
     return(hits)
   },
   neh) # The df input is here at the end
@@ -55,4 +55,21 @@ neh_get <- function(keywords, from_year, to_year) {
   results$pi <- sub(" \\[Project Director\\].*", "", results$Participants)
 
   return(results)
+}
+
+#' Standardize NEH results
+#' @param keywords Vector of strings to search for in the project description
+#' @param from_year Beginning year to search
+#' @param to_year Ending year to search
+#' @return a standardized data.frame
+neh_standardize <- function(keywords, from_year, to_year) {
+  neh <- neh_get(keywords, from_year, to_year)
+  if (is.null(neh)) return(NULL)
+  with(neh, data.frame(
+    institution=Institution, pi, year=YearAwarded,
+    start=BeginGrant, end=EndGrant,
+    program=Program, amount=as.integer(AwardOutright),
+    id=AppNumber, title=ProjectTitle, keyword, source="NEH",
+    stringsAsFactors = FALSE
+  ))
 }

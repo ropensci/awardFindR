@@ -69,7 +69,6 @@ fedreporter_stardardize <- function(keyword, from_year, to_year) {
     institution=orgName, pi=contactPi, year=fy,
     start=substr(projectStartDate, 1, 10), end=substr(projectEndDate, 1, 10),
     program=agency, amount=totalCostAmount, id=projectNumber, title,
-    source="Federal Reporter",
-    stringsAsFactors = FALSE
+    keyword, source="Federal Reporter", stringsAsFactors = FALSE
   ))
 }

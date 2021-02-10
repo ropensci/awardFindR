@@ -19,7 +19,7 @@ sloan_get(keywords, from_year, to_year, generate = FALSE)
 A data.frame
 }
 \description{
-Scrape, format and search the Sloan grants database for a series of keywords
+Search for a set of keywords in the Sloan grants database.
 }
 \examples{
 \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}

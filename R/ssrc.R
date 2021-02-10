@@ -24,7 +24,6 @@ ssrc_get_details <- function(entry) {
 }
 
 #' Search SSRC fellowships and grants by keyword and date
-#'
 #' @param keyword Keyword to query, single string
 #' @param from_year Year to begin search, integer
 #' @param to_year Year to end search, integer
@@ -33,14 +32,12 @@ ssrc_get_details <- function(entry) {
 #' @examples ssrc <- ssrc_get("qualitative", 2015, 2016)
 ssrc_get <- function(keyword, from_year, to_year) {
   base_url <- "https://www.ssrc.org/search/?"
-
   query <- "t=fellows&=&sort=relevance&fellowship="
   query <- paste0(query, "&q=", keyword)
   # Have to collate years to search by date
   for (year in from_year:to_year) query <- paste0(query, "&year[]=", year)
 
   url <- paste0(base_url, query)
-
   page <- request(url, "get")
 
   entries <- xml2::xml_find_all(page, "//li[@class='hit l-fellows-hit']")
@@ -53,18 +50,29 @@ ssrc_get <- function(keyword, from_year, to_year) {
     repeat {
       url <- paste0(base_url, query, "&p=", n)
       page <- request(url, "get")
-
       entries <- xml2::xml_find_all(page, "//li[@class='hit l-fellows-hit']")
       if (length(entries)==0) break
 
       temp <- lapply(entries, ssrc_get_details)
       temp <- do.call(rbind.data.frame, temp)
-
       df <- rbind.data.frame(df, temp)
-
       n <- n + 1
     }
   }
 
   return(df)
+}
+
+#' Standardize search for SSRC fellowships and grants
+#' @param keyword Keyword to query, single string
+#' @param from_year Year to begin search, integer
+#' @param to_year Year to end search, integer
+#' @return a data.frame
+ssrc_standardize <- function(keyword, from_year, to_year) {
+  ssrc <- ssrc_get(keyword, from_year, to_year)
+  if (is.null(ssrc)) return(NULL)
+  with(ssrc, data.frame(
+    institution, pi=pi_name, year, start=NA, end=NA, program, amount=NA,
+    id, title, keyword, source="SSRC", stringsAsFactors = FALSE
+  ))
 }

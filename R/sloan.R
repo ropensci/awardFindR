@@ -91,15 +91,12 @@ sloan_get <- function(keywords, from_year, to_year, generate=FALSE) {
       return(NULL)
     }
 
-    hits$query <- keyword
+    hits$keyword <- keyword
     return(hits)
   },
   sloan_df(generate), from_year, to_year) # the lapply function arguments here
-
   results <- do.call(rbind.data.frame, results)
-
   if (nrow(results)==0) return(NULL)
-
   return(results)
 }
 
@@ -112,9 +109,7 @@ sloan_standardize <- function(keywords, from_year, to_year) {
   sloan <- sloan_get(keywords, from_year, to_year)
   if (is.null(sloan)) return(NULL)
   with(sloan, data.frame(
-    institution=grantee, pi, year,
-    start=NA, end=NA,
-    program, amount, id,
-    title=description, source="Sloan"
+    institution=grantee, pi, year, start=NA, end=NA, program, amount, id,
+    title=description, keyword, source="Sloan", stringsAsFactors = FALSE
   ))
 }

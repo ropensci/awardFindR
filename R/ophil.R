@@ -1,5 +1,4 @@
 #' Grab the Open Philanthropy grants data search for keyword-date combos
-#'
 #' @param keyword Keyword to search for in the project description, single string
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
@@ -18,6 +17,7 @@ ophil_get <- function(keyword, from_year, to_year) {
                                                      "//div[@class='view-content']/table/tbody"))
   if (length(results)==0) return(NULL)  # No results?
 
+  # Loop through each entry and extract details
   df <- lapply(results, function(x) {
     fields <- xml2::xml_children(x)
     title <- xml2::xml_text(xml2::xml_find_all(fields[1], ".//a/text()"))
@@ -32,16 +32,31 @@ ophil_get <- function(keyword, from_year, to_year) {
 
     date <- xml2::xml_text(xml2::xml_find_all(fields[5], ".//span/text()"))
 
-    data.frame(grantee, month=date, focus=program,
-               amount=as.integer(amount), title=title, id=id,
+    data.frame(grantee, month=date, program,
+               amount=as.integer(amount), title, id,
                stringsAsFactors = FALSE)
   })
   df <- do.call(rbind.data.frame, df)
 
+  # Subset to the years passed in the arguments
   df$year <- as.integer(substr_right(df$month, 4))
   year <- NULL # For R CMD check
   df <- subset(df, year >= from_year & year <= to_year)
   if (nrow(df)==0) return(NULL) # No results in the date range?
 
   return(df)
+}
+
+#' Standardize the Open Philanthropy grants search
+#' @param keyword Keyword to search for in the project description, single string
+#' @param from_year Beginning year to search
+#' @param to_year Ending year to search
+#' @return A data.frame
+ophil_standardize <- function(keyword, from_year, to_year) {
+  ophil <- ophil_get(keyword, from_year, to_year)
+  if (is.null(ophil)) return(NULL)
+  with(ophil, data.frame(
+    institution=grantee, pi=NA, year, start=NA, end=NA, program, amount,
+    title, id, keyword, source="Open Philanthropy", stringsAsFactors = FALSE
+  ))
 }

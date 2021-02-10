@@ -5,8 +5,8 @@
 #'
 #' @param keywords Path to keywords csv file (1 term per line) or vector of keywords.
 #' @param sources A vector of sources to pull from. Supported: fedreporter, gates, mellon, neh, nih, nsf, ophil, osociety, sloan, ssrc, usaspending, carnegie, macarthur. Default: all
-#' @param from A date object to limit the search, defaults to Jan 1 2019
-#' @param to A date object to limit the search, defaults to today
+#' @param from_date A date object to limit the search, defaults to Jan 1 2019
+#' @param to_date A date object to limit the search, defaults to today
 #' @return a data.frame
 #' @export
 #'
@@ -29,48 +29,87 @@
 #'
 #' # Specific keyword, all sources, specific date range:
 #' five_years <- awardFindR(keywords="qualitative",
-#' from="2015-01-01", to="2020-01-01")
+#' from_date="2015-01-01", to_date="2020-01-01")
 #' }
 awardFindR <- function(keywords,
                       sources=c("fedreporter", "gates", "mellon", "carnegie",
                                 "macarthur", "neh", "nih", "nsf", "ophil",
                                 "osociety", "sloan", "ssrc", "usaspending"),
-                      from="2019-01-01", to=Sys.Date()) {
+                      from_date="2019-01-01", to_date=Sys.Date()) {
 
   options(stringAsFactors=FALSE)
 
-  # Check keywords for sanity
+  # Check args for sanity
   stopifnot(is.character(keywords))
-
-  # Is an argument of length 1 a path or a keyword?
-  if (length(keywords) == 1 && file.exists(keywords))
-    keywords <- readLines(keywords)
-
-  # check sources for sanity
   stopifnot(is.character(sources))
 
-  # Validate dates
-  from <- try(as.Date(from, format="%Y-%m-%d"))
-  to <- try(as.Date(to, format="%Y-%m-%d"))
-  if ("try-error" %in% class(from) || is.na(from)) stop('"From" date invalid')
-  if ("try-error" %in% class(to) || is.na(to)) stop('"To" date invalid')
-  if (from > to) stop("Ending date must be after beginning date")
+  if (length(keywords)==1) # Is an argument of length 1 a path or a keyword?
+    # If it's a file, read it into memory as the new keywords term
+    if (file.exists(keywords)) keywords <- readLines(keywords)
 
-  # Run the routines in apis.R
-  awards <- award_scrape(keywords, sources, from, to)
-  if (is.null(awards)) {
-    warning("No results from any sources")
+  # Validate dates
+  from_date <- try(as.Date(from_date, format="%Y-%m-%d"))
+  to_date <- try(as.Date(to_date, format="%Y-%m-%d"))
+  if ("try-error" %in% class(from_date) || is.na(from_date)) stop('"From" date invalid')
+  if ("try-error" %in% class(to_date) || is.na(to_date)) stop('"To" date invalid')
+  if (from_date > to_date) stop("Ending date must be after beginning date")
+  # Many sources can only handle years for date limiting, so calculate those
+  from_year <- format.Date(from_date, "%Y")
+  to_year <- format.Date(to_date, "%Y")
+
+  # Assembling the final data.frame
+  results <- NULL # Keep this var as a placeholder for rbind.data.frame
+  # These first APIs here can handle multiple keywords, so we only have to run them once.
+  if ("neh" %in% sources)
+    results <- rbind.data.frame(results, neh_standardize(keywords, from_year, to_year))
+  if ("sloan" %in% sources)
+    results <- rbind.data.frame(results, sloan_standardize(keywords, from_year, to_year))
+  if ("usaspending" %in% sources)
+    results <- rbind.data.frame(results, usaspend_standardize(keywords, from_date, to_date))
+
+  # These APIs below can only handle one keyword at a time, so we'll loop through
+  for (keyword in keywords) {
+    if ("carnegie" %in% sources)
+      results <- rbind.data.frame(results, carnegie_standardize(keyword, from_year, to_year))
+    if ("fedreporter" %in% sources)
+      results <- rbind.data.frame(results, fedreporter_stardardize(keyword, from_year, to_year))
+    if ("gates" %in% sources)
+      results <- rbind.data.frame(results, gates_standardize(keyword, from_date, to_date))
+    if ("macarthur" %in% sources)
+      results <- rbind.data.frame(results, macarthur_standardize(keyword, from_date, to_date))
+    if ("mellon" %in% sources)
+      results <- rbind.data.frame(results, mellon_standardize(keyword, from_year, to_year))
+    if ("nih" %in% sources)
+      results <- rbind.data.frame(results, nih_standardize(keyword, from_date, to_date))
+    if ("nsf" %in% sources)
+      results <- rbind.data.frame(results, nsf_standardize(keyword, from_date, to_date))
+    if ("ophil" %in% sources)
+      results <- rbind.data.frame(results, ophil_standardize(keyword, from_year, to_year))
+    if ("osociety" %in% sources)
+      results <- rbind.data.frame(results, osociety_standardize(keyword, from_year, to_year))
+    if ("ssrc" %in% sources)
+      results <- rbind.data.frame(results, ssrc_standardize(keyword, from_year, to_year))
+  }
+
+  # No results?
+  if (nrow(results)==0) {
+    warning("No results from any source")
     return(NULL)
   }
 
-  if (any(duplicated(awards$id))) { # Find duplicates
-    duplicates <- stats::aggregate(keyword ~ id, data=awards,
+  # Find and merge duplicates
+  if (any(duplicated(results$id))) {
+    duplicates <- stats::aggregate(keyword ~ id, data=results,
                                    # Merge keywords
                                    FUN=function(x) paste(x, collapse="; "))
-    awards$keyword <- NULL # Reset keywords field
-    awards <- merge(awards, duplicates) # Replace with merged keywords
-    awards <- awards[!duplicated(awards$id), ] # Delete duplicates
+    results$keyword <- NULL # Reset keywords field
+    results <- merge(results, duplicates) # Replace with merged keywords
+    results <- results[!duplicated(results$id), ] # Delete duplicates
   }
 
-  return(awards)
+  # Get rid of all caps in some strings
+  results$institution <- sapply(as.character(results$institution), title_case)
+  results$pi <- sapply(results$pi, title_case)
+
+  return(results)
 }

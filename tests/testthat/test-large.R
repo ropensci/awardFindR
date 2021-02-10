@@ -1,9 +1,9 @@
 # Which sources should be included in this bucket?
-sources <- c("nsf", "nih")
+sources <- c("nsf", "nih", "ssrc")
 
 test_that("Zero results warns and returns null", {
   expect_warning(return <- suppressMessages(awardFindR("foobar", sources)),
-                 "No results from any sources")
+                 "No results from any source")
   expect_null(return)
 })
 

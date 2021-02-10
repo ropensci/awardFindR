@@ -37,6 +37,6 @@ request <- function(url, method, payload=NULL) {
   message() # Because the message above doesn't end w/ a newline
   httr::warn_for_status(response)
 
-  httr::content(response)
+  suppressMessages(httr::content(response))
 }
 

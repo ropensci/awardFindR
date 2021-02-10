@@ -50,13 +50,18 @@ macarthur_get <- function(keyword, from_date, to_date) {
   return(df)
 }
 
+#' Standardize award results from the MacArthur Foundation
+#' @param keyword Single keyword to query
+#' @param from_date Date object to begin search
+#' @param to_date Date object to end search
+#' @return a standardized data.frame
 macarthur_standardize <- function(keyword, from_date, to_date) {
   macarthur <- macarthur_get(keyword, from_date, to_date)
   if (is.null(macarthur)) return(NULL)
   with(macarthur, data.frame(
     institution, pi=NA, year=format.Date(approved, "%Y"),
     start=substr(start, 1, 10), end=substr(end, 1, 10),
-    program, amount, id, title, source="MacArthur", # keyword,
+    program, amount, id, title, keyword, source="MacArthur",
     stringsAsFactors = FALSE
   ))
 }

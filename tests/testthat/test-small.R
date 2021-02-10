@@ -4,7 +4,7 @@ sources <- c("macarthur", "gates", "mellon",
 
 test_that("Zero results warns and returns null", {
   expect_warning(return <- suppressMessages(awardFindR("foobar", sources)),
-                 "No results from any sources")
+                 "No results from any source")
   expect_null(return)
 })
 
@@ -20,7 +20,7 @@ test_that("Small but complex keyword query", {
 })
 
 test_that("Simple keyword NSF mix for type compatibility", {
-  return <- suppressMessages(awardFindR("qualitative", c("nsf", "ssrc"),
+  return <- suppressMessages(awardFindR("qualitative", c("nsf", "carnegie"),
                      "2015-01-01", "2015-02-01"))
   # If the date columns are numeric or whatever, they've been corrupted
   expect_type(return$start, "character")

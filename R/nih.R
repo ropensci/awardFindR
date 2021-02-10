@@ -64,7 +64,7 @@ nih_standardize <- function(keyword, from_date, to_date) {
   with(nih, data.frame(
     institution=org_name, pi=contact_pi_name, year=fiscal_year,
     start=project_start_date, end=project_end_date,
-    program=agency_code, amount=award_amount, id=project_num,
-    title=project_title, source="NIH"
+    program=agency_code, amount=as.integer(award_amount), id=project_num,
+    title=project_title, keyword, source="NIH", stringsAsFactors = FALSE
   ))
 }

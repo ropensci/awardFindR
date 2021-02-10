@@ -8,8 +8,8 @@ awardFindR(
   keywords,
   sources = c("fedreporter", "gates", "mellon", "carnegie", "macarthur", "neh", "nih",
     "nsf", "ophil", "osociety", "sloan", "ssrc", "usaspending"),
-  from = "2019-01-01",
-  to = Sys.Date()
+  from_date = "2019-01-01",
+  to_date = Sys.Date()
 )
 }
 \arguments{
@@ -17,9 +17,9 @@ awardFindR(
 
 \item{sources}{A vector of sources to pull from. Supported: fedreporter, gates, mellon, neh, nih, nsf, ophil, osociety, sloan, ssrc, usaspending, carnegie, macarthur. Default: all}
 
-\item{from}{A date object to limit the search, defaults to Jan 1 2019}
+\item{from_date}{A date object to limit the search, defaults to Jan 1 2019}
 
-\item{to}{A date object to limit the search, defaults to today}
+\item{to_date}{A date object to limit the search, defaults to today}
 }
 \value{
 a data.frame
@@ -47,6 +47,6 @@ sources=c("nsf", "neh"))
 
 # Specific keyword, all sources, specific date range:
 five_years <- awardFindR(keywords="qualitative",
-from="2015-01-01", to="2020-01-01")
+from_date="2015-01-01", to_date="2020-01-01")
 }
 }
