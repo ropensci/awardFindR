@@ -7,7 +7,7 @@
 awardFindR(
   keywords,
   sources = c("fedreporter", "gates", "mellon", "carnegie", "macarthur", "neh", "nih",
-    "nsf", "ophil", "osociety", "sloan", "ssrc", "usaspending"),
+    "nsf", "ophil", "osociety", "rockefeller", "sloan", "ssrc", "usaspending"),
   from_date = "2019-01-01",
   to_date = Sys.Date()
 )

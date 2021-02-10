@@ -7,7 +7,7 @@ test_that("Zero results warns and returns null", {
   expect_null(return)
 })
 
-test_that("Small but complex keyword query", {
+test_that("Complex keyword query", {
   return <- suppressMessages(
     awardFindR(c("ethnography", "qualitative analysis"), sources,
                        "2019-01-01", "2019-06-01"))

@@ -34,7 +34,8 @@
 awardFindR <- function(keywords,
                       sources=c("fedreporter", "gates", "mellon", "carnegie",
                                 "macarthur", "neh", "nih", "nsf", "ophil",
-                                "osociety", "sloan", "ssrc", "usaspending"),
+                                "osociety", "rockefeller", "sloan", "ssrc",
+                                "usaspending"),
                       from_date="2019-01-01", to_date=Sys.Date()) {
 
   options(stringAsFactors=FALSE)
@@ -87,6 +88,8 @@ awardFindR <- function(keywords,
       results <- rbind.data.frame(results, ophil_standardize(keyword, from_year, to_year))
     if ("osociety" %in% sources)
       results <- rbind.data.frame(results, osociety_standardize(keyword, from_year, to_year))
+    if ("rockefeller" %in% sources)
+      results <- rbind.data.frame(results, rockefeller_standardize(keyword, from_date, to_date))
     if ("ssrc" %in% sources)
       results <- rbind.data.frame(results, ssrc_standardize(keyword, from_year, to_year))
   }
