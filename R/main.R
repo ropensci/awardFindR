@@ -34,8 +34,8 @@
 awardFindR <- function(keywords,
                       sources=c("fedreporter", "gates", "mellon", "carnegie",
                                 "macarthur", "neh", "nih", "nsf", "ophil",
-                                "osociety", "rockefeller", "sloan", "ssrc",
-                                "usaspending"),
+                                "osociety", "rockefeller", "rwjf",
+                                "sloan", "ssrc", "usaspending"),
                       from_date="2019-01-01", to_date=Sys.Date()) {
 
   options(stringAsFactors=FALSE)
@@ -57,15 +57,17 @@ awardFindR <- function(keywords,
 
   # Assembling the full data.frame
   results <- NULL # Keep this var as a placeholder for rbind.data.frame
-  for (source in sources)
-    results <- eval(parse(text=paste0( # Run the *_standardize routines
+  for (source in sources) {
+    stopifnot(exists(paste0(source, "_standardize"))) # Does source routine exist?
+    results <- eval(parse(text=paste0( # eval the term and run it
       'rbind.data.frame(results, ',
       source, '_standardize(keywords, from_date, to_date))')))
+  }
 
   # No results?
-  if (nrow(results)==0) {
+  if (nrow(results)==0 | is.null(results)) {
     warning("No results from any source")
-    return(NULL)
+    return(data.frame())
   }
 
   # Find and merge duplicates
