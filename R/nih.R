@@ -49,19 +49,22 @@ nih_get <- function(keyword, from_date, to_date) {
   df <- df[!duplicated(df$project_serial_num), ]
   # Remove factors
   df[] <- lapply(df, as.character)
+  df$keyword <- keyword
 
   return(df)
 }
 
 #' Standardize NIH RePORTER results
-#' @param keyword Keyword to query
-#' @param from_date Date object to begin search
-#' @param to_date Date object to end search
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
 #' @return a standardized data.frame
-nih_standardize <- function(keyword, from_date, to_date) {
-  nih <- nih_get(keyword, from_date, to_date)
-  if (is.null(nih)) return(NULL)
-  with(nih, data.frame(
+nih_standardize <- function(keywords, from_date, to_date) {
+  raw <- lapply(keywords, nih_get, from_date, to_date)
+  raw <- do.call(rbind.data.frame, raw)
+  if (nrow(raw)==0) return(NULL)
+
+  with(raw, data.frame(
     institution=org_name, pi=contact_pi_name, year=fiscal_year,
     start=project_start_date, end=project_end_date,
     program=agency_code, amount=as.integer(award_amount), id=project_num,

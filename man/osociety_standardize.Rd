@@ -4,17 +4,17 @@
 \alias{osociety_standardize}
 \title{Standardize Open Society foundation awards}
 \usage{
-osociety_standardize(keyword, from_year, to_year)
+osociety_standardize(keywords, from_date, to_date)
 }
 \arguments{
-\item{keyword}{Keyword, single string}
+\item{keywords}{Vector of keywords to search}
 
-\item{from_year}{Year to begin search, integer}
+\item{from_date}{Beginning date object to search}
 
-\item{to_year}{Year to end search, integer}
+\item{to_date}{Ending date object to search}
 }
 \value{
-a data.frame
+a standardized data.frame
 }
 \description{
 Standardize Open Society foundation awards

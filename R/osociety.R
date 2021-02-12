@@ -36,21 +36,25 @@ osociety_get <- function(keyword, from_year, to_year) {
     program <- info$value[info$name=="Referring Program"][1]
     description <- info$value[info$name=="Description"][1]
 
-    data.frame(institution, year, id, amount, program, description, stringsAsFactors = F)
+    data.frame(institution, year, id, amount, program, description, keyword,
+               stringsAsFactors = F)
   })
 
   do.call(rbind.data.frame, results)
 }
 
 #' Standardize Open Society foundation awards
-#' @param keyword Keyword, single string
-#' @param from_year Year to begin search, integer
-#' @param to_year Year to end search, integer
-#' @return a data.frame
-osociety_standardize <- function(keyword, from_year, to_year) {
-  osociety <- osociety_get(keyword, from_year, to_year)
-  if (is.null(osociety)) return(NULL)
-  with(osociety, data.frame(
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
+#' @return a standardized data.frame
+osociety_standardize <- function(keywords, from_date, to_date) {
+  raw <- lapply(keywords, osociety_get,
+                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+  raw <- do.call(rbind.data.frame, raw)
+  if (nrow(raw)==0) return(NULL)
+
+  with(raw, data.frame(
     institution, pi=NA, year, start=NA, end=NA, program,
     amount=as.integer(amount), id, title=description, keyword,
     source="Open Society", stringsAsFactors = FALSE

@@ -53,19 +53,22 @@ fedreporter_get <- function (keyword, from_year, to_year,
   df$id_main <- NULL
 
   df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x)) # Remove factors
-
+  df$keyword <- keyword
   return(df)
 }
 
 #' Standardize award results from the Federal Reporter
-#' @param keyword Keyword, single string
-#' @param from_year Beginning fiscal year to search, integer
-#' @param to_year Ending fiscal year to search, integer
-#' @return A standardized data.frame
-fedreporter_stardardize <- function(keyword, from_year, to_year) {
-  federal <- fedreporter_get(keyword, from_year, to_year)
-  if (is.null(federal)) return(NULL)
-  with(federal, data.frame(
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
+#' @return a standardized data.frame
+fedreporter_stardardize <- function(keywords, from_date, to_date) {
+  raw <- lapply(keywords, fedreporter_get,
+                    format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+  raw <- do.call(rbind.data.frame, raw)
+  if (nrow(raw)==0) return(NULL)
+
+  with(raw, data.frame(
     institution=orgName, pi=contactPi, year=fy,
     start=substr(projectStartDate, 1, 10), end=substr(projectEndDate, 1, 10),
     program=agency, amount=totalCostAmount, id=projectNumber, title,

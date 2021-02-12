@@ -36,21 +36,24 @@ carnegie_get <- function(keyword, from_year, to_year) {
     title <- details$value[details$name=="Project Title"]
     date <- details$value[details$name=="Date"]
     data.frame(grantee=info[2], date, amount, program=info[4], id, title,
-               year=info[1], stringsAsFactors = FALSE)
+               year=info[1], keyword, stringsAsFactors = FALSE)
   })
 
   do.call(rbind.data.frame, awards)
 }
 
 #' Standardize Carnegie awards search results
-#' @param keyword Keyword to query, single string
-#' @param from_year Year to begin search, integer
-#' @param to_year Year to end search, integer
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
 #' @return a standardized data.frame
-carnegie_standardize <- function(keyword, from_year, to_year) {
-  carnegie <- carnegie_get(keyword, from_year, to_year)
-  if (is.null(carnegie)) return(NULL)
-  with(carnegie, data.frame(
+carnegie_standardize <- function(keywords, from_date, to_date) {
+  raw <- lapply(keywords, carnegie_get,
+                     format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+  raw <- do.call(rbind.data.frame, raw)
+  if (nrow(raw)==0) return(NULL)
+
+  with(raw, data.frame(
     institution=grantee, pi=NA, year, start=NA, end=NA,
     program, amount, id, title, keyword, source="Carnegie",
     stringsAsFactors = F

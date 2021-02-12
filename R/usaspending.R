@@ -68,9 +68,10 @@ usaspend_get <- function(keywords, from_date, to_date) {
 #' @param to_date Ending date object to search
 #' @return a standardized data.frame
 usaspend_standardize <- function(keywords, from_date, to_date) {
-  usa <- usaspend_get(keywords, from_date, to_date)
-  if (is.null(usa)) return(NULL)
-  with(usa, data.frame(
+  raw <- usaspend_get(keywords, from_date, to_date)
+  if (is.null(raw)) return(NULL)
+
+  with(raw, data.frame(
     institution=Recipient.Name, pi=NA, year=substr(Start.Date, 1, 4),
     start=Start.Date, end=End.Date, program=Awarding.Agency,
     amount=as.integer(Award.Amount), id=Award.ID, title=Description, keyword=NA,

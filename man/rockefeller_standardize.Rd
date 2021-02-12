@@ -4,14 +4,14 @@
 \alias{rockefeller_standardize}
 \title{Standardize Rockefeller Foundation grants search}
 \usage{
-rockefeller_standardize(keyword, from_date, to_date)
+rockefeller_standardize(keywords, from_date, to_date)
 }
 \arguments{
-\item{keyword}{Single keyword to query}
+\item{keywords}{Vector of keywords to search}
 
-\item{from_date}{Date object to begin search}
+\item{from_date}{Beginning date object to search}
 
-\item{to_date}{Date object to end search}
+\item{to_date}{Ending date object to search}
 }
 \value{
 a standardized data.frame

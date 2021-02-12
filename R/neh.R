@@ -58,14 +58,16 @@ neh_get <- function(keywords, from_year, to_year) {
 }
 
 #' Standardize NEH results
-#' @param keywords Vector of strings to search for in the project description
-#' @param from_year Beginning year to search
-#' @param to_year Ending year to search
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
 #' @return a standardized data.frame
-neh_standardize <- function(keywords, from_year, to_year) {
-  neh <- neh_get(keywords, from_year, to_year)
-  if (is.null(neh)) return(NULL)
-  with(neh, data.frame(
+neh_standardize <- function(keywords, from_date, to_date) {
+  raw <- neh_get(keywords,
+                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+  if (is.null(raw)) return(NULL)
+
+  with(raw, data.frame(
     institution=Institution, pi, year=YearAwarded,
     start=BeginGrant, end=EndGrant,
     program=Program, amount=as.integer(AwardOutright),

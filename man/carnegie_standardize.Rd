@@ -4,14 +4,14 @@
 \alias{carnegie_standardize}
 \title{Standardize Carnegie awards search results}
 \usage{
-carnegie_standardize(keyword, from_year, to_year)
+carnegie_standardize(keywords, from_date, to_date)
 }
 \arguments{
-\item{keyword}{Keyword to query, single string}
+\item{keywords}{Vector of keywords to search}
 
-\item{from_year}{Year to begin search, integer}
+\item{from_date}{Beginning date object to search}
 
-\item{to_year}{Year to end search, integer}
+\item{to_date}{Ending date object to search}
 }
 \value{
 a standardized data.frame

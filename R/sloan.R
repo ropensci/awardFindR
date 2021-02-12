@@ -101,14 +101,16 @@ sloan_get <- function(keywords, from_year, to_year, generate=FALSE) {
 }
 
 #' Standardize Sloan search
-#' @param keywords vector of keywords to query
-#' @param from_year Beginning year to search
-#' @param to_year Ending year to search
-#' @return A standardized data.frame
-sloan_standardize <- function(keywords, from_year, to_year) {
-  sloan <- sloan_get(keywords, from_year, to_year)
-  if (is.null(sloan)) return(NULL)
-  with(sloan, data.frame(
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
+#' @return a standardized data.frame
+sloan_standardize <- function(keywords, from_date, to_date) {
+  raw <- sloan_get(keywords,
+                     format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+  if (is.null(raw)) return(NULL)
+
+  with(raw, data.frame(
     institution=grantee, pi, year, start=NA, end=NA, program, amount, id,
     title=description, keyword, source="Sloan", stringsAsFactors = FALSE
   ))

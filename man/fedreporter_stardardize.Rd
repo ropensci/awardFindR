@@ -4,17 +4,17 @@
 \alias{fedreporter_stardardize}
 \title{Standardize award results from the Federal Reporter}
 \usage{
-fedreporter_stardardize(keyword, from_year, to_year)
+fedreporter_stardardize(keywords, from_date, to_date)
 }
 \arguments{
-\item{keyword}{Keyword, single string}
+\item{keywords}{Vector of keywords to search}
 
-\item{from_year}{Beginning fiscal year to search, integer}
+\item{from_date}{Beginning date object to search}
 
-\item{to_year}{Ending fiscal year to search, integer}
+\item{to_date}{Ending date object to search}
 }
 \value{
-A standardized data.frame
+a standardized data.frame
 }
 \description{
 Standardize award results from the Federal Reporter

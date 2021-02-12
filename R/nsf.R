@@ -11,8 +11,8 @@ nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
   output_data <- 'id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
   output_data <- paste0(output_data, ",fundsObligatedAmt,fundProgramName") # Extra info
 
-  keyword <- gsub(" ", "+", keyword)
-  query <- paste0('&keyword="', keyword, '"&cfdaNumber=', cfda)
+  query <- paste0('&keyword="', gsub(" ", "+", keyword),
+                  '"&cfdaNumber=', cfda)
 
   # Collate URL
   query_url <- paste0(base_url, query,  '&printFields=', output_data,
@@ -37,29 +37,31 @@ nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
 
   # Remove factors
   df[] <- lapply(df, as.character)
+  df$keyword <- keyword
 
   return(df)
 }
 
 #' Standardize NSF search responses
-#' @param keyword Keyword to query, single string
-#' @param from_date Beginning date object
-#' @param to_date End date object
-#' @return A standardized data.frame
-nsf_standardize <- function(keyword, from_date, to_date) {
-  nsf <- nsf_get(keyword, from_date, to_date)
-  if (is.null(nsf)) return(NULL)
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
+#' @return a standardized data.frame
+nsf_standardize <- function(keywords, from_date, to_date) {
+  raw <- lapply(keywords, nsf_get, from_date, to_date)
+  raw <- do.call(rbind.data.frame, raw)
+  if (nrow(raw)==0) return(NULL)
 
-  nsf$directorate <- NA
+  raw$directorate <- NA
   # Make the directorate field a bit more user-friendly
-  nsf$directorate[nsf$cfdaNumber=="47.075"] <- "SBE"
-  nsf$directorate[nsf$cfdaNumber=="47.076"] <- "EHR"
+  raw$directorate[raw$cfdaNumber=="47.075"] <- "SBE"
+  raw$directorate[raw$cfdaNumber=="47.076"] <- "EHR"
 
-  with(nsf, data.frame(
+  with(raw, data.frame(
     institution=awardeeName, pi=paste0(piLastName, ", ", piFirstName),
     year=format.Date(as.Date(date, format="%m/%d/%Y"), format="%Y"),
-    start=as.character(as.Date(nsf$startDate, format="%m/%d/%Y")),
-    end=as.character(as.Date(nsf$expDate, format="%m/%d/%Y")),
+    start=as.character(as.Date(startDate, format="%m/%d/%Y")),
+    end=as.character(as.Date(expDate, format="%m/%d/%Y")),
     program=directorate, amount=fundsObligatedAmt, id=id, title=title, keyword,
     source="NSF", stringsAsFactors = FALSE
   ))

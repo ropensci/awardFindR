@@ -60,18 +60,22 @@ ssrc_get <- function(keyword, from_year, to_year) {
     }
   }
 
+  df$keyword <- keyword
   return(df)
 }
 
 #' Standardize search for SSRC fellowships and grants
-#' @param keyword Keyword to query, single string
-#' @param from_year Year to begin search, integer
-#' @param to_year Year to end search, integer
-#' @return a data.frame
-ssrc_standardize <- function(keyword, from_year, to_year) {
-  ssrc <- ssrc_get(keyword, from_year, to_year)
-  if (is.null(ssrc)) return(NULL)
-  with(ssrc, data.frame(
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
+#' @return a standardized data.frame
+ssrc_standardize <- function(keywords, from_date, to_date) {
+  raw <- lapply(keywords, ssrc_get,
+                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+  raw <- do.call(rbind.data.frame, raw)
+  if (nrow(raw)==0) return(NULL)
+
+  with(raw, data.frame(
     institution, pi=pi_name, year, start=NA, end=NA, program, amount=NA,
     id, title, keyword, source="SSRC", stringsAsFactors = FALSE
   ))

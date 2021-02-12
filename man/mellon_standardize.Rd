@@ -4,14 +4,14 @@
 \alias{mellon_standardize}
 \title{Standardize award results from Mellon}
 \usage{
-mellon_standardize(keyword, from_year, to_year)
+mellon_standardize(keywords, from_date, to_date)
 }
 \arguments{
-\item{keyword}{Keyword to query}
+\item{keywords}{Vector of keywords to search}
 
-\item{from_year}{Year to begin search}
+\item{from_date}{Beginning date object to search}
 
-\item{to_year}{Year to end search}
+\item{to_date}{Ending date object to search}
 }
 \value{
 a standardized data.frame

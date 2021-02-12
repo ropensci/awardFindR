@@ -4,17 +4,17 @@
 \alias{sloan_standardize}
 \title{Standardize Sloan search}
 \usage{
-sloan_standardize(keywords, from_year, to_year)
+sloan_standardize(keywords, from_date, to_date)
 }
 \arguments{
-\item{keywords}{vector of keywords to query}
+\item{keywords}{Vector of keywords to search}
 
-\item{from_year}{Beginning year to search}
+\item{from_date}{Beginning date object to search}
 
-\item{to_year}{Ending year to search}
+\item{to_date}{Ending date object to search}
 }
 \value{
-A standardized data.frame
+a standardized data.frame
 }
 \description{
 Standardize Sloan search

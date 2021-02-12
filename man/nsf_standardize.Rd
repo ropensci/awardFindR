@@ -4,17 +4,17 @@
 \alias{nsf_standardize}
 \title{Standardize NSF search responses}
 \usage{
-nsf_standardize(keyword, from_date, to_date)
+nsf_standardize(keywords, from_date, to_date)
 }
 \arguments{
-\item{keyword}{Keyword to query, single string}
+\item{keywords}{Vector of keywords to search}
 
-\item{from_date}{Beginning date object}
+\item{from_date}{Beginning date object to search}
 
-\item{to_date}{End date object}
+\item{to_date}{Ending date object to search}
 }
 \value{
-A standardized data.frame
+a standardized data.frame
 }
 \description{
 Standardize NSF search responses

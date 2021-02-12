@@ -14,18 +14,21 @@ rockefeller_get <- function(keyword, from_date, to_date) {
 
   response <- as.data.frame(request(url, "get"))
   if (nrow(response)==0) return(NULL) # No results?
+  response$keyword <- keyword
   return(response)
 }
 
 #' Standardize Rockefeller Foundation grants search
-#' @param keyword Single keyword to query
-#' @param from_date Date object to begin search
-#' @param to_date Date object to end search
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
 #' @return a standardized data.frame
-rockefeller_standardize <- function(keyword, from_date, to_date) {
-  rockefeller <- rockefeller_get(keyword, from_date, to_date)
-  if (is.null(rockefeller)) return(NULL)
-  with(rockefeller, data.frame(
+rockefeller_standardize <- function(keywords, from_date, to_date) {
+  raw <- lapply(keywords, rockefeller_get, from_date, to_date)
+  raw <- do.call(rbind.data.frame, raw)
+  if (nrow(raw)) return(NULL)
+
+  with(raw, data.frame(
     institution=Title, pi=NA, year=format.Date(`Grant Term Start`, "%Y"),
     start=as.character(`Grant Term Start`), end=as.character(`Grant Term End`),
     program=Initiative, amount=as.integer(`Grant Amount`),

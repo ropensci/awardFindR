@@ -43,19 +43,22 @@ ophil_get <- function(keyword, from_year, to_year) {
   year <- NULL # For R CMD check
   df <- subset(df, year >= from_year & year <= to_year)
   if (nrow(df)==0) return(NULL) # No results in the date range?
-
+  df$keyword <- keyword
   return(df)
 }
 
 #' Standardize the Open Philanthropy grants search
-#' @param keyword Keyword to search for in the project description, single string
-#' @param from_year Beginning year to search
-#' @param to_year Ending year to search
-#' @return A data.frame
-ophil_standardize <- function(keyword, from_year, to_year) {
-  ophil <- ophil_get(keyword, from_year, to_year)
-  if (is.null(ophil)) return(NULL)
-  with(ophil, data.frame(
+#' @param keywords Vector of keywords to search
+#' @param from_date Beginning date object to search
+#' @param to_date Ending date object to search
+#' @return a standardized data.frame
+ophil_standardize <- function(keywords, from_date, to_date) {
+  raw <- lapply(keywords, ophil_get,
+                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+  raw <- do.call(rbind.data.frame, raw)
+  if (nrow(raw)==0) return(NULL)
+
+  with(raw, data.frame(
     institution=grantee, pi=NA, year, start=NA, end=NA, program, amount,
     title, id, keyword, source="Open Philanthropy", stringsAsFactors = FALSE
   ))

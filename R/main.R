@@ -54,45 +54,13 @@ awardFindR <- function(keywords,
   if ("try-error" %in% class(from_date) || is.na(from_date)) stop('"From" date invalid')
   if ("try-error" %in% class(to_date) || is.na(to_date)) stop('"To" date invalid')
   if (from_date > to_date) stop("Ending date must be after beginning date")
-  # Many sources can only handle years for date limiting, so calculate those
-  from_year <- format.Date(from_date, "%Y")
-  to_year <- format.Date(to_date, "%Y")
 
-  # Assembling the final data.frame
+  # Assembling the full data.frame
   results <- NULL # Keep this var as a placeholder for rbind.data.frame
-  # These first APIs here can handle multiple keywords, so we only have to run them once.
-  if ("neh" %in% sources)
-    results <- rbind.data.frame(results, neh_standardize(keywords, from_year, to_year))
-  if ("sloan" %in% sources)
-    results <- rbind.data.frame(results, sloan_standardize(keywords, from_year, to_year))
-  if ("usaspending" %in% sources)
-    results <- rbind.data.frame(results, usaspend_standardize(keywords, from_date, to_date))
-
-  # These APIs below can only handle one keyword at a time, so we'll loop through
-  for (keyword in keywords) {
-    if ("carnegie" %in% sources)
-      results <- rbind.data.frame(results, carnegie_standardize(keyword, from_year, to_year))
-    if ("fedreporter" %in% sources)
-      results <- rbind.data.frame(results, fedreporter_stardardize(keyword, from_year, to_year))
-    if ("gates" %in% sources)
-      results <- rbind.data.frame(results, gates_standardize(keyword, from_date, to_date))
-    if ("macarthur" %in% sources)
-      results <- rbind.data.frame(results, macarthur_standardize(keyword, from_date, to_date))
-    if ("mellon" %in% sources)
-      results <- rbind.data.frame(results, mellon_standardize(keyword, from_year, to_year))
-    if ("nih" %in% sources)
-      results <- rbind.data.frame(results, nih_standardize(keyword, from_date, to_date))
-    if ("nsf" %in% sources)
-      results <- rbind.data.frame(results, nsf_standardize(keyword, from_date, to_date))
-    if ("ophil" %in% sources)
-      results <- rbind.data.frame(results, ophil_standardize(keyword, from_year, to_year))
-    if ("osociety" %in% sources)
-      results <- rbind.data.frame(results, osociety_standardize(keyword, from_year, to_year))
-    if ("rockefeller" %in% sources)
-      results <- rbind.data.frame(results, rockefeller_standardize(keyword, from_date, to_date))
-    if ("ssrc" %in% sources)
-      results <- rbind.data.frame(results, ssrc_standardize(keyword, from_year, to_year))
-  }
+  for (source in sources)
+    results <- eval(parse(text=paste0( # Run the *_standardize routines
+      'rbind.data.frame(results, ',
+      source, '_standardize(keywords, from_date, to_date))')))
 
   # No results?
   if (nrow(results)==0) {

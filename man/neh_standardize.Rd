@@ -4,14 +4,14 @@
 \alias{neh_standardize}
 \title{Standardize NEH results}
 \usage{
-neh_standardize(keywords, from_year, to_year)
+neh_standardize(keywords, from_date, to_date)
 }
 \arguments{
-\item{keywords}{Vector of strings to search for in the project description}
+\item{keywords}{Vector of keywords to search}
 
-\item{from_year}{Beginning year to search}
+\item{from_date}{Beginning date object to search}
 
-\item{to_year}{Ending year to search}
+\item{to_date}{Ending date object to search}
 }
 \value{
 a standardized data.frame
