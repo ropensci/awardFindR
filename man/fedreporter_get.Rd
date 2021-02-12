@@ -4,7 +4,7 @@
 \alias{fedreporter_get}
 \title{Search awards from the Federal Reporter}
 \usage{
-fedreporter_get(keyword, from_year, to_year, agency = "usda,dod,nasa,epa")
+fedreporter_get(keyword, from_year, to_year, agency = "usda,dod,nasa,epa,ed")
 }
 \arguments{
 \item{keyword}{Keyword, single string}

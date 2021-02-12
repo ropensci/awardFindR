@@ -8,7 +8,7 @@
 #' @examples
 #' federal <- fedreporter_get(keyword="ethnography", from_year=2020, to_year=2021, agency="nih")
 fedreporter_get <- function (keyword, from_year, to_year,
-                             agency="usda,dod,nasa,epa") {
+                             agency="usda,dod,nasa,epa,ed") {
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'
 
   query_url <- paste0(base_url,
@@ -52,7 +52,7 @@ fedreporter_get <- function (keyword, from_year, to_year,
   df <- df[!duplicated(df$id_main), ]
   df$id_main <- NULL
 
-  df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x)) # Remove factors
+  #df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x)) # Remove factors
   df$keyword <- keyword
   return(df)
 }
@@ -62,7 +62,7 @@ fedreporter_get <- function (keyword, from_year, to_year,
 #' @param from_date Beginning date object to search
 #' @param to_date Ending date object to search
 #' @return a standardized data.frame
-fedreporter_stardardize <- function(keywords, from_date, to_date) {
+fedreporter_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, fedreporter_get,
                     format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)
