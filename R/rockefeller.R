@@ -26,13 +26,13 @@ rockefeller_get <- function(keyword, from_date, to_date) {
 rockefeller_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, rockefeller_get, from_date, to_date)
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)) return(NULL)
+  if (nrow(raw)==0) return(NULL)
 
   with(raw, data.frame(
     institution=Title, pi=NA, year=format.Date(`Grant Term Start`, "%Y"),
     start=as.character(`Grant Term Start`), end=as.character(`Grant Term End`),
     program=Initiative, amount=as.integer(`Grant Amount`),
-    id=paste0("R", 1:nrow(rockefeller)), title=Description, keyword,
+    id=paste0("R", 1:nrow(raw)), title=Description, keyword,
     source="Rockefeller", stringsAsFactors = FALSE
   ))
 }
