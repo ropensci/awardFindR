@@ -35,7 +35,7 @@ awardFindR <- function(keywords,
                       sources=c("fedreporter", "gates", "mellon", "carnegie",
                                 "macarthur", "neh", "nih", "nsf", "ophil",
                                 "osociety", "rockefeller", "rwjf",
-                                "sloan", "ssrc", "templeton", "usaspending"),
+                                "sloan", "ssrc", "templeton", "usaspend"),
                       from_date="2019-01-01", to_date=Sys.Date()) {
 
   options(stringAsFactors=FALSE)
@@ -66,18 +66,21 @@ awardFindR <- function(keywords,
 
   # No results?
   if (nrow(results)==0 | is.null(results)) {
-    warning("No results from any source")
+    message("No results from any source")
     return(data.frame())
   }
 
   # Find and merge duplicates
   if (any(duplicated(results$id))) {
-    duplicates <- stats::aggregate(keyword ~ id, data=results,
+    duplicates <- stats::aggregate(keyword ~ id + source, data=results,
                                    # Merge keywords
                                    FUN=function(x) paste(x, collapse="; "))
     results$keyword <- NULL # Reset keywords field
     results <- merge(results, duplicates) # Replace with merged keywords
-    results <- results[!duplicated(results$id), ] # Delete duplicates
+    # Delete duplicates, but make sure it's not from a different source!
+    results$dup_id <- with(results, paste(source, id))
+    results <- results[!duplicated(results$dup_id), ] # Delete duplicates
+    results$dup_id <- NULL
   }
 
   # Get rid of all caps in some strings

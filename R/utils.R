@@ -1,17 +1,21 @@
+#' Return basic text hash
+#' *NOT* cryptographic!! this is a toy hasher!
+#' @param string A character string
+#' @return a integer summary hash
+text_hash <- function(string) {
+  hash <- as.integer(charToRaw(string))
+  sum(hash)
+}
+
 #' Capitalize string to Title Case
-#'
 #' @param string a character string of ANY CaSe
 #' @return A Title Case Character String
-#' @examples
-#' # Should output "Foo Bar"
-#' \dontrun{title_case("foo BAR")}
 title_case <- function(string) {
   if (is.na(string)) return(NA) # Don't try to give us back a character string!!
   c <- strsplit(tolower(string), " ")[[1]]
   paste(toupper(substring(c, 1,1)), substring(c, 2),
         sep="", collapse=" ")
 }
-
 
 #' Substring from the right
 #' @param x Character string to substring from

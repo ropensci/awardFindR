@@ -15,6 +15,7 @@ rockefeller_get <- function(keyword, from_date, to_date) {
   response <- as.data.frame(request(url, "get"))
   if (nrow(response)==0) return(NULL) # No results?
   response$keyword <- keyword
+  response$id <- sapply(response$Description, text_hash)
   return(response)
 }
 
@@ -32,7 +33,7 @@ rockefeller_standardize <- function(keywords, from_date, to_date) {
     institution=Title, pi=NA, year=format.Date(`Grant Term Start`, "%Y"),
     start=as.character(`Grant Term Start`), end=as.character(`Grant Term End`),
     program=Initiative, amount=as.integer(`Grant Amount`),
-    id=paste0("R", 1:nrow(raw)), title=Description, keyword,
+    id=paste0("R", id), title=Description, keyword,
     source="Rockefeller", stringsAsFactors = FALSE
   ))
 }
