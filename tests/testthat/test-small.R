@@ -1,11 +1,10 @@
 # Which sources should be included in this bucket?
 sources <- c("macarthur", "gates", "mellon",
-             "carnegie", "ophil", "osociety")
+             "carnegie", "ophil", "osociety",
+             "rwjf", "sloan", "arnold", "templeton")
 
-test_that("Zero results warns and returns null", {
-  expect_warning(return <- suppressMessages(awardFindR("foobar", sources)),
-                 "No results from any source")
-  expect_null(return)
+test_that("Zero results returns empty data.frame()", {
+  expect_equal(data.frame(), suppressMessages(awardFindR("foobar", sources)))
 })
 
 test_that("Complex keyword query", {

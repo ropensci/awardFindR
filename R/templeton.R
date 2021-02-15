@@ -36,8 +36,9 @@ templeton_df <- function() {
 templeton_get <- function(keywords, from_year, to_year) {
   url <- "https://www.templeton.org/?limit=500&s="
   links <- lapply(keywords, function(keyword) {
-    response <- request(paste0(url, keyword), "get")
+    response <- request(paste0(url, xml2::url_escape(keyword)), "get")
     link <- xml2::xml_text(xml2::xml_find_all(response, "//h2/a[@rel='bookmark']/@href"))
+    if (length(link)==0) return(NULL)
     data.frame(keyword, link, stringsAsFactors = FALSE)
   })
   links <- do.call(rbind.data.frame, links)
@@ -60,7 +61,8 @@ templeton_get <- function(keywords, from_year, to_year) {
 templeton_standardize <- function(keywords, from_date, to_date) {
   raw <- templeton_get(keywords,
                        format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
-  if (is.null(raw) | nrow(raw)==0) return(NULL)
+  if (is.null(raw)) return(NULL)
+  if (nrow(raw)==0) return(NULL)
 
   with(raw, data.frame(
     institution=grantee, pi, year, start=NA, end=NA, program=area, amount,

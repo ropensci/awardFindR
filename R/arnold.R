@@ -10,7 +10,8 @@ arnold_get <- function(keyword, from_year, to_year) {
   url <- "https://pyj9b8sltv-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(4.5.1)%3B%20Browser%20(lite)%3B%20instantsearch.js%20(4.8.3)%3B%20JS%20Helper%20(3.2.2)&x-algolia-api-key=bec9ead5977b11ae383f4df272c2f106&x-algolia-application-id=PYJ9B8SLTV"
 
   years <- paste0('"years:', from_year, '"')
-  for (n in (from_year+1):to_year) years <- paste0(years, ',"years:', n, '"')
+  for (n in (as.integer(from_year)+1):as.integer(to_year))
+    years <- paste0(years, ',"years:', n, '"')
   years <- xml2::url_escape(years)
 
   # Not includidng all the terms at the end gives a HTTP 400 error
