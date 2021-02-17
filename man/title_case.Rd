@@ -15,7 +15,3 @@ A Title Case Character String
 \description{
 Capitalize string to Title Case
 }
-\examples{
-# Should output "Foo Bar"
-\dontrun{title_case("foo BAR")}
-}

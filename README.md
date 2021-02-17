@@ -10,7 +10,7 @@ Individual sources have functions of their own. `nsf_get()` specifically fetches
 
 ## Dependencies
 
-This package depends on `xml2` and `httr`.
+This package depends on `rvest` and `httr`.
 
 ## Installation
 Install `awardFindR` directly from this repository using the `remotes` package
