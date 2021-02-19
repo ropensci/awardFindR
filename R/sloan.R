@@ -1,16 +1,11 @@
 #' Scrape the Sloan grants database from html to a data.frame
 #'
-#' @param generate Should we generate a new data.frame from the web? TRUE/FALSE
 #' @return A data.frame
 #' @export
 #' @examples
 #' # Make a new version of the sloan data.frame
-#' \dontrun{sloan <- sloan_df(generate=T)}
-sloan_df <- function(generate=FALSE) {
-
-  # Should we use the generated file?
-  if (generate==FALSE) return(sloan)
-
+#' \dontrun{sloan <- sloan_df()}
+sloan_df <- function() {
   # This URL will give us all the grants Sloan ever made in a single html return
   # up to 3000 results, there are 2131 as of writing but that parameter can be changed at the end here
   url <- "https://sloan.org/grants-database?dynamic=1&order_by=approved_at&order_by_direction=desc&limit=3000"
@@ -71,12 +66,12 @@ sloan_df <- function(generate=FALSE) {
 #' @param keywords vector of keywords to query
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
-#' @param generate Should we generate a new data.frame from the web? TRUE/FALSE
 #' @return A data.frame
 #' @export
 #' @examples
 #' \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}
-sloan_get <- function(keywords, from_year, to_year, generate=FALSE) {
+sloan_get <- function(keywords, from_year, to_year) {
+  data(sloan)
   results <- lapply(keywords, function(keyword, df, from, to) {
     year <- NULL # For R CMD check
     df <- subset(df, year >= from & year <= to)
@@ -94,7 +89,7 @@ sloan_get <- function(keywords, from_year, to_year, generate=FALSE) {
     hits$keyword <- keyword
     return(hits)
   },
-  sloan_df(generate), from_year, to_year) # the lapply function arguments here
+  sloan, from_year, to_year) # the lapply function arguments here
   results <- do.call(rbind.data.frame, results)
   if (nrow(results)==0) return(NULL)
   return(results)

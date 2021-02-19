@@ -1,12 +1,12 @@
 test_that("Combined search of nonsense term", {
-  suppressMessages(vcr::use_cassette("full_empty", {
+  suppressMessages(vcr::use_cassette("full_empty", record = "new_episodes", {
     foobar <- awardFindR("foobar")
   }))
   expect_equal(data.frame(), foobar)
 })
 
 test_that("merging multiple sources and multiple keywords with spaces", {
-  suppressMessages(vcr::use_cassette("full", {
+  suppressMessages(vcr::use_cassette("full", record = "new_episodes", {
     results <- awardFindR(c("ethnography", "qualitative analysis"),
                           from_date = "2018-01-01", to_date="2018-02-01")
   }))

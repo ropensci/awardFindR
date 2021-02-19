@@ -1,5 +1,6 @@
 # awardFindR
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/PESData/awardFindR/workflows/R-CMD-check/badge.svg)](https://github.com/PESData/awardFindR/actions)
 [![Codecov test coverage](https://codecov.io/gh/PESData/awardFindR/branch/master/graph/badge.svg)](https://codecov.io/gh/PESData/awardFindR?branch=master)
 <!-- badges: end -->
 
