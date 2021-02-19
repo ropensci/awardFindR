@@ -71,7 +71,6 @@ sloan_df <- function() {
 #' @examples
 #' \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}
 sloan_get <- function(keywords, from_year, to_year) {
-  data(sloan)
   results <- lapply(keywords, function(keyword, df, from, to) {
     year <- NULL # For R CMD check
     df <- subset(df, year >= from & year <= to)
