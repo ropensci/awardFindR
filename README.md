@@ -1,4 +1,7 @@
 # awardFindR
+<!-- badges: start -->
+[![Codecov test coverage](https://codecov.io/gh/PESData/awardFindR/branch/master/graph/badge.svg)](https://codecov.io/gh/PESData/awardFindR?branch=master)
+<!-- badges: end -->
 
 `awardFindR` is an framework that scrapes a variety of grant databases for specific keywords, rendering the results together in a large `data.frame`. It is designed to be modular and extensible, supporting a wide variety of APIs and other means of making award data available online. 
 
