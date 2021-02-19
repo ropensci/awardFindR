@@ -11,7 +11,7 @@ nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
   output_data <- 'id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
   output_data <- paste0(output_data, ",fundsObligatedAmt,fundProgramName") # Extra info
 
-  query <- paste0('&keyword="', gsub(" ", "+", keyword),
+  query <- paste0('keyword="', gsub(" ", "+", keyword),
                   '"&cfdaNumber=', cfda)
 
   # Collate URL

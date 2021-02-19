@@ -32,10 +32,13 @@ ssrc_get_details <- function(entry) {
 #' @examples ssrc <- ssrc_get("qualitative", 2015, 2016)
 ssrc_get <- function(keyword, from_year, to_year) {
   base_url <- "https://www.ssrc.org/search/?"
-  query <- "t=fellows&=&sort=relevance&fellowship="
-  query <- paste0(query, "&q=", keyword)
+  query <- "t=fellows&sort=relevance"
+  query <- paste0(query, "&q=", xml2::url_escape(keyword))
   # Have to collate years to search by date
-  for (year in from_year:to_year) query <- paste0(query, "&year[]=", year)
+  if (length(from_year:to_year) > 1)
+    query <- paste0(query, "&year=", paste0(from_year:to_year, collapse=","))
+  else
+    query <- paste0(query, "&year=[]=", from_year)
 
   url <- paste0(base_url, query)
   page <- request(url, "get")

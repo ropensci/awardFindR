@@ -9,7 +9,7 @@
 mellon_get <- function(keyword, from_year, to_year) {
   base_url <- "https://mellon.org/grants/grants-database/advanced-search/?"
   query_url <- paste0(base_url,
-                      "&year-start=", from_year, "&year-end=", to_year,
+                      "year-start=", from_year, "&year-end=", to_year,
                       "&q=", xml2::url_escape(keyword),
                       # Total grants are 17437 as of writing,
                       # and this figure below seems to be arbitrarily flexible
