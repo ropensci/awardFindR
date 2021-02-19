@@ -15,3 +15,6 @@ a data.frame
 \description{
 Get Russell Sage foundation awards
 }
+\examples{
+\dontrun{rsf <- rsf_get("ethnography")}
+}
