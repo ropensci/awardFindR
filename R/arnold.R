@@ -35,7 +35,7 @@ arnold_get <- function(keyword, from_year, to_year) {
       with(entry, data.frame(
         title, grantDescription, grantTerm,
         fundingSource, grantAmount,
-        url, objectID, keyword))
+        url, objectID, keyword, stringsAsFactors = FALSE))
     })
     full[[response$page+1]] <- do.call(rbind.data.frame, row)
 
@@ -63,7 +63,7 @@ arnold_standardize <- function(keywords, from_date, to_date) {
     institution=title, pi=NA,
     year=substr(grantTerm, 1, 4), start=substr(grantTerm, 1, 4),
     end=substr_right(as.character(grantTerm), 4),
-    program=fundingSource, amount=grantAmount, id=objectID,
+    program=fundingSource, amount=grantAmount, id=as.character(objectID),
     title=grantDescription, keyword, source="Arnold",
     stringsAsFactors = FALSE
   ))

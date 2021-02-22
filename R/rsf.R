@@ -35,10 +35,11 @@ rsf_get <- function(keyword) {
 
     # Extract data from these nasty unstructured divs
     info <- rvest::html_children(rvest::html_children(award)[3])
-    info <- with(info, data.frame(
+    info <- data.frame(
       label=rvest::html_text(rvest::html_nodes(info, "strong:first-child")),
-      value=rvest::html_text(rvest::html_nodes(info, "strong + div, br + div"))
-    ))
+      value=rvest::html_text(rvest::html_nodes(info, "strong + div, br + div")),
+      stringsAsFactors = FALSE
+    )
     awardee <- strsplit(info$value[info$label=="Awarded Scholars: "], ",")
     pi_name <- trimws(awardee[[1]][1])
     institution <- trimws(awardee[[1]][2])
