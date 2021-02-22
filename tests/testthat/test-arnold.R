@@ -4,8 +4,3 @@ test_that("Arnold returns expected results", {
     expect_equal("136154", one_result$id)
   }))
 })
-
-test_that("Fail gracefully", {
-  expect_null(suppressMessages(arnold_standardize("foobar", "2019-01-01", "2019-01-02")))
-})
-

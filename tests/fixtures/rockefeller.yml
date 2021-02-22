@@ -1,0 +1,47 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.rockefellerfoundation.org/?post_type=grant&keyword=testing&from_month=01&from_year=2011&to_month=01&to_year=2021&download=filter
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      cache-control: public, max-age=600
+      content-disposition: attachment; filename="grant-filter-20210222-035245.csv"
+      content-type: text/csv;charset=UTF-8
+      expires: '0'
+      link: <https://www.rockefellerfoundation.org/wp-json/>; rel="https://api.w.org/"
+      pragma: no-cache
+      server: nginx
+      strict-transport-security: max-age=300
+      x-pantheon-styx-hostname: styx-fe1-b-7bb85b855d-jqljx
+      x-styx-req-id: ffcd1483-7525-11eb-8ec6-fe08f6f86127
+      age: '0'
+      accept-ranges: bytes
+      via: 1.1 varnish, 1.1 varnish, 1.1 varnish
+      access-control-allow-origin: '*'
+      date: Mon, 22 Feb 2021 15:52:45 GMT
+      x-served-by: cache-mdw17372-MDW, cache-mdw17377-MDW, cache-mdw17352-MDW
+      x-cache: MISS, MISS, MISS
+      x-cache-hits: 0, 0, 0
+      x-timer: S1614009163.023613,VS0,VE2087
+      vary: orig-host
+      content-length: '397'
+    body:
+      encoding: UTF-8
+      file: no
+      string: "\"Title\",\"Grant Amount\",\"Grant Term Start\",\"Grant Term End\",\"Description\",\"Initiative\",\"Grant
+        Status\"\r\n\"Testing For America, LLC 2020\",\"1500000.00\",\"2020-10-01\",\"2021-09-30\",\"in
+        support of efforts to identify, pay for, and deploy the SalivaDirect protocol
+        COVID-19 tests needed to safely reopen college campuses with a focus on Historically
+        Black Colleges & Universities\",\"Health Initiative\",\"Open\""
+  recorded_at: 2021-02-22 15:52:45 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

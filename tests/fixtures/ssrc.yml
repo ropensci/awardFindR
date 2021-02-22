@@ -1,0 +1,2368 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.ssrc.org/search/?t=fellows&sort=relevance&q=qualitative&year=2012,2013,2014,2015,2016,2017,2018,2019,2020
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 19 Feb 2021 16:44:19 GMT
+      server: Apache
+      cache-control: no-cache, must-revalidate, max-age=0
+      expires: Mon, 12 Dec 1982 06:14:00 GMT
+      pragma: no-cache
+      x-frame-options: SAMEORIGIN
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      last-modified: Fri, 19 Feb 2021 16:44:20 GMT
+      vary: Accept-Encoding,User-Agent
+      content-encoding: gzip
+      strict-transport-security: max-age=300; includeSubDomains
+      x-ua-compatible: IE=edge
+      content-length: '11942'
+      content-type: text/html; charset=utf-8
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        <!DOCTYPE html>
+        <html class="no-js" lang="en">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="imagetoolbar" content="false">
+        <meta name="MSSmartTagsPreventParsing" content="true">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#E1E2E3">
+        <meta charset="utf-8">
+        <meta name="root" content="https://www.ssrc.org/">
+        <link rel="shortcut icon" href="https://www.ssrc.org/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+        <link rel="preconnect" href="https://s3.amazonaws.com">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <link rel="preconnect" href="https://www.google-analytics.com">
+        <link rel="preconnect" href="https://www.googletagmanager.com">
+        <link rel="alternate" type="application/rss+xml" title="SSRC Newsfeed" href="https://www.ssrc.org/feed/">
+        <title>Search for qualitative | Social Science Research Council (SSRC) | Brooklyn, NY, USA</title>
+        <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0">
+        <link rel="stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" as="style" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i&amp;display=swap" crossorigin="anonymous">
+        <link rel="stylesheet" as="style" href="https://www.ssrc.org/workspace/assets/dist/app.min.css?v=2.0.12">
+        <meta property="og:site_name" content="Social Science Research Council">
+        <meta name="twitter:site" content="@SSRC_org">
+        <meta name="twitter:card" content="summary_large_image">
+        </head>
+        <body itemscope="itemscope" itemtype="http://schema.org/SearchResultsPage" id="search-page">
+        <svg style="display: none"><symbol id="logo" viewBox="0 0 672 219"><path d="m312.60000172 163.20000572c-14.9 0-25.6-3.5-35-13.1l10-9.9c7.2 7.2 15.1 9.5 25.3 9.5 12.9 0 20.4-5.6 20.4-15.2 0-4.3-1.3-7.9-3.9-10.3-2.5-2.4-5-3.3-10.8-4.2l-11.7-1.7c-8.1-1.1-14.5-3.9-18.8-7.9-4.9-4.6-7.2-10.8-7.2-18.9 0-17.2 12.5-29 33.1-29 13.1 0 22.2 3.3 30.7 11.3l-9.6 9.4c-6.1-5.8-13.2-7.6-21.5-7.6-11.7 0-18.1 6.7-18.1 15.4 0 3.6 1.1 6.8 3.8 9.2 2.5 2.2 6.5 3.9 11.1 4.6l11.3 1.7c9.2 1.4 14.3 3.6 18.5 7.4 5.4 4.7 8.1 11.8 8.1 20.3-.1 18.2-15 29-35.7 29z"></path><path d="m415.90000172 163.20000572c-14.9 0-25.6-3.5-35-13.1l10-9.9c7.2 7.2 15.1 9.5 25.3 9.5 12.9 0 20.4-5.6 20.4-15.2 0-4.3-1.3-7.9-3.9-10.3-2.5-2.4-5-3.3-10.8-4.2l-11.7-1.5c-8.1-1.1-14.5-3.9-18.8-7.9-4.9-4.6-7.2-10.8-7.2-18.9 0-17.2 12.5-29 33.1-29 13.1 0 22.2 3.3 30.7 11.3l-9.6 9.4c-6.1-5.8-13.2-7.6-21.5-7.6-11.7 0-18.1 6.7-18.1 15.4 0 3.6 1.1 6.8 3.8 9.2 2.5 2.2 6.5 3.9 11.1 4.6l11.3 1.7c9.2 1.4 14.3 3.6 18.5 7.4 5.4 4.7 8.1 11.8 8.1 20.3-.2 18-15 28.8-35.7 28.8z"></path><path d="m547.00000172 162.40000572-20.8-41.7h-18.8v41.7h-15v-98.9h38.4c18.8 0 30.7 12.1 30.7 28.9 0 14.2-8.6 23.2-19.7 26.3l22.8 43.8h-17.6zm-17.3-85.5h-22.2v31h22.2c10 0 16.8-5.7 16.8-15.4 0-9.8-6.8-15.6-16.8-15.6z"></path><path d="m636.20000172 163.20000572c-10.3 0-19.2-3.8-26-10.6-9.7-9.7-9.6-20.7-9.6-39.7s-.1-30 9.6-39.7c6.8-6.8 15.7-10.6 26-10.6 18.2 0 31.8 10.7 35.3 30.4h-15.3c-2.4-10-9-16.9-20-16.9-5.8 0-11.1 2.2-14.6 6-4.9 5.3-6 11-6 30.9s1.1 25.6 6 30.8c3.5 3.8 8.8 6 14.6 6 11 0 17.8-7 20.1-17h15.1c-3.2 19.7-17.2 30.4-35.2 30.4z"></path><path d="m88.00000172 219.00000572c-19.9 0-40.1-5.1-58.6-15.7l8.3-14.4c15.9 9.2 33.2 13.5 50.3 13.5 34.8 0 68.7-18.1 87.3-50.4 9.2-15.9 13.5-33.2 13.5-50.3 0-34.8-18.1-68.7-50.4-87.3l8.3-14.4c37.6 21.7 58.7 61.2 58.7 101.7 0 19.9-5.1 40.1-15.7 58.6-21.7 37.6-61.2 58.7-101.7 58.7z"></path><path d="m30.40000172 117.50000572 33.5 19.3 19.7-34-41.5-24c-6.8 12.5-10.4 25.9-11.7 38.7z"></path><path d="m42.80000172 173.20000572 17.9-31-30.9-17.8c-.1 1.5-.1 3-.1 4.4 0 11.7 1.9 22.3 4.9 30.5 2.3 6.3 5.3 11.1 8.2 13.9z"></path><path d="m97.30000172 163.30000572-31.2-18-17.9 31c2.1.6 4.7 1 7.7 1 11 0 26.5-4.6 41.4-14z"></path><path d="m45.10000172 73.40000572 41.5 24 19.7-34-33.5-19.3c-10.4 7.4-20.2 17.2-27.7 29.3z"></path><path d="m78.50000172 40.20000572 30.8 17.8 17.9-31.1c-2-.5-4.4-.8-7.2-.8-10.8-.1-26.4 4.6-41.5 14.1z"></path><path d="m151.60000172 89.50000572c-1.6 12.7-5.5 25.9-12.2 38.3l26.3 15.2c6.7-12.5 10.1-26 10.4-39.4z"></path><path d="m24.50000172 114.10000572c1.6-12.7 5.4-25.9 12.1-38.4l-26.4-15.2c-6.7 12.6-10 26.1-10.2 39.5z"></path><path d="m114.80000172 61.10000572 31.5 18.2c.1-1.6.1-3.2.1-4.7 0-11.7-1.9-22.3-4.9-30.5-2.4-6.6-5.6-11.5-8.6-14.2z"></path><path d="m130.90000172 130.10000572-42-24.2-19.7 34 33.9 19.6c10.4-7.5 20.2-17.2 27.8-29.4z"></path><path d="m103.50000172 166.90000572c-16.7 11.1-34.4 16.6-47.5 16.6-.2 0-.3 0-.5 0 23.7 9.5 49.8 7.9 71.7-2.9z"></path><path d="m28.80000172 161.50000572c-3.3-9-5.3-20.3-5.3-32.7 0-2.6.1-5.2.3-7.9l-23.6-13.7c1.6 24.1 13 47.2 32.7 63-1.6-2.5-2.9-5.5-4.1-8.7z"></path><path d="m136.20000172 133.20000572c-7.5 12.1-17 22-27.2 29.7l24.5 14.2c11.5-6.9 21.5-16.5 29.1-28.6z"></path><path d="m145.80000172 86.10000572-34.1-19.6-19.7 34 42 24.3c6.7-12.6 10.4-25.9 11.8-38.7z"></path><path d="m147.30000172 41.90000572c3.3 9 5.3 20.3 5.3 32.6 0 2.7-.1 5.4-.3 8.2l23.7 13.7c-1.5-24.3-12.9-47.5-32.7-63.4 1.5 2.7 2.9 5.6 4 8.9z"></path><path d="m72.40000172 36.60000572c16.7-11.2 34.5-16.7 47.7-16.8h.5c-23.8-9.5-50-7.9-72 3.1z"></path><path d="m39.70000172 70.30000572c7.5-12.1 17-22 27.1-29.7l-24.6-14.2c-11.4 6.9-21.4 16.6-28.9 28.7z"></path></symbol></svg><div class="off-canvas-wrapper">
+        <div id="offCanvas" class="off-canvas position-right" data-off-canvas="data-off-canvas"><nav class="l-mobile-nav"><ul class="vertical menu drilldown" data-drilldown="data-drilldown" data-scroll-top="true" data-parent-link="true">
+        <li><span>Menu</span></li>
+        <li class="active"><a href="https://www.ssrc.org/" class="active" tabindex="-1">Home</a></li>
+        <li>
+        <a href="https://www.ssrc.org/programs/" tabindex="-1">Programs</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/programs/view/abe-fellowship-program/" tabindex="-1">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/apn/" tabindex="-1">African Peacebuilding Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/anxieties-of-democracy/" tabindex="-1">Anxieties of Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/china-environment-and-health/" tabindex="-1">China Environment and Health Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cppf/" tabindex="-1">Conflict Prevention and Peace Forum</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cuba-program/" tabindex="-1">Cuba</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/digital-culture/" tabindex="-1">Digital Culture</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dignity-and-debt/" tabindex="-1">Dignity + Debt</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dpdf/" tabindex="-1">Dissertation Proposal Development</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dsd/" tabindex="-1">Drugs, Security and Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/education-research-program/" tabindex="-1">Education Research</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/global-scholars-initiative/" tabindex="-1">Global Scholars Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/interasia-program/" tabindex="-1">InterAsia</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/idrf/" tabindex="-1">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/just-tech/" tabindex="-1">Just Tech</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/mastercard-foundation-scholars-program-learning-partnership-facilitation//" tabindex="-1">Mastercard Foundation Scholars Program Learning Partnership Facilitation</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/moa/" tabindex="-1">Measure of America</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/media-democracy/" tabindex="-1">Media &amp; Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/mellon-mays-graduate-initiatives-program/" tabindex="-1">Mellon Mays Graduate Initiatives</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/new-voices-from-japan/" tabindex="-1">New Voices from Japan</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/nextgenafrica/" tabindex="-1">Next Generation Social Sciences in Africa</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/northeast-asia-cooperative-security-project/" tabindex="-1">Northeast Asia Cooperative Security Project</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/producing-knowledge-on-world-regions/" tabindex="-1">Producing Knowledge on World Regions</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/religion-and-the-public-sphere/" tabindex="-1">Religion and the Public Sphere</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/scholarly-borderlands//" tabindex="-1">Scholarly Borderlands</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/sloan-scholars-mentoring-network/" tabindex="-1">Sloan Scholars Mentoring Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/social-data-initiative/" tabindex="-1">Social Data Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/strategic-learning-and-evaluation/" tabindex="-1">Strategic Learning and Evaluation</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/transregional-collaboratory-on-the-indian-ocean/" tabindex="-1">Transregional Collaboratory on the Indian Ocean</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/understanding-violent-conflict/" tabindex="-1">Understanding Violent Conflict</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/vietnam-program/" tabindex="-1">Vietnam</a></li>
+        </ul>
+        </li>
+        <li>
+        <a href="https://www.ssrc.org/fellowships/" tabindex="-1">Fellowships &amp; Prizes</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/fellowships/view/aasworkshop/" tabindex="-1">AAS-SSRC Dissertation Workshop Series</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/" tabindex="-1">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship-for-journalists/" tabindex="-1">Abe Fellowship for Journalists</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/collaborative-working-group-fellowships/" tabindex="-1">African Peacebuilding Network Collaborative Working Group Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/apn-research-fellowships/" tabindex="-1">African Peacebuilding Network Individual Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/china-africa-peace-fellowship/" tabindex="-1">China-Africa Peace Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/conflict-research-fellowship/" tabindex="-1">Conflict Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/dpd-university-initiative/" tabindex="-1">DPD University Initiative</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/global-scholars-initiative-writing-workshop//" tabindex="-1">Global Scholars Initiative Writing Workshops</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" tabindex="-1">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/jsps-fellowship/" tabindex="-1">Japan Society for the Promotion of Science (JSPS) Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/just-tech-covid-19-rapid-response-grants/" tabindex="-1">Just Tech Covid-19 Rapid-Response Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksdw/" tabindex="-1">Korean Studies Dissertation Workshop</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksfacultyworkshop/" tabindex="-1">Korean Studies Workshop for Junior Faculty</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/mellon-mays-predoctoral-research-grants/" tabindex="-1">Mellon Mays Predoctoral Research Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" tabindex="-1">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" tabindex="-1">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" tabindex="-1">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/tanur-prize/" tabindex="-1">Rachel Tanur Memorial Prize for Visual Sociology</a></li>
+        <li><a href="https://covid19research.ssrc.org/rapid-response-grants-on-covid-19-and-the-social-sciences" rel="external" tabindex="-1">Rapid-Response Grants on Covid-19 and the Social Sciences</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/call-for-proposals-2020-summer-institute-for-early-career-scholars//" tabindex="-1">Religion and the Public Sphere Summer Institute</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/religion-spirituality-and-democratic-renewal-fellowship/" rel="external" tabindex="-1">Religion, Spirituality, and Democratic Renewal Fellowship<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ssmn-grants/" tabindex="-1">Sloan Scholars Mentoring Network Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/social-data-research-and-dissertation-fellowships" rel="external" tabindex="-1">Social Data Initiative Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/the-albert-o-hirschman-prize/" tabindex="-1">The Albert O. Hirschman Prize</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-collaborative-research-grants//" tabindex="-1">Transregional Collaborative Research Grants<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-planning-grants/" tabindex="-1">Transregional Planning Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-research-fellowship/" tabindex="-1">Transregional Research Junior Scholar Fellowship: InterAsian Contexts and Connections</a></li>
+        </ul>
+        </li>
+        <li><a href="https://www.ssrc.org/themes/" tabindex="-1">Themes</a></li>
+        <li><a href="https://www.ssrc.org/print-and-digital/" tabindex="-1">Print &amp; Digital</a></li>
+        <li>
+        <a href="https://www.ssrc.org/about/mission/" tabindex="-1">About</a><ul class="menu vertical nested">
+        <li class="active">
+        <a class="active" tabindex="-1">About the SSRC</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/about/mission/" tabindex="-1">Mission</a></li>
+        <li><a href="https://www.ssrc.org/about/who-we-are/" tabindex="-1">Who We Are</a></li>
+        <li><a href="https://www.ssrc.org/about/how-we-work/" tabindex="-1">How We Work</a></li>
+        <li><a href="https://www.ssrc.org/about/where-we-work/" tabindex="-1">Where We Work</a></li>
+        </ul>
+        </li>
+        <li class="active">
+        <a class="active" tabindex="-1">Leadership</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/about/board-of-directors/" tabindex="-1">Board of Directors</a></li>
+        <li><a href="https://www.ssrc.org/about/executive-officers/" tabindex="-1">Executive Officers</a></li>
+        <li><a href="https://www.ssrc.org/about/visiting-committee-to-the-social-science-research-council/" tabindex="-1">Visiting Committee</a></li>
+        </ul>
+        </li>
+        <li class="active">
+        <a class="active" tabindex="-1">General Information</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/search/?t=staff" tabindex="-1">Staff Directory</a></li>
+        <li><a href="https://www.ssrc.org/about/college-and-university-fund/" tabindex="-1">College and University Fund for the Social Sciences</a></li>
+        <li><a href="https://anamericandilemma21c.org/" rel="external" tabindex="-1">An American Dilemma for the 21st Century</a></li>
+        <li><a href="http://www.ssrc.org/to-secure-knowledge/" rel="external" tabindex="-1">To Secure Knowledge: A Task Force of the SSRC</a></li>
+        <li><a href="https://www.ssrc.org/about/financials/" tabindex="-1">Financials</a></li>
+        <li><a href="https://www.ssrc.org/about/employment/" tabindex="-1">Employment</a></li>
+        <li><a href="https://www.ssrc.org/about/contact-us/" tabindex="-1">Contact Us</a></li>
+        </ul>
+        </li>
+        </ul>
+        </li>
+        <li><a href="https://www.ssrc.org/news/" tabindex="-1">News</a></li>
+        <li><a href="https://www.ssrc.org/donate/" tabindex="-1">Donate</a></li>
+        <li><a href="https://www.ssrc.org/pages/privacy-policy/" tabindex="-1">Privacy Policy</a></li>
+        <li><a href="https://www.ssrc.org/pages/directions-to-the-ssrc/" tabindex="-1">Directions to the SSRC</a></li>
+        <li><a href="https://www.ssrc.org/pages/creative-commons/" tabindex="-1">Creative Commons</a></li>
+        </ul></nav></div>
+        <div class="off-canvas-content" data-off-canvas-content="data-off-canvas-content">
+        <header id="page-header" class="s-search"><div id="menu">
+        <div id="eyebrow" class="hide-for-small-only"><div class="grid-container"><div class="grid-x">
+        <h6 class="cell hide-for-medium-only large-6"><a href="https://www.ssrc.org">The Social Science Research Council</a></h6>
+        <nav class="cell large-12 l-eyebrow-menu"><a href="https://www.ssrc.org/news/">News</a><a href="https://items.ssrc.org"><em>Items</em></a><a href="https://www.ssrc.org/view/college-and-university-fund/">College and University Fund</a><a href="https://covid19research.ssrc.org"><span style="color: #cc4b37">Covid-19 and the Social Sciences</span></a><a href="https://www.ssrc.org/donate/" class="l-donate-button">Donate</a></nav>
+        </div></div></div>
+        <div class="grid-container"><div class="grid-x grid-margin-x">
+        <a href="https://www.ssrc.org" class="cell small-10 medium-3 logo"><svg width="150" height="80" aria-label="The Social Science Research Council" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a><nav class="cell hide-for-small-only medium-13 large-14 l-main-menu"><ul class="dropdown menu" data-dropdown-menu="data-dropdown-menu">
+        <li>
+        <a href="https://www.ssrc.org/programs/">Programs</a><ul class="l-sub-nav menu">
+        <li><a href="https://www.ssrc.org/programs/view/abe-fellowship-program/">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/apn/">African Peacebuilding Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/anxieties-of-democracy/">Anxieties of Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cppf/">Conflict Prevention and Peace Forum</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cuba-program/">Cuba</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/digital-culture/">Digital Culture</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dsd/">Drugs, Security and Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/global-scholars-initiative/">Global Scholars Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/interasia-program/">InterAsia</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/idrf/">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/just-tech/">Just Tech</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/moa/">Measure of America</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/media-democracy/">Media &amp; Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/mellon-mays-graduate-initiatives-program/">Mellon Mays Graduate Initiatives</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/nextgenafrica/">Next Generation Social Sciences in Africa</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/religion-and-the-public-sphere/">Religion and the Public Sphere</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/scholarly-borderlands//">Scholarly Borderlands</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/sloan-scholars-mentoring-network/">Sloan Scholars Mentoring Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/social-data-initiative/">Social Data Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/transregional-collaboratory-on-the-indian-ocean/">Transregional Collaboratory on the Indian Ocean</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/understanding-violent-conflict/">Understanding Violent Conflict</a></li>
+        </ul>
+        </li>
+        <li>
+        <a href="https://www.ssrc.org/fellowships/">Fellowships &amp; Prizes</a><ul class="l-sub-nav menu">
+        <li><a href="https://www.ssrc.org/fellowships/view/aasworkshop/">AAS-SSRC Dissertation Workshop Series</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship-for-journalists/">Abe Fellowship for Journalists</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/collaborative-working-group-fellowships/">African Peacebuilding Network Collaborative Working Group Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/apn-research-fellowships/">African Peacebuilding Network Individual Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/china-africa-peace-fellowship/">China-Africa Peace Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/conflict-research-fellowship/">Conflict Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/global-scholars-initiative-writing-workshop//">Global Scholars Initiative Writing Workshops</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/jsps-fellowship/">Japan Society for the Promotion of Science (JSPS) Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/just-tech-covid-19-rapid-response-grants/">Just Tech Covid-19 Rapid-Response Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksdw/">Korean Studies Dissertation Workshop</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksfacultyworkshop/">Korean Studies Workshop for Junior Faculty</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/mellon-mays-predoctoral-research-grants/">Mellon Mays Predoctoral Research Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/tanur-prize/">Rachel Tanur Memorial Prize for Visual Sociology</a></li>
+        <li><a href="https://covid19research.ssrc.org/rapid-response-grants-on-covid-19-and-the-social-sciences" rel="external">Rapid-Response Grants on Covid-19 and the Social Sciences</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/call-for-proposals-2020-summer-institute-for-early-career-scholars//">Religion and the Public Sphere Summer Institute</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/religion-spirituality-and-democratic-renewal-fellowship/" rel="external">Religion, Spirituality, and Democratic Renewal Fellowship<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ssmn-grants/">Sloan Scholars Mentoring Network Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/social-data-research-and-dissertation-fellowships" rel="external">Social Data Initiative Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/the-albert-o-hirschman-prize/">The Albert O. Hirschman Prize</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-collaborative-research-grants//">Transregional Collaborative Research Grants<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-planning-grants/">Transregional Planning Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-research-fellowship/">Transregional Research Junior Scholar Fellowship: InterAsian Contexts and Connections</a></li>
+        </ul>
+        </li>
+        <li><a href="https://www.ssrc.org/themes/">Themes</a></li>
+        <li><a href="https://www.ssrc.org/print-and-digital/">Print &amp; Digital</a></li>
+        <li><a href="https://www.ssrc.org/about/mission/">About</a></li>
+        </ul></nav><form id="searchsite" name="searchsite" method="get" action="https://www.ssrc.org/search/" class="l-search cell small-6 medium-2 large-1" itemprop="potentialAction" itemscope="itemscope" itemtype="http://schema.org/SearchAction">
+        <meta itemprop="target" content="https://www.ssrc.org/search/?q={q}&amp;start=0">
+        <span class="fa fa-search hide-for-small" aria-hidden="true"><i>Search</i></span><input itemprop="query-input" type="search" name="q" accesskey="s" tabindex="1" value="qualitative" placeholder="Type to search"><input type="hidden" name="start" value="0"><button type="submit" class="fa fa-search"><i>Search</i></button><a class="fa fa-close"><i>Close</i></a>
+        </form>
+        <div class="show-for-small-only cell small-2"><button type="button" data-toggle="offCanvas">Open Menu</button></div>
+        </div></div>
+        </div>
+        <div class="s-search l-centered-hero"><div class="grid-container"><h1>48 results  for <em>“qualitative”</em> in <em>Fellows &amp; Grantees</em>
+        </h1></div></div></header><main id="page-content" role="main" tabindex="0"><div class="grid-container l-generic-page"><div class="grid-x l-search-results">
+        <div class="hide-for-medium cell small-2"><button type="button" class="button" data-toggle="searchOffCanvas">Open Search Filters</button></div>
+        <aside id="searchOffCanvas" class="off-canvas-absolute off-canvas position-left in-canvas-for-medium" data-off-canvas="data-off-canvas"><form class="facets">
+        <fieldset class="fieldset keywords">
+        <input type="hidden" name="t" value="fellows"><input type="hidden" name="p" value="1"><input type="hidden" name="sort" value="relevance"><div class="input-group">
+        <input type="text" name="q" value="qualitative" placeholder="Enter keywords..." class="input-group-field"><div class="input-group-button"><button type="submit" class="button">Search</button></div>
+        </div>
+        <a href="https://www.ssrc.org/search/?q=qualitative" class="clear"><span class="icon">×</span><span>Clear all filters</span></a>
+        </fieldset>
+        <h3>Narrow by type</h3>
+        <ul class="types">
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative">All types</a><span class="count">119</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=pages">Pages</a><span class="count">2</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=publications">Publications &amp; Writing</a><span class="count">28</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=programs">Programs &amp; Projects</a><span class="count">5</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=fellowships">Fellowships &amp; Prizes</a><span class="count">2</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=staff">Staff</a><span class="count">4</span>
+        </li>
+        <li class="selected">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=fellows">Fellows &amp; Grantees</a><span class="count">78</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=events">Meetings &amp; Events</a><span class="count">0</span>
+        </li>
+        </ul>
+        <h3>Sort by</h3>
+        <ul class="types sort">
+        <li class="selected"><a href="#relevance">Relevance</a></li>
+        <li class=""><a href="#name">Name (a-z)</a></li>
+        <li class=""><a href="#year">Year (newest first)</a></li>
+        </ul>
+        <fieldset class="facet">
+            <h3>Fellowship/Prizes</h3>
+            <ul class="types">
+                      <li class="all selected">
+                    <label>
+                      <input type="radio" name="fellowship" value="" checked>
+                      <span>All Fellowships &amp; Prizes</span>
+                    </label>
+                  </li>
+                          <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="AAS-SSRC Dissertation Workshop Series">
+                        <span>AAS-SSRC Dissertation Workshop Series</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Abe Fellowship">
+                        <span>Abe Fellowship</span>
+                        <span class="count">4</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="International Dissertation Research Fellowship (IDRF)">
+                        <span>International Dissertation Research Fellowship (IDRF)</span>
+                        <span class="count">8</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship">
+                        <span>Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</span>
+                        <span class="count">11</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship">
+                        <span>Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</span>
+                        <span class="count">14</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship">
+                        <span>Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</span>
+                        <span class="count">10</span>
+                      </label>
+                    </li>
+                    </ul>
+        </fieldset>
+        <fieldset class="facet">
+            <h3>Year</h3>
+            <ul class="types">
+                        <li class="selected removeable">
+                      <label title="Remove 2014">
+                        <input type="checkbox" name="year[]" value="2014" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2014</span>
+                        <span class="count">19</span>
+                      </label>
+                    </li>
+                          <li class="selected removeable">
+                      <label title="Remove 2013">
+                        <input type="checkbox" name="year[]" value="2013" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2013</span>
+                        <span class="count">13</span>
+                      </label>
+                    </li>
+                          <li class="selected removeable">
+                      <label title="Remove 2015">
+                        <input type="checkbox" name="year[]" value="2015" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2015</span>
+                        <span class="count">10</span>
+                      </label>
+                    </li>
+                          <li class="selected removeable">
+                      <label title="Remove 2012">
+                        <input type="checkbox" name="year[]" value="2012" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2012</span>
+                        <span class="count">6</span>
+                      </label>
+                    </li>
+                        <li class="all ">
+                    <label>
+                      <input type="radio" name="year" value="">
+                      <span>All years</span>
+                    </label>
+                  </li>
+                          <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2011">
+                        <span>2011</span>
+                        <span class="count">4</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2010">
+                        <span>2010</span>
+                        <span class="count">5</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2009">
+                        <span>2009</span>
+                        <span class="count">4</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2008">
+                        <span>2008</span>
+                        <span class="count">5</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2007">
+                        <span>2007</span>
+                        <span class="count">5</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2006">
+                        <span>2006</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2005">
+                        <span>2005</span>
+                        <span class="count">3</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2004">
+                        <span>2004</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="1999">
+                        <span>1999</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="1997">
+                        <span>1997</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                    </ul>
+        </fieldset>
+        </form></aside><section class="cell medium-13 l-hits"><div id="filter-repeater"></div>
+        <ul>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/C56B6BAF-6FAB-E211-A4A2-001CC477EC84/">Baris Selcuk</a></h5>
+        <p class="l-title">Editor</p>
+        <p class="l-project-title"><em>Individualization and the Chinese Middle Class Family. A <strong class="highlight">Qualitative</strong> Study of 24 Beijing Families. (Working Title)</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/aasworkshop/" class="muted">AAS-SSRC Dissertation Workshop Series</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/229ED902-834D-E411-9403-005056AB4B80/">Kalyango Ronald Sebba</a></h5>
+        <p class="l-title">LECTURER, SCHOOL OF WOMEN AND GENDER STUDIES</p>
+        <p class="l-project-title"><em>RETURNING HOME: GENDER AND CHOICE AMONG IDPS IN NORTHERN UGANDA</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Makerere Univeristy</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><a href="https://www.ssrc.org/fellows/F3BFEE08-834D-E411-9403-005056AB4B80/"><img alt="" class="thumbnail" src="https://www.ssrc.org/image/1/320/320/1/s3.amazonaws.com/ssrc-cdn1/crmuploads/contact/magoti-iddy-ramadhani.jpg"></a></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/F3BFEE08-834D-E411-9403-005056AB4B80/">Iddy Ramdhani Magoti</a></h5>
+        <p class="l-title">Cordinator of Departmental Resource Unit, History</p>
+        <p class="l-institution">University of Dar es Salaam</p>
+        <p class="l-project-title"><em>Ethnic Identity and the State: The Dynamics of Intra - and Inter- Ethnic Relations in Mara River Basin, 1900 - 2010</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Dar es Salaam</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/1ABA0128-CFDE-E411-940A-005056AB4B80/">Moses Ugochukwu Ohaegbuchi</a></h5>
+        <p class="l-title">Research Student, Institute for Peace and Strategic Studies</p>
+        <p class="l-institution">University of Ibadan</p>
+        <p class="l-project-title"><em>Peacebuiding and Social Transformation by Women Societies in Post-civil War Southeast Nigeria</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Ibadan</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/3C9ED902-834D-E411-9403-005056AB4B80/">Mangeni James Byanasaye Wasike</a></h5>
+        <p class="l-title">Full-time Assistant Lecturer, Sociology and Anthropology</p>
+        <p class="l-project-title"><em>Cultural understandings of mental illness in a fragile context: a critical ethnography of Karamoja, Uganda</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Stellenbosch University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/909ED902-834D-E411-9403-005056AB4B80/">Emeka Thaddues Njoku</a></h5>
+        <p class="l-title">Academic Advisor, Political Science</p>
+        <p class="l-institution">University of Ibadan</p>
+        <p class="l-project-title"><em>Counter Terrorism and Civil society in Nigeria</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Ibadan</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/A6B69C48-D74F-E411-9403-005056AB4B80/">Simangele Gladys Mayisela</a></h5>
+        <p class="l-title">Visiting Lecturer, Department of Education</p>
+        <p class="l-institution">University of Cape Town</p>
+        <p class="l-project-title"><em>Corporal punishment: Socio-cultural practices of teachers in a South African primary school</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Cape Town</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/12C0EE08-834D-E411-9403-005056AB4B80/">Tsitsi Jane Mpofu-Mketwa</a></h5>
+        <p class="l-title"></p>
+        <p class="l-project-title"><em>“Asihlali phantsi!" A Study of Agency among isiXhosa-speaking women traders from a Cape Town  township</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Cape Town</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><a href="https://www.ssrc.org/fellows/4B9ED902-834D-E411-9403-005056AB4B80/"><img alt="" class="thumbnail" src="https://www.ssrc.org/image/1/320/320/1/s3.amazonaws.com/ssrc-cdn1/crmuploads/contact/chitukutuku-edmore.jpg"></a></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/4B9ED902-834D-E411-9403-005056AB4B80/">Edmore Chitukutuku</a></h5>
+        <p class="l-title">Department of Anthropology</p>
+        <p class="l-institution">University of the Witwatersrand</p>
+        <p class="l-project-title"><em>Rebuilding and Reliving memories of Militia Bases of Political violence in Zimbabwe: The search for political legitimacy and the Making of history in post -2000 crisis.</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of the Witwatersrand</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/F2BFEE08-834D-E411-9403-005056AB4B80/">Harriet Omokiniovo Efanodor</a></h5>
+        <p class="l-title">Lecturer I, Political Science and Public Administration</p>
+        <p class="l-institution">Edo University Iyamho</p>
+        <p class="l-project-title"><em>The impact of Contemporary Globalisation Policies on Rural Women in Nigeria</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Delta State University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/2CBA0128-CFDE-E411-940A-005056AB4B80/">Oluwagbemiga Oluwaseun Ajayi</a></h5>
+        <p class="l-title">Head of Department, Sociology and Criminology</p>
+        <p class="l-institution">Osun State University</p>
+        <p class="l-project-title"><em>RELIGIOSITY AS DEPOLITICIZATION: PENTECOSTALISM, YOUTH AND STRUCTURAL VIOLENCE IN NIGERIA</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Obafemi Awolowo University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/0DBA0128-CFDE-E411-940A-005056AB4B80/">Olivia Nankinga</a></h5>
+        <p class="l-title">Assistant Lecturer, Population Studies</p>
+        <p class="l-institution">Makerere University</p>
+        <p class="l-project-title"><em>Health Status and Well Being of Children in Uganda:  A Comparative Analysis of Childcare Arrangements in Relatively Secure and Post Conflict Areas</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Makerere Univeristy</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/2ABA0128-CFDE-E411-940A-005056AB4B80/">Simbarashe Gukurume</a></h5>
+        <p class="l-title">Research Assistant, Institute for Humanities in Africa (HUMA)</p>
+        <p class="l-institution">University of Cape Town</p>
+        <p class="l-project-title"><em>Pentecostal Charismatic Churches, Prosperity Gospel and upwardly mobile University students in Zimbabwe: Two case studies of PCCs at the University of Zimbabwe</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Cape Town</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/8C9ED902-834D-E411-9403-005056AB4B80/">Solomon Sika-Bright</a></h5>
+        <p class="l-title">Assistant Lecturer, Sociology and Anthropology</p>
+        <p class="l-institution">University of Cape Coast</p>
+        <p class="l-project-title"><em>NATURE OF MATERNAL EMPLOYMENT AND ITS INFLUENCES ON EXCLUSIVE BREASTFEEDING IN CAPE COAST</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Cape Coast</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/7BC7CFFC-824D-E411-9403-005056AB4B80/">Mike Tigere Mavura</a></h5>
+        <p class="l-title">Lecturer, Political & International Studies</p>
+        <p class="l-institution">Rhodes University</p>
+        <p class="l-project-title"><em>Transnationalism and Re-thinking international Relations in Southern Africa: The Case of Short-term Cross-Border Migration from Zimbabwe to South Africa</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Rhodes University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/7CC7CFFC-824D-E411-9403-005056AB4B80/">Richard Bruno Mbunda</a></h5>
+        <p class="l-title">Assistant Lecturer, Political Science and Public Administration</p>
+        <p class="l-institution">University of Dar es Salaam</p>
+        <p class="l-project-title"><em>PEASANT AGRICULTURE AND THE QUEST FOR FOOD SOVEREIGNTY IN TANZANIA</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Dar es Salaam</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/7DC7CFFC-824D-E411-9403-005056AB4B80/">Felicia Safoa Odame</a></h5>
+        <p class="l-title">Senior Lecturer, Department of Social, Political and Historical Studies</p>
+        <p class="l-institution">University for Development Studies</p>
+        <p class="l-project-title"><em>Non-Formal Education and Social Change in the Nadowli District of Ghana:   Reality or Mirage?</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University for Development Studies</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/7F9ED902-834D-E411-9403-005056AB4B80/">Simangele Gladys Mayisela</a></h5>
+        <p class="l-title">Visiting Lecturer, Department of Education</p>
+        <p class="l-institution">University of Cape Town</p>
+        <p class="l-project-title"><em>Corporal punishment: Socio-cultural practices and perspectives of South African primary school teachers.</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Cape Town</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/4BB1EB71-0DA6-E111-BB1A-001CC477EC84/">Ahilan Arasaratnam Kadirgamar</a></h5>
+        <p class="l-title">Senior Lecturer, Sociology</p>
+        <p class="l-project-title"><em>Reconstruction and Dispossession: Landed Relations in Post-war Sri Lanka</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" class="muted">International Dissertation Research Fellowship (IDRF)</a></dd>
+        <dt>Year </dt>
+        <dd>2012</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>City University of New York (CUNY) / Graduate Center</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/5C9ED902-834D-E411-9403-005056AB4B80/">Olugbenga Samuel Falase</a></h5>
+        <p class="l-title">Full Time/Lecturer II, Department of Sociology</p>
+        <p class="l-institution">University of Ibadan</p>
+        <p class="l-project-title"><em>The Politics of Forest Governance in South-western Nigeria</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Ibadan</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/8E9ED902-834D-E411-9403-005056AB4B80/">Nathaniel Umukoro</a></h5>
+        <p class="l-title">Dean of Students, Political Science and Public Administration</p>
+        <p class="l-project-title"><em>Regime Types' Human Rights Violation and Conflict Escalation in the Niger Delta, 1993-2007</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Ibadan</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/0EBA0128-CFDE-E411-940A-005056AB4B80/">Carolé Cilliers</a></h5>
+        <p class="l-title">Lecturer, School of Social Sciences</p>
+        <p class="l-project-title"><em>Intersexed bodies and medicine in South Africa</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of the Witwatersrand</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/658CE0DF-4AE7-E311-93FF-005056AB4B80/">Margaret C. Hanson</a></h5>
+        <p class="l-title">Assistant Professor, Politics and Global Studies</p>
+        <p class="l-institution">Arizona State University</p>
+        <p class="l-project-title"><em>Property Rights, Land, and Rule in Central Asia</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" class="muted">International Dissertation Research Fellowship (IDRF)</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Ohio State University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/4FA48AB0-4DC6-E311-93FD-005056AB3675/">Anuradha Mukherji</a></h5>
+        <p class="l-title">Assistant Professor, Geography, Planning, and Environment</p>
+        <p class="l-institution">East Carolina University</p>
+        <p class="l-project-title"><em>Planning Urban Recovery & Resilience:  Comparing Land Use Policy and Adaptation Initiatives after Catastrophic Events</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/" class="muted">Abe Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>Title (at time of award)</dt>
+        <dd>Assistant Professor</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of North Carolina / East Carolina University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/259ED902-834D-E411-9403-005056AB4B80/">Peninah Agaba</a></h5>
+        <p class="l-title">Assistant Lecturer, Population Studies</p>
+        <p class="l-institution">Makerere University</p>
+        <p class="l-project-title"><em>Determinants of utilization of Maternal Health services among Refugees in Nakivale Refugge camp, Uganda</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Makerere Univeristy</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        </ul>
+        <div class="grid-container l-search-pagination"><ul class="pagination" data-options="appendTo:.l-hits &gt; ul;target:.l-hits &gt; ul li;pageParam:p">
+        <li class="unavailable"><a class="pagination-previous" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=2">« Previous</a></li>
+        <li class="current"><a class="page" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=1">1</a></li>
+        <li><a class="page" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=2">2</a></li>
+        <li><a class="pagination-next" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=2">Next »</a></li>
+        </ul></div></section>
+        </div></div></main><footer id="page-footer"><div class="grid-container grid-x grid-padding-x">
+        <div class="cell medium-9">
+        <a href="https://www.ssrc.org" class="logo"><svg width="200" height="80" aria-label="The Social Science Research Council" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a><div class="grid-x grid-padding-x">
+        <div class="l-contact-info cell medium-9" itemscope="itemscope" itemtype="http://schema.org/Organization">
+        <nav class="l-social-navigation"><a href="https://www.ssrc.org/news/" rel="me noopener" target="_blank" class="fa fa-envelope"><i>News</i></a><a href="https://twitter.com/SSRC_org" rel="me noopener" target="_blank" class="fa fa-twitter"><i>Twitter</i></a><a href="https://www.facebook.com/SSRC.org" rel="me noopener" target="_blank" class="fa fa-facebook"><i>Facebook</i></a><a href="https://www.youtube.com/user/SSRCorg" rel="me noopener" target="_blank" class="fa fa-youtube-play"><i>Youtube</i></a></nav><p itemprop="name">Social Science Research Council</p>
+        <p itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">300 Cadman Plaza West, 15th Floor</span><br><span itemprop="addressLocality">Brooklyn</span>, <span itemprop="addressRegion">NY</span> <span itemprop="postalCode">11201</span>, <span itemprop="addressCountry">USA</span></p>
+        <p><a href="tel:2123772700" itemprop="telephone">212-377-2700</a></p>
+        </div>
+        <div class="cell medium-9"><nav class="l-footer-menu"><ol>
+        <li><a href="https://www.ssrc.org/pages/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="https://www.ssrc.org/pages/directions-to-the-ssrc/">Directions to the SSRC</a></li>
+        <li><a href="https://www.ssrc.org/pages/creative-commons/">Creative Commons</a></li>
+        <li><a href="https://www.ssrc.org/about/employment/">Employment</a></li>
+        <li><a href="https://www.ssrc.org/about/contact-us/">Contact Us</a></li>
+        </ol></nav></div>
+        </div>
+        </div>
+        <div class="cell medium-9">
+        <div class="l-content hide-for-small-only">
+        <h6>Mobilizing social science for the public good.</h6>
+        <p>The Social Science Research Council, an independent, international nonprofit, mobilizes necessary knowledge for the public good by supporting scholars worldwide, generating new research across disciplines, and linking researchers with policymakers and citizens.</p>
+        </div>
+        <div id="subscribe">
+        <h3>Sign up for Council Update, the SSRC's monthly newsletter</h3>
+        <form method="post" enctype="multipart/form-data" class="l-form grid-margin-x grid-container"><div class="grid-x grid-margin-x">
+        <div class="cell medium-6"><label for="name">Name<input type="text" id="name" name="fields[name]" required="required" placeholder="Name"></label></div>
+        <div class="cell medium-8"><label for="email">Email address<input type="email" id="email" name="fields[email]" required="required" placeholder="Email address"></label></div>
+        <div class="cell medium-4">
+        <input type="hidden" id="country" name="fields[country]"><button name="action[subscribe]" class="button" type="submit">Subscribe</button>
+        </div>
+        <div class="cell l-content"><p>By subscribing, you agree that the SSRC may process your information in accordance with our <a href="https://www.ssrc.org/pages/privacy-policy/">privacy
+          policy</a>.</p></div>
+        </div></form>
+        </div>
+        </div>
+        </div></footer>
+        </div>
+        </div>
+        <div id="cookie" class="l-sticky-footer"><div class="grid-container grid-x">
+        <div class="cell medium-14"><p>Our site uses cookies to enhance your browsing experience.  By continuing to use our site you give us permission to deploy cookies per our <a href="https://www.ssrc.org/pages/privacy-policy/">privacy and cookies policy</a>.</p></div>
+        <button class="l-cookie-button button cell medium-4">Accept &amp; Close</button>
+        </div></div>
+        <script>
+              window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+              ga('create', 'UA-1557817-1', 'ssrc.org');
+              ga('send', 'pageview');
+            </script><script async="async" src="https://www.google-analytics.com/analytics.js"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer', 'GTM-PCR79XB');</script><script src="https://www.ssrc.org/workspace/assets/dist/app.min.js?v=2.0.12"></script>
+        </body>
+        </html>
+  recorded_at: 2021-02-19 16:44:22 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4
+- request:
+    method: get
+    uri: https://www.ssrc.org/search/?t=fellows&sort=relevance&q=qualitative&year=2012,2013,2014,2015,2016,2017,2018,2019,2020&p=2
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 19 Feb 2021 16:44:20 GMT
+      server: Apache
+      cache-control: no-cache, must-revalidate, max-age=0
+      expires: Mon, 12 Dec 1982 06:14:00 GMT
+      pragma: no-cache
+      x-frame-options: SAMEORIGIN
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      last-modified: Fri, 19 Feb 2021 16:44:20 GMT
+      vary: Accept-Encoding,User-Agent
+      content-encoding: gzip
+      strict-transport-security: max-age=300; includeSubDomains
+      x-ua-compatible: IE=edge
+      content-length: '11719'
+      content-type: text/html; charset=utf-8
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        <!DOCTYPE html>
+        <html class="no-js" lang="en">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="imagetoolbar" content="false">
+        <meta name="MSSmartTagsPreventParsing" content="true">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#E1E2E3">
+        <meta charset="utf-8">
+        <meta name="root" content="https://www.ssrc.org/">
+        <link rel="shortcut icon" href="https://www.ssrc.org/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+        <link rel="preconnect" href="https://s3.amazonaws.com">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <link rel="preconnect" href="https://www.google-analytics.com">
+        <link rel="preconnect" href="https://www.googletagmanager.com">
+        <link rel="alternate" type="application/rss+xml" title="SSRC Newsfeed" href="https://www.ssrc.org/feed/">
+        <title>Search for qualitative | Social Science Research Council (SSRC) | Brooklyn, NY, USA</title>
+        <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0">
+        <link rel="stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" as="style" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i&amp;display=swap" crossorigin="anonymous">
+        <link rel="stylesheet" as="style" href="https://www.ssrc.org/workspace/assets/dist/app.min.css?v=2.0.12">
+        <meta property="og:site_name" content="Social Science Research Council">
+        <meta name="twitter:site" content="@SSRC_org">
+        <meta name="twitter:card" content="summary_large_image">
+        </head>
+        <body itemscope="itemscope" itemtype="http://schema.org/SearchResultsPage" id="search-page">
+        <svg style="display: none"><symbol id="logo" viewBox="0 0 672 219"><path d="m312.60000172 163.20000572c-14.9 0-25.6-3.5-35-13.1l10-9.9c7.2 7.2 15.1 9.5 25.3 9.5 12.9 0 20.4-5.6 20.4-15.2 0-4.3-1.3-7.9-3.9-10.3-2.5-2.4-5-3.3-10.8-4.2l-11.7-1.7c-8.1-1.1-14.5-3.9-18.8-7.9-4.9-4.6-7.2-10.8-7.2-18.9 0-17.2 12.5-29 33.1-29 13.1 0 22.2 3.3 30.7 11.3l-9.6 9.4c-6.1-5.8-13.2-7.6-21.5-7.6-11.7 0-18.1 6.7-18.1 15.4 0 3.6 1.1 6.8 3.8 9.2 2.5 2.2 6.5 3.9 11.1 4.6l11.3 1.7c9.2 1.4 14.3 3.6 18.5 7.4 5.4 4.7 8.1 11.8 8.1 20.3-.1 18.2-15 29-35.7 29z"></path><path d="m415.90000172 163.20000572c-14.9 0-25.6-3.5-35-13.1l10-9.9c7.2 7.2 15.1 9.5 25.3 9.5 12.9 0 20.4-5.6 20.4-15.2 0-4.3-1.3-7.9-3.9-10.3-2.5-2.4-5-3.3-10.8-4.2l-11.7-1.5c-8.1-1.1-14.5-3.9-18.8-7.9-4.9-4.6-7.2-10.8-7.2-18.9 0-17.2 12.5-29 33.1-29 13.1 0 22.2 3.3 30.7 11.3l-9.6 9.4c-6.1-5.8-13.2-7.6-21.5-7.6-11.7 0-18.1 6.7-18.1 15.4 0 3.6 1.1 6.8 3.8 9.2 2.5 2.2 6.5 3.9 11.1 4.6l11.3 1.7c9.2 1.4 14.3 3.6 18.5 7.4 5.4 4.7 8.1 11.8 8.1 20.3-.2 18-15 28.8-35.7 28.8z"></path><path d="m547.00000172 162.40000572-20.8-41.7h-18.8v41.7h-15v-98.9h38.4c18.8 0 30.7 12.1 30.7 28.9 0 14.2-8.6 23.2-19.7 26.3l22.8 43.8h-17.6zm-17.3-85.5h-22.2v31h22.2c10 0 16.8-5.7 16.8-15.4 0-9.8-6.8-15.6-16.8-15.6z"></path><path d="m636.20000172 163.20000572c-10.3 0-19.2-3.8-26-10.6-9.7-9.7-9.6-20.7-9.6-39.7s-.1-30 9.6-39.7c6.8-6.8 15.7-10.6 26-10.6 18.2 0 31.8 10.7 35.3 30.4h-15.3c-2.4-10-9-16.9-20-16.9-5.8 0-11.1 2.2-14.6 6-4.9 5.3-6 11-6 30.9s1.1 25.6 6 30.8c3.5 3.8 8.8 6 14.6 6 11 0 17.8-7 20.1-17h15.1c-3.2 19.7-17.2 30.4-35.2 30.4z"></path><path d="m88.00000172 219.00000572c-19.9 0-40.1-5.1-58.6-15.7l8.3-14.4c15.9 9.2 33.2 13.5 50.3 13.5 34.8 0 68.7-18.1 87.3-50.4 9.2-15.9 13.5-33.2 13.5-50.3 0-34.8-18.1-68.7-50.4-87.3l8.3-14.4c37.6 21.7 58.7 61.2 58.7 101.7 0 19.9-5.1 40.1-15.7 58.6-21.7 37.6-61.2 58.7-101.7 58.7z"></path><path d="m30.40000172 117.50000572 33.5 19.3 19.7-34-41.5-24c-6.8 12.5-10.4 25.9-11.7 38.7z"></path><path d="m42.80000172 173.20000572 17.9-31-30.9-17.8c-.1 1.5-.1 3-.1 4.4 0 11.7 1.9 22.3 4.9 30.5 2.3 6.3 5.3 11.1 8.2 13.9z"></path><path d="m97.30000172 163.30000572-31.2-18-17.9 31c2.1.6 4.7 1 7.7 1 11 0 26.5-4.6 41.4-14z"></path><path d="m45.10000172 73.40000572 41.5 24 19.7-34-33.5-19.3c-10.4 7.4-20.2 17.2-27.7 29.3z"></path><path d="m78.50000172 40.20000572 30.8 17.8 17.9-31.1c-2-.5-4.4-.8-7.2-.8-10.8-.1-26.4 4.6-41.5 14.1z"></path><path d="m151.60000172 89.50000572c-1.6 12.7-5.5 25.9-12.2 38.3l26.3 15.2c6.7-12.5 10.1-26 10.4-39.4z"></path><path d="m24.50000172 114.10000572c1.6-12.7 5.4-25.9 12.1-38.4l-26.4-15.2c-6.7 12.6-10 26.1-10.2 39.5z"></path><path d="m114.80000172 61.10000572 31.5 18.2c.1-1.6.1-3.2.1-4.7 0-11.7-1.9-22.3-4.9-30.5-2.4-6.6-5.6-11.5-8.6-14.2z"></path><path d="m130.90000172 130.10000572-42-24.2-19.7 34 33.9 19.6c10.4-7.5 20.2-17.2 27.8-29.4z"></path><path d="m103.50000172 166.90000572c-16.7 11.1-34.4 16.6-47.5 16.6-.2 0-.3 0-.5 0 23.7 9.5 49.8 7.9 71.7-2.9z"></path><path d="m28.80000172 161.50000572c-3.3-9-5.3-20.3-5.3-32.7 0-2.6.1-5.2.3-7.9l-23.6-13.7c1.6 24.1 13 47.2 32.7 63-1.6-2.5-2.9-5.5-4.1-8.7z"></path><path d="m136.20000172 133.20000572c-7.5 12.1-17 22-27.2 29.7l24.5 14.2c11.5-6.9 21.5-16.5 29.1-28.6z"></path><path d="m145.80000172 86.10000572-34.1-19.6-19.7 34 42 24.3c6.7-12.6 10.4-25.9 11.8-38.7z"></path><path d="m147.30000172 41.90000572c3.3 9 5.3 20.3 5.3 32.6 0 2.7-.1 5.4-.3 8.2l23.7 13.7c-1.5-24.3-12.9-47.5-32.7-63.4 1.5 2.7 2.9 5.6 4 8.9z"></path><path d="m72.40000172 36.60000572c16.7-11.2 34.5-16.7 47.7-16.8h.5c-23.8-9.5-50-7.9-72 3.1z"></path><path d="m39.70000172 70.30000572c7.5-12.1 17-22 27.1-29.7l-24.6-14.2c-11.4 6.9-21.4 16.6-28.9 28.7z"></path></symbol></svg><div class="off-canvas-wrapper">
+        <div id="offCanvas" class="off-canvas position-right" data-off-canvas="data-off-canvas"><nav class="l-mobile-nav"><ul class="vertical menu drilldown" data-drilldown="data-drilldown" data-scroll-top="true" data-parent-link="true">
+        <li><span>Menu</span></li>
+        <li class="active"><a href="https://www.ssrc.org/" class="active" tabindex="-1">Home</a></li>
+        <li>
+        <a href="https://www.ssrc.org/programs/" tabindex="-1">Programs</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/programs/view/abe-fellowship-program/" tabindex="-1">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/apn/" tabindex="-1">African Peacebuilding Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/anxieties-of-democracy/" tabindex="-1">Anxieties of Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/china-environment-and-health/" tabindex="-1">China Environment and Health Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cppf/" tabindex="-1">Conflict Prevention and Peace Forum</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cuba-program/" tabindex="-1">Cuba</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/digital-culture/" tabindex="-1">Digital Culture</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dignity-and-debt/" tabindex="-1">Dignity + Debt</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dpdf/" tabindex="-1">Dissertation Proposal Development</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dsd/" tabindex="-1">Drugs, Security and Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/education-research-program/" tabindex="-1">Education Research</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/global-scholars-initiative/" tabindex="-1">Global Scholars Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/interasia-program/" tabindex="-1">InterAsia</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/idrf/" tabindex="-1">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/just-tech/" tabindex="-1">Just Tech</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/mastercard-foundation-scholars-program-learning-partnership-facilitation//" tabindex="-1">Mastercard Foundation Scholars Program Learning Partnership Facilitation</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/moa/" tabindex="-1">Measure of America</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/media-democracy/" tabindex="-1">Media &amp; Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/mellon-mays-graduate-initiatives-program/" tabindex="-1">Mellon Mays Graduate Initiatives</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/new-voices-from-japan/" tabindex="-1">New Voices from Japan</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/nextgenafrica/" tabindex="-1">Next Generation Social Sciences in Africa</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/northeast-asia-cooperative-security-project/" tabindex="-1">Northeast Asia Cooperative Security Project</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/producing-knowledge-on-world-regions/" tabindex="-1">Producing Knowledge on World Regions</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/religion-and-the-public-sphere/" tabindex="-1">Religion and the Public Sphere</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/scholarly-borderlands//" tabindex="-1">Scholarly Borderlands</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/sloan-scholars-mentoring-network/" tabindex="-1">Sloan Scholars Mentoring Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/social-data-initiative/" tabindex="-1">Social Data Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/strategic-learning-and-evaluation/" tabindex="-1">Strategic Learning and Evaluation</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/transregional-collaboratory-on-the-indian-ocean/" tabindex="-1">Transregional Collaboratory on the Indian Ocean</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/understanding-violent-conflict/" tabindex="-1">Understanding Violent Conflict</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/vietnam-program/" tabindex="-1">Vietnam</a></li>
+        </ul>
+        </li>
+        <li>
+        <a href="https://www.ssrc.org/fellowships/" tabindex="-1">Fellowships &amp; Prizes</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/fellowships/view/aasworkshop/" tabindex="-1">AAS-SSRC Dissertation Workshop Series</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/" tabindex="-1">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship-for-journalists/" tabindex="-1">Abe Fellowship for Journalists</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/collaborative-working-group-fellowships/" tabindex="-1">African Peacebuilding Network Collaborative Working Group Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/apn-research-fellowships/" tabindex="-1">African Peacebuilding Network Individual Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/china-africa-peace-fellowship/" tabindex="-1">China-Africa Peace Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/conflict-research-fellowship/" tabindex="-1">Conflict Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/dpd-university-initiative/" tabindex="-1">DPD University Initiative</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/global-scholars-initiative-writing-workshop//" tabindex="-1">Global Scholars Initiative Writing Workshops</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" tabindex="-1">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/jsps-fellowship/" tabindex="-1">Japan Society for the Promotion of Science (JSPS) Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/just-tech-covid-19-rapid-response-grants/" tabindex="-1">Just Tech Covid-19 Rapid-Response Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksdw/" tabindex="-1">Korean Studies Dissertation Workshop</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksfacultyworkshop/" tabindex="-1">Korean Studies Workshop for Junior Faculty</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/mellon-mays-predoctoral-research-grants/" tabindex="-1">Mellon Mays Predoctoral Research Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" tabindex="-1">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" tabindex="-1">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" tabindex="-1">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/tanur-prize/" tabindex="-1">Rachel Tanur Memorial Prize for Visual Sociology</a></li>
+        <li><a href="https://covid19research.ssrc.org/rapid-response-grants-on-covid-19-and-the-social-sciences" rel="external" tabindex="-1">Rapid-Response Grants on Covid-19 and the Social Sciences</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/call-for-proposals-2020-summer-institute-for-early-career-scholars//" tabindex="-1">Religion and the Public Sphere Summer Institute</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/religion-spirituality-and-democratic-renewal-fellowship/" rel="external" tabindex="-1">Religion, Spirituality, and Democratic Renewal Fellowship<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ssmn-grants/" tabindex="-1">Sloan Scholars Mentoring Network Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/social-data-research-and-dissertation-fellowships" rel="external" tabindex="-1">Social Data Initiative Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/the-albert-o-hirschman-prize/" tabindex="-1">The Albert O. Hirschman Prize</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-collaborative-research-grants//" tabindex="-1">Transregional Collaborative Research Grants<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-planning-grants/" tabindex="-1">Transregional Planning Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-research-fellowship/" tabindex="-1">Transregional Research Junior Scholar Fellowship: InterAsian Contexts and Connections</a></li>
+        </ul>
+        </li>
+        <li><a href="https://www.ssrc.org/themes/" tabindex="-1">Themes</a></li>
+        <li><a href="https://www.ssrc.org/print-and-digital/" tabindex="-1">Print &amp; Digital</a></li>
+        <li>
+        <a href="https://www.ssrc.org/about/mission/" tabindex="-1">About</a><ul class="menu vertical nested">
+        <li class="active">
+        <a class="active" tabindex="-1">About the SSRC</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/about/mission/" tabindex="-1">Mission</a></li>
+        <li><a href="https://www.ssrc.org/about/who-we-are/" tabindex="-1">Who We Are</a></li>
+        <li><a href="https://www.ssrc.org/about/how-we-work/" tabindex="-1">How We Work</a></li>
+        <li><a href="https://www.ssrc.org/about/where-we-work/" tabindex="-1">Where We Work</a></li>
+        </ul>
+        </li>
+        <li class="active">
+        <a class="active" tabindex="-1">Leadership</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/about/board-of-directors/" tabindex="-1">Board of Directors</a></li>
+        <li><a href="https://www.ssrc.org/about/executive-officers/" tabindex="-1">Executive Officers</a></li>
+        <li><a href="https://www.ssrc.org/about/visiting-committee-to-the-social-science-research-council/" tabindex="-1">Visiting Committee</a></li>
+        </ul>
+        </li>
+        <li class="active">
+        <a class="active" tabindex="-1">General Information</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/search/?t=staff" tabindex="-1">Staff Directory</a></li>
+        <li><a href="https://www.ssrc.org/about/college-and-university-fund/" tabindex="-1">College and University Fund for the Social Sciences</a></li>
+        <li><a href="https://anamericandilemma21c.org/" rel="external" tabindex="-1">An American Dilemma for the 21st Century</a></li>
+        <li><a href="http://www.ssrc.org/to-secure-knowledge/" rel="external" tabindex="-1">To Secure Knowledge: A Task Force of the SSRC</a></li>
+        <li><a href="https://www.ssrc.org/about/financials/" tabindex="-1">Financials</a></li>
+        <li><a href="https://www.ssrc.org/about/employment/" tabindex="-1">Employment</a></li>
+        <li><a href="https://www.ssrc.org/about/contact-us/" tabindex="-1">Contact Us</a></li>
+        </ul>
+        </li>
+        </ul>
+        </li>
+        <li><a href="https://www.ssrc.org/news/" tabindex="-1">News</a></li>
+        <li><a href="https://www.ssrc.org/donate/" tabindex="-1">Donate</a></li>
+        <li><a href="https://www.ssrc.org/pages/privacy-policy/" tabindex="-1">Privacy Policy</a></li>
+        <li><a href="https://www.ssrc.org/pages/directions-to-the-ssrc/" tabindex="-1">Directions to the SSRC</a></li>
+        <li><a href="https://www.ssrc.org/pages/creative-commons/" tabindex="-1">Creative Commons</a></li>
+        </ul></nav></div>
+        <div class="off-canvas-content" data-off-canvas-content="data-off-canvas-content">
+        <header id="page-header" class="s-search"><div id="menu">
+        <div id="eyebrow" class="hide-for-small-only"><div class="grid-container"><div class="grid-x">
+        <h6 class="cell hide-for-medium-only large-6"><a href="https://www.ssrc.org">The Social Science Research Council</a></h6>
+        <nav class="cell large-12 l-eyebrow-menu"><a href="https://www.ssrc.org/news/">News</a><a href="https://items.ssrc.org"><em>Items</em></a><a href="https://www.ssrc.org/view/college-and-university-fund/">College and University Fund</a><a href="https://covid19research.ssrc.org"><span style="color: #cc4b37">Covid-19 and the Social Sciences</span></a><a href="https://www.ssrc.org/donate/" class="l-donate-button">Donate</a></nav>
+        </div></div></div>
+        <div class="grid-container"><div class="grid-x grid-margin-x">
+        <a href="https://www.ssrc.org" class="cell small-10 medium-3 logo"><svg width="150" height="80" aria-label="The Social Science Research Council" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a><nav class="cell hide-for-small-only medium-13 large-14 l-main-menu"><ul class="dropdown menu" data-dropdown-menu="data-dropdown-menu">
+        <li>
+        <a href="https://www.ssrc.org/programs/">Programs</a><ul class="l-sub-nav menu">
+        <li><a href="https://www.ssrc.org/programs/view/abe-fellowship-program/">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/apn/">African Peacebuilding Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/anxieties-of-democracy/">Anxieties of Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cppf/">Conflict Prevention and Peace Forum</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cuba-program/">Cuba</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/digital-culture/">Digital Culture</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dsd/">Drugs, Security and Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/global-scholars-initiative/">Global Scholars Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/interasia-program/">InterAsia</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/idrf/">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/just-tech/">Just Tech</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/moa/">Measure of America</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/media-democracy/">Media &amp; Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/mellon-mays-graduate-initiatives-program/">Mellon Mays Graduate Initiatives</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/nextgenafrica/">Next Generation Social Sciences in Africa</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/religion-and-the-public-sphere/">Religion and the Public Sphere</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/scholarly-borderlands//">Scholarly Borderlands</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/sloan-scholars-mentoring-network/">Sloan Scholars Mentoring Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/social-data-initiative/">Social Data Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/transregional-collaboratory-on-the-indian-ocean/">Transregional Collaboratory on the Indian Ocean</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/understanding-violent-conflict/">Understanding Violent Conflict</a></li>
+        </ul>
+        </li>
+        <li>
+        <a href="https://www.ssrc.org/fellowships/">Fellowships &amp; Prizes</a><ul class="l-sub-nav menu">
+        <li><a href="https://www.ssrc.org/fellowships/view/aasworkshop/">AAS-SSRC Dissertation Workshop Series</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship-for-journalists/">Abe Fellowship for Journalists</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/collaborative-working-group-fellowships/">African Peacebuilding Network Collaborative Working Group Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/apn-research-fellowships/">African Peacebuilding Network Individual Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/china-africa-peace-fellowship/">China-Africa Peace Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/conflict-research-fellowship/">Conflict Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/global-scholars-initiative-writing-workshop//">Global Scholars Initiative Writing Workshops</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/jsps-fellowship/">Japan Society for the Promotion of Science (JSPS) Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/just-tech-covid-19-rapid-response-grants/">Just Tech Covid-19 Rapid-Response Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksdw/">Korean Studies Dissertation Workshop</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksfacultyworkshop/">Korean Studies Workshop for Junior Faculty</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/mellon-mays-predoctoral-research-grants/">Mellon Mays Predoctoral Research Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/tanur-prize/">Rachel Tanur Memorial Prize for Visual Sociology</a></li>
+        <li><a href="https://covid19research.ssrc.org/rapid-response-grants-on-covid-19-and-the-social-sciences" rel="external">Rapid-Response Grants on Covid-19 and the Social Sciences</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/call-for-proposals-2020-summer-institute-for-early-career-scholars//">Religion and the Public Sphere Summer Institute</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/religion-spirituality-and-democratic-renewal-fellowship/" rel="external">Religion, Spirituality, and Democratic Renewal Fellowship<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ssmn-grants/">Sloan Scholars Mentoring Network Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/social-data-research-and-dissertation-fellowships" rel="external">Social Data Initiative Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/the-albert-o-hirschman-prize/">The Albert O. Hirschman Prize</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-collaborative-research-grants//">Transregional Collaborative Research Grants<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-planning-grants/">Transregional Planning Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-research-fellowship/">Transregional Research Junior Scholar Fellowship: InterAsian Contexts and Connections</a></li>
+        </ul>
+        </li>
+        <li><a href="https://www.ssrc.org/themes/">Themes</a></li>
+        <li><a href="https://www.ssrc.org/print-and-digital/">Print &amp; Digital</a></li>
+        <li><a href="https://www.ssrc.org/about/mission/">About</a></li>
+        </ul></nav><form id="searchsite" name="searchsite" method="get" action="https://www.ssrc.org/search/" class="l-search cell small-6 medium-2 large-1" itemprop="potentialAction" itemscope="itemscope" itemtype="http://schema.org/SearchAction">
+        <meta itemprop="target" content="https://www.ssrc.org/search/?q={q}&amp;start=0">
+        <span class="fa fa-search hide-for-small" aria-hidden="true"><i>Search</i></span><input itemprop="query-input" type="search" name="q" accesskey="s" tabindex="1" value="qualitative" placeholder="Type to search"><input type="hidden" name="start" value="0"><button type="submit" class="fa fa-search"><i>Search</i></button><a class="fa fa-close"><i>Close</i></a>
+        </form>
+        <div class="show-for-small-only cell small-2"><button type="button" data-toggle="offCanvas">Open Menu</button></div>
+        </div></div>
+        </div>
+        <div class="s-search l-centered-hero"><div class="grid-container"><h1>48 results  for <em>“qualitative”</em> in <em>Fellows &amp; Grantees</em>
+        </h1></div></div></header><main id="page-content" role="main" tabindex="0"><div class="grid-container l-generic-page"><div class="grid-x l-search-results">
+        <div class="hide-for-medium cell small-2"><button type="button" class="button" data-toggle="searchOffCanvas">Open Search Filters</button></div>
+        <aside id="searchOffCanvas" class="off-canvas-absolute off-canvas position-left in-canvas-for-medium" data-off-canvas="data-off-canvas"><form class="facets">
+        <fieldset class="fieldset keywords">
+        <input type="hidden" name="t" value="fellows"><input type="hidden" name="p" value="1"><input type="hidden" name="sort" value="relevance"><div class="input-group">
+        <input type="text" name="q" value="qualitative" placeholder="Enter keywords..." class="input-group-field"><div class="input-group-button"><button type="submit" class="button">Search</button></div>
+        </div>
+        <a href="https://www.ssrc.org/search/?q=qualitative" class="clear"><span class="icon">×</span><span>Clear all filters</span></a>
+        </fieldset>
+        <h3>Narrow by type</h3>
+        <ul class="types">
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative">All types</a><span class="count">119</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=pages">Pages</a><span class="count">2</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=publications">Publications &amp; Writing</a><span class="count">28</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=programs">Programs &amp; Projects</a><span class="count">5</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=fellowships">Fellowships &amp; Prizes</a><span class="count">2</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=staff">Staff</a><span class="count">4</span>
+        </li>
+        <li class="selected">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=fellows">Fellows &amp; Grantees</a><span class="count">78</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=events">Meetings &amp; Events</a><span class="count">0</span>
+        </li>
+        </ul>
+        <h3>Sort by</h3>
+        <ul class="types sort">
+        <li class="selected"><a href="#relevance">Relevance</a></li>
+        <li class=""><a href="#name">Name (a-z)</a></li>
+        <li class=""><a href="#year">Year (newest first)</a></li>
+        </ul>
+        <fieldset class="facet">
+            <h3>Fellowship/Prizes</h3>
+            <ul class="types">
+                      <li class="all selected">
+                    <label>
+                      <input type="radio" name="fellowship" value="" checked>
+                      <span>All Fellowships &amp; Prizes</span>
+                    </label>
+                  </li>
+                          <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="AAS-SSRC Dissertation Workshop Series">
+                        <span>AAS-SSRC Dissertation Workshop Series</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Abe Fellowship">
+                        <span>Abe Fellowship</span>
+                        <span class="count">4</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="International Dissertation Research Fellowship (IDRF)">
+                        <span>International Dissertation Research Fellowship (IDRF)</span>
+                        <span class="count">8</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship">
+                        <span>Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</span>
+                        <span class="count">11</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship">
+                        <span>Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</span>
+                        <span class="count">14</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship">
+                        <span>Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</span>
+                        <span class="count">10</span>
+                      </label>
+                    </li>
+                    </ul>
+        </fieldset>
+        <fieldset class="facet">
+            <h3>Year</h3>
+            <ul class="types">
+                        <li class="selected removeable">
+                      <label title="Remove 2014">
+                        <input type="checkbox" name="year[]" value="2014" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2014</span>
+                        <span class="count">19</span>
+                      </label>
+                    </li>
+                          <li class="selected removeable">
+                      <label title="Remove 2013">
+                        <input type="checkbox" name="year[]" value="2013" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2013</span>
+                        <span class="count">13</span>
+                      </label>
+                    </li>
+                          <li class="selected removeable">
+                      <label title="Remove 2015">
+                        <input type="checkbox" name="year[]" value="2015" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2015</span>
+                        <span class="count">10</span>
+                      </label>
+                    </li>
+                          <li class="selected removeable">
+                      <label title="Remove 2012">
+                        <input type="checkbox" name="year[]" value="2012" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2012</span>
+                        <span class="count">6</span>
+                      </label>
+                    </li>
+                        <li class="all ">
+                    <label>
+                      <input type="radio" name="year" value="">
+                      <span>All years</span>
+                    </label>
+                  </li>
+                          <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2011">
+                        <span>2011</span>
+                        <span class="count">4</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2010">
+                        <span>2010</span>
+                        <span class="count">5</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2009">
+                        <span>2009</span>
+                        <span class="count">4</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2008">
+                        <span>2008</span>
+                        <span class="count">5</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2007">
+                        <span>2007</span>
+                        <span class="count">5</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2006">
+                        <span>2006</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2005">
+                        <span>2005</span>
+                        <span class="count">3</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2004">
+                        <span>2004</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="1999">
+                        <span>1999</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="1997">
+                        <span>1997</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                    </ul>
+        </fieldset>
+        </form></aside><section class="cell medium-13 l-hits"><div id="filter-repeater"></div>
+        <ul>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/599ED902-834D-E411-9403-005056AB4B80/">Maame Kyerewaa Brobbey</a></h5>
+        <p class="l-title">Teaching Assistant, Institute of African Studies</p>
+        <p class="l-institution">University of Ghana, Legon</p>
+        <p class="l-project-title"><em>Ghana's Security Burden: Youth Unemployment and Illegal Gold Mining</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Ghana</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><a href="https://www.ssrc.org/fellows/EE9FD621-CFDE-E411-940A-005056AB4B80/"><img alt="" class="thumbnail" src="https://www.ssrc.org/image/1/320/320/1/s3.amazonaws.com/ssrc-cdn1/crmuploads/contact/chitukutuku-edmore.jpg"></a></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/EE9FD621-CFDE-E411-940A-005056AB4B80/">Edmore Chitukutuku</a></h5>
+        <p class="l-title">Department of Anthropology</p>
+        <p class="l-institution">University of the Witwatersrand</p>
+        <p class="l-project-title"><em>Rebuilding liberation war militia bases: Reproducing memories of political violence in post-2000 crisis in Zimababwe</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of the Witwatersrand</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/389ED902-834D-E411-9403-005056AB4B80/">Patience Afua Addo</a></h5>
+        <p class="l-title">Teaching Assistant, INSTITUTE OF AFRICAN STUDIES</p>
+        <p class="l-institution">University of Ghana, Legon</p>
+        <p class="l-project-title"><em>EFFECTS OF CLIMATE CHANGE ON SOCIAL NETWORKS AND GENDER INEQUALITY AND THE IMPLICATION FOR FOOD SECURITY IN FISHING COMMUNITIES IN GHANA.</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Ghana</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/80C7CFFC-824D-E411-9403-005056AB4B80/">Robert Ojambo</a></h5>
+        <p class="l-title">Lecturer, DEPARTMENT OF HISTORY AND POLITICAL SCIENCE</p>
+        <p class="l-project-title"><em>The Land Question in the Socio-Political Conflicts in the Former Districts of Bukedi and Bugisu in Eastern Uganda: 1900-2007</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Dar es Salaam</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/499ED902-834D-E411-9403-005056AB4B80/">Prudence Byambwenu Kemigisha</a></h5>
+        <p class="l-title">Lecturer, Faculty of Interdisciplinary Studies</p>
+        <p class="l-institution">Mbarara University of Science and Technology</p>
+        <p class="l-project-title"><em>Land Rights and Food Security in Uganda: Assessing  the influence of women’s land rights on food security in Bushenyi district</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Mbarara University of Science & Technology</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/1DC0EE08-834D-E411-9403-005056AB4B80/">Richard Bruno Mbunda</a></h5>
+        <p class="l-title">Assistant Lecturer, Political Science and Public Administration</p>
+        <p class="l-institution">University of Dar es Salaam</p>
+        <p class="l-project-title"><em>Peasant Agriculture and the Quest for Food Sovereignty in Tanzania</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Dar es Salaam</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/1BC0EE08-834D-E411-9403-005056AB4B80/">Uche Okpara</a></h5>
+        <p class="l-title">Lecturer, Climate Change and State Fragility</p>
+        <p class="l-institution">University of Greenwich</p>
+        <p class="l-project-title"><em>Climate Change, Water Resources and Conflict: Evidence and Proposed Policy Responses</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Leeds</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/76C7CFFC-824D-E411-9403-005056AB4B80/">Jean Pierre Pierre Misago</a></h5>
+        <p class="l-title">Senior Researcher, African Center for Migration & Society</p>
+        <p class="l-institution">University of the Witwatersrand</p>
+        <p class="l-project-title"><em>Migration, Governance and Violent Exclusion: Exploring the Politics of Xenophobic Violence in Post-Apartheid South Africa</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of the Witwatersrand</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><a href="https://www.ssrc.org/fellows/209ED902-834D-E411-9403-005056AB4B80/"><img alt="" class="thumbnail" src="https://www.ssrc.org/image/1/320/320/1/s3.amazonaws.com/ssrc-cdn1/crmuploads/contact/serwajja-eria.jpg"></a></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/209ED902-834D-E411-9403-005056AB4B80/">Eria Serwajja</a></h5>
+        <p class="l-title">Lecturer, International Development</p>
+        <p class="l-institution">Busitema University</p>
+        <p class="l-project-title"><em>EXAMINING THE LAND QUESTION IN RESETTLEMENT: A case Post-Conflict Northern Uganda</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2013</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of the Western Cape</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/10A0D621-CFDE-E411-940A-005056AB4B80/">Xichavo Alecia Ndlovu</a></h5>
+        <p class="l-title">Part-time Associate Lecturer, International Relations</p>
+        <p class="l-project-title"><em>Sustaining the unsustainable? Political institutions and development in sub-Saharan Africa's resource economies.</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of the Witwatersrand</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/08BA0128-CFDE-E411-940A-005056AB4B80/">Innocent Badasu</a></h5>
+        <p class="l-title">Graduate Teaching Assistant, Legon Centre for International Affairs and Diplomacy</p>
+        <p class="l-institution">University of Ghana</p>
+        <p class="l-project-title"><em>The role of civil society in Peace-building: A case study of West Africa.</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Ghana</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/39BA0128-CFDE-E411-940A-005056AB4B80/">Sithembile Mbete</a></h5>
+        <p class="l-title">Lecturer, Political Sciences</p>
+        <p class="l-institution">University of Pretoria</p>
+        <p class="l-project-title"><em>The ‘middle power’ debate revisited: South Africa on the United Nations Security Council, 2007-2008 and 2011-2012</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Pretoria</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/01A0D621-CFDE-E411-940A-005056AB4B80/">Simangele Gladys Mayisela</a></h5>
+        <p class="l-title">Visiting Lecturer, Department of Education</p>
+        <p class="l-institution">University of Cape Town</p>
+        <p class="l-project-title"><em>Corporal punishment: cultural-historical practices of a South African primary school teachers</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2015</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Cape Town</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/64B1EB71-0DA6-E111-BB1A-001CC477EC84/">Asheesh Kapur Siddique</a></h5>
+        <p class="l-title">Assistant Professor, History</p>
+        <p class="l-institution">University of Massachusetts / Amherst</p>
+        <p class="l-project-title"><em>Daring to Ask: The Questionnaire and the Problem of Knowledge in the Late Eighteenth Century British Atlantic Enlightenment</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" class="muted">International Dissertation Research Fellowship (IDRF)</a></dd>
+        <dt>Year </dt>
+        <dd>2012</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Columbia University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><a href="https://www.ssrc.org/fellows/50E97C05-2F8B-E211-A4A2-001CC477EC84/"><img alt="" class="thumbnail" src="https://www.ssrc.org/image/1/320/320/1/s3.amazonaws.com/ssrc-cdn1/crmuploads/contact/yamamoto-yoko.png"></a></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/50E97C05-2F8B-E211-A4A2-001CC477EC84/">Yoko Yamamoto</a></h5>
+        <p class="l-title">Adjunct Assistant Professor/Research Associate, Department of Education/Center for the Study of Human Development</p>
+        <p class="l-institution">Brown University</p>
+        <p class="l-project-title"><em>Social Stratification and Early Educational Processes: Student Beliefs about Learning in Japan and the U.S.</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/" class="muted">Abe Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2012</dd>
+        <dt>Title (at time of award)</dt>
+        <dd>Adjunt Assistant Professor, Research Associate</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Brown University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><a href="https://www.ssrc.org/fellows/19A6BB7C-8FD8-E411-940A-005056AB4B80/"><img alt="" class="thumbnail" src="https://www.ssrc.org/image/1/320/320/1/s3.amazonaws.com/ssrc-cdn1/crmuploads/contact/porter-noriko.png"></a></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/19A6BB7C-8FD8-E411-940A-005056AB4B80/">Noriko Porter</a></h5>
+        <p class="l-title">Instructor, Human Development</p>
+        <p class="l-institution">Washington State University</p>
+        <p class="l-project-title"><em>Comparing Stress of Mothers Who Raise Children With Autism Between Japan and USA: A Mixed Methods Study</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/" class="muted">Abe Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>Title (at time of award)</dt>
+        <dd>Instructor</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Washington State University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/5AF2DCE5-4AE7-E311-93FF-005056AB4B80/">Galen B. Murton</a></h5>
+        <p class="l-title">Assistant Professor, Geography</p>
+        <p class="l-institution">James Madison University</p>
+        <p class="l-project-title"><em>Himalayan Highways: Intersecting Identities, Markets, and Geopolitics in Mustang, Nepal</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" class="muted">International Dissertation Research Fellowship (IDRF)</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Colorado / Boulder</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/2EB1EB71-0DA6-E111-BB1A-001CC477EC84/">Nicholas Barnes</a></h5>
+        <p class="l-title">Watson Institute Postdoctoral Fellow, International and Public Affairs</p>
+        <p class="l-institution">Brown University</p>
+        <p class="l-project-title"><em>Monopolies of Violence: Gang Governance in Rio de Janeiro</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" class="muted">International Dissertation Research Fellowship (IDRF)</a></dd>
+        <dt>Year </dt>
+        <dd>2012</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of Wisconsin / Madison</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/598CE0DF-4AE7-E311-93FF-005056AB4B80/">Volha Charnysh</a></h5>
+        <p class="l-title">Assistant Professor, Political Science</p>
+        <p class="l-institution">Massachusetts Institute of Technology (MIT)</p>
+        <p class="l-project-title"><em>Overcoming the Challenges of Diversity: Institutional Solutions to Dilemmas of Collective Action</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" class="muted">International Dissertation Research Fellowship (IDRF)</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Harvard University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/4CB1EB71-0DA6-E111-BB1A-001CC477EC84/">Hun Kim</a></h5>
+        <p class="l-title">Assistant Professor, Department of Urban Planning and Public Policy</p>
+        <p class="l-institution">University of California / Irvine</p>
+        <p class="l-project-title"><em>Categorical Erosion: Land Capitalization and Governance in Vietnam</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" class="muted">International Dissertation Research Fellowship (IDRF)</a></dd>
+        <dt>Year </dt>
+        <dd>2012</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of California / Berkeley</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/6FB1EB71-0DA6-E111-BB1A-001CC477EC84/">Gowri Vijayakumar</a></h5>
+        <p class="l-title">Assistant Professor, Sociology</p>
+        <p class="l-institution">Brandeis University</p>
+        <p class="l-project-title"><em>Viral Politics: AIDS, Public Health, and Citizenship in India and South Africa</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" class="muted">International Dissertation Research Fellowship (IDRF)</a></dd>
+        <dt>Year </dt>
+        <dd>2012</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of California / Berkeley</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/04C0EE08-834D-E411-9403-005056AB4B80/">Xichavo Alecia Ndlovu</a></h5>
+        <p class="l-title">Part-time Associate Lecturer, International Relations</p>
+        <p class="l-project-title"><em>Sustaining the unsustainable? Political institutions and development in sub-Saharan Africa's resource economies</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" class="muted">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>University of the Witwatersrand</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        <li class="hit l-fellows-hit"><div class="grid-x">
+        <aside class="cell medium-5 hide-for-small-only"><img src="https://www.ssrc.org/workspace/assets/images/default-avatar.png"></aside><div class="cell medium-13">
+        <h5><a href="https://www.ssrc.org/fellows/D397F92F-B1D7-E411-940A-005056AB4B80/">Gene Park</a></h5>
+        <p class="l-title">Associate Professor, Political Science</p>
+        <p class="l-institution">Loyola Marymount University</p>
+        <p class="l-project-title"><em>Tax Structure, Politics, and Deficits</em></p>
+        <dl class="l-inline-summary">
+        <dt>Fellowship/Grant</dt>
+        <dd><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/" class="muted">Abe Fellowship</a></dd>
+        <dt>Year </dt>
+        <dd>2014</dd>
+        <dt>Title (at time of award)</dt>
+        <dd>Associate Professor</dd>
+        <dt>University/Institution (at time of award)</dt>
+        <dd>Loyola Marymount University</dd>
+        </dl>
+        <span class="l-label"><span>Fellows &amp; Grantees</span></span>
+        </div>
+        </div></li>
+        </ul>
+        <div class="grid-container l-search-pagination"><ul class="pagination" data-options="appendTo:.l-hits &gt; ul;target:.l-hits &gt; ul li;pageParam:p">
+        <li><a class="pagination-previous" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=1">« Previous</a></li>
+        <li><a class="page" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=1">1</a></li>
+        <li class="current"><a class="page" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=2">2</a></li>
+        <li class="disabled"><a class="pagination-next" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=1">Next »</a></li>
+        </ul></div></section>
+        </div></div></main><footer id="page-footer"><div class="grid-container grid-x grid-padding-x">
+        <div class="cell medium-9">
+        <a href="https://www.ssrc.org" class="logo"><svg width="200" height="80" aria-label="The Social Science Research Council" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a><div class="grid-x grid-padding-x">
+        <div class="l-contact-info cell medium-9" itemscope="itemscope" itemtype="http://schema.org/Organization">
+        <nav class="l-social-navigation"><a href="https://www.ssrc.org/news/" rel="me noopener" target="_blank" class="fa fa-envelope"><i>News</i></a><a href="https://twitter.com/SSRC_org" rel="me noopener" target="_blank" class="fa fa-twitter"><i>Twitter</i></a><a href="https://www.facebook.com/SSRC.org" rel="me noopener" target="_blank" class="fa fa-facebook"><i>Facebook</i></a><a href="https://www.youtube.com/user/SSRCorg" rel="me noopener" target="_blank" class="fa fa-youtube-play"><i>Youtube</i></a></nav><p itemprop="name">Social Science Research Council</p>
+        <p itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">300 Cadman Plaza West, 15th Floor</span><br><span itemprop="addressLocality">Brooklyn</span>, <span itemprop="addressRegion">NY</span> <span itemprop="postalCode">11201</span>, <span itemprop="addressCountry">USA</span></p>
+        <p><a href="tel:2123772700" itemprop="telephone">212-377-2700</a></p>
+        </div>
+        <div class="cell medium-9"><nav class="l-footer-menu"><ol>
+        <li><a href="https://www.ssrc.org/pages/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="https://www.ssrc.org/pages/directions-to-the-ssrc/">Directions to the SSRC</a></li>
+        <li><a href="https://www.ssrc.org/pages/creative-commons/">Creative Commons</a></li>
+        <li><a href="https://www.ssrc.org/about/employment/">Employment</a></li>
+        <li><a href="https://www.ssrc.org/about/contact-us/">Contact Us</a></li>
+        </ol></nav></div>
+        </div>
+        </div>
+        <div class="cell medium-9">
+        <div class="l-content hide-for-small-only">
+        <h6>Mobilizing social science for the public good.</h6>
+        <p>The Social Science Research Council, an independent, international nonprofit, mobilizes necessary knowledge for the public good by supporting scholars worldwide, generating new research across disciplines, and linking researchers with policymakers and citizens.</p>
+        </div>
+        <div id="subscribe">
+        <h3>Sign up for Council Update, the SSRC's monthly newsletter</h3>
+        <form method="post" enctype="multipart/form-data" class="l-form grid-margin-x grid-container"><div class="grid-x grid-margin-x">
+        <div class="cell medium-6"><label for="name">Name<input type="text" id="name" name="fields[name]" required="required" placeholder="Name"></label></div>
+        <div class="cell medium-8"><label for="email">Email address<input type="email" id="email" name="fields[email]" required="required" placeholder="Email address"></label></div>
+        <div class="cell medium-4">
+        <input type="hidden" id="country" name="fields[country]"><button name="action[subscribe]" class="button" type="submit">Subscribe</button>
+        </div>
+        <div class="cell l-content"><p>By subscribing, you agree that the SSRC may process your information in accordance with our <a href="https://www.ssrc.org/pages/privacy-policy/">privacy
+          policy</a>.</p></div>
+        </div></form>
+        </div>
+        </div>
+        </div></footer>
+        </div>
+        </div>
+        <div id="cookie" class="l-sticky-footer"><div class="grid-container grid-x">
+        <div class="cell medium-14"><p>Our site uses cookies to enhance your browsing experience.  By continuing to use our site you give us permission to deploy cookies per our <a href="https://www.ssrc.org/pages/privacy-policy/">privacy and cookies policy</a>.</p></div>
+        <button class="l-cookie-button button cell medium-4">Accept &amp; Close</button>
+        </div></div>
+        <script>
+              window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+              ga('create', 'UA-1557817-1', 'ssrc.org');
+              ga('send', 'pageview');
+            </script><script async="async" src="https://www.google-analytics.com/analytics.js"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer', 'GTM-PCR79XB');</script><script src="https://www.ssrc.org/workspace/assets/dist/app.min.js?v=2.0.12"></script>
+        </body>
+        </html>
+  recorded_at: 2021-02-19 16:44:22 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4
+- request:
+    method: get
+    uri: https://www.ssrc.org/search/?t=fellows&sort=relevance&q=qualitative&year=2012,2013,2014,2015,2016,2017,2018,2019,2020&p=3
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 19 Feb 2021 16:44:21 GMT
+      server: Apache
+      cache-control: no-cache, must-revalidate, max-age=0
+      expires: Mon, 12 Dec 1982 06:14:00 GMT
+      pragma: no-cache
+      x-frame-options: SAMEORIGIN
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      last-modified: Fri, 19 Feb 2021 16:44:21 GMT
+      vary: Accept-Encoding,User-Agent
+      content-encoding: gzip
+      strict-transport-security: max-age=300; includeSubDomains
+      x-ua-compatible: IE=edge
+      content-length: '8240'
+      content-type: text/html; charset=utf-8
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        <!DOCTYPE html>
+        <html class="no-js" lang="en">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="imagetoolbar" content="false">
+        <meta name="MSSmartTagsPreventParsing" content="true">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#E1E2E3">
+        <meta charset="utf-8">
+        <meta name="root" content="https://www.ssrc.org/">
+        <link rel="shortcut icon" href="https://www.ssrc.org/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+        <link rel="preconnect" href="https://s3.amazonaws.com">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <link rel="preconnect" href="https://www.google-analytics.com">
+        <link rel="preconnect" href="https://www.googletagmanager.com">
+        <link rel="alternate" type="application/rss+xml" title="SSRC Newsfeed" href="https://www.ssrc.org/feed/">
+        <title>Search for qualitative | Social Science Research Council (SSRC) | Brooklyn, NY, USA</title>
+        <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0">
+        <link rel="stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" as="style" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i&amp;display=swap" crossorigin="anonymous">
+        <link rel="stylesheet" as="style" href="https://www.ssrc.org/workspace/assets/dist/app.min.css?v=2.0.12">
+        <meta property="og:site_name" content="Social Science Research Council">
+        <meta name="twitter:site" content="@SSRC_org">
+        <meta name="twitter:card" content="summary_large_image">
+        </head>
+        <body itemscope="itemscope" itemtype="http://schema.org/SearchResultsPage" id="search-page">
+        <svg style="display: none"><symbol id="logo" viewBox="0 0 672 219"><path d="m312.60000172 163.20000572c-14.9 0-25.6-3.5-35-13.1l10-9.9c7.2 7.2 15.1 9.5 25.3 9.5 12.9 0 20.4-5.6 20.4-15.2 0-4.3-1.3-7.9-3.9-10.3-2.5-2.4-5-3.3-10.8-4.2l-11.7-1.7c-8.1-1.1-14.5-3.9-18.8-7.9-4.9-4.6-7.2-10.8-7.2-18.9 0-17.2 12.5-29 33.1-29 13.1 0 22.2 3.3 30.7 11.3l-9.6 9.4c-6.1-5.8-13.2-7.6-21.5-7.6-11.7 0-18.1 6.7-18.1 15.4 0 3.6 1.1 6.8 3.8 9.2 2.5 2.2 6.5 3.9 11.1 4.6l11.3 1.7c9.2 1.4 14.3 3.6 18.5 7.4 5.4 4.7 8.1 11.8 8.1 20.3-.1 18.2-15 29-35.7 29z"></path><path d="m415.90000172 163.20000572c-14.9 0-25.6-3.5-35-13.1l10-9.9c7.2 7.2 15.1 9.5 25.3 9.5 12.9 0 20.4-5.6 20.4-15.2 0-4.3-1.3-7.9-3.9-10.3-2.5-2.4-5-3.3-10.8-4.2l-11.7-1.5c-8.1-1.1-14.5-3.9-18.8-7.9-4.9-4.6-7.2-10.8-7.2-18.9 0-17.2 12.5-29 33.1-29 13.1 0 22.2 3.3 30.7 11.3l-9.6 9.4c-6.1-5.8-13.2-7.6-21.5-7.6-11.7 0-18.1 6.7-18.1 15.4 0 3.6 1.1 6.8 3.8 9.2 2.5 2.2 6.5 3.9 11.1 4.6l11.3 1.7c9.2 1.4 14.3 3.6 18.5 7.4 5.4 4.7 8.1 11.8 8.1 20.3-.2 18-15 28.8-35.7 28.8z"></path><path d="m547.00000172 162.40000572-20.8-41.7h-18.8v41.7h-15v-98.9h38.4c18.8 0 30.7 12.1 30.7 28.9 0 14.2-8.6 23.2-19.7 26.3l22.8 43.8h-17.6zm-17.3-85.5h-22.2v31h22.2c10 0 16.8-5.7 16.8-15.4 0-9.8-6.8-15.6-16.8-15.6z"></path><path d="m636.20000172 163.20000572c-10.3 0-19.2-3.8-26-10.6-9.7-9.7-9.6-20.7-9.6-39.7s-.1-30 9.6-39.7c6.8-6.8 15.7-10.6 26-10.6 18.2 0 31.8 10.7 35.3 30.4h-15.3c-2.4-10-9-16.9-20-16.9-5.8 0-11.1 2.2-14.6 6-4.9 5.3-6 11-6 30.9s1.1 25.6 6 30.8c3.5 3.8 8.8 6 14.6 6 11 0 17.8-7 20.1-17h15.1c-3.2 19.7-17.2 30.4-35.2 30.4z"></path><path d="m88.00000172 219.00000572c-19.9 0-40.1-5.1-58.6-15.7l8.3-14.4c15.9 9.2 33.2 13.5 50.3 13.5 34.8 0 68.7-18.1 87.3-50.4 9.2-15.9 13.5-33.2 13.5-50.3 0-34.8-18.1-68.7-50.4-87.3l8.3-14.4c37.6 21.7 58.7 61.2 58.7 101.7 0 19.9-5.1 40.1-15.7 58.6-21.7 37.6-61.2 58.7-101.7 58.7z"></path><path d="m30.40000172 117.50000572 33.5 19.3 19.7-34-41.5-24c-6.8 12.5-10.4 25.9-11.7 38.7z"></path><path d="m42.80000172 173.20000572 17.9-31-30.9-17.8c-.1 1.5-.1 3-.1 4.4 0 11.7 1.9 22.3 4.9 30.5 2.3 6.3 5.3 11.1 8.2 13.9z"></path><path d="m97.30000172 163.30000572-31.2-18-17.9 31c2.1.6 4.7 1 7.7 1 11 0 26.5-4.6 41.4-14z"></path><path d="m45.10000172 73.40000572 41.5 24 19.7-34-33.5-19.3c-10.4 7.4-20.2 17.2-27.7 29.3z"></path><path d="m78.50000172 40.20000572 30.8 17.8 17.9-31.1c-2-.5-4.4-.8-7.2-.8-10.8-.1-26.4 4.6-41.5 14.1z"></path><path d="m151.60000172 89.50000572c-1.6 12.7-5.5 25.9-12.2 38.3l26.3 15.2c6.7-12.5 10.1-26 10.4-39.4z"></path><path d="m24.50000172 114.10000572c1.6-12.7 5.4-25.9 12.1-38.4l-26.4-15.2c-6.7 12.6-10 26.1-10.2 39.5z"></path><path d="m114.80000172 61.10000572 31.5 18.2c.1-1.6.1-3.2.1-4.7 0-11.7-1.9-22.3-4.9-30.5-2.4-6.6-5.6-11.5-8.6-14.2z"></path><path d="m130.90000172 130.10000572-42-24.2-19.7 34 33.9 19.6c10.4-7.5 20.2-17.2 27.8-29.4z"></path><path d="m103.50000172 166.90000572c-16.7 11.1-34.4 16.6-47.5 16.6-.2 0-.3 0-.5 0 23.7 9.5 49.8 7.9 71.7-2.9z"></path><path d="m28.80000172 161.50000572c-3.3-9-5.3-20.3-5.3-32.7 0-2.6.1-5.2.3-7.9l-23.6-13.7c1.6 24.1 13 47.2 32.7 63-1.6-2.5-2.9-5.5-4.1-8.7z"></path><path d="m136.20000172 133.20000572c-7.5 12.1-17 22-27.2 29.7l24.5 14.2c11.5-6.9 21.5-16.5 29.1-28.6z"></path><path d="m145.80000172 86.10000572-34.1-19.6-19.7 34 42 24.3c6.7-12.6 10.4-25.9 11.8-38.7z"></path><path d="m147.30000172 41.90000572c3.3 9 5.3 20.3 5.3 32.6 0 2.7-.1 5.4-.3 8.2l23.7 13.7c-1.5-24.3-12.9-47.5-32.7-63.4 1.5 2.7 2.9 5.6 4 8.9z"></path><path d="m72.40000172 36.60000572c16.7-11.2 34.5-16.7 47.7-16.8h.5c-23.8-9.5-50-7.9-72 3.1z"></path><path d="m39.70000172 70.30000572c7.5-12.1 17-22 27.1-29.7l-24.6-14.2c-11.4 6.9-21.4 16.6-28.9 28.7z"></path></symbol></svg><div class="off-canvas-wrapper">
+        <div id="offCanvas" class="off-canvas position-right" data-off-canvas="data-off-canvas"><nav class="l-mobile-nav"><ul class="vertical menu drilldown" data-drilldown="data-drilldown" data-scroll-top="true" data-parent-link="true">
+        <li><span>Menu</span></li>
+        <li class="active"><a href="https://www.ssrc.org/" class="active" tabindex="-1">Home</a></li>
+        <li>
+        <a href="https://www.ssrc.org/programs/" tabindex="-1">Programs</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/programs/view/abe-fellowship-program/" tabindex="-1">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/apn/" tabindex="-1">African Peacebuilding Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/anxieties-of-democracy/" tabindex="-1">Anxieties of Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/china-environment-and-health/" tabindex="-1">China Environment and Health Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cppf/" tabindex="-1">Conflict Prevention and Peace Forum</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cuba-program/" tabindex="-1">Cuba</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/digital-culture/" tabindex="-1">Digital Culture</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dignity-and-debt/" tabindex="-1">Dignity + Debt</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dpdf/" tabindex="-1">Dissertation Proposal Development</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dsd/" tabindex="-1">Drugs, Security and Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/education-research-program/" tabindex="-1">Education Research</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/global-scholars-initiative/" tabindex="-1">Global Scholars Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/interasia-program/" tabindex="-1">InterAsia</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/idrf/" tabindex="-1">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/just-tech/" tabindex="-1">Just Tech</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/mastercard-foundation-scholars-program-learning-partnership-facilitation//" tabindex="-1">Mastercard Foundation Scholars Program Learning Partnership Facilitation</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/moa/" tabindex="-1">Measure of America</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/media-democracy/" tabindex="-1">Media &amp; Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/mellon-mays-graduate-initiatives-program/" tabindex="-1">Mellon Mays Graduate Initiatives</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/new-voices-from-japan/" tabindex="-1">New Voices from Japan</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/nextgenafrica/" tabindex="-1">Next Generation Social Sciences in Africa</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/northeast-asia-cooperative-security-project/" tabindex="-1">Northeast Asia Cooperative Security Project</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/producing-knowledge-on-world-regions/" tabindex="-1">Producing Knowledge on World Regions</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/religion-and-the-public-sphere/" tabindex="-1">Religion and the Public Sphere</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/scholarly-borderlands//" tabindex="-1">Scholarly Borderlands</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/sloan-scholars-mentoring-network/" tabindex="-1">Sloan Scholars Mentoring Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/social-data-initiative/" tabindex="-1">Social Data Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/strategic-learning-and-evaluation/" tabindex="-1">Strategic Learning and Evaluation</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/transregional-collaboratory-on-the-indian-ocean/" tabindex="-1">Transregional Collaboratory on the Indian Ocean</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/understanding-violent-conflict/" tabindex="-1">Understanding Violent Conflict</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/vietnam-program/" tabindex="-1">Vietnam</a></li>
+        </ul>
+        </li>
+        <li>
+        <a href="https://www.ssrc.org/fellowships/" tabindex="-1">Fellowships &amp; Prizes</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/fellowships/view/aasworkshop/" tabindex="-1">AAS-SSRC Dissertation Workshop Series</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/" tabindex="-1">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship-for-journalists/" tabindex="-1">Abe Fellowship for Journalists</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/collaborative-working-group-fellowships/" tabindex="-1">African Peacebuilding Network Collaborative Working Group Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/apn-research-fellowships/" tabindex="-1">African Peacebuilding Network Individual Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/china-africa-peace-fellowship/" tabindex="-1">China-Africa Peace Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/conflict-research-fellowship/" tabindex="-1">Conflict Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/dpd-university-initiative/" tabindex="-1">DPD University Initiative</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/global-scholars-initiative-writing-workshop//" tabindex="-1">Global Scholars Initiative Writing Workshops</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/" tabindex="-1">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/jsps-fellowship/" tabindex="-1">Japan Society for the Promotion of Science (JSPS) Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/just-tech-covid-19-rapid-response-grants/" tabindex="-1">Just Tech Covid-19 Rapid-Response Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksdw/" tabindex="-1">Korean Studies Dissertation Workshop</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksfacultyworkshop/" tabindex="-1">Korean Studies Workshop for Junior Faculty</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/mellon-mays-predoctoral-research-grants/" tabindex="-1">Mellon Mays Predoctoral Research Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/" tabindex="-1">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/" tabindex="-1">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/" tabindex="-1">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/tanur-prize/" tabindex="-1">Rachel Tanur Memorial Prize for Visual Sociology</a></li>
+        <li><a href="https://covid19research.ssrc.org/rapid-response-grants-on-covid-19-and-the-social-sciences" rel="external" tabindex="-1">Rapid-Response Grants on Covid-19 and the Social Sciences</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/call-for-proposals-2020-summer-institute-for-early-career-scholars//" tabindex="-1">Religion and the Public Sphere Summer Institute</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/religion-spirituality-and-democratic-renewal-fellowship/" rel="external" tabindex="-1">Religion, Spirituality, and Democratic Renewal Fellowship<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ssmn-grants/" tabindex="-1">Sloan Scholars Mentoring Network Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/social-data-research-and-dissertation-fellowships" rel="external" tabindex="-1">Social Data Initiative Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/the-albert-o-hirschman-prize/" tabindex="-1">The Albert O. Hirschman Prize</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-collaborative-research-grants//" tabindex="-1">Transregional Collaborative Research Grants<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-planning-grants/" tabindex="-1">Transregional Planning Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-research-fellowship/" tabindex="-1">Transregional Research Junior Scholar Fellowship: InterAsian Contexts and Connections</a></li>
+        </ul>
+        </li>
+        <li><a href="https://www.ssrc.org/themes/" tabindex="-1">Themes</a></li>
+        <li><a href="https://www.ssrc.org/print-and-digital/" tabindex="-1">Print &amp; Digital</a></li>
+        <li>
+        <a href="https://www.ssrc.org/about/mission/" tabindex="-1">About</a><ul class="menu vertical nested">
+        <li class="active">
+        <a class="active" tabindex="-1">About the SSRC</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/about/mission/" tabindex="-1">Mission</a></li>
+        <li><a href="https://www.ssrc.org/about/who-we-are/" tabindex="-1">Who We Are</a></li>
+        <li><a href="https://www.ssrc.org/about/how-we-work/" tabindex="-1">How We Work</a></li>
+        <li><a href="https://www.ssrc.org/about/where-we-work/" tabindex="-1">Where We Work</a></li>
+        </ul>
+        </li>
+        <li class="active">
+        <a class="active" tabindex="-1">Leadership</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/about/board-of-directors/" tabindex="-1">Board of Directors</a></li>
+        <li><a href="https://www.ssrc.org/about/executive-officers/" tabindex="-1">Executive Officers</a></li>
+        <li><a href="https://www.ssrc.org/about/visiting-committee-to-the-social-science-research-council/" tabindex="-1">Visiting Committee</a></li>
+        </ul>
+        </li>
+        <li class="active">
+        <a class="active" tabindex="-1">General Information</a><ul class="menu vertical nested">
+        <li><a href="https://www.ssrc.org/search/?t=staff" tabindex="-1">Staff Directory</a></li>
+        <li><a href="https://www.ssrc.org/about/college-and-university-fund/" tabindex="-1">College and University Fund for the Social Sciences</a></li>
+        <li><a href="https://anamericandilemma21c.org/" rel="external" tabindex="-1">An American Dilemma for the 21st Century</a></li>
+        <li><a href="http://www.ssrc.org/to-secure-knowledge/" rel="external" tabindex="-1">To Secure Knowledge: A Task Force of the SSRC</a></li>
+        <li><a href="https://www.ssrc.org/about/financials/" tabindex="-1">Financials</a></li>
+        <li><a href="https://www.ssrc.org/about/employment/" tabindex="-1">Employment</a></li>
+        <li><a href="https://www.ssrc.org/about/contact-us/" tabindex="-1">Contact Us</a></li>
+        </ul>
+        </li>
+        </ul>
+        </li>
+        <li><a href="https://www.ssrc.org/news/" tabindex="-1">News</a></li>
+        <li><a href="https://www.ssrc.org/donate/" tabindex="-1">Donate</a></li>
+        <li><a href="https://www.ssrc.org/pages/privacy-policy/" tabindex="-1">Privacy Policy</a></li>
+        <li><a href="https://www.ssrc.org/pages/directions-to-the-ssrc/" tabindex="-1">Directions to the SSRC</a></li>
+        <li><a href="https://www.ssrc.org/pages/creative-commons/" tabindex="-1">Creative Commons</a></li>
+        </ul></nav></div>
+        <div class="off-canvas-content" data-off-canvas-content="data-off-canvas-content">
+        <header id="page-header" class="s-search"><div id="menu">
+        <div id="eyebrow" class="hide-for-small-only"><div class="grid-container"><div class="grid-x">
+        <h6 class="cell hide-for-medium-only large-6"><a href="https://www.ssrc.org">The Social Science Research Council</a></h6>
+        <nav class="cell large-12 l-eyebrow-menu"><a href="https://www.ssrc.org/news/">News</a><a href="https://items.ssrc.org"><em>Items</em></a><a href="https://www.ssrc.org/view/college-and-university-fund/">College and University Fund</a><a href="https://covid19research.ssrc.org"><span style="color: #cc4b37">Covid-19 and the Social Sciences</span></a><a href="https://www.ssrc.org/donate/" class="l-donate-button">Donate</a></nav>
+        </div></div></div>
+        <div class="grid-container"><div class="grid-x grid-margin-x">
+        <a href="https://www.ssrc.org" class="cell small-10 medium-3 logo"><svg width="150" height="80" aria-label="The Social Science Research Council" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a><nav class="cell hide-for-small-only medium-13 large-14 l-main-menu"><ul class="dropdown menu" data-dropdown-menu="data-dropdown-menu">
+        <li>
+        <a href="https://www.ssrc.org/programs/">Programs</a><ul class="l-sub-nav menu">
+        <li><a href="https://www.ssrc.org/programs/view/abe-fellowship-program/">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/apn/">African Peacebuilding Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/anxieties-of-democracy/">Anxieties of Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cppf/">Conflict Prevention and Peace Forum</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/cuba-program/">Cuba</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/digital-culture/">Digital Culture</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/dsd/">Drugs, Security and Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/global-scholars-initiative/">Global Scholars Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/interasia-program/">InterAsia</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/idrf/">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/just-tech/">Just Tech</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/moa/">Measure of America</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/media-democracy/">Media &amp; Democracy</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/mellon-mays-graduate-initiatives-program/">Mellon Mays Graduate Initiatives</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/nextgenafrica/">Next Generation Social Sciences in Africa</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/religion-and-the-public-sphere/">Religion and the Public Sphere</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/scholarly-borderlands//">Scholarly Borderlands</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/sloan-scholars-mentoring-network/">Sloan Scholars Mentoring Network</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/social-data-initiative/">Social Data Initiative</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/transregional-collaboratory-on-the-indian-ocean/">Transregional Collaboratory on the Indian Ocean</a></li>
+        <li><a href="https://www.ssrc.org/programs/view/understanding-violent-conflict/">Understanding Violent Conflict</a></li>
+        </ul>
+        </li>
+        <li>
+        <a href="https://www.ssrc.org/fellowships/">Fellowships &amp; Prizes</a><ul class="l-sub-nav menu">
+        <li><a href="https://www.ssrc.org/fellowships/view/aasworkshop/">AAS-SSRC Dissertation Workshop Series</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship/">Abe Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/abe-fellowship-for-journalists/">Abe Fellowship for Journalists</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/collaborative-working-group-fellowships/">African Peacebuilding Network Collaborative Working Group Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/apn-research-fellowships/">African Peacebuilding Network Individual Research Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/china-africa-peace-fellowship/">China-Africa Peace Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/conflict-research-fellowship/">Conflict Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/global-scholars-initiative-writing-workshop//">Global Scholars Initiative Writing Workshops</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/idrf-fellowship/">International Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/jsps-fellowship/">Japan Society for the Promotion of Science (JSPS) Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/just-tech-covid-19-rapid-response-grants/">Just Tech Covid-19 Rapid-Response Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksdw/">Korean Studies Dissertation Workshop</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ksfacultyworkshop/">Korean Studies Workshop for Junior Faculty</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/mellon-mays-predoctoral-research-grants/">Mellon Mays Predoctoral Research Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-doctoral-dissertation-completion-fellowship/">Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-proposal-fellowship/">Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/next-generation-social-sciences-in-africa-research-fellowship/">Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/tanur-prize/">Rachel Tanur Memorial Prize for Visual Sociology</a></li>
+        <li><a href="https://covid19research.ssrc.org/rapid-response-grants-on-covid-19-and-the-social-sciences" rel="external">Rapid-Response Grants on Covid-19 and the Social Sciences</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/call-for-proposals-2020-summer-institute-for-early-career-scholars//">Religion and the Public Sphere Summer Institute</a></li>
+        <li><a href="https://www.ssrc.org/programs/component/religion-and-the-public-sphere/religion-spirituality-and-democratic-renewal-fellowship/" rel="external">Religion, Spirituality, and Democratic Renewal Fellowship<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/ssmn-grants/">Sloan Scholars Mentoring Network Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/social-data-research-and-dissertation-fellowships" rel="external">Social Data Initiative Fellowships</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/the-albert-o-hirschman-prize/">The Albert O. Hirschman Prize</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-collaborative-research-grants//">Transregional Collaborative Research Grants<span class="l-nav-label action">Apply</span></a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-planning-grants/">Transregional Planning Grants</a></li>
+        <li><a href="https://www.ssrc.org/fellowships/view/transregional-research-fellowship/">Transregional Research Junior Scholar Fellowship: InterAsian Contexts and Connections</a></li>
+        </ul>
+        </li>
+        <li><a href="https://www.ssrc.org/themes/">Themes</a></li>
+        <li><a href="https://www.ssrc.org/print-and-digital/">Print &amp; Digital</a></li>
+        <li><a href="https://www.ssrc.org/about/mission/">About</a></li>
+        </ul></nav><form id="searchsite" name="searchsite" method="get" action="https://www.ssrc.org/search/" class="l-search cell small-6 medium-2 large-1" itemprop="potentialAction" itemscope="itemscope" itemtype="http://schema.org/SearchAction">
+        <meta itemprop="target" content="https://www.ssrc.org/search/?q={q}&amp;start=0">
+        <span class="fa fa-search hide-for-small" aria-hidden="true"><i>Search</i></span><input itemprop="query-input" type="search" name="q" accesskey="s" tabindex="1" value="qualitative" placeholder="Type to search"><input type="hidden" name="start" value="0"><button type="submit" class="fa fa-search"><i>Search</i></button><a class="fa fa-close"><i>Close</i></a>
+        </form>
+        <div class="show-for-small-only cell small-2"><button type="button" data-toggle="offCanvas">Open Menu</button></div>
+        </div></div>
+        </div>
+        <div class="s-search l-centered-hero"><div class="grid-container"><h1>48 results  for <em>“qualitative”</em> in <em>Fellows &amp; Grantees</em>
+        </h1></div></div></header><main id="page-content" role="main" tabindex="0"><div class="grid-container l-generic-page"><div class="grid-x l-search-results">
+        <div class="hide-for-medium cell small-2"><button type="button" class="button" data-toggle="searchOffCanvas">Open Search Filters</button></div>
+        <aside id="searchOffCanvas" class="off-canvas-absolute off-canvas position-left in-canvas-for-medium" data-off-canvas="data-off-canvas"><form class="facets">
+        <fieldset class="fieldset keywords">
+        <input type="hidden" name="t" value="fellows"><input type="hidden" name="p" value="1"><input type="hidden" name="sort" value="relevance"><div class="input-group">
+        <input type="text" name="q" value="qualitative" placeholder="Enter keywords..." class="input-group-field"><div class="input-group-button"><button type="submit" class="button">Search</button></div>
+        </div>
+        <a href="https://www.ssrc.org/search/?q=qualitative" class="clear"><span class="icon">×</span><span>Clear all filters</span></a>
+        </fieldset>
+        <h3>Narrow by type</h3>
+        <ul class="types">
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative">All types</a><span class="count">119</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=pages">Pages</a><span class="count">2</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=publications">Publications &amp; Writing</a><span class="count">28</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=programs">Programs &amp; Projects</a><span class="count">5</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=fellowships">Fellowships &amp; Prizes</a><span class="count">2</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=staff">Staff</a><span class="count">4</span>
+        </li>
+        <li class="selected">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=fellows">Fellows &amp; Grantees</a><span class="count">78</span>
+        </li>
+        <li class="">
+        <a href="https://www.ssrc.org/search/?q=qualitative&amp;t=events">Meetings &amp; Events</a><span class="count">0</span>
+        </li>
+        </ul>
+        <h3>Sort by</h3>
+        <ul class="types sort">
+        <li class="selected"><a href="#relevance">Relevance</a></li>
+        <li class=""><a href="#name">Name (a-z)</a></li>
+        <li class=""><a href="#year">Year (newest first)</a></li>
+        </ul>
+        <fieldset class="facet">
+            <h3>Fellowship/Prizes</h3>
+            <ul class="types">
+                      <li class="all selected">
+                    <label>
+                      <input type="radio" name="fellowship" value="" checked>
+                      <span>All Fellowships &amp; Prizes</span>
+                    </label>
+                  </li>
+                          <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="AAS-SSRC Dissertation Workshop Series">
+                        <span>AAS-SSRC Dissertation Workshop Series</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Abe Fellowship">
+                        <span>Abe Fellowship</span>
+                        <span class="count">4</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="International Dissertation Research Fellowship (IDRF)">
+                        <span>International Dissertation Research Fellowship (IDRF)</span>
+                        <span class="count">8</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship">
+                        <span>Next Generation Social Sciences in Africa: Doctoral Dissertation Completion Fellowship</span>
+                        <span class="count">11</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship">
+                        <span>Next Generation Social Sciences in Africa: Doctoral Dissertation Proposal Fellowship</span>
+                        <span class="count">14</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="fellowship[]" value="Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship">
+                        <span>Next Generation Social Sciences in Africa: Doctoral Dissertation Research Fellowship</span>
+                        <span class="count">10</span>
+                      </label>
+                    </li>
+                    </ul>
+        </fieldset>
+        <fieldset class="facet">
+            <h3>Year</h3>
+            <ul class="types">
+                        <li class="selected removeable">
+                      <label title="Remove 2014">
+                        <input type="checkbox" name="year[]" value="2014" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2014</span>
+                        <span class="count">19</span>
+                      </label>
+                    </li>
+                          <li class="selected removeable">
+                      <label title="Remove 2013">
+                        <input type="checkbox" name="year[]" value="2013" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2013</span>
+                        <span class="count">13</span>
+                      </label>
+                    </li>
+                          <li class="selected removeable">
+                      <label title="Remove 2015">
+                        <input type="checkbox" name="year[]" value="2015" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2015</span>
+                        <span class="count">10</span>
+                      </label>
+                    </li>
+                          <li class="selected removeable">
+                      <label title="Remove 2012">
+                        <input type="checkbox" name="year[]" value="2012" checked class="hidden-safe">
+                        <span class="icon">×</span>
+                        <span class="label remove">2012</span>
+                        <span class="count">6</span>
+                      </label>
+                    </li>
+                        <li class="all ">
+                    <label>
+                      <input type="radio" name="year" value="">
+                      <span>All years</span>
+                    </label>
+                  </li>
+                          <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2011">
+                        <span>2011</span>
+                        <span class="count">4</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2010">
+                        <span>2010</span>
+                        <span class="count">5</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2009">
+                        <span>2009</span>
+                        <span class="count">4</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2008">
+                        <span>2008</span>
+                        <span class="count">5</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2007">
+                        <span>2007</span>
+                        <span class="count">5</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2006">
+                        <span>2006</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2005">
+                        <span>2005</span>
+                        <span class="count">3</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="2004">
+                        <span>2004</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="1999">
+                        <span>1999</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                            <li>
+                      <label>
+                        <input type="checkbox" name="year[]" value="1997">
+                        <span>1997</span>
+                        <span class="count">1</span>
+                      </label>
+                    </li>
+                    </ul>
+        </fieldset>
+        </form></aside><section class="cell medium-13 l-hits"><div id="filter-repeater"></div>
+        <ul></ul>
+        <div class="grid-container l-search-pagination"><ul class="pagination" data-options="appendTo:.l-hits &gt; ul;target:.l-hits &gt; ul li;pageParam:p">
+        <li><a class="pagination-previous" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=2">« Previous</a></li>
+        <li>
+        <a class="page" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=1">1</a><span>...</span>
+        </li>
+        <li class="current"><a class="page" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=3">3</a></li>
+        <li><a class="pagination-next" href="https://www.ssrc.org/search/?t=fellows&amp;sort=relevance&amp;q=qualitative&amp;year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;p=4">Next »</a></li>
+        </ul></div></section>
+        </div></div></main><footer id="page-footer"><div class="grid-container grid-x grid-padding-x">
+        <div class="cell medium-9">
+        <a href="https://www.ssrc.org" class="logo"><svg width="200" height="80" aria-label="The Social Science Research Council" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a><div class="grid-x grid-padding-x">
+        <div class="l-contact-info cell medium-9" itemscope="itemscope" itemtype="http://schema.org/Organization">
+        <nav class="l-social-navigation"><a href="https://www.ssrc.org/news/" rel="me noopener" target="_blank" class="fa fa-envelope"><i>News</i></a><a href="https://twitter.com/SSRC_org" rel="me noopener" target="_blank" class="fa fa-twitter"><i>Twitter</i></a><a href="https://www.facebook.com/SSRC.org" rel="me noopener" target="_blank" class="fa fa-facebook"><i>Facebook</i></a><a href="https://www.youtube.com/user/SSRCorg" rel="me noopener" target="_blank" class="fa fa-youtube-play"><i>Youtube</i></a></nav><p itemprop="name">Social Science Research Council</p>
+        <p itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">300 Cadman Plaza West, 15th Floor</span><br><span itemprop="addressLocality">Brooklyn</span>, <span itemprop="addressRegion">NY</span> <span itemprop="postalCode">11201</span>, <span itemprop="addressCountry">USA</span></p>
+        <p><a href="tel:2123772700" itemprop="telephone">212-377-2700</a></p>
+        </div>
+        <div class="cell medium-9"><nav class="l-footer-menu"><ol>
+        <li><a href="https://www.ssrc.org/pages/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="https://www.ssrc.org/pages/directions-to-the-ssrc/">Directions to the SSRC</a></li>
+        <li><a href="https://www.ssrc.org/pages/creative-commons/">Creative Commons</a></li>
+        <li><a href="https://www.ssrc.org/about/employment/">Employment</a></li>
+        <li><a href="https://www.ssrc.org/about/contact-us/">Contact Us</a></li>
+        </ol></nav></div>
+        </div>
+        </div>
+        <div class="cell medium-9">
+        <div class="l-content hide-for-small-only">
+        <h6>Mobilizing social science for the public good.</h6>
+        <p>The Social Science Research Council, an independent, international nonprofit, mobilizes necessary knowledge for the public good by supporting scholars worldwide, generating new research across disciplines, and linking researchers with policymakers and citizens.</p>
+        </div>
+        <div id="subscribe">
+        <h3>Sign up for Council Update, the SSRC's monthly newsletter</h3>
+        <form method="post" enctype="multipart/form-data" class="l-form grid-margin-x grid-container"><div class="grid-x grid-margin-x">
+        <div class="cell medium-6"><label for="name">Name<input type="text" id="name" name="fields[name]" required="required" placeholder="Name"></label></div>
+        <div class="cell medium-8"><label for="email">Email address<input type="email" id="email" name="fields[email]" required="required" placeholder="Email address"></label></div>
+        <div class="cell medium-4">
+        <input type="hidden" id="country" name="fields[country]"><button name="action[subscribe]" class="button" type="submit">Subscribe</button>
+        </div>
+        <div class="cell l-content"><p>By subscribing, you agree that the SSRC may process your information in accordance with our <a href="https://www.ssrc.org/pages/privacy-policy/">privacy
+          policy</a>.</p></div>
+        </div></form>
+        </div>
+        </div>
+        </div></footer>
+        </div>
+        </div>
+        <div id="cookie" class="l-sticky-footer"><div class="grid-container grid-x">
+        <div class="cell medium-14"><p>Our site uses cookies to enhance your browsing experience.  By continuing to use our site you give us permission to deploy cookies per our <a href="https://www.ssrc.org/pages/privacy-policy/">privacy and cookies policy</a>.</p></div>
+        <button class="l-cookie-button button cell medium-4">Accept &amp; Close</button>
+        </div></div>
+        <script>
+              window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+              ga('create', 'UA-1557817-1', 'ssrc.org');
+              ga('send', 'pageview');
+            </script><script async="async" src="https://www.google-analytics.com/analytics.js"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer', 'GTM-PCR79XB');</script><script src="https://www.ssrc.org/workspace/assets/dist/app.min.js?v=2.0.12"></script>
+        </body>
+        </html>
+  recorded_at: 2021-02-19 16:44:22 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4
