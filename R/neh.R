@@ -32,8 +32,7 @@ neh_get <- function(keywords, from_year, to_year) {
 
   results <- lapply(keywords, function(keyword, df) {
     # grep the query in the description, subset to the hits
-    hits <- grepl(keyword, df$ProjectDesc,
-                  ignore.case=TRUE)
+    hits <- grepl(keyword, df$ProjectDesc, ignore.case=TRUE)
     hits <- df[hits, ]
 
     # Empty results?
@@ -43,18 +42,19 @@ neh_get <- function(keywords, from_year, to_year) {
     }
 
     hits$keyword <- keyword
-    return(hits)
-  },
-  neh) # The df input is here at the end
+    hits
+  }, neh) # The df input is here at the end
 
   results <- do.call(rbind.data.frame, results)
   # Did we get nothing after all these queries?
-  if (nrow(results)==0) return(NULL)
+  if (nrow(results)==0) {
+    return(NULL)
+  }
 
   # Some regex magic to make the "participant" field more applicable to our PI field
   results$pi <- sub(" \\[Project Director\\].*", "", results$Participants)
 
-  return(results)
+  results
 }
 
 #' Standardize NEH results
@@ -65,7 +65,9 @@ neh_get <- function(keywords, from_year, to_year) {
 neh_standardize <- function(keywords, from_date, to_date) {
   raw <- neh_get(keywords,
                  format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
-  if (is.null(raw)) return(NULL)
+  if (is.null(raw)) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution=Institution, pi, year=YearAwarded,

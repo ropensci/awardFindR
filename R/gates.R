@@ -23,7 +23,10 @@ gates_get <- function(keyword, from_date, to_date) {
       stringsAsFactors = FALSE))
  })
  df <- do.call(rbind.data.frame, df)
- if (nrow(df)==0) return(NULL) # No results at first?
+
+ if (nrow(df)==0) {
+    return(NULL) # No results at first?
+ }
 
  # Extract ID from the ending of the url
  df$id <- regmatches(df$url, regexpr("([-a-zA-Z0-9])+$", df$url))
@@ -31,12 +34,14 @@ gates_get <- function(keyword, from_date, to_date) {
  # Subset by date
  df$date <- as.Date(df$date)
  df <- subset(df, date >= from_date & date <= to_date)
- if (nrow(df)==0) return(NULL) # No results now?
+ if (nrow(df)==0) {
+    return(NULL) # No results now?
+ }
 
  df$grantee[df$grantee==""] <- NA
-
  df$keyword <- keyword
- return(df)
+
+ df
 }
 
 #' Standardize award results from the Bill & Melinda Gates Foundation
@@ -47,7 +52,9 @@ gates_get <- function(keyword, from_date, to_date) {
 gates_standardize <- function(keywords, from_date, to_date) {
    raw <- lapply(keywords, gates_get, from_date, to_date)
    raw <- do.call(rbind.data.frame, raw)
-   if (nrow(raw)==0) return(NULL)
+   if (nrow(raw)==0) {
+      return(NULL)
+   }
 
    with(raw, data.frame(
       institution=grantee, pi=NA, year, start=NA, end=NA, program=NA,

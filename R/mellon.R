@@ -27,14 +27,16 @@ mellon_get <- function(keyword, from_year, to_year) {
     fields <- c("institution", "description",
                 "date", "amount",
                 "location", "program")
-    df <- as.data.frame(text, stringsAsFactors=F)
-    names(df) <- fields
-    df$id <- id
+    row <- as.data.frame(text, stringsAsFactors=F)
+    names(row) <- fields
+    row$id <- id
 
-    return(df)
+    row
   })
   df <- do.call(rbind.data.frame, df)
-  if (nrow(df)==0) return(NULL) # No results?
+  if (nrow(df)==0) {
+    return(NULL) # No results?
+  }
 
   df$amount <- gsub("^\\$|,", "", df$amount) # Remove $ and , in amounts (i.e. $1,000,000)
   df$amount <- as.integer(df$amount)
@@ -42,7 +44,7 @@ mellon_get <- function(keyword, from_year, to_year) {
   df$date <- as.Date(df$date, format="%m/%d/%y")
   df$keyword <- keyword
 
-  return(df)
+  df
 }
 
 #' Standardize award results from Mellon
@@ -54,7 +56,10 @@ mellon_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, mellon_get,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
+
   with(raw, data.frame(
     institution, pi=NA, year=format.Date(date, "%Y"), start=NA, end=NA,
     program, amount, id, title=description, keyword, source="Mellon",

@@ -13,10 +13,14 @@ rockefeller_get <- function(keyword, from_date, to_date) {
   "&to_month=", format.Date(to_date, "%m"), "&to_year=", format.Date(to_date, "%Y"), "&download=filter")
 
   response <- as.data.frame(request(url, "get"))
-  if (nrow(response)==0) return(NULL) # No results?
+  if (nrow(response)==0) {
+    return(NULL) # No results?
+  }
+
   response$keyword <- keyword
   response$id <- sapply(response$Description, text_hash)
-  return(response)
+
+  response
 }
 
 #' Standardize Rockefeller Foundation grants search
@@ -27,7 +31,9 @@ rockefeller_get <- function(keyword, from_date, to_date) {
 rockefeller_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, rockefeller_get, from_date, to_date)
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution=Title, pi=NA, year=format.Date(`Grant Term Start`, "%Y"),

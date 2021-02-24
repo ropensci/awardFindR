@@ -37,14 +37,15 @@ ssrc_get <- function(keyword, from_year, to_year) {
   # Have to collate years to search by date
   if (length(from_year:to_year) > 1)
     query <- paste0(query, "&year=", paste0(from_year:to_year, collapse=","))
-  else
-    query <- paste0(query, "&year=[]=", from_year)
+  else query <- paste0(query, "&year[]=", from_year)
 
   url <- paste0(base_url, query)
   page <- request(url, "get")
 
   entries <- xml2::xml_find_all(page, "//li[@class='hit l-fellows-hit']")
-  if (length(entries)==0) return(NULL)   # No results?
+  if (length(entries)==0) {
+    return(NULL)   # No results?
+  }
   df <- lapply(entries, ssrc_get_details)
   df <- do.call(rbind.data.frame, df)
 
@@ -64,7 +65,8 @@ ssrc_get <- function(keyword, from_year, to_year) {
   }
 
   df$keyword <- keyword
-  return(df)
+
+  df
 }
 
 #' Standardize search for SSRC fellowships and grants
@@ -76,7 +78,9 @@ ssrc_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, ssrc_get,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution, pi=pi_name, year, start=NA, end=NA, program, amount=NA,

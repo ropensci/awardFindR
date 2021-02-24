@@ -29,9 +29,9 @@ rsf_get <- function(keyword) {
   df <- lapply(links, function(x) {
     award <- request(x, "get")
     award <- rvest::html_node(award, "div.content > header > div.u-nubbed")
-    program <- trimws(rvest::html_text(rvest::html_children(award)[1]))
+    program <- rvest::html_children(award)[1] %>% rvest::html_text(trim=TRUE)
     program <- gsub("\t\t\t\t", "; ", program) # Separate with ;
-    title <- trimws(rvest::html_text(rvest::html_children(award)[2]))
+    title <- rvest::html_children(award)[2] %>% rvest::html_text(trim=TRUE)
 
     # Extract data from these nasty unstructured divs
     info <- rvest::html_children(rvest::html_children(award)[3])
@@ -41,6 +41,8 @@ rsf_get <- function(keyword) {
       stringsAsFactors = FALSE
     )
     awardee <- strsplit(info$value[info$label=="Awarded Scholars: "], ",")
+    if (length(awardee)==0) # Try plan B
+      awardee <- strsplit(info$value[info$label=="Other External Scholars: "], ",")
     pi_name <- trimws(awardee[[1]][1])
     institution <- trimws(awardee[[1]][2])
 
@@ -54,7 +56,7 @@ rsf_get <- function(keyword) {
   df <- do.call(rbind.data.frame, df) # Bind the df lines
 
   df$keyword <- keyword
-  return(df)
+  df
 }
 
 #' Standardize Russell Sage foundation award results
@@ -65,12 +67,16 @@ rsf_get <- function(keyword) {
 rsf_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, rsf_get)
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   # Since the API doesn't have the feature, we'll do date handling here
   year <- NULL # for R CMD check
   raw <- subset(raw, year > format.Date(from_date, "%Y") & year < format.Date(to_date, "%Y"))
-  if (nrow(raw)==0) return(NULL) # Empty now after date subsetting?
+  if (nrow(raw)==0) {
+    return(NULL) # Empty now after date subsetting?
+  }
 
   with(raw, data.frame(
     institution, pi=pi_name, year, start=NA, end=NA, program, amount,

@@ -51,9 +51,17 @@ awardFindR <- function(keywords,
   # Validate dates
   from_date <- try(as.Date(from_date, format="%Y-%m-%d"))
   to_date <- try(as.Date(to_date, format="%Y-%m-%d"))
-  if ("try-error" %in% class(from_date) || is.na(from_date)) stop('"From" date invalid')
-  if ("try-error" %in% class(to_date) || is.na(to_date)) stop('"To" date invalid')
-  if (from_date > to_date) stop("Ending date must be after beginning date")
+  if ("try-error" %in% class(from_date) || is.na(from_date)) {
+    stop('"From" date invalid')
+  }
+
+  if ("try-error" %in% class(to_date) || is.na(to_date)) {
+    stop('"To" date invalid')
+  }
+
+  if (from_date > to_date) {
+    stop("Ending date must be after beginning date")
+  }
 
   # Assembling the full data.frame
   results <- NULL # Keep this var as a placeholder for rbind.data.frame
@@ -87,5 +95,5 @@ awardFindR <- function(keywords,
   results$institution <- sapply(as.character(results$institution), title_case)
   results$pi <- sapply(results$pi, title_case)
 
-  return(results)
+  results
 }

@@ -14,7 +14,9 @@ carnegie_get <- function(keyword, from_year, to_year) {
 
   response <- request(url, "get")
   awards <- xml2::xml_find_all(response, "//tbody/tr[@data-url]")
-  if (length(awards)==0) return(NULL) # No awards in the table?
+  if (length(awards)==0)  {
+    return(NULL) # No awards in the table?
+  }
 
   awards <- lapply(awards, function(x) {
     id <- gsub("^grant-", "",
@@ -51,7 +53,9 @@ carnegie_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, carnegie_get,
                      format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution=grantee, pi=NA, year, start=NA, end=NA,

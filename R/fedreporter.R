@@ -21,7 +21,10 @@ fedreporter_get <- function (keyword, from_year, to_year,
   # Actually query the API
   api <- request(query_url, "get")
 
-  if (api$totalCount==0) return(NULL) # No results?
+  if (api$totalCount==0) {
+    return(NULL) # No results?
+  }
+
   df <- api$items
   df <- lapply(df, lapply, function(x)ifelse(is.null(x), NA, x)) # NULL to NA
   df <- do.call(rbind.data.frame, df)
@@ -54,7 +57,8 @@ fedreporter_get <- function (keyword, from_year, to_year,
 
   #df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x)) # Remove factors
   df$keyword <- keyword
-  return(df)
+
+  df
 }
 
 #' Standardize award results from the Federal Reporter
@@ -66,7 +70,9 @@ fedreporter_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, fedreporter_get,
                     format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution=orgName, pi=contactPi, year=fy,

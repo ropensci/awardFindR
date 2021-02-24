@@ -14,7 +14,9 @@ rwjf_get <- function(keyword, from_year, to_year) {
 
   page <- 1
   response <- request(paste0(url, "&s=", page), "get")
-  if (response$totalResults==0) return(NULL) # No results?
+  if (response$totalResults==0) {
+    return(NULL) # No results?
+  }
 
   full <- list() # Placeholder
   full[[page]] <- response$results
@@ -46,7 +48,8 @@ rwjf_get <- function(keyword, from_year, to_year) {
   full$endDate <- as.Date(as.POSIXct(full$endDate/1000, origin="1970-01-01"))
 
   full$keyword <- keyword
-  return(full)
+
+  full
 }
 
 
@@ -59,7 +62,9 @@ rwjf_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, rwjf_get,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution=orgName, pi=director, year=format.Date(dateAwarded, "%Y"),

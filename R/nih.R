@@ -26,7 +26,10 @@ nih_get <- function(keyword, from_date, to_date) {
   offset=0)
 
   response <- request(url, "post", payload) # Query API
-  if (response$meta$total == 0) return(NULL) # No results?
+  if (response$meta$total == 0) {
+    return(NULL) # No results?
+  }
+
   # change NULL values to NA
   df <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
   df <- do.call(rbind.data.frame, df)
@@ -51,7 +54,7 @@ nih_get <- function(keyword, from_date, to_date) {
   df[] <- lapply(df, as.character)
   df$keyword <- keyword
 
-  return(df)
+  df
 }
 
 #' Standardize NIH RePORTER results
@@ -62,7 +65,9 @@ nih_get <- function(keyword, from_date, to_date) {
 nih_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, nih_get, from_date, to_date)
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution=org_name, pi=contact_pi_name, year=fiscal_year,

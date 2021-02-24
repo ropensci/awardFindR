@@ -16,7 +16,9 @@ osociety_get <- function(keyword, from_year, to_year) {
   response <- request(url, "get")
 
   results <- xml2::xml_find_all(response, "//div[@data-grants-database-single]")
-  if (length(results)==0) return(NULL) # No results?
+  if (length(results)==0) {
+    return(NULL) # No results?
+  }
 
   results <- lapply(results, function(entry) {
     institution <- xml2::xml_text(xml2::xml_find_first(entry, ".//h2"))
@@ -52,7 +54,9 @@ osociety_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, osociety_get,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution, pi=NA, year, start=NA, end=NA, program,

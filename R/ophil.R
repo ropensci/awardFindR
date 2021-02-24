@@ -15,7 +15,9 @@ ophil_get <- function(keyword, from_year, to_year) {
   # Everything important is a child of this table's tbody
   results <- xml2::xml_children(xml2::xml_find_first(response,
                                                      "//div[@class='view-content']/table/tbody"))
-  if (length(results)==0) return(NULL)  # No results?
+  if (length(results)==0) {
+    return(NULL)  # No results?
+  }
 
   # Loop through each entry and extract details
   df <- lapply(results, function(x) {
@@ -42,9 +44,13 @@ ophil_get <- function(keyword, from_year, to_year) {
   df$year <- as.integer(substr_right(df$month, 4))
   year <- NULL # For R CMD check
   df <- subset(df, year >= from_year & year <= to_year)
-  if (nrow(df)==0) return(NULL) # No results in the date range?
+  if (nrow(df)==0) {
+    return(NULL) # No results in the date range?
+  }
+
   df$keyword <- keyword
-  return(df)
+
+  df
 }
 
 #' Standardize the Open Philanthropy grants search
@@ -56,7 +62,9 @@ ophil_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, ophil_get,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution=grantee, pi=NA, year, start=NA, end=NA, program, amount,

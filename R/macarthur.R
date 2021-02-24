@@ -16,8 +16,9 @@ macarthur_get <- function(keyword, from_date, to_date) {
   query_url <- paste0(url, parameters, extra)
   response <- request(query_url, "get")
 
-  if (xml2::xml_integer(xml2::xml_find_first(response, "/response/result/@numFound"))==0)
+  if (xml2::xml_integer(xml2::xml_find_first(response, "/response/result/@numFound"))==0) {
     return(NULL) # No results?
+  }
 
   results <- xml2::xml_children(xml2::xml_children(response)[2])
   results <- lapply(results, function(x) {
@@ -44,11 +45,14 @@ macarthur_get <- function(keyword, from_date, to_date) {
 
   approved <- NULL # For R CMD check
   df <- subset(df, as.Date(approved) > from_date & as.Date(approved) < to_date) # Date limit
-  if (nrow(df)==0) return(NULL) # No results after date limiting?
+  if (nrow(df)==0) {
+    return(NULL) # No results after date limiting?
+  }
 
   df$year <- format.Date(df$approved, "%Y")
   df$keyword <- keyword
-  return(df)
+
+  df
 }
 
 #' Standardize award results from the MacArthur Foundation
@@ -59,7 +63,9 @@ macarthur_get <- function(keyword, from_date, to_date) {
 macarthur_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, macarthur_get, from_date, to_date)
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution, pi=NA, year=format.Date(approved, "%Y"),

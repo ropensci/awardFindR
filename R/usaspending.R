@@ -37,7 +37,9 @@ usaspend_get <- function(keywords, from_date, to_date) {
   response <- request(url, "post", payload)
 
   awards <- response$results
-  if (length(awards)==0) return(NULL)
+  if (length(awards)==0) {
+    return(NULL)
+  }
 
   # Replace NULL with NA
   awards <- lapply(awards, lapply, function(x)ifelse(is.null(x), NA, x))
@@ -59,7 +61,7 @@ usaspend_get <- function(keywords, from_date, to_date) {
                      function(x) ifelse(is.factor(x),
                                         as.character(x), x)) # No factors
 
-  return(awards)
+  awards
 }
 
 #' Standardize the USAspending database search
@@ -69,7 +71,9 @@ usaspend_get <- function(keywords, from_date, to_date) {
 #' @return a standardized data.frame
 usaspend_standardize <- function(keywords, from_date, to_date) {
   raw <- usaspend_get(keywords, from_date, to_date)
-  if (is.null(raw)) return(NULL)
+  if (is.null(raw)) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution=Recipient.Name, pi=NA, year=substr(Start.Date, 1, 4),

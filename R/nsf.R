@@ -23,7 +23,10 @@ nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
   offset <- 1
   api <- request(paste0(query_url, '&offset=', offset), "get")
   api <- api$response$award
-  if (length(api)==0) return(NULL) # No results?
+  if (length(api)==0) {
+    return(NULL) # No results?
+  }
+
   df <- do.call(rbind.data.frame, api)
 
   # Max results 25 per request. Do we need to loop the query?
@@ -39,7 +42,7 @@ nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
   df[] <- lapply(df, as.character)
   df$keyword <- keyword
 
-  return(df)
+  df
 }
 
 #' Standardize NSF search responses
@@ -50,7 +53,9 @@ nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
 nsf_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, nsf_get, from_date, to_date)
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   raw$directorate <- NA
   # Make the directorate field a bit more user-friendly

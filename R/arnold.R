@@ -25,7 +25,9 @@ arnold_get <- function(keyword, from_year, to_year) {
 
   response <- request(url, "post", payload)
   response <- unlist(response, recursive=F)$results
-  if (response$nbHits==0) return(NULL) # No results?
+  if (response$nbHits==0) {
+    return(NULL) # No results?
+  }
 
   full <- list()
   while (response$page <= response$nbPages) {
@@ -57,7 +59,9 @@ arnold_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, arnold_get,
                    format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)
-  if (nrow(raw)==0) return(NULL)
+  if (nrow(raw)==0) {
+    return(NULL)
+  }
 
   with(raw, data.frame(
     institution=title, pi=NA,
