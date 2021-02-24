@@ -1,12 +1,12 @@
 test_that("Search that should return all empty", {
-  suppressMessages(vcr::use_cassette("full_empty", record = "new_episodes", {
+  suppressMessages(vcr::use_cassette("empty", record = "new_episodes", {
     foobar <- awardFindR("foobar")
   }))
   expect_equal(data.frame(), foobar)
 })
 
 test_that("merging multiple sources and multiple keywords with spaces", {
-  keywords <- c("ethnography", "qualitative analysis")
+  keywords <- c("ethnography", "qualitative data")
   csv <- tempfile()
   writeLines(keywords, csv)
 

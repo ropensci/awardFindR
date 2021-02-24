@@ -4,10 +4,10 @@
 \alias{sloan_get}
 \title{Search for a set of keywords in the Sloan grants database.}
 \usage{
-sloan_get(keywords, from_year, to_year)
+sloan_get(keyword, from_year, to_year)
 }
 \arguments{
-\item{keywords}{vector of keywords to query}
+\item{keyword}{vector of keywords to query}
 
 \item{from_year}{Beginning year to search}
 
@@ -20,5 +20,6 @@ A data.frame
 Search for a set of keywords in the Sloan grants database.
 }
 \examples{
+
 \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}
 }
