@@ -6,9 +6,9 @@
 \usage{
 awardFindR(
   keywords,
-  sources = c("fedreporter", "gates", "mellon", "carnegie", "macarthur", "neh", "nih",
-    "nsf", "ophil", "osociety", "rockefeller", "rwjf", "rsf", "sloan", "ssrc",
-    "templeton", "usaspend"),
+  sources = c("arnold", "carnegie", "fedreporter", "gates", "macarthur", "mellon",
+    "neh", "nih", "nsf", "ophil", "osociety", "rockefeller", "rsf", "rwjf", "sloan",
+    "ssrc", "templeton", "usaspend"),
   from_date = "2019-01-01",
   to_date = Sys.Date()
 )
@@ -31,20 +31,12 @@ These queries can be limited by keyword, source and date terms.
 }
 \examples{
 # Results for "ethnography" from NSF between 1/1 and 2/1 2020
-awards <- awardFindR("ethnography", "nsf", "2020-01-01", "2020-02-01")
+\dontrun{awards <- awardFindR("ethnography", "nsf", "2020-01-01", "2020-02-01")}
 
 # More intensive queries
 \dontrun{
-# Full pull of all keywords and sources
-full <- awardFindR(keywords="data/keywords.csv")
-
 # Specific keywords, all sources:
 specific <- awardFindR(keywords=c("ethnography", "case studies"))
-
-# All keywords, specific sources:
-nsf <- awardFindR(keywords="data/keywords.csv", sources="nsf")
-nsf_and_neh <- awardFindR(keywords="data/keywords.csv",
-sources=c("nsf", "neh"))
 
 # Specific keyword, all sources, specific date range:
 five_years <- awardFindR(keywords="qualitative",

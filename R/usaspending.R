@@ -5,11 +5,7 @@
 #' @return a data.frame
 #' @export
 #' @examples
-#' # Single keyword
-#' results <- usaspend_get("interview", "2018-01-01", "2020-01-01")
-#'
-#' # Multiple keywords
-#' results <- usaspend_get(c("qualitative", "interview"), "2019-01-01", "2020-01-01")
+#' \dontrun{results <- usaspend_get(c("qualitative", "interview"), "2019-01-01", "2020-01-01")}
 usaspend_get <- function(keywords, from_date, to_date) {
   url <- "https://api.usaspending.gov/api/v2/search/spending_by_award/"
 
@@ -20,6 +16,8 @@ usaspend_get <- function(keywords, from_date, to_date) {
              "Funding Agency", "Funding Sub Agency"),
     filters=list(
       agencies=list(
+        # These should be the agencies that are not covered by Federal Reporter, NIH RePORTER or NSF
+        # because the data is limited from USAspending
         list(name="Institute of Museum and Library Services", tier="toptier", type="awarding"),
         list(name="Smithsonian Institution", tier="toptier", type="awarding"),
         list(name="Department of Commerce", tier="toptier", type="awarding"),

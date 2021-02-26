@@ -20,9 +20,5 @@ a data.frame
 Search the USAspending database
 }
 \examples{
-# Single keyword
-results <- usaspend_get("interview", "2018-01-01", "2020-01-01")
-
-# Multiple keywords
-results <- usaspend_get(c("qualitative", "interview"), "2019-01-01", "2020-01-01")
+\dontrun{results <- usaspend_get(c("qualitative", "interview"), "2019-01-01", "2020-01-01")}
 }
