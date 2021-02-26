@@ -7,46 +7,52 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+
+
+`awardFindR` is meant to be the top-level function for interacting with grant database search functions.
+
+# Load awardFindR
+
+```r
+library(awardFindR)
 ```
 
-`awardFindR()` is meant to be the top-level function for interacting with grant databases.
+# Simple keyword search
 
-The simplest way to generate the dataset is to run the function with the default keywords set, as follows
-```
-grants <- awardFindR("data/keywords.csv")
-```
-
-This pulls data from all supported databases, querying the results for each term in `data/keywords.csv` over the past two years. All these parameters are modifiable. For example, if we only wanted to search a few of the supported databases, we could run 
-```
-nsf <- awardFindR(keywords="data/keywords.csv", sources="nsf")
-
-results <- awardFindR(keywords="data/keywords.csv", sources=c("nsf", "nih"))
-```
-
-If we wanted to test different keywords, that parameter either accepts a file name or a character vector of keywords. For example:
-```
-new_terms <- awardFindR(keywords="qualitative data")
-
-new_terms <- awardFindR(keywords=c("qualitative data", "ethnography"))
-
-new terms <- awardFindR(keywords="new_terms.csv")
-```
-If you specify a .csv file, it should be a list of keywords, one string per line.
-
-We can change the date limitations on our search as well, like so
-```
-last_five_years <- awardFindR("keywords", sources="nih", from_date="2015-01-01", to_date="2020-01-01")
-
-last_year <- awardFindR("keywords", sources="nih", from_date="2019-01-01", to_date="2020-01-01")
-```
-We can also omit one of these terms. The `from` parameter defaults to January 1 2019, while the `to` parameter defaults to the current date. If we wanted to search all databases for all keywords from 2015 to the current date, for example, we would run
-```
-results <- awardFindR("keywords", sources="nih", from_date="2015-01-01")
+```r
+nsf <- awardFindR(keywords="ethnography", sources="nsf")
+str(nsf)
+#> 'data.frame':	40 obs. of  11 variables:
+#>  $ institution: chr  "University Of Alabama Tuscaloosa" "Princeton University" "Louisiana State University" "Human Relations Area Files" ...
+#>  $ pi         : chr  "Pritzker, Sonya" "Biehl, Joao" "Shrum, Wesley" "Fischer, Michael" ...
+#>  $ year       : chr  "2020" "2019" "2019" "2020" ...
+#>  $ start      : chr  "2020-08-15" "2019-01-15" "2019-09-01" "2020-09-01" ...
+#>  $ end        : chr  "2025-07-31" "2019-12-31" "2022-08-31" "2022-08-31" ...
+#>  $ program    : chr  "SBE" "SBE" "SBE" "SBE" ...
+#>  $ amount     : chr  "219557" "25200" "105795" "1054999" ...
+#>  $ id         : chr  "1941798" "1850672" "1921841" "2024286" ...
+#>  $ title      : chr  "CAREER: A Longitudinal Study of Communication and Biology in Committed Relationships" "Doctoral Dissertation Research: Understanding the Brain-Machine Interface in the Engineering of Prosthetic Technologies" "How to Collect Humans: A Video Ethnographic Approach to Fieldwork in Paleontology" "HDNS-I: Infrastructure for Knowledge Linkages from Ethnography of World Societies" ...
+#>  $ keyword    : chr  "ethnography" "ethnography" "ethnography" "ethnography" ...
+#>  $ source     : chr  "NSF" "NSF" "NSF" "NSF" ...
 ```
 
-Throughout this package, date parameters should be able to be coerced into `Date()` objects. This means dates should adhere to a "yyyy-mm-dd" format if specificed as strings.
+# Multiple sources and keywords
+
+```r
+nsf_and_nih <- awardFindR(keywords=c("ethnographies", "ethnography"), sources=c("nsf", "nih"))
+table(nsf_and_nih$source)
+#> 
+#> NIH NSF 
+#> 106  40
+unique(nsf_and_nih$keyword)
+#> [1] "ethnography"                "ethnographies; ethnography" "ethnographies"             
+#> [4] "ethnography; ethnography"
+```
+
+For more than a few keywords, you can specify an external simple csv file. If you specify a .csv file path for `keywords`, the file should be a list of keywords, one string per line. For example:
+```
+qualitative data
+qualitative analysis
+case study
+case studies
+```
