@@ -7,6 +7,8 @@ Maintainer: Michael McCall <mimccall@syr.edu>
 Description: Queries a number of scientific awards databases
     Collects relevant results based on keyword and date parameters,
     returns list of projects that fit those criteria.
+URL: https://github.com/PESData/awardFindR
+BugReports: https://github.com/PESData/awardFindR/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
