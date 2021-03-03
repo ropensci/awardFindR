@@ -8,11 +8,13 @@
 
 <title>Contributing • awardFindR</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,7 +38,9 @@
 
 
 
+
 <meta property="og:title" content="Contributing" />
+
 
 
 
@@ -75,7 +79,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -86,11 +90,10 @@
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/PESData/awardFindR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -127,9 +130,9 @@
 <p>Sources need to have a minimum of two functions:</p>
 <ol>
 <li>a <code>*_get</code> function that scrapes raw data from the source and returns it as-is,</li>
-<li>and a <code>*_standardize</code> function that harmonizes the data to fit the data.frame output from <code>awardFindR</code>.</li>
+<li>and a hidden <code>.*_standardize</code> (note the preceding period) function that harmonizes the data to fit the data.frame output from <code>awardFindR</code>.</li>
 </ol>
-<p>The file containing the source should have an easily identifiable filename, which should be reflected in the naming of the <code>*_get</code> and <code>*_standardize</code> functions. For example, import from the “Megafunds Foundation” should be in <code>megafunds.R</code>, containing <code>megafunds_get()</code> and <code>megafunds_standardize()</code>.</p>
+<p>The file containing the source should have an easily identifiable filename, which should be reflected in the naming of the <code>*_get</code> and <code>*_standardize</code> functions. For example, import from the “Megafunds Foundation” should be in <code>megafunds.R</code>, containing <code>megafunds_get()</code> and <code>.megafunds_standardize()</code>.</p>
 <div id="_get" class="section level3">
 <h3 class="hasAnchor">
 <a href="#_get" class="anchor"></a><code>*_get</code>
@@ -154,9 +157,9 @@
 </div>
 <div id="_standardize" class="section level3">
 <h3 class="hasAnchor">
-<a href="#_standardize" class="anchor"></a><code>*_standardize</code>
+<a href="#_standardize" class="anchor"></a><code>.*_standardize</code>
 </h3>
-<p>The <code>awardFindR</code> calls the <code>*_standardize</code> function, which should in turn call the <code>*_get</code> function described above. All <code>*_standardize</code> functions need to accept the exact same input. This includes:</p>
+<p>The <code>awardFindR</code> calls the internal<code>.*_standardize</code> function, which should in turn call the <code>*_get</code> function described above. All <code>.*_standardize</code> functions need to accept the exact same input. This includes:</p>
 <ol>
 <li>
 <em>keywords</em> - A vector of keywords to search</li>
@@ -202,7 +205,7 @@
 <div id="adding-tests" class="section level2">
 <h2 class="hasAnchor">
 <a href="#adding-tests" class="anchor"></a>Adding Tests</h2>
-<p>The main tests in <code>test-full.R</code> attempt to exercise both the successful and no results code branches. The latter always works. Unfortunately, the default search for the former (the terms “qualitative analysis” and “ethnography” in 2018) does not actually return results for some smaller sources. For this and other reasons, it’s a good idea to create a source-specific test for the <code>_standardize</code> function.</p>
+<p>The main tests in <code>test-full.R</code> attempt to exercise both the successful and no results code branches. The latter always works. Unfortunately, the default search for the former (the terms “qualitative analysis” and “ethnography” in 2018) does not actually return results for some smaller sources. For this and other reasons, it’s a good idea to create a source-specific test for the <code>.*_standardize</code> function.</p>
 <p>Tests should actually return results, but should also minimally tax the API. Less than 10 results would be ideal. There is one exception to this: when a source needs to loop through multiple pages. In this case, the smallest number of results that triggers the looping is ideal, in order to ensure maximum test coverage.</p>
 <p>One test should verify reproducibility; i.e. we get the same results again for a query in a specified date range. When used with a real-world HTTP resource, this should alert us if there is a change in how the resource is provided.</p>
 <p>Finally, HTTP requests for tests should be cached using the ROpenSci package <a href="https://docs.ropensci.org/vcr/"><code>vcr</code></a>. Individual sources should have their own cassettes. This limits stress on the APIs from frequent testing of internal logic, especially by the continuous integration system. Failure to do this could potentially result in service-level bans if we’re not careful.</p>

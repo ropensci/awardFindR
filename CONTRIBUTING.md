@@ -13,9 +13,9 @@ New sources are entirely self-contained in a single `.R` file.
 Sources need to have a minimum of two functions:
 
 1.  a `*_get` function that scrapes raw data from the source and returns it as-is,
-2.  and a `*_standardize` function that harmonizes the data to fit the data.frame output from `awardFindR`.
+2.  and a hidden `.*_standardize` (note the preceding period) function that harmonizes the data to fit the data.frame output from `awardFindR`.
 
-The file containing the source should have an easily identifiable filename, which should be reflected in the naming of the `*_get` and `*_standardize` functions. For example, import from the "Megafunds Foundation" should be in `megafunds.R`, containing `megafunds_get()` and `megafunds_standardize()`.
+The file containing the source should have an easily identifiable filename, which should be reflected in the naming of the `*_get` and `*_standardize` functions. For example, import from the "Megafunds Foundation" should be in `megafunds.R`, containing `megafunds_get()` and `.megafunds_standardize()`.
 
 ### `*_get`
 
@@ -41,9 +41,9 @@ JSON sources shouldn't need any additional dependencies, since the `request()` f
 
 If the source does not use HTML, XML or JSON, it may be necessary to employ additional dependencies as necessary. This is an extreme case and should be done with care.
 
-### `*_standardize`
+### `.*_standardize`
 
-The `awardFindR` calls the `*_standardize` function, which should in turn call the `*_get` function described above. All `*_standardize` functions need to accept the exact same input. This includes:
+The `awardFindR` calls the  internal`.*_standardize` function, which should in turn call the `*_get` function described above. All `.*_standardize` functions need to accept the exact same input. This includes:
 
 1. *keywords* - A vector of keywords to search 
 2. *from_date* - A beginning date object (e.g. "2015-01-01")
@@ -71,7 +71,7 @@ Source routines are included in the `awardFindR()` function through the _sources
 
 ## Adding Tests
 
-The main tests in `test-full.R` attempt to exercise both the successful and no results code branches. The latter always works. Unfortunately, the default search for the former (the terms "qualitative analysis" and "ethnography" in 2018) does not actually return results for some smaller sources. For this and other reasons, it's a good idea to create a source-specific test for the `_standardize` function.
+The main tests in `test-full.R` attempt to exercise both the successful and no results code branches. The latter always works. Unfortunately, the default search for the former (the terms "qualitative analysis" and "ethnography" in 2018) does not actually return results for some smaller sources. For this and other reasons, it's a good idea to create a source-specific test for the `.*_standardize` function.
 
 Tests should actually return results, but should also minimally tax the API. Less than 10 results would be ideal. There is one exception to this: when a source needs to loop through multiple pages. In this case, the smallest number of results that triggers the looping is ideal, in order to ensure maximum test coverage.
 
