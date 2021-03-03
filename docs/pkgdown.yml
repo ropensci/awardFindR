@@ -1,0 +1,7 @@
+pandoc: 2.11.4
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  awardFindR: awardFindR.html
+last_built: 2021-03-03T04:58Z
+
