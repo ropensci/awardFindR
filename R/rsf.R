@@ -46,12 +46,12 @@ rsf_get <- function(keyword) {
     pi_name <- trimws(awardee[[1]][1])
     institution <- trimws(awardee[[1]][2])
 
-    year <- as.integer(substr_right(info$value[info$label=="Project Date: "], 4))
+    year <- as.integer(.substr_right(info$value[info$label=="Project Date: "], 4))
     # Remove $ and , in amounts (i.e. $1,000,000)
     amount <- gsub("^\\$|,", "", info$value[info$label=="Award Amount: "])
 
     data.frame(institution, pi_name, year, amount, title, program,
-               id=paste0("RSF", text_hash(x))) # Return one df line
+               id=paste0("RSF", .text_hash(x))) # Return one df line
   })
   df <- do.call(rbind.data.frame, df) # Bind the df lines
 
@@ -59,12 +59,7 @@ rsf_get <- function(keyword) {
   df
 }
 
-#' Standardize Russell Sage foundation award results
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-rsf_standardize <- function(keywords, from_date, to_date) {
+.rsf_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, rsf_get)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {

@@ -45,12 +45,7 @@ osociety_get <- function(keyword, from_year, to_year) {
   do.call(rbind.data.frame, results)
 }
 
-#' Standardize Open Society foundation awards
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-osociety_standardize <- function(keywords, from_date, to_date) {
+.osociety_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, osociety_get,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)

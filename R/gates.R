@@ -44,12 +44,7 @@ gates_get <- function(keyword, from_date, to_date) {
  df
 }
 
-#' Standardize award results from the Bill & Melinda Gates Foundation
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-gates_standardize <- function(keywords, from_date, to_date) {
+.gates_standardize <- function(keywords, from_date, to_date) {
    raw <- lapply(keywords, gates_get, from_date, to_date)
    raw <- do.call(rbind.data.frame, raw)
    if (nrow(raw)==0) {

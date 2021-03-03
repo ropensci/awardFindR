@@ -59,9 +59,9 @@ awardFindR <- function(keywords,
   # Assembling the full data.frame
   results <- NULL # Keep this var as a placeholder for rbind.data.frame
   for (source in sources) {
-    stopifnot(exists(paste0(source, "_standardize"))) # Does source routine exist?
+    stopifnot(exists(paste0(".", source, "_standardize"))) # Does source routine exist?
     results <- eval(parse(text=paste0( # eval the term and run it
-      'rbind.data.frame(results, ',
+      'rbind.data.frame(results, .',
       source, '_standardize(keywords, from_date, to_date))')))
   }
 
@@ -86,8 +86,8 @@ awardFindR <- function(keywords,
   }
 
   # Get rid of all caps in some strings
-  results$institution <- sapply(as.character(results$institution), title_case)
-  results$pi <- sapply(results$pi, title_case)
+  results$institution <- sapply(as.character(results$institution), .title_case)
+  results$pi <- sapply(results$pi, .title_case)
 
   results
 }

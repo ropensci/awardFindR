@@ -62,12 +62,7 @@ usaspend_get <- function(keywords, from_date, to_date) {
   awards
 }
 
-#' Standardize the USAspending database search
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-usaspend_standardize <- function(keywords, from_date, to_date) {
+.usaspend_standardize <- function(keywords, from_date, to_date) {
   raw <- usaspend_get(keywords, from_date, to_date)
   if (is.null(raw)) {
     return(NULL)

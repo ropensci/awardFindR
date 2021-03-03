@@ -57,12 +57,7 @@ templeton_get <- function(keywords, from_year, to_year) {
   subset(selected, from_year <= year & to_year >= year)
 }
 
-#' Standardize Templeton search
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-templeton_standardize <- function(keywords, from_date, to_date) {
+.templeton_standardize <- function(keywords, from_date, to_date) {
   raw <- templeton_get(keywords,
                        format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   if (is.null(raw)) {

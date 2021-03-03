@@ -45,12 +45,7 @@ nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
   df
 }
 
-#' Standardize NSF search responses
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-nsf_standardize <- function(keywords, from_date, to_date) {
+.nsf_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, nsf_get, from_date, to_date)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {

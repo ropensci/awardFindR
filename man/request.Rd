@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{request}
 \alias{request}
-\title{Make an HTTP request}
+\title{Make an HTTP request with httr}
 \usage{
 request(url, method, payload = NULL)
 }
@@ -17,5 +17,5 @@ request(url, method, payload = NULL)
 Content of the HTTP response, as returned by httr::content()
 }
 \description{
-Make an HTTP request
+Make an HTTP request with httr
 }

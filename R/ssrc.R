@@ -1,7 +1,4 @@
-#' Extract details from SSRC webpage entry
-#' @param entry XML object passed by ssrc_get()
-#' @return A single line of a data.frame
-ssrc_get_details <- function(entry) {
+.ssrc_get_details <- function(entry) {
   pi_name <- xml2::xml_text(xml2::xml_find_first(entry, ".//h5/a/text()"))
   title <- xml2::xml_text(xml2::xml_find_first(entry, ".//p[@class='l-project-title']/em"))
   program <- xml2::xml_text(xml2::xml_find_first(entry, ".//dl[@class='l-inline-summary']/dd/a"))
@@ -46,7 +43,7 @@ ssrc_get <- function(keyword, from_year, to_year) {
   if (length(entries)==0) {
     return(NULL)   # No results?
   }
-  df <- lapply(entries, ssrc_get_details)
+  df <- lapply(entries, .ssrc_get_details)
   df <- do.call(rbind.data.frame, df)
 
   if (length(entries)==25) { # Need to loop?
@@ -57,7 +54,7 @@ ssrc_get <- function(keyword, from_year, to_year) {
       entries <- xml2::xml_find_all(page, "//li[@class='hit l-fellows-hit']")
       if (length(entries)==0) break
 
-      temp <- lapply(entries, ssrc_get_details)
+      temp <- lapply(entries, .ssrc_get_details)
       temp <- do.call(rbind.data.frame, temp)
       df <- rbind.data.frame(df, temp)
       n <- n + 1
@@ -69,12 +66,7 @@ ssrc_get <- function(keyword, from_year, to_year) {
   df
 }
 
-#' Standardize search for SSRC fellowships and grants
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-ssrc_standardize <- function(keywords, from_date, to_date) {
+.ssrc_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, ssrc_get,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)

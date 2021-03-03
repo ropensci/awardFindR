@@ -47,12 +47,7 @@ mellon_get <- function(keyword, from_year, to_year) {
   df
 }
 
-#' Standardize award results from Mellon
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-mellon_standardize <- function(keywords, from_date, to_date) {
+.mellon_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, mellon_get,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
   raw <- do.call(rbind.data.frame, raw)

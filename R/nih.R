@@ -57,12 +57,7 @@ nih_get <- function(keyword, from_date, to_date) {
   df
 }
 
-#' Standardize NIH RePORTER results
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-nih_standardize <- function(keywords, from_date, to_date) {
+.nih_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, nih_get, from_date, to_date)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {

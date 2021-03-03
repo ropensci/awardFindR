@@ -36,7 +36,7 @@ sloan_get <- function(keyword, from_year, to_year) {
   amount <- gsub("^\\$|,", "", amount) # Get rid of all the $ and commas
 
   year <- rvest::html_nodes(results, "div.year") %>%
-    rvest::html_text(trim=TRUE) %>% substr_right(4)
+    rvest::html_text(trim=TRUE) %>% .substr_right(4)
   year <- as.integer(year)
 
   id <- rvest::html_nodes(results, "footer > a.permalink") %>%
@@ -63,12 +63,7 @@ sloan_get <- function(keyword, from_year, to_year) {
   subset(df, year >= from_year, year <= to_year)
 }
 
-#' Standardize Sloan search
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @return a standardized data.frame
-sloan_standardize <- function(keywords, from_date, to_date) {
+.sloan_standardize <- function(keywords, from_date, to_date) {
   raw <- lapply(keywords, sloan_get,
                 as.integer(format.Date(from_date, "%Y")),
                 as.integer(format.Date(to_date, "%Y")))
