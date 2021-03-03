@@ -43,10 +43,9 @@ nsf_and_nih <- awardFindR(keywords=c("ethnographies", "ethnography"), sources=c(
 table(nsf_and_nih$source)
 #> 
 #> NIH NSF 
-#> 106  40
+#> 106  42
 unique(nsf_and_nih$keyword)
-#> [1] "ethnography"                "ethnographies; ethnography" "ethnographies"             
-#> [4] "ethnography; ethnography"
+#> [1] "ethnography"                "ethnographies; ethnography" "ethnographies"
 ```
 
 For more than a few keywords, you can specify an external simple csv file. If you specify a .csv file path for `keywords`, the file should be a list of keywords, one string per line. For example:

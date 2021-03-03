@@ -1,0 +1,464 @@
+http_interactions:
+- request:
+    method: post
+    uri: https://api.usaspending.gov/api/v2/search/spending_by_award/
+    body:
+      encoding: ''
+      string: '{"fields":["Award ID","Recipient Name","Description","Start Date","End
+        Date","Award Amount","Awarding Agency","Awarding Sub Agency","Funding Agency","Funding
+        Sub Agency"],"filters":{"agencies":[{"name":"Institute of Museum and Library
+        Services","tier":"toptier","type":"awarding"},{"name":"Smithsonian Institution","tier":"toptier","type":"awarding"},{"name":"Department
+        of Commerce","tier":"toptier","type":"awarding"},{"name":"Department of Education","tier":"toptier","type":"awarding"},{"name":"Department
+        of the Interior","tier":"toptier","type":"awarding"}],"award_type_codes":["02","03","04","05"],"keywords":["test"],"recipient_type_names":["higher_education"],"time_period":[{"start_date":"2012-01-01","end_date":"2014-01-01"}]},"limit":50,"page":1,"order":"desc","subawards":"false"}'
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Content-Type: application/json
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Wed, 03 Mar 2021 19:49:32 GMT
+      content-type: application/json
+      content-length: '25864'
+      vary: Accept, Cookie, Origin
+      allow: POST, OPTIONS
+      cache-trace: hit-cache
+      key: 4fc3403e949682aaec60dfd85d919a14
+      x-frame-options: SAMEORIGIN
+      strict-transport-security: max-age=31536000; includeSubDomains; preload
+      set-cookie: cookiesession1=678A3E0DSTUV0123456898901234BD59;Expires=Thu, 03
+        Mar 2022 19:49:32 GMT;Path=/;HttpOnly
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"limit":50,"results":[{"internal_id":49915272,"Award ID":"S330B130017","Recipient
+        Name":"EDUCATION, CALIFORNIA DEPARTMENT OF","Description":"TEST FEES","Start
+        Date":"2013-09-01","End Date":"2014-08-31","Award Amount":10757186.0,"Awarding
+        Agency":"Department of Education","Awarding Sub Agency":"Department of Education","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":1068,"generated_internal_id":"ASST_NON_S330B130017_9100"},{"internal_id":49915239,"Award
+        ID":"S330B120063","Recipient Name":"EDUCATION, CALIFORNIA DEPARTMENT OF","Description":"TEST
+        FEES","Start Date":"2012-08-01","End Date":"2013-07-31","Award Amount":7603942.0,"Awarding
+        Agency":"Department of Education","Awarding Sub Agency":"Department of Education","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":1068,"generated_internal_id":"ASST_NON_S330B120063_9100"},{"internal_id":49565181,"Award
+        ID":"P13AP00083","Recipient Name":"UNIVERSITY OF DELAWARE","Description":"SIMPLE
+        RAPID CORROSION TESTS WITH QUANTITATIVE IMAGE ANALYSIS FOR MATERIALS PRESERVATION","Start
+        Date":"2013-07-01","End Date":"2015-09-30","Award Amount":25000.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"National Park
+        Service","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_P13AP00083_1443"},{"internal_id":49564398,"Award
+        ID":"P13AC00876","Recipient Name":"UNIVERSITY OF NEW MEXICO, THE","Description":"DEVELOP
+        AND TEST GRAFFITI MITIGATION TECHNIQUES","Start Date":"2013-09-01","End Date":"2015-12-31","Award
+        Amount":45941.0,"Awarding Agency":"Department of the Interior","Awarding Sub
+        Agency":"National Park Service","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_P13AC00876_1443"},{"internal_id":49564195,"Award
+        ID":"P13AC00650","Recipient Name":"COLORADO STATE UNIVERSITY","Description":"DEVELOPMENT
+        AND TESTING OF INSTRUMENTATION AND SOFTWARE FOR ACOUSTICAL MONITORING","Start
+        Date":"2013-07-09","End Date":"2015-12-31","Award Amount":474662.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"National Park
+        Service","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_P13AC00650_1443"},{"internal_id":49563914,"Award
+        ID":"P13AC00346","Recipient Name":"SALISH KOOTENAI COLLEGE, INC.","Description":"CONDUCT
+        ARCHEOLOGICAL TESTING TO SUPPORT DETERMINATION OF ELIGIBILITY","Start Date":"2013-05-15","End
+        Date":"2018-04-30","Award Amount":46349.0,"Awarding Agency":"Department of
+        the Interior","Awarding Sub Agency":"National Park Service","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_P13AC00346_1443"},{"internal_id":49563913,"Award
+        ID":"P13AC00345","Recipient Name":"UNIVERSITY OF MONTANA","Description":"ARCHEOLOGICAL
+        AND GEOMORPHOLOGICAL INVENTORY AND NR TESTING","Start Date":"2013-06-01","End
+        Date":"2015-12-31","Award Amount":29976.58,"Awarding Agency":"Department of
+        the Interior","Awarding Sub Agency":"National Park Service","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_P13AC00345_1443"},{"internal_id":49558124,"Award
+        ID":"P10AC00561","Recipient Name":"UNIVERSITY OF UTAH, THE","Description":"TESTING
+        AND EVALUATING A NEW WASTEWATER LAGOON TREATMENT METHOD IN GLACER NATIONAL
+        PARK","Start Date":"2010-09-01","End Date":"2013-01-30","Award Amount":-1.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"National Park
+        Service","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_P10AC00561_1443"},{"internal_id":49117391,"Award
+        ID":"NA12OAR4310058","Recipient Name":"REGENTS OF THE UNIVERSITY OF COLORADO,
+        THE","Description":"DRAKE PASSAGE AS A TEST BED FOR LARGE-SCALE CHANGES IN
+        SOUTHERN OCEAN BIOGEOCHEMISTRY","Start Date":"2012-06-01","End Date":"2017-05-31","Award
+        Amount":474479.0,"Awarding Agency":"Department of Commerce","Awarding Sub
+        Agency":"National Oceanic and Atmospheric Administration","Funding Agency":"Department
+        of Commerce","Funding Sub Agency":"National Oceanic and Atmospheric Administration","awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA12OAR4310058_1330"},{"internal_id":49117102,"Award
+        ID":"NA12NMF4720252","Recipient Name":"UNIVERSITY OF MASSACHUSETTS","Description":"TESTING
+        OF A MODIFIED GROUNDGEAR TO REDUCE YELLOWTAIL FLOUNDER AND JUVENILE COD IN
+        THE LARGE MESH GROUNDFISH FISHERY ON GEORGES BANK","Start Date":"2012-10-01","End
+        Date":"2014-09-30","Award Amount":184674.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Oceanic and Atmospheric Administration","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA12NMF4720252_1330"},{"internal_id":49116941,"Award
+        ID":"NA12NMF4390130","Recipient Name":"UNIVERSITY OF CALIFORNIA, DAVIS","Description":"DIAGNOSTIC
+        TESTING SUPPORT FOR THE MARINE MAMMAL HEALTH AND STRANDING NETWORK","Start
+        Date":"2012-08-01","End Date":"2014-07-30","Award Amount":95614.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Oceanic and
+        Atmospheric Administration","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA12NMF4390130_1330"},{"internal_id":49115504,"Award
+        ID":"NA10NMF4540111","Recipient Name":"TEXAS A&M UNIVERSITY-CORPUS CHRISTI","Description":"ISNAPPER:
+        DESIGN  TESTING  AND ANALYSIS OF AN IPHONE-BASED APPLICATION AS AN ELECTRONIC
+        LOGBOOK IN THE FOR-HIRE FISHERIES.","Start Date":"2010-08-01","End Date":"2013-07-31","Award
+        Amount":178886.0,"Awarding Agency":"Department of Commerce","Awarding Sub
+        Agency":"National Oceanic and Atmospheric Administration","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA10NMF4540111_1330"},{"internal_id":49115310,"Award
+        ID":"NA10NMF4270393","Recipient Name":"UNIVERSITY OF MASSACHUSETTS","Description":"TESTING
+        OF THE ROPE SEPARATOR HADDOCK TRAWL ON GEORGES BANK","Start Date":"2010-08-01","End
+        Date":"2014-07-31","Award Amount":247090.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Oceanic and Atmospheric Administration","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA10NMF4270393_1330"},{"internal_id":49115122,"Award
+        ID":"NA09OAR4310144","Recipient Name":"PENNSYLVANIA STATE UNIVERSITY, THE","Description":"DEVELOPING
+        AND TESTING A MULTI-HAZARD VULNERABILITY ASSESSMENT SUPPORT SYSTEM","Start
+        Date":"2009-09-01","End Date":"2012-08-31","Award Amount":166238.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Oceanic and
+        Atmospheric Administration","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA09OAR4310144_1330"},{"internal_id":49115076,"Award
+        ID":"NA09OAR4300218","Recipient Name":"UNIVERSITY OF MISSISSIPPI","Description":"THE
+        NATIONAL INSTITUTE FOR UNDERSEA SCIENCE AND TECHNOLOGY (NIUST) TROPICAL ECOSYSTEM
+        SCIENCE AND TECHNOLOGY (TEST)","Start Date":"2009-10-01","End Date":"2011-09-30","Award
+        Amount":761180.0,"Awarding Agency":"Department of Commerce","Awarding Sub
+        Agency":"National Oceanic and Atmospheric Administration","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA09OAR4300218_1330"},{"internal_id":49114847,"Award
+        ID":"NA09NOS4200045","Recipient Name":"CLEMSON UNIVERSITY","Description":"UNDERSTANDING
+        THE DYNAMICS OF INVASION:  A TEST USING THE TITAN ACORN BARNACLE (MEGABALANUS
+        COCCOPORNE) AND THE STRIPED BARNACLE AMPHIBALANUS AMPHITR","Start Date":"2009-06-01","End
+        Date":"2012-11-30","Award Amount":39283.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Oceanic and Atmospheric Administration","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA09NOS4200045_1330"},{"internal_id":49114836,"Award
+        ID":"NA09NOS4200033","Recipient Name":"UNIVERSITY OF SOUTH FLORIDA","Description":"DYNAMICS
+        OF MANGROVE BOUNDARIES: FIELD TESTS OF MANGROVE EXPANSION INTO MARSH PLANT
+        HABITAT","Start Date":"2009-06-01","End Date":"2012-05-31","Award Amount":59756.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Oceanic and
+        Atmospheric Administration","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA09NOS4200033_1330"},{"internal_id":49114426,"Award
+        ID":"NA09NMF4330145","Recipient Name":"UNIVERSITY OF GEORGIA","Description":"NEW
+        GEAR TO REDUCE SHRIMP TRAWL BYCATCH: TESTING THE CAPABILITIES OF A NEWLY CERTIFIED
+        TED","Start Date":"2009-08-01","End Date":"2012-07-31","Award Amount":46558.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Oceanic and
+        Atmospheric Administration","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA09NMF4330145_1330"},{"internal_id":49114236,"Award
+        ID":"NA08OAR4170920","Recipient Name":"UNIVERSITY OF MARYLAND CENTER FOR ENVIRONMENTAL
+        SCIENCE","Description":"RDTE FACILITY, ESTABLISHING A MOBILE TEST PLATFORM
+        ON THE CHESAPEAKE BAY AS PART OF THE MARITIME ENVIRONMENTAL RESOURCE CENTER
+        - M. TAMBURRI","Start Date":"2008-10-01","End Date":"2011-09-30","Award Amount":98213.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Oceanic and
+        Atmospheric Administration","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA08OAR4170920_1330"},{"internal_id":49114230,"Award
+        ID":"NA08OAR4170865","Recipient Name":"SAN JOSE STATE UNIVERSITY RESEARCH
+        FOUNDATION","Description":"TECHNOLOGIES AND PRACTICES. METABOLIC VERIFICATION
+        OF PLANKTON VIABILITY DURING BALLAST TREATMENT TESTING: ESTABLISHING GROUND
+        TRUTH","Start Date":"2008-10-01","End Date":"2011-09-30","Award Amount":270040.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Oceanic and
+        Atmospheric Administration","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA08OAR4170865_1330"},{"internal_id":49113975,"Award
+        ID":"NA07OAR4310408","Recipient Name":"OREGON STATE UNIVERSITY","Description":"CLIMATE
+        VARIABILITY AND COASTAL COMMUNITY RESILIENCE: TESTING A NATIONAL MODEL OF
+        STATE-BASED OUTREACH","Start Date":"2007-08-01","End Date":"2011-07-31","Award
+        Amount":288372.0,"Awarding Agency":"Department of Commerce","Awarding Sub
+        Agency":"National Oceanic and Atmospheric Administration","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA07OAR4310408_1330"},{"internal_id":49113889,"Award
+        ID":"NA07NOS4730211","Recipient Name":"UNIVERSITY OF FLORIDA","Description":"A
+        REGIONAL STORM SURGE AND INUNDATION MODEL TESTBED FOR SECOORA","Start Date":"2008-01-01","End
+        Date":"2013-06-30","Award Amount":1244139.0,"Awarding Agency":"Department
+        of Commerce","Awarding Sub Agency":"National Oceanic and Atmospheric Administration","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_NA07NOS4730211_1330"},{"internal_id":48948053,"Award
+        ID":"L13AC00262","Recipient Name":"NEVADA SYSTEM OF HIGHER EDUCATION","Description":"CESU
+        DEVELOP TEST EVALUATE SCENARIO PLANNING","Start Date":"2013-09-13","End Date":"2018-09-13","Award
+        Amount":420325.4,"Awarding Agency":"Department of the Interior","Awarding
+        Sub Agency":"Bureau of Land Management","Funding Agency":"Department of the
+        Interior","Funding Sub Agency":"Bureau of Land Management","awarding_agency_id":209,"generated_internal_id":"ASST_NON_L13AC00262_1422"},{"internal_id":48948022,"Award
+        ID":"L13AC00230","Recipient Name":"OREGON STATE UNIVERSITY","Description":"BLM
+        OR/WA CESU SUDDEN OAK DEATH GENETIC TESTING","Start Date":"2013-09-11","End
+        Date":"2018-09-10","Award Amount":50000.0,"Awarding Agency":"Department of
+        the Interior","Awarding Sub Agency":"Bureau of Land Management","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_L13AC00230_1422"},{"internal_id":48946888,"Award
+        ID":"L10AP20011","Recipient Name":"BOARD OF REGENTS NEVADA SYSTEM OF HIGHER
+        EDUCATION","Description":"DEVELOP AND TEST MOJAVE NATIVE PLANT MATERIALS","Start
+        Date":"2010-09-01","End Date":"2013-08-31","Award Amount":153556.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"Bureau of Land
+        Management","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_L10AP20011_1422"},{"internal_id":48946134,"Award
+        ID":"L09AC15896","Recipient Name":"UNIVERSITY OF NORTH DAKOTA","Description":"UNIVERSITY
+        OF NORTH DAKOTA TESTING AT SERENDIPITY SHELTER","Start Date":"2009-09-02","End
+        Date":"2013-09-01","Award Amount":5804.0,"Awarding Agency":"Department of
+        the Interior","Awarding Sub Agency":"Bureau of Land Management","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_L09AC15896_1422"},{"internal_id":48669002,"Award
+        ID":"G13AC00377","Recipient Name":"REGENTS OF THE UNIVERSITY OF IDAHO","Description":"TESTING
+        MODELS OF THE HEAT TRANSFER FROM SILICATE MELTS INTO WET SEDIMENTS","Start
+        Date":"2013-09-05","End Date":"2016-09-30","Award Amount":55000.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G13AC00377_1434"},{"internal_id":48668767,"Award
+        ID":"G13AC00132","Recipient Name":"NORTH CAROLINA STATE UNIVERSITY","Description":"MONITORING
+        AND TESTING DEMOGRAPHIC EFFECTS OF RESTORATION FOR THE US FEDERALLY ENDANGERED
+        ST. FRANCIS  SATYR BUTTERFLY","Start Date":"2013-05-01","End Date":"2014-05-31","Award
+        Amount":108935.0,"Awarding Agency":"Department of the Interior","Awarding
+        Sub Agency":"U.S. Geological Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G13AC00132_1434"},{"internal_id":48668652,"Award
+        ID":"G13AC00012","Recipient Name":"HUMBOLDT STATE UNIVERSITY SPONSORED PROGRAMS
+        FOUNDATION","Description":"MONITORING THE ENDANGERED TIDEWATER GOBY (EUCYCLOGOBIUS
+        NEWBERRY) USING WATER SAMPLES: LABORATORY TESTS","Start Date":"2012-12-05","End
+        Date":"2013-12-30","Award Amount":23365.0,"Awarding Agency":"Department of
+        the Interior","Awarding Sub Agency":"U.S. Geological Survey","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G13AC00012_1434"},{"internal_id":48668545,"Award
+        ID":"G12AP20090","Recipient Name":"GEORGIA TECH RESEARCH CORPORATION","Description":"TESTING
+        STATIC VS. DYNAMIC TRIGGERING BASED ON SYSTEMATIC DETECTION OF MISSING TRIGGERED
+        EVENTS IN CENTRAL CALIFORNIA","Start Date":"2012-06-01","End Date":"2013-05-31","Award
+        Amount":62898.0,"Awarding Agency":"Department of the Interior","Awarding Sub
+        Agency":"U.S. Geological Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G12AP20090_1434"},{"internal_id":48668518,"Award
+        ID":"G12AP20063","Recipient Name":"UNIVERSITY OF WASHINGTON","Description":"TESTING
+        MODELS OF THIN-SKINNED VS. BASEMENT-INVOLVED FAULTING IN THE YAKIMA FOLD AND
+        THRUST BELT, WA","Start Date":"2012-03-26","End Date":"2013-03-25","Award
+        Amount":55256.0,"Awarding Agency":"Department of the Interior","Awarding Sub
+        Agency":"U.S. Geological Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G12AP20063_1434"},{"internal_id":48668426,"Award
+        ID":"G12AC20484","Recipient Name":"TRUSTEES OF THE COLORADO SCHOOL OF MINES","Description":"JOINT
+        RESEARCH AND DEVELOPMENT OF GEOTECHNICAL TESTING CAPABILITIES FOR LANDSLIDE
+        RESEARCH","Start Date":"2012-09-15","End Date":"2018-05-31","Award Amount":285690.6,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G12AC20484_1434"},{"internal_id":48668322,"Award
+        ID":"G12AC20378","Recipient Name":"NORTH CAROLINA STATE UNIVERSITY","Description":"TESTING
+        A DECISION MODEL TO MAXIMIZE SUITABLE HABITAT FOR MIGRATORY SHOREBIRDS IN
+        SALINE LAGOONS","Start Date":"2012-07-27","End Date":"2015-09-30","Award Amount":80189.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G12AC20378_1434"},{"internal_id":48668303,"Award
+        ID":"G12AC20358","Recipient Name":"UNIVERSITY OF FLORIDA","Description":"TESTING
+        NATURAL RESOURCE APPLICATIONS USING A SMALL UNMANNED AIRCRAFT SYSTEM","Start
+        Date":"2012-07-23","End Date":"2015-02-28","Award Amount":69340.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G12AC20358_1434"},{"internal_id":48668236,"Award
+        ID":"G12AC20284","Recipient Name":"VIRGINIA POLYTECHNIC INSTITUTE AND STATE
+        UNIVERSITY","Description":"PRELIMINARY APPLICATION OF A FRAMEWORK FOR MODELING
+        HABITAT SUITABILITY AND DISTRIBUTION OF STREAM FISHES WITH FIELD-TESTING","Start
+        Date":"2012-07-01","End Date":"2012-08-31","Award Amount":50400.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G12AC20284_1434"},{"internal_id":48668061,"Award
+        ID":"G12AC20082","Recipient Name":"KANSAS, UNIVERSITY OF","Description":"DEVELOP
+        METHODS FOR LABORATORY CULTURE AND TOXICITY TESTING WITH FAIRY SHRIMP","Start
+        Date":"2012-05-01","End Date":"2013-04-30","Award Amount":25263.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G12AC20082_1434"},{"internal_id":48668029,"Award
+        ID":"G12AC20046","Recipient Name":"REGENTS OF THE UNIVERSITY OF IDAHO","Description":"HIGH
+        RISK BALLAST WATER: TESTING OF EFFICACY OF HYDRATED LIME AND SODIUM HYDROXIDE
+        BIOCIDE TREATMENT","Start Date":"2012-01-17","End Date":"2013-12-31","Award
+        Amount":52600.0,"Awarding Agency":"Department of the Interior","Awarding Sub
+        Agency":"U.S. Geological Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G12AC20046_1434"},{"internal_id":48668012,"Award
+        ID":"G12AC20027","Recipient Name":"SYRACUSE UNIVERSITY","Description":"TESTING
+        THE GREAT UNCONFORMITY HYPOTHESIS BY DETERMINING U-PB  AGES OF DETRITAL ZIRCON
+        FROM CAMBRIAN SEDIMENTARY ROCKS ALONG THE EASTERN MARGIN OF TH","Start Date":"2011-12-31","End
+        Date":"2012-12-30","Award Amount":20157.0,"Awarding Agency":"Department of
+        the Interior","Awarding Sub Agency":"U.S. Geological Survey","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G12AC20027_1434"},{"internal_id":48667599,"Award
+        ID":"G11AC20476","Recipient Name":"REGENTS OF THE UNIVERSITY OF IDAHO","Description":"DEVELOPING
+        A TEST FOR EARLY DECTION OF NEW ZEALAND MUDSNAILS USING ENVIRONMENTAL DNA","Start
+        Date":"2011-10-01","End Date":"2016-09-30","Award Amount":35417.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G11AC20476_1434"},{"internal_id":48667365,"Award
+        ID":"G11AC20216","Recipient Name":"UNIVERSITY OF VERMONT & STATE AGRICULTURAL
+        COLLEGE","Description":"A PILOT TEST FOR MONITORING PHENOLOGY WITH ACOUSTIC
+        SENSORS","Start Date":"2010-06-09","End Date":"2013-04-30","Award Amount":31000.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G11AC20216_1434"},{"internal_id":48667347,"Award
+        ID":"G11AC20196","Recipient Name":"VIRGINIA POLYTECHNIC INSTITUTE AND STATE
+        UNIVERSITY","Description":"MULTI GENERATIONAL MULTI SPECIES TEST FOR ENDOCRINE
+        DISRUPTING CHEMICAL EFFECTS","Start Date":"2009-04-14","End Date":"2012-08-31","Award
+        Amount":103278.0,"Awarding Agency":"Department of the Interior","Awarding
+        Sub Agency":"U.S. Geological Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G11AC20196_1434"},{"internal_id":48666953,"Award
+        ID":"G10AC00507","Recipient Name":"UTAH STATE UNIVERSITY","Description":"A
+        TEST OF THE BIOTIC RESISTANCE HYPOTHESIS WITH NATIVE AND EXOTIC TROUT ASSEMBLAGES
+        IN INTERMOUNTAIN WEST STREAM ECOSYSTEMS: TOWARDS A BETTER UNDERST","Start
+        Date":"2010-07-26","End Date":"2011-06-30","Award Amount":-278.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G10AC00507_1434"},{"internal_id":48666823,"Award
+        ID":"G10AC00307","Recipient Name":"TEXAS TECH UNIVERSITY SYSTEM","Description":"INCIDENCE
+        AND CHARACTERIZATION OF INTERSEX  TESTICULAR TUMORS  AND REPRODUCTIVE CONDITION","Start
+        Date":"2010-05-05","End Date":"2012-09-30","Award Amount":60904.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G10AC00307_1434"},{"internal_id":48666804,"Award
+        ID":"G10AC00284","Recipient Name":"GEORGE MASON UNIVERSITY","Description":"RESEARCH
+        AND DEVELOPMENT ON TESTING  DEPLOYMENT AND REVISION OF CONSENSUS-BASED GEOSPATIAL
+        STANDARDS","Start Date":"2010-06-01","End Date":"2015-09-30","Award Amount":349142.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G10AC00284_1434"},{"internal_id":48666614,"Award
+        ID":"G10AC00069","Recipient Name":"REGENTS OF THE UNIVERSITY OF MICHIGAN","Description":"DEVELOPMENT
+        AND TESTING OF STRUCTURAL EQUATION MODELS FOR THE NATIONAL WATER QUALITY ASSESSMENT
+        PROG","Start Date":"2010-03-15","End Date":"2013-12-31","Award Amount":209169.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G10AC00069_1434"},{"internal_id":48666337,"Award
+        ID":"G09AC00362","Recipient Name":"UNIVERSITY OF FLORIDA","Description":"ASSESSING
+        NATAL SOURCES OF JUVENILE NATIVE FISH IN GRAND CANYON: A TEST WITH FLANNELMOUTH
+        SUCKERS","Start Date":"2009-09-16","End Date":"2010-09-30","Award Amount":-799.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G09AC00362_1434"},{"internal_id":48666317,"Award
+        ID":"G09AC00331","Recipient Name":"BOISE STATE UNIVERSITY","Description":"\"\"IDENTIFROG
+        SOFTWARE DEVELOPMENT, TESTING, AND APPLICATION\"\" DATED 06/23/2009","Start
+        Date":"2009-07-29","End Date":"2012-09-30","Award Amount":17078.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Geological
+        Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G09AC00331_1434"},{"internal_id":48665625,"Award
+        ID":"G00AC00012","Recipient Name":"VIRGINIA POLYTECHNIC INSTITUTE","Description":"DISSOLVED
+        OXYGEN REQUIREMENTS FOR FRESHWATER MUSSELS PHASE 1: DEVELOPMENT OF TEST SYSTEMS
+        AND EXPERIMENTAL PROTOCOLS","Start Date":"2008-03-01","End Date":"2010-08-31","Award
+        Amount":-131.0,"Awarding Agency":"Department of the Interior","Awarding Sub
+        Agency":"U.S. Geological Survey","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_G00AC00012_1434"},{"internal_id":48589691,"Award
+        ID":"F12AP01082","Recipient Name":"WESTERN MICHIGAN UNIVERSITY","Description":"TEST
+        OF AN ANTI-FUNGAL AGENT ON THE GROWTH OF G. DESTRUCTANS, ON EXPERIMENTALLY-INFECTED
+        BATS","Start Date":"2012-07-31","End Date":"2014-03-31","Award Amount":180647.0,"Awarding
+        Agency":"Department of the Interior","Awarding Sub Agency":"U.S. Fish and
+        Wildlife Service","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":209,"generated_internal_id":"ASST_NON_F12AP01082_1448"},{"internal_id":46313704,"Award
+        ID":"70NANB9H9163","Recipient Name":"UNIVERSITY SYSTEM OF NEW HAMPSHIRE","Description":"USG
+        IPV6 TESTING PROGRAM, SPECIFICATION AND MANAGEMENT COLLABORATION","Start Date":"2009-09-01","End
+        Date":"2010-08-31","Award Amount":293070.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Institute of Standards and Technology","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB9H9163_1341"}],"page_metadata":{"page":1,"hasNext":true,"last_record_unique_id":46313704,"last_record_sort_value":"70NANB9H9163"},"messages":[["For
+        searches, time period start and end dates are currently limited to an earliest
+        date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
+        Award Download feature on the website or one of our download or bulk_download
+        API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
+  recorded_at: 2021-03-03 19:49:34 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4
+- request:
+    method: post
+    uri: https://api.usaspending.gov/api/v2/search/spending_by_award/
+    body:
+      encoding: ''
+      string: '{"fields":["Award ID","Recipient Name","Description","Start Date","End
+        Date","Award Amount","Awarding Agency","Awarding Sub Agency","Funding Agency","Funding
+        Sub Agency"],"filters":{"agencies":[{"name":"Institute of Museum and Library
+        Services","tier":"toptier","type":"awarding"},{"name":"Smithsonian Institution","tier":"toptier","type":"awarding"},{"name":"Department
+        of Commerce","tier":"toptier","type":"awarding"},{"name":"Department of Education","tier":"toptier","type":"awarding"},{"name":"Department
+        of the Interior","tier":"toptier","type":"awarding"}],"award_type_codes":["02","03","04","05"],"keywords":["test"],"recipient_type_names":["higher_education"],"time_period":[{"start_date":"2012-01-01","end_date":"2014-01-01"}]},"limit":50,"page":2,"order":"desc","subawards":"false"}'
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Content-Type: application/json
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Wed, 03 Mar 2021 19:49:33 GMT
+      content-type: application/json
+      content-length: '12364'
+      vary: Accept, Cookie, Origin
+      allow: POST, OPTIONS
+      cache-trace: hit-cache
+      key: 2c364ad38e7af849d35953a7fe159ef7
+      x-frame-options: SAMEORIGIN
+      strict-transport-security: max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"limit":50,"results":[{"internal_id":46313693,"Award ID":"70NANB9H9145","Recipient
+        Name":"UNIVERSITY OF MARYLAND BALTIMORE COUNTY","Description":"INTEGRATION
+        TESTING IN SUPPLY CHAIN LOGISTICS","Start Date":"2009-08-16","End Date":"2012-08-15","Award
+        Amount":794923.0,"Awarding Agency":"Department of Commerce","Awarding Sub
+        Agency":"National Institute of Standards and Technology","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB9H9145_1341"},{"internal_id":46313688,"Award
+        ID":"70NANB9H9129","Recipient Name":"UNIVERSITY OF TEXAS AT AUSTIN","Description":"DEVELOPMENT
+        OF AN INDOOR INTELLIGENT AND AUTOMATED CONSTRUCTION JOB SITE TESTBED","Start
+        Date":"2009-04-01","End Date":"2014-06-30","Award Amount":938409.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB9H9129_1341"},{"internal_id":46312227,"Award
+        ID":"70NANB13H180","Recipient Name":"UNIVERSITY OF BALTIMORE","Description":"FUTURE
+        VOTING TEST BED DEVELOPMENT","Start Date":"2013-09-01","End Date":"2014-08-31","Award
+        Amount":66541.0,"Awarding Agency":"Department of Commerce","Awarding Sub Agency":"National
+        Institute of Standards and Technology","Funding Agency":null,"Funding Sub
+        Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB13H180_1341"},{"internal_id":46312219,"Award
+        ID":"70NANB13H168","Recipient Name":"REGENTS OF THE UNIVERSITY OF MICHIGAN","Description":"FABRICATION,
+        TESTING AND ANALYSIS OF A REFERENCE MEMS ACTUATOR FOR CALIBRATION OF OPTICAL
+        MEASUREMENT SYSTEMS","Start Date":"2013-09-01","End Date":"2013-12-31","Award
+        Amount":38525.0,"Awarding Agency":"Department of Commerce","Awarding Sub Agency":"National
+        Institute of Standards and Technology","Funding Agency":null,"Funding Sub
+        Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB13H168_1341"},{"internal_id":46312213,"Award
+        ID":"70NANB13H156","Recipient Name":"WICHITA STATE UNIVERSITY","Description":"DEVELOPMENT
+        OF BASELINE COMPOSITE CAD MODEL TEST CASES","Start Date":"2013-08-01","End
+        Date":"2014-04-30","Award Amount":84382.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Institute of Standards and Technology","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB13H156_1341"},{"internal_id":46312206,"Award
+        ID":"70NANB13H147","Recipient Name":"STEVENS INSTITUTE OF TECHNOLOGY (INC)","Description":"SOLID
+        PHANTOMS AS DIMENSIONAL TEST TARGETS FOR DEPTH-RESOLVING OPTICAL MEDICAL IMAGERS","Start
+        Date":"2013-07-01","End Date":"2015-06-30","Award Amount":41195.26,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":"Department of Commerce","Funding
+        Sub Agency":"National Institute of Standards and Technology","awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB13H147_1341"},{"internal_id":46312203,"Award
+        ID":"70NANB13H144","Recipient Name":"CARNEGIE MELLON UNIVERSITY","Description":"SMART
+        GRID IN A ROOM - A HYBRID TEST-BED FACILITY FOR CYBER-PHYSICAL SYSTEMS (CPS)-BASED
+        STANDARDS IN MICROGRIDS AND THEIR INTERACTIONS WITH UTILITY","Start Date":"2013-07-01","End
+        Date":"2016-06-30","Award Amount":930000.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Institute of Standards and Technology","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB13H144_1341"},{"internal_id":46312041,"Award
+        ID":"70NANB12H266","Recipient Name":"NORTHEASTERN UNIVERSITY","Description":"DEVELOPMENT
+        OF LONG-TERM ADHESION TEST FOR PHOTOVOLTAIC MODULE COMPONENTS","Start Date":"2012-10-01","End
+        Date":"2013-09-30","Award Amount":47584.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Institute of Standards and Technology","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB12H266_1341"},{"internal_id":46312027,"Award
+        ID":"70NANB12H247","Recipient Name":"GEORGE MASON UNIVERSITY","Description":"DESIGN
+        AND IMPLEMENTATION OF A COGNITIVE RADIO NETWORK TESTBED","Start Date":"2012-08-25","End
+        Date":"2013-08-24","Award Amount":42999.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Institute of Standards and Technology","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB12H247_1341"},{"internal_id":46311970,"Award
+        ID":"70NANB12H175","Recipient Name":"UNIVERSITY OF TEXAS AT ARLINGTON","Description":"COMBINATORIAL
+        TESTING FOR COMPLEX SYSTEMS","Start Date":"2012-10-01","End Date":"2015-09-30","Award
+        Amount":250522.0,"Awarding Agency":"Department of Commerce","Awarding Sub
+        Agency":"National Institute of Standards and Technology","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB12H175_1341"},{"internal_id":46311945,"Award
+        ID":"70NANB12H132","Recipient Name":"UNIVERSITY OF MARYLAND, COLLEGE PARK","Description":"DEVELOPMENTS
+        OF CHARACTERIZATION METHODS AND STABILITY TEST PROTOCOLS FOR ENGINEERED NANOPARTICLES
+        AS NANOSCALE POSITIVE CONTROL REFERENCE MATERIALS","Start Date":"2012-04-01","End
+        Date":"2015-03-31","Award Amount":410532.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Institute of Standards and Technology","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB12H132_1341"},{"internal_id":46311839,"Award
+        ID":"70NANB11H188","Recipient Name":"GEORGE MASON UNIVERSITY","Description":"AUTOMATED
+        TOOLS AND METHODS FOR TESTING OF NETWORK-ENABLED MOBILE APPLICATIONS","Start
+        Date":"2011-09-01","End Date":"2013-05-31","Award Amount":99999.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB11H188_1341"},{"internal_id":46311643,"Award
+        ID":"70NANB10H260","Recipient Name":"GEORGE MASON UNIVERSITY","Description":"SECURING
+        ANDROID SMART-PHONES VIA AUTOMATED TESTING AND CERTIFIED COMMUNICATIONS","Start
+        Date":"2010-08-01","End Date":"2013-07-31","Award Amount":314609.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB10H260_1341"},{"internal_id":46311589,"Award
+        ID":"70NANB10H168","Recipient Name":"UNIVERSITY OF TEXAS AT ARLINGTON","Description":"FAULT
+        LOCALIZATION BASED ON COMBINATORIAL TESTING","Start Date":"2010-09-01","End
+        Date":"2014-08-31","Award Amount":237754.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Institute of Standards and Technology","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_70NANB10H168_1341"},{"internal_id":46220362,"Award
+        ID":"60NANB9D9154","Recipient Name":"VIRGINIA POLYTECHNIC INSTITUTE AND STATE
+        UNIVERSITY","Description":"STANDARD SOURCE FOR VOC EMISSIONS TESTING","Start
+        Date":"2009-09-01","End Date":"2011-08-28","Award Amount":112445.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_60NANB9D9154_1341"},{"internal_id":46220347,"Award
+        ID":"60NANB9D9115","Recipient Name":"VIRGINIA POLYTECHNIC INSTITUTE AND STATE
+        UNIVERSITY","Description":"MATHEMATICAL MODELS TO ENHANCE CONTROL AND TESTNG
+        WITH THE NIST 500-MM GUARDED HOT-PLATE APPARATUS OPERATING AT ITS EXTENDED
+        CAPABILITIES","Start Date":"2009-07-01","End Date":"2011-12-31","Award Amount":87820.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_60NANB9D9115_1341"},{"internal_id":46220318,"Award
+        ID":"60NANB7D6159","Recipient Name":"UNIVERSITY OF CENTRAL FLORIDA BOARD OF
+        TRUSTEES, THE","Description":"SOLAR THERMAL COLLECTOR TESTING INTERCOMPARISON.  COMPARISON
+        OF INDOOR AND OUTDOOR TESTS OF SOLAR THERMAL COLLECTORS AT LABORATORIES IN
+        FLORIDA AND C","Start Date":"2007-08-01","End Date":"2012-12-31","Award Amount":27846.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_60NANB7D6159_1341"},{"internal_id":46220113,"Award
+        ID":"60NANB13D163","Recipient Name":"TRUSTEES OF COLUMBIA UNIVERSITY IN THE
+        CITY OF NEW YORK, THE","Description":"A TEST OF QED AND THE GRAVITATIONAL
+        INVERSE-SQUARE LAW AT THE SUB-NANOMETER SCALE WITH ULTRACOLD SR2 MOLECULES","Start
+        Date":"2013-10-01","End Date":"2016-09-30","Award Amount":150000.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_60NANB13D163_1341"},{"internal_id":46220083,"Award
+        ID":"60NANB12D253","Recipient Name":"UNIVERSITY OF MASSACHUSETTS","Description":"MEASUREMENTS
+        OF GRAPHENE TEST STRUCTURES AND DEVICES","Start Date":"2012-09-01","End Date":"2016-10-31","Award
+        Amount":371016.0,"Awarding Agency":"Department of Commerce","Awarding Sub
+        Agency":"National Institute of Standards and Technology","Funding Agency":null,"Funding
+        Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_60NANB12D253_1341"},{"internal_id":46220051,"Award
+        ID":"60NANB12D021","Recipient Name":"UNIVERSITY OF TEXAS AT ARLINGTON","Description":"COMBINATORIAL
+        TESTING FOR HEALTHCARE SYSTEMS","Start Date":"2012-06-01","End Date":"2013-05-31","Award
+        Amount":56431.0,"Awarding Agency":"Department of Commerce","Awarding Sub Agency":"National
+        Institute of Standards and Technology","Funding Agency":null,"Funding Sub
+        Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_60NANB12D021_1341"},{"internal_id":46220021,"Award
+        ID":"60NANB11D146","Recipient Name":"GEORGE MASON UNIVERSITY","Description":"TRI-GATE
+        NANOWIRE FET TEST-STRUCTURES TO INVESTIGATE SHORT CHANNEL EFFECTS AND BALLISTIC
+        TRANSPORT","Start Date":"2011-08-01","End Date":"2014-07-31","Award Amount":185365.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_60NANB11D146_1341"},{"internal_id":46219989,"Award
+        ID":"60NANB10D280","Recipient Name":"PURDUE UNIVERSITY","Description":"TEST
+        METHODS FOR EVALUATING FAULT DETECTION AND DIAGNOSTICS SYSTEMS","Start Date":"2010-08-01","End
+        Date":"2012-12-01","Award Amount":189858.0,"Awarding Agency":"Department of
+        Commerce","Awarding Sub Agency":"National Institute of Standards and Technology","Funding
+        Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_60NANB10D280_1341"},{"internal_id":46219971,"Award
+        ID":"60NANB10D253","Recipient Name":"UNIVERSITY OF WASHINGTON","Description":"MEASUREMENT
+        OF THE FINE STRUCTURE CONSTANT AND TEST OF QED AT THE SUB-PPB LEVEL","Start
+        Date":"2010-10-01","End Date":"2013-09-30","Award Amount":150000.0,"Awarding
+        Agency":"Department of Commerce","Awarding Sub Agency":"National Institute
+        of Standards and Technology","Funding Agency":null,"Funding Sub Agency":null,"awarding_agency_id":183,"generated_internal_id":"ASST_NON_60NANB10D253_1341"}],"page_metadata":{"page":2,"hasNext":false,"last_record_unique_id":null,"last_record_sort_value":"None"},"messages":[["For
+        searches, time period start and end dates are currently limited to an earliest
+        date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
+        Award Download feature on the website or one of our download or bulk_download
+        API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
+  recorded_at: 2021-03-03 19:49:34 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

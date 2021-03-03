@@ -4,4 +4,4 @@
 ^codecov\.yml$
 ^\.github$
 ^CONTRIBUTING.md
-^\docs$
+^docs$
