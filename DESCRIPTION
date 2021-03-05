@@ -4,17 +4,23 @@ Title: QDR awardFindR
 Version: 0.1.0
 Authors@R: c(person("Michael", "McCall", email = "mimccall@syr.edu",
                   role = c("aut", "cre"), comment = c(ORCID="0000-0002-4668-4212")),
+                  person("Sebastian", "Karcher", email = "karcher@u.northwestern.edu",
+                  role = c("ctb"), comment = c(ORCID = "0000-0001-8249-7388")),
                   person("Qualitative Data", "Repository", email = "qdr@syr.edu",
                   role = c("cph")),
                   person("Sloan", "Foundation", email = "technology@sloan.org",
-                  role = c("fnd")),
-                  person("Sebastian", "Karcher", email = "karcher@u.northwestern.edu",
-                  role = c("ctb"), comment = c(ORCID = "0000-0001-8249-7388")))
+                  role = c("fnd")))
 Author: Michael C. McCall
 Maintainer: Michael McCall <mimccall@syr.edu>
-Description: Queries a number of scientific awards databases
+Description: Queries a number of scientific awards databases.
     Collects relevant results based on keyword and date parameters,
-    returns list of projects that fit those criteria.
+    returns list of projects that fit those criteria as a data frame.
+    Sources include: Arnold Ventures, Carnegie Corp, Federal RePORTER,
+    Gates Foundation, MacArthur Foundation, Mellon Foundation, NEH, NIH,
+    NSF, Open Philanthropy, Open Society Foundations, Rockefeller Foundation,
+    Russell Sage Foundation, Robert Wood Johnson Foundation, 
+    Sloan Foundation, Social Science Research Council, John Templeton Foundation,
+    USASpending.gov
 URL: https://github.com/PESData/awardFindR
 BugReports: https://github.com/PESData/awardFindR/issues
 License: MIT + file LICENSE
