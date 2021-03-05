@@ -2,6 +2,14 @@ Package: awardFindR
 Type: Package
 Title: QDR awardFindR
 Version: 0.1.0
+Authors@R: c(person("Michael", "McCall", email = "mimccall@syr.edu",
+                  role = c("aut", "cre"), comment = c(ORCID="0000-0002-4668-4212")),
+                  person("Qualitative Data", "Repository", email = "qdr@syr.edu",
+                  role = c("cph")),
+                  person("Sloan", "Foundation", email = "technology@sloan.org",
+                  role = c("fnd")),
+                  person("Sebastian", "Karcher", email = "karcher@u.northwestern.edu",
+                  role = c("ctb"), comment = c(ORCID = "0000-0001-8249-7388")))
 Author: Michael C. McCall
 Maintainer: Michael McCall <mimccall@syr.edu>
 Description: Queries a number of scientific awards databases

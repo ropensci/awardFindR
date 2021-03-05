@@ -57,3 +57,7 @@ remotes::install_github("PESData/awardFindR")
 ### Dependencies
 
 This package depends on `rvest`, `xml2` and `httr`.
+
+### Funding
+
+This package was developed with support from [a grant from the Sloan Foundation](https://sloan.org/grant-detail/8725).
