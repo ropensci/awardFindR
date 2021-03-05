@@ -64,7 +64,7 @@ neh_get <- function(keywords, from_year, to_year) {
     start=BeginGrant, end=EndGrant,
     program=Program, amount=as.integer(AwardOutright),
     # Encoding problems on windows changes first variable name ("AppNumber")
-    id=raw[1], title=ProjectTitle, keyword, source="NEH",
+    id=as.character(raw[1]), title=ProjectTitle, keyword, source="NEH",
     stringsAsFactors = FALSE
   ))
 }

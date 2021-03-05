@@ -17,7 +17,7 @@ usaspend_get <- function(keywords, from_date, to_date) {
     filters=list(
       agencies=list(
         # These should be the agencies that are not covered by Federal Reporter, NIH RePORTER or NSF
-        # because the data is limited from USAspending
+        # because the data is limited from USAspending compared to other sources
         list(name="Institute of Museum and Library Services", tier="toptier", type="awarding"),
         list(name="Smithsonian Institution", tier="toptier", type="awarding"),
         list(name="Department of Commerce", tier="toptier", type="awarding"),
