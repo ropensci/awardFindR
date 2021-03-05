@@ -2,7 +2,7 @@
 % Please edit documentation in R/neh.R
 \name{neh_get}
 \alias{neh_get}
-\title{Grab the NEH grants data and loop the keyword queries}
+\title{Get relevant awards from NEH}
 \usage{
 neh_get(keywords, from_year, to_year)
 }
@@ -14,10 +14,10 @@ neh_get(keywords, from_year, to_year)
 \item{to_year}{Ending year to search}
 }
 \value{
-A data.frame with the relevant results from NEH
+A raw data.frame with the relevant results from NEH
 }
 \description{
-So that we don't keep redownloading the NEH csv file, this is a wrapper to loop neh_query()
+Get relevant awards from NEH
 }
 \examples{
 neh <- neh_get(c("focus groups", "ethnography"), 2018, 2020)

@@ -1,14 +1,9 @@
-#' Grab the NEH grants data and loop the keyword queries
-#'
-#' So that we don't keep redownloading the NEH csv file, this is a wrapper to loop neh_query()
-#'
+#' Get relevant awards from NEH
 #' @param keywords Vector of strings to search for in the project description
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
-#'
-#' @return A data.frame with the relevant results from NEH
+#' @return A raw data.frame with the relevant results from NEH
 #' @export
-#'
 #' @examples
 #' neh <- neh_get(c("focus groups", "ethnography"), 2018, 2020)
 neh_get <- function(keywords, from_year, to_year) {
@@ -68,7 +63,8 @@ neh_get <- function(keywords, from_year, to_year) {
     institution=Institution, pi, year=YearAwarded,
     start=BeginGrant, end=EndGrant,
     program=Program, amount=as.integer(AwardOutright),
-    id=AppNumber, title=ProjectTitle, keyword, source="NEH",
+    # Encoding problems on windows changes first variable name ("AppNumber")
+    id=raw[1], title=ProjectTitle, keyword, source="NEH",
     stringsAsFactors = FALSE
   ))
 }
