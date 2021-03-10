@@ -1,5 +1,5 @@
 test_that("Search that should return all empty", {
-  suppressMessages(vcr::use_cassette("empty", record = "new_episodes", {
+  suppressMessages(vcr::use_cassette("empty", {
     foobar <- awardFindR("foobar")
   }))
   expect_equal(data.frame(), foobar)
@@ -10,7 +10,7 @@ test_that("merging multiple sources and multiple keywords with spaces", {
   csv <- tempfile()
   writeLines(keywords, csv)
 
-  suppressMessages(vcr::use_cassette("full", record = "new_episodes", {
+  suppressMessages(vcr::use_cassette("full", {
     results <- awardFindR(csv, from_date = "2018-01-01", to_date="2018-02-01")
   }))
   expect_gt(nrow(results), 1)

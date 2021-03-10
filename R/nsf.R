@@ -2,11 +2,11 @@
 #' @param keyword Keyword to query, single string
 #' @param from_date Beginning date object
 #' @param to_date End date object
-#' @param cfda Comma-separated CFDA codes to include, SBE and EHR only by default
+#' @param cfda Comma-separated CFDA codes to include, default: all
 #' @return A data.frame of raw NSF API output
 #' @export
 #' @examples nsf <- nsf_get("ethnography", "2020-01-01", "2020-02-01")
-nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
+nsf_get <- function(keyword, from_date, to_date, cfda="47.041,47.050,47.049,47.078,47.083,47.079,47.070,47.074,47.076,47.075") {
   base_url <- 'https://api.nsf.gov/services/v1/awards.json?'
   output_data <- 'id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
   output_data <- paste0(output_data, ",fundsObligatedAmt,fundProgramName") # Extra info
@@ -52,17 +52,12 @@ nsf_get <- function(keyword, from_date, to_date, cfda="47.076,47.075") {
     return(NULL)
   }
 
-  raw$directorate <- NA
-  # Make the directorate field a bit more user-friendly
-  raw$directorate[raw$cfdaNumber=="47.075"] <- "SBE"
-  raw$directorate[raw$cfdaNumber=="47.076"] <- "EHR"
-
   with(raw, data.frame(
     institution=awardeeName, pi=paste0(piLastName, ", ", piFirstName),
     year=format.Date(as.Date(date, format="%m/%d/%Y"), format="%Y"),
     start=as.character(as.Date(startDate, format="%m/%d/%Y")),
     end=as.character(as.Date(expDate, format="%m/%d/%Y")),
-    program=directorate, amount=fundsObligatedAmt, id=id, title=title, keyword,
+    program=cfdaNumber, amount=fundsObligatedAmt, id=id, title=title, keyword,
     source="NSF", stringsAsFactors = FALSE
   ))
 }
