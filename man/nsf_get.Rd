@@ -4,7 +4,12 @@
 \alias{nsf_get}
 \title{Search the NSF API for awards}
 \usage{
-nsf_get(keyword, from_date, to_date, cfda = "47.076,47.075")
+nsf_get(
+  keyword,
+  from_date,
+  to_date,
+  cfda = "47.041,47.050,47.049,47.078,47.083,47.079,47.070,47.074,47.076,47.075"
+)
 }
 \arguments{
 \item{keyword}{Keyword to query, single string}
@@ -13,7 +18,7 @@ nsf_get(keyword, from_date, to_date, cfda = "47.076,47.075")
 
 \item{to_date}{End date object}
 
-\item{cfda}{Comma-separated CFDA codes to include, SBE and EHR only by default}
+\item{cfda}{Comma-separated CFDA codes to include, default: all}
 }
 \value{
 A data.frame of raw NSF API output
