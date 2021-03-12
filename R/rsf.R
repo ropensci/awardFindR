@@ -24,6 +24,9 @@ rsf_get <- function(keyword) {
 
   # This is the general site-wide search feature, so pick only the awards
   links <- links[grepl("awarded-project", links)]
+  if (length(links)==0) { # No results?
+    return(NULL)
+  }
 
   # Getting details require seperate HTTP reqs for each award, ugh
   df <- lapply(links, function(x) {
