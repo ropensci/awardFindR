@@ -21,7 +21,7 @@ nih_get <- function(keyword, from_date, to_date) {
   ),
   include_fields=c("org_name", "project_num", "project_serial_num",
                    "fiscal_year", "project_start_date", "project_end_date",
-                   "project_title", "agency_code",
+                   "project_title", "agency_code", "abstract_text",
                    "contact_pi_name", "award_amount"), #, "principle_investigators"))
   offset=0)
 
