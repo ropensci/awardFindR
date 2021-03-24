@@ -9,9 +9,19 @@
 gates_get <- function(keyword, from_year, to_year) {
  url <- "https://www.gatesfoundation.org/api/grantssearch"
 
- params <- "?date&displayedTaxonomy&listingId=d2a41504-f557-4f1e-88d6-ea109d344feb&loadAllPages=true&page=1&pageId=31242fca-dcf8-466a-a296-d6411f85b0a5&perPage=999"
- params <- paste0(params, "&q=", xml2::url_escape(keyword), "&sc_site=gfo&showContentTypes=false&showDates=false&showImages&showSummaries=false&sortBy=date-desc&sortOrder=desc")
- params <- paste0(params, "&yearAwardedEnd=", to_year, "&yearAwardedStart=", from_year)
+ params <- paste0("?date&displayedTaxonomy&",
+ "listingId=d2a41504-f557-4f1e-88d6-ea109d344feb",
+ "&loadAllPages=true&page=1",
+ "&pageId=31242fca-dcf8-466a-a296-d6411f85b0a5&perPage=999")
+
+ params <- paste0(params, "&q=", xml2::url_escape(keyword),
+                  "&sc_site=gfo&showContentTypes=false&showDates=false",
+                  "&showImages&showSummaries=false&sortBy=date-desc",
+                  "&sortOrder=desc")
+
+ params <- paste0(params, "&yearAwardedEnd=", to_year,
+                  "&yearAwardedStart=", from_year)
+
  url <- paste0(url, params)
 
  response <- request(url, "get")
@@ -29,7 +39,8 @@ gates_get <- function(keyword, from_year, to_year) {
  df <- do.call(rbind.data.frame, df)
 
  df$grantee[df$grantee==""] <- NA
- df$awardedAmount <- gsub("^\\$|,", "", df$awardedAmount) # Get rid of all the $ and commas
+ # Get rid of all the $ and commas
+ df$awardedAmount <- gsub("^\\$|,", "", df$awardedAmount)
  df$keyword <- keyword
 
  df
@@ -44,8 +55,8 @@ gates_get <- function(keyword, from_year, to_year) {
    }
 
    with(raw, data.frame(
-      institution=grantee, pi=NA, year=yearAwarded, start=NA, end=NA, program=NA,
-      amount=awardedAmount, id, title=NA, keyword, source="Gates",
+      institution=grantee, pi=NA, year=yearAwarded, start=NA, end=NA,
+      program=NA, amount=awardedAmount, id, title=NA, keyword, source="Gates",
       stringsAsFactors = FALSE
    ))
 }

@@ -20,5 +20,8 @@ a data.frame
 Search the USAspending database
 }
 \examples{
-\dontrun{results <- usaspend_get(c("qualitative", "interview"), "2019-01-01", "2020-01-01")}
+\dontrun{
+results <- usaspend_get(c("qualitative", "interview"),
+ "2019-01-01", "2020-01-01")
+}
 }

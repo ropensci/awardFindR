@@ -10,7 +10,8 @@ rwjf_get <- function(keyword, from_year, to_year) {
   url <- paste0("https://www.rwjf.org/action/grants/database.json?",
   "k=", gsub(" ", "%20", keyword) , "&start=", from_year, "&end=", to_year,
   # Extra junk
-  "&amt=-1&active=true&closed=true&featured=true&t=&m=&sortBy=year&ascending=false&fundid=")
+  "&amt=-1&active=true&closed=true&featured=true&t=&m=",
+  "&sortBy=year&ascending=false&fundid=")
 
   page <- 1
   response <- request(paste0(url, "&s=", page), "get")
@@ -36,15 +37,19 @@ rwjf_get <- function(keyword, from_year, to_year) {
 
       with(x, data.frame(
         title, amountAwarded, dateAwarded, grantNumber, startDate, endDate,
-        director, orgName=granteeInfo$orgName, stringsAsFactors = F
+        director, orgName=granteeInfo$orgName, stringsAsFactors = FALSE
       ))
     })
     do.call(rbind.data.frame, step) # Assemble the page
   })
   full <- do.call(rbind.data.frame, full) # Assemble the full data.frame
 
-  full$dateAwarded <- as.Date(as.POSIXct(full$dateAwarded/1000, origin="1970-01-01"))
-  full$startDate <- as.Date(as.POSIXct(full$startDate/1000, origin="1970-01-01"))
+  full$dateAwarded <- as.Date(as.POSIXct(full$dateAwarded/1000,
+                                         origin="1970-01-01"))
+
+  full$startDate <- as.Date(as.POSIXct(full$startDate/1000,
+                                       origin="1970-01-01"))
+
   full$endDate <- as.Date(as.POSIXct(full$endDate/1000, origin="1970-01-01"))
 
   full$keyword <- keyword

@@ -22,7 +22,8 @@ nih_get <- function(keyword, from_date, to_date) {
   include_fields=c("org_name", "project_num", "project_serial_num",
                    "fiscal_year", "project_start_date", "project_end_date",
                    "project_title", "agency_code", "abstract_text",
-                   "contact_pi_name", "award_amount"), #, "principle_investigators"))
+                   "contact_pi_name", "award_amount"),
+  #, "principle_investigators"))
   offset=0)
 
   response <- request(url, "post", payload) # Query API
@@ -43,7 +44,9 @@ nih_get <- function(keyword, from_date, to_date) {
     place <- response$meta$offset + response$meta$limit # New position
 
     # Bind everything together
-    temp <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
+    temp <- lapply(response$results, lapply,
+                   function(x)ifelse(is.null(x), NA, x))
+
     temp <- do.call(rbind.data.frame, temp)
     df <- rbind.data.frame(df, temp)
   }

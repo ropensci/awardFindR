@@ -14,7 +14,7 @@ awardFindR(
 )
 }
 \arguments{
-\item{keywords}{Path to keywords csv file (1 term per line) or vector of keywords.}
+\item{keywords}{Path to keywords csv file (1 term per line) or vector.}
 
 \item{sources}{A vector of sources to pull from. Default: all}
 
@@ -31,7 +31,8 @@ These queries can be limited by keyword, source and date terms.
 }
 \examples{
 # Results for "ethnography" from NSF between 1/1 and 2/1 2020
-\dontrun{awards <- awardFindR("ethnography", "nsf", "2020-01-01", "2020-02-01")}
+\dontrun{awards <- awardFindR("ethnography", "nsf",
+"2020-01-01", "2020-02-01")}
 
 # More intensive queries
 \dontrun{

@@ -20,5 +20,7 @@ A data.frame
 Search for a set of keywords in the Templeton grants database.
 }
 \examples{
-\dontrun{templeton <- templeton_get(c("qualitative data", "case studies"), 2018, 2020)}
+\dontrun{
+templeton <- templeton_get(c("qualitative data", "case studies"), 2018, 2020)
+}
 }

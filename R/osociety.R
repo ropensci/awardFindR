@@ -7,7 +7,7 @@
 #' @examples osociety <- osociety_get("qualitative", 2016, 2019)
 osociety_get <- function(keyword, from_year, to_year) {
   base_url <- "https://www.opensocietyfoundations.org/grants/past?"
-  query <- paste0("xhr=1&", # filter_program=open-society-fellowship%2Chesp%2Cscholarship-programs&",
+  query <- paste0("xhr=1&",
                   "filter_keyword=", keyword,
                   "&filter_year=",
                   paste(from_year:to_year, collapse="%2C")) # URL escape
@@ -22,24 +22,36 @@ osociety_get <- function(keyword, from_year, to_year) {
 
   results <- lapply(results, function(entry) {
     institution <- xml2::xml_text(xml2::xml_find_first(entry, ".//h2"))
-    institution <- gsub("^\\s+|\\s+$", "", institution)   # Remove trailing and leading whitespace
+    # Remove trailing and leading whitespace
+    institution <- gsub("^\\s+|\\s+$", "", institution)
 
     id <- xml2::xml_text(xml2::xml_find_first(entry, ".//@id"))
-    year <- xml2::xml_integer(xml2::xml_find_first(entry, ".//span[@class='a-grantsDatabase__value']"))
+    year <- xml2::xml_integer(
+      xml2::xml_find_first(entry, ".//span[@class='a-grantsDatabase__value']"))
 
-    amount <- xml2::xml_text(xml2::xml_find_first(entry, ".//span[@class='a-grantsDatabase__value a-grantsDatabase__value--amount']"))
-    amount <- gsub("^\\$|,", "", amount) # Remove $ and , in amounts (i.e. $1,000,000)
+    amount_xpath <- paste0(".//span[@class='a-grantsDatabase__value ",
+                           "a-grantsDatabase__value--amount']")
+    amount <- xml2::xml_text(
+      xml2::xml_find_first(entry, amount_xpath))
+    # Remove $ and , in amounts (i.e. $1,000,000)
+    amount <- gsub("^\\$|,", "", amount)
 
-    # Make a data.frame of the labels and values that we can query for data later
-    info <- data.frame(name=xml2::xml_text(xml2::xml_find_all(entry, ".//span[@class='a-grantsDatabase__label']")),
-                       value=xml2::xml_text(xml2::xml_find_all(entry, ".//p[@class='a-grantsDatabase__text']")))
-    info$value <- gsub("^\\s+|\\s+$", "", info$value)   # Remove trailing and leading whitespace
+    # Make a data.frame of the labels and values that we can query later
+    info <- data.frame(
+      name=xml2::xml_text(
+        xml2::xml_find_all(entry, ".//span[@class='a-grantsDatabase__label']")),
+
+      value=xml2::xml_text(
+        xml2::xml_find_all(entry, ".//p[@class='a-grantsDatabase__text']")))
+
+    # Remove trailing and leading whitespace
+    info$value <- gsub("^\\s+|\\s+$", "", info$value)
     # Now query it
     program <- info$value[info$name=="Referring Program"][1]
     description <- info$value[info$name=="Description"][1]
 
     data.frame(institution, year, id, amount, program, description, keyword,
-               stringsAsFactors = F)
+               stringsAsFactors = FALSE)
   })
 
   do.call(rbind.data.frame, results)

@@ -1,23 +1,36 @@
 .ssrc_get_details <- function(entry) {
-  pi_name <- xml2::xml_text(xml2::xml_find_first(entry, ".//h5/a/text()"))
-  title <- xml2::xml_text(xml2::xml_find_first(entry, ".//p[@class='l-project-title']/em"))
-  program <- xml2::xml_text(xml2::xml_find_first(entry, ".//dl[@class='l-inline-summary']/dd/a"))
+  pi_name <- xml2::xml_text(
+    xml2::xml_find_first(entry, ".//h5/a/text()"))
+
+  title <- xml2::xml_text(
+    xml2::xml_find_first(entry, ".//p[@class='l-project-title']/em"))
+
+  program <- xml2::xml_text(
+    xml2::xml_find_first(entry, ".//dl[@class='l-inline-summary']/dd/a"))
 
   data <- xml2::xml_find_all(entry, ".//dl[@class='l-inline-summary']")
-  data <- data.frame(label=xml2::xml_text(xml2::xml_find_all(data, ".//dt/text()")),
-                     data=xml2::xml_text(xml2::xml_find_all(data, ".//dd")))
+
+  data <- data.frame(label=xml2::xml_text(
+    xml2::xml_find_all(data, ".//dt/text()")),
+                     data=xml2::xml_text(
+                       xml2::xml_find_all(data, ".//dd")))
 
   year <- as.character(data$data[as.character(data$label)=="Year "])
 
-  institution <- data$data[as.character(data$label)=="University/Institution (at time of award)"]
+  institution <-
+    data$data[as.character(data$label)==
+                "University/Institution (at time of award)"]
+
   if (length(institution)==0) {
-    institution <- xml2::xml_text(xml2::xml_find_first(entry, ".//p[@class='l-institution']"))
+    institution <- xml2::xml_text(
+      xml2::xml_find_first(entry, ".//p[@class='l-institution']"))
   }
 
   id <- xml2::xml_text(xml2::xml_find_first(entry, ".//h5/a/@href"))
   id <- regmatches(id, regexpr("/([-A-Z0-9])+/$", id))
 
-  data.frame(pi_name, institution, year, title, program, id, stringsAsFactors = F)
+  data.frame(pi_name, institution, year, title, program, id,
+             stringsAsFactors = FALSE)
 }
 
 #' Search SSRC fellowships and grants by keyword and date

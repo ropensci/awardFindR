@@ -1,5 +1,5 @@
 #' Grab the Open Philanthropy grants data search for keyword-date combos
-#' @param keyword Keyword to search for in the project description, single string
+#' @param keyword Keyword to search for in description, single string
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
 #' @return A data.frame
@@ -13,8 +13,9 @@ ophil_get <- function(keyword, from_year, to_year) {
   response <- request(query_url, "get")
 
   # Everything important is a child of this table's tbody
-  results <- xml2::xml_children(xml2::xml_find_first(response,
-                                                     "//div[@class='view-content']/table/tbody"))
+  results <- xml2::xml_children(
+    xml2::xml_find_first(response, "//div[@class='view-content']/table/tbody"))
+
   if (length(results)==0) {
     return(NULL)  # No results?
   }
@@ -29,8 +30,10 @@ ophil_get <- function(keyword, from_year, to_year) {
     program <- xml2::xml_text(xml2::xml_find_all(fields[3], ".//a/text()"))
 
     amount <- xml2::xml_text(fields[4])
-    amount <- gsub("^\\s+|\\s+$", "", amount)   # Remove trailing and leading whitespace
-    amount <- gsub("^\\$|,", "", amount) # Remove $ and , in amounts (i.e. $1,000,000)
+    # Remove trailing and leading whitespace
+    amount <- gsub("^\\s+|\\s+$", "", amount)
+    # Remove $ and , in amounts (i.e. $1,000,000)
+    amount <- gsub("^\\$|,", "", amount)
 
     date <- xml2::xml_text(xml2::xml_find_all(fields[5], ".//span/text()"))
 

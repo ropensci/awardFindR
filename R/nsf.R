@@ -6,13 +6,16 @@
 #' @return A data.frame of raw NSF API output
 #' @export
 #' @examples nsf <- nsf_get("ethnography", "2020-01-01", "2020-02-01")
-nsf_get <- function(keyword, from_date, to_date, cfda="47.041,47.050,47.049,47.078,47.083,47.079,47.070,47.074,47.076,47.075") {
+nsf_get <- function(keyword, from_date, to_date, cfda=NULL) {
   base_url <- 'https://api.nsf.gov/services/v1/awards.json?'
-  output_data <- 'id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber'
-  output_data <- paste0(output_data, ",fundsObligatedAmt,fundProgramName") # Extra info
+  output_data <- paste0("id,date,startDate,expDate,title,awardeeName,",
+                        "piFirstName,piLastName,piEmail,cfdaNumber,",
+                        "fundsObligatedAmt,fundProgramName")
 
-  query <- paste0('keyword="', gsub(" ", "+", keyword),
-                  '"&cfdaNumber=', cfda)
+  query <- paste0('keyword="', gsub(" ", "+", keyword), "\"")
+
+  # Add CFDA search term if defined
+  if (!is.null(cfda)) query <- paste0(query, '&cfdaNumber=', cfda)
 
   # Collate URL
   query_url <- paste0(base_url, query,  '&printFields=', output_data,

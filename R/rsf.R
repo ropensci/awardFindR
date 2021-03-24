@@ -45,11 +45,15 @@ rsf_get <- function(keyword) {
     )
     awardee <- strsplit(info$value[info$label=="Awarded Scholars: "], ",")
     if (length(awardee)==0) # Try plan B
-      awardee <- strsplit(info$value[info$label=="Other External Scholars: "], ",")
+      awardee <- strsplit(
+        info$value[info$label=="Other External Scholars: "], ",")
+
     pi_name <- trimws(awardee[[1]][1])
     institution <- trimws(awardee[[1]][2])
 
-    year <- as.integer(.substr_right(info$value[info$label=="Project Date: "], 4))
+    year <- as.integer(
+      .substr_right(info$value[info$label=="Project Date: "], 4))
+
     # Remove $ and , in amounts (i.e. $1,000,000)
     amount <- gsub("^\\$|,", "", info$value[info$label=="Award Amount: "])
 
@@ -71,7 +75,9 @@ rsf_get <- function(keyword) {
 
   # Since the API doesn't have the feature, we'll do date handling here
   year <- NULL # for R CMD check
-  raw <- subset(raw, year > format.Date(from_date, "%Y") & year < format.Date(to_date, "%Y"))
+  raw <- subset(raw, year > format.Date(from_date, "%Y") &
+                  year < format.Date(to_date, "%Y"))
+
   if (nrow(raw)==0) {
     return(NULL) # Empty now after date subsetting?
   }

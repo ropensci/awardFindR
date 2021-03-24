@@ -7,7 +7,12 @@
 #' @examples
 #' arnold <- arnold_get("qualitative data", 2016, 2017)
 arnold_get <- function(keyword, from_year, to_year) {
-  url <- "https://pyj9b8sltv-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(4.5.1)%3B%20Browser%20(lite)%3B%20instantsearch.js%20(4.8.3)%3B%20JS%20Helper%20(3.2.2)&x-algolia-api-key=bec9ead5977b11ae383f4df272c2f106&x-algolia-application-id=PYJ9B8SLTV"
+  url <- paste0("https://pyj9b8sltv-dsn.algolia.net",
+  "/1/indexes/*/queries?",
+  "x-algolia-agent=Algolia%20for%20JavaScript%20(4.5.1)%3B%20Browser%20(lite)",
+  "%3B%20instantsearch.js%20(4.8.3)%3B%20JS%20Helper%20(3.2.2)",
+  "&x-algolia-api-key=bec9ead5977b11ae383f4df272c2f106",
+  "&x-algolia-application-id=PYJ9B8SLTV")
 
   years <- paste0('"years:', from_year, '"')
   for (n in (as.integer(from_year)+1):as.integer(to_year))
@@ -17,14 +22,17 @@ arnold_get <- function(keyword, from_year, to_year) {
   # Not includidng all the terms at the end gives a HTTP 400 error
   page <- 0
   query <- paste0("query=", keyword,
-                  "&maxValuesPerFacet=100&highlightPreTag=__ais-highlight__&highlightPostTag=__%2Fais-highlight__&facets=%5B%22topics%22%2C%22years%22%2C%22fundingSource%22%5D&tagFilters=",
+                  "&maxValuesPerFacet=100&highlightPreTag=__ais-highlight__",
+                  "&highlightPostTag=__%2Fais-highlight__&",
+                  "facets=%5B%22topics%22%2C%22years%22%2C%22",
+                  "fundingSource%22%5D&tagFilters=",
                   "&facetFilters=%5B%5B", years, "%5D%5D")
 
   payload <- list(requests = list(list(indexName ="prod_grants",
                                          params = paste0(query, "&page=0"))))
 
   response <- request(url, "post", payload)
-  response <- unlist(response, recursive=F)$results
+  response <- unlist(response, recursive=FALSE)$results
   if (response$nbHits==0) {
     return(NULL) # No results?
   }
@@ -33,7 +41,7 @@ arnold_get <- function(keyword, from_year, to_year) {
   while (response$page <= response$nbPages) {
     awards <- response$hits
     row <- lapply(awards, function(x) {
-      entry <- unlist(x, recursive=F)
+      entry <- unlist(x, recursive=FALSE)
       with(entry, data.frame(
         title, grantDescription, grantTerm,
         fundingSource, grantAmount,
@@ -44,7 +52,7 @@ arnold_get <- function(keyword, from_year, to_year) {
     # Load next page
     payload$requests[[1]]$params <- paste0(query, "&page=", response$page+1)
     response <- request(url, "post", payload)
-    response <- unlist(response, recursive=F)$results
+    response <- unlist(response, recursive=FALSE)$results
   }
 
   do.call(rbind.data.frame, full)

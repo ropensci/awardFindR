@@ -9,14 +9,20 @@ NULL
 #' @export
 #' @examples
 #'
-#' \dontrun{sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)}
+#' \dontrun{
+#' sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)
+#' }
 sloan_get <- function(keyword, from_year, to_year) {
-  url <- "https://sloan.org/grants-database?dynamic=1&order_by=approved_at&order_by_direction=desc&limit=3000"
+  url <- paste0("https://sloan.org/grants-database",
+  "?dynamic=1&order_by=approved_at&order_by_direction=desc&limit=3000")
+
   response <- request(url, "get")
 
-  descriptions <- rvest::html_text(rvest::html_nodes(response, "div.brief-description"),
-                                   trim=TRUE)
-  hits <- grepl(keyword, descriptions, ignore.case=TRUE)  # this is the search function
+  descriptions <- rvest::html_text(
+    rvest::html_nodes(response, "div.brief-description"), trim=TRUE)
+
+  # this is the search function
+  hits <- grepl(keyword, descriptions, ignore.case=TRUE)
   if (!any(hits)) {
     return(NULL) # No results
   }

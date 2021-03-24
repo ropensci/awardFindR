@@ -9,8 +9,11 @@
 rockefeller_get <- function(keyword, from_date, to_date) {
   url <- paste0("https://www.rockefellerfoundation.org/?post_type=grant&",
   "keyword=", xml2::url_escape(keyword),
-  "&from_month=", format.Date(from_date, "%m"), "&from_year=", format.Date(from_date, "%Y"),
-  "&to_month=", format.Date(to_date, "%m"), "&to_year=", format.Date(to_date, "%Y"), "&download=filter")
+  "&from_month=", format.Date(from_date, "%m"),
+  "&from_year=", format.Date(from_date, "%Y"),
+  "&to_month=", format.Date(to_date, "%m"),
+  "&to_year=", format.Date(to_date, "%Y"),
+  "&download=filter")
 
   response <- as.data.frame(request(url, "get"))
   if (nrow(response)==0) {
@@ -18,7 +21,7 @@ rockefeller_get <- function(keyword, from_date, to_date) {
   }
 
   response$keyword <- keyword
-  response$id <- sapply(response$Description, .text_hash)
+  response$id <- vapply(response$Description, .text_hash, 1)
 
   response
 }

@@ -4,12 +4,7 @@
 \alias{nsf_get}
 \title{Search the NSF API for awards}
 \usage{
-nsf_get(
-  keyword,
-  from_date,
-  to_date,
-  cfda = "47.041,47.050,47.049,47.078,47.083,47.079,47.070,47.074,47.076,47.075"
-)
+nsf_get(keyword, from_date, to_date, cfda = NULL)
 }
 \arguments{
 \item{keyword}{Keyword to query, single string}

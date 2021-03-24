@@ -3,7 +3,7 @@
 #' Query a collection of online grant databases for awards.
 #' These queries can be limited by keyword, source and date terms.
 #'
-#' @param keywords Path to keywords csv file (1 term per line) or vector of keywords.
+#' @param keywords Path to keywords csv file (1 term per line) or vector.
 #' @param sources A vector of sources to pull from. Default: all
 #' @param from_date A date object to limit the search, defaults to Jan 1 2019
 #' @param to_date A date object to limit the search, defaults to today
@@ -12,7 +12,8 @@
 #'
 #' @examples
 #' # Results for "ethnography" from NSF between 1/1 and 2/1 2020
-#' \dontrun{awards <- awardFindR("ethnography", "nsf", "2020-01-01", "2020-02-01")}
+#' \dontrun{awards <- awardFindR("ethnography", "nsf",
+#' "2020-01-01", "2020-02-01")}
 #'
 #' # More intensive queries
 #' \dontrun{
@@ -28,7 +29,8 @@ awardFindR <- function(keywords,
                                 "gates", "macarthur", "mellon",
                                 "neh", "nih", "nsf", "ophil",
                                 "osociety", "rockefeller", "rsf",
-                                "rwjf", "sloan", "ssrc", "templeton", "usaspend"),
+                                "rwjf", "sloan", "ssrc", "templeton",
+                                "usaspend"),
                       from_date="2019-01-01", to_date=Sys.Date()) {
 
   options(stringAsFactors=FALSE)
@@ -59,7 +61,8 @@ awardFindR <- function(keywords,
   # Assembling the full data.frame
   results <- NULL # Keep this var as a placeholder for rbind.data.frame
   for (source in sources) {
-    stopifnot(exists(paste0(".", source, "_standardize"))) # Does source routine exist?
+    # Does source routine exist?
+    stopifnot(exists(paste0(".", source, "_standardize")))
     results <- eval(parse(text=paste0( # eval the term and run it
       'rbind.data.frame(results, .',
       source, '_standardize(keywords, from_date, to_date))')))
@@ -86,8 +89,9 @@ awardFindR <- function(keywords,
   }
 
   # Get rid of all caps in some strings
-  results$institution <- sapply(as.character(results$institution), .title_case)
-  results$pi <- sapply(results$pi, .title_case)
+  results$institution <- vapply(as.character(results$institution),
+                                .title_case, "string")
+  #results$pi <- vapply(as.character(results$pi), .title_case, "string")
 
   results
 }

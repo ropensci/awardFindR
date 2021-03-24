@@ -20,5 +20,7 @@ a data.frame
 Search Carnegie awards
 }
 \examples{
+\dontrun{
 carnegie <- carnegie_get("qualitative data", 2016, 2017)
+}
 }

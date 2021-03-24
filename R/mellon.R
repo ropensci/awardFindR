@@ -17,8 +17,9 @@ mellon_get <- function(keyword, from_year, to_year) {
 
   response <- request(query_url, "get")
 
-  results <- xml2::xml_children(xml2::xml_find_first(response,
-                                                     "//table[@class='grant-list']/tbody"))
+  results <- xml2::xml_children(
+    xml2::xml_find_first(response, "//table[@class='grant-list']/tbody"))
+
   # Loop through each entry
   df <- lapply(results, function(entry) {
     id <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[2],
@@ -27,7 +28,7 @@ mellon_get <- function(keyword, from_year, to_year) {
     fields <- c("institution", "description",
                 "date", "amount",
                 "location", "program")
-    row <- as.data.frame(text, stringsAsFactors=F)
+    row <- as.data.frame(text, stringsAsFactors=FALSE)
     names(row) <- fields
     row$id <- id
 
@@ -38,7 +39,8 @@ mellon_get <- function(keyword, from_year, to_year) {
     return(NULL) # No results?
   }
 
-  df$amount <- gsub("^\\$|,", "", df$amount) # Remove $ and , in amounts (i.e. $1,000,000)
+  # Remove $ and , in amounts (i.e. $1,000,000)
+  df$amount <- gsub("^\\$|,", "", df$amount)
   df$amount <- as.integer(df$amount)
 
   df$date <- as.Date(df$date, format="%m/%d/%y")

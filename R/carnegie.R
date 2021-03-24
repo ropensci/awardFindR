@@ -5,7 +5,9 @@
 #' @return a data.frame
 #' @export
 #' @examples
+#' \dontrun{
 #' carnegie <- carnegie_get("qualitative data", 2016, 2017)
+#' }
 carnegie_get <- function(keyword, from_year, to_year) {
   base_url <- "https://www.carnegie.org/grants/grants-database/"
   query <- paste0("?q=", xml2::url_escape(keyword), "&per_page=104")
@@ -22,7 +24,7 @@ carnegie_get <- function(keyword, from_year, to_year) {
     id <- gsub("^grant-", "",
                xml2::xml_text(xml2::xml_find_first(x, ".//@id")))
     info <- xml2::xml_find_all(x, ".//td")
-    info <- sapply(info, xml2::xml_text)
+    info <- vapply(info, xml2::xml_text, "string")
     # Remove $ and , in amounts (i.e. $1,000,000)
     amount <- as.integer(gsub("^\\$|,", "", info[3]))
 
@@ -31,9 +33,14 @@ carnegie_get <- function(keyword, from_year, to_year) {
     details <- xml2::read_html(details$result)
 
     # Turn the div table into a real table
-    details <- data.frame(name=xml2::xml_text(xml2::xml_find_all(details, ".//strong[@class='grant-detail--label']")),
-                       value=xml2::xml_text(xml2::xml_find_all(details, ".//div[@class='grant-detail--text']")),
-                       stringsAsFactors = F)
+    details <- data.frame(
+      name=xml2::xml_text(
+        xml2::xml_find_all(details, ".//strong[@class='grant-detail--label']")),
+
+      value=xml2::xml_text(
+        xml2::xml_find_all(details, ".//div[@class='grant-detail--text']")),
+
+      stringsAsFactors = FALSE)
 
     title <- details$value[details$name=="Project Title"]
     date <- details$value[details$name=="Date"]
@@ -55,6 +62,6 @@ carnegie_get <- function(keyword, from_year, to_year) {
   with(raw, data.frame(
     institution=grantee, pi=NA, year, start=NA, end=NA,
     program, amount, id, title, keyword, source="Carnegie",
-    stringsAsFactors = F
+    stringsAsFactors = FALSE
   ))
 }

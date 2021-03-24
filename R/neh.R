@@ -10,7 +10,7 @@ neh_get <- function(keywords, from_year, to_year) {
   # This file is updated monthly, should hopefully be valid for the next decade?
   # See https://securegrants.neh.gov/open/data/
   url <- "https://securegrants.neh.gov/Open/data/NEH_Grants2020s.csv"
-  message(paste("GET", url, "... "), appendLF = F)
+  message(paste("GET", url, "... "), appendLF = FALSE)
   response <- httr::GET(url)
   httr::message_for_status(response)
   message()
@@ -46,7 +46,7 @@ neh_get <- function(keywords, from_year, to_year) {
     return(NULL)
   }
 
-  # Some regex magic to make the "participant" field more applicable to our PI field
+  # Some regex magic to make the "participant" field applicable to our PI field
   results$pi <- sub(" \\[Project Director\\].*", "", results$Participants)
 
   results

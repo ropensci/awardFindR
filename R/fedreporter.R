@@ -2,11 +2,14 @@
 #' @param keyword Keyword, single string
 #' @param from_year Beginning fiscal year to search, integer
 #' @param to_year Ending fiscal year to search, integer
-#' @param agency Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,epa".
+#' @param agency Agencies, comma separated. Defaults to "usda,dod,nasa,epa".
 #' @export
 #' @return A data.frame
 #' @examples
-#' federal <- fedreporter_get(keyword="ethnography", from_year=2020, to_year=2021, agency="nih")
+#' \dontrun{
+#' federal <- fedreporter_get(keyword="ethnography",
+#' from_year=2020, to_year=2021, agency="nih")
+#' }
 fedreporter_get <- function (keyword, from_year, to_year,
                              agency="usda,dod,nasa,epa,ed") {
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'
@@ -14,9 +17,10 @@ fedreporter_get <- function (keyword, from_year, to_year,
   query_url <- paste0(base_url,
                       "?query=agency:", toupper(agency),
                       "$text:", xml2::url_escape(keyword), "$textFields:terms",
-                      # Only date paramater available in the fedreporter query is by fiscal year :(
-                      # Also, you can't use ranges, so this collates each consecutive year with commas
-                      "$fy:", paste0(as.integer(from_year):as.integer(to_year), collapse=","))
+                      # Only date paramater available is fiscal year :(
+                      # Also, you can't use ranges
+                      "$fy:", paste0(as.integer(from_year):as.integer(to_year),
+                                     collapse=","))
 
   # Actually query the API
   api <- request(query_url, "get")
@@ -37,14 +41,15 @@ fedreporter_get <- function (keyword, from_year, to_year,
 
     # Process list
     temp <- api$items
-    temp <- lapply(temp, lapply, function(x)ifelse(is.null(x), NA, x)) # NULL to NA
+    # NULL to NA
+    temp <- lapply(temp, lapply, function(x)ifelse(is.null(x), NA, x))
     temp <- do.call(rbind.data.frame, temp)
 
     df <- rbind.data.frame(df, temp) # Merge
   }
 
   # Find duplicates (renewals?)
-  # Results seem to be returned from most to least recent, so we can just drop the duplicates
+  # Results returned from most to least recent, so we drop the duplicates
   if (nchar(as.character(df$projectNumber[1])) > 14) {
     # This is for NIH
     df$id_main <- substr(df$projectNumber, 2, 12)
@@ -55,7 +60,6 @@ fedreporter_get <- function (keyword, from_year, to_year,
   df <- df[!duplicated(df$id_main), ]
   df$id_main <- NULL
 
-  #df[] <- lapply(df, function(x) ifelse(is.factor(x), as.character(x), x)) # Remove factors
   df$keyword <- keyword
 
   df

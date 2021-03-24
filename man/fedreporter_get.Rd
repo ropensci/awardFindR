@@ -13,7 +13,7 @@ fedreporter_get(keyword, from_year, to_year, agency = "usda,dod,nasa,epa,ed")
 
 \item{to_year}{Ending fiscal year to search, integer}
 
-\item{agency}{Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,epa".}
+\item{agency}{Agencies, comma separated. Defaults to "usda,dod,nasa,epa".}
 }
 \value{
 A data.frame
@@ -22,5 +22,8 @@ A data.frame
 Search awards from the Federal Reporter
 }
 \examples{
-federal <- fedreporter_get(keyword="ethnography", from_year=2020, to_year=2021, agency="nih")
+\dontrun{
+federal <- fedreporter_get(keyword="ethnography",
+from_year=2020, to_year=2021, agency="nih")
+}
 }

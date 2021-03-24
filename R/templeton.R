@@ -13,14 +13,15 @@ templeton_df <- function() {
 
   full <- lapply(entries, function(x) {
     info <- xml2::xml_text(xml2::xml_find_all(x, ".//td"))
-    data.frame(t(info), stringsAsFactors = F)
+    data.frame(t(info), stringsAsFactors = FALSE)
   })
   full <- do.call(rbind.data.frame, full)
   names(full) <- vars # Use the captured table headers
   full$link <- xml2::xml_text(xml2::xml_find_all(entries, ".//td/a/@href"))
 
   full$Featured <- NULL
-  full$`Grant Amount` <- gsub("^\\$|,", "", full$`Grant Amount`) # Get rid of all the $ and commas
+  # Get rid of all the $ and commas
+  full$`Grant Amount` <- gsub("^\\$|,", "", full$`Grant Amount`)
 
   full
 }
@@ -32,12 +33,17 @@ templeton_df <- function() {
 #' @return A data.frame
 #' @export
 #' @examples
-#' \dontrun{templeton <- templeton_get(c("qualitative data", "case studies"), 2018, 2020)}
+#' \dontrun{
+#' templeton <- templeton_get(c("qualitative data", "case studies"), 2018, 2020)
+#' }
 templeton_get <- function(keywords, from_year, to_year) {
   url <- "https://www.templeton.org/?limit=500&s="
   links <- lapply(keywords, function(keyword) {
     response <- request(paste0(url, xml2::url_escape(keyword)), "get")
-    link <- xml2::xml_text(xml2::xml_find_all(response, "//h2/a[@rel='bookmark']/@href"))
+
+    link <- xml2::xml_text(
+      xml2::xml_find_all(response, "//h2/a[@rel='bookmark']/@href"))
+
     if (length(link)==0) {
       return(NULL)
     }
@@ -49,7 +55,8 @@ templeton_get <- function(keywords, from_year, to_year) {
   }
 
   all <- templeton_df()
-  vars <- c("year", "id", "title", "pi", "grantee", "amount", "area", "region", "link")
+  vars <- c("year", "id", "title", "pi", "grantee",
+            "amount", "area", "region", "link")
   names(all) <- vars
 
   selected <- merge(links, all, by="link")

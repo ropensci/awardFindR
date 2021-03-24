@@ -20,5 +20,6 @@ a data.frame
 Search MacArthur foundation for awards
 }
 \examples{
-macarthur <- macarthur_get("qualitative", "1999-01-01", "2020-01-01")
+macarthur <- macarthur_get("qualitative",
+"1999-01-01", "2020-01-01")
 }
