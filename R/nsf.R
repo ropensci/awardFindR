@@ -30,14 +30,17 @@ nsf_get <- function(keyword, from_date, to_date, cfda=NULL) {
     return(NULL) # No results?
   }
 
-  df <- do.call(rbind.data.frame, api)
+  df <- rbind.match.columns(api)
 
   # Max results 25 per request. Do we need to loop the query?
   while (length(api)==25) {
     offset <- offset + 25
+
+    Sys.sleep(3) # Be NICE to the API!
+
     api <- request(paste0(query_url, '&offset=', offset), "get")
     api <- api$response$award
-    temp <- do.call(rbind.data.frame, api)
+    temp <- rbind.match.columns(api)
     df <- rbind.data.frame(df, temp)
   }
 
