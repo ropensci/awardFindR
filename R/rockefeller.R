@@ -5,7 +5,9 @@
 #' @return a data.frame
 #' @export
 #' @examples
+#' \dontrun{
 #' rockefeller <- rockefeller_get("test", "2012-01-01", "2021-01-01")
+#' }
 rockefeller_get <- function(keyword, from_date, to_date) {
   url <- paste0("https://www.rockefellerfoundation.org/?post_type=grant&",
   "keyword=", xml2::url_escape(keyword),

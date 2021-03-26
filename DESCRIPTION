@@ -19,8 +19,8 @@ Description: Queries a number of scientific awards databases.
     Gates Foundation, MacArthur Foundation, Mellon Foundation, NEH, NIH,
     NSF, Open Philanthropy, Open Society Foundations, Rockefeller Foundation,
     Russell Sage Foundation, Robert Wood Johnson Foundation, 
-    Sloan Foundation, Social Science Research Council, John Templeton Foundation,
-    USASpending.gov
+    Sloan Foundation, Social Science Research Council, 
+    John Templeton Foundation, and USASpending.gov.
 URL: https://github.com/PESData/awardFindR
 BugReports: https://github.com/PESData/awardFindR/issues
 License: MIT + file LICENSE

@@ -50,13 +50,7 @@ fedreporter_get <- function (keyword, from_year, to_year,
 
   # Find duplicates (renewals?)
   # Results returned from most to least recent, so we drop the duplicates
-  if (nchar(as.character(df$projectNumber[1])) > 14) {
-    # This is for NIH
-    df$id_main <- substr(df$projectNumber, 2, 12)
-  } else {
-    # This works for DoD
-    df$id_main <- substr(df$projectNumber, 1, 8)
-  }
+  df$id_main <- substr(df$projectNumber, 1, 8)
   df <- df[!duplicated(df$id_main), ]
   df$id_main <- NULL
 

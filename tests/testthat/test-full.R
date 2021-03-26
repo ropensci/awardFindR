@@ -1,6 +1,15 @@
+test_that("Incorrect date", {
+  expect_error(awardFindR("test", "nsf", "foobar"), "date invalid")
+  expect_error(awardFindR("test", "nsf", "2018-01-01", "foobar"),
+               "date invalid")
+  expect_error(awardFindR("test", "nsf", "2018-01-01", "2016-01-01"),
+               "must be after")
+
+})
+
 test_that("Search that should return all empty", {
   suppressMessages(vcr::use_cassette("empty", {
-    foobar <- awardFindR("foobar")
+    foobar <- awardFindR("foobar", to_date="2021-01-01")
   }))
   expect_equal(data.frame(), foobar)
 })

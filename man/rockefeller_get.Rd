@@ -20,5 +20,7 @@ a data.frame
 Search Rockefeller Foundation grants
 }
 \examples{
+\dontrun{
 rockefeller <- rockefeller_get("test", "2012-01-01", "2021-01-01")
+}
 }
