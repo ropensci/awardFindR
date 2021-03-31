@@ -77,7 +77,7 @@ usaspend_get <- function(keywords, from_date, to_date) {
   with(raw, data.frame(
     institution=Recipient.Name, pi=NA, year=substr(Start.Date, 1, 4),
     start=Start.Date, end=End.Date, program=Awarding.Agency,
-    amount=as.integer(Award.Amount), id=Award.ID, title=Description, keyword=NA,
-    source="USASpending", stringsAsFactors = FALSE
+    amount=as.integer(Award.Amount), id=Award.ID, title=Description,
+    abstract=NA, keyword=NA, source="USASpending", stringsAsFactors = FALSE
   ))
 }

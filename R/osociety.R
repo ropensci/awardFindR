@@ -67,7 +67,7 @@ osociety_get <- function(keyword, from_year, to_year) {
 
   with(raw, data.frame(
     institution, pi=NA, year, start=NA, end=NA, program,
-    amount=as.integer(amount), id, title=description, keyword,
+    amount=as.integer(amount), id, title=description, abstract=NA, keyword,
     source="Open Society", stringsAsFactors = FALSE
   ))
 }

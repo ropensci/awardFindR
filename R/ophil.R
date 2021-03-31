@@ -65,7 +65,8 @@ ophil_get <- function(keyword, from_year, to_year) {
   }
 
   with(raw, data.frame(
-    institution=grantee, pi=NA, year, start=NA, end=NA, program, amount,
-    title, id, keyword, source="Open Philanthropy", stringsAsFactors = FALSE
+    institution=grantee, pi=NA, year, start=NA, end=NA, program, amount, id,
+    title, abstract=NA, keyword, source="Open Philanthropy",
+    stringsAsFactors = FALSE
   ))
 }

@@ -39,7 +39,7 @@ rockefeller_get <- function(keyword, from_date, to_date) {
     institution=Title, pi=NA, year=format.Date(`Grant Term Start`, "%Y"),
     start=as.character(`Grant Term Start`), end=as.character(`Grant Term End`),
     program=Initiative, amount=as.integer(`Grant Amount`),
-    id=paste0("R", id), title=Description, keyword,
+    id=paste0("R", id), title=Description, abstract=NA, keyword,
     source="Rockefeller", stringsAsFactors = FALSE
   ))
 }

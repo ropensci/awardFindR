@@ -87,7 +87,7 @@ macarthur_get <- function(keyword, from_date, to_date) {
   with(raw, data.frame(
     institution, pi=NA, year=format.Date(approved, "%Y"),
     start=substr(start, 1, 10), end=substr(end, 1, 10),
-    program, amount, id, title, keyword, source="MacArthur",
+    program, amount, id, title, abstract=NA, keyword, source="MacArthur",
     stringsAsFactors = FALSE
   ))
 }

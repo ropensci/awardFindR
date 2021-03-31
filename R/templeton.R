@@ -77,7 +77,8 @@ templeton_get <- function(keywords, from_year, to_year) {
 
   with(raw, data.frame(
     institution=grantee, pi, year, start=NA, end=NA, program=area, amount,
-    id, title, keyword, source="Templeton", stringsAsFactors = FALSE
+    id, title, abstract=NA, keyword, source="Templeton",
+    stringsAsFactors = FALSE
   ))
 
 }

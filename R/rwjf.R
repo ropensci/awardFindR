@@ -68,7 +68,7 @@ rwjf_get <- function(keyword, from_year, to_year) {
   with(raw, data.frame(
     institution=orgName, pi=director, year=format.Date(dateAwarded, "%Y"),
     start=as.character(startDate), end=as.character(endDate),
-    program=NA, amount=amountAwarded, id=grantNumber, title, keyword,
-    source="RWJF", stringsAsFactors = FALSE
+    program=NA, amount=amountAwarded, id=grantNumber, title, abstract=NA,
+    keyword, source="RWJF", stringsAsFactors = FALSE
   ))
 }

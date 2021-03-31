@@ -80,6 +80,7 @@ sloan_get <- function(keyword, from_year, to_year) {
 
   with(raw, data.frame(
     institution=grantee, pi, year, start=NA, end=NA, program, amount, id,
-    title=description, keyword, source="Sloan", stringsAsFactors = FALSE
+    title=description, abstract=NA,
+    keyword, source="Sloan", stringsAsFactors = FALSE
   ))
 }

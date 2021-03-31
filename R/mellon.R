@@ -59,7 +59,7 @@ mellon_get <- function(keyword, from_year, to_year) {
 
   with(raw, data.frame(
     institution, pi=NA, year=format.Date(date, "%Y"), start=NA, end=NA,
-    program, amount, id, title=description, keyword, source="Mellon",
-    stringsAsFactors = FALSE
+    program, amount, id, title=description, abstract=NA, keyword,
+    source="Mellon", stringsAsFactors = FALSE
   ))
 }

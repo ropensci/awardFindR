@@ -71,7 +71,7 @@ arnold_get <- function(keyword, from_year, to_year) {
     year=substr(grantTerm, 1, 4), start=substr(grantTerm, 1, 4),
     end=.substr_right(as.character(grantTerm), 4),
     program=fundingSource, amount=grantAmount, id=as.character(objectID),
-    title=grantDescription, keyword, source="Arnold",
+    title=grantDescription, abstract=NA, keyword, source="Arnold",
     stringsAsFactors = FALSE
   ))
 }

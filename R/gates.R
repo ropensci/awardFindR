@@ -56,7 +56,7 @@ gates_get <- function(keyword, from_year, to_year) {
 
    with(raw, data.frame(
       institution=grantee, pi=NA, year=yearAwarded, start=NA, end=NA,
-      program=NA, amount=awardedAmount, id, title=NA, keyword, source="Gates",
-      stringsAsFactors = FALSE
+      program=NA, amount=awardedAmount, id, title=NA, abstract=NA,
+      keyword, source="Gates", stringsAsFactors = FALSE
    ))
 }

@@ -61,7 +61,7 @@ carnegie_get <- function(keyword, from_year, to_year) {
 
   with(raw, data.frame(
     institution=grantee, pi=NA, year, start=NA, end=NA,
-    program, amount, id, title, keyword, source="Carnegie",
+    program, amount, id, title, abstract=NA, keyword, source="Carnegie",
     stringsAsFactors = FALSE
   ))
 }

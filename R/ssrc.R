@@ -89,6 +89,6 @@ ssrc_get <- function(keyword, from_year, to_year) {
 
   with(raw, data.frame(
     institution, pi=pi_name, year, start=NA, end=NA, program, amount=NA,
-    id, title, keyword, source="SSRC", stringsAsFactors = FALSE
+    id, title, abstract=NA, keyword, source="SSRC", stringsAsFactors = FALSE
   ))
 }

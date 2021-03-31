@@ -84,6 +84,6 @@ rsf_get <- function(keyword) {
 
   with(raw, data.frame(
     institution, pi=pi_name, year, start=NA, end=NA, program, amount,
-    id, title, keyword, source="RSF"
+    id, title, abstract=NA, keyword, source="RSF"
   ))
 }
