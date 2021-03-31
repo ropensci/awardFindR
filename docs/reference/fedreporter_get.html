@@ -139,7 +139,7 @@
     </tr>
     <tr>
       <th>agency</th>
-      <td><p>Agency keyword for search criteria. Single comma-separated string. Defaults to "usda,dod,nasa,epa".</p></td>
+      <td><p>Agencies, comma separated. Defaults to "usda,dod,nasa,epa".</p></td>
     </tr>
     </table>
 
@@ -148,8 +148,11 @@
     <p>A data.frame</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>federal</span> <span class='op'>&lt;-</span> <span class='fu'>fedreporter_get</span><span class='op'>(</span>keyword<span class='op'>=</span><span class='st'>"ethnography"</span>, from_year<span class='op'>=</span><span class='fl'>2020</span>, to_year<span class='op'>=</span><span class='fl'>2021</span>, agency<span class='op'>=</span><span class='st'>"nih"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>GET https://api.federalreporter.nih.gov/v1/Projects/search?query=agency:NIH$text:ethnography$textFields:terms$fy:2020,2021 ... </span></div><div class='output co'>#&gt; <span class='message'>OK (HTTP 200).</span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'>GET https://api.federalreporter.nih.gov/v1/Projects/search?query=agency:NIH$text:ethnography$textFields:terms$fy:2020,2021&amp;offset=51 ... </span></div><div class='output co'>#&gt; <span class='message'>OK (HTTP 200).</span></div><div class='output co'>#&gt; </div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>federal</span> <span class='op'>&lt;-</span> <span class='fu'>fedreporter_get</span><span class='op'>(</span>keyword<span class='op'>=</span><span class='st'>"ethnography"</span>,
+from_year<span class='op'>=</span><span class='fl'>2020</span>, to_year<span class='op'>=</span><span class='fl'>2021</span>, agency<span class='op'>=</span><span class='st'>"nih"</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

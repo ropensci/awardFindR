@@ -138,7 +138,7 @@
 <a href="#_get" class="anchor"></a><code>*_get</code>
 </h3>
 <p>The <code>*_get</code> routine is exported, so end users can call it directly if they have interest in a specific data source. It should be as faithful a reproduction of the original data source as possible, though variables should still be R-friendly (for example, award amounts as strings like “$300,000” aren’t useful. An integer of 300000 is much more useful.)</p>
-<p>These routines will usually use HTML or JSON-based HTTP resources. <code>utils.R</code> in this package has a <code><a href="reference/request.html">request()</a></code> function that handles HTTP POST and GET requests with <code>httr</code> and returns xml2 objects (which can be used with <code>rvest</code> or <code>xml2</code>) or json as a base R <code><a href="https://rdrr.io/r/base/list.html">list()</a></code> object automatically. In order to centralize HTTP error handling and standardize message output to the user, please employ this function as much as possible for HTTP requests.</p>
+<p>These routines will usually use HTML or JSON-based HTTP resources. <code>utils.R</code> in this package has a <code>request()</code> function that handles HTTP POST and GET requests with <code>httr</code> and returns xml2 objects (which can be used with <code>rvest</code> or <code>xml2</code>) or json as a base R <code><a href="https://rdrr.io/r/base/list.html">list()</a></code> object automatically. In order to centralize HTTP error handling and standardize message output to the user, please employ this function as much as possible for HTTP requests.</p>
 </div>
 <div id="style-and-dependencies" class="section level3">
 <h3 class="hasAnchor">
@@ -152,7 +152,7 @@
 <p>The function should accept at least one keyword and two date terms as arguments. <em>keyword</em> is a string, or, if the source can handle more than one keyword at a time, <em>keywords</em> is a vector of strings. Dates are typically exact days or years, depending on the capabilities of the search function available from the source. Exact dates should be date objects named <em>from_date</em> and <em>to_date</em>, while years should be integers named <em>from_year</em> and <em>to_year</em>.</p>
 <p>Additional source-specific variables can be added to the function, but should have default values specified. <code>*_get</code> routines should function as expected with these three variables alone.</p>
 <p>If at all possible, searching should be done server-side to reduce HTTP traffic. Downloading the whole grant database and searching with <code><a href="https://rdrr.io/r/base/grep.html">grep()</a></code> or a similar function should be a last resort. This also minimizes CPU load.</p>
-<p>JSON sources shouldn’t need any additional dependencies, since the <code><a href="reference/request.html">request()</a></code> function handles encoding and decoding from/to lists automatically. HTML/XML sources, however, should use <code>rvest</code> or <code>xml2</code>, respectively.</p>
+<p>JSON sources shouldn’t need any additional dependencies, since the <code>request()</code> function handles encoding and decoding from/to lists automatically. HTML/XML sources, however, should use <code>rvest</code> or <code>xml2</code>, respectively.</p>
 <p>If the source does not use HTML, XML or JSON, it may be necessary to employ additional dependencies as necessary. This is an extreme case and should be done with care.</p>
 </div>
 <div id="_standardize" class="section level3">

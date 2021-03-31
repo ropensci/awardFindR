@@ -16,11 +16,7 @@
 # internal substring from right function
 .substr_right <- function(x, n) substr(x, nchar(x)-n+1, nchar(x))
 
-#' Make an HTTP request with httr
-#' @param url URL
-#' @param method "get" or "post"
-#' @param payload list object to convert to json and send, only if method="post"
-#' @return Content of the HTTP response, as returned by httr::content()
+# Make an HTTP request with httr
 request <- function(url, method, payload=NULL) {
   if (method=="post" & !is.null(payload)) {
     message(paste("POST", url, "... "), appendLF=FALSE)

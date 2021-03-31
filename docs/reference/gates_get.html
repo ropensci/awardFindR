@@ -120,7 +120,7 @@
     <p>Query awards from the Bill &amp; Melinda Gates Foundation</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gates_get</span><span class='op'>(</span><span class='va'>keyword</span>, <span class='va'>from_date</span>, <span class='va'>to_date</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>gates_get</span><span class='op'>(</span><span class='va'>keyword</span>, <span class='va'>from_year</span>, <span class='va'>to_year</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -130,12 +130,12 @@
       <td><p>Single keyword to query</p></td>
     </tr>
     <tr>
-      <th>from_date</th>
-      <td><p>Date object to begin search</p></td>
+      <th>from_year</th>
+      <td><p>Year integer to begin search</p></td>
     </tr>
     <tr>
-      <th>to_date</th>
-      <td><p>Date object to end search</p></td>
+      <th>to_year</th>
+      <td><p>Year integer to end search</p></td>
     </tr>
     </table>
 
@@ -145,7 +145,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='va'>gates</span> <span class='op'>&lt;-</span> <span class='fu'>gates_get</span><span class='op'>(</span><span class='st'>"qualitative"</span>, <span class='st'>"2018-01-01"</span>, <span class='st'>"2020-01-01"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>POST https://www.gatesfoundation.org/services/gfo/search.ashx ... </span></div><div class='output co'>#&gt; <span class='message'>OK (HTTP 200).</span></div><div class='output co'>#&gt; </div></pre>
+</div><div class='output co'>#&gt; <span class='message'>GET https://www.gatesfoundation.org/api/grantssearch?date&amp;displayedTaxonomy&amp;listingId=d2a41504-f557-4f1e-88d6-ea109d344feb&amp;loadAllPages=true&amp;page=1&amp;pageId=31242fca-dcf8-466a-a296-d6411f85b0a5&amp;perPage=999&amp;q=qualitative&amp;sc_site=gfo&amp;showContentTypes=false&amp;showDates=false&amp;showImages&amp;showSummaries=false&amp;sortBy=date-desc&amp;sortOrder=desc&amp;yearAwardedEnd=2020-01-01&amp;yearAwardedStart=2018-01-01 ... </span></div><div class='output co'>#&gt; <span class='message'>OK (HTTP 200).</span></div><div class='output co'>#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

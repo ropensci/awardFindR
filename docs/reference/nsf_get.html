@@ -120,7 +120,7 @@
     <p>Search the NSF API for awards</p>
     </div>
 
-    <pre class="usage"><span class='fu'>nsf_get</span><span class='op'>(</span><span class='va'>keyword</span>, <span class='va'>from_date</span>, <span class='va'>to_date</span>, cfda <span class='op'>=</span> <span class='st'>"47.076,47.075"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>nsf_get</span><span class='op'>(</span><span class='va'>keyword</span>, <span class='va'>from_date</span>, <span class='va'>to_date</span>, cfda <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -139,7 +139,7 @@
     </tr>
     <tr>
       <th>cfda</th>
-      <td><p>Comma-separated CFDA codes to include, SBE and EHR only by default</p></td>
+      <td><p>Comma-separated CFDA codes to include, default: all</p></td>
     </tr>
     </table>
 
@@ -149,7 +149,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='va'>nsf</span> <span class='op'>&lt;-</span> <span class='fu'>nsf_get</span><span class='op'>(</span><span class='st'>"ethnography"</span>, <span class='st'>"2020-01-01"</span>, <span class='st'>"2020-02-01"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>GET https://api.nsf.gov/services/v1/awards.json?keyword="ethnography"&amp;cfdaNumber=47.076,47.075&amp;printFields=id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber,fundsObligatedAmt,fundProgramName&amp;dateStart=01/01/2020&amp;dateEnd=02/01/2020&amp;offset=1 ... </span></div><div class='output co'>#&gt; <span class='message'>OK (HTTP 200).</span></div><div class='output co'>#&gt; </div></pre>
+</div><div class='output co'>#&gt; <span class='message'>GET https://api.nsf.gov/services/v1/awards.json?keyword="ethnography"&amp;printFields=id,date,startDate,expDate,title,awardeeName,piFirstName,piLastName,piEmail,cfdaNumber,fundsObligatedAmt,fundProgramName,abstractText&amp;dateStart=01/01/2020&amp;dateEnd=02/01/2020&amp;offset=1 ... </span></div><div class='output co'>#&gt; <span class='message'>OK (HTTP 200).</span></div><div class='output co'>#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

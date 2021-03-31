@@ -21,7 +21,7 @@ Sources supported currently include:
 - [National Endowment for the Humanities](https://securegrants.neh.gov/publicquery/main.aspx) (`neh`)
 - [NIH RePORTER](https://projectreporter.nih.gov/reporter.cfm) (`nih`)
 - [National Science Foundation](https://nsf.gov/awardsearch/) (`nsf`)
-- [Open Philanthrophy](https://www.openphilanthropy.org/giving/grants) (`ophil`)
+- [Open Philanthropy](https://www.openphilanthropy.org/giving/grants) (`ophil`)
 - [Open Society Foundations](https://www.opensocietyfoundations.org/grants/past) (`osociety`)
 - [Rockefeller Foundation](https://www.rockefellerfoundation.org/) (`rockefeller`)
 - [Russell Sage Foundation](https://www.russellsage.org) (`rsf`)
