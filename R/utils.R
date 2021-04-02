@@ -1,3 +1,5 @@
+#' @importFrom readr read_csv
+
 # Internal, return basic text hash
 # *NOT* cryptographic!! this is a toy hasher!
 .text_hash <- function(string) {

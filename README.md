@@ -47,6 +47,14 @@ awardFindR(keywords="ethnography")
 
 See the included vignette for additional examples.
 
+For those interested in the results from a specific source, each source has its own function. For example, someone interested in NSF results for "ethnography" between 2018 and 2020 could run the following:
+
+```
+nsf_get("ethnography", "2018-01-01", "2020-01-01")
+```
+
+Similar functions exist for each supported source. See included help for further details, as the arguments differ slightly between each.
+
 ## Installation
 Install `awardFindR` directly from this repository using the `remotes` package
 ```
