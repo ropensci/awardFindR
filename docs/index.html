@@ -134,6 +134,9 @@
 <p>Search for all awards matching a keyword since the default cutoff of Jan 1, 2019 to today</p>
 <pre><code><a href="reference/awardFindR.html">awardFindR(keywords="ethnography")</a></code></pre>
 <p>See the included vignette for additional examples.</p>
+<p>For those interested in the results from a specific source, each source has its own function. For example, someone interested in NSF results for “ethnography” between 2018 and 2020 could run the following:</p>
+<pre><code><a href="reference/nsf_get.html">nsf_get("ethnography", "2018-01-01", "2020-01-01")</a></code></pre>
+<p>Similar functions exist for each supported source. See included help for further details, as the arguments differ slightly between each.</p>
 </div>
 </div>
 <div id="installation" class="section level2">
