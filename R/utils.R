@@ -7,14 +7,6 @@
   sum(hash)
 }
 
-# Internal title case function
-.title_case <- function(string) {
-  if (is.na(string)) return(NA) # Don't try to give us back a character string!!
-  c <- strsplit(tolower(string), " ")[[1]]
-  paste(toupper(substring(c, 1,1)), substring(c, 2),
-        sep="", collapse=" ")
-}
-
 # internal substring from right function
 .substr_right <- function(x, n) substr(x, nchar(x)-n+1, nchar(x))
 

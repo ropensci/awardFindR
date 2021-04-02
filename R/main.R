@@ -88,10 +88,5 @@ awardFindR <- function(keywords,
     results$dup_id <- NULL
   }
 
-  # Get rid of all caps in some strings
-  results$institution <- vapply(as.character(results$institution),
-                                .title_case, "string")
-  #results$pi <- vapply(as.character(results$pi), .title_case, "string")
-
   results
 }
