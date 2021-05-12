@@ -26,6 +26,12 @@ gates_get <- function(keyword, from_year, to_year) {
 
  response <- request(url, "get")
 
+ # Did we get HTML back?
+ if (class(response)[1]=="xml_document") {
+    return(NULL)
+ }
+
+ # No results?
  if (response$totalResults==0) {
     return(NULL)
  }
@@ -33,7 +39,7 @@ gates_get <- function(keyword, from_year, to_year) {
  df <- lapply(response$results, function(x) {
    x <- unlist(x, recursive=FALSE)
    with(x, data.frame(
-      awardedAmount, grantee, url, yearAwarded, id,
+      awardedAmount, grantee, url, date, id,
       stringsAsFactors = FALSE))
  })
  df <- do.call(rbind.data.frame, df)
@@ -41,6 +47,7 @@ gates_get <- function(keyword, from_year, to_year) {
  df$grantee[df$grantee==""] <- NA
  # Get rid of all the $ and commas
  df$awardedAmount <- gsub("^\\$|,", "", df$awardedAmount)
+ df$year <- .substr_right(df$date, 4)
  df$keyword <- keyword
 
  df
@@ -55,8 +62,8 @@ gates_get <- function(keyword, from_year, to_year) {
    }
 
    with(raw, data.frame(
-      institution=grantee, pi=NA, year=yearAwarded, start=NA, end=NA,
-      program=NA, amount=awardedAmount, id, title=NA, abstract=NA,
+      institution=grantee, pi=NA, year, start=NA, end=NA,
+      program=NA, amount=awardedAmount, id=url, title=NA, abstract=NA,
       keyword, source="Gates", stringsAsFactors = FALSE
    ))
 }
