@@ -33,7 +33,7 @@ nih_get <- function(keyword, from_date, to_date) {
 
   # change NULL values to NA
   df <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
-  df <- rbind.match.columns(df)
+  df <- Reduce(function(x, y) merge(x, y, all=TRUE), df)
 
   # What is our current max?
   place <- response$meta$offset + response$meta$limit
@@ -50,7 +50,7 @@ nih_get <- function(keyword, from_date, to_date) {
     temp <- lapply(response$results, lapply,
                    function(x)ifelse(is.null(x), NA, x))
 
-    temp <- rbind.match.columns(temp)
+    temp <- Reduce(function(x, y) merge(x, y, all=TRUE), temp)
     df <- rbind.data.frame(df, temp)
   }
 

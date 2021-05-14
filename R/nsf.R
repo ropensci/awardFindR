@@ -10,7 +10,8 @@ nsf_get <- function(keyword, from_date, to_date, cfda=NULL) {
   base_url <- 'https://api.nsf.gov/services/v1/awards.json?'
   output_data <- paste0("id,date,startDate,expDate,title,awardeeName,",
                         "piFirstName,piLastName,piEmail,cfdaNumber,",
-                        "fundsObligatedAmt,fundProgramName,abstractText")
+                        "fundsObligatedAmt,fundProgramName,abstractText,",
+                        "awardeeCounty") #,publicationResearch")
 
   query <- paste0('keyword="', gsub(" ", "+", keyword), "\"")
 
@@ -30,7 +31,7 @@ nsf_get <- function(keyword, from_date, to_date, cfda=NULL) {
     return(NULL) # No results?
   }
 
-  df <- rbind.match.columns(api)
+  df <- Reduce(function(x, y) merge(x, y, all=TRUE), api)
 
   # Max results 25 per request. Do we need to loop the query?
   while (length(api)==25) {
@@ -40,7 +41,7 @@ nsf_get <- function(keyword, from_date, to_date, cfda=NULL) {
 
     api <- request(paste0(query_url, '&offset=', offset), "get")
     api <- api$response$award
-    temp <- rbind.match.columns(api)
+    temp <- Reduce(function(x, y) merge(x, y, all=TRUE), api)
     df <- rbind.data.frame(df, temp)
   }
 

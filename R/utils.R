@@ -26,18 +26,3 @@ request <- function(url, method, payload=NULL) {
 
   suppressMessages(httr::content(response))
 }
-
-rbind.match.columns <- function(frames) {
-  frames <- lapply(frames, as.data.frame)
-
-  # Find all unique column names
-  fields <- unique(unlist(lapply(frames, names)))
-
-  # Bind the lists into one data.frame and handle missing data
-  do.call(rbind, lapply(frames, function(x) {
-    data.frame(c(x, vapply(setdiff(fields, names(x)),
-                           function(y) NA, c(1))),
-               stringsAsFactors = FALSE)
-  }))
-}
-
