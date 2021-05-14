@@ -14,23 +14,39 @@ carnegie_get <- function(keyword, from_year, to_year) {
   url <- paste0(base_url, query)
   for (n in from_year:to_year) url <- paste0(url, "&y=", n)
 
-  response <- request(url, "get")
-  awards <- xml2::xml_find_all(response, "//tbody/tr[@data-url]")
+  message(paste("GET", url, "... "), appendLF=FALSE)
+  response <- httr::GET(url)
+  httr::message_for_status(response)
+  message()
+
+  cookie <- httr::cookies(response)$value # Need this cookie for CSRF validation
+  response <- httr::content(response)
+  awards <- rvest::html_nodes(response, "tbody > tr")
   if (length(awards)==0)  {
     return(NULL) # No awards in the table?
   }
 
   awards <- lapply(awards, function(x) {
-    id <- gsub("^grant-", "",
-               xml2::xml_text(xml2::xml_find_first(x, ".//@id")))
-    info <- xml2::xml_find_all(x, ".//td")
-    info <- vapply(info, xml2::xml_text, "string")
+    id <- gsub("^grant-", "", rvest::html_attr(x, "id"))
+    info <- rvest::html_nodes(x, "td") %>% rvest::html_text()
     # Remove $ and , in amounts (i.e. $1,000,000)
     amount <- as.integer(gsub("^\\$|,", "", info[3]))
 
     # Extra details require another HTTP request (per individual award, ugh)
-    details <- request(paste0(base_url, "grant/", id, "/"), "get")
-    details <- xml2::read_html(details$result)
+    # Also, Carnegie now uses CSRF tokens, so we have to include those headers
+    url <- paste0(base_url, "grant/", id, "/")
+    message(paste("GET", url, "... "), appendLF=FALSE)
+    response <- httr::GET(url, config=httr::add_headers(
+                      Referer=paste0(base_url,
+                                     "/grantee/knowledgeworks-foundation/"),
+                      `X-CSRFToken`=cookie,
+                      `X-Requested-With`="XMLHttpRequest"),
+                    httr::set_cookies(csfrtoken=cookie), httr::accept_json())
+    httr::message_for_status(response)
+    message()
+
+    details <- httr::content(response)
+    details <- xml2::read_html(details$result[1])
 
     # Turn the div table into a real table
     details <- data.frame(
@@ -44,8 +60,10 @@ carnegie_get <- function(keyword, from_year, to_year) {
 
     title <- details$value[details$name=="Project Title"]
     date <- details$value[details$name=="Date"]
+    description <- details$value[details$name=="Description"]
     data.frame(grantee=info[2], date, amount, program=info[4], id, title,
-               year=info[1], keyword, stringsAsFactors = FALSE)
+               year=info[1], abstract=description,
+               keyword, stringsAsFactors = FALSE)
   })
 
   do.call(rbind.data.frame, awards)
@@ -61,7 +79,7 @@ carnegie_get <- function(keyword, from_year, to_year) {
 
   with(raw, data.frame(
     institution=grantee, pi=NA, year, start=NA, end=NA,
-    program, amount, id, title, abstract=NA, keyword, source="Carnegie",
+    program, amount, id, title, abstract, keyword, source="Carnegie",
     stringsAsFactors = FALSE
   ))
 }
