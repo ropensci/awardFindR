@@ -14,10 +14,11 @@
 request <- function(url, method, payload=NULL) {
   if (method=="post" & !is.null(payload)) {
     message(paste("POST", url, "... "), appendLF=FALSE)
-    response <- httr::POST(url, body=payload, encode="json")
+    response <- httr::POST(url, body=payload, encode="json",
+                           config = httr::config(connecttimeout = 60))
   } else if (method=="get") {
     message(paste("GET", url, "... "), appendLF=FALSE)
-    response <- httr::GET(url)
+    response <- httr::GET(url, config = httr::config(connecttimeout = 60))
   } else stop("Invalid request")
 
   httr::message_for_status(response)
