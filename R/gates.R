@@ -6,7 +6,7 @@
 #' @return a data.frame
 #' @export
 #' @examples
-#' gates <- gates_get("qualitative", "2018-01-01", "2020-01-01")
+#' gates <- gates_get("qualitative", 2018, 2020)
 gates_get <- function(keyword, from_year, to_year, verbose=FALSE) {
  url <- "https://www.gatesfoundation.org/api/grantssearch"
 

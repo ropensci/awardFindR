@@ -22,5 +22,5 @@ a data.frame
 Query awards from the Bill & Melinda Gates Foundation
 }
 \examples{
-gates <- gates_get("qualitative", "2018-01-01", "2020-01-01")
+gates <- gates_get("qualitative", 2018, 2020)
 }
