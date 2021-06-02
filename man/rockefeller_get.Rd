@@ -4,7 +4,7 @@
 \alias{rockefeller_get}
 \title{Search Rockefeller Foundation grants}
 \usage{
-rockefeller_get(keyword, from_date, to_date)
+rockefeller_get(keyword, from_date, to_date, verbose)
 }
 \arguments{
 \item{keyword}{Single keyword to query}
@@ -12,6 +12,8 @@ rockefeller_get(keyword, from_date, to_date)
 \item{from_date}{Date object to begin search}
 
 \item{to_date}{Date object to end search}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 a data.frame

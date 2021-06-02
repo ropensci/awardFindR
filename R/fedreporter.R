@@ -2,6 +2,7 @@
 #' @param keyword Keyword, single string
 #' @param from_year Beginning fiscal year to search, integer
 #' @param to_year Ending fiscal year to search, integer
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @param agency Agencies, comma separated. Defaults to "usda,dod,nasa,epa".
 #' @export
 #' @return A data.frame
@@ -10,7 +11,7 @@
 #' federal <- fedreporter_get(keyword="ethnography",
 #' from_year=2020, to_year=2021, agency="nih")
 #' }
-fedreporter_get <- function (keyword, from_year, to_year,
+fedreporter_get <- function (keyword, from_year, to_year, verbose=FALSE,
                              agency="usda,dod,nasa,epa,ed") {
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'
 
@@ -23,7 +24,7 @@ fedreporter_get <- function (keyword, from_year, to_year,
                                      collapse=","))
 
   # Actually query the API
-  api <- request(query_url, "get")
+  api <- request(query_url, "get", verbose)
 
   if (api$totalCount==0) {
     return(NULL) # No results?
@@ -37,7 +38,7 @@ fedreporter_get <- function (keyword, from_year, to_year,
   while (api$offset+api$limit < api$totalCount) {
     offset <- api$offset + api$limit # New offset
     new_url <- paste0(query_url, "&offset=", offset)
-    api <- request(new_url, "get")
+    api <- request(new_url, "get", verbose)
 
     # Process list
     temp <- api$items
@@ -59,9 +60,10 @@ fedreporter_get <- function (keyword, from_year, to_year,
   df
 }
 
-.fedreporter_standardize <- function(keywords, from_date, to_date) {
+.fedreporter_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, fedreporter_get,
-                    format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                    format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

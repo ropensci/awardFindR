@@ -10,7 +10,8 @@ awardFindR(
     "neh", "nih", "nsf", "ophil", "osociety", "rockefeller", "rsf", "rwjf", "sloan",
     "ssrc", "templeton", "usaspend"),
   from_date = "2019-01-01",
-  to_date = Sys.Date()
+  to_date = Sys.Date(),
+  verbose = FALSE
 )
 }
 \arguments{
@@ -21,6 +22,8 @@ awardFindR(
 \item{from_date}{A date object to limit the search, defaults to Jan 1 2019}
 
 \item{to_date}{A date object to limit the search, defaults to today}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 a data.frame

@@ -2,13 +2,14 @@
 #' @param keyword Single keyword to query
 #' @param from_date Date object to begin search
 #' @param to_date Date object to end search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples
 #' \dontrun{
 #' rockefeller <- rockefeller_get("test", "2012-01-01", "2021-01-01")
 #' }
-rockefeller_get <- function(keyword, from_date, to_date) {
+rockefeller_get <- function(keyword, from_date, to_date, verbose) {
   url <- paste0("https://www.rockefellerfoundation.org/?post_type=grant&",
   "keyword=", xml2::url_escape(keyword),
   "&from_month=", format.Date(from_date, "%m"),
@@ -17,7 +18,7 @@ rockefeller_get <- function(keyword, from_date, to_date) {
   "&to_year=", format.Date(to_date, "%Y"),
   "&download=filter")
 
-  response <- as.data.frame(request(url, "get"))
+  response <- as.data.frame(request(url, "get", verbose))
   if (nrow(response)==0) {
     return(NULL) # No results?
   }
@@ -28,8 +29,8 @@ rockefeller_get <- function(keyword, from_date, to_date) {
   response
 }
 
-.rockefeller_standardize <- function(keywords, from_date, to_date) {
-  raw <- lapply(keywords, rockefeller_get, from_date, to_date)
+.rockefeller_standardize <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, rockefeller_get, from_date, to_date, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

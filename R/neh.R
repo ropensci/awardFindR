@@ -2,18 +2,21 @@
 #' @param keywords Vector of strings to search for in the project description
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return A raw data.frame with the relevant results from NEH
 #' @export
 #' @examples
 #' neh <- neh_get(c("focus groups", "ethnography"), 2018, 2020)
-neh_get <- function(keywords, from_year, to_year) {
+neh_get <- function(keywords, from_year, to_year, verbose=FALSE) {
   # This file is updated monthly, should hopefully be valid for the next decade?
   # See https://securegrants.neh.gov/open/data/
   url <- "https://securegrants.neh.gov/Open/data/NEH_Grants2020s.csv"
-  message(paste("GET", url, "... "), appendLF = FALSE)
+  if (verbose==TRUE)  message(paste("GET", url, "... "), appendLF = FALSE)
   response <- httr::GET(url)
-  httr::message_for_status(response)
-  message()
+  if (verbose==TRUE) {
+    httr::message_for_status(response)
+    message()
+  }
   httr::stop_for_status(response)
 
   response <- httr::content(response, as="text", encoding="UTF-8")
@@ -52,9 +55,10 @@ neh_get <- function(keywords, from_year, to_year) {
   results
 }
 
-.neh_standardize <- function(keywords, from_date, to_date) {
+.neh_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- neh_get(keywords,
-                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                 verbose)
   if (is.null(raw)) {
     return(NULL)
   }

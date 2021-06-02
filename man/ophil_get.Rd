@@ -4,7 +4,7 @@
 \alias{ophil_get}
 \title{Grab the Open Philanthropy grants data search for keyword-date combos}
 \usage{
-ophil_get(keyword, from_year, to_year)
+ophil_get(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
 \item{keyword}{Keyword to search for in description, single string}
@@ -12,6 +12,8 @@ ophil_get(keyword, from_year, to_year)
 \item{from_year}{Beginning year to search}
 
 \item{to_year}{Ending year to search}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 A data.frame

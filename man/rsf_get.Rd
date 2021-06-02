@@ -4,10 +4,12 @@
 \alias{rsf_get}
 \title{Get Russell Sage foundation awards}
 \usage{
-rsf_get(keyword)
+rsf_get(keyword, verbose = FALSE)
 }
 \arguments{
 \item{keyword}{Keyword to query, single string}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 a data.frame

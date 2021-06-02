@@ -1,9 +1,10 @@
 #' Get Russell Sage foundation awards
 #' @param keyword Keyword to query, single string
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples \dontrun{rsf <- rsf_get("ethnography")}
-rsf_get <- function(keyword) {
+rsf_get <- function(keyword, verbose=FALSE) {
   # First we use the general search function to find potential awards
   url <- "https://www.russellsage.org"
   path <- paste0("/search/node/", keyword)
@@ -11,7 +12,7 @@ rsf_get <- function(keyword) {
   # Collect all the links, looping through pages as necessary
   links <- c()
   repeat {
-    page <- request(paste0(url, path), "get")
+    page <- request(paste0(url, path), "get", verbose)
     links <- c(links,
                rvest::html_attr(rvest::html_nodes(page, "li.search-result a"),
                                 "href"))
@@ -30,7 +31,7 @@ rsf_get <- function(keyword) {
 
   # Getting details require seperate HTTP reqs for each award, ugh
   df <- lapply(links, function(x) {
-    award <- request(x, "get")
+    award <- request(x, "get", verbose)
     award <- rvest::html_node(award, "div.content > header > div.u-nubbed")
     program <- rvest::html_children(award)[1] %>% rvest::html_text(trim=TRUE)
     program <- gsub("\t\t\t\t", "; ", program) # Separate with ;
@@ -66,8 +67,8 @@ rsf_get <- function(keyword) {
   df
 }
 
-.rsf_standardize <- function(keywords, from_date, to_date) {
-  raw <- lapply(keywords, rsf_get)
+.rsf_standardize <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, rsf_get, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

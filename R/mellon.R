@@ -2,11 +2,12 @@
 #' @param keyword Keyword to query
 #' @param from_year Year to begin search
 #' @param to_year Year to end search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples
 #' mellon <- mellon_get("qualitative", 2013, 2021)
-mellon_get <- function(keyword, from_year, to_year) {
+mellon_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://mellon.org/grants/grants-database/advanced-search/?"
   query_url <- paste0(base_url,
                       "year-start=", from_year, "&year-end=", to_year,
@@ -15,7 +16,7 @@ mellon_get <- function(keyword, from_year, to_year) {
                       # and this figure below seems to be arbitrarily flexible
                       "&per_page=5000")
 
-  response <- request(query_url, "get")
+  response <- request(query_url, "get", verbose)
 
   results <- xml2::xml_children(
     xml2::xml_find_first(response, "//table[@class='grant-list']/tbody"))
@@ -49,9 +50,10 @@ mellon_get <- function(keyword, from_year, to_year) {
   df
 }
 
-.mellon_standardize <- function(keywords, from_date, to_date) {
+.mellon_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, mellon_get,
-                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

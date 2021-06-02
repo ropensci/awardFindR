@@ -2,11 +2,12 @@
 #' @param keyword Keyword to query, single string
 #' @param from_year Year to begin search, integer
 #' @param to_year Year to end search, integer
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples
 #' rwjf <- rwjf_get("qualitative data analysis", 2014, 2014)
-rwjf_get <- function(keyword, from_year, to_year) {
+rwjf_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   url <- paste0("https://www.rwjf.org/action/grants/database.json?",
   "k=", gsub(" ", "%20", keyword) , "&start=", from_year, "&end=", to_year,
   # Extra junk
@@ -14,7 +15,7 @@ rwjf_get <- function(keyword, from_year, to_year) {
   "&sortBy=year&ascending=false&fundid=")
 
   page <- 1
-  response <- request(paste0(url, "&s=", page), "get")
+  response <- request(paste0(url, "&s=", page), "get", verbose)
   if (response$totalResults==0) {
     return(NULL) # No results?
   }
@@ -23,7 +24,7 @@ rwjf_get <- function(keyword, from_year, to_year) {
   full[[page]] <- response$results
   while (page < response$totalPages) { # HTTP get all the pages
     page <- page + 1 # Next page
-    response <- request(paste0(url, "&s=", page), "get")
+    response <- request(paste0(url, "&s=", page), "get", verbose)
     full[[page]] <- response$results
   }
 
@@ -57,9 +58,10 @@ rwjf_get <- function(keyword, from_year, to_year) {
   full
 }
 
-.rwjf_standardize <- function(keywords, from_date, to_date) {
+.rwjf_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, rwjf_get,
-                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

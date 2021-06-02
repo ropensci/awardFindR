@@ -2,6 +2,7 @@
 #' @param keywords Vector of keywords to search
 #' @param from_date Beginning date object to search
 #' @param to_date Ending date object to search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples
@@ -9,7 +10,7 @@
 #' results <- usaspend_get(c("qualitative", "interview"),
 #'  "2019-01-01", "2020-01-01")
 #' }
-usaspend_get <- function(keywords, from_date, to_date) {
+usaspend_get <- function(keywords, from_date, to_date, verbose) {
   url <- "https://api.usaspending.gov/api/v2/search/spending_by_award/"
 
   payload <- list(
@@ -38,7 +39,7 @@ usaspend_get <- function(keywords, from_date, to_date) {
   )
 
   # query API
-  response <- request(url, "post", payload)
+  response <- request(url, "post", verbose, payload)
 
   awards <- response$results
   if (length(awards)==0) {
@@ -52,7 +53,7 @@ usaspend_get <- function(keywords, from_date, to_date) {
   # Need to loop queries?
   while (response$page_metadata$hasNext == TRUE) {
     payload$page <- response$page_metadata$page + 1
-    response <- request(url, "post", payload)
+    response <- request(url, "post", verbose, payload)
 
     temp <- response$results
     temp <- lapply(temp, lapply, function(x)ifelse(is.null(x), NA, x))
@@ -68,8 +69,8 @@ usaspend_get <- function(keywords, from_date, to_date) {
   awards
 }
 
-.usaspend_standardize <- function(keywords, from_date, to_date) {
-  raw <- usaspend_get(keywords, from_date, to_date)
+.usaspend_standardize <- function(keywords, from_date, to_date, verbose) {
+  raw <- usaspend_get(keywords, from_date, to_date, verbose)
   if (is.null(raw)) {
     return(NULL)
   }

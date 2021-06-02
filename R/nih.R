@@ -2,10 +2,11 @@
 #' @param keyword Keyword to query
 #' @param from_date Date object to begin search
 #' @param to_date Date object to end search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples nih <- nih_get("ethnography", "2019-01-01", "2019-05-01")
-nih_get <- function(keyword, from_date, to_date) {
+nih_get <- function(keyword, from_date, to_date, verbose=FALSE) {
   url <- "https://api.reporter.nih.gov/v1/projects/Search"
 
   # httr encodes all this into json for a POST request
@@ -26,7 +27,7 @@ nih_get <- function(keyword, from_date, to_date) {
   #, "principle_investigators"))
   offset=0)
 
-  response <- request(url, "post", payload) # Query API
+  response <- request(url, "post", verbose, payload) # Query API
   if (response$meta$total == 0) {
     return(NULL) # No results?
   }
@@ -43,7 +44,7 @@ nih_get <- function(keyword, from_date, to_date) {
 
     Sys.sleep(3) # Be NICE to the API!
 
-    response <- request(url, "post", payload) # Query again
+    response <- request(url, "post", verbose, payload) # Query again
     place <- response$meta$offset + response$meta$limit # New position
 
     # Bind everything together
@@ -66,8 +67,8 @@ nih_get <- function(keyword, from_date, to_date) {
   df
 }
 
-.nih_standardize <- function(keywords, from_date, to_date) {
-  raw <- lapply(keywords, nih_get, from_date, to_date)
+.nih_standardize <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, nih_get, from_date, to_date, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

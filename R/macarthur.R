@@ -3,12 +3,13 @@
 #' @param keyword Keyword to query, single string
 #' @param from_date Date object to begin search
 #' @param to_date Date object to end search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples
 #' macarthur <- macarthur_get("qualitative",
 #' "1999-01-01", "2020-01-01")
-macarthur_get <- function(keyword, from_date, to_date) {
+macarthur_get <- function(keyword, from_date, to_date, verbose=FALSE) {
   url <- "https://searchg2.crownpeak.net/live-macfound-rt/select?"
   parameters <- paste0("q=", xml2::url_escape(keyword),
                        "&wt=xml&start=0&rows=100")
@@ -21,7 +22,7 @@ macarthur_get <- function(keyword, from_date, to_date) {
   "&json.wrf=searchg2_5445608496089546")
 
   query_url <- paste0(url, parameters, extra)
-  response <- request(query_url, "get")
+  response <- request(query_url, "get", verbose)
 
   if (xml2::xml_integer(
     xml2::xml_find_first(response, "/response/result/@numFound"))==0) {
@@ -77,8 +78,8 @@ macarthur_get <- function(keyword, from_date, to_date) {
   df
 }
 
-.macarthur_standardize <- function(keywords, from_date, to_date) {
-  raw <- lapply(keywords, macarthur_get, from_date, to_date)
+.macarthur_standardize <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, macarthur_get, from_date, to_date, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

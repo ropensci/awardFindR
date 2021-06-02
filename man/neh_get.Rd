@@ -4,7 +4,7 @@
 \alias{neh_get}
 \title{Get relevant awards from NEH}
 \usage{
-neh_get(keywords, from_year, to_year)
+neh_get(keywords, from_year, to_year, verbose = FALSE)
 }
 \arguments{
 \item{keywords}{Vector of strings to search for in the project description}
@@ -12,6 +12,8 @@ neh_get(keywords, from_year, to_year)
 \item{from_year}{Beginning year to search}
 
 \item{to_year}{Ending year to search}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 A raw data.frame with the relevant results from NEH

@@ -4,7 +4,7 @@
 \alias{nsf_get}
 \title{Search the NSF API for awards}
 \usage{
-nsf_get(keyword, from_date, to_date, cfda = NULL)
+nsf_get(keyword, from_date, to_date, verbose = FALSE, cfda = NULL)
 }
 \arguments{
 \item{keyword}{Keyword to query, single string}
@@ -12,6 +12,8 @@ nsf_get(keyword, from_date, to_date, cfda = NULL)
 \item{from_date}{Beginning date object}
 
 \item{to_date}{End date object}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 
 \item{cfda}{Comma-separated CFDA codes to include, default: all}
 }

@@ -4,7 +4,7 @@
 \alias{macarthur_get}
 \title{Search MacArthur foundation for awards}
 \usage{
-macarthur_get(keyword, from_date, to_date)
+macarthur_get(keyword, from_date, to_date, verbose = FALSE)
 }
 \arguments{
 \item{keyword}{Keyword to query, single string}
@@ -12,6 +12,8 @@ macarthur_get(keyword, from_date, to_date)
 \item{from_date}{Date object to begin search}
 
 \item{to_date}{Date object to end search}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 a data.frame

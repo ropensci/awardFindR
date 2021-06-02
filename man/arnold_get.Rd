@@ -4,7 +4,7 @@
 \alias{arnold_get}
 \title{Get Arnold Foundations/Arnold Venture awards}
 \usage{
-arnold_get(keyword, from_year, to_year)
+arnold_get(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
 \item{keyword}{Keyword to query, single string}
@@ -12,6 +12,8 @@ arnold_get(keyword, from_year, to_year)
 \item{from_year}{Year to begin search, integer}
 
 \item{to_year}{Year to end search, integer}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 a data.frame

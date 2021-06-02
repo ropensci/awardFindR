@@ -4,7 +4,7 @@
 \alias{mellon_get}
 \title{Search the Andrew W. Mellon Foundation grant database}
 \usage{
-mellon_get(keyword, from_year, to_year)
+mellon_get(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
 \item{keyword}{Keyword to query}
@@ -12,6 +12,8 @@ mellon_get(keyword, from_year, to_year)
 \item{from_year}{Year to begin search}
 
 \item{to_year}{Year to end search}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 a data.frame

@@ -5,6 +5,7 @@ NULL
 #' @param keyword vector of keywords to query
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return A data.frame
 #' @export
 #' @examples
@@ -12,11 +13,11 @@ NULL
 #' \dontrun{
 #' sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)
 #' }
-sloan_get <- function(keyword, from_year, to_year) {
+sloan_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   url <- paste0("https://sloan.org/grants-database",
   "?dynamic=1&order_by=approved_at&order_by_direction=desc&limit=3000")
 
-  response <- request(url, "get")
+  response <- request(url, "get", verbose)
 
   descriptions <- rvest::html_text(
     rvest::html_nodes(response, "div.brief-description"), trim=TRUE)
@@ -69,10 +70,11 @@ sloan_get <- function(keyword, from_year, to_year) {
   subset(df, year >= from_year, year <= to_year)
 }
 
-.sloan_standardize <- function(keywords, from_date, to_date) {
+.sloan_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, sloan_get,
                 as.integer(format.Date(from_date, "%Y")),
-                as.integer(format.Date(to_date, "%Y")))
+                as.integer(format.Date(to_date, "%Y")),
+                verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

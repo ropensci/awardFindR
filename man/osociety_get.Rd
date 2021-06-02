@@ -4,7 +4,7 @@
 \alias{osociety_get}
 \title{Query and scrape Open Society foundation awards}
 \usage{
-osociety_get(keyword, from_year, to_year)
+osociety_get(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
 \item{keyword}{Keyword, single string}
@@ -12,6 +12,8 @@ osociety_get(keyword, from_year, to_year)
 \item{from_year}{Year to begin search, integer}
 
 \item{to_year}{Year to end search, integer}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 a data.frame

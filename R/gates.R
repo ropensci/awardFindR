@@ -2,11 +2,12 @@
 #' @param keyword Single keyword to query
 #' @param from_year Year integer to begin search
 #' @param to_year Year integer to end search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples
 #' gates <- gates_get("qualitative", "2018-01-01", "2020-01-01")
-gates_get <- function(keyword, from_year, to_year) {
+gates_get <- function(keyword, from_year, to_year, verbose=FALSE) {
  url <- "https://www.gatesfoundation.org/api/grantssearch"
 
  params <- paste0("?date&displayedTaxonomy&",
@@ -24,7 +25,7 @@ gates_get <- function(keyword, from_year, to_year) {
 
  url <- paste0(url, params)
 
- response <- request(url, "get")
+ response <- request(url, "get", verbose)
 
  # Did we get HTML back?
  if (class(response)[1]=="xml_document") {
@@ -53,9 +54,10 @@ gates_get <- function(keyword, from_year, to_year) {
  df
 }
 
-.gates_standardize <- function(keywords, from_date, to_date) {
+.gates_standardize <- function(keywords, from_date, to_date, verbose) {
    raw <- lapply(keywords, gates_get,
-                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                 verbose)
    raw <- do.call(rbind.data.frame, raw)
    if (nrow(raw)==0) {
       return(NULL)

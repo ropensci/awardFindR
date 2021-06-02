@@ -2,11 +2,12 @@
 #' @param keyword Keyword to query, single string
 #' @param from_year Year to begin search, integer
 #' @param to_year Year to end search, integer
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples
 #' arnold <- arnold_get("qualitative data", 2016, 2017)
-arnold_get <- function(keyword, from_year, to_year) {
+arnold_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   url <- paste0("https://pyj9b8sltv-dsn.algolia.net",
   "/1/indexes/*/queries?",
   "x-algolia-agent=Algolia%20for%20JavaScript%20(4.5.1)%3B%20Browser%20(lite)",
@@ -31,7 +32,7 @@ arnold_get <- function(keyword, from_year, to_year) {
   payload <- list(requests = list(list(indexName ="prod_grants",
                                          params = paste0(query, "&page=0"))))
 
-  response <- request(url, "post", payload)
+  response <- request(url, "post", verbose, payload)
   response <- unlist(response, recursive=FALSE)$results
   if (response$nbHits==0) {
     return(NULL) # No results?
@@ -51,16 +52,17 @@ arnold_get <- function(keyword, from_year, to_year) {
 
     # Load next page
     payload$requests[[1]]$params <- paste0(query, "&page=", response$page+1)
-    response <- request(url, "post", payload)
+    response <- request(url, "post", verbose, payload)
     response <- unlist(response, recursive=FALSE)$results
   }
 
   do.call(rbind.data.frame, full)
 }
 
-.arnold_standardize <- function(keywords, from_date, to_date) {
+.arnold_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, arnold_get,
-                   format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                   format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

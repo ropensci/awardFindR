@@ -37,10 +37,11 @@
 #' @param keyword Keyword to query, single string
 #' @param from_year Year to begin search, integer
 #' @param to_year Year to end search, integer
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples ssrc <- ssrc_get("qualitative", 2015, 2016)
-ssrc_get <- function(keyword, from_year, to_year) {
+ssrc_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://www.ssrc.org/search/?"
   query <- "t=fellows&sort=relevance"
   query <- paste0(query, "&q=", xml2::url_escape(keyword))
@@ -50,7 +51,7 @@ ssrc_get <- function(keyword, from_year, to_year) {
   else query <- paste0(query, "&year[]=", from_year)
 
   url <- paste0(base_url, query)
-  page <- request(url, "get")
+  page <- request(url, "get", verbose)
 
   entries <- xml2::xml_find_all(page, "//li[@class='hit l-fellows-hit']")
   if (length(entries)==0) {
@@ -63,7 +64,7 @@ ssrc_get <- function(keyword, from_year, to_year) {
     n <- 2
     repeat {
       url <- paste0(base_url, query, "&p=", n)
-      page <- request(url, "get")
+      page <- request(url, "get", verbose)
       entries <- xml2::xml_find_all(page, "//li[@class='hit l-fellows-hit']")
       if (length(entries)==0) break
 
@@ -79,9 +80,10 @@ ssrc_get <- function(keyword, from_year, to_year) {
   df
 }
 
-.ssrc_standardize <- function(keywords, from_date, to_date) {
+.ssrc_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, ssrc_get,
-                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

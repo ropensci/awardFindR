@@ -4,7 +4,10 @@
 \alias{templeton_df}
 \title{Scrape the Templeton grants database from html to a data.frame}
 \usage{
-templeton_df()
+templeton_df(verbose = FALSE)
+}
+\arguments{
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 A data.frame

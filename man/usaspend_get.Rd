@@ -4,7 +4,7 @@
 \alias{usaspend_get}
 \title{Search the USAspending database}
 \usage{
-usaspend_get(keywords, from_date, to_date)
+usaspend_get(keywords, from_date, to_date, verbose)
 }
 \arguments{
 \item{keywords}{Vector of keywords to search}
@@ -12,6 +12,8 @@ usaspend_get(keywords, from_date, to_date)
 \item{from_date}{Beginning date object to search}
 
 \item{to_date}{Ending date object to search}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 a data.frame

@@ -7,6 +7,7 @@
 #' @param sources A vector of sources to pull from. Default: all
 #' @param from_date A date object to limit the search, defaults to Jan 1 2019
 #' @param to_date A date object to limit the search, defaults to today
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #'
@@ -31,7 +32,8 @@ awardFindR <- function(keywords,
                                 "osociety", "rockefeller", "rsf",
                                 "rwjf", "sloan", "ssrc", "templeton",
                                 "usaspend"),
-                      from_date="2019-01-01", to_date=Sys.Date()) {
+                      from_date="2019-01-01", to_date=Sys.Date(),
+                      verbose=FALSE) {
 
   # options(stringAsFactors=FALSE)
 
@@ -65,7 +67,7 @@ awardFindR <- function(keywords,
     stopifnot(exists(paste0(".", source, "_standardize")))
     results <- eval(parse(text=paste0( # eval the term and run it
       'rbind.data.frame(results, .',
-      source, '_standardize(keywords, from_date, to_date))')))
+      source, '_standardize(keywords, from_date, to_date, verbose))')))
   }
 
   # No results?

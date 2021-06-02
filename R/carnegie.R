@@ -2,22 +2,25 @@
 #' @param keyword Keyword to query, single string
 #' @param from_year Year to begin search, integer
 #' @param to_year Year to end search, integer
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples
 #' \dontrun{
 #' carnegie <- carnegie_get("qualitative data", 2016, 2017)
 #' }
-carnegie_get <- function(keyword, from_year, to_year) {
+carnegie_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://www.carnegie.org/grants/grants-database/"
   query <- paste0("?q=", xml2::url_escape(keyword), "&per_page=104")
   url <- paste0(base_url, query)
   for (n in from_year:to_year) url <- paste0(url, "&y=", n)
 
-  message(paste("GET", url, "... "), appendLF=FALSE)
+  if (verbose==TRUE) message(paste("GET", url, "... "), appendLF=FALSE)
   response <- httr::GET(url)
-  httr::message_for_status(response)
-  message()
+  if (verbose==TRUE) {
+    httr::message_for_status(response)
+    message()
+  }
 
   cookie <- httr::cookies(response)$value # Need this cookie for CSRF validation
   response <- httr::content(response)
@@ -35,15 +38,17 @@ carnegie_get <- function(keyword, from_year, to_year) {
     # Extra details require another HTTP request (per individual award, ugh)
     # Also, Carnegie now uses CSRF tokens, so we have to include those headers
     url <- paste0(base_url, "grant/", id, "/")
-    message(paste("GET", url, "... "), appendLF=FALSE)
+    if(verbose==TRUE) message(paste("GET", url, "... "), appendLF=FALSE)
     response <- httr::GET(url, config=httr::add_headers(
                       Referer=paste0(base_url,
                                      "/grantee/knowledgeworks-foundation/"),
                       `X-CSRFToken`=cookie,
                       `X-Requested-With`="XMLHttpRequest"),
                     httr::set_cookies(csfrtoken=cookie), httr::accept_json())
-    httr::message_for_status(response)
-    message()
+    if (verbose==TRUE) {
+      httr::message_for_status(response)
+      message()
+    }
 
     details <- httr::content(response)
     details <- xml2::read_html(details$result[1])
@@ -69,9 +74,10 @@ carnegie_get <- function(keyword, from_year, to_year) {
   do.call(rbind.data.frame, awards)
 }
 
-.carnegie_standardize <- function(keywords, from_date, to_date) {
+.carnegie_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, carnegie_get,
-                     format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                     format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

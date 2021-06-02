@@ -2,10 +2,11 @@
 #' @param keyword Keyword, single string
 #' @param from_year Year to begin search, integer
 #' @param to_year Year to end search, integer
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
 #' @examples osociety <- osociety_get("qualitative", 2016, 2019)
-osociety_get <- function(keyword, from_year, to_year) {
+osociety_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://www.opensocietyfoundations.org/grants/past?"
   query <- paste0("xhr=1&",
                   "filter_keyword=", keyword,
@@ -13,7 +14,7 @@ osociety_get <- function(keyword, from_year, to_year) {
                   paste(from_year:to_year, collapse="%2C")) # URL escape
 
   url <- paste0(base_url, query)
-  response <- request(url, "get")
+  response <- request(url, "get", verbose)
 
   results <- xml2::xml_find_all(response, "//div[@data-grants-database-single]")
   if (length(results)==0) {
@@ -57,9 +58,10 @@ osociety_get <- function(keyword, from_year, to_year) {
   do.call(rbind.data.frame, results)
 }
 
-.osociety_standardize <- function(keywords, from_date, to_date) {
+.osociety_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, osociety_get,
-                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

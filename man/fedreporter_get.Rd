@@ -4,7 +4,13 @@
 \alias{fedreporter_get}
 \title{Search awards from the Federal Reporter}
 \usage{
-fedreporter_get(keyword, from_year, to_year, agency = "usda,dod,nasa,epa,ed")
+fedreporter_get(
+  keyword,
+  from_year,
+  to_year,
+  verbose = FALSE,
+  agency = "usda,dod,nasa,epa,ed"
+)
 }
 \arguments{
 \item{keyword}{Keyword, single string}
@@ -12,6 +18,8 @@ fedreporter_get(keyword, from_year, to_year, agency = "usda,dod,nasa,epa,ed")
 \item{from_year}{Beginning fiscal year to search, integer}
 
 \item{to_year}{Ending fiscal year to search, integer}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 
 \item{agency}{Agencies, comma separated. Defaults to "usda,dod,nasa,epa".}
 }

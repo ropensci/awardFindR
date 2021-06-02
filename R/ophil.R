@@ -2,15 +2,16 @@
 #' @param keyword Keyword to search for in description, single string
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return A data.frame
 #' @export
 #' @examples ophil <- ophil_get("qualitative", 2019, 2020)
-ophil_get <- function(keyword, from_year, to_year) {
+ophil_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://www.openphilanthropy.org/giving/grants?"
   query_url <- paste0(base_url,
                       "keys=\"", xml2::url_escape(keyword), "\"")
 
-  response <- request(query_url, "get")
+  response <- request(query_url, "get", verbose)
 
   # Everything important is a child of this table's tbody
   results <- xml2::xml_children(
@@ -56,9 +57,10 @@ ophil_get <- function(keyword, from_year, to_year) {
   df
 }
 
-.ophil_standardize <- function(keywords, from_date, to_date) {
+.ophil_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, ophil_get,
-                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"))
+                format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
+                verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     return(NULL)

@@ -4,7 +4,7 @@
 \alias{templeton_get}
 \title{Search for a set of keywords in the Templeton grants database.}
 \usage{
-templeton_get(keywords, from_year, to_year)
+templeton_get(keywords, from_year, to_year, verbose = FALSE)
 }
 \arguments{
 \item{keywords}{vector of keywords to query}
@@ -12,6 +12,8 @@ templeton_get(keywords, from_year, to_year)
 \item{from_year}{Beginning year to search}
 
 \item{to_year}{Ending year to search}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 A data.frame

@@ -4,7 +4,7 @@
 \alias{sloan_get}
 \title{Search for a set of keywords in the Sloan grants database.}
 \usage{
-sloan_get(keyword, from_year, to_year)
+sloan_get(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
 \item{keyword}{vector of keywords to query}
@@ -12,6 +12,8 @@ sloan_get(keyword, from_year, to_year)
 \item{from_year}{Beginning year to search}
 
 \item{to_year}{Ending year to search}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 A data.frame

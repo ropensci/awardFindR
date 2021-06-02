@@ -4,7 +4,7 @@
 \alias{gates_get}
 \title{Query awards from the Bill & Melinda Gates Foundation}
 \usage{
-gates_get(keyword, from_year, to_year)
+gates_get(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
 \item{keyword}{Single keyword to query}
@@ -12,6 +12,8 @@ gates_get(keyword, from_year, to_year)
 \item{from_year}{Year integer to begin search}
 
 \item{to_year}{Year integer to end search}
+
+\item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
 \value{
 a data.frame
