@@ -20,7 +20,8 @@ test_that("merging multiple sources and multiple keywords with spaces", {
   writeLines(keywords, csv)
 
   suppressMessages(vcr::use_cassette("full", {
-    results <- awardFindR(csv, from_date = "2018-01-01", to_date="2018-02-01")
+    results <- awardFindR(csv, from_date = "2018-01-01", to_date="2018-02-01",
+                          verbose=TRUE)
   }))
   expect_gt(nrow(results), 1)
   # If the date columns are numeric or whatever, they've been corrupted
