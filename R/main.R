@@ -33,7 +33,7 @@ awardFindR <- function(keywords,
                                 "usaspend"),
                       from_date="2019-01-01", to_date=Sys.Date()) {
 
-  options(stringAsFactors=FALSE)
+  # options(stringAsFactors=FALSE)
 
   # Check args for sanity
   stopifnot(is.character(keywords))
