@@ -8,7 +8,7 @@ NULL
 #' @examples
 #'
 #' \dontrun{
-#' sloan <- sloan_get(c("qualitative data", "case studies"), 2018, 2020)
+#' sloan <- sloan_get("case studies", 2018, 2020)
 #' }
 sloan_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   url <- paste0("https://sloan.org/grants-database",

@@ -3,7 +3,7 @@
 #' @return a data.frame
 #' @export
 #' @examples
-#' arnold <- arnold_get("qualitative data", 2016, 2017)
+#' arnold <- arnold_get("qualitative", 2016, 2017)
 arnold_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   url <- paste0("https://pyj9b8sltv-dsn.algolia.net",
   "/1/indexes/*/queries?",

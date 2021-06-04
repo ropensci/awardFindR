@@ -30,6 +30,7 @@ nsf_get <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
   }
 
   df <- Reduce(function(x, y) merge(x, y, all=TRUE), api)
+  df <- as.data.frame(df)
 
   # Max results 25 per request. Do we need to loop the query?
   while (length(api)==25) {

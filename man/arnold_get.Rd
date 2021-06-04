@@ -22,5 +22,5 @@ a data.frame
 Get Arnold Foundations/Arnold Venture awards
 }
 \examples{
-arnold <- arnold_get("qualitative data", 2016, 2017)
+arnold <- arnold_get("qualitative", 2016, 2017)
 }

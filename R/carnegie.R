@@ -60,9 +60,14 @@ carnegie_get <- function(keyword, from_year, to_year, verbose=FALSE) {
 
       stringsAsFactors = FALSE)
 
+    # Pull the data we're looking for
     title <- details$value[details$name=="Project Title"]
     date <- details$value[details$name=="Date"]
+
     description <- details$value[details$name=="Description"]
+    if (length(description)==0) description <- NA
+
+    # Merge the data from the search page and the specific result page
     data.frame(grantee=info[2], date, amount, program=info[4], id, title,
                year=info[1], abstract=description,
                keyword, stringsAsFactors = FALSE)
