@@ -35,7 +35,6 @@ neh_get <- function(keywords, from_year, to_year, verbose=FALSE) {
 
     # Empty results?
     if (nrow(hits)==0) {
-      message(paste("No NEH results for:", keyword))
       return(NULL)
     }
 
@@ -60,6 +59,7 @@ neh_get <- function(keywords, from_year, to_year, verbose=FALSE) {
                  format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                  verbose)
   if (is.null(raw)) {
+    message("No results from NEH")
     return(NULL)
   }
 

@@ -67,11 +67,9 @@ templeton_get <- function(keywords, from_year, to_year, verbose=FALSE) {
   raw <- templeton_get(keywords,
                        format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                        verbose)
-  if (is.null(raw)) {
-    return(NULL)
-  }
 
-  if (nrow(raw)==0) {
+  if (is.null(raw) || nrow(raw)==0) {
+    message("No results from Templeton")
     return(NULL)
   }
 

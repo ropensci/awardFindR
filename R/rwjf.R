@@ -61,6 +61,7 @@ rwjf_get <- function(keyword, from_year, to_year, verbose=FALSE) {
                 verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
+    message("No results from RWJF")
     return(NULL)
   }
 

@@ -71,6 +71,7 @@ rsf_get <- function(keyword, verbose=FALSE) {
   raw <- lapply(keywords, rsf_get, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
+    message("No results from RSF")
     return(NULL)
   }
 
@@ -79,8 +80,9 @@ rsf_get <- function(keyword, verbose=FALSE) {
   raw <- subset(raw, year > format.Date(from_date, "%Y") &
                   year < format.Date(to_date, "%Y"))
 
-  if (nrow(raw)==0) {
-    return(NULL) # Empty now after date subsetting?
+  if (nrow(raw)==0) { # Empty now after date subsetting?
+    message("No results from RSF")
+    return(NULL)
   }
 
   with(raw, data.frame(

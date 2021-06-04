@@ -70,6 +70,7 @@ usaspend_get <- function(keywords, from_date, to_date, verbose) {
 .usaspend_standardize <- function(keywords, from_date, to_date, verbose) {
   raw <- usaspend_get(keywords, from_date, to_date, verbose)
   if (is.null(raw)) {
+    message("No results from USAspending")
     return(NULL)
   }
 

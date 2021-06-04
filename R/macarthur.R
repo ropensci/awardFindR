@@ -78,6 +78,7 @@ macarthur_get <- function(keyword, from_date, to_date, verbose=FALSE) {
   raw <- lapply(keywords, macarthur_get, from_date, to_date, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
+    message("No results from MacArthur")
     return(NULL)
   }
 
