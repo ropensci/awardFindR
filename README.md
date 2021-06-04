@@ -10,7 +10,16 @@
 
 Packages that have provided similar functionality include [awardsBot](https://github.com/NCEAS/awards-bot).
 
-Sources supported currently include:
+## Installation
+Install `awardFindR` directly from this repository using the `remotes` package
+```
+if (!require("remotes")) {
+  install.packages("remotes")
+}
+remotes::install_github("PESData/awardFindR")
+```
+
+## Supported sources
 
 - [Arnold Ventures](https://www.arnoldventures.org/grants-search) (`arnold`)
 - [Carnegie Corporation of New York](https://www.carnegie.org/grants/grants-database/) (`carnegie`)
@@ -33,7 +42,7 @@ Sources supported currently include:
 
 ## How the package works
 
-`awardFindR` has parameters to change keywords, sources and dates as search criteria, which are passed on to source routines. Dates are interpreted with varying degrees of precision based on the data available from each source. See included help on individual sources to understand their respective limitations.
+`award_search` has parameters to change keywords, sources and dates as search criteria, which are passed on to source routines. Dates are interpreted with varying degrees of precision based on the data available from each source. See included help on individual sources to understand their respective limitations.
 
 Individual sources have functions of their own. `nsf_get` specifically fetches results from NSF, and `nih_get` fetches results from NIH, for example. These are meant to provide end users with higher levels of detail if they're interested in a specific source.
 
@@ -42,7 +51,7 @@ Individual sources have functions of their own. `nsf_get` specifically fetches r
 Search for all awards matching a keyword since the default cutoff of Jan 1, 2019 to today
 
 ```
-awardFindR(keywords="ethnography")
+awardFindR::award_search(keywords="ethnography")
 ```
 
 See the included vignette for additional examples.
@@ -50,19 +59,11 @@ See the included vignette for additional examples.
 For those interested in the results from a specific source, each source has its own function. For example, someone interested in NSF results for "ethnography" between 2018 and 2020 could run the following:
 
 ```
-nsf_get("ethnography", "2018-01-01", "2020-01-01")
+awardFindR::nsf_get("ethnography", "2018-01-01", "2020-01-01")
 ```
 
 Similar functions exist for each supported source. See included help for further details, as the arguments differ slightly between each.
 
-## Installation
-Install `awardFindR` directly from this repository using the `remotes` package
-```
-if (!require("remotes")) {
-  install.packages("remotes")
-}
-remotes::install_github("PESData/awardFindR")
-```
 ### Dependencies
 
 This package depends on `rvest`, `xml2` and `httr`.

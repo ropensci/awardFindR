@@ -13,19 +13,19 @@
 #'
 #' @examples
 #' # Results for "ethnography" from NSF between 1/1 and 2/1 2020
-#' \dontrun{awards <- awardFindR("ethnography", "nsf",
+#' \dontrun{awards <- award_search("ethnography", "nsf",
 #' "2020-01-01", "2020-02-01")}
 #'
 #' # More intensive queries
 #' \dontrun{
 #' # Specific keywords, all sources:
-#' specific <- awardFindR(keywords=c("ethnography", "case studies"))
+#' specific <- award_search(keywords=c("ethnography", "case studies"))
 #'
 #' # Specific keyword, all sources, specific date range:
-#' five_years <- awardFindR(keywords="qualitative",
+#' five_years <- award_search(keywords="qualitative",
 #' from_date="2015-01-01", to_date="2020-01-01")
 #' }
-awardFindR <- function(keywords,
+award_search <- function(keywords,
                       sources=c("arnold", "carnegie", "fedreporter",
                                 "gates", "macarthur", "mellon",
                                 "neh", "nih", "nsf", "ophil",
