@@ -28,10 +28,7 @@ templeton_df <- function(verbose=FALSE) {
 }
 
 #' Search for a set of keywords in the Templeton grants database.
-#' @param keywords vector of keywords to query
-#' @param from_year Beginning year to search
-#' @param to_year Ending year to search
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @inheritParams neh_get
 #' @return A data.frame
 #' @export
 #' @examples

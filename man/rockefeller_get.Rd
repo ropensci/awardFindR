@@ -7,7 +7,7 @@
 rockefeller_get(keyword, from_date, to_date, verbose)
 }
 \arguments{
-\item{keyword}{Single keyword to query}
+\item{keyword}{Keyword to query}
 
 \item{from_date}{Date object to begin search}
 

@@ -1,9 +1,5 @@
 #' Search MacArthur foundation for awards
-#'
-#' @param keyword Keyword to query, single string
-#' @param from_date Date object to begin search
-#' @param to_date Date object to end search
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @inheritParams nih_get
 #' @return a data.frame
 #' @export
 #' @examples

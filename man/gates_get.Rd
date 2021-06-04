@@ -7,11 +7,11 @@
 gates_get(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
-\item{keyword}{Single keyword to query}
+\item{keyword}{Keyword to query}
 
-\item{from_year}{Year integer to begin search}
+\item{from_year}{Beginning year to search}
 
-\item{to_year}{Year integer to end search}
+\item{to_year}{Ending year to search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }

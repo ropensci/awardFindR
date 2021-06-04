@@ -1,8 +1,6 @@
 #' Search the USAspending database
-#' @param keywords Vector of keywords to search
-#' @param from_date Beginning date object to search
-#' @param to_date Ending date object to search
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @param keywords Vector of strings to search
+#' @inheritParams nih_get
 #' @return a data.frame
 #' @export
 #' @examples

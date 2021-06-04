@@ -1,8 +1,5 @@
 #' Query awards from the Bill & Melinda Gates Foundation
-#' @param keyword Single keyword to query
-#' @param from_year Year integer to begin search
-#' @param to_year Year integer to end search
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @inheritParams fedreporter_get
 #' @return a data.frame
 #' @export
 #' @examples

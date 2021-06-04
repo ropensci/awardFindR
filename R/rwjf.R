@@ -1,8 +1,5 @@
 #' Get Robert Wood Johnson foundation awards
-#' @param keyword Keyword to query, single string
-#' @param from_year Year to begin search, integer
-#' @param to_year Year to end search, integer
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @inheritParams fedreporter_get
 #' @return a data.frame
 #' @export
 #' @examples

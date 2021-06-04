@@ -1,8 +1,5 @@
 #' Search Rockefeller Foundation grants
-#' @param keyword Single keyword to query
-#' @param from_date Date object to begin search
-#' @param to_date Date object to end search
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @inheritParams nih_get
 #' @return a data.frame
 #' @export
 #' @examples

@@ -1,8 +1,5 @@
 #' Search the Andrew W. Mellon Foundation grant database
-#' @param keyword Keyword to query
-#' @param from_year Year to begin search
-#' @param to_year Year to end search
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @inheritParams fedreporter_get
 #' @return a data.frame
 #' @export
 #' @examples

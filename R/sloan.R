@@ -2,10 +2,7 @@
 NULL
 
 #' Search for a set of keywords in the Sloan grants database.
-#' @param keyword vector of keywords to query
-#' @param from_year Beginning year to search
-#' @param to_year Ending year to search
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @inheritParams fedreporter_get
 #' @return A data.frame
 #' @export
 #' @examples

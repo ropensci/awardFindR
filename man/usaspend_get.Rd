@@ -7,11 +7,11 @@
 usaspend_get(keywords, from_date, to_date, verbose)
 }
 \arguments{
-\item{keywords}{Vector of keywords to search}
+\item{keywords}{Vector of strings to search}
 
-\item{from_date}{Beginning date object to search}
+\item{from_date}{Date object to begin search}
 
-\item{to_date}{Ending date object to search}
+\item{to_date}{Date object to end search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }

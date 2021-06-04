@@ -1,11 +1,9 @@
 #' Search awards from the Federal Reporter
-#' @param keyword Keyword, single string
-#' @param from_year Beginning fiscal year to search, integer
-#' @param to_year Ending fiscal year to search, integer
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @param agency Agencies, comma separated. Defaults to "usda,dod,nasa,epa".
-#' @export
+#' @param keyword Keyword to query
+#' @inheritParams neh_get
 #' @return A data.frame
+#' @export
 #' @examples
 #' \dontrun{
 #' federal <- fedreporter_get(keyword="ethnography",

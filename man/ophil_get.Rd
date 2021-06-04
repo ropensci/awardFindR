@@ -7,7 +7,7 @@
 ophil_get(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
-\item{keyword}{Keyword to search for in description, single string}
+\item{keyword}{Keyword to query}
 
 \item{from_year}{Beginning year to search}
 

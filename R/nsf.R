@@ -1,10 +1,7 @@
 #' Search the NSF API for awards
-#' @param keyword Keyword to query, single string
-#' @param from_date Beginning date object
-#' @param to_date End date object
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @param cfda Comma-separated CFDA codes to include, default: all
-#' @return A data.frame of raw NSF API output
+#' @inheritParams nih_get
+#' @return A data.frame
 #' @export
 #' @examples nsf <- nsf_get("ethnography", "2020-01-01", "2020-02-01")
 nsf_get <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {

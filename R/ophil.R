@@ -1,8 +1,5 @@
 #' Grab the Open Philanthropy grants data search for keyword-date combos
-#' @param keyword Keyword to search for in description, single string
-#' @param from_year Beginning year to search
-#' @param to_year Ending year to search
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @inheritParams fedreporter_get
 #' @return A data.frame
 #' @export
 #' @examples ophil <- ophil_get("qualitative", 2019, 2020)

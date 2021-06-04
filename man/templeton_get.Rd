@@ -7,7 +7,7 @@
 templeton_get(keywords, from_year, to_year, verbose = FALSE)
 }
 \arguments{
-\item{keywords}{vector of keywords to query}
+\item{keywords}{Vector of strings to search for in the project description}
 
 \item{from_year}{Beginning year to search}
 

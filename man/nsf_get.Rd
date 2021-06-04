@@ -7,18 +7,18 @@
 nsf_get(keyword, from_date, to_date, verbose = FALSE, cfda = NULL)
 }
 \arguments{
-\item{keyword}{Keyword to query, single string}
+\item{keyword}{Keyword to query}
 
-\item{from_date}{Beginning date object}
+\item{from_date}{Date object to begin search}
 
-\item{to_date}{End date object}
+\item{to_date}{Date object to end search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 
 \item{cfda}{Comma-separated CFDA codes to include, default: all}
 }
 \value{
-A data.frame of raw NSF API output
+A data.frame
 }
 \description{
 Search the NSF API for awards

@@ -7,7 +7,7 @@
 sloan_get(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
-\item{keyword}{vector of keywords to query}
+\item{keyword}{Keyword to query}
 
 \item{from_year}{Beginning year to search}
 

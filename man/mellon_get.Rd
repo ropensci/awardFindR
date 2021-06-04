@@ -9,9 +9,9 @@ mellon_get(keyword, from_year, to_year, verbose = FALSE)
 \arguments{
 \item{keyword}{Keyword to query}
 
-\item{from_year}{Year to begin search}
+\item{from_year}{Beginning year to search}
 
-\item{to_year}{Year to end search}
+\item{to_year}{Ending year to search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }

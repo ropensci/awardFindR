@@ -7,7 +7,7 @@
 macarthur_get(keyword, from_date, to_date, verbose = FALSE)
 }
 \arguments{
-\item{keyword}{Keyword to query, single string}
+\item{keyword}{Keyword to query}
 
 \item{from_date}{Date object to begin search}
 

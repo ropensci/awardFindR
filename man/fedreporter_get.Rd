@@ -13,11 +13,11 @@ fedreporter_get(
 )
 }
 \arguments{
-\item{keyword}{Keyword, single string}
+\item{keyword}{Keyword to query}
 
-\item{from_year}{Beginning fiscal year to search, integer}
+\item{from_year}{Beginning year to search}
 
-\item{to_year}{Ending fiscal year to search, integer}
+\item{to_year}{Ending year to search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 
