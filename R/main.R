@@ -40,6 +40,7 @@ awardFindR <- function(keywords,
   # Check args for sanity
   stopifnot(is.character(keywords))
   stopifnot(is.character(sources))
+  sources <- match.arg(sources, several.ok = TRUE)
 
   if (length(keywords)==1) # Is an argument of length 1 a path or a keyword?
     # If it's a file, read it into memory as the new keywords term
