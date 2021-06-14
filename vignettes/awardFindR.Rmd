@@ -7,45 +7,31 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
+`search_awards` is meant to be the top-level function for interacting with grant database search functions.
 
-`awardFindR` is meant to be the top-level function for interacting with grant database search functions.
-
-# Load awardFindR
-
-```r
+## Load awardFindR
+```{r}
 library(awardFindR)
 ```
 
-# Simple keyword search
-
-```r
-nsf <- awardFindR(keywords="ethnography", sources="nsf")
+## Simple keyword search, single source
+```{r, message=FALSE}
+nsf <- search_awards(keywords="ethnographies", sources="nsf")
 str(nsf)
-#> 'data.frame':	40 obs. of  11 variables:
-#>  $ institution: chr  "University Of Alabama Tuscaloosa" "Princeton University" "Louisiana State University" "Human Relations Area Files" ...
-#>  $ pi         : chr  "Pritzker, Sonya" "Biehl, Joao" "Shrum, Wesley" "Fischer, Michael" ...
-#>  $ year       : chr  "2020" "2019" "2019" "2020" ...
-#>  $ start      : chr  "2020-08-15" "2019-01-15" "2019-09-01" "2020-09-01" ...
-#>  $ end        : chr  "2025-07-31" "2019-12-31" "2022-08-31" "2022-08-31" ...
-#>  $ program    : chr  "SBE" "SBE" "SBE" "SBE" ...
-#>  $ amount     : chr  "219557" "25200" "105795" "1054999" ...
-#>  $ id         : chr  "1941798" "1850672" "1921841" "2024286" ...
-#>  $ title      : chr  "CAREER: A Longitudinal Study of Communication and Biology in Committed Relationships" "Doctoral Dissertation Research: Understanding the Brain-Machine Interface in the Engineering of Prosthetic Technologies" "How to Collect Humans: A Video Ethnographic Approach to Fieldwork in Paleontology" "HDNS-I: Infrastructure for Knowledge Linkages from Ethnography of World Societies" ...
-#>  $ keyword    : chr  "ethnography" "ethnography" "ethnography" "ethnography" ...
-#>  $ source     : chr  "NSF" "NSF" "NSF" "NSF" ...
 ```
 
-# Multiple sources and keywords
-
-```r
-nsf_and_nih <- awardFindR(keywords=c("ethnographies", "ethnography"), sources=c("nsf", "nih"))
+## Multiple sources and keywords, specific date range
+```{r, message=FALSE}
+nsf_and_nih <- search_awards(keywords=c("ethnography", "qualitative data"), sources=c("nsf", "nih"), from_date="2018-01-01", to_date="2018-05-01")
 table(nsf_and_nih$source)
-#> 
-#> NIH NSF 
-#> 106  42
 unique(nsf_and_nih$keyword)
-#> [1] "ethnography"                "ethnographies; ethnography" "ethnographies"
 ```
 
 For more than a few keywords, you can specify an external simple csv file. If you specify a .csv file path for `keywords`, the file should be a list of keywords, one string per line. For example:
