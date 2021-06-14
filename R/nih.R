@@ -5,8 +5,8 @@
 #' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
-#' @examples nih <- nih_get("ethnography", "2019-01-01", "2019-05-01")
-nih_get <- function(keyword, from_date, to_date, verbose=FALSE) {
+#' @examples nih <- get_nih("ethnography", "2019-01-01", "2019-05-01")
+get_nih <- function(keyword, from_date, to_date, verbose=FALSE) {
   url <- "https://api.reporter.nih.gov/v1/projects/Search"
 
   # httr encodes all this into json for a POST request
@@ -67,8 +67,8 @@ nih_get <- function(keyword, from_date, to_date, verbose=FALSE) {
   df
 }
 
-.nih_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, nih_get, from_date, to_date, verbose)
+.standardize_nih <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_nih, from_date, to_date, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     message("No results from NIH")

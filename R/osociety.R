@@ -1,9 +1,9 @@
 #' Query and scrape Open Society foundation awards
-#' @inheritParams fedreporter_get
+#' @inheritParams get_fedreporter
 #' @return a data.frame
 #' @export
-#' @examples osociety <- osociety_get("qualitative", 2016, 2019)
-osociety_get <- function(keyword, from_year, to_year, verbose=FALSE) {
+#' @examples osociety <- get_osociety("qualitative", 2016, 2019)
+get_osociety <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://www.opensocietyfoundations.org/grants/past?"
   query <- paste0("xhr=1&",
                   "filter_keyword=", keyword,
@@ -55,8 +55,8 @@ osociety_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   do.call(rbind.data.frame, results)
 }
 
-.osociety_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, osociety_get,
+.standardize_osociety <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_osociety,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                 verbose)
   raw <- do.call(rbind.data.frame, raw)

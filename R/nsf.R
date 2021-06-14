@@ -1,10 +1,10 @@
 #' Search the NSF API for awards
 #' @param cfda Comma-separated CFDA codes to include, default: all
-#' @inheritParams nih_get
+#' @inheritParams get_nih
 #' @return A data.frame
 #' @export
-#' @examples nsf <- nsf_get("ethnography", "2020-01-01", "2020-02-01")
-nsf_get <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
+#' @examples nsf <- get_nsf("ethnography", "2020-01-01", "2020-02-01")
+get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
   base_url <- 'https://api.nsf.gov/services/v1/awards.json?'
   output_data <- paste0("id,date,startDate,expDate,title,awardeeName,",
                         "piFirstName,piLastName,piEmail,cfdaNumber,",
@@ -51,8 +51,8 @@ nsf_get <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
   df
 }
 
-.nsf_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, nsf_get, from_date, to_date, verbose)
+.standardize_nsf <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_nsf, from_date, to_date, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     message("No results from NSF")

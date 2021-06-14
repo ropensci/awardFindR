@@ -3,8 +3,8 @@
 #' @return A data.frame
 #' @export
 #' @examples
-#' \dontrun{templeton <- templeton_df()}
-templeton_df <- function(verbose=FALSE) {
+#' \dontrun{templeton <- create_templeton_df()}
+create_templeton_df <- function(verbose=FALSE) {
   url <- "https://www.templeton.org/grants/grant-database"
   html <- request(url, "get", verbose)
   table <- xml2::xml_find_first(html, "//table[@id='grants-table']/tbody")
@@ -28,14 +28,14 @@ templeton_df <- function(verbose=FALSE) {
 }
 
 #' Search for a set of keywords in the Templeton grants database.
-#' @inheritParams neh_get
+#' @inheritParams get_neh
 #' @return A data.frame
 #' @export
 #' @examples
 #' \dontrun{
-#' templeton <- templeton_get(c("qualitative data", "case studies"), 2018, 2020)
+#' templeton <- get_templeton(c("qualitative data", "case studies"), 2018, 2020)
 #' }
-templeton_get <- function(keywords, from_year, to_year, verbose=FALSE) {
+get_templeton <- function(keywords, from_year, to_year, verbose=FALSE) {
   url <- "https://www.templeton.org/?limit=500&s="
   links <- lapply(keywords, function(keyword) {
     response <- request(paste0(url, xml2::url_escape(keyword)), "get", verbose)
@@ -53,7 +53,7 @@ templeton_get <- function(keywords, from_year, to_year, verbose=FALSE) {
     return(NULL)
   }
 
-  all <- templeton_df(verbose)
+  all <- create_templeton_df(verbose)
   vars <- c("year", "id", "title", "pi", "grantee",
             "amount", "area", "region", "link")
   names(all) <- vars
@@ -63,8 +63,8 @@ templeton_get <- function(keywords, from_year, to_year, verbose=FALSE) {
   subset(selected, from_year <= year & to_year >= year)
 }
 
-.templeton_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- templeton_get(keywords,
+.standardize_templeton <- function(keywords, from_date, to_date, verbose) {
+  raw <- get_templeton(keywords,
                        format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                        verbose)
 

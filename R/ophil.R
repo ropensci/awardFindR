@@ -1,9 +1,9 @@
 #' Grab the Open Philanthropy grants data search for keyword-date combos
-#' @inheritParams fedreporter_get
+#' @inheritParams get_fedreporter
 #' @return A data.frame
 #' @export
-#' @examples ophil <- ophil_get("qualitative", 2019, 2020)
-ophil_get <- function(keyword, from_year, to_year, verbose=FALSE) {
+#' @examples ophil <- get_ophil("qualitative", 2019, 2020)
+get_ophil <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://www.openphilanthropy.org/giving/grants?"
   query_url <- paste0(base_url,
                       "keys=\"", xml2::url_escape(keyword), "\"")
@@ -54,8 +54,8 @@ ophil_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   df
 }
 
-.ophil_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, ophil_get,
+.standardize_ophil <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_ophil,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                 verbose)
   raw <- do.call(rbind.data.frame, raw)

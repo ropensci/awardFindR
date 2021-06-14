@@ -1,15 +1,15 @@
 #' Search awards from the Federal Reporter
 #' @param agency Agencies, comma separated. Defaults to "usda,dod,nasa,epa".
 #' @param keyword Keyword to query
-#' @inheritParams neh_get
+#' @inheritParams get_neh
 #' @return A data.frame
 #' @export
 #' @examples
 #' \dontrun{
-#' federal <- fedreporter_get(keyword="ethnography",
+#' federal <- get_fedreporter(keyword="ethnography",
 #' from_year=2020, to_year=2021, agency="nih")
 #' }
-fedreporter_get <- function (keyword, from_year, to_year, verbose=FALSE,
+get_fedreporter <- function (keyword, from_year, to_year, verbose=FALSE,
                              agency="usda,dod,nasa,epa,ed") {
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'
 
@@ -58,8 +58,8 @@ fedreporter_get <- function (keyword, from_year, to_year, verbose=FALSE,
   df
 }
 
-.fedreporter_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, fedreporter_get,
+.standardize_fedreporter <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_fedreporter,
                     format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                 verbose)
   raw <- do.call(rbind.data.frame, raw)

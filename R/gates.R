@@ -1,10 +1,10 @@
 #' Query awards from the Bill & Melinda Gates Foundation
-#' @inheritParams fedreporter_get
+#' @inheritParams get_fedreporter
 #' @return a data.frame
 #' @export
 #' @examples
-#' gates <- gates_get("qualitative", 2018, 2020)
-gates_get <- function(keyword, from_year, to_year, verbose=FALSE) {
+#' gates <- get_gates("qualitative", 2018, 2020)
+get_gates <- function(keyword, from_year, to_year, verbose=FALSE) {
  url <- "https://www.gatesfoundation.org/api/grantssearch"
 
  params <- paste0("?date&displayedTaxonomy&",
@@ -51,8 +51,8 @@ gates_get <- function(keyword, from_year, to_year, verbose=FALSE) {
  df
 }
 
-.gates_standardize <- function(keywords, from_date, to_date, verbose) {
-   raw <- lapply(keywords, gates_get,
+.standardize_gates <- function(keywords, from_date, to_date, verbose) {
+   raw <- lapply(keywords, get_gates,
                  format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                  verbose)
    raw <- do.call(rbind.data.frame, raw)

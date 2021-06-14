@@ -1,11 +1,11 @@
 #' Search MacArthur foundation for awards
-#' @inheritParams nih_get
+#' @inheritParams get_nih
 #' @return a data.frame
 #' @export
 #' @examples
-#' macarthur <- macarthur_get("qualitative",
+#' macarthur <- get_macarthur("qualitative",
 #' "1999-01-01", "2020-01-01")
-macarthur_get <- function(keyword, from_date, to_date, verbose=FALSE) {
+get_macarthur <- function(keyword, from_date, to_date, verbose=FALSE) {
   url <- "https://searchg2.crownpeak.net/live-macfound-rt/select?"
   parameters <- paste0("q=", xml2::url_escape(keyword),
                        "&wt=xml&start=0&rows=100")
@@ -74,8 +74,8 @@ macarthur_get <- function(keyword, from_date, to_date, verbose=FALSE) {
   df
 }
 
-.macarthur_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, macarthur_get, from_date, to_date, verbose)
+.standardize_macarthur <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_macarthur, from_date, to_date, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     message("No results from MacArthur")

@@ -6,8 +6,8 @@
 #' @return A raw data.frame with the relevant results from NEH
 #' @export
 #' @examples
-#' neh <- neh_get(c("focus groups", "ethnography"), 2018, 2020)
-neh_get <- function(keywords, from_year, to_year, verbose=FALSE) {
+#' neh <- get_neh(c("focus groups", "ethnography"), 2018, 2020)
+get_neh <- function(keywords, from_year, to_year, verbose=FALSE) {
   # This file is updated monthly, should hopefully be valid for the next decade?
   # See https://securegrants.neh.gov/open/data/
   url <- "https://securegrants.neh.gov/Open/data/NEH_Grants2020s.csv"
@@ -54,8 +54,8 @@ neh_get <- function(keywords, from_year, to_year, verbose=FALSE) {
   results
 }
 
-.neh_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- neh_get(keywords,
+.standardize_neh <- function(keywords, from_date, to_date, verbose) {
+  raw <- get_neh(keywords,
                  format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                  verbose)
   if (is.null(raw)) {

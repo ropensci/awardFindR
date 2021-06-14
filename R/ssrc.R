@@ -1,4 +1,4 @@
-.ssrc_get_details <- function(entry) {
+.get_details_ssrc <- function(entry) {
   pi_name <- xml2::xml_text(
     xml2::xml_find_first(entry, ".//h5/a/text()"))
 
@@ -34,11 +34,11 @@
 }
 
 #' Search SSRC fellowships and grants by keyword and date
-#' @inheritParams fedreporter_get
+#' @inheritParams get_fedreporter
 #' @return a data.frame
 #' @export
-#' @examples ssrc <- ssrc_get("qualitative", 2015, 2016)
-ssrc_get <- function(keyword, from_year, to_year, verbose=FALSE) {
+#' @examples ssrc <- get_ssrc("qualitative", 2015, 2016)
+get_ssrc <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://www.ssrc.org/search/?"
   query <- "t=fellows&sort=relevance"
   query <- paste0(query, "&q=", xml2::url_escape(keyword))
@@ -54,7 +54,7 @@ ssrc_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   if (length(entries)==0) {
     return(NULL)   # No results?
   }
-  df <- lapply(entries, .ssrc_get_details)
+  df <- lapply(entries, .get_details_ssrc)
   df <- do.call(rbind.data.frame, df)
 
   if (length(entries)==25) { # Need to loop?
@@ -65,7 +65,7 @@ ssrc_get <- function(keyword, from_year, to_year, verbose=FALSE) {
       entries <- xml2::xml_find_all(page, "//li[@class='hit l-fellows-hit']")
       if (length(entries)==0) break
 
-      temp <- lapply(entries, .ssrc_get_details)
+      temp <- lapply(entries, .get_details_ssrc)
       temp <- do.call(rbind.data.frame, temp)
       df <- rbind.data.frame(df, temp)
       n <- n + 1
@@ -77,8 +77,8 @@ ssrc_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   df
 }
 
-.ssrc_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, ssrc_get,
+.standardize_ssrc <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_ssrc,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                 verbose)
   raw <- do.call(rbind.data.frame, raw)

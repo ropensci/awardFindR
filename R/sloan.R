@@ -2,15 +2,15 @@
 NULL
 
 #' Search for a set of keywords in the Sloan grants database.
-#' @inheritParams fedreporter_get
+#' @inheritParams get_fedreporter
 #' @return A data.frame
 #' @export
 #' @examples
 #'
 #' \dontrun{
-#' sloan <- sloan_get("case studies", 2018, 2020)
+#' sloan <- get_sloan("case studies", 2018, 2020)
 #' }
-sloan_get <- function(keyword, from_year, to_year, verbose=FALSE) {
+get_sloan <- function(keyword, from_year, to_year, verbose=FALSE) {
   url <- paste0("https://sloan.org/grants-database",
   "?dynamic=1&order_by=approved_at&order_by_direction=desc&limit=3000")
 
@@ -67,8 +67,8 @@ sloan_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   subset(df, year >= from_year, year <= to_year)
 }
 
-.sloan_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, sloan_get,
+.standardize_sloan <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_sloan,
                 as.integer(format.Date(from_date, "%Y")),
                 as.integer(format.Date(to_date, "%Y")),
                 verbose)

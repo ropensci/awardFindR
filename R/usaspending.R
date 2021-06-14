@@ -1,6 +1,6 @@
 #' Search the USAspending database
 #' @param keywords Vector of strings to search
-#' @inheritParams nih_get
+#' @inheritParams get_nih
 #' @return a data.frame
 #' @export
 #' @examples
@@ -8,7 +8,7 @@
 #' results <- usaspend_get(c("qualitative", "interview"),
 #'  "2019-01-01", "2020-01-01")
 #' }
-usaspend_get <- function(keywords, from_date, to_date, verbose) {
+get_usaspend <- function(keywords, from_date, to_date, verbose) {
   url <- "https://api.usaspending.gov/api/v2/search/spending_by_award/"
 
   payload <- list(
@@ -67,8 +67,8 @@ usaspend_get <- function(keywords, from_date, to_date, verbose) {
   awards
 }
 
-.usaspend_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- usaspend_get(keywords, from_date, to_date, verbose)
+.standardize_usaspend <- function(keywords, from_date, to_date, verbose) {
+  raw <- get_usaspend(keywords, from_date, to_date, verbose)
   if (is.null(raw)) {
     message("No results from USAspending")
     return(NULL)

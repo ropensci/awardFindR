@@ -1,12 +1,12 @@
 #' Search Carnegie awards
-#' @inheritParams fedreporter_get
+#' @inheritParams get_fedreporter
 #' @return a data.frame
 #' @export
 #' @examples
 #' \dontrun{
-#' carnegie <- carnegie_get("qualitative data", 2016, 2017)
+#' carnegie <- get_carnegie("qualitative data", 2016, 2017)
 #' }
-carnegie_get <- function(keyword, from_year, to_year, verbose=FALSE) {
+get_carnegie <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://www.carnegie.org/grants/grants-database/"
   query <- paste0("?q=", xml2::url_escape(keyword), "&per_page=104")
   url <- paste0(base_url, query)
@@ -76,8 +76,8 @@ carnegie_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   do.call(rbind.data.frame, awards)
 }
 
-.carnegie_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, carnegie_get,
+.standardize_carnegie <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_carnegie,
                      format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                 verbose)
   raw <- do.call(rbind.data.frame, raw)

@@ -1,10 +1,10 @@
 #' Search the Andrew W. Mellon Foundation grant database
-#' @inheritParams fedreporter_get
+#' @inheritParams get_fedreporter
 #' @return a data.frame
 #' @export
 #' @examples
-#' mellon <- mellon_get("qualitative", 2013, 2021)
-mellon_get <- function(keyword, from_year, to_year, verbose=FALSE) {
+#' mellon <- get_mellon("qualitative", 2013, 2021)
+get_mellon <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://mellon.org/grants/grants-database/advanced-search/?"
   query_url <- paste0(base_url,
                       "year-start=", from_year, "&year-end=", to_year,
@@ -47,8 +47,8 @@ mellon_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   df
 }
 
-.mellon_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, mellon_get,
+.standardize_mellon <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_mellon,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                 verbose)
   raw <- do.call(rbind.data.frame, raw)

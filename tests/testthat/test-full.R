@@ -1,15 +1,15 @@
 test_that("Incorrect date", {
-  expect_error(award_search("test", "nsf", "foobar"), "date invalid")
-  expect_error(award_search("test", "nsf", "2018-01-01", "foobar"),
+  expect_error(search_awards("test", "nsf", "foobar"), "date invalid")
+  expect_error(search_awards("test", "nsf", "2018-01-01", "foobar"),
                "date invalid")
-  expect_error(award_search("test", "nsf", "2018-01-01", "2016-01-01"),
+  expect_error(search_awards("test", "nsf", "2018-01-01", "2016-01-01"),
                "must be after")
 
 })
 
 test_that("Search that should return all empty", {
   suppressMessages(vcr::use_cassette("empty", {
-    foobar <- award_search("foobar", to_date="2021-01-01")
+    foobar <- search_awards("foobar", to_date="2021-01-01")
   }))
   expect_equal(data.frame(), foobar)
 })
@@ -20,7 +20,7 @@ test_that("merging multiple sources and multiple keywords with spaces", {
   writeLines(keywords, csv)
 
   suppressMessages(vcr::use_cassette("full", {
-    results <- award_search(csv, from_date = "2018-01-01", to_date="2018-02-01",
+    results <- search_awards(csv, from_date = "2018-01-01", to_date="2018-02-01",
                           verbose=TRUE)
   }))
   expect_gt(nrow(results), 1)

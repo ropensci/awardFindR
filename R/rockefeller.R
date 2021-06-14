@@ -1,12 +1,12 @@
 #' Search Rockefeller Foundation grants
-#' @inheritParams nih_get
+#' @inheritParams get_nih
 #' @return a data.frame
 #' @export
 #' @examples
 #' \dontrun{
-#' rockefeller <- rockefeller_get("test", "2012-01-01", "2021-01-01")
+#' rockefeller <- get_rockefeller("test", "2012-01-01", "2021-01-01")
 #' }
-rockefeller_get <- function(keyword, from_date, to_date, verbose) {
+get_rockefeller <- function(keyword, from_date, to_date, verbose) {
   url <- paste0("https://www.rockefellerfoundation.org/?post_type=grant&",
   "keyword=", xml2::url_escape(keyword),
   "&from_month=", format.Date(from_date, "%m"),
@@ -26,8 +26,8 @@ rockefeller_get <- function(keyword, from_date, to_date, verbose) {
   response
 }
 
-.rockefeller_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, rockefeller_get, from_date, to_date, verbose)
+.standardize_rockefeller <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_rockefeller, from_date, to_date, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     message("No results from Rockefeller")

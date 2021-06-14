@@ -13,19 +13,19 @@
 #'
 #' @examples
 #' # Results for "ethnography" from NSF between 1/1 and 2/1 2020
-#' \dontrun{awards <- award_search("ethnography", "nsf",
+#' \dontrun{awards <- search_awards("ethnography", "nsf",
 #' "2020-01-01", "2020-02-01")}
 #'
 #' # More intensive queries
 #' \dontrun{
 #' # Specific keywords, all sources:
-#' specific <- award_search(keywords=c("ethnography", "case studies"))
+#' specific <- search_awards(keywords=c("ethnography", "case studies"))
 #'
 #' # Specific keyword, all sources, specific date range:
-#' five_years <- award_search(keywords="qualitative",
+#' five_years <- search_awards(keywords="qualitative",
 #' from_date="2015-01-01", to_date="2020-01-01")
 #' }
-award_search <- function(keywords,
+search_awards <- function(keywords,
                       sources=c("arnold", "carnegie", "fedreporter",
                                 "gates", "macarthur", "mellon",
                                 "neh", "nih", "nsf", "ophil",
@@ -67,8 +67,8 @@ award_search <- function(keywords,
     # Does source routine exist?
     stopifnot(exists(paste0(".", source, "_standardize")))
     results <- eval(parse(text=paste0( # eval the term and run it
-      'rbind.data.frame(results, .',
-      source, '_standardize(keywords, from_date, to_date, verbose))')))
+      'rbind.data.frame(results, .standardize_',
+      source, '(keywords, from_date, to_date, verbose))')))
   }
 
   # No results?

@@ -1,10 +1,10 @@
 #' Get Arnold Foundations/Arnold Venture awards
-#' @inheritParams fedreporter_get
+#' @inheritParams get_fedreporter
 #' @return a data.frame
 #' @export
 #' @examples
-#' arnold <- arnold_get("qualitative", 2016, 2017)
-arnold_get <- function(keyword, from_year, to_year, verbose=FALSE) {
+#' arnold <- get_arnold("qualitative", 2016, 2017)
+get_arnold <- function(keyword, from_year, to_year, verbose=FALSE) {
   url <- paste0("https://pyj9b8sltv-dsn.algolia.net",
   "/1/indexes/*/queries?",
   "x-algolia-agent=Algolia%20for%20JavaScript%20(4.5.1)%3B%20Browser%20(lite)",
@@ -56,8 +56,8 @@ arnold_get <- function(keyword, from_year, to_year, verbose=FALSE) {
   do.call(rbind.data.frame, full)
 }
 
-.arnold_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, arnold_get,
+.standardize_arnold <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_arnold,
                    format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                 verbose)
   raw <- do.call(rbind.data.frame, raw)

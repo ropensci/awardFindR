@@ -1,6 +1,6 @@
 test_that("Rockefeller returns expected results", {
   suppressMessages(vcr::use_cassette("rockefeller", {
-    one_result <- .rockefeller_standardize("testing",
+    one_result <- .standardize_rockefeller("testing",
                                            "2011-01-01", "2021-01-31",
                                            FALSE)
   }))

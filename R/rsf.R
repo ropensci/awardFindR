@@ -3,8 +3,8 @@
 #' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
-#' @examples \dontrun{rsf <- rsf_get("ethnography")}
-rsf_get <- function(keyword, verbose=FALSE) {
+#' @examples \dontrun{rsf <- get_rsf("ethnography")}
+get_rsf <- function(keyword, verbose=FALSE) {
   # First we use the general search function to find potential awards
   url <- "https://www.russellsage.org"
   path <- paste0("/search/node/", keyword)
@@ -67,8 +67,8 @@ rsf_get <- function(keyword, verbose=FALSE) {
   df
 }
 
-.rsf_standardize <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, rsf_get, verbose)
+.standardize_rsf <- function(keywords, from_date, to_date, verbose) {
+  raw <- lapply(keywords, get_rsf, verbose)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     message("No results from RSF")
