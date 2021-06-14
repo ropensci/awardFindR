@@ -55,7 +55,7 @@ get_rwjf <- function(keyword, from_year, to_year, verbose=FALSE) {
   full
 }
 
-.rwjf_standardize <- function(keywords, from_date, to_date, verbose) {
+.standardize_rwjf <- function(keywords, from_date, to_date, verbose) {
   raw <- lapply(keywords, get_rwjf,
                 format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                 verbose)

@@ -65,7 +65,7 @@ search_awards <- function(keywords,
   results <- NULL # Keep this var as a placeholder for rbind.data.frame
   for (source in sources) {
     # Does source routine exist?
-    stopifnot(exists(paste0(".", source, "_standardize")))
+    stopifnot(exists(paste0(".standardize_", source)))
     results <- eval(parse(text=paste0( # eval the term and run it
       'rbind.data.frame(results, .standardize_',
       source, '(keywords, from_date, to_date, verbose))')))
