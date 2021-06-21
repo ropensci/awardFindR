@@ -73,6 +73,8 @@ get_templeton <- function(keywords, from_year, to_year, verbose=FALSE) {
     return(NULL)
   }
 
+  raw <- raw[!duplicated(raw$id), ] # Remove duplicates (only a few in full set)
+
   with(raw, data.frame(
     institution=grantee, pi, year, start=NA, end=NA, program=area, amount,
     id, title, abstract=NA, keyword, source="Templeton",
