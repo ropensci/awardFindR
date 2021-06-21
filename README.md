@@ -1,8 +1,8 @@
 # awardFindR
 <!-- badges: start -->
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-[![R-CMD-check](https://github.com/PESData/awardFindR/workflows/R-CMD-check/badge.svg)](https://github.com/PESData/awardFindR/actions)
-[![Codecov test coverage](https://codecov.io/gh/PESData/awardFindR/branch/master/graph/badge.svg)](https://codecov.io/gh/PESData/awardFindR?branch=master)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![R-CMD-check](https://github.com/ropensci/awardFindR/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/awardFindR/actions)
+[![Codecov test coverage](https://codecov.io/gh/ropensci/awardFindR/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/awardFindR?branch=master)
 [![](https://badges.ropensci.org/432_status.svg)](https://github.com/ropensci/software-review/issues/432)
 <!-- badges: end -->
 
@@ -16,7 +16,7 @@ Install `awardFindR` directly from this repository using the `remotes` package
 if (!require("remotes")) {
   install.packages("remotes")
 }
-remotes::install_github("PESData/awardFindR")
+remotes::install_github("ropensci/awardFindR")
 ```
 
 ## Supported sources
