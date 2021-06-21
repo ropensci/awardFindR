@@ -35,12 +35,19 @@ get_rwjf <- function(keyword, from_year, to_year, verbose=FALSE) {
 
       with(x, data.frame(
         title, amountAwarded, dateAwarded, grantNumber, startDate, endDate,
-        director, orgName=granteeInfo$orgName, stringsAsFactors = FALSE
+        director, description, orgName=granteeInfo$orgName,
+        stringsAsFactors = FALSE
       ))
     })
     do.call(rbind.data.frame, step) # Assemble the page
   })
   full <- do.call(rbind.data.frame, full) # Assemble the full data.frame
+
+  # Is the keyword actually in the description??
+  full <- full[grepl(keyword, full$description, ignore.case = TRUE), ]
+  if (nrow(full)==0) {
+    return(NULL)
+  }
 
   full$dateAwarded <- as.Date(as.POSIXct(full$dateAwarded/1000,
                                          origin="1970-01-01"))
@@ -68,7 +75,7 @@ get_rwjf <- function(keyword, from_year, to_year, verbose=FALSE) {
   with(raw, data.frame(
     institution=orgName, pi=director, year=format.Date(dateAwarded, "%Y"),
     start=as.character(startDate), end=as.character(endDate),
-    program=NA, amount=amountAwarded, id=grantNumber, title, abstract=NA,
-    keyword, source="RWJF", stringsAsFactors = FALSE
+    program=NA, amount=amountAwarded, id=grantNumber, title,
+    abstract=description, keyword, source="RWJF", stringsAsFactors = FALSE
   ))
 }
