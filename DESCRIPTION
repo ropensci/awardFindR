@@ -1,7 +1,7 @@
 Package: awardFindR
 Type: Package
-Title: QDR awardFindR
-Version: 0.1.0
+Title: awardFindR
+Version: 1.0.0
 Authors@R: c(person("Michael", "McCall", email = "mimccall@syr.edu",
                   role = c("aut", "cre"), comment = c(ORCID="0000-0002-4668-4212")),
                   person("Sebastian", "Karcher", email = "karcher@u.northwestern.edu",
