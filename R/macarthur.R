@@ -36,6 +36,9 @@ get_macarthur <- function(keyword, from_date, to_date, verbose=FALSE) {
     title <- xml2::xml_text(
       xml2::xml_find_first(x, ".//str[@name='custom_s_title']"))
 
+    description <- xml2::xml_text(
+      xml2::xml_find_first(x, ".//str[@name='custom_s_description']"))
+
     program <- xml2::xml_text(
       xml2::xml_find_first(x, ".//str[@name='custom_s_program_area_code']"))
 
@@ -52,7 +55,7 @@ get_macarthur <- function(keyword, from_date, to_date, verbose=FALSE) {
       xml2::xml_find_first(x, ".//str[@name='custom_s_end_date']"))
 
     data.frame(id, institution, approved, start, end, amount, program, title,
-               stringsAsFactors = FALSE)
+               description, stringsAsFactors = FALSE)
   })
   df <- do.call(rbind.data.frame, results)
 
@@ -85,7 +88,7 @@ get_macarthur <- function(keyword, from_date, to_date, verbose=FALSE) {
   with(raw, data.frame(
     institution, pi=NA, year=format.Date(approved, "%Y"),
     start=substr(start, 1, 10), end=substr(end, 1, 10),
-    program, amount, id, title, abstract=NA, keyword, source="MacArthur",
-    stringsAsFactors = FALSE
+    program, amount, id, title, abstract=description, keyword,
+    source="MacArthur", stringsAsFactors = FALSE
   ))
 }
