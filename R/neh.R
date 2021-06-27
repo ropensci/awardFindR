@@ -1,74 +1,81 @@
 #' Get relevant awards from NEH
-#' @param keywords Vector of strings to search for in the project description
-#' @param from_year Beginning year to search
-#' @param to_year Ending year to search
-#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @inheritParams get_fedreporter
 #' @return A raw data.frame with the relevant results from NEH
 #' @export
 #' @examples
-#' neh <- get_neh(c("focus groups", "ethnography"), 2018, 2020)
-get_neh <- function(keywords, from_year, to_year, verbose=FALSE) {
-  # This file is updated monthly, should hopefully be valid for the next decade?
-  # See https://securegrants.neh.gov/open/data/
-  url <- "https://securegrants.neh.gov/Open/data/NEH_Grants2020s.csv"
-  if (verbose==TRUE)  message(paste("GET", url, "... "), appendLF = FALSE)
-  response <- httr::GET(url)
+#' \dontrun{neh <- get_neh("ethnography", 2018, 2020)}
+get_neh <- function(keyword, from_year, to_year, verbose=FALSE) {
+  base_url <- "https://securegrants.neh.gov"
+  query <- paste0("/publicquery/main.aspx?q=1&n=0&o=0&k=1&kv=",
+                  gsub(" ", "+", keyword),
+                  "&kj=phrase&w=1&f=0&s=0&cd=0&p=0&d=0&at=0&y=1&yf=",
+                  from_year, "&yt=", to_year,
+                  "&prd=0&cov=0&prz=0&wp=0&ca=0&or=DESC&ob=year")
+  url <- paste0(base_url, query)
+
+  session <- rvest::session(base_url)
+  if (verbose==TRUE) message(paste("GET", url, "... "), appendLF = FALSE)
+  page <- rvest::session_jump_to(session, url)
   if (verbose==TRUE) {
-    httr::message_for_status(response)
+    httr::message_for_status(page)
     message()
   }
-  httr::stop_for_status(response)
 
-  response <- httr::content(response, as="text", encoding="UTF-8")
-  neh <- utils::read.csv(text=response,
-                         na.strings = c("NA", "NULL", "Unknown"),
-                         stringsAsFactors = FALSE,
-                         fileEncoding = "UTF-8-BOM")
+  page <- rvest::read_html(page)
 
-  YearAwarded <- NULL # For R CMD check
-  neh <- subset(neh, YearAwarded >= from_year & YearAwarded <= to_year)
+  form <- rvest::html_form(page, NULL)[[1]]
+  # Need to add this field to the form, which isn't straightforward
+  form$fields$`__EVENTTARGET` <- form$fields$`__VIEWSTATE`
+  form$fields$`__EVENTTARGET`$name <- "__EVENTTARGET"
+  form$fields$`__EVENTTARGET`$attr$name <- "__EVENTTARGET"
+  form$fields$`__EVENTTARGET`$attr$id <- "__EVENTTARGET"
+  form$fields$`__EVENTTARGET`$value <- "lbSaveExcel"
+  form$fields$`__EVENTTARGET`$attr$value <- "lbSaveExcel"
 
-  results <- lapply(keywords, function(keyword, df) {
-    # grep the query in the description, subset to the hits
-    hits <- grepl(keyword, df$ProjectDesc, ignore.case=TRUE)
-    hits <- df[hits, ]
-
-    # Empty results?
-    if (nrow(hits)==0) {
-      return(NULL)
-    }
-
-    hits$keyword <- keyword
-    hits
-  }, neh) # The df input is here at the end
-
-  results <- do.call(rbind.data.frame, results)
-  # Did we get nothing after all these queries?
-  if (nrow(results)==0) {
-    return(NULL)
+  if (verbose==TRUE) message(paste("POST", url, "... "), appendLF = FALSE)
+  xlsx_response <- rvest::session_submit(session, form)
+  if (verbose==TRUE) {
+    httr::message_for_status(xlsx_response)
+    message()
   }
 
-  # Some regex magic to make the "participant" field applicable to our PI field
-  results$pi <- sub(" \\[Project Director\\].*", "", results$Participants)
+  # Check if there's no results
+  if (xlsx_response$response$url ==
+      paste0("https://securegrants.neh.gov/PublicQuery/error.aspx",
+             "?aspxerrorpath=/publicquery/main.aspx")) {
+    return (NULL)
+    }
+
+  # This returns a binary xlsx file, which needs to be saved and loaded
+  xlsx_path <- tempfile()
+  writeBin(xlsx_response$response$content, xlsx_path)
+
+  results <- readxl::read_xlsx(xlsx_path)
+  results$keyword <- keyword
 
   results
 }
 
 .standardize_neh <- function(keywords, from_date, to_date, verbose) {
-  raw <- get_neh(keywords,
+  raw <- lapply(keywords, get_neh,
                  format.Date(from_date, "%Y"), format.Date(to_date, "%Y"),
                  verbose)
-  if (is.null(raw)) {
+  raw <- do.call(rbind.data.frame, raw)
+
+  if (nrow(raw)==0) {
     message("No results from NEH")
     return(NULL)
   }
 
+  dates <- strsplit(raw$GrantPeriod, " ")
+  dates <- data.frame(start=unlist(lapply(dates, `[`, 1)),
+                      end=unlist(lapply(dates, `[`, 3)))
+
   with(raw, data.frame(
-    institution=Institution, pi, year=YearAwarded,
-    start=BeginGrant, end=EndGrant,
-    program=Program, amount=as.integer(AwardOutright),
-    # Encoding problems on windows changes first variable name ("AppNumber")
-    id=as.character(raw[1]), title=ProjectTitle, abstract=ProjectDesc,
-    keyword, source="NEH", stringsAsFactors = FALSE
+    institution=Institution, pi=paste(PDFirstname, PDLastname),
+    year=YearAwarded, start=dates$start, end=dates$end,
+    program=ProgramName, amount=as.integer(AwardOutright),
+    id=as.character(ApplicationNumber), title=ProjectTitle,
+    abstract=ProjectDesc, keyword, source="NEH", stringsAsFactors = FALSE
   ))
 }

@@ -4,10 +4,10 @@
 \alias{get_neh}
 \title{Get relevant awards from NEH}
 \usage{
-get_neh(keywords, from_year, to_year, verbose = FALSE)
+get_neh(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
-\item{keywords}{Vector of strings to search for in the project description}
+\item{keyword}{Keyword to query}
 
 \item{from_year}{Beginning year to search}
 
@@ -22,5 +22,5 @@ A raw data.frame with the relevant results from NEH
 Get relevant awards from NEH
 }
 \examples{
-neh <- get_neh(c("focus groups", "ethnography"), 2018, 2020)
+\dontrun{neh <- get_neh("ethnography", 2018, 2020)}
 }
