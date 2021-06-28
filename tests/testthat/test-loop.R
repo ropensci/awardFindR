@@ -1,5 +1,5 @@
 test_that("NIH and NSF multiple page query", {
-  suppressMessages(vcr::use_cassette("nih", {
+  suppressMessages(vcr::use_cassette("nih", record="new_episodes", {
     nih <- awardFindR::get_nih("qualitative", "2019-01-01", "2019-02-25")
     nsf <- awardFindR::get_nsf("qualitative", "2019-01-01", "2019-02-25")
   }))

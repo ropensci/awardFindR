@@ -7,7 +7,7 @@
 get_templeton(keywords, from_year, to_year, verbose = FALSE)
 }
 \arguments{
-\item{keywords}{Vector of strings to search for in the project description}
+\item{keywords}{Vector of strings to search}
 
 \item{from_year}{Beginning year to search}
 

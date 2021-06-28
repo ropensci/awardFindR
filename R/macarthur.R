@@ -12,10 +12,10 @@ get_macarthur <- function(keyword, from_date, to_date, verbose=FALSE) {
 
   # I really don't know what most of this does below, but it was part of the
   # web interface's API query, so I'm leaving it in for now.
-  extra <- paste0("&echoParams=explicit&fl=*&defType=edismax",
-  "&fq=custom_s_template:%22grant%20detail%22&sort=score%20desc",
-  "&qf=custom_t_title%20custom_t_description%20custom_t_name&indent=true",
-  "&json.wrf=searchg2_5445608496089546")
+  extra <- paste0("&echoParams=explicit&fl=%2A&defType=edismax",
+  "&fq=custom_s_template%3A%22grant%20detail%22&sort=score%20desc",
+  "&qf=custom_t_title%20custom_t_description%20custom_t_name",
+  "&indent=true&json.wrf=searchg2_5445608496089546")
 
   query_url <- paste0(url, parameters, extra)
   response <- request(query_url, "get", verbose)

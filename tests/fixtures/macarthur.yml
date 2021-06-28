@@ -1,7 +1,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://searchg2.crownpeak.net/live-macfound-rt/select?q=qualitative&wt=xml&start=0&rows=100&echoParams=explicit&fl=*&defType=edismax&fq=custom_s_template:%22grant%20detail%22&sort=score%20desc&qf=custom_t_title%20custom_t_description%20custom_t_name&indent=true&json.wrf=searchg2_5445608496089546
+    uri: https://searchg2.crownpeak.net/live-macfound-rt/select?q=qualitative&wt=xml&start=0&rows=100&echoParams=explicit&fl=%2A&defType=edismax&fq=custom_s_template%3A%22grant%20detail%22&sort=score%20desc&qf=custom_t_title%20custom_t_description%20custom_t_name&indent=true&json.wrf=searchg2_5445608496089546
     body:
       encoding: ''
       string: ''
@@ -16,7 +16,7 @@ http_interactions:
     headers:
       access-control-allow-origin: '*'
       content-type: application/xml; charset=utf-8
-      date: Fri, 26 Mar 2021 17:36:05 GMT
+      date: Sun, 27 Jun 2021 13:10:56 GMT
       server: Apache/2.4.3 (Unix) OpenSSL/1.0.2g
       transfer-encoding: chunked
       connection: keep-alive
@@ -46,7 +46,7 @@ http_interactions:
             <str name="wt">xml</str>
           </lst>
         </lst>
-        <result name="response" numFound="14" start="0">
+        <result name="response" numFound="15" start="0">
           <doc>
             <str name="id">87682</str>
             <str name="url">87682</str>
@@ -315,14 +315,20 @@ http_interactions:
             <str name="custom_s_grantee_url">/grantee/razzhivin-vladimir-iurievich-35099/</str>
             <arr name="custom_ss_topic_id">
               <str>101143</str>
+              <str>102037</str>
             </arr>
             <str name="custom_s_amountrange">1</str>
+            <int name="custom_i_page_score">0</int>
             <str name="title">For "Vascular Plant Diversity of Northeastern Asia: A Qualitative and Quantitative Predictive Model and Its Application to Flora Conservation under Anthropogenic Impact and Global Climate Change."</str>
             <str name="custom_s_url"/>
             <str name="content"/>
+            <str name="custom_s_boost_keywords"/>
+            <str name="custom_t_boost_keywords"/>
+            <str name="custom_s_key_image"/>
+            <date name="custom_dt_date">2021-01-02T19:58:35Z</date>
             <str name="language">en</str>
             <str name="content_en"/>
-            <long name="_version_">1689390637266239488</long></doc>
+            <long name="_version_">1702254100685520896</long></doc>
           <doc>
             <str name="id">81184</str>
             <str name="url">81184</str>
@@ -469,6 +475,60 @@ http_interactions:
             <str name="content_en"/>
             <long name="_version_">1689391373664387072</long></doc>
           <doc>
+            <str name="id">200846</str>
+            <str name="url">200846</str>
+            <str name="custom_s_template">grant detail</str>
+            <str name="metadata_title">to produce a series of case studies documenting the experience of jurisdictions participating in the Safety and Justice Challenge during its first five years.</str>
+            <str name="metadata_description">The MacArthur Foundation supports creative people and effective institutions committed to building a more just, verdant, and peaceful world. In addition to selecting the MacArthur Fellows, we work to defend human rights, advance global conservation and security, make cities better places, and understand how technology is affecting children and society.</str>
+            <str name="metadata_keywords"> foundation, philanthropy, grant, grantmaking</str>
+            <str name="custom_s_foundation_id">2004-154624</str>
+            <str name="custom_s_org_id">23</str>
+            <str name="custom_s_parent_grantee_id"/>
+            <str name="custom_s_grantee_location">Washington, D.C.</str>
+            <str name="custom_s_grant_approved_date">12/15/2020 00:00:00</str>
+            <str name="custom_s_name">Urban Institute</str>
+            <str name="custom_t_name">Urban Institute</str>
+            <str name="custom_s_city">Washington</str>
+            <str name="custom_s_state">DC</str>
+            <str name="custom_s_state_display">District of Columbia</str>
+            <str name="custom_s_country">US</str>
+            <str name="custom_s_country_display">United States</str>
+            <str name="custom_s_amount">600000.0</str>
+            <str name="custom_s_amount_display">$600,000</str>
+            <str name="custom_s_title">to produce a series of case studies documenting the experience of jurisdictions participating in the Safety and Justice Challenge during its first five years.</str>
+            <str name="custom_s_description">&lt;p&gt;Established in 1968, the Urban Institute (Urban) conducts economic and social policy research and evaluation to understand and solve real-world challenges in a rapidly urbanizing environment. This award enables Urban to produce a series of case studies documenting the experience of jurisdictions participating in the Safety and Justice Challenge during its first five years, with the broad aim of furthering the field's understanding of how reductions in jail usage have been realized to date. All studies will have both qualitative and quantitative components, and will be designed to spread what has been learned and achieved as widely as possible, in order to generate national momentum for local criminal justice reform.&lt;/p&gt;</str>
+            <str name="custom_t_title">to produce a series of case studies documenting the experience of jurisdictions participating in the Safety and Justice Challenge during its first five years.</str>
+            <str name="custom_t_description">&lt;p&gt;Established in 1968, the Urban Institute (Urban) conducts economic and social policy research and evaluation to understand and solve real-world challenges in a rapidly urbanizing environment. This award enables Urban to produce a series of case studies documenting the experience of jurisdictions participating in the Safety and Justice Challenge during its first five years, with the broad aim of furthering the field's understanding of how reductions in jail usage have been realized to date. All studies will have both qualitative and quantitative components, and will be designed to spread what has been learned and achieved as widely as possible, in order to generate national momentum for local criminal justice reform.&lt;/p&gt;</str>
+            <str name="custom_s_year_approved">2020</str>
+            <int name="custom_i_year_approved">2020</int>
+            <str name="custom_s_start_date">01/01/2021 00:00:00</str>
+            <str name="custom_s_end_date">12/31/2022 00:00:00</str>
+            <str name="custom_s_program_area_code">CJ</str>
+            <str name="custom_s_level_1_sub_category">RSC</str>
+            <str name="custom_s_level_2_sub_category">RSC</str>
+            <str name="custom_s_is_subgrant">false</str>
+            <str name="custom_s_is_projectgrant">false</str>
+            <str name="custom_s_is_representative">true</str>
+            <str name="custom_s_term_in_months">2 years</str>
+            <str name="custom_s_grantee_url">/grantee/urban-institute-23/</str>
+            <str name="custom_s_program_id">102194</str>
+            <str name="custom_s_program_name">Criminal Justice</str>
+            <arr name="custom_ss_topic_id">
+              <str>101127</str>
+            </arr>
+            <str name="custom_s_amountrange">3</str>
+            <int name="custom_i_page_score">0</int>
+            <str name="title">to produce a series of case studies documenting the experience of jurisdictions participating in the Safety and Justice Challenge during its first five years.</str>
+            <str name="custom_s_url">www.urban.org</str>
+            <str name="content"/>
+            <str name="custom_s_boost_keywords"/>
+            <str name="custom_t_boost_keywords"/>
+            <str name="custom_s_key_image"/>
+            <date name="custom_dt_date">2021-05-04T14:36:39Z</date>
+            <str name="language">en</str>
+            <str name="content_en"/>
+            <long name="_version_">1703391121098407936</long></doc>
+          <doc>
             <str name="id">79733</str>
             <str name="url">79733</str>
             <str name="custom_s_template">grant detail</str>
@@ -592,14 +652,14 @@ http_interactions:
             <str name="custom_s_year_approved">2020</str>
             <int name="custom_i_year_approved">2020</int>
             <str name="custom_s_start_date">2020-09-01T00:00:00+00:00</str>
-            <str name="custom_s_end_date">2021-02-28T00:00:00</str>
+            <str name="custom_s_end_date">2021-07-31T00:00:00</str>
             <str name="custom_s_program_area_code">JOU</str>
             <str name="custom_s_level_1_sub_category">NFM</str>
             <str name="custom_s_level_2_sub_category">NFM</str>
             <str name="custom_s_is_subgrant">false</str>
             <str name="custom_s_is_projectgrant">false</str>
             <str name="custom_s_is_representative"/>
-            <str name="custom_s_term_in_months"> 6 months</str>
+            <str name="custom_s_term_in_months"> 11 months</str>
             <str name="custom_s_grantee_url">/grantee/community-board-10115307/</str>
             <str name="custom_s_program_id">102192</str>
             <str name="custom_s_program_name">Journalism &amp; Media</str>
@@ -607,12 +667,17 @@ http_interactions:
               <str>101134</str>
             </arr>
             <str name="custom_s_amountrange">1</str>
+            <int name="custom_i_page_score">0</int>
             <str name="title">in support of the Documentary Community Board.</str>
             <str name="custom_s_url"/>
             <str name="content"/>
+            <str name="custom_s_boost_keywords"/>
+            <str name="custom_t_boost_keywords"/>
+            <str name="custom_s_key_image"/>
+            <date name="custom_dt_date">2021-01-02T19:48:53Z</date>
             <str name="language">en</str>
             <str name="content_en"/>
-            <long name="_version_">1689390811680079872</long></doc>
+            <long name="_version_">1699131574350512128</long></doc>
           <doc>
             <str name="id">101124</str>
             <str name="url">101124</str>
@@ -704,12 +769,14 @@ http_interactions:
             <str name="title">to support the T100 project, a longitudinal study that will gather previously unavailable data and yield insights on the preferences and behaviors of a group of investors providing catalytic capital.</str>
             <str name="custom_s_url"/>
             <str name="content"/>
+            <str name="custom_s_boost_keywords"/>
+            <str name="custom_t_boost_keywords"/>
             <str name="custom_s_key_image"/>
             <date name="custom_dt_date">2021-01-02T19:46:48Z</date>
             <str name="language">en</str>
             <str name="content_en"/>
-            <long name="_version_">1693730863542435840</long></doc>
+            <long name="_version_">1701922461314973696</long></doc>
         </result>
         </response>
-  recorded_at: 2021-03-26 17:35:41 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.7.4
+  recorded_at: 2021-06-27 13:09:06 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0

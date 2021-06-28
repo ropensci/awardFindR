@@ -8,7 +8,7 @@ test_that("Incorrect date", {
 })
 
 test_that("Search that should return all empty", {
-  suppressMessages(vcr::use_cassette("empty", {
+  suppressMessages(vcr::use_cassette("empty", record="new_episodes", {
     foobar <- search_awards("foobar", to_date="2021-01-01")
   }))
   expect_equal(data.frame(), foobar)
@@ -19,8 +19,14 @@ test_that("merging multiple sources and multiple keywords with spaces", {
   csv <- tempfile()
   writeLines(keywords, csv)
 
-  suppressMessages(vcr::use_cassette("full", {
-    results <- search_awards(csv, from_date = "2018-01-01", to_date="2018-02-01",
+  suppressMessages(vcr::use_cassette("full", record="new_episodes", {
+    results <- search_awards(csv,
+                             sources=c("arnold", "carnegie", "fedreporter",
+                                      "gates", "macarthur", "mellon",
+                                      "nih", "nsf", "ophil",
+                                      "osociety", "rockefeller", "rsf", "rwjf",
+                                      "sloan", "ssrc", "templeton", "usaspend"),
+                             from_date = "2018-01-01", to_date="2018-02-01",
                           verbose=TRUE)
   }))
   expect_gt(nrow(results), 1)

@@ -28,7 +28,8 @@ create_templeton_df <- function(verbose=FALSE) {
 }
 
 #' Search for a set of keywords in the Templeton grants database.
-#' @inheritParams get_neh
+#' @inheritParams get_usaspend
+#' @inheritParams get_fedreporter
 #' @return A data.frame
 #' @export
 #' @examples

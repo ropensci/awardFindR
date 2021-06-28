@@ -1,7 +1,9 @@
 #' Search awards from the Federal Reporter
-#' @param agency Agencies, comma separated. Defaults to "usda,dod,nasa,epa".
 #' @param keyword Keyword to query
-#' @inheritParams get_neh
+#' @param from_year Beginning year to search
+#' @param to_year Ending year to search
+#' @param agency Agencies, comma separated. Defaults to "usda,dod,nasa,epa".
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return A data.frame
 #' @export
 #' @examples
@@ -14,12 +16,14 @@ get_fedreporter <- function (keyword, from_year, to_year, verbose=FALSE,
   base_url <- 'https://api.federalreporter.nih.gov/v1/Projects/search'
 
   query_url <- paste0(base_url,
-                      "?query=agency:", toupper(agency),
-                      "$text:", xml2::url_escape(keyword), "$textFields:terms",
+                      "?query=agency%3A", toupper(gsub(",", "%2C", agency)),
+                      "%24text%3A", xml2::url_escape(keyword),
+                      "%24textFields%3Aterms",
                       # Only date paramater available is fiscal year :(
                       # Also, you can't use ranges
-                      "$fy:", paste0(as.integer(from_year):as.integer(to_year),
-                                     collapse=","))
+                      "%24fy%3A",
+                      paste0(as.integer(from_year):as.integer(to_year),
+                                     collapse="%2C"))
 
   # Actually query the API
   api <- request(query_url, "get", verbose)
