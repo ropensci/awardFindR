@@ -35,6 +35,7 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE) {
   # change NULL values to NA
   df <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
   df <- Reduce(function(x, y) merge(x, y, all=TRUE), df)
+  df <- as.data.frame(df)
 
   # What is our current max?
   place <- response$meta$offset + response$meta$limit
