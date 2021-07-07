@@ -56,8 +56,6 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE) {
     df <- rbind.data.frame(df, temp)
   }
 
-  # Remove duplicates
-  df <- df[!duplicated(df$project_serial_num), ]
   # Remove factors
   df[] <- lapply(df, as.character)
   df$keyword <- keyword
