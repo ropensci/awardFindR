@@ -8,7 +8,7 @@
 get_macarthur <- function(keyword, from_date, to_date, verbose=FALSE) {
   url <- "https://searchg2.crownpeak.net/live-macfound-rt/select?"
   parameters <- paste0("q=", xml2::url_escape(keyword),
-                       "&wt=xml&start=0&rows=100")
+                       "&wt=xml&start=0&rows=25494")
 
   # I really don't know what most of this does below, but it was part of the
   # web interface's API query, so I'm leaving it in for now.
