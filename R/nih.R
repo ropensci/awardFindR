@@ -20,10 +20,10 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE) {
       operator="advanced",
       search_field="abstracttext")
   ),
-  include_fields=c("org_name", "project_num", "project_serial_num",
-                   "fiscal_year", "project_start_date", "project_end_date",
-                   "project_title", "agency_code", "abstract_text",
-                   "contact_pi_name", "award_amount", "award_notice_date"),
+  include_fields=c("OrgName", "ProjectNum", "ProjectSerialNum",
+                   "FiscalYear", "ProjectStartDate", "ProjectEndDate",
+                   "ProjectTitle", "AgencyCode", "AbstractText",
+                   "ContactPiName", "AwardAmount", "AwardNoticeDate"),
   #, "principle_investigators"))
   offset=0)
 
