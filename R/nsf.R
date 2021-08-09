@@ -8,7 +8,7 @@ get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
   base_url <- 'https://api.nsf.gov/services/v1/awards.json?'
   output_data <- paste0("id,date,startDate,expDate,title,awardeeName,",
                         "piFirstName,piLastName,piEmail,cfdaNumber,",
-                        "fundsObligatedAmt,fundProgramName,abstractText,",
+                        "estimatedTotalAmt,fundProgramName,abstractText,",
                         "awardeeCounty") #,publicationResearch")
 
   query <- paste0('keyword="', gsub(" ", "+", keyword), "\"")
@@ -64,7 +64,7 @@ get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
     year=format.Date(as.Date(date, format="%m/%d/%Y"), format="%Y"),
     start=as.character(as.Date(startDate, format="%m/%d/%Y")),
     end=as.character(as.Date(expDate, format="%m/%d/%Y")),
-    program=cfdaNumber, amount=fundsObligatedAmt, id=id, title=title,
+    program=cfdaNumber, amount=estimatedTotalAmt, id=id, title=title,
     abstract=abstractText, keyword, source="NSF", stringsAsFactors = FALSE
   ))
 }

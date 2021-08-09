@@ -74,7 +74,7 @@ get_neh <- function(keyword, from_year, to_year, verbose=FALSE) {
   with(raw, data.frame(
     institution=Institution, pi=paste(PDFirstname, PDLastname),
     year=YearAwarded, start=dates$start, end=dates$end,
-    program=ProgramName, amount=as.integer(AwardOutright),
+    program=ProgramName, amount=as.numeric(OriginalAmount),
     id=as.character(ApplicationNumber), title=ProjectTitle,
     abstract=ProjectDesc, keyword, source="NEH", stringsAsFactors = FALSE
   ))
