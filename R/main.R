@@ -78,6 +78,10 @@ search_awards <- function(keywords,
   }
 
   # Find and merge duplicates
+  if (all(duplicated(results$id))) {
+    results <- results[1, ]
+  }
+
   if (any(duplicated(results$id))) {
     duplicates <- stats::aggregate(keyword ~ id + source, data=results,
                                    # Merge keywords

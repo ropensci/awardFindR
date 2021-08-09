@@ -60,9 +60,9 @@ get_usaspend <- function(keywords, from_date, to_date, verbose) {
     awards <- rbind.data.frame(awards, temp)
   }
 
-  awards[] <- lapply(awards,
-                     function(x) ifelse(is.factor(x),
-                                        as.character(x), x)) # No factors
+  #awards[] <- lapply(awards,
+  #                   function(x) ifelse(is.factor(x),
+  #                                      as.character(x), x)) # No factors
 
   awards
 }
