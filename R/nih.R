@@ -25,11 +25,14 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE) {
                    "ProjectTitle", "AgencyCode", "AbstractText",
                    "ContactPiName", "AwardAmount", "AwardNoticeDate"),
   #, "principle_investigators"))
-  offset=0)
+  limit=500, offset=0)
 
   response <- request(url, "post", verbose, payload) # Query API
   if (response$meta$total == 0) {
     return(NULL) # No results?
+  } else if (response$meta$total > 9999) {
+    warning(paste0("NIH query for \"", keyword, "\" too large, returning empty"))
+    return(NULL)
   }
 
   # change NULL values to NA
