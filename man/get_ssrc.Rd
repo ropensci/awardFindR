@@ -22,5 +22,5 @@ a data.frame
 Search SSRC fellowships and grants by keyword and date
 }
 \examples{
-ssrc <- get_ssrc("qualitative", 2015, 2016)
+\dontrun{ssrc <- get_ssrc("qualitative", 2015, 2016)}
 }

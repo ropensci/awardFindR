@@ -37,7 +37,7 @@
 #' @inheritParams get_fedreporter
 #' @return a data.frame
 #' @export
-#' @examples ssrc <- get_ssrc("qualitative", 2015, 2016)
+#' @examples \dontrun{ssrc <- get_ssrc("qualitative", 2015, 2016)}
 get_ssrc <- function(keyword, from_year, to_year, verbose=FALSE) {
 
   url <- "https://12786hbsdl-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(4.10.3)%3B%20Browser%20(lite)%3B%20instantsearch.js%20(4.25.2)%3B%20JS%20Helper%20(3.5.4)&x-algolia-api-key=cdd85ab4fc628277674bb5d9e375af2b&x-algolia-application-id=12786HBSDL"
@@ -51,12 +51,13 @@ get_ssrc <- function(keyword, from_year, to_year, verbose=FALSE) {
 #    tagFilters=list("", ""),
 #    facetFilters='[["post_type:fellow"]]"},{"indexName":"wp_searchable_posts","params":"query"'
 )))
+  return(NULL)
 
   response <- request(url, "post", verbose, payload) # Query API
 
-  #base_url <- "https://www.ssrc.org/search/?"
-  #query <- "t=fellows&sort=relevance"
-  #query <- paste0(query, "&q=", xml2::url_escape(keyword))
+  base_url <- "https://www.ssrc.org/search/?"
+  query <- "t=fellows&sort=relevance"
+  query <- paste0(query, "&q=", xml2::url_escape(keyword))
   # Have to collate years to search by date
   if (length(from_year:to_year) > 1)
     query <- paste0(query, "&year=", paste0(from_year:to_year, collapse=","))
