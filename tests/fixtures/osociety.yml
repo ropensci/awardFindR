@@ -14,24 +14,36 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Wed, 03 Mar 2021 19:51:56 GMT
+      date: Fri, 28 Jan 2022 18:30:16 GMT
       content-type: text/html; charset=UTF-8
-      set-cookie: __cfduid=d3807d738bd9ac7980a10e0a42d06b89b1614801116; expires=Fri,
-        02-Apr-21 19:51:56 GMT; path=/; domain=.opensocietyfoundations.org; HttpOnly;
-        SameSite=Lax; Secure
       vary: Accept-Encoding
       cache-control: public, max-age=3600
       x-frame-options: SAMEORIGIN
       x-xss-protection: 1; mode=block
       x-content-type-options: nosniff
+      content-security-policy: 'default-src ''self''; script-src ''self'' ''sha256-6vmNTbfgubexXPiaZdcqfKCk+vKBe9cfsKsAciXQtMg=''
+        ''sha256-r1aYSsDn5Btub+zo7XZr6P3ZhmNyYTvHf/yjmzIpxT8='' ''sha256-aqdvQaQU9tkorRhtgHldablGaB5SI/SwbLemAOKE7Yo=''
+        ''sha256-Vxv+qm8gMYYzbp7hSMakF5Q81e7GDj/Z5HZYT4ekhho='' ''sha256-uBpmtDakUPHISUCFtaVC869LxTI53EPQREvqhqlxGVU=''
+        ''sha256-h8bC9y2R69GO3nntfTAfOohrJdzeOS7slDdbOSULEJo='' https://www.google-analytics.com/analytics.js
+        https://cdncache-a.akamaihd.net/sub/b156ae9/98002/l.js https://www.youtube.com
+        https://www.googletagmanager.com https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js
+        https://www.google-analytics.com/analytics.js https://www.googletagmanager.com/gtag/js
+        https://www.youtube.com/iframe_api https://www2.osfound.org/shorten https://connect.facebook.net;
+        style-src ''unsafe-inline'' ''self''; object-src ''self'' https://video.ted.com;
+        base-uri ''self''; connect-src ''self'' https://www.googletagmanager.com https://www.google-analytics.com
+        https://*.ingest.sentry.io https://cdn.plyr.io; font-src ''self'' https: data:;
+        frame-src ''self'' https://www.youtube.com https://w.soundcloud.com https://www.facebook.com;
+        img-src ''self'' https://i.ytimg.com https://opensocietyfoundations.imgix.net
+        https://www.google-analytics.com https: data:; manifest-src ''self''; media-src
+        ''self''; report-uri https://opensociety.report-uri.com/r/d/csp/enforce; worker-src
+        ''none'';'
       content-encoding: gzip
-      cf-cache-status: HIT
-      age: '83'
-      cf-request-id: 089b3eb60f00000dd6b0276000000001
+      cf-cache-status: MISS
+      last-modified: Fri, 28 Jan 2022 18:30:16 GMT
       expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       strict-transport-security: max-age=15552000
       server: cloudflare
-      cf-ray: 62a567034eb60dd6-IAD
+      cf-ray: 6d4c4a7dd8c80cf1-EWR
     body:
       encoding: UTF-8
       file: no
@@ -46,7 +58,9 @@ http_interactions:
         content=\"Open Society Foundations - Awarded Grants, Scholarships, and Fellowships\"
         />\n<meta property=\"og:description\" content=\"A database of grants, scholarships,
         and fellowships that we award throughout the year to organizations and individuals
-        who advance open society values.\" />\n<meta property=\"og:image:url\" content=\"https://opensocietyfoundations.imgix.net/uploads/cb6b2c1f-afa5-4192-ba4f-b0d0bd975b8c/open-society-avatar.png?auto=compress%2Cformat&amp;fit=min&amp;fm=jpg&amp;q=80&amp;rect=0%2C0%2C1200%2C1200\"
+        who advance open society values.\" />\n<meta property=\"og:url\" content=\"https://www.opensocietyfoundations.org/grants/past\"
+        />\n<meta property=\"og:type\" content=\"website\" />\n<meta property=\"og:image:url\"
+        content=\"https://opensocietyfoundations.imgix.net/uploads/cb6b2c1f-afa5-4192-ba4f-b0d0bd975b8c/open-society-avatar.png?auto=compress%2Cformat&amp;fit=min&amp;fm=jpg&amp;q=80&amp;rect=0%2C0%2C1200%2C1200\"
         />\n<meta property=\"og:image:alt\" content=\"Open Society Foundations Logo\"
         />\n\n<meta name=\"twitter:card\" content=\"summary\" />\n<meta name=\"twitter:site\"
         content=\"@OpenSociety\" />\n<meta name=\"twitter:title\" content=\"Open Society
@@ -76,24 +90,16 @@ http_interactions:
         c||c.documentTouch&&i instanceof DocumentTouch),\nt.objectFit=\"objectFit\"in
         n.style,window.A17=t,n.className=n.className.replace(\n/\\bno-js\\b/,\" js
         \"+t.browserSpec+(t.touch?\" touch\":\" no-touch\")+(\nt.objectFit?\" objectFit\":\"
-        no-objectFit\")),\"html4\"===t.browserSpec?((\ne=i.createElement(\"link\")).rel=\"stylesheet\",e.title=\"html4css\",\ne.href=\"/dist/styles/html4css.css\",o.appendChild(e),(e=i.createElement(\"script\")\n).src=\"//legacypicturefill.s3.amazonaws.com/legacypicturefill.min.js\",\no.appendChild(e),function
+        no-objectFit\")),\"html4\"===t.browserSpec?((\ne=i.createElement(\"link\")).rel=\"stylesheet\",e.title=\"html4css\",\ne.href=\"/dist/styles/html4css.css\",o.appendChild(e),(e=i.createElement(\"script\")\n).src=\"https://legacypicturefill.s3.amazonaws.com/legacypicturefill.min.js\",\ne.crossOrigin='anonymous',o.appendChild(e),function
         e(){!i.readyState&&i.addEventListener&&(\ni.body?setTimeout(function(){i.readyState=\"complete\"},500):setTimeout(e,9))}(),\nfunction
         e(){if(/in/.test(i.readyState))setTimeout(e,9);else for(\nvar t=0;t<i.styleSheets.length;t++){var
-        s=i.styleSheets[t]\n;\"html4css\"!==s.title&&(s.disabled=!0)}}()):((e=i.createElement(\"script\")\n).src=\"//cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js\",\no.appendChild(e),(s=new
+        s=i.styleSheets[t]\n;\"html4css\"!==s.title&&(s.disabled=!0)}}()):((e=i.createElement(\"script\")\n).src=\"https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js\",\ne.crossOrigin='anonymous',o.appendChild(e),(s=new
         XMLHttpRequest).open(\"GET\",\"/dist/icons/icons.svg\",!0),\ns.send(),s.onload=function(e){200<=s.status&&s.status<400&&l()})}(document);\n</script>\n\n<link
-        href=\"/dist/styles/app-ec0a68c4c7.css\" rel=\"stylesheet\" /> \n\n<!-- Google
-        Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew
-        Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-NNRNV5Q');</script>\n<!--
-        End Google Tag Manager -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-2765806-27\"></script>\n<script>\n
-        \ window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n
-        \ gtag('js', new Date());\n  gtag('config', 'UA-2765806-27');\n</script>\n</head>\n\n<body>\n\n<!--
-        Google Tag Manager (noscript) -->\n<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-NNRNV5Q\"\nheight=\"0\"
-        width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\n<!--
-        End Google Tag Manager (noscript) -->\n<div id=\"a17\" class=\"pageClass--grants\">\n
-        \     <a href=\"#main\" class=\"a-link--skip\">Skip to main content</a>\n
-        \ <header class=\"g-header\" data-behavior=\"stickyNav\">\n  <div class=\"g-megaNav__overlay\"
-        data-meganav-toggle></div>\n  <div class=\"g-header__wrapper\">\n\n    <div
-        class=\"g-header__container\">\n\n      \n      <a href=\"https://www.opensocietyfoundations.org\"
+        href=\"/dist/styles/app-43198ec2d5.css\" rel=\"stylesheet\" />\n\n</head>\n\n<body>\n
+        \ <div id=\"a17\" class=\"pageClass--grants\">\n    <a href=\"#main\" class=\"a-link--skip\">Skip
+        to main content</a>\n  <header class=\"g-header\" data-behavior=\"stickyNav\">\n
+        \ <div class=\"g-megaNav__overlay\" data-meganav-toggle></div>\n  <div class=\"g-header__wrapper\">\n\n
+        \   <div class=\"g-header__container\">\n\n      \n      <a href=\"https://www.opensocietyfoundations.org\"
         class=\"g-header__logo\" aria-label=\"Back to the homepage\">\n        <span
         class=\"visually-hidden\">Open Society Foundations</span>\n        <svg><use
         xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon--logo\" aria-hidden=\"true\"></use></svg>\n
@@ -231,8 +237,13 @@ http_interactions:
         required data-newsletter-input/>\n                    <input class=\"g-newsletterCta__submit\"
         type=\"submit\" id=\"newsletter_navigation_submit\" value=\"Submit\" data-newsletter-submit/>\n
         \                 </div>\n                </div>\n              </form>\n
-        \           </div>\n          </div>\n\n        </div>\n      </div>\n    </div>\n\n
-        \ </div>\n\n  <div class=\"g-megaNav__social g-megaNav__social--mobile medium-hide\">\n
+        \           </div>\n            <div class=\"g-newsletterCta__col-full\">\n
+        \             <p>By entering your email address and clicking “Submit,” you
+        agree to receive updates from the Open Society Foundations about our work.
+        To learn more about how we use and protect your personal data, please view
+        our <a href=\"/policies/privacy\">privacy policy</a>.</p>\n            </div>\n
+        \         </div>\n\n        </div>\n      </div>\n    </div>\n\n  </div>\n\n
+        \ <div class=\"g-megaNav__social g-megaNav__social--mobile medium-hide\">\n
         \   <a href=\"https://www.facebook.com/OpenSocietyFoundations\" aria-label=\"Visit
         our Facebook page\">\n      <svg><use xmlns:xlink=\"http://www.w3.org/1999/xlink\"
         xlink:href=\"#icon--social-facebook-white\"></use></svg>\n    </a>\n    <a
@@ -367,12 +378,7 @@ http_interactions:
         \           class=\"m-filters__option m-filters__option--checkbox no-pjax
         \"\n            data-filter-type=\"program\"\n            data-filter-value=\"culture-and-art\"\n
         \           data-url=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=culture-and-art\">\n
-        \           Culture and Art\n          </a>\n                  <a href=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=early-childhood-program\"\n
-        \           class=\"m-filters__option m-filters__option--checkbox no-pjax
-        \"\n            data-filter-type=\"program\"\n            data-filter-value=\"early-childhood-program\"\n
-        \           data-url=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=early-childhood-program\">\n
-        \           Early Childhood Program\n          </a>\n                  <a
-        href=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=economic-justice-program\"\n
+        \           Culture and Art\n          </a>\n                  <a href=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=economic-justice-program\"\n
         \           class=\"m-filters__option m-filters__option--checkbox no-pjax
         \"\n            data-filter-type=\"program\"\n            data-filter-value=\"economic-justice-program\"\n
         \           data-url=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=economic-justice-program\">\n
@@ -524,7 +530,11 @@ http_interactions:
         \           class=\"m-filters__option m-filters__option--checkbox no-pjax
         \ is-active \"\n            data-filter-type=\"year\"\n            data-filter-value=\"2019\"\n
         \           data-url=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2020\">\n
-        \           2019\n          </a>\n              </div>\n      </div>\n</section>\n
+        \           2019\n          </a>\n                  <a href=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019\"\n
+        \           class=\"m-filters__option m-filters__option--checkbox no-pjax
+        \ is-active \"\n            data-filter-type=\"year\"\n            data-filter-value=\"2020\"\n
+        \           data-url=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019\">\n
+        \           2020\n          </a>\n              </div>\n      </div>\n</section>\n
         \     <section class=\"o-filtersResultContainer\">\n  <section class=\"m-filtersActiveBar
         \  has-activeFilters \">\n  <span class=\"m-filtersActiveBar__title\">4 Grants
         Found</span>\n\n      <div class=\"m-filtersActiveBar__filters\">\n              <a
@@ -536,7 +546,9 @@ http_interactions:
         class=\"m-filtersActiveBar__filter no-pjax\" data-active-filter=\"2018\">\n
         \         2018\n        </a>\n              <a href=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2020\"
         class=\"m-filtersActiveBar__filter no-pjax\" data-active-filter=\"2019\">\n
-        \         2019\n        </a>\n                    <a href=\"https://www.opensocietyfoundations.org/grants/past\"
+        \         2019\n        </a>\n              <a href=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019\"
+        class=\"m-filtersActiveBar__filter no-pjax\" data-active-filter=\"2020\">\n
+        \         2020\n        </a>\n                    <a href=\"https://www.opensocietyfoundations.org/grants/past\"
         class=\"m-filtersActiveBar__filter no-pjax\" data-active-filter=\"clear\">\n
         \         Clear all\n        </a>\n          </div>\n  \n  <div class=\"m-filtersActiveBar__option\">\n
         \   \n          <section class=\"m-filtersMobile\" data-behavior=\"filtersMobile\"
@@ -677,12 +689,6 @@ http_interactions:
         \                     <label for=\"culture-and-art\">Culture and Art</label>\n
         \                   </div>\n                                      <div class=\"a-checkbox\">\n
         \                     <input\n                        type=\"checkbox\"\n
-        \                       id=\"early-childhood-program\"\n                        name=\"early-childhood-program\"\n
-        \                       value=\"early-childhood-program\"\n                        data-filter-type=\"filter_program\"\n
-        \                       data-filter-value=\"early-childhood-program\"\n                                                >\n
-        \                     <label for=\"early-childhood-program\">Early Childhood
-        Program</label>\n                    </div>\n                                      <div
-        class=\"a-checkbox\">\n                      <input\n                        type=\"checkbox\"\n
         \                       id=\"economic-justice-program\"\n                        name=\"economic-justice-program\"\n
         \                       value=\"economic-justice-program\"\n                        data-filter-type=\"filter_program\"\n
         \                       data-filter-value=\"economic-justice-program\"\n                                                >\n
@@ -789,10 +795,10 @@ http_interactions:
         \                     <label for=\"scholarship-programs\">Scholarship Programs</label>\n
         \                   </div>\n                                      <div class=\"a-checkbox\">\n
         \                     <input\n                        type=\"checkbox\"\n
-        \                       id=\"open-societyus\"\n                        name=\"open-societyus\"\n
+        \                       id=\"open-society-us\"\n                        name=\"open-society-us\"\n
         \                       value=\"us-programs\"\n                        data-filter-type=\"filter_program\"\n
         \                       data-filter-value=\"us-programs\"\n                                                >\n
-        \                     <label for=\"open-societyus\">Open Society–U.S.</label>\n
+        \                     <label for=\"open-society-us\">Open Society–U.S.</label>\n
         \                   </div>\n                                      <div class=\"a-checkbox\">\n
         \                     <input\n                        type=\"checkbox\"\n
         \                       id=\"womens-rights-program\"\n                        name=\"womens-rights-program\"\n
@@ -897,6 +903,12 @@ http_interactions:
         \                       value=\"2019\"\n                        data-filter-type=\"filter_year\"\n
         \                       data-filter-value=\"2019\"\n                        checked=\"true\"
         \                        >\n                      <label for=\"2019\">2019</label>\n
+        \                   </div>\n                                      <div class=\"a-checkbox\">\n
+        \                     <input\n                        type=\"checkbox\"\n
+        \                       id=\"2020\"\n                        name=\"2020\"\n
+        \                       value=\"2020\"\n                        data-filter-type=\"filter_year\"\n
+        \                       data-filter-value=\"2020\"\n                        checked=\"true\"
+        \                        >\n                      <label for=\"2020\">2020</label>\n
         \                   </div>\n                                  </div>\n              </div>\n
         \           </div>\n                  </div>\n      </div>\n\n      \n      <div
         class=\"m-filtersMobile__footer\">\n                <a href=\"#\" class=\"btn
@@ -1046,12 +1058,9 @@ http_interactions:
         \     </div>\n    </div>\n  </div>\n</button>\n  </li>\n      </ul>\n    </div>\n
         \ </div>\n</div>\n\n    \n    \n  </section>\n\n\n        \n\n          <section
         class=\"g-newsletterCta  row\">\n  <div class=\"g-newsletterCta__col\">\n
-        \   <h2 class=\"g-newsletterCta__title\">Didn’t find what you were looking
-        for?</h2>\n    <a href=\"https://www.opensocietyfoundations.org/grants/inquiry\"
-        class=\"btn g-newsletterCta__button no-pjax\">Grant inquiry form</a>\n  </div>\n
-        \ <div class=\"g-newsletterCta__col\">\n    <h2 class=\"g-newsletterCta__title\">Subscribe
-        to updates about new grant opportunities</h2>\n    <form class=\"g-newsletterCta__form\"
-        type=\"post\" action=\"https://www.opensocietyfoundations.org/newsletter/grants\"
+        \   <h2 class=\"g-newsletterCta__title\">Subscribe to updates about new grant
+        opportunities</h2>\n  </div>\n  <div class=\"g-newsletterCta__col\">\n    <form
+        class=\"g-newsletterCta__form\" type=\"post\" action=\"https://www.opensocietyfoundations.org/newsletter/grants\"
         data-behavior=\"newsletter\">\n      <div class=\"g-newsletterCta__wrapper\"
         data-newsletter-wrapper>\n        <input type=\"hidden\" name=\"_token\" value=\"\">
         \       <div class=\"g-newsletterCta__row\">\n          <input class=\"g-newsletterCta__input
@@ -1062,20 +1071,24 @@ http_interactions:
         \       <div class=\"a-checkbox\">\n          <input type=\"checkbox\" id=\"newsletter\"
         name=\"also_general_newsletter\" value=\"newsletter\">\n          <label for=\"newsletter\">Also
         send me the latest on Open Society’s work around the world</label>\n        </div>\n
-        \     </div>\n    </form>\n  </div>\n</section>\n\n                  <footer
-        class=\"g-footer\">\n\n  <section class=\"g-footer__highlights row\">\n    <div
-        class=\"g-footer__highlight\">\n      <h2><a href=\"/voices\">Voices</a></h2>\n
-        \     <p>Read the latest from our staff, grantees, and partners about how
-        we’re working around the world to build vibrant and inclusive democracies
-        whose governments are accountable and open to the participation of all people.</p>\n
-        \     <a href=\"/voices\" class=\"a-link--readmore\"><i>Learn more</i></a>\n
-        \   </div>\n\n    <div class=\"g-footer__highlight\">\n      <h2><a href=\"/how-we-fund\">How
-        We Fund</a></h2>\n      <p>Every year the Open Society Foundations give thousands
-        of grants to groups and individuals that work on the issues we focus on—promoting
-        tolerance, transparency, and open debate.</p>\n      <a href=\"/how-we-fund\"
-        class=\"a-link--readmore\"><i>Learn more</i></a>\n    </div>\n  </section>\n\n
-        \ <section class=\"g-footer__sitemap row\">\n    <div class=\"g-footer__sitemap__col\">\n
-        \     <ul class=\"g-footer__sitemap__list no-list\">\n        <li><a href=\"https://www.opensocietyfoundations.org/who-we-are\"
+        \     </div>\n    </form>\n  </div>\n  <div class=\"g-newsletterCta__col-full\">\n
+        \   <p>By entering your email address and clicking “Submit,” you agree to
+        receive updates from the Open Society Foundations about our work. To learn
+        more about how we use and protect your personal data, please view our <a href=\"/policies/privacy\">privacy
+        policy</a>.</p>\n  </div>\n</section>\n\n                  <footer class=\"g-footer\">\n\n
+        \ <section class=\"g-footer__highlights row\">\n    <div class=\"g-footer__highlight\">\n
+        \     <h2><a href=\"/voices\">Voices</a></h2>\n      <p>Read the latest from
+        our staff, grantees, and partners about how we’re working around the world
+        to build vibrant and inclusive democracies whose governments are accountable
+        and open to the participation of all people.</p>\n      <a href=\"/voices\"
+        class=\"a-link--readmore\"><i>Learn more</i></a>\n    </div>\n\n    <div class=\"g-footer__highlight\">\n
+        \     <h2><a href=\"/how-we-work/how-we-fund\">How We Fund</a></h2>\n      <p>Every
+        year the Open Society Foundations give thousands of grants to groups and individuals
+        that work on the issues we focus on—promoting tolerance, transparency, and
+        open debate.</p>\n      <a href=\"/how-we-work/how-we-fund\" class=\"a-link--readmore\"><i>Learn
+        more</i></a>\n    </div>\n  </section>\n\n  <section class=\"g-footer__sitemap
+        row\">\n    <div class=\"g-footer__sitemap__col\">\n      <ul class=\"g-footer__sitemap__list
+        no-list\">\n        <li><a href=\"https://www.opensocietyfoundations.org/who-we-are\"
         class=\"g-footer__sitemap__title\">Who We Are</a></li>\n        <li><a href=\"https://www.opensocietyfoundations.org/who-we-are/our-history\">Our
         History</a></li>\n        <li><a href=\"https://www.opensocietyfoundations.org/george-soros\">George
         Soros</a></li>\n        <li><a href=\"https://www.opensocietyfoundations.org/who-we-are/leadership\">Leadership</a></li>\n
@@ -1106,7 +1119,7 @@ http_interactions:
         xlink:href=\"#icon--cc-attribution\"></use></svg>\n          <svg><use xmlns:xlink=\"http://www.w3.org/1999/xlink\"
         xlink:href=\"#icon--cc-non-commercial\"></use></svg>\n          <svg><use
         xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#icon--cc-no-derivatives\"></use></svg>\n
-        \       </a>\n      </div>\n\n      <span>\n        © 2021 Open Society Foundations,
+        \       </a>\n      </div>\n\n      <span>\n        © 2022 Open Society Foundations,
         some rights reserved.\n      </span>\n    </div>\n  </section>\n    <section
         class=\"g-footer__legal row\">\n    <div class=\"g-footer__social\">\n      <a
         href=\"https://www.facebook.com/OpenSocietyFoundations\" aria-label=\"Visit
@@ -1123,11 +1136,13 @@ http_interactions:
         href=\"https://www.linkedin.com/company/open-society-foundations\" aria-label=\"Visit
         our LinkedIn page\">\n        <svg><use xmlns:xlink=\"http://www.w3.org/1999/xlink\"
         xlink:href=\"#icon--social-linkedin-white\"></use></svg>\n      </a>\n    </div>\n
-        \   <div class=\"g-footer__legalLinks\">\n      <a href=\"https://www.opensocietyfoundations.org/policies/terms-and-conditions\">Terms
+        \   <div class=\"g-footer__legalLinks\" data-behavior=\"cookieNotice\">\n
+        \     <a href=\"https://www.opensocietyfoundations.org/policies/terms-and-conditions\">Terms
         and Conditions</a>\n      <a href=\"https://www.opensocietyfoundations.org/policies/privacy\">Privacy</a>\n
         \     <a href=\"https://www.opensocietyfoundations.org/policies/accessibility\">Accessibility</a>\n
-        \   </div>\n\n    \n    \n  </section>\n</footer>\n\t</div>\n</div>\n    </main>\n\n
+        \   </div>\n\n    \n  </section>\n</footer>\n\t</div>\n</div>\n    </main>\n\n
         \ \n  <div class=\"pageLoader\">\n\t<div class=\"pageLoader__bar\"></div>\n</div>
-        \   </div>\n\n  <script src=\"/dist/scripts/app-1f5ada94f6.js\"></script>\n</body>\n</html>\n"
-  recorded_at: 2021-03-03 19:51:56 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.7.4
+        \     </div>\n      <script src=\"/dist/scripts/app-7f92fbcf66.js\"></script>\n
+        \ </body>\n</html>\n"
+  recorded_at: 2022-01-28 18:30:17 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0

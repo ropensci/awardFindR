@@ -20,10 +20,10 @@ http_interactions:
       x-powered-by: ASP.NET
       x-frame-options: SAMEORIGIN
       strict-transport-security: 'max-age=31536000; includeSubDomains; preload '
-      server-timing: dtRpid;desc="-1240157598"
-      set-cookie: dtCookie=v_4_srv_1_sn_2D5B5EE95E9BDD9C05991BE874075F88_perc_100000_ol_0_mul_1_app-3A9560ca98ee91dc54_1;
+      server-timing: dtSInfo;desc="0", dtRpid;desc="-222208973"
+      set-cookie: dtCookie=v_4_srv_2_sn_A8D62D1434B6FDE7724E0D33DD213D1B_perc_100000_ol_0_mul_1_app-3A9560ca98ee91dc54_1;
         Path=/; Domain=.nih.gov
-      date: Sun, 27 Jun 2021 12:31:30 GMT
+      date: Fri, 28 Jan 2022 18:28:17 GMT
     body:
       encoding: UTF-8
       file: no
@@ -1601,96 +1601,7 @@ http_interactions:
         Prostate Cancer therapy; prototype; Quality of life; Race; racial and ethnic;
         racial minority; Research Design; Research Project Grants; research study;
         Risk; Self Management; Support Groups; Surveys; Symptoms; System; Underinsured;
-        United States; urinary; user centered design; Work"},{"projectNumber":"PR171449","fy":2017,"title":"EATING
-        DISORDERS IN VETERANS: PREVALENCE, COMORBIDITY, RISK, AND HEALTH CARE USE","department":"DOD","agency":"CDMRP","ic":null,"totalCostAmount":1077324,"nihApplId":null,"smApplId":1101194,"budgetStartDate":null,"budgetEndDate":null,"contactPi":"MITCHELL,
-        KAREN","otherPis":null,"congressionalDistrict":"08","dunsId":"962848586","latitude":42.3272756,"longitude":-71.1099371,"orgName":"BOSTON
-        VA RESEARCH INSTITUTE INC","orgCity":"BOSTON","orgState":"MA","orgCountry":"UNITED
-        STATES","orgZipCode":"02130","projectStartDate":"2018-09-30T00:00:00","projectEndDate":"2021-09-29T00:00:00","cfdaCode":"12.420","abstract":"Eating
-        disorders (EDs), including anorexia nervosa, bulimia nervosa, and binge eating
-        disorder, are pernicious conditions with the highest mortality rate of any
-        psychiatric disorder. They also are extremely impairing, more so than nearly
-        any other psychiatric disorder, and individuals with EDs are high users of
-        healthcare, given the physical complications of these conditions. Yet, EDs
-        remain understudied among Veterans, possibly due to the misperception that
-        members of this population do not suffer from EDs. Recent findings contradict
-        this belief, as studies by the Initiating Principal Investigator have demonstrated
-        that both male and female Veterans have rates of EDs that are at least as
-        high as, if not higher than, the general U.S. population. Military and Veteran-specific
-        risk/maintenance factors for EDs, such as difficulty conforming to military
-        weight and fitness standards and exposure to military sexual trauma and combat,
-        may operate together with earlier childhood factors to contribute to the onset
-        of EDs. Thus, Veterans may be particularly vulnerable to EDs. Veterans with
-        EDs are likely to be high users of Department of Veterans Affairs (VA) healthcare,
-        but given the lack of national screening or treatment programs, the ED may
-        be undetected. This proposal will fill crucial gaps in the literature and
-        validate screening measures of EDs in post-9/11 Veterans to enable detection
-        and early intervention for these debilitating conditions.This application
-        focuses on EDs and addresses several Fiscal Year 2017 Peer Reviewed Medical
-        Research Program Areas for Encouragement, including prevalence of diagnosable
-        EDs and other clinically significant disordered eating, associations between
-        ED symptoms and military-unique behaviors and conditions, and treatment patterns
-        of individuals with EDs. We will establish a cohort of post-9/11 Veterans
-        who were separated from Service within the past year in order to: (1a) Examine
-        the prevalence of full/subthreshold EDs among male and female Veterans. (1b)
-        Examine the proportion of full/subthreshold EDs among vulnerable subgroups
-        of Veterans. (1c) Examine temporal associations among EDs and comorbid disorders,
-        including post-traumatic stress disorder (PTSD), depression, anxiety, and
-        alcohol and substance use disorders. (2a) Document treatment patterns and
-        healthcare preferences among male and female Veterans with probable full/subthreshold
-        ED diagnoses. (2b) Compare treatment patterns for Veterans with probable full/subthreshold
-        ED diagnoses to Veterans without ED diagnoses. (2c) Identify barriers to care
-        for Veterans seeking mental health treatment in general and for EDs specifically.
-        (3) Identify the impact of general and military/Veteran-specific risk/maintenance
-        factors for ED symptoms and investigate gender differences. (4) Validate and
-        compare two existing, scalable, screening measures of EDs in a Veteran sample.This
-        will be a cross-sectional study. Participants will be randomly selected from
-        the roster of Veterans who separated from Service within the past year. Names
-        will be provided by the VA/Department of Defense (DoD) Identity Repository
-        (VADIR), a VA office with access to DoD records. We will recruit a sample
-        of 2100 Veterans to complete a mailed survey. Survey respondents whose scores
-        exceed clinical cutoffs on ED screening measures, as well as an age- and sex-matched
-        sample of healthy controls, will be selected to participate in a telephone
-        interview. ED diagnoses will be confirmed, and participants will be interviewed
-        about risk factors for EDs. In addition, ages of onset of EDs and comorbid
-        conditions, including PTSD, depression, anxiety, and alcohol and substance
-        use disorders, will be assessed in order to investigate temporal associations.Our
-        findings regarding the prevalence of EDs will help clinicians, researchers,
-        and policymakers understand the scope of EDs among Veterans and will also
-        aid us in identifying patients for targeted screening or prevention. Identification
-        of barriers to care for Veterans with EDs will enable us to address these
-        barriers by, for example, providing information to Veterans on the availability
-        of services and by addressing stigma. Validating brief screening measures
-        for EDs among male and female Veterans will allow us to make recommendations
-        to researchers and clinicians who wish to detect EDs efficiently. In the long
-        term, screening and identifying vulnerable subgroups, combined with knowledge
-        of where Veterans with EDs are seeking services, will allow us to implement
-        effective, targeted screening and prevention programs and to intervene early,
-        improving treatment outcomes. Identifying military-specific risk/maintenance
-        factors for EDs will allow us to implement treatments for EDs that are appropriate
-        for Veterans. Addressing comorbidity in evidenced-based treatments is a critical
-        issue, and this proposal will provide important foundational work for developing
-        treatments and providing them to Veterans with EDs and comorbid mental health
-        conditions. Many people with EDs, within Veteran and other populations, do
-        not seek or receive treatment for these debilitating conditions. This research
-        will be a key contributing step in closing the treatment gap by making it
-        possible that patients receive timely treatment in both the community and
-        the VA healthcare system.","terms":" Address; Age; Age of Onset; Alcohol consumption;
-        Anorexia Nervosa; Anxiety; Area; barrier to care; Behavior; Belief; Binge
-        eating disorder; brief screening; Bulimia; Clinical; clinically significant;
-        cohort; combat; Communities; Comorbidity; Cross-Sectional Studies; Department
-        of Defense; Detection; Diagnosis; Disease; early childhood; Early Intervention;
-        Eating Disorders; Evidence based treatment; Exposure to; Female; fitness;
-        Foundations; gender difference; Health Services Accessibility; Healthcare;
-        Healthcare Systems; Impairment; improved; Individual; Interview; Knowledge;
-        Literature; Maintenance; male; Measures; Medical Research; member; Mental
-        Depression; Mental disorders; Mental Health; Military Personnel; mortality;
-        Names; Participant; Patients; Pattern; Peer Review; Population; Post-Traumatic
-        Stress Disorders; preference; Prevalence; Prevention; Prevention program;
-        Principal Investigator; programs; Recommendation; Records; recruit; repository;
-        Research; Research Personnel; Respondent; Risk; Risk Factors; Sampling; screening;
-        screening program; Services; sex; sexual trauma; social stigma; Subgroup;
-        Substance Use Disorder; Surveys; Symptoms; Telephone Interviews; Time; Treatment
-        outcome; treatment program; Veterans; Weight; Work"},{"projectNumber":"PR171449P1","fy":2017,"title":"EATING
+        United States; urinary; user centered design; Work"},{"projectNumber":"PR171449P1","fy":2017,"title":"EATING
         DISORDERS IN VETERANS: PREVALENCE, COMORBIDITY, RISK, AND HEALTH CARE USE","department":"DOD","agency":"CDMRP","ic":null,"totalCostAmount":1012068,"nihApplId":null,"smApplId":1101195,"budgetStartDate":null,"budgetEndDate":null,"contactPi":"COOPER,
         ZAFRA","otherPis":null,"congressionalDistrict":"03","dunsId":"043207562","latitude":41.3018017,"longitude":-72.9331432,"orgName":"YALE
         UNIVERSITY","orgCity":"NEW HAVEN","orgState":"CT","orgCountry":"UNITED STATES","orgZipCode":"06519","projectStartDate":"2018-09-30T00:00:00","projectEndDate":"2021-09-29T00:00:00","cfdaCode":"12.420","abstract":"Eating
@@ -2212,8 +2123,98 @@ http_interactions:
         Rehabilitation therapy; Research; Research Design; Schools; Self Efficacy;
         Self-Help Devices; Services; Site; Socioeconomic Status; Speech Recognition
         Software; Spinal cord injury; Structure; System; Telephone Interviews; United
-        States; Variant; Veterans; War; Work; Wrist"}]}'
-  recorded_at: 2021-06-27 12:31:34 GMT
+        States; Variant; Veterans; War; Work; Wrist"},{"projectNumber":"PR171449","fy":2017,"title":"EATING
+        DISORDERS IN VETERANS: PREVALENCE, COMORBIDITY, RISK, AND HEALTH CARE USE","department":"DOD","agency":"CDMRP","ic":null,"totalCostAmount":1077324,"nihApplId":null,"smApplId":1101194,"budgetStartDate":null,"budgetEndDate":null,"contactPi":"MITCHELL,
+        KAREN","otherPis":null,"congressionalDistrict":"08","dunsId":"962848586","latitude":42.3600825,"longitude":-71.0588801,"orgName":"BOSTON
+        VA RESEARCH INSTITUTE INC","orgCity":"BOSTON","orgState":"MA","orgCountry":"UNITED
+        STATES","orgZipCode":"02130","projectStartDate":"2018-09-30T00:00:00","projectEndDate":"2021-09-29T00:00:00","cfdaCode":"12.420","abstract":"Eating
+        disorders (EDs), including anorexia nervosa, bulimia nervosa, and binge eating
+        disorder, are pernicious conditions with the highest mortality rate of any
+        psychiatric disorder.  They also are extremely impairing, more so than nearly
+        any other psychiatric disorder, and individuals with EDs are high users of
+        healthcare, given the physical complications of these conditions.  Yet, EDs
+        remain understudied among Veterans, possibly due to the misperception that
+        members of this population do not suffer from EDs.  Recent findings contradict
+        this belief, as studies by the Initiating Principal Investigator have demonstrated
+        that both male and female Veterans have rates of EDs that are at least as
+        high as, if not higher than, the general U.S. population.  Military and Veteran-specific
+        risk/maintenance factors for EDs, such as difficulty conforming to military
+        weight and fitness standards and exposure to military sexual trauma and combat,
+        may operate together with earlier childhood factors to contribute to the onset
+        of EDs.  Thus, Veterans may be particularly vulnerable to EDs.  Veterans with
+        EDs are likely to be high users of Department of Veterans Affairs (VA) healthcare,
+        but given the lack of national screening or treatment programs, the ED may
+        be undetected.  This proposal will fill crucial gaps in the literature and
+        validate screening measures of EDs in post-9/11 Veterans to enable detection
+        and early intervention for these debilitating conditions.This application
+        focuses on EDs and addresses several Fiscal Year 2017 Peer Reviewed Medical
+        Research Program Areas for Encouragement, including prevalence of diagnosable
+        EDs and other clinically significant disordered eating, associations between
+        ED symptoms and military-unique behaviors and conditions, and treatment patterns
+        of individuals with EDs.  We will establish a cohort of post-9/11 Veterans
+        who were separated from Service within the past year in order to: (1a) Examine
+        the prevalence of full/subthreshold EDs among male and female Veterans.  (1b)
+        Examine the proportion of full/subthreshold EDs among vulnerable subgroups
+        of Veterans.  (1c) Examine temporal associations among EDs and comorbid disorders,
+        including post-traumatic stress disorder (PTSD), depression, anxiety, and
+        alcohol and substance use disorders.  (2a) Document treatment patterns and
+        healthcare preferences among male and female Veterans with probable full/subthreshold
+        ED diagnoses.  (2b) Compare treatment patterns for Veterans with probable
+        full/subthreshold ED diagnoses to Veterans without ED diagnoses.  (2c) Identify
+        barriers to care for Veterans seeking mental health treatment in general and
+        for EDs specifically.  (3) Identify the impact of general and military/Veteran-specific
+        risk/maintenance factors for ED symptoms and investigate gender differences.  (4)
+        Validate and compare two existing, scalable, screening measures of EDs in
+        a Veteran sample.This will be a cross-sectional study.  Participants will
+        be randomly selected from the roster of Veterans who separated from Service
+        within the past year.  Names will be provided by the VA/Department of Defense
+        (DoD) Identity Repository (VADIR), a VA office with access to DoD records.  We
+        will recruit a sample of 2100 Veterans to complete a mailed survey.  Survey
+        respondents whose scores exceed clinical cutoffs on ED screening measures,
+        as well as an age- and sex-matched sample of healthy controls, will be selected
+        to participate in a telephone interview.  ED diagnoses will be confirmed,
+        and participants will be interviewed about risk factors for EDs.  In addition,
+        ages of onset of EDs and comorbid conditions, including PTSD, depression,
+        anxiety, and alcohol and substance use disorders, will be assessed in order
+        to investigate temporal associations.Our findings regarding the prevalence
+        of EDs will help clinicians, researchers, and policymakers understand the
+        scope of EDs among Veterans and will also aid us in identifying patients for
+        targeted screening or prevention.  Identification of barriers to care for
+        Veterans with EDs will enable us to address these barriers by, for example,
+        providing information to Veterans on the availability of services and by addressing
+        stigma.  Validating brief screening measures for EDs among male and female
+        Veterans will allow us to make recommendations to researchers and clinicians
+        who wish to detect EDs efficiently.  In the long term, screening and identifying
+        vulnerable subgroups, combined with knowledge of where Veterans with EDs are
+        seeking services, will allow us to implement effective, targeted screening
+        and prevention programs and to intervene early, improving treatment outcomes.  Identifying
+        military-specific risk/maintenance factors for EDs will allow us to implement
+        treatments for EDs that are appropriate for Veterans.  Addressing comorbidity
+        in evidenced-based treatments is a critical issue, and this proposal will
+        provide important foundational work for developing treatments and providing
+        them to Veterans with EDs and comorbid mental health conditions.  Many people
+        with EDs, within Veteran and other populations, do not seek or receive treatment
+        for these debilitating conditions.  This research will be a key contributing
+        step in closing the treatment gap by making it possible that patients receive
+        timely treatment in both the community and the VA healthcare system.","terms":"
+        Address; Age; Age of Onset; Alcohol consumption; Anorexia Nervosa; Anxiety;
+        Area; barrier to care; Behavior; Belief; Binge eating disorder; brief screening;
+        Bulimia; Clinical; clinically significant; cohort; combat; Communities; Comorbidity;
+        Cross-Sectional Studies; Department of Defense; Detection; Diagnosis; Disease;
+        early childhood; Early Intervention; Eating Disorders; Evidence based treatment;
+        Exposure to; Female; fitness; Foundations; gender difference; Health Services
+        Accessibility; Healthcare; Healthcare Systems; Impairment; improved; Individual;
+        Interview; Knowledge; Literature; Maintenance; male; Measures; Medical Research;
+        member; Mental Depression; Mental disorders; Mental Health; Military Personnel;
+        mortality; Names; Participant; Patients; Pattern; Peer Review; Population;
+        Post-Traumatic Stress Disorders; preference; Prevalence; Prevention; Prevention
+        program; Principal Investigator; programs; Recommendation; Records; recruit;
+        repository; Research; Research Personnel; Respondent; Risk; Risk Factors;
+        Sampling; screening; screening program; Services; sex; sexual trauma; social
+        stigma; Subgroup; Substance Use Disorder; Surveys; Symptoms; Telephone Interviews;
+        Time; Treatment outcome; treatment program; United States Department of Veterans
+        Affairs; Veterans; Weight; Work"}]}'
+  recorded_at: 2022-01-28 18:28:18 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -2236,8 +2237,8 @@ http_interactions:
       x-powered-by: ASP.NET
       x-frame-options: SAMEORIGIN
       strict-transport-security: 'max-age=31536000; includeSubDomains; preload '
-      server-timing: dtRpid;desc="-1555620027"
-      date: Sun, 27 Jun 2021 12:31:32 GMT
+      server-timing: dtSInfo;desc="0", dtRpid;desc="-485381497"
+      date: Fri, 28 Jan 2022 18:28:17 GMT
     body:
       encoding: UTF-8
       file: no
@@ -3389,5 +3390,5 @@ http_interactions:
         Parents; Policies; Poverty; programs; Reporting; Research; Review Literature;
         Role; Single Parent; Single-Parent Family; skills; Teenagers; Time; Unmarried;
         Unmarried Mother; Woman; young adult"}]}'
-  recorded_at: 2021-06-27 12:31:34 GMT
+  recorded_at: 2022-01-28 18:28:18 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0

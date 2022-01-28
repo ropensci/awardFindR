@@ -41,7 +41,7 @@ get_neh <- function(keyword, from_year, to_year, verbose=FALSE) {
 
   # Check if there's no results
   if (xlsx_response$response$url ==
-      paste0("https://securegrants.neh.gov/PublicQuery/error.aspx",
+      paste0("https://securegrants.neh.gov/PublicQuery/error.htm",
              "?aspxerrorpath=/publicquery/main.aspx")) {
     return (NULL)
     }

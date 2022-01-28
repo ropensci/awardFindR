@@ -42,7 +42,7 @@ get_templeton <- function(keywords, from_year, to_year, verbose=FALSE) {
     response <- request(paste0(url, xml2::url_escape(keyword)), "get", verbose)
 
     link <- xml2::xml_text(
-      xml2::xml_find_all(response, "//h2/a[@rel='bookmark']/@href"))
+      xml2::xml_find_all(response, "//section[@id='search-results-content']//a[@rel='bookmark']/@href"))
 
     if (length(link)==0) {
       return(NULL)

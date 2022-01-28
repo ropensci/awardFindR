@@ -3,6 +3,6 @@ test_that("Arnold returns expected results", {
     one_result <- suppressMessages(
       .standardize_arnold("qualitative research", "2020-01-02", "2020-01-03",
                           FALSE))
-    expect_equal("136154", one_result$id)
+    expect_equal("214384", one_result$id)
   }))
 })
