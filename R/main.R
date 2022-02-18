@@ -95,5 +95,6 @@ search_awards <- function(keywords,
     results$dup_id <- NULL
   }
 
+  #results <- subset(results, year < as.integer(format.Date(from_date, "%Y")))
   results
 }
