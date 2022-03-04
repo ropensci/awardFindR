@@ -1,5 +1,5 @@
 #' Query awards from the Bill & Melinda Gates Foundation
-#' @inheritParams get_fedreporter
+#' @inheritParams get_neh
 #' @return a data.frame
 #' @export
 #' @examples

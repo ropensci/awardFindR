@@ -1,5 +1,5 @@
 #' Search the Andrew W. Mellon Foundation grant database
-#' @inheritParams get_fedreporter
+#' @inheritParams get_neh
 #' @return a data.frame
 #' @export
 #' @examples

@@ -17,16 +17,16 @@ http_interactions:
       cache-control: no-cache
       connection: keep-alive
       content-encoding: gzip
-      content-length: '2283'
+      content-length: '2279'
       content-type: application/json; charset=utf-8
-      date: Fri, 28 Jan 2022 18:30:07 GMT
-      expires: Fri, 28 Jan 2022 18:30:07 GMT
+      date: Fri, 04 Mar 2022 19:04:42 GMT
+      expires: Fri, 04 Mar 2022 19:04:42 GMT
       pragma: no-cache
       server: Microsoft-IIS/10.0
       server-timing:
       - cdn-cache; desc=MISS
-      - edge; dur=19
-      - origin; dur=478
+      - edge; dur=9
+      - origin; dur=182
       vary: Accept-Encoding
       x-frame-options: SAMEORIGIN
     body:
@@ -37,7 +37,7 @@ http_interactions:
         Economic Mobility & Opportunity","grantTopicExtras":0,"date":"NOVEMBER 2019","grantStatus":"Closed","grantDuration":"5","granteeLocation":{"city":"Pittsburgh","state":"Pennsylvania","country":"United
         States"},"regionServed":"GLOBAL","regionServedExtras":1,"awardedAmount":"$231,444","url":"/about/committed-grants/2019/11/inv003474"},{"id":"{E4047BB4-D2EA-495E-BFC4-689FEABDA9FE}","grantee":"Action
         Contre La Faim","division":"Global Development","divisionExtras":0,"mainCat":null,"grantTopic":"Nutrition","grantTopicExtras":0,"date":"AUGUST
-        2019","grantStatus":"Active","grantDuration":"30","granteeLocation":{"city":"Paris","state":"","country":"France"},"regionServed":"GLOBAL","regionServedExtras":2,"awardedAmount":"$1,500,000","url":"/about/committed-grants/2019/08/opp1208004"},{"id":"{1819B763-EC95-4767-A37C-B20FFAD1004B}","grantee":"Princeton
+        2019","grantStatus":"Closed","grantDuration":"30","granteeLocation":{"city":"Paris","state":"","country":"France"},"regionServed":"GLOBAL","regionServedExtras":2,"awardedAmount":"$1,500,000","url":"/about/committed-grants/2019/08/opp1208004"},{"id":"{1819B763-EC95-4767-A37C-B20FFAD1004B}","grantee":"Princeton
         University","division":"U.S. Program","divisionExtras":0,"mainCat":null,"grantTopic":"U.S.
         Economic Mobility & Opportunity","grantTopicExtras":0,"date":"NOVEMBER 2018","grantStatus":"Closed","grantDuration":"19","granteeLocation":{"city":"Princeton","state":"New
         Jersey","country":"United States"},"regionServed":"GLOBAL","regionServedExtras":1,"awardedAmount":"$91,845","url":"/about/committed-grants/2018/11/opp1203985"}],"facets":[{"dropdownSelectLabel":"Select
@@ -95,7 +95,7 @@ http_interactions:
         Sanitation and Hygiene","name":"Water, Sanitation and Hygiene","count":0,"selected":false,"childValues":[]}],"childGroups":[]},{"dropdownSelectLabel":"Start","dropdownClearLabel":"All
         Years","id":"yearAwardedStart","label":"Year Awarded","values":[{"id":"2018","name":"2018","count":1,"selected":true,"childValues":[]},{"id":"2019","name":"2019","count":2,"selected":false,"childValues":[]}],"childGroups":[]},{"dropdownSelectLabel":"End","dropdownClearLabel":"All
         Years","id":"yearAwardedEnd","label":"Year Awarded","values":[{"id":"2019","name":"2019","count":2,"selected":true,"childValues":[]},{"id":"2018","name":"2018","count":1,"selected":false,"childValues":[]}],"childGroups":[]},{"dropdownSelectLabel":null,"dropdownClearLabel":null,"id":"status","label":"Grant
-        Status","values":[{"id":"Active","name":"Active","count":1,"selected":false,"childValues":[]},{"id":"Closed","name":"Closed","count":2,"selected":false,"childValues":[]}],"childGroups":[]},{"dropdownSelectLabel":"Select
+        Status","values":[{"id":"Active","name":"Active","count":0,"selected":false,"childValues":[]},{"id":"Closed","name":"Closed","count":3,"selected":false,"childValues":[]}],"childGroups":[]},{"dropdownSelectLabel":"Select
         a Region","dropdownClearLabel":"All Regions","id":"region","label":"Region
         Served","values":[{"id":"AFRICA","name":"AFRICA","count":1,"selected":false,"childValues":[]},{"id":"ASIA","name":"ASIA","count":0,"selected":false,"childValues":[]},{"id":"EUROPE","name":"EUROPE","count":1,"selected":false,"childValues":[]},{"id":"GLOBAL","name":"GLOBAL","count":3,"selected":false,"childValues":[]},{"id":"NORTH
         AMERICA","name":"NORTH AMERICA","count":2,"selected":false,"childValues":[]},{"id":"OCEANIA","name":"OCEANIA","count":0,"selected":false,"childValues":[]},{"id":"SOUTH
@@ -110,5 +110,5 @@ http_interactions:
         York","name":"New York","count":0,"selected":false,"childValues":[]},{"id":"Pennsylvania","name":"Pennsylvania","count":1,"selected":false,"childValues":[]},{"id":"Washington","name":"Washington","count":0,"selected":false,"childValues":[]}],"childGroups":[]},{"dropdownSelectLabel":"Select
         a City","dropdownClearLabel":"All Cities","id":"city","label":"Grantee city","values":[{"id":"Atlanta","name":"Atlanta","count":0,"selected":false,"childValues":[]},{"id":"Barcelona","name":"Barcelona","count":0,"selected":false,"childValues":[]},{"id":"Beijing","name":"Beijing","count":0,"selected":false,"childValues":[]},{"id":"Brooklyn","name":"Brooklyn","count":0,"selected":false,"childValues":[]},{"id":"Burnaby","name":"Burnaby","count":0,"selected":false,"childValues":[]},{"id":"Denver","name":"Denver","count":0,"selected":false,"childValues":[]},{"id":"Dhaka","name":"Dhaka","count":0,"selected":false,"childValues":[]},{"id":"New
         York","name":"New York","count":0,"selected":false,"childValues":[]},{"id":"Paris","name":"Paris","count":1,"selected":false,"childValues":[]},{"id":"Pittsburgh","name":"Pittsburgh","count":1,"selected":false,"childValues":[]},{"id":"Princeton","name":"Princeton","count":1,"selected":false,"childValues":[]},{"id":"Seattle","name":"Seattle","count":0,"selected":false,"childValues":[]},{"id":"Washington","name":"Washington","count":0,"selected":false,"childValues":[]}],"childGroups":[]}]}'
-  recorded_at: 2022-01-28 18:30:07 GMT
+  recorded_at: 2022-03-04 19:04:40 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0

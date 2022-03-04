@@ -6,7 +6,7 @@
                        program=related_competitions, description=content))
 }
 #' Search SSRC fellowships and grants by keyword and date
-#' @inheritParams get_fedreporter
+#' @inheritParams get_neh
 #' @return a data.frame
 #' @export
 #' @examples \dontrun{ssrc <- get_ssrc("qualitative", 2015, 2016)}

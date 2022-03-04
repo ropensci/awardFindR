@@ -1,5 +1,5 @@
 #' Get Robert Wood Johnson foundation awards
-#' @inheritParams get_fedreporter
+#' @inheritParams get_neh
 #' @return a data.frame
 #' @export
 #' @examples

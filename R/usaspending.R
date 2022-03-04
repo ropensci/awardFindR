@@ -21,6 +21,13 @@ get_usaspend <- function(keywords, from_date, to_date, verbose) {
         # These should be agencies that are not covered by:
         # Federal Reporter, NIH RePORTER or NSF
         # because the data is limited from USAspending compared to other sources
+        list(name="Department of Agriculture", tier="toptier", type="awarding"),
+        list(name="Department of Defense", tier="toptier", type="awarding"),
+        list(name="National Aeronautics and Space Administration", tier="toptier",
+             type="awarding"),
+        list(name="Environmental Protection Agency", tier="toptier",
+             type="awarding"),
+        list(name="Department of Education", tier="toptier", type="awarding"),
         list(name="Institute of Museum and Library Services", tier="toptier",
              type="awarding"),
         list(name="Smithsonian Institution", tier="toptier", type="awarding"),

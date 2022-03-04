@@ -14,8 +14,10 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 28 Jan 2022 18:30:16 GMT
+      date: Fri, 04 Mar 2022 19:04:54 GMT
       content-type: text/html; charset=UTF-8
+      transfer-encoding: chunked
+      connection: keep-alive
       vary: Accept-Encoding
       cache-control: public, max-age=3600
       x-frame-options: SAMEORIGIN
@@ -32,18 +34,18 @@ http_interactions:
         style-src ''unsafe-inline'' ''self''; object-src ''self'' https://video.ted.com;
         base-uri ''self''; connect-src ''self'' https://www.googletagmanager.com https://www.google-analytics.com
         https://*.ingest.sentry.io https://cdn.plyr.io; font-src ''self'' https: data:;
-        frame-src ''self'' https://www.youtube.com https://w.soundcloud.com https://www.facebook.com;
-        img-src ''self'' https://i.ytimg.com https://opensocietyfoundations.imgix.net
+        frame-src ''self'' https://www.youtube.com https://w.soundcloud.com https://www.facebook.com
+        https://player.vimeo.com; img-src ''self'' https://i.ytimg.com https://opensocietyfoundations.imgix.net
         https://www.google-analytics.com https: data:; manifest-src ''self''; media-src
         ''self''; report-uri https://opensociety.report-uri.com/r/d/csp/enforce; worker-src
         ''none'';'
       content-encoding: gzip
       cf-cache-status: MISS
-      last-modified: Fri, 28 Jan 2022 18:30:16 GMT
+      last-modified: Fri, 04 Mar 2022 19:04:54 GMT
       expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       strict-transport-security: max-age=15552000
       server: cloudflare
-      cf-ray: 6d4c4a7dd8c80cf1-EWR
+      cf-ray: 6e6ce154aa2a8c2f-EWR
     body:
       encoding: UTF-8
       file: no
@@ -149,8 +151,8 @@ http_interactions:
         no-list\">\n              <li><a href=\"https://www.opensocietyfoundations.org/how-we-work\"
         class=\"g-megaNav__megaLink g-megaNav__megaLink--header\">How We Work</a></li>\n
         \             <li class=\"g-megaNav__link\"><a href=\"https://www.opensocietyfoundations.org/how-we-work/how-we-fund\"><span>How
-        We Fund</span></a></li>\n              <li class=\"g-megaNav__link\"><a href=\"https://www.opensocietyfoundations.org/grants\"><span>Grants,
-        Scholarships, and Fellowships</span></a></li>\n              <li class=\"g-megaNav__link\"><a
+        We Fund</span></a></li>\n              <li class=\"g-megaNav__link\"><a href=\"https://www.opensocietyfoundations.org/grants\"><span>Grants
+        and Fellowships</span></a></li>\n              <li class=\"g-megaNav__link\"><a
         href=\"https://www.opensocietyfoundations.org/grants/past\"><span>Awarded
         Grants</span></a></li>\n            </ul>\n          </div>\n\n          <div
         class=\"g-megaNav__col medium-hide\">\n            <ul class=\"g-megaNav__list
@@ -238,8 +240,8 @@ http_interactions:
         type=\"submit\" id=\"newsletter_navigation_submit\" value=\"Submit\" data-newsletter-submit/>\n
         \                 </div>\n                </div>\n              </form>\n
         \           </div>\n            <div class=\"g-newsletterCta__col-full\">\n
-        \             <p>By entering your email address and clicking “Submit,” you
-        agree to receive updates from the Open Society Foundations about our work.
+        \             <p>By entering your email address and clicking “Submit,�\x9D
+        you agree to receive updates from the Open Society Foundations about our work.
         To learn more about how we use and protect your personal data, please view
         our <a href=\"/policies/privacy\">privacy policy</a>.</p>\n            </div>\n
         \         </div>\n\n        </div>\n      </div>\n    </div>\n\n  </div>\n\n
@@ -266,10 +268,10 @@ http_interactions:
         Open Society Foundations work to build vibrant and inclusive democracies whose
         governments are accountable to their citizens. The vast majority of the grants
         made by Open Society are to organizations, but we also award a limited number
-        of grants to individuals, primarily through scholarships and fellowships offered
-        across a number of different programs.</p>\n        \n              </div>\n
-        \     </div>\n\n      <div class=\"m-pageIntro__sidebar\">\n      <ul class=\"a-linkList
-        no-list\">\n      <li>\n      <a class=\"a-linkList__item\" href=\"https://www.opensocietyfoundations.org/grants\">\n
+        of grants to individuals through fellowships offered across a number of different
+        programs.</p>\n        \n              </div>\n      </div>\n\n      <div
+        class=\"m-pageIntro__sidebar\">\n      <ul class=\"a-linkList no-list\">\n
+        \     <li>\n      <a class=\"a-linkList__item\" href=\"https://www.opensocietyfoundations.org/grants\">\n
         \       Grant, scholarship, and fellowship opportunities\n      </a>\n    </li>\n
         \     <li>\n      <a class=\"a-linkList__item\" href=\"https://www.opensocietyfoundations.org/grants/past/about\">\n
         \       About this database\n      </a>\n    </li>\n  </ul>\n    </div>\n
@@ -453,11 +455,7 @@ http_interactions:
         \           class=\"m-filters__option m-filters__option--checkbox no-pjax
         \"\n            data-filter-type=\"program\"\n            data-filter-value=\"roma-initiatives\"\n
         \           data-url=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=roma-initiatives\">\n
-        \           Roma initiatives\n          </a>\n                  <a href=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=scholarship-programs\"\n
-        \           class=\"m-filters__option m-filters__option--checkbox no-pjax
-        \"\n            data-filter-type=\"program\"\n            data-filter-value=\"scholarship-programs\"\n
-        \           data-url=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=scholarship-programs\">\n
-        \           Scholarship Programs\n          </a>\n                  <a href=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=us-programs\"\n
+        \           Roma initiatives\n          </a>\n                  <a href=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=us-programs\"\n
         \           class=\"m-filters__option m-filters__option--checkbox no-pjax
         \"\n            data-filter-type=\"program\"\n            data-filter-value=\"us-programs\"\n
         \           data-url=\"https://www.opensocietyfoundations.org/grants/past?xhr=1&amp;filter_keyword=qualitative&amp;filter_year=2012%2C2013%2C2014%2C2015%2C2016%2C2017%2C2018%2C2019%2C2020&amp;filter_program=us-programs\">\n
@@ -789,12 +787,6 @@ http_interactions:
         \                     <label for=\"roma-initiatives\">Roma initiatives</label>\n
         \                   </div>\n                                      <div class=\"a-checkbox\">\n
         \                     <input\n                        type=\"checkbox\"\n
-        \                       id=\"scholarship-programs\"\n                        name=\"scholarship-programs\"\n
-        \                       value=\"scholarship-programs\"\n                        data-filter-type=\"filter_program\"\n
-        \                       data-filter-value=\"scholarship-programs\"\n                                                >\n
-        \                     <label for=\"scholarship-programs\">Scholarship Programs</label>\n
-        \                   </div>\n                                      <div class=\"a-checkbox\">\n
-        \                     <input\n                        type=\"checkbox\"\n
         \                       id=\"open-society-us\"\n                        name=\"open-society-us\"\n
         \                       value=\"us-programs\"\n                        data-filter-type=\"filter_program\"\n
         \                       data-filter-value=\"us-programs\"\n                                                >\n
@@ -1072,8 +1064,8 @@ http_interactions:
         name=\"also_general_newsletter\" value=\"newsletter\">\n          <label for=\"newsletter\">Also
         send me the latest on Open Society’s work around the world</label>\n        </div>\n
         \     </div>\n    </form>\n  </div>\n  <div class=\"g-newsletterCta__col-full\">\n
-        \   <p>By entering your email address and clicking “Submit,” you agree to
-        receive updates from the Open Society Foundations about our work. To learn
+        \   <p>By entering your email address and clicking “Submit,�\x9D you agree
+        to receive updates from the Open Society Foundations about our work. To learn
         more about how we use and protect your personal data, please view our <a href=\"/policies/privacy\">privacy
         policy</a>.</p>\n  </div>\n</section>\n\n                  <footer class=\"g-footer\">\n\n
         \ <section class=\"g-footer__highlights row\">\n    <div class=\"g-footer__highlight\">\n
@@ -1099,8 +1091,8 @@ http_interactions:
         and Foundations</a></li>\n      </ul>\n    </div>\n\n    <div class=\"g-footer__sitemap__col\">\n
         \     <ul class=\"g-footer__sitemap__list no-list\">\n        <li><a href=\"https://www.opensocietyfoundations.org/how-we-work\"
         class=\"g-footer__sitemap__title\">How We Work</a></li>\n        <li><a href=\"https://www.opensocietyfoundations.org/how-we-work/how-we-fund\">How
-        We Fund</a></li>\n        <li><a href=\"https://www.opensocietyfoundations.org/grants\">Grants,
-        Scholarships, and Fellowships</a></li>\n        <li><a href=\"https://www.opensocietyfoundations.org/grants/past\">Awarded
+        We Fund</a></li>\n        <li><a href=\"https://www.opensocietyfoundations.org/grants\">Grants
+        and Fellowships</a></li>\n        <li><a href=\"https://www.opensocietyfoundations.org/grants/past\">Awarded
         Grants</a></li>\n      </ul>\n\n      <ul class=\"g-footer__sitemap__list
         no-list\">\n        <li><a href=\"https://www.opensocietyfoundations.org/what-we-do\"
         class=\"g-footer__sitemap__title\">What We Do</a></li>\n        <li><a href=\"https://www.opensocietyfoundations.org/what-we-do?#where-we-work\">Where
@@ -1144,5 +1136,5 @@ http_interactions:
         \ \n  <div class=\"pageLoader\">\n\t<div class=\"pageLoader__bar\"></div>\n</div>
         \     </div>\n      <script src=\"/dist/scripts/app-7f92fbcf66.js\"></script>\n
         \ </body>\n</html>\n"
-  recorded_at: 2022-01-28 18:30:17 GMT
+  recorded_at: 2022-03-04 19:04:53 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0

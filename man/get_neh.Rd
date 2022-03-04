@@ -14,6 +14,8 @@ get_neh(keyword, from_year, to_year, verbose = FALSE)
 \item{to_year}{Ending year to search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
+
+\item{agency}{Agencies, comma separated. Defaults to "usda,dod,nasa,epa".}
 }
 \value{
 A raw data.frame with the relevant results from NEH

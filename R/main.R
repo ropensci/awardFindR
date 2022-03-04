@@ -26,7 +26,7 @@
 #' from_date="2015-01-01", to_date="2020-01-01")
 #' }
 search_awards <- function(keywords,
-                      sources=c("arnold", "carnegie", "fedreporter",
+                      sources=c("arnold", "carnegie",
                                 "gates", "macarthur", "mellon",
                                 "neh", "nih", "nsf", "ophil",
                                 "osociety", "rockefeller", "rsf",

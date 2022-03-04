@@ -22,7 +22,7 @@ test_that("merging multiple sources and multiple keywords with spaces", {
   # missing ssrc
   suppressMessages(vcr::use_cassette("full", record="new_episodes", {
     results <- search_awards(csv,
-                             sources=c("arnold", "carnegie", "fedreporter",
+                             sources=c("arnold", "carnegie",
                                       "gates", "macarthur", "mellon",
                                       "nih", "nsf", "rockefeller", "ophil",
                                       "osociety", "rsf", "rwjf",

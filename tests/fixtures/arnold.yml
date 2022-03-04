@@ -17,7 +17,7 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx
-      date: Fri, 28 Jan 2022 18:28:16 GMT
+      date: Fri, 04 Mar 2022 19:03:17 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -42,8 +42,8 @@ http_interactions:
         perform __ais-highlight__qualitative__/ais-highlight__ __ais-highlight__research__/ais-highlight__
         on the impacts of pretrial diversion and detention.","matchLevel":"full","fullyHighlighted":false,"matchedWords":["qualitative","research"]}}}],"nbHits":1,"page":0,"nbPages":1,"hitsPerPage":20,"facets":{"years":{"2015":1,"2016":1,"2017":1,"2018":1,"2019":1,"2020":1,"2021":1},"topics":{"Criminal
         Justice":1,"Pretrial Justice":1},"fundingSource":{"LJAF":1}},"facets_stats":{"years":{"min":2015,"max":2021,"avg":2018,"sum":14126}},"exhaustiveFacetsCount":true,"exhaustiveNbHits":true,"exhaustiveTypo":true,"query":"qualitative
-        research","params":"query=qualitative research&maxValuesPerFacet=100&highlightPreTag=__ais-highlight__&highlightPostTag=__%2Fais-highlight__&facets=%5B%22topics%22%2C%22years%22%2C%22fundingSource%22%5D&tagFilters=&facetFilters=%5B%5B%22years%3A2020%22%2C%22years%3A2021%22%2C%22years%3A2020%22%5D%5D&page=0","index":"prod_grants","renderingContent":{},"processingTimeMS":8}]}'
-  recorded_at: 2022-01-28 18:28:17 GMT
+        research","params":"query=qualitative research&maxValuesPerFacet=100&highlightPreTag=__ais-highlight__&highlightPostTag=__%2Fais-highlight__&facets=%5B%22topics%22%2C%22years%22%2C%22fundingSource%22%5D&tagFilters=&facetFilters=%5B%5B%22years%3A2020%22%2C%22years%3A2021%22%2C%22years%3A2020%22%5D%5D&page=0","index":"prod_grants","renderingContent":{},"processingTimeMS":1}]}'
+  recorded_at: 2022-03-04 19:03:16 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -63,7 +63,7 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx
-      date: Fri, 28 Jan 2022 18:28:16 GMT
+      date: Fri, 04 Mar 2022 19:03:17 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -82,7 +82,7 @@ http_interactions:
       string: '{"results":[{"hits":[],"nbHits":1,"page":1,"nbPages":1,"hitsPerPage":20,"facets":{"years":{"2015":1,"2016":1,"2017":1,"2018":1,"2019":1,"2020":1,"2021":1},"topics":{"Criminal
         Justice":1,"Pretrial Justice":1},"fundingSource":{"LJAF":1}},"facets_stats":{"years":{"min":2015,"max":2021,"avg":2018,"sum":14126}},"exhaustiveFacetsCount":true,"exhaustiveNbHits":true,"exhaustiveTypo":true,"query":"qualitative
         research","params":"query=qualitative research&maxValuesPerFacet=100&highlightPreTag=__ais-highlight__&highlightPostTag=__%2Fais-highlight__&facets=%5B%22topics%22%2C%22years%22%2C%22fundingSource%22%5D&tagFilters=&facetFilters=%5B%5B%22years%3A2020%22%2C%22years%3A2021%22%2C%22years%3A2020%22%5D%5D&page=1","index":"prod_grants","renderingContent":{},"processingTimeMS":1}]}'
-  recorded_at: 2022-01-28 18:28:17 GMT
+  recorded_at: 2022-03-04 19:03:16 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -102,7 +102,7 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx
-      date: Fri, 28 Jan 2022 18:28:16 GMT
+      date: Fri, 04 Mar 2022 19:03:17 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -121,5 +121,5 @@ http_interactions:
       string: '{"results":[{"hits":[],"nbHits":1,"page":2,"nbPages":1,"hitsPerPage":20,"facets":{"years":{"2015":1,"2016":1,"2017":1,"2018":1,"2019":1,"2020":1,"2021":1},"topics":{"Criminal
         Justice":1,"Pretrial Justice":1},"fundingSource":{"LJAF":1}},"facets_stats":{"years":{"min":2015,"max":2021,"avg":2018,"sum":14126}},"exhaustiveFacetsCount":true,"exhaustiveNbHits":true,"exhaustiveTypo":true,"query":"qualitative
         research","params":"query=qualitative research&maxValuesPerFacet=100&highlightPreTag=__ais-highlight__&highlightPostTag=__%2Fais-highlight__&facets=%5B%22topics%22%2C%22years%22%2C%22fundingSource%22%5D&tagFilters=&facetFilters=%5B%5B%22years%3A2020%22%2C%22years%3A2021%22%2C%22years%3A2020%22%5D%5D&page=2","index":"prod_grants","renderingContent":{},"processingTimeMS":1}]}'
-  recorded_at: 2022-01-28 18:28:17 GMT
+  recorded_at: 2022-03-04 19:03:16 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0

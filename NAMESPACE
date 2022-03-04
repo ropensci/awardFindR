@@ -3,7 +3,6 @@
 export(create_templeton_df)
 export(get_arnold)
 export(get_carnegie)
-export(get_fedreporter)
 export(get_gates)
 export(get_macarthur)
 export(get_mellon)

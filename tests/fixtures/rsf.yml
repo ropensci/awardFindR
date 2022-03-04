@@ -15,19 +15,21 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       cache-control: public, max-age=0
+      connection: keep-alive
       content-encoding: gzip
       content-language: en
       content-type: text/html; charset=utf-8
-      date: Fri, 28 Jan 2022 18:30:20 GMT
-      etag: W/"1643394619-0"
+      date: Fri, 04 Mar 2022 19:04:57 GMT
+      etag: W/"1646420696-0"
       expires: Sun, 19 Nov 1978 05:00:00 GMT
-      last-modified: Fri, 28 Jan 2022 18:30:19 GMT
+      last-modified: Fri, 04 Mar 2022 19:04:56 GMT
       link: <https://www.russellsage.org/search/node/semi-structured%20interviews>;
         rel="canonical",<https://www.russellsage.org/search/node/semi-structured%20interviews>;
         rel="shortlink"
       permissions-policy: interest-cohort=()
       server: nginx
       strict-transport-security: max-age=31536000
+      transfer-encoding: chunked
       vary:
       - Accept-Encoding
       - Cookie,Accept-Encoding
@@ -71,7 +73,7 @@ http_interactions:
         true);ga(\"send\", \"pageview\");\n//--><!]]>\n</script>\n<script type=\"text/javascript\"
         src=\"https://www.russellsage.org/sites/default/files/js/js_s6R4p2dhOvUimd6qhIoxe3X14zTp5RP9-tfJsETEcZI.js\"></script>\n<script
         type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\njQuery.extend(Drupal.settings,
-        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"5BgB9jeW0E14sySWrX209qYm38wf5Mg8Vo2hK_HZpY4\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/modules\\/contrib\\/date\\/date_api\\/date.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/search\\/node\\/semi-structured%20interviews\":true,\"\\/search\\/node\":true}});\n//--><!]]>\n</script>\n\n
+        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"zbixBWUYYoO5n9LOn3enoZQ4LnH9mcniRwpijpexK3M\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/modules\\/contrib\\/date\\/date_api\\/date.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/search\\/node\\/semi-structured%20interviews\":true,\"\\/search\\/node\":true}});\n//--><!]]>\n</script>\n\n
         \ <!-- Typekit webfonts -->\n  <script src=\"https://use.typekit.net/ott5tvu.js\"></script>\n
         \ <script>try{Typekit.load({ async: true });}catch(e){}</script>\n</head>\n<body>\n
         \ <div id=\"skip-link\">\n    <a href=\"#main-content\" class=\"element-invisible
@@ -88,7 +90,7 @@ http_interactions:
         value=\"\" size=\"15\" maxlength=\"128\" class=\"form-text\" />\n</div>\n</div><div
         class=\"InputGroup InputGroup--submit form-actions form-wrapper\" id=\"edit-actions\"><input
         type=\"submit\" id=\"edit-submit--2\" name=\"op\" value=\"Search\" class=\"form-submit\"
-        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-DUdYu2M95Ce63hmadqugU8rrnXmsG54xF-HgWlmnG34\"
+        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-YiHqhuKV7PXmr3i1Wl-4pET2QrvIT_DoUUZz9T5bMVw\"
         />\n<input type=\"hidden\" name=\"form_id\" value=\"search_block_form\" />\n\n\n</div>\n</div></form>\n
         \ </div>\n</div>\n\n\t\t\t<div class=\"SiteHeader__topRightGroup\">\n<div
         class=\"SecondaryMenu\">\n\t<h2 class=\"u-visuallyHidden\">Secondary Menu</h2>\n\t<ul>\t\t\t<li><a
@@ -162,9 +164,12 @@ http_interactions:
         Ethnicity, and Immigration</a></li>\n<li class=\"leaf menu-mlid-792\"><a href=\"/research/funding/social-inequality\">Social,
         Political, and Economic Inequality</a></li>\n<li class=\"leaf menu-mlid-1269\"><a
         href=\"/research/funding/behavioral-science-decision-making\">Behavioral Science
-        and Decision Making in Context</a></li>\n<li class=\"leaf menu-mlid-1145\"><a
-        href=\"/funding/immigration-and-immigrant-integration\">Immigration and Immigrant
-        Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
+        and Decision Making in Context</a></li>\n<li class=\"expanded menu-mlid-1275\"><a
+        href=\"/research/funding/dissertation-research-grants\">Dissertation Research
+        Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
+        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n<li
+        class=\"leaf menu-mlid-1145\"><a href=\"/funding/immigration-and-immigrant-integration\">Immigration
+        and Immigrant Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
         title=\"\">Pipeline Grants Competition</a></li>\n<li class=\"last leaf menu-mlid-1253\"><a
         href=\"/research/funding/covid-19-pandemic\">Social, Political, Economic,
         and Psychological Consequences of the COVID-19 Pandemic</a></li>\n</ul></li>\n<li
@@ -238,15 +243,16 @@ http_interactions:
         class=\"last leaf menu-mlid-1246\"><a href=\"/proposal-development-summer-institute\">Proposal
         Development Summer Institute</a></li>\n</ul></li>\n<li class=\"leaf menu-mlid-1239\"><a
         href=\"/research/pipeline-grants-competition\">Pipeline Grants Competition</a></li>\n<li
-        class=\"leaf menu-mlid-1274\"><a href=\"/datasets\" title=\"RSF occasionally
-        funds projects that result in datasets that are made available to the public.
-        These are often hosted at repositories such as ICPSR and the Harvard Dataverse.
-        We have compiled RSF-funded (or partially funded) datasets and made them searchable
-        by keyword, with links to download them. \">Datasets</a></li>\n<li class=\"expanded
-        menu-mlid-818\"><a href=\"/research/recently-completed-research\" title=\"\">Completed
-        Programs</a><ul class=\"menu\"><li class=\"first expanded menu-mlid-783\"><a
-        href=\"/research/behavioral-economics\">Behavioral Economics</a><ul class=\"menu\"><li
-        class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
+        class=\"leaf menu-mlid-1283\"><a href=\"/research/dissertation-research-grants-program\">Dissertation
+        Research Grants</a></li>\n<li class=\"leaf menu-mlid-1274\"><a href=\"/datasets\"
+        title=\"RSF occasionally funds projects that result in datasets that are made
+        available to the public. These are often hosted at repositories such as ICPSR
+        and the Harvard Dataverse. We have compiled RSF-funded (or partially funded)
+        datasets and made them searchable by keyword, with links to download them.
+        \">Datasets</a></li>\n<li class=\"last expanded menu-mlid-818\"><a href=\"/research/recently-completed-research\"
+        title=\"\">Completed Programs</a><ul class=\"menu\"><li class=\"first expanded
+        menu-mlid-783\"><a href=\"/research/behavioral-economics\">Behavioral Economics</a><ul
+        class=\"menu\"><li class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
         title=\"\">Recent Grants</a></li>\n<li class=\"leaf menu-mlid-799\"><a href=\"/research/behavioral-economics-detailed\">Program
         History</a></li>\n<li class=\"leaf menu-mlid-800\"><a href=\"/research/behavioral-economics/behavioral-economics-roundtable\">Behavioral
         Economics Roundtable</a></li>\n<li class=\"leaf menu-mlid-896\"><a href=\"/research/behavioral-economics/books\"
@@ -301,10 +307,7 @@ http_interactions:
         Influence of Economic Elites</a></li>\n<li class=\"leaf menu-mlid-1248\"><a
         href=\"/special-initiatives/computational-social-science\">Computational Social
         Science</a></li>\n<li class=\"last leaf menu-mlid-1160\"><a href=\"/funding/improving-education-and-reducing-inequality-united-states\">Improving
-        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n<li
-        class=\"last expanded menu-mlid-1275\"><a href=\"/dissertation-research-grants\">Dissertation
-        Research Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
-        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
+        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
         class=\"expanded menu-mlid-839\"><a href=\"/about/what-we-do/visiting-scholars-program\">Visiting
         Scholars</a><ul class=\"menu\"><li class=\"first leaf menu-mlid-1178\"><a
         href=\"/visiting-scholars/incoming-visiting-scholars\" title=\"\">Incoming
@@ -374,10 +377,8 @@ http_interactions:
         class=\"leaf menu-mlid-1225\"><a href=\"http://www.russellsage.org/summer-institutes\"
         title=\"\">Summer Institutes</a></li>\n<li class=\"leaf menu-mlid-1242\"><a
         href=\"/research/pipeline-grants-competition\" title=\"\">Pipeline Grants
-        Competition</a></li>\n<li class=\"leaf menu-mlid-1278\"><a href=\"/dissertation-research-grants\"
-        title=\"\">Dissertation Research Grants</a></li>\n<li class=\"last leaf menu-mlid-1236\"><a
-        href=\"https://www.russellsage.org/sites/default/files/RSF_HR_Manager.pdf\"
-        title=\"\">Open Job Posting - Human Resources Manager</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
+        Competition</a></li>\n<li class=\"last leaf menu-mlid-1278\"><a href=\"/research/funding/dissertation-research-grants\"
+        title=\"\">Dissertation Research Grants</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
         class=\"Seal\"></div>\n\t\t</div><!-- /.Frame__inside -->\n\t</div><!--/.Frame-->\n\n</header><!--
         /.SiteHeader -->\n\n<div id='MobileMenu__content' class='MobileMenu__content
         MobileMenu'>\n\t<div class='MobileMenu__inside'>\n\n\t</div><!-- /.MobileMenu__inside
@@ -396,10 +397,18 @@ http_interactions:
         keywords </label>\n <input type=\"text\" id=\"edit-keys\" name=\"keys\" value=\"semi-structured
         interviews\" size=\"40\" maxlength=\"255\" class=\"form-text\" />\n</div>\n<input
         type=\"submit\" id=\"edit-submit\" name=\"op\" value=\"Search\" class=\"form-submit\"
-        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-3dIip9x0aV8Me6V0OmlFVOisnvGZMpR4Fg5QOr_G2yk\"
+        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-AgBzqhjPqb_UtKcKX0prBd7kvMFsj4JrFfeZBo4MdAc\"
         />\n<input type=\"hidden\" name=\"form_id\" value=\"search_form\" />\n</div></form>
         \ <h2>Search results</h2>\n  <ol class=\"search-resultsnode-results\">\n<li
-        class=\"search-result\">\n  <h3 class=\"title\">\n    <a href=\"https://www.russellsage.org/awarded-project/radar-screen-unregulated-jobs-chicago-and-new-york-city\">Off
+        class=\"search-result\">\n  <h3 class=\"title\">\n    <a href=\"https://www.russellsage.org/news/margaret-olivia-sage-scholar-greg-duncan-discusses-his-pioneering-research-early-childhood\">Margaret
+        Olivia Sage Scholar Greg Duncan Discusses His Pioneering Research on Early
+        Childhood Development</a>\n  </h3>\n  <div class=\"search-snippet-info\">
+        \     <p class=\"search-snippet\">...  third, and fourth birthday marks. In-depth
+        qualitative <strong>interviews</strong> will be conducted with a random sample
+        of 80 mothers from two of the ...  maternal behavior.  \n    Q. The study
+        includes qualitative, <strong>semi-structured</strong> <strong>interviews</strong>.
+        How will they enhance the findings of the ...</p>  </div>\n</li>\n\n<li class=\"search-result\">\n
+        \ <h3 class=\"title\">\n    <a href=\"https://www.russellsage.org/awarded-project/radar-screen-unregulated-jobs-chicago-and-new-york-city\">Off
         the Radar Screen: Unregulated Jobs in Chicago and New York City</a>\n  </h3>\n
         \ <div class=\"search-snippet-info\">      <p class=\"search-snippet\">...
         \ in New York and Chicago. Earlier, the researchers conducted <strong>semi-structured</strong>
@@ -421,8 +430,8 @@ http_interactions:
         <strong>interviews</strong> with landlords and property managers, ethnographic
         observations, and ...</p>  </div>\n</li>\n\n<li class=\"search-result\">\n
         \ <h3 class=\"title\">\n    <a href=\"https://www.russellsage.org/awarded-project/mixed-methods-investigation-black-parents%E2%80%99-socialization-gendered-racism-and\">A
-        Mixed Methods Investigation of Black Parents’ Socialization on Gendered Racism
-        and Misogynoir against Black Women and Girls</a>\n  </h3>\n  <div class=\"search-snippet-info\">
+        Mixed Methods Investigation of Black Parents’ Socialization on Gendered
+        Racism and Misogynoir against Black Women and Girls</a>\n  </h3>\n  <div class=\"search-snippet-info\">
         \     <p class=\"search-snippet\">...  and harm against Black women and girls.
         Leath will conduct <strong>semi-structured</strong> <strong>interviews</strong>
         with 30 Black mothers and 30 Black fathers, exploring the ...</p>  </div>\n</li>\n\n<li
@@ -534,7 +543,7 @@ http_interactions:
         of Use</a></li>\t</ul>\n</nav>\n          \n        </div><!-- /.SiteFooter__groupMenus
         -->\n\n      </div><!-- /.u-grid -->\n    </div>\n  </footer>\n\n    </div>\n
         \ </div>\n</body>\n</html>"
-  recorded_at: 2022-01-28 18:30:24 GMT
+  recorded_at: 2022-03-04 19:04:59 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -552,18 +561,20 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       cache-control: public, max-age=0
+      connection: keep-alive
       content-encoding: gzip
       content-language: en
       content-type: text/html; charset=utf-8
-      date: Fri, 28 Jan 2022 18:30:20 GMT
-      etag: W/"1643394433-0"
+      date: Fri, 04 Mar 2022 19:04:57 GMT
+      etag: W/"1646420697-0"
       expires: Sun, 19 Nov 1978 05:00:00 GMT
-      last-modified: Fri, 28 Jan 2022 18:27:13 GMT
+      last-modified: Fri, 04 Mar 2022 19:04:57 GMT
       link: <https://www.russellsage.org/awarded-project/radar-screen-unregulated-jobs-chicago-and-new-york-city>;
         rel="canonical",<https://www.russellsage.org/node/7961>; rel="shortlink"
       permissions-policy: interest-cohort=()
       server: nginx
       strict-transport-security: max-age=31536000
+      transfer-encoding: chunked
       vary:
       - Accept-Encoding
       - Cookie,Accept-Encoding
@@ -573,7 +584,7 @@ http_interactions:
       x-drupal-cache: MISS
       x-frame-options: SAMEORIGIN
       x-generator: Drupal 7 (https://www.drupal.org)
-      x-nginx-cache-status: HIT
+      x-nginx-cache-status: MISS
       x-server-powered-by: Engintron
       x-xss-protection: 1; mode=block
     body:
@@ -619,7 +630,7 @@ http_interactions:
         true);ga(\"send\", \"pageview\");\n//--><!]]>\n</script>\n<script type=\"text/javascript\"
         src=\"https://www.russellsage.org/sites/default/files/js/js_s6R4p2dhOvUimd6qhIoxe3X14zTp5RP9-tfJsETEcZI.js\"></script>\n<script
         type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\njQuery.extend(Drupal.settings,
-        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"0iqL42Z4bOUGx6I-bmZ35ds9M0GwYKpOKkSoUGOhEsQ\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/radar-screen-unregulated-jobs-chicago-and-new-york-city\":true}});\n//--><!]]>\n</script>\n\n
+        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"XY0j7CVlFb51pQFrMWELPKOM_7HJHlluErbc0fDyVUw\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/radar-screen-unregulated-jobs-chicago-and-new-york-city\":true}});\n//--><!]]>\n</script>\n\n
         \ <!-- Typekit webfonts -->\n  <script src=\"https://use.typekit.net/ott5tvu.js\"></script>\n
         \ <script>try{Typekit.load({ async: true });}catch(e){}</script>\n</head>\n<body>\n
         \ <div id=\"skip-link\">\n    <a href=\"#main-content\" class=\"element-invisible
@@ -636,7 +647,7 @@ http_interactions:
         value=\"\" size=\"15\" maxlength=\"128\" class=\"form-text\" />\n</div>\n</div><div
         class=\"InputGroup InputGroup--submit form-actions form-wrapper\" id=\"edit-actions\"><input
         type=\"submit\" id=\"edit-submit\" name=\"op\" value=\"Search\" class=\"form-submit\"
-        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-RJh0ZCUWB7A0dW6KmlM6JYvPPpxLS-lyjYcZ6zy8l_I\"
+        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-Is54GN3rO-0MS7DZmPrSkCJhafJ3uLinyCJMo9D4QK0\"
         />\n<input type=\"hidden\" name=\"form_id\" value=\"search_block_form\" />\n\n\n</div>\n</div></form>\n
         \ </div>\n</div>\n\n\t\t\t<div class=\"SiteHeader__topRightGroup\">\n<div
         class=\"SecondaryMenu\">\n\t<h2 class=\"u-visuallyHidden\">Secondary Menu</h2>\n\t<ul>\t\t\t<li><a
@@ -710,9 +721,12 @@ http_interactions:
         Ethnicity, and Immigration</a></li>\n<li class=\"leaf menu-mlid-792\"><a href=\"/research/funding/social-inequality\">Social,
         Political, and Economic Inequality</a></li>\n<li class=\"leaf menu-mlid-1269\"><a
         href=\"/research/funding/behavioral-science-decision-making\">Behavioral Science
-        and Decision Making in Context</a></li>\n<li class=\"leaf menu-mlid-1145\"><a
-        href=\"/funding/immigration-and-immigrant-integration\">Immigration and Immigrant
-        Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
+        and Decision Making in Context</a></li>\n<li class=\"expanded menu-mlid-1275\"><a
+        href=\"/research/funding/dissertation-research-grants\">Dissertation Research
+        Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
+        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n<li
+        class=\"leaf menu-mlid-1145\"><a href=\"/funding/immigration-and-immigrant-integration\">Immigration
+        and Immigrant Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
         title=\"\">Pipeline Grants Competition</a></li>\n<li class=\"last leaf menu-mlid-1253\"><a
         href=\"/research/funding/covid-19-pandemic\">Social, Political, Economic,
         and Psychological Consequences of the COVID-19 Pandemic</a></li>\n</ul></li>\n<li
@@ -786,15 +800,16 @@ http_interactions:
         class=\"last leaf menu-mlid-1246\"><a href=\"/proposal-development-summer-institute\">Proposal
         Development Summer Institute</a></li>\n</ul></li>\n<li class=\"leaf menu-mlid-1239\"><a
         href=\"/research/pipeline-grants-competition\">Pipeline Grants Competition</a></li>\n<li
-        class=\"leaf menu-mlid-1274\"><a href=\"/datasets\" title=\"RSF occasionally
-        funds projects that result in datasets that are made available to the public.
-        These are often hosted at repositories such as ICPSR and the Harvard Dataverse.
-        We have compiled RSF-funded (or partially funded) datasets and made them searchable
-        by keyword, with links to download them. \">Datasets</a></li>\n<li class=\"expanded
-        menu-mlid-818\"><a href=\"/research/recently-completed-research\" title=\"\">Completed
-        Programs</a><ul class=\"menu\"><li class=\"first expanded menu-mlid-783\"><a
-        href=\"/research/behavioral-economics\">Behavioral Economics</a><ul class=\"menu\"><li
-        class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
+        class=\"leaf menu-mlid-1283\"><a href=\"/research/dissertation-research-grants-program\">Dissertation
+        Research Grants</a></li>\n<li class=\"leaf menu-mlid-1274\"><a href=\"/datasets\"
+        title=\"RSF occasionally funds projects that result in datasets that are made
+        available to the public. These are often hosted at repositories such as ICPSR
+        and the Harvard Dataverse. We have compiled RSF-funded (or partially funded)
+        datasets and made them searchable by keyword, with links to download them.
+        \">Datasets</a></li>\n<li class=\"last expanded menu-mlid-818\"><a href=\"/research/recently-completed-research\"
+        title=\"\">Completed Programs</a><ul class=\"menu\"><li class=\"first expanded
+        menu-mlid-783\"><a href=\"/research/behavioral-economics\">Behavioral Economics</a><ul
+        class=\"menu\"><li class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
         title=\"\">Recent Grants</a></li>\n<li class=\"leaf menu-mlid-799\"><a href=\"/research/behavioral-economics-detailed\">Program
         History</a></li>\n<li class=\"leaf menu-mlid-800\"><a href=\"/research/behavioral-economics/behavioral-economics-roundtable\">Behavioral
         Economics Roundtable</a></li>\n<li class=\"leaf menu-mlid-896\"><a href=\"/research/behavioral-economics/books\"
@@ -849,10 +864,7 @@ http_interactions:
         Influence of Economic Elites</a></li>\n<li class=\"leaf menu-mlid-1248\"><a
         href=\"/special-initiatives/computational-social-science\">Computational Social
         Science</a></li>\n<li class=\"last leaf menu-mlid-1160\"><a href=\"/funding/improving-education-and-reducing-inequality-united-states\">Improving
-        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n<li
-        class=\"last expanded menu-mlid-1275\"><a href=\"/dissertation-research-grants\">Dissertation
-        Research Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
-        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
+        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
         class=\"expanded menu-mlid-839\"><a href=\"/about/what-we-do/visiting-scholars-program\">Visiting
         Scholars</a><ul class=\"menu\"><li class=\"first leaf menu-mlid-1178\"><a
         href=\"/visiting-scholars/incoming-visiting-scholars\" title=\"\">Incoming
@@ -922,10 +934,8 @@ http_interactions:
         class=\"leaf menu-mlid-1225\"><a href=\"http://www.russellsage.org/summer-institutes\"
         title=\"\">Summer Institutes</a></li>\n<li class=\"leaf menu-mlid-1242\"><a
         href=\"/research/pipeline-grants-competition\" title=\"\">Pipeline Grants
-        Competition</a></li>\n<li class=\"leaf menu-mlid-1278\"><a href=\"/dissertation-research-grants\"
-        title=\"\">Dissertation Research Grants</a></li>\n<li class=\"last leaf menu-mlid-1236\"><a
-        href=\"https://www.russellsage.org/sites/default/files/RSF_HR_Manager.pdf\"
-        title=\"\">Open Job Posting - Human Resources Manager</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
+        Competition</a></li>\n<li class=\"last leaf menu-mlid-1278\"><a href=\"/research/funding/dissertation-research-grants\"
+        title=\"\">Dissertation Research Grants</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
         class=\"Seal\"></div>\n\t\t</div><!-- /.Frame__inside -->\n\t</div><!--/.Frame-->\n\n</header><!--
         /.SiteHeader -->\n\n<div id='MobileMenu__content' class='MobileMenu__content
         MobileMenu'>\n\t<div class='MobileMenu__inside'>\n\n\t</div><!-- /.MobileMenu__inside
@@ -1106,7 +1116,7 @@ http_interactions:
         of Use</a></li>\t</ul>\n</nav>\n          \n        </div><!-- /.SiteFooter__groupMenus
         -->\n\n      </div><!-- /.u-grid -->\n    </div>\n  </footer>\n\n    </div>\n
         \ </div>\n</body>\n</html>"
-  recorded_at: 2022-01-28 18:30:24 GMT
+  recorded_at: 2022-03-04 19:04:59 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -1124,18 +1134,20 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       cache-control: public, max-age=0
+      connection: keep-alive
       content-encoding: gzip
       content-language: en
       content-type: text/html; charset=utf-8
-      date: Fri, 28 Jan 2022 18:30:21 GMT
-      etag: W/"1643394620-0"
+      date: Fri, 04 Mar 2022 19:04:58 GMT
+      etag: W/"1646420698-0"
       expires: Sun, 19 Nov 1978 05:00:00 GMT
-      last-modified: Fri, 28 Jan 2022 18:30:20 GMT
+      last-modified: Fri, 04 Mar 2022 19:04:58 GMT
       link: <https://www.russellsage.org/awarded-project/new-family-formation-prison-reentry-population>;
         rel="canonical",<https://www.russellsage.org/node/11205>; rel="shortlink"
       permissions-policy: interest-cohort=()
       server: nginx
       strict-transport-security: max-age=31536000
+      transfer-encoding: chunked
       vary:
       - Accept-Encoding
       - Cookie,Accept-Encoding
@@ -1188,7 +1200,7 @@ http_interactions:
         true);ga(\"send\", \"pageview\");\n//--><!]]>\n</script>\n<script type=\"text/javascript\"
         src=\"https://www.russellsage.org/sites/default/files/js/js_s6R4p2dhOvUimd6qhIoxe3X14zTp5RP9-tfJsETEcZI.js\"></script>\n<script
         type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\njQuery.extend(Drupal.settings,
-        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"YcaBTcFlHptJXpstxgUoj7bESDC5D17ZWuWlRUQDC8A\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/new-family-formation-prison-reentry-population\":true}});\n//--><!]]>\n</script>\n\n
+        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"sR8flS9uCMYINMCxSeKoMZrAGPapxNrGB0F55Z6J09k\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/new-family-formation-prison-reentry-population\":true}});\n//--><!]]>\n</script>\n\n
         \ <!-- Typekit webfonts -->\n  <script src=\"https://use.typekit.net/ott5tvu.js\"></script>\n
         \ <script>try{Typekit.load({ async: true });}catch(e){}</script>\n</head>\n<body>\n
         \ <div id=\"skip-link\">\n    <a href=\"#main-content\" class=\"element-invisible
@@ -1205,7 +1217,7 @@ http_interactions:
         value=\"\" size=\"15\" maxlength=\"128\" class=\"form-text\" />\n</div>\n</div><div
         class=\"InputGroup InputGroup--submit form-actions form-wrapper\" id=\"edit-actions\"><input
         type=\"submit\" id=\"edit-submit\" name=\"op\" value=\"Search\" class=\"form-submit\"
-        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-IJW-NV-KTARNRj4rjNtTP0BKZj-PwSziOx9-6XQnpTg\"
+        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-f6Pcx3Uu0O-g6ocWv9gFl98o4u93CF_EtdlgYNDi5gU\"
         />\n<input type=\"hidden\" name=\"form_id\" value=\"search_block_form\" />\n\n\n</div>\n</div></form>\n
         \ </div>\n</div>\n\n\t\t\t<div class=\"SiteHeader__topRightGroup\">\n<div
         class=\"SecondaryMenu\">\n\t<h2 class=\"u-visuallyHidden\">Secondary Menu</h2>\n\t<ul>\t\t\t<li><a
@@ -1279,9 +1291,12 @@ http_interactions:
         Ethnicity, and Immigration</a></li>\n<li class=\"leaf menu-mlid-792\"><a href=\"/research/funding/social-inequality\">Social,
         Political, and Economic Inequality</a></li>\n<li class=\"leaf menu-mlid-1269\"><a
         href=\"/research/funding/behavioral-science-decision-making\">Behavioral Science
-        and Decision Making in Context</a></li>\n<li class=\"leaf menu-mlid-1145\"><a
-        href=\"/funding/immigration-and-immigrant-integration\">Immigration and Immigrant
-        Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
+        and Decision Making in Context</a></li>\n<li class=\"expanded menu-mlid-1275\"><a
+        href=\"/research/funding/dissertation-research-grants\">Dissertation Research
+        Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
+        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n<li
+        class=\"leaf menu-mlid-1145\"><a href=\"/funding/immigration-and-immigrant-integration\">Immigration
+        and Immigrant Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
         title=\"\">Pipeline Grants Competition</a></li>\n<li class=\"last leaf menu-mlid-1253\"><a
         href=\"/research/funding/covid-19-pandemic\">Social, Political, Economic,
         and Psychological Consequences of the COVID-19 Pandemic</a></li>\n</ul></li>\n<li
@@ -1355,15 +1370,16 @@ http_interactions:
         class=\"last leaf menu-mlid-1246\"><a href=\"/proposal-development-summer-institute\">Proposal
         Development Summer Institute</a></li>\n</ul></li>\n<li class=\"leaf menu-mlid-1239\"><a
         href=\"/research/pipeline-grants-competition\">Pipeline Grants Competition</a></li>\n<li
-        class=\"leaf menu-mlid-1274\"><a href=\"/datasets\" title=\"RSF occasionally
-        funds projects that result in datasets that are made available to the public.
-        These are often hosted at repositories such as ICPSR and the Harvard Dataverse.
-        We have compiled RSF-funded (or partially funded) datasets and made them searchable
-        by keyword, with links to download them. \">Datasets</a></li>\n<li class=\"expanded
-        menu-mlid-818\"><a href=\"/research/recently-completed-research\" title=\"\">Completed
-        Programs</a><ul class=\"menu\"><li class=\"first expanded menu-mlid-783\"><a
-        href=\"/research/behavioral-economics\">Behavioral Economics</a><ul class=\"menu\"><li
-        class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
+        class=\"leaf menu-mlid-1283\"><a href=\"/research/dissertation-research-grants-program\">Dissertation
+        Research Grants</a></li>\n<li class=\"leaf menu-mlid-1274\"><a href=\"/datasets\"
+        title=\"RSF occasionally funds projects that result in datasets that are made
+        available to the public. These are often hosted at repositories such as ICPSR
+        and the Harvard Dataverse. We have compiled RSF-funded (or partially funded)
+        datasets and made them searchable by keyword, with links to download them.
+        \">Datasets</a></li>\n<li class=\"last expanded menu-mlid-818\"><a href=\"/research/recently-completed-research\"
+        title=\"\">Completed Programs</a><ul class=\"menu\"><li class=\"first expanded
+        menu-mlid-783\"><a href=\"/research/behavioral-economics\">Behavioral Economics</a><ul
+        class=\"menu\"><li class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
         title=\"\">Recent Grants</a></li>\n<li class=\"leaf menu-mlid-799\"><a href=\"/research/behavioral-economics-detailed\">Program
         History</a></li>\n<li class=\"leaf menu-mlid-800\"><a href=\"/research/behavioral-economics/behavioral-economics-roundtable\">Behavioral
         Economics Roundtable</a></li>\n<li class=\"leaf menu-mlid-896\"><a href=\"/research/behavioral-economics/books\"
@@ -1418,10 +1434,7 @@ http_interactions:
         Influence of Economic Elites</a></li>\n<li class=\"leaf menu-mlid-1248\"><a
         href=\"/special-initiatives/computational-social-science\">Computational Social
         Science</a></li>\n<li class=\"last leaf menu-mlid-1160\"><a href=\"/funding/improving-education-and-reducing-inequality-united-states\">Improving
-        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n<li
-        class=\"last expanded menu-mlid-1275\"><a href=\"/dissertation-research-grants\">Dissertation
-        Research Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
-        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
+        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
         class=\"expanded menu-mlid-839\"><a href=\"/about/what-we-do/visiting-scholars-program\">Visiting
         Scholars</a><ul class=\"menu\"><li class=\"first leaf menu-mlid-1178\"><a
         href=\"/visiting-scholars/incoming-visiting-scholars\" title=\"\">Incoming
@@ -1491,10 +1504,8 @@ http_interactions:
         class=\"leaf menu-mlid-1225\"><a href=\"http://www.russellsage.org/summer-institutes\"
         title=\"\">Summer Institutes</a></li>\n<li class=\"leaf menu-mlid-1242\"><a
         href=\"/research/pipeline-grants-competition\" title=\"\">Pipeline Grants
-        Competition</a></li>\n<li class=\"leaf menu-mlid-1278\"><a href=\"/dissertation-research-grants\"
-        title=\"\">Dissertation Research Grants</a></li>\n<li class=\"last leaf menu-mlid-1236\"><a
-        href=\"https://www.russellsage.org/sites/default/files/RSF_HR_Manager.pdf\"
-        title=\"\">Open Job Posting - Human Resources Manager</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
+        Competition</a></li>\n<li class=\"last leaf menu-mlid-1278\"><a href=\"/research/funding/dissertation-research-grants\"
+        title=\"\">Dissertation Research Grants</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
         class=\"Seal\"></div>\n\t\t</div><!-- /.Frame__inside -->\n\t</div><!--/.Frame-->\n\n</header><!--
         /.SiteHeader -->\n\n<div id='MobileMenu__content' class='MobileMenu__content
         MobileMenu'>\n\t<div class='MobileMenu__inside'>\n\n\t</div><!-- /.MobileMenu__inside
@@ -1667,7 +1678,7 @@ http_interactions:
         of Use</a></li>\t</ul>\n</nav>\n          \n        </div><!-- /.SiteFooter__groupMenus
         -->\n\n      </div><!-- /.u-grid -->\n    </div>\n  </footer>\n\n    </div>\n
         \ </div>\n</body>\n</html>"
-  recorded_at: 2022-01-28 18:30:24 GMT
+  recorded_at: 2022-03-04 19:04:59 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -1685,25 +1696,25 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       cache-control: public, max-age=0
+      connection: keep-alive
       content-encoding: gzip
       content-language: en
       content-type: text/html; charset=utf-8
-      date: Fri, 28 Jan 2022 18:30:22 GMT
-      etag: W/"1643394621-0"
+      date: Fri, 04 Mar 2022 19:04:58 GMT
+      etag: W/"1646413299-0"
       expires: Sun, 19 Nov 1978 05:00:00 GMT
-      last-modified: Fri, 28 Jan 2022 18:30:21 GMT
+      last-modified: Fri, 04 Mar 2022 17:01:39 GMT
       link: <https://www.russellsage.org/awarded-project/mixed-methods-investigation-black-parents%E2%80%99-socialization-gendered-racism-and>;
         rel="canonical",<https://www.russellsage.org/node/14066>; rel="shortlink"
       permissions-policy: interest-cohort=()
       server: nginx
       strict-transport-security: max-age=31536000
+      transfer-encoding: chunked
       vary:
       - Accept-Encoding
       - Cookie,Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      - nosniff
-      x-drupal-cache: MISS
+      x-content-type-options: nosniff
+      x-drupal-cache: HIT
       x-frame-options: SAMEORIGIN
       x-generator: Drupal 7 (https://www.drupal.org)
       x-nginx-cache-status: MISS
@@ -1719,8 +1730,9 @@ http_interactions:
         identify if and how Black parents use racial socialization—a parenting practice
         that helps their children understand, process, and cope with racial discrimination—to
         foster positive social development among their daughters. She will first explore
-        parents’ awareness of gendered racism and\" />\n<meta name=\"generator\" content=\"Drupal
-        7 (https://www.drupal.org)\" />\n<link rel=\"canonical\" href=\"https://www.russellsage.org/awarded-project/mixed-methods-investigation-black-parents%E2%80%99-socialization-gendered-racism-and\"
+        parents’ awareness of gendered racism and\" />\n<meta name=\"generator\"
+        content=\"Drupal 7 (https://www.drupal.org)\" />\n<link rel=\"canonical\"
+        href=\"https://www.russellsage.org/awarded-project/mixed-methods-investigation-black-parents%E2%80%99-socialization-gendered-racism-and\"
         />\n<link rel=\"shortlink\" href=\"https://www.russellsage.org/node/14066\"
         />\n<meta name=\"twitter:card\" content=\"summary\" />\n<meta name=\"twitter:creator\"
         content=\"@russellsagefdn\" />\n<meta name=\"twitter:creator:id\" content=\"19788335\"
@@ -1749,7 +1761,7 @@ http_interactions:
         true);ga(\"send\", \"pageview\");\n//--><!]]>\n</script>\n<script type=\"text/javascript\"
         src=\"https://www.russellsage.org/sites/default/files/js/js_s6R4p2dhOvUimd6qhIoxe3X14zTp5RP9-tfJsETEcZI.js\"></script>\n<script
         type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\njQuery.extend(Drupal.settings,
-        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"q_zuII8HEs7veSJPeUEwlX0MeDE90N7b8062ZMXCAkc\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/mixed-methods-investigation-black-parents%E2%80%99-socialization-gendered-racism-and\":true}});\n//--><!]]>\n</script>\n\n
+        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"u9YdrrdTe01s-weomAwJ-F-fgV-c_w5iwCdM-CqBBlU\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/mixed-methods-investigation-black-parents%E2%80%99-socialization-gendered-racism-and\":true}});\n//--><!]]>\n</script>\n\n
         \ <!-- Typekit webfonts -->\n  <script src=\"https://use.typekit.net/ott5tvu.js\"></script>\n
         \ <script>try{Typekit.load({ async: true });}catch(e){}</script>\n</head>\n<body>\n
         \ <div id=\"skip-link\">\n    <a href=\"#main-content\" class=\"element-invisible
@@ -1766,7 +1778,7 @@ http_interactions:
         value=\"\" size=\"15\" maxlength=\"128\" class=\"form-text\" />\n</div>\n</div><div
         class=\"InputGroup InputGroup--submit form-actions form-wrapper\" id=\"edit-actions\"><input
         type=\"submit\" id=\"edit-submit\" name=\"op\" value=\"Search\" class=\"form-submit\"
-        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-KsvVIr3niNmLCPTaH7YdLLS8xcour1UFn-0yJ4qfty0\"
+        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-9QlwlaGtLpkC8QY7Df5iGSapuAygrKeGiGHzEIKwWVo\"
         />\n<input type=\"hidden\" name=\"form_id\" value=\"search_block_form\" />\n\n\n</div>\n</div></form>\n
         \ </div>\n</div>\n\n\t\t\t<div class=\"SiteHeader__topRightGroup\">\n<div
         class=\"SecondaryMenu\">\n\t<h2 class=\"u-visuallyHidden\">Secondary Menu</h2>\n\t<ul>\t\t\t<li><a
@@ -1840,9 +1852,12 @@ http_interactions:
         Ethnicity, and Immigration</a></li>\n<li class=\"leaf menu-mlid-792\"><a href=\"/research/funding/social-inequality\">Social,
         Political, and Economic Inequality</a></li>\n<li class=\"leaf menu-mlid-1269\"><a
         href=\"/research/funding/behavioral-science-decision-making\">Behavioral Science
-        and Decision Making in Context</a></li>\n<li class=\"leaf menu-mlid-1145\"><a
-        href=\"/funding/immigration-and-immigrant-integration\">Immigration and Immigrant
-        Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
+        and Decision Making in Context</a></li>\n<li class=\"expanded menu-mlid-1275\"><a
+        href=\"/research/funding/dissertation-research-grants\">Dissertation Research
+        Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
+        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n<li
+        class=\"leaf menu-mlid-1145\"><a href=\"/funding/immigration-and-immigrant-integration\">Immigration
+        and Immigrant Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
         title=\"\">Pipeline Grants Competition</a></li>\n<li class=\"last leaf menu-mlid-1253\"><a
         href=\"/research/funding/covid-19-pandemic\">Social, Political, Economic,
         and Psychological Consequences of the COVID-19 Pandemic</a></li>\n</ul></li>\n<li
@@ -1916,15 +1931,16 @@ http_interactions:
         class=\"last leaf menu-mlid-1246\"><a href=\"/proposal-development-summer-institute\">Proposal
         Development Summer Institute</a></li>\n</ul></li>\n<li class=\"leaf menu-mlid-1239\"><a
         href=\"/research/pipeline-grants-competition\">Pipeline Grants Competition</a></li>\n<li
-        class=\"leaf menu-mlid-1274\"><a href=\"/datasets\" title=\"RSF occasionally
-        funds projects that result in datasets that are made available to the public.
-        These are often hosted at repositories such as ICPSR and the Harvard Dataverse.
-        We have compiled RSF-funded (or partially funded) datasets and made them searchable
-        by keyword, with links to download them. \">Datasets</a></li>\n<li class=\"expanded
-        menu-mlid-818\"><a href=\"/research/recently-completed-research\" title=\"\">Completed
-        Programs</a><ul class=\"menu\"><li class=\"first expanded menu-mlid-783\"><a
-        href=\"/research/behavioral-economics\">Behavioral Economics</a><ul class=\"menu\"><li
-        class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
+        class=\"leaf menu-mlid-1283\"><a href=\"/research/dissertation-research-grants-program\">Dissertation
+        Research Grants</a></li>\n<li class=\"leaf menu-mlid-1274\"><a href=\"/datasets\"
+        title=\"RSF occasionally funds projects that result in datasets that are made
+        available to the public. These are often hosted at repositories such as ICPSR
+        and the Harvard Dataverse. We have compiled RSF-funded (or partially funded)
+        datasets and made them searchable by keyword, with links to download them.
+        \">Datasets</a></li>\n<li class=\"last expanded menu-mlid-818\"><a href=\"/research/recently-completed-research\"
+        title=\"\">Completed Programs</a><ul class=\"menu\"><li class=\"first expanded
+        menu-mlid-783\"><a href=\"/research/behavioral-economics\">Behavioral Economics</a><ul
+        class=\"menu\"><li class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
         title=\"\">Recent Grants</a></li>\n<li class=\"leaf menu-mlid-799\"><a href=\"/research/behavioral-economics-detailed\">Program
         History</a></li>\n<li class=\"leaf menu-mlid-800\"><a href=\"/research/behavioral-economics/behavioral-economics-roundtable\">Behavioral
         Economics Roundtable</a></li>\n<li class=\"leaf menu-mlid-896\"><a href=\"/research/behavioral-economics/books\"
@@ -1979,10 +1995,7 @@ http_interactions:
         Influence of Economic Elites</a></li>\n<li class=\"leaf menu-mlid-1248\"><a
         href=\"/special-initiatives/computational-social-science\">Computational Social
         Science</a></li>\n<li class=\"last leaf menu-mlid-1160\"><a href=\"/funding/improving-education-and-reducing-inequality-united-states\">Improving
-        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n<li
-        class=\"last expanded menu-mlid-1275\"><a href=\"/dissertation-research-grants\">Dissertation
-        Research Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
-        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
+        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
         class=\"expanded menu-mlid-839\"><a href=\"/about/what-we-do/visiting-scholars-program\">Visiting
         Scholars</a><ul class=\"menu\"><li class=\"first leaf menu-mlid-1178\"><a
         href=\"/visiting-scholars/incoming-visiting-scholars\" title=\"\">Incoming
@@ -2052,10 +2065,8 @@ http_interactions:
         class=\"leaf menu-mlid-1225\"><a href=\"http://www.russellsage.org/summer-institutes\"
         title=\"\">Summer Institutes</a></li>\n<li class=\"leaf menu-mlid-1242\"><a
         href=\"/research/pipeline-grants-competition\" title=\"\">Pipeline Grants
-        Competition</a></li>\n<li class=\"leaf menu-mlid-1278\"><a href=\"/dissertation-research-grants\"
-        title=\"\">Dissertation Research Grants</a></li>\n<li class=\"last leaf menu-mlid-1236\"><a
-        href=\"https://www.russellsage.org/sites/default/files/RSF_HR_Manager.pdf\"
-        title=\"\">Open Job Posting - Human Resources Manager</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
+        Competition</a></li>\n<li class=\"last leaf menu-mlid-1278\"><a href=\"/research/funding/dissertation-research-grants\"
+        title=\"\">Dissertation Research Grants</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
         class=\"Seal\"></div>\n\t\t</div><!-- /.Frame__inside -->\n\t</div><!--/.Frame-->\n\n</header><!--
         /.SiteHeader -->\n\n<div id='MobileMenu__content' class='MobileMenu__content
         MobileMenu'>\n\t<div class='MobileMenu__inside'>\n\n\t</div><!-- /.MobileMenu__inside
@@ -2072,9 +2083,9 @@ http_interactions:
         class=\"u-pipeList\">\t\t\t\t<li class=\"u-label u-label--small\"><a href=\"/research/social-political-economic-inequality-grants\">Social,
         Political, and Economic Inequality</a></li>\t\t</ul>  <div class=\"Post__titleGroup
         u-margin__10\">\n    <h2 class=\"u-black u-title u-title--large u-margin__5\">A
-        Mixed Methods Investigation of Black Parents’ Socialization on Gendered Racism
-        and Misogynoir against Black Women and Girls\n    </h2>\n  </div>\n\n  <div
-        class=\"u-text--meta u-margin__20\"><div class=\"u-text--meta u-commaList
+        Mixed Methods Investigation of Black Parents’ Socialization on Gendered
+        Racism and Misogynoir against Black Women and Girls\n    </h2>\n  </div>\n\n
+        \ <div class=\"u-text--meta u-margin__20\"><div class=\"u-text--meta u-commaList
         u-margin__20\">\n  <strong>Awarded Scholars: </strong><br />    <div>        <span>Seanna
         Leath, University of Virginia</span>    </div></div>\n      <div class=\"u-text--meta
         u-commaList u-margin__20\">\n      <strong>Project Date: </strong>\n      <div>Feb
@@ -2130,14 +2141,14 @@ http_interactions:
         awareness of gendered racism and <em>misogynoir</em>—how racism and sexism
         intersect to produce racialized gendered violence and harm against Black women
         and girls. Leath will conduct semi-structured interviews with 30 Black mothers
-        and 30 Black fathers, exploring the relationships between parents’ race and
-        gender-related beliefs, direct and vicarious experiences of misogynoir, and
-        exposure to misogynoir through social media, and the parenting practices and
-        socialization messages they communicate to daughters about racism and sexism.
-        She expects parents to describe many direct and vicarious experiences of gendered
-        racism and misogynoir, such as adultification of Black girls (others treating
-        them as developmentally older than they are), physical appearance and tone
-        policing (dress code violations in school contexts), and the invisibility
+        and 30 Black fathers, exploring the relationships between parents’ race
+        and gender-related beliefs, direct and vicarious experiences of misogynoir,
+        and exposure to misogynoir through social media, and the parenting practices
+        and socialization messages they communicate to daughters about racism and
+        sexism. She expects parents to describe many direct and vicarious experiences
+        of gendered racism and misogynoir, such as adultification of Black girls (others
+        treating them as developmentally older than they are), physical appearance
+        and tone policing (dress code violations in school contexts), and the invisibility
         of their experiences.</p>\n</p>\n  </div><!-- /.Post__body -->\n\n  <div class=\"Post__afterContent
         u-marginTop__100\">\n\t<div class=\"u-grid--thick u-grid--thick--singleRow\">\t</div>\n\n</div>\n</div><!--
         /.Post__content -->\n  </div>\n</div>\n  </div>\n\n          </article><!--
@@ -2228,7 +2239,7 @@ http_interactions:
         of Use</a></li>\t</ul>\n</nav>\n          \n        </div><!-- /.SiteFooter__groupMenus
         -->\n\n      </div><!-- /.u-grid -->\n    </div>\n  </footer>\n\n    </div>\n
         \ </div>\n</body>\n</html>"
-  recorded_at: 2022-01-28 18:30:24 GMT
+  recorded_at: 2022-03-04 19:04:59 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -2246,18 +2257,20 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       cache-control: public, max-age=0
+      connection: keep-alive
       content-encoding: gzip
       content-language: en
       content-type: text/html; charset=utf-8
-      date: Fri, 28 Jan 2022 18:30:22 GMT
-      etag: W/"1643394622-0"
+      date: Fri, 04 Mar 2022 19:04:59 GMT
+      etag: W/"1646420699-0"
       expires: Sun, 19 Nov 1978 05:00:00 GMT
-      last-modified: Fri, 28 Jan 2022 18:30:22 GMT
+      last-modified: Fri, 04 Mar 2022 19:04:59 GMT
       link: <https://www.russellsage.org/awarded-project/reverse-mortgages-and-racial-inequalities-wealth-and-health>;
         rel="canonical",<https://www.russellsage.org/node/8680>; rel="shortlink"
       permissions-policy: interest-cohort=()
       server: nginx
       strict-transport-security: max-age=31536000
+      transfer-encoding: chunked
       vary:
       - Accept-Encoding
       - Cookie,Accept-Encoding
@@ -2314,7 +2327,7 @@ http_interactions:
         true);ga(\"send\", \"pageview\");\n//--><!]]>\n</script>\n<script type=\"text/javascript\"
         src=\"https://www.russellsage.org/sites/default/files/js/js_s6R4p2dhOvUimd6qhIoxe3X14zTp5RP9-tfJsETEcZI.js\"></script>\n<script
         type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\njQuery.extend(Drupal.settings,
-        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"iGeC-4DPxdVT-0cxK4Z4K3ZqeMtZ93nOaC0FbG__TMc\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/reverse-mortgages-and-racial-inequalities-wealth-and-health\":true}});\n//--><!]]>\n</script>\n\n
+        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"A8CIxZ_QAcXQxb_rLgPOBdjfHKA-L2UfmIBYzSsnQHA\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/reverse-mortgages-and-racial-inequalities-wealth-and-health\":true}});\n//--><!]]>\n</script>\n\n
         \ <!-- Typekit webfonts -->\n  <script src=\"https://use.typekit.net/ott5tvu.js\"></script>\n
         \ <script>try{Typekit.load({ async: true });}catch(e){}</script>\n</head>\n<body>\n
         \ <div id=\"skip-link\">\n    <a href=\"#main-content\" class=\"element-invisible
@@ -2331,7 +2344,7 @@ http_interactions:
         value=\"\" size=\"15\" maxlength=\"128\" class=\"form-text\" />\n</div>\n</div><div
         class=\"InputGroup InputGroup--submit form-actions form-wrapper\" id=\"edit-actions\"><input
         type=\"submit\" id=\"edit-submit\" name=\"op\" value=\"Search\" class=\"form-submit\"
-        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-VryDb94y4jm3SenatOpiFpF0trsDQE4iDgEvYnsLONE\"
+        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-MaTMFwBSo3yeAMDPL9LNiIAtE_KLl1YccICeRfEkkHs\"
         />\n<input type=\"hidden\" name=\"form_id\" value=\"search_block_form\" />\n\n\n</div>\n</div></form>\n
         \ </div>\n</div>\n\n\t\t\t<div class=\"SiteHeader__topRightGroup\">\n<div
         class=\"SecondaryMenu\">\n\t<h2 class=\"u-visuallyHidden\">Secondary Menu</h2>\n\t<ul>\t\t\t<li><a
@@ -2405,9 +2418,12 @@ http_interactions:
         Ethnicity, and Immigration</a></li>\n<li class=\"leaf menu-mlid-792\"><a href=\"/research/funding/social-inequality\">Social,
         Political, and Economic Inequality</a></li>\n<li class=\"leaf menu-mlid-1269\"><a
         href=\"/research/funding/behavioral-science-decision-making\">Behavioral Science
-        and Decision Making in Context</a></li>\n<li class=\"leaf menu-mlid-1145\"><a
-        href=\"/funding/immigration-and-immigrant-integration\">Immigration and Immigrant
-        Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
+        and Decision Making in Context</a></li>\n<li class=\"expanded menu-mlid-1275\"><a
+        href=\"/research/funding/dissertation-research-grants\">Dissertation Research
+        Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
+        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n<li
+        class=\"leaf menu-mlid-1145\"><a href=\"/funding/immigration-and-immigrant-integration\">Immigration
+        and Immigrant Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
         title=\"\">Pipeline Grants Competition</a></li>\n<li class=\"last leaf menu-mlid-1253\"><a
         href=\"/research/funding/covid-19-pandemic\">Social, Political, Economic,
         and Psychological Consequences of the COVID-19 Pandemic</a></li>\n</ul></li>\n<li
@@ -2481,15 +2497,16 @@ http_interactions:
         class=\"last leaf menu-mlid-1246\"><a href=\"/proposal-development-summer-institute\">Proposal
         Development Summer Institute</a></li>\n</ul></li>\n<li class=\"leaf menu-mlid-1239\"><a
         href=\"/research/pipeline-grants-competition\">Pipeline Grants Competition</a></li>\n<li
-        class=\"leaf menu-mlid-1274\"><a href=\"/datasets\" title=\"RSF occasionally
-        funds projects that result in datasets that are made available to the public.
-        These are often hosted at repositories such as ICPSR and the Harvard Dataverse.
-        We have compiled RSF-funded (or partially funded) datasets and made them searchable
-        by keyword, with links to download them. \">Datasets</a></li>\n<li class=\"expanded
-        menu-mlid-818\"><a href=\"/research/recently-completed-research\" title=\"\">Completed
-        Programs</a><ul class=\"menu\"><li class=\"first expanded menu-mlid-783\"><a
-        href=\"/research/behavioral-economics\">Behavioral Economics</a><ul class=\"menu\"><li
-        class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
+        class=\"leaf menu-mlid-1283\"><a href=\"/research/dissertation-research-grants-program\">Dissertation
+        Research Grants</a></li>\n<li class=\"leaf menu-mlid-1274\"><a href=\"/datasets\"
+        title=\"RSF occasionally funds projects that result in datasets that are made
+        available to the public. These are often hosted at repositories such as ICPSR
+        and the Harvard Dataverse. We have compiled RSF-funded (or partially funded)
+        datasets and made them searchable by keyword, with links to download them.
+        \">Datasets</a></li>\n<li class=\"last expanded menu-mlid-818\"><a href=\"/research/recently-completed-research\"
+        title=\"\">Completed Programs</a><ul class=\"menu\"><li class=\"first expanded
+        menu-mlid-783\"><a href=\"/research/behavioral-economics\">Behavioral Economics</a><ul
+        class=\"menu\"><li class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
         title=\"\">Recent Grants</a></li>\n<li class=\"leaf menu-mlid-799\"><a href=\"/research/behavioral-economics-detailed\">Program
         History</a></li>\n<li class=\"leaf menu-mlid-800\"><a href=\"/research/behavioral-economics/behavioral-economics-roundtable\">Behavioral
         Economics Roundtable</a></li>\n<li class=\"leaf menu-mlid-896\"><a href=\"/research/behavioral-economics/books\"
@@ -2544,10 +2561,7 @@ http_interactions:
         Influence of Economic Elites</a></li>\n<li class=\"leaf menu-mlid-1248\"><a
         href=\"/special-initiatives/computational-social-science\">Computational Social
         Science</a></li>\n<li class=\"last leaf menu-mlid-1160\"><a href=\"/funding/improving-education-and-reducing-inequality-united-states\">Improving
-        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n<li
-        class=\"last expanded menu-mlid-1275\"><a href=\"/dissertation-research-grants\">Dissertation
-        Research Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
-        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
+        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
         class=\"expanded menu-mlid-839\"><a href=\"/about/what-we-do/visiting-scholars-program\">Visiting
         Scholars</a><ul class=\"menu\"><li class=\"first leaf menu-mlid-1178\"><a
         href=\"/visiting-scholars/incoming-visiting-scholars\" title=\"\">Incoming
@@ -2617,10 +2631,8 @@ http_interactions:
         class=\"leaf menu-mlid-1225\"><a href=\"http://www.russellsage.org/summer-institutes\"
         title=\"\">Summer Institutes</a></li>\n<li class=\"leaf menu-mlid-1242\"><a
         href=\"/research/pipeline-grants-competition\" title=\"\">Pipeline Grants
-        Competition</a></li>\n<li class=\"leaf menu-mlid-1278\"><a href=\"/dissertation-research-grants\"
-        title=\"\">Dissertation Research Grants</a></li>\n<li class=\"last leaf menu-mlid-1236\"><a
-        href=\"https://www.russellsage.org/sites/default/files/RSF_HR_Manager.pdf\"
-        title=\"\">Open Job Posting - Human Resources Manager</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
+        Competition</a></li>\n<li class=\"last leaf menu-mlid-1278\"><a href=\"/research/funding/dissertation-research-grants\"
+        title=\"\">Dissertation Research Grants</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
         class=\"Seal\"></div>\n\t\t</div><!-- /.Frame__inside -->\n\t</div><!--/.Frame-->\n\n</header><!--
         /.SiteHeader -->\n\n<div id='MobileMenu__content' class='MobileMenu__content
         MobileMenu'>\n\t<div class='MobileMenu__inside'>\n\n\t</div><!-- /.MobileMenu__inside
@@ -2806,7 +2818,7 @@ http_interactions:
         of Use</a></li>\t</ul>\n</nav>\n          \n        </div><!-- /.SiteFooter__groupMenus
         -->\n\n      </div><!-- /.u-grid -->\n    </div>\n  </footer>\n\n    </div>\n
         \ </div>\n</body>\n</html>"
-  recorded_at: 2022-01-28 18:30:24 GMT
+  recorded_at: 2022-03-04 19:04:59 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -2824,18 +2836,20 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       cache-control: public, max-age=0
+      connection: keep-alive
       content-encoding: gzip
       content-language: en
       content-type: text/html; charset=utf-8
-      date: Fri, 28 Jan 2022 18:30:23 GMT
-      etag: W/"1643394623-0"
+      date: Fri, 04 Mar 2022 19:05:00 GMT
+      etag: W/"1646420700-0"
       expires: Sun, 19 Nov 1978 05:00:00 GMT
-      last-modified: Fri, 28 Jan 2022 18:30:23 GMT
+      last-modified: Fri, 04 Mar 2022 19:05:00 GMT
       link: <https://www.russellsage.org/awarded-project/repo-pandemic-cars-collections-and-socioeconomic-fallout-covid-19>;
         rel="canonical",<https://www.russellsage.org/node/14177>; rel="shortlink"
       permissions-policy: interest-cohort=()
       server: nginx
       strict-transport-security: max-age=31536000
+      transfer-encoding: chunked
       vary:
       - Accept-Encoding
       - Cookie,Accept-Encoding
@@ -2888,7 +2902,7 @@ http_interactions:
         true);ga(\"send\", \"pageview\");\n//--><!]]>\n</script>\n<script type=\"text/javascript\"
         src=\"https://www.russellsage.org/sites/default/files/js/js_s6R4p2dhOvUimd6qhIoxe3X14zTp5RP9-tfJsETEcZI.js\"></script>\n<script
         type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\njQuery.extend(Drupal.settings,
-        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"OXvSOhqTIjUwANsxPHuJnHczNzNw4IkSRRW9ZCBJFOs\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/repo-pandemic-cars-collections-and-socioeconomic-fallout-covid-19\":true}});\n//--><!]]>\n</script>\n\n
+        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"4LMPTtuudRLKyEjXPrtMIZVmJgqs8PDlGHPTQEbSWlU\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/repo-pandemic-cars-collections-and-socioeconomic-fallout-covid-19\":true}});\n//--><!]]>\n</script>\n\n
         \ <!-- Typekit webfonts -->\n  <script src=\"https://use.typekit.net/ott5tvu.js\"></script>\n
         \ <script>try{Typekit.load({ async: true });}catch(e){}</script>\n</head>\n<body>\n
         \ <div id=\"skip-link\">\n    <a href=\"#main-content\" class=\"element-invisible
@@ -2905,7 +2919,7 @@ http_interactions:
         value=\"\" size=\"15\" maxlength=\"128\" class=\"form-text\" />\n</div>\n</div><div
         class=\"InputGroup InputGroup--submit form-actions form-wrapper\" id=\"edit-actions\"><input
         type=\"submit\" id=\"edit-submit\" name=\"op\" value=\"Search\" class=\"form-submit\"
-        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-8dIqfG72ohlrFFjrPWFJezqAjbMIqQNZiOudTUg4wg8\"
+        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-OzFLGXDkZIGzd3uam6SBc-G4fdc9aQzrboVa-qBc_AA\"
         />\n<input type=\"hidden\" name=\"form_id\" value=\"search_block_form\" />\n\n\n</div>\n</div></form>\n
         \ </div>\n</div>\n\n\t\t\t<div class=\"SiteHeader__topRightGroup\">\n<div
         class=\"SecondaryMenu\">\n\t<h2 class=\"u-visuallyHidden\">Secondary Menu</h2>\n\t<ul>\t\t\t<li><a
@@ -2979,9 +2993,12 @@ http_interactions:
         Ethnicity, and Immigration</a></li>\n<li class=\"leaf menu-mlid-792\"><a href=\"/research/funding/social-inequality\">Social,
         Political, and Economic Inequality</a></li>\n<li class=\"leaf menu-mlid-1269\"><a
         href=\"/research/funding/behavioral-science-decision-making\">Behavioral Science
-        and Decision Making in Context</a></li>\n<li class=\"leaf menu-mlid-1145\"><a
-        href=\"/funding/immigration-and-immigrant-integration\">Immigration and Immigrant
-        Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
+        and Decision Making in Context</a></li>\n<li class=\"expanded menu-mlid-1275\"><a
+        href=\"/research/funding/dissertation-research-grants\">Dissertation Research
+        Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
+        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n<li
+        class=\"leaf menu-mlid-1145\"><a href=\"/funding/immigration-and-immigrant-integration\">Immigration
+        and Immigrant Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
         title=\"\">Pipeline Grants Competition</a></li>\n<li class=\"last leaf menu-mlid-1253\"><a
         href=\"/research/funding/covid-19-pandemic\">Social, Political, Economic,
         and Psychological Consequences of the COVID-19 Pandemic</a></li>\n</ul></li>\n<li
@@ -3055,15 +3072,16 @@ http_interactions:
         class=\"last leaf menu-mlid-1246\"><a href=\"/proposal-development-summer-institute\">Proposal
         Development Summer Institute</a></li>\n</ul></li>\n<li class=\"leaf menu-mlid-1239\"><a
         href=\"/research/pipeline-grants-competition\">Pipeline Grants Competition</a></li>\n<li
-        class=\"leaf menu-mlid-1274\"><a href=\"/datasets\" title=\"RSF occasionally
-        funds projects that result in datasets that are made available to the public.
-        These are often hosted at repositories such as ICPSR and the Harvard Dataverse.
-        We have compiled RSF-funded (or partially funded) datasets and made them searchable
-        by keyword, with links to download them. \">Datasets</a></li>\n<li class=\"expanded
-        menu-mlid-818\"><a href=\"/research/recently-completed-research\" title=\"\">Completed
-        Programs</a><ul class=\"menu\"><li class=\"first expanded menu-mlid-783\"><a
-        href=\"/research/behavioral-economics\">Behavioral Economics</a><ul class=\"menu\"><li
-        class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
+        class=\"leaf menu-mlid-1283\"><a href=\"/research/dissertation-research-grants-program\">Dissertation
+        Research Grants</a></li>\n<li class=\"leaf menu-mlid-1274\"><a href=\"/datasets\"
+        title=\"RSF occasionally funds projects that result in datasets that are made
+        available to the public. These are often hosted at repositories such as ICPSR
+        and the Harvard Dataverse. We have compiled RSF-funded (or partially funded)
+        datasets and made them searchable by keyword, with links to download them.
+        \">Datasets</a></li>\n<li class=\"last expanded menu-mlid-818\"><a href=\"/research/recently-completed-research\"
+        title=\"\">Completed Programs</a><ul class=\"menu\"><li class=\"first expanded
+        menu-mlid-783\"><a href=\"/research/behavioral-economics\">Behavioral Economics</a><ul
+        class=\"menu\"><li class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
         title=\"\">Recent Grants</a></li>\n<li class=\"leaf menu-mlid-799\"><a href=\"/research/behavioral-economics-detailed\">Program
         History</a></li>\n<li class=\"leaf menu-mlid-800\"><a href=\"/research/behavioral-economics/behavioral-economics-roundtable\">Behavioral
         Economics Roundtable</a></li>\n<li class=\"leaf menu-mlid-896\"><a href=\"/research/behavioral-economics/books\"
@@ -3118,10 +3136,7 @@ http_interactions:
         Influence of Economic Elites</a></li>\n<li class=\"leaf menu-mlid-1248\"><a
         href=\"/special-initiatives/computational-social-science\">Computational Social
         Science</a></li>\n<li class=\"last leaf menu-mlid-1160\"><a href=\"/funding/improving-education-and-reducing-inequality-united-states\">Improving
-        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n<li
-        class=\"last expanded menu-mlid-1275\"><a href=\"/dissertation-research-grants\">Dissertation
-        Research Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
-        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
+        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
         class=\"expanded menu-mlid-839\"><a href=\"/about/what-we-do/visiting-scholars-program\">Visiting
         Scholars</a><ul class=\"menu\"><li class=\"first leaf menu-mlid-1178\"><a
         href=\"/visiting-scholars/incoming-visiting-scholars\" title=\"\">Incoming
@@ -3191,10 +3206,8 @@ http_interactions:
         class=\"leaf menu-mlid-1225\"><a href=\"http://www.russellsage.org/summer-institutes\"
         title=\"\">Summer Institutes</a></li>\n<li class=\"leaf menu-mlid-1242\"><a
         href=\"/research/pipeline-grants-competition\" title=\"\">Pipeline Grants
-        Competition</a></li>\n<li class=\"leaf menu-mlid-1278\"><a href=\"/dissertation-research-grants\"
-        title=\"\">Dissertation Research Grants</a></li>\n<li class=\"last leaf menu-mlid-1236\"><a
-        href=\"https://www.russellsage.org/sites/default/files/RSF_HR_Manager.pdf\"
-        title=\"\">Open Job Posting - Human Resources Manager</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
+        Competition</a></li>\n<li class=\"last leaf menu-mlid-1278\"><a href=\"/research/funding/dissertation-research-grants\"
+        title=\"\">Dissertation Research Grants</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
         class=\"Seal\"></div>\n\t\t</div><!-- /.Frame__inside -->\n\t</div><!--/.Frame-->\n\n</header><!--
         /.SiteHeader -->\n\n<div id='MobileMenu__content' class='MobileMenu__content
         MobileMenu'>\n\t<div class='MobileMenu__inside'>\n\n\t</div><!-- /.MobileMenu__inside
@@ -3374,7 +3387,7 @@ http_interactions:
         of Use</a></li>\t</ul>\n</nav>\n          \n        </div><!-- /.SiteFooter__groupMenus
         -->\n\n      </div><!-- /.u-grid -->\n    </div>\n  </footer>\n\n    </div>\n
         \ </div>\n</body>\n</html>"
-  recorded_at: 2022-01-28 18:30:24 GMT
+  recorded_at: 2022-03-04 19:04:59 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -3392,18 +3405,20 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       cache-control: public, max-age=0
+      connection: keep-alive
       content-encoding: gzip
       content-language: en
       content-type: text/html; charset=utf-8
-      date: Fri, 28 Jan 2022 18:30:24 GMT
-      etag: W/"1643394624-0"
+      date: Fri, 04 Mar 2022 19:05:01 GMT
+      etag: W/"1646420700-0"
       expires: Sun, 19 Nov 1978 05:00:00 GMT
-      last-modified: Fri, 28 Jan 2022 18:30:24 GMT
+      last-modified: Fri, 04 Mar 2022 19:05:00 GMT
       link: <https://www.russellsage.org/awarded-project/disconnected-men-intersection-work-and-family>;
         rel="canonical",<https://www.russellsage.org/node/12962>; rel="shortlink"
       permissions-policy: interest-cohort=()
       server: nginx
       strict-transport-security: max-age=31536000
+      transfer-encoding: chunked
       vary:
       - Accept-Encoding
       - Cookie,Accept-Encoding
@@ -3424,9 +3439,9 @@ http_interactions:
         type=\"image/vnd.microsoft.icon\" />\n<meta name=\"description\" content=\"The
         labor force participation rate of prime working-age men (25-54 years old)
         has declined from 97 percent in 1964 to about 85 percent today. In contrast,
-        prime-age women’s labor force participation over this period rose until the
-        past few years. These changes in labor force participation have taken place
-        alongside substantial changes in family life. More Americans are\" />\n<meta
+        prime-age women’s labor force participation over this period rose until
+        the past few years. These changes in labor force participation have taken
+        place alongside substantial changes in family life. More Americans are\" />\n<meta
         name=\"generator\" content=\"Drupal 7 (https://www.drupal.org)\" />\n<link
         rel=\"canonical\" href=\"https://www.russellsage.org/awarded-project/disconnected-men-intersection-work-and-family\"
         />\n<link rel=\"shortlink\" href=\"https://www.russellsage.org/node/12962\"
@@ -3456,7 +3471,7 @@ http_interactions:
         true);ga(\"send\", \"pageview\");\n//--><!]]>\n</script>\n<script type=\"text/javascript\"
         src=\"https://www.russellsage.org/sites/default/files/js/js_s6R4p2dhOvUimd6qhIoxe3X14zTp5RP9-tfJsETEcZI.js\"></script>\n<script
         type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\njQuery.extend(Drupal.settings,
-        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"GQRpcQmIksEz8CNStSxpeSlcPrfAfvcqRrDRixItOkA\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/disconnected-men-intersection-work-and-family\":true}});\n//--><!]]>\n</script>\n\n
+        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"beehive\",\"theme_token\":\"ziUxc0EgO_yuDBKO0Q4x9sXo73nBACy7X0JOk3W-ZTA\",\"js\":{\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery\\/1.10\\/jquery.min.js\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/js\\/ckeditor-accordion.js\":1,\"0\":1,\"\\/\\/s7.addthis.com\\/js\\/300\\/addthis_widget.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"1\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/plugins.min.js\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/js\\/custom.min.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor_accordion\\/css\\/ckeditor-accordion.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/ckeditor\\/css\\/ckeditor.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/plugins.min.css\":1,\"sites\\/all\\/themes\\/beehive\\/build\\/css\\/main.min.css\":1}},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"},\"urlIsAjaxTrusted\":{\"\\/awarded-project\\/disconnected-men-intersection-work-and-family\":true}});\n//--><!]]>\n</script>\n\n
         \ <!-- Typekit webfonts -->\n  <script src=\"https://use.typekit.net/ott5tvu.js\"></script>\n
         \ <script>try{Typekit.load({ async: true });}catch(e){}</script>\n</head>\n<body>\n
         \ <div id=\"skip-link\">\n    <a href=\"#main-content\" class=\"element-invisible
@@ -3473,7 +3488,7 @@ http_interactions:
         value=\"\" size=\"15\" maxlength=\"128\" class=\"form-text\" />\n</div>\n</div><div
         class=\"InputGroup InputGroup--submit form-actions form-wrapper\" id=\"edit-actions\"><input
         type=\"submit\" id=\"edit-submit\" name=\"op\" value=\"Search\" class=\"form-submit\"
-        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-2zQTT1vp3IJlBiKeySE1UGljG-CSBVfV1-jbqSs0p2A\"
+        /></div><input type=\"hidden\" name=\"form_build_id\" value=\"form-17Nf1pXVHlHE1rHWuLcog45P2mxyrxD71tSqS50AgH0\"
         />\n<input type=\"hidden\" name=\"form_id\" value=\"search_block_form\" />\n\n\n</div>\n</div></form>\n
         \ </div>\n</div>\n\n\t\t\t<div class=\"SiteHeader__topRightGroup\">\n<div
         class=\"SecondaryMenu\">\n\t<h2 class=\"u-visuallyHidden\">Secondary Menu</h2>\n\t<ul>\t\t\t<li><a
@@ -3547,9 +3562,12 @@ http_interactions:
         Ethnicity, and Immigration</a></li>\n<li class=\"leaf menu-mlid-792\"><a href=\"/research/funding/social-inequality\">Social,
         Political, and Economic Inequality</a></li>\n<li class=\"leaf menu-mlid-1269\"><a
         href=\"/research/funding/behavioral-science-decision-making\">Behavioral Science
-        and Decision Making in Context</a></li>\n<li class=\"leaf menu-mlid-1145\"><a
-        href=\"/funding/immigration-and-immigrant-integration\">Immigration and Immigrant
-        Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
+        and Decision Making in Context</a></li>\n<li class=\"expanded menu-mlid-1275\"><a
+        href=\"/research/funding/dissertation-research-grants\">Dissertation Research
+        Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
+        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n<li
+        class=\"leaf menu-mlid-1145\"><a href=\"/funding/immigration-and-immigrant-integration\">Immigration
+        and Immigrant Integration</a></li>\n<li class=\"leaf menu-mlid-1243\"><a href=\"/research/funding/pipeline-grants-competition\"
         title=\"\">Pipeline Grants Competition</a></li>\n<li class=\"last leaf menu-mlid-1253\"><a
         href=\"/research/funding/covid-19-pandemic\">Social, Political, Economic,
         and Psychological Consequences of the COVID-19 Pandemic</a></li>\n</ul></li>\n<li
@@ -3623,15 +3641,16 @@ http_interactions:
         class=\"last leaf menu-mlid-1246\"><a href=\"/proposal-development-summer-institute\">Proposal
         Development Summer Institute</a></li>\n</ul></li>\n<li class=\"leaf menu-mlid-1239\"><a
         href=\"/research/pipeline-grants-competition\">Pipeline Grants Competition</a></li>\n<li
-        class=\"leaf menu-mlid-1274\"><a href=\"/datasets\" title=\"RSF occasionally
-        funds projects that result in datasets that are made available to the public.
-        These are often hosted at repositories such as ICPSR and the Harvard Dataverse.
-        We have compiled RSF-funded (or partially funded) datasets and made them searchable
-        by keyword, with links to download them. \">Datasets</a></li>\n<li class=\"expanded
-        menu-mlid-818\"><a href=\"/research/recently-completed-research\" title=\"\">Completed
-        Programs</a><ul class=\"menu\"><li class=\"first expanded menu-mlid-783\"><a
-        href=\"/research/behavioral-economics\">Behavioral Economics</a><ul class=\"menu\"><li
-        class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
+        class=\"leaf menu-mlid-1283\"><a href=\"/research/dissertation-research-grants-program\">Dissertation
+        Research Grants</a></li>\n<li class=\"leaf menu-mlid-1274\"><a href=\"/datasets\"
+        title=\"RSF occasionally funds projects that result in datasets that are made
+        available to the public. These are often hosted at repositories such as ICPSR
+        and the Harvard Dataverse. We have compiled RSF-funded (or partially funded)
+        datasets and made them searchable by keyword, with links to download them.
+        \">Datasets</a></li>\n<li class=\"last expanded menu-mlid-818\"><a href=\"/research/recently-completed-research\"
+        title=\"\">Completed Programs</a><ul class=\"menu\"><li class=\"first expanded
+        menu-mlid-783\"><a href=\"/research/behavioral-economics\">Behavioral Economics</a><ul
+        class=\"menu\"><li class=\"first leaf menu-mlid-878\"><a href=\"/research/behavioral-economics/recent-grants\"
         title=\"\">Recent Grants</a></li>\n<li class=\"leaf menu-mlid-799\"><a href=\"/research/behavioral-economics-detailed\">Program
         History</a></li>\n<li class=\"leaf menu-mlid-800\"><a href=\"/research/behavioral-economics/behavioral-economics-roundtable\">Behavioral
         Economics Roundtable</a></li>\n<li class=\"leaf menu-mlid-896\"><a href=\"/research/behavioral-economics/books\"
@@ -3686,10 +3705,7 @@ http_interactions:
         Influence of Economic Elites</a></li>\n<li class=\"leaf menu-mlid-1248\"><a
         href=\"/special-initiatives/computational-social-science\">Computational Social
         Science</a></li>\n<li class=\"last leaf menu-mlid-1160\"><a href=\"/funding/improving-education-and-reducing-inequality-united-states\">Improving
-        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n<li
-        class=\"last expanded menu-mlid-1275\"><a href=\"/dissertation-research-grants\">Dissertation
-        Research Grants</a><ul class=\"menu\"><li class=\"first last leaf menu-mlid-1276\"><a
-        href=\"/frequently-asked-questions-faqs\">Frequently Asked Questions (FAQs)</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
+        Education and Reducing Inequality in the United States</a></li>\n</ul></li>\n</ul></li>\n</li>\t\t\t<li><li
         class=\"expanded menu-mlid-839\"><a href=\"/about/what-we-do/visiting-scholars-program\">Visiting
         Scholars</a><ul class=\"menu\"><li class=\"first leaf menu-mlid-1178\"><a
         href=\"/visiting-scholars/incoming-visiting-scholars\" title=\"\">Incoming
@@ -3759,10 +3775,8 @@ http_interactions:
         class=\"leaf menu-mlid-1225\"><a href=\"http://www.russellsage.org/summer-institutes\"
         title=\"\">Summer Institutes</a></li>\n<li class=\"leaf menu-mlid-1242\"><a
         href=\"/research/pipeline-grants-competition\" title=\"\">Pipeline Grants
-        Competition</a></li>\n<li class=\"leaf menu-mlid-1278\"><a href=\"/dissertation-research-grants\"
-        title=\"\">Dissertation Research Grants</a></li>\n<li class=\"last leaf menu-mlid-1236\"><a
-        href=\"https://www.russellsage.org/sites/default/files/RSF_HR_Manager.pdf\"
-        title=\"\">Open Job Posting - Human Resources Manager</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
+        Competition</a></li>\n<li class=\"last leaf menu-mlid-1278\"><a href=\"/research/funding/dissertation-research-grants\"
+        title=\"\">Dissertation Research Grants</a></li>\n</ul></li>\n</li>\t</ul>\n</nav>\n\n\t\t\t<div
         class=\"Seal\"></div>\n\t\t</div><!-- /.Frame__inside -->\n\t</div><!--/.Frame-->\n\n</header><!--
         /.SiteHeader -->\n\n<div id='MobileMenu__content' class='MobileMenu__content
         MobileMenu'>\n\t<div class='MobileMenu__inside'>\n\n\t</div><!-- /.MobileMenu__inside
@@ -3831,55 +3845,55 @@ http_interactions:
         \             </a>\n            </li>\n          </ul>\n      </div>\n  <div
         class=\"Post__body u-WYSIWYG u-bee\">      <p><p>The labor force participation
         rate of prime working-age men (25-54 years old) has declined from 97 percent
-        in 1964 to about 85 percent today. In contrast, prime-age women’s labor force
-        participation over this period rose until the past few years. These changes
-        in labor force participation have taken place alongside substantial changes
-        in family life. More Americans are unmarried, and fathers are more likely
-        to live apart from their children. Being disconnected from both work and family
-        is most pronounced among less-educated men. This raises questions about how
-        men experience this disconnection and how they understand their place in society
-        in the absence of work and family ties. </p>\n<p>Sociologist Sarah Halpern-Meekin
-        is proposing a qualitative project that explores how men disconnected from
-        the world of work see themselves vis-à-vis the worlds of work and family,
-        with the goal of better understanding their decisions and experiences. She
-        has two specific aims. The first is to understand the meaning men ascribe
-        to work and to their disconnect from formal employment. Because work both
-        provides income and is central to their identities, what makes men feel they
-        can’t or won’t pursue work? She seeks to identify how being disconnected affects
-        their lives and sense of self. The second aim is to understand the extent
-        to which men see connections between their labor force participation and family
-        relationships. How do they see their employment decisions as enmeshed with,
-        versus separate from, their activities in other spheres of life? Halpern-Meekin
-        will select about 80 men aged 25-54 and not currently formally employed or
-        actively seeking formal employment who reside in non-metropolitan counties
-        in Wisconsin for semi-structured interviews.</p>\n</p>\n  </div><!-- /.Post__body
-        -->\n\n  <div class=\"Post__afterContent u-marginTop__100\">\n\t<div class=\"u-grid--thick
-        u-grid--thick--singleRow\">\t</div>\n\n</div>\n</div><!-- /.Post__content
-        -->\n  </div>\n</div>\n  </div>\n\n          </article><!-- /.Post -->\n        </div><!--
-        /.u-grid__72 -->\n        <div class=\"u-grid__5\"></div>\n        <div class=\"u-grid__23
-        MainGrid__sidebar\">          <section class=\"u-box u-tealBackground u-interiorBorder
-        u-truncatePadding\"><header class=\"u-padding__30 u-maxWidthHeader\">\n\t<h2
-        class=\" u-margin__10\">\n\t\t<div class=\"u-title u-title--small\">RSF</div>\n\t</h2>\n\t<div
-        class=\"u-text--small u-sansSerif\">\n\t\t<p><i>RSF: The Russell Sage Foundation
-        Journal of the Social Sciences</i> is a peer-reviewed, open-access journal
-        of original empirical research articles by both established and <span class=\"u-nobr\">emerging
-        scholars</span>.</p>\n\t</div>\n\t<div class=\"u-blueButton\"><a href=\"http://www.rsfjournal.org/\">Learn
-        more</a></div>\n</header>          </section>          <section class=\"u-box
-        u-goldBackground u-interiorBorder u-truncatePadding\">\n<div id=\"block-bean-awards\"
-        class=\"block block-bean\">\n\n  <div class=\"content\"><header class=\"u-padding__30
-        u-maxWidthHeader\">\n\t<h2 class=\"u-title u-title--small u-margin__10\">Grants</h2>\n\t<div
-        class=\"u-text--small u-sansSerif\">\n\t\t<p>The Russell Sage Foundation offers
-        grants and positions in our Visiting Scholars program for research.</p>\n\t</div>\n\t<div
-        class=\"u-blueButton\">\n\t\t<a href=\"https://www.russellsage.org/how-to-apply\">Read
-        More</a>\n\t</div>\n</header>\n  </div>\n</div>\n          </section>          <section
-        class=\"u-box u-redBackground u-interiorBorder\"><h2 class=\"u-title u-title--small
-        u-margin__10\">Newsletter</h2>\n<div class=\"u-text--small u-sansSerif\">\n\t<p>Join
-        our mailing list for <span class=\"u-nobr\">email updates</span>.</p>\n</div>\n<div
-        class=\"u-blueButton\">\n\t<a href=\"/about/get-updates\">Sign Up</a>\n</div>
-        \         </section>\n\n        </div><!--/.u-grid__23-->\n      </div><!--
-        /.u-grid -->\n    </div><!-- /.Frame__inside -->\n  </div><!-- /.Frame -->\n
-        </main>\t<div class=\"cover\"></div><footer class=\"SiteFooter Frame Frame--gray\">\n
-        \ <div class=\"Frame__inside\">\n    <div class=\"SiteFooter__grid\">\n\n
+        in 1964 to about 85 percent today. In contrast, prime-age women’s labor
+        force participation over this period rose until the past few years. These
+        changes in labor force participation have taken place alongside substantial
+        changes in family life. More Americans are unmarried, and fathers are more
+        likely to live apart from their children. Being disconnected from both work
+        and family is most pronounced among less-educated men. This raises questions
+        about how men experience this disconnection and how they understand their
+        place in society in the absence of work and family ties. </p>\n<p>Sociologist
+        Sarah Halpern-Meekin is proposing a qualitative project that explores how
+        men disconnected from the world of work see themselves vis-à-vis the worlds
+        of work and family, with the goal of better understanding their decisions
+        and experiences. She has two specific aims. The first is to understand the
+        meaning men ascribe to work and to their disconnect from formal employment.
+        Because work both provides income and is central to their identities, what
+        makes men feel they can’t or won’t pursue work? She seeks to identify
+        how being disconnected affects their lives and sense of self. The second aim
+        is to understand the extent to which men see connections between their labor
+        force participation and family relationships. How do they see their employment
+        decisions as enmeshed with, versus separate from, their activities in other
+        spheres of life? Halpern-Meekin will select about 80 men aged 25-54 and
+        not currently formally employed or actively seeking formal employment who
+        reside in non-metropolitan counties in Wisconsin for semi-structured interviews.</p>\n</p>\n
+        \ </div><!-- /.Post__body -->\n\n  <div class=\"Post__afterContent u-marginTop__100\">\n\t<div
+        class=\"u-grid--thick u-grid--thick--singleRow\">\t</div>\n\n</div>\n</div><!--
+        /.Post__content -->\n  </div>\n</div>\n  </div>\n\n          </article><!--
+        /.Post -->\n        </div><!-- /.u-grid__72 -->\n        <div class=\"u-grid__5\"></div>\n
+        \       <div class=\"u-grid__23 MainGrid__sidebar\">          <section class=\"u-box
+        u-tealBackground u-interiorBorder u-truncatePadding\"><header class=\"u-padding__30
+        u-maxWidthHeader\">\n\t<h2 class=\" u-margin__10\">\n\t\t<div class=\"u-title
+        u-title--small\">RSF</div>\n\t</h2>\n\t<div class=\"u-text--small u-sansSerif\">\n\t\t<p><i>RSF:
+        The Russell Sage Foundation Journal of the Social Sciences</i> is a peer-reviewed,
+        open-access journal of original empirical research articles by both established
+        and <span class=\"u-nobr\">emerging scholars</span>.</p>\n\t</div>\n\t<div
+        class=\"u-blueButton\"><a href=\"http://www.rsfjournal.org/\">Learn more</a></div>\n</header>
+        \         </section>          <section class=\"u-box u-goldBackground u-interiorBorder
+        u-truncatePadding\">\n<div id=\"block-bean-awards\" class=\"block block-bean\">\n\n
+        \ <div class=\"content\"><header class=\"u-padding__30 u-maxWidthHeader\">\n\t<h2
+        class=\"u-title u-title--small u-margin__10\">Grants</h2>\n\t<div class=\"u-text--small
+        u-sansSerif\">\n\t\t<p>The Russell Sage Foundation offers grants and positions
+        in our Visiting Scholars program for research.</p>\n\t</div>\n\t<div class=\"u-blueButton\">\n\t\t<a
+        href=\"https://www.russellsage.org/how-to-apply\">Read More</a>\n\t</div>\n</header>\n
+        \ </div>\n</div>\n          </section>          <section class=\"u-box u-redBackground
+        u-interiorBorder\"><h2 class=\"u-title u-title--small u-margin__10\">Newsletter</h2>\n<div
+        class=\"u-text--small u-sansSerif\">\n\t<p>Join our mailing list for <span
+        class=\"u-nobr\">email updates</span>.</p>\n</div>\n<div class=\"u-blueButton\">\n\t<a
+        href=\"/about/get-updates\">Sign Up</a>\n</div>          </section>\n\n        </div><!--/.u-grid__23-->\n
+        \     </div><!-- /.u-grid -->\n    </div><!-- /.Frame__inside -->\n  </div><!--
+        /.Frame -->\n </main>\t<div class=\"cover\"></div><footer class=\"SiteFooter
+        Frame Frame--gray\">\n  <div class=\"Frame__inside\">\n    <div class=\"SiteFooter__grid\">\n\n
         \     <div class=\"SiteFooter__groupInfo\">\n        <div class=\"FooterLogo\">\n
         \         <a href=\"/\">\n            <img src=\"/sites/all/themes/beehive/img/RusselSageFoundation.svg\"
         onerror=\"this.src=/'sites/all/themes/beehive/img/RusselSageFoundation.png'\"
@@ -3943,5 +3957,5 @@ http_interactions:
         of Use</a></li>\t</ul>\n</nav>\n          \n        </div><!-- /.SiteFooter__groupMenus
         -->\n\n      </div><!-- /.u-grid -->\n    </div>\n  </footer>\n\n    </div>\n
         \ </div>\n</body>\n</html>"
-  recorded_at: 2022-01-28 18:30:24 GMT
+  recorded_at: 2022-03-04 19:04:59 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0

@@ -14,29 +14,30 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
+      connection: keep-alive
+      content-length: '35348'
       cache-control: public, max-age=600
       content-encoding: gzip
       content-type: text/html; charset=UTF-8
       link: <https://www.templeton.org/wp-json/>; rel="https://api.w.org/"
       server: nginx
       strict-transport-security: max-age=300
-      traceparent: 00-ab9692f4ceb54ab8b55f0c37e7e0651e-a913c28f0fa17904-00
-      x-cloud-trace-context: ab9692f4ceb54ab8b55f0c37e7e0651e/12183295336665676036;o=0
-      x-pantheon-styx-hostname: styx-fe2-a-55bcb968f4-chdv2
-      x-styx-req-id: e843f268-8076-11ec-bf18-9e13eb20878f
+      traceparent: 00-fc192da8292d4f888fd9e872440e51c9-3f4e556ccbabfe85-00
+      x-cloud-trace-context: fc192da8292d4f888fd9e872440e51c9/4561677398334766725;o=0
+      x-pantheon-styx-hostname: styx-fe2-a-854c9bcdfb-25db4
+      x-styx-req-id: eb8e071c-9bed-11ec-9ef3-8a10d23a32ca
       x-tec-api-origin: https://www.templeton.org
       x-tec-api-root: https://www.templeton.org/wp-json/tribe/events/v1/
       x-tec-api-version: v1
-      date: Fri, 28 Jan 2022 20:14:34 GMT
-      x-served-by: cache-mdw17380-MDW, cache-lga21977-LGA
-      x-cache: MISS, MISS
-      x-cache-hits: 0, 0
-      x-timer: S1643400873.269154,VS0,VE1038
+      date: Fri, 04 Mar 2022 19:05:02 GMT
+      x-served-by: cache-mdw17332-MDW, cache-lga21971-LGA
+      x-cache: MISS, HIT
+      x-cache-hits: 0, 1
+      x-timer: S1646420702.299101,VS0,VE1
       vary: Accept-Encoding, Cookie, Cookie
-      age: '0'
+      age: '31'
       accept-ranges: bytes
       via: 1.1 varnish, 1.1 varnish
-      content-length: '35278'
     body:
       encoding: UTF-8
       file: no
@@ -264,10 +265,10 @@ http_interactions:
         type='text/css' media='all' />\n<link rel='stylesheet' id='main_style-css'
         \ href='https://www.templeton.org/wp-content/themes/push10custom/style.css?ver=0.3'
         type='text/css' media='all' />\n<link rel='stylesheet' id='maintenance-css'
-        \ href='https://www.templeton.org/wp-content/themes/push10custom/maintenance.css?ver=1643314840'
-        type='text/css' media='all' />\n<link rel='stylesheet' id='new-news-css'  href='https://www.templeton.org/wp-content/themes/push10custom/new-news.css?ver=1643314840'
+        \ href='https://www.templeton.org/wp-content/themes/push10custom/maintenance.css?ver=1646338946'
+        type='text/css' media='all' />\n<link rel='stylesheet' id='new-news-css'  href='https://www.templeton.org/wp-content/themes/push10custom/new-news.css?ver=1646338946'
         type='text/css' media='all' />\n<link rel='stylesheet' id='new-style-css'
-        \ href='https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/dist/main.min.css?ver=5.9'
+        \ href='https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/dist/main.min.css?ver=1646338946'
         type='text/css' media='all' />\n<link rel='stylesheet' id='cookieconsent-css'
         \ href='https://www.templeton.org/wp-content/themes/push10custom/cookieconsent.css?ver=0.3'
         type='text/css' media='all' />\n<link rel='stylesheet' id='highlight-and-share-email-css'
@@ -336,9 +337,10 @@ http_interactions:
         traduzidas para o seu idioma. As páginas restantes são apenas em Inglês.</span></p>\n\t\t\t\t\t<div
         id=\"close\">\n\t\t\t\t\t\t<div class=\"btn\">\n\t\t\t\t\t\t\t<div class=\"\">\n\t\t\t\t\t\t\t\tOK\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div
         class=\"meta\" data-language=\"ar\">\n\t\t\t\t\t<p><span class=\"s1\">أنت
-        تشاهد </span><span class=\"s2\">Templeton.org</span><span class=\"s1\"> باللغة
-        العربية. تتم ترجمة بعض صفحات الموقع فقط إلى لغتك. الصفحات المتبقية هي باللغة
-        الإنجليزية فقط.</span></p>\n\t\t\t\t\t<div id=\"close\">\n\t\t\t\t\t\t<div
+        تشاهد </span><span class=\"s2\">Templeton.org</span><span class=\"s1\">
+        باللغة العربية. تتم ترجمة بعض ص�\x81حات الموقع
+        �\x81قط إلى لغتك. الص�\x81حات المتبقية هي باللغة
+        الإنجليزية �\x81قط.</span></p>\n\t\t\t\t\t<div id=\"close\">\n\t\t\t\t\t\t<div
         class=\"btn\">\n\t\t\t\t\t\t\t<div class=\"\">\n\t\t\t\t\t\t\t\tOK\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t</div>\n\t\t<header
         class=\"scroll-watch\">\n\t\t\t<div class=\"util-toggle\" id=\"search-field\">\n\t\t\t\t<div>\n\t\t\t\t\t<div
         class=\"frame\">\n\t\t\t\t\t\t<form method=\"get\" id=\"searchform\" class=\"searchform\"
@@ -350,9 +352,9 @@ http_interactions:
         aria-label=\"Toggle Mobile Menu\" href=\"#\" id=\"m-menu-toggle\">\n\t\t\t\t\t\t\t<span
         class=\"bars\" id=\"bar-1\"></span>\n\t\t\t\t\t\t\t<span class=\"bars\" id=\"bar-2\"></span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<a
         href=\"https://www.templeton.org\" class=\"hidden-mobile-logo\">\n\t\t\t\t\t\t\t<img
-        \ alt=\"John Templeton Foundation Logo\" id=\"logo-main-mobile\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/new-jtf-logo.svg\"
+        \ alt=\"John Templeton Foundation Logo\" id=\"logo-main-mobile\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/imgs/JTF-Logo-Tagline-FullColor-CMYK.svg\"
         class=\"logo lazyload\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"
-        /><noscript><img src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/new-jtf-logo.svg\"
+        /><noscript><img src=\"https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/imgs/JTF-Logo-Tagline-FullColor-CMYK.svg\"
         alt=\"John Templeton Foundation Logo\" id=\"logo-main-mobile\" class=\"logo\"
         /></noscript>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<ul class=\"utility-nav\">\n\t\t\t\t\t\t\t<li
         id=\"menu-item-38\" class=\"no-open menu-item menu-item-type-post_type menu-item-object-page
@@ -405,9 +407,9 @@ http_interactions:
         class=\"dark-dark transition\"></div>\n\t\t\t\t<div class=\"frame\">\n\t\t\t\t\t<div
         class=\"nav-wrapper clearfix\">\n\t\t\t\t\t\t<div class=\"logo-wrapper\">\n\t\t\t\t\t\t\t<a
         href=\"https://www.templeton.org\" class=\"logo-link\" data-green=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/jtf-logo-green.svg\">\n\t\t\t\t\t\t\t\t<img
-        \ alt=\"John Templeton Foundation Logo\" id=\"logo-main\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/new-jtf-logo.svg\"
+        \ alt=\"John Templeton Foundation Logo\" id=\"logo-main\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/imgs/JTF-Logo-Tagline-FullColor-CMYK.svg\"
         class=\"logo lazyload\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"
-        /><noscript><img src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/new-jtf-logo.svg\"
+        /><noscript><img src=\"https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/imgs/JTF-Logo-Tagline-FullColor-CMYK.svg\"
         alt=\"John Templeton Foundation Logo\" id=\"logo-main\" class=\"logo\" /></noscript>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a
         href=\"https://www.templeton.org\" class=\"logo-link-sticky\" data-green=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/jtf-logo-green.svg\">\n\t\t\t\t\t\t\t\t<img
         \ alt=\"John Templeton Foundation Logo\" id=\"logo-main\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/jtf-logo-symbol.svg\"
@@ -429,11 +431,13 @@ http_interactions:
         menu-item-705\"><a href=\"https://www.templeton.org/about/careers\">Careers</a></li>\n</ul></div>\n</li>\n<li
         id=\"menu-item-33\" class=\"menu-item menu-item-type-post_type menu-item-object-page
         menu-item-has-children menu-item-33\"><a href=\"https://www.templeton.org/funding-areas\">Funding
-        Areas</a>\n<div class='sub-menu-wrap'><ul class='sub-menu'>\n\t<li id=\"menu-item-75352\"
-        class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-75352\"><a
-        href=\"https://www.templeton.org/strategic-priorities\">Strategic Priorities</a></li>\n\t<li
-        id=\"menu-item-1049\" class=\"menu-item menu-item-type-post_type menu-item-object-page
-        menu-item-1049\"><a href=\"https://www.templeton.org/funding-areas/science-big-questions\">Science
+        Areas</a>\n<div class='sub-menu-wrap'><ul class='sub-menu'>\n\t<li id=\"menu-item-81008\"
+        class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-81008\"><a
+        href=\"https://www.templeton.org/funding-areas\">Funding<br>Areas</a></li>\n\t<li
+        id=\"menu-item-75352\" class=\"menu-item menu-item-type-post_type menu-item-object-page
+        menu-item-75352\"><a href=\"https://www.templeton.org/strategic-priorities\">Strategic
+        Priorities</a></li>\n\t<li id=\"menu-item-1049\" class=\"menu-item menu-item-type-post_type
+        menu-item-object-page menu-item-1049\"><a href=\"https://www.templeton.org/funding-areas/science-big-questions\">Science
         &#038; The Big Questions</a></li>\n\t<li id=\"menu-item-1047\" class=\"menu-item
         menu-item-type-post_type menu-item-object-page menu-item-1047\"><a href=\"https://www.templeton.org/funding-areas/character-virtue-development\">Character
         Virtue Development</a></li>\n\t<li id=\"menu-item-1046\" class=\"menu-item
@@ -491,9 +495,11 @@ http_interactions:
         class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children
         menu-item-33\"><a href=\"https://www.templeton.org/funding-areas\">Funding
         Areas</a>\n<div class='sub-menu-wrap'><ul class='sub-menu'>\n\t<li class=\"menu-item
-        menu-item-type-post_type menu-item-object-page menu-item-75352\"><a href=\"https://www.templeton.org/strategic-priorities\">Strategic
-        Priorities</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page
-        menu-item-1049\"><a href=\"https://www.templeton.org/funding-areas/science-big-questions\">Science
+        menu-item-type-post_type menu-item-object-page menu-item-81008\"><a href=\"https://www.templeton.org/funding-areas\">Funding<br>Areas</a></li>\n\t<li
+        class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-75352\"><a
+        href=\"https://www.templeton.org/strategic-priorities\">Strategic Priorities</a></li>\n\t<li
+        class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-1049\"><a
+        href=\"https://www.templeton.org/funding-areas/science-big-questions\">Science
         &#038; The Big Questions</a></li>\n\t<li class=\"menu-item menu-item-type-post_type
         menu-item-object-page menu-item-1047\"><a href=\"https://www.templeton.org/funding-areas/character-virtue-development\">Character
         Virtue Development</a></li>\n\t<li class=\"menu-item menu-item-type-post_type
@@ -518,7 +524,7 @@ http_interactions:
         menu-item-1299\"><a href=\"https://www.templeton.org/grants/grant-database\">Grant
         Database</a></li>\n</ul></div>\n</li>\n<li class=\"menu-item menu-item-type-post_type
         menu-item-object-page menu-item-80195\"><a href=\"https://www.templeton.org/news\">News
-        &#038; Insights</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\t\t</header>\n<main
+        &#038; Insights</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\t\t</header><main
         id=\"main-content\">\n        <section id=\"search-results-content\">\n        <div
         class=\"frame\">\n            <h1 class=\"extra-large\">Search results</h1>\n
         \           <form method=\"get\" id=\"searchform\" class=\"searchform\" action=\"https://www.templeton.org/\">\n
@@ -635,7 +641,7 @@ http_interactions:
         policy.&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_6.3'
         value='3' class='gform_hidden' /></div></li><li id=\"field_3_8\" class=\"gfield
         gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible\"
-        ><label class='gfield_label' for='input_3_8' >Name</label><div class='ginput_container'><input
+        ><label class='gfield_label' for='input_3_8' >Email</label><div class='ginput_container'><input
         name='input_8' id='input_3_8' type='text' value='' /></div><div class='gfield_description'
         id='gfield_description_3_8'>This field is for validation purposes and should
         be left unchanged.</div></li></ul></div>\n        <div class='gform_footer
@@ -707,7 +713,7 @@ http_interactions:
         id=\"menu-item-7267\" class=\"menu-item menu-item-type-post_type menu-item-object-page
         menu-item-7267\"><a target=\"_blank\" rel=\"noopener\" href=\"https://portal.templeton.org/#new_tab\">Login</a></li>\n
         \                           </ul>\n                            <!-- <div class=\"lang-switcher\">\n
-        \                                           <ul class=“lang-switcher”><select
+        \                                           <ul class=“lang-switcher�\x9D><select
         name=\"lang_choice_1\" id=\"lang_choice_1\">\n\t<option value=\"en\" selected='selected'>English</option>\n\t<option
         value=\"es\">Español</option>\n\t<option value=\"pt\">Português</option>\n\t<option
         value=\"ar\">العربية</option>\n\n</select>\n<script type=\"text/javascript\">\n\t\t\t\t\t//<![CDATA[\n\t\t\t\t\tvar
@@ -857,7 +863,7 @@ http_interactions:
         Approach Initiative</a></li>\n</ul>\n</li>\n<li id=\"menu-item-4349\" class=\"menu-item
         menu-item-type-post_type menu-item-object-page menu-item-4349\"><a target=\"_blank\"
         rel=\"noopener\" href=\"https://portal.templeton.org/#new_tab\">Login</a></li>\n\n
-        \       <!-- <ul class=“lang-switcher”>\t<li class=\"lang-item lang-item-107
+        \       <!-- <ul class=“lang-switcher�\x9D>\t<li class=\"lang-item lang-item-107
         lang-item-en current-lang lang-item-first\"><a  lang=\"en-US\" hreflang=\"en-US\"
         href=\"https://www.templeton.org/?limit=500&#038;s=ethnography\">English</a></li>\n\t<li
         class=\"lang-item lang-item-113 lang-item-es\"><a  lang=\"es-ES\" hreflang=\"es-ES\"
@@ -869,8 +875,8 @@ http_interactions:
         -->\n\n    </ul>\n</nav>\n\n</div><!-- close #site -->\n\n<div class=\"cookie-overlay\"
         style=\"display: none;\"></div>\n<div class=\"cookie-banner\" style=\"display:
         none;\">\n    <div class=\"frame\">\n        <p>\n            By clicking
-        “Accept All”, you agree to the storing of cookies on your device to enhance
-        site navigation, analyze site usage, and assist in our marketing efforts.\n
+        “Accept All�\x9D, you agree to the storing of cookies on your device to
+        enhance site navigation, analyze site usage, and assist in our marketing efforts.\n
         \           <a href=\"/privacy-policy\">Cookie policy</a>\n        </p>\n
         \       <p>\n            <button class=\"btn\">Accept All</button>\n        </p>\n\n
         \   </div>\n</div>\n\n\n\t\t<script>\n\t\t( function ( body ) {\n\t\t\t'use
@@ -1131,7 +1137,7 @@ http_interactions:
         id='wp-i18n-js'></script>\n<script type='text/javascript' id='wp-i18n-js-after'>\nwp.i18n.setLocaleData(
         { 'text direction\\u0004ltr': [ 'ltr' ] } );\n</script>\n<script type='text/javascript'
         id='highlight-and-share-js-extra'>\n/* <![CDATA[ */\nvar highlight_and_share
-        = {\"show_facebook\":\"1\",\"show_twitter\":\"1\",\"show_linkedin\":\"\",\"show_ok\":\"\",\"show_vk\":\"\",\"show_email\":\"\",\"show_xing\":\"\",\"show_copy\":\"\",\"show_whatsapp\":\"\",\"twitter_username\":\"\",\"mobile\":\"\",\"content\":\".standard-text,.has-content-area,.has-excerpt-area\",\"tweet_text\":\"Tweet\",\"facebook_text\":\"Share\",\"linkedin_text\":\"LinkedIn\",\"ok_text\":\"Odnoklassniki\",\"vk_text\":\"VKontakte\",\"whatsapp_text\":\"WhatsApp\",\"xing_text\":\"Xing\",\"copy_text\":\"Copy\",\"email_text\":\"E-mail\",\"icons\":\"1\",\"facebook_app_id\":\"1836143459901029\",\"email_your_name_value\":\"\",\"email_from_value\":\"\",\"nonce\":\"47303b6ccb\",\"ajax_url\":\"https:\\/\\/www.templeton.org\\/wp-admin\\/admin-ajax.php\",\"email_share\":\"Share
+        = {\"show_facebook\":\"1\",\"show_twitter\":\"1\",\"show_linkedin\":\"\",\"show_ok\":\"\",\"show_vk\":\"\",\"show_email\":\"\",\"show_xing\":\"\",\"show_copy\":\"\",\"show_whatsapp\":\"\",\"twitter_username\":\"\",\"mobile\":\"\",\"content\":\".standard-text,.has-content-area,.has-excerpt-area\",\"tweet_text\":\"Tweet\",\"facebook_text\":\"Share\",\"linkedin_text\":\"LinkedIn\",\"ok_text\":\"Odnoklassniki\",\"vk_text\":\"VKontakte\",\"whatsapp_text\":\"WhatsApp\",\"xing_text\":\"Xing\",\"copy_text\":\"Copy\",\"email_text\":\"E-mail\",\"icons\":\"1\",\"facebook_app_id\":\"1836143459901029\",\"email_your_name_value\":\"\",\"email_from_value\":\"\",\"nonce\":\"ca7502a2f4\",\"ajax_url\":\"https:\\/\\/www.templeton.org\\/wp-admin\\/admin-ajax.php\",\"email_share\":\"Share
         This Post Via Email\",\"email_subject\":\"Your Subject\",\"email_your_name\":\"Your
         Name\",\"email_send_email\":\"Send to Email Address\",\"email_subject_text\":\"[Shared
         Post] %title%\",\"email_from\":\"Your Email Address\",\"email_send\":\"Send
@@ -1144,7 +1150,7 @@ http_interactions:
         = domain;\n\twp.i18n.setLocaleData( localeData, domain );\n} )( \"highlight-and-share\",
         { \"locale_data\": { \"messages\": { \"\": {} } } } );\n</script>\n<script
         type='text/javascript' src='https://www.templeton.org/wp-content/plugins/highlight-and-share/js/highlight-and-share.js?ver=3.5.5'
-        id='highlight-and-share-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-content/plugins/wp-smush-pro/app/assets/js/smush-lazy-load.min.js?ver=3.9.5'
+        id='highlight-and-share-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-content/plugins/wp-smush-pro/app/assets/js/smush-lazy-load.min.js?ver=3.9.6'
         id='smush-lazy-load-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/dom-ready.min.js?ver=ecda74de0221e1c2ce5c57cbb5af09d5'
         id='wp-dom-ready-js'></script>\n<script type='text/javascript' id='wp-a11y-js-translations'>\n(
         function( domain, translations ) {\n\tvar localeData = translations.locale_data[
@@ -1218,8 +1224,8 @@ http_interactions:
         \   //         var s = d.getElementsByTagName(n)[0];\n    //         s.parentNode.insertBefore(e,
         s);\n    //     }\n    //     w.pdst('conf', {\n    //         key: '8d11c483717740469c4796eb631fefa8'\n
         \   //     })\n    //     w.pdst('view')\n    // })(window, document);\n</script>\n<script
-        type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"bam.nr-data.net\",\"licenseKey\":\"156398ea8b\",\"applicationID\":\"44072675\",\"transactionName\":\"b1ZbNRFSWktXB0APDVYceAIXWltWGRdRBxBbWw==\",\"queueTime\":0,\"applicationTime\":973,\"atts\":\"QxFYQ1lISUU=\",\"errorBeacon\":\"bam.nr-data.net\",\"agent\":\"\"}</script></body>\n\n</html>"
-  recorded_at: 2022-01-28 20:14:37 GMT
+        type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"bam.nr-data.net\",\"licenseKey\":\"156398ea8b\",\"applicationID\":\"44072675\",\"transactionName\":\"b1ZbNRFSWktXB0APDVYceAIXWltWGRdRBxBbWw==\",\"queueTime\":0,\"applicationTime\":1005,\"atts\":\"QxFYQ1lISUU=\",\"errorBeacon\":\"bam.nr-data.net\",\"agent\":\"\"}</script></body>\n\n</html>"
+  recorded_at: 2022-03-04 19:05:03 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -1237,31 +1243,32 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       accept-ranges: bytes
-      age: '300'
+      age: '124'
       cache-control: public, max-age=600
+      connection: keep-alive
       content-encoding: gzip
-      content-length: '228904'
+      content-length: '240138'
       content-type: text/html; charset=UTF-8
-      date: Fri, 28 Jan 2022 20:14:34 GMT
+      date: Fri, 04 Mar 2022 19:05:02 GMT
       link:
       - <https://www.templeton.org/wp-json/>; rel="https://api.w.org/"
       - <https://www.templeton.org/wp-json/wp/v2/pages/1297>; rel="alternate"; type="application/json"
       - <https://www.templeton.org/?p=1297>; rel=shortlink
       server: nginx
       strict-transport-security: max-age=300
-      traceparent: 00-2e593216ecc94d7ebee383552fb37a39-5f3bcc94c9b250b4-00
+      traceparent: 00-506d148cb81a4f62952514f512a5be31-9c66a63ba7c464f1-00
       vary: Accept-Encoding, Cookie, Cookie
       via: 1.1 varnish, 1.1 varnish
-      x-cache: HIT, MISS
-      x-cache-hits: 1, 0
-      x-cloud-trace-context: 2e593216ecc94d7ebee383552fb37a39/6862303396640215220;o=0
-      x-pantheon-styx-hostname: styx-fe2-b-d8dd6bb59-csqbs
-      x-served-by: cache-mdw17335-MDW, cache-lga21977-LGA
-      x-styx-req-id: 335a4576-8076-11ec-a945-26aabb7f4d8f
+      x-cache: HIT, HIT
+      x-cache-hits: 1, 1
+      x-cloud-trace-context: 506d148cb81a4f62952514f512a5be31/11269877892689192177;o=0
+      x-pantheon-styx-hostname: styx-fe2-b-f66bf767-q4wvz
+      x-served-by: cache-mdw17373-MDW, cache-lga21971-LGA
+      x-styx-req-id: b1d9d3dd-9bed-11ec-a64f-4a3321e9b47b
       x-tec-api-origin: https://www.templeton.org
       x-tec-api-root: https://www.templeton.org/wp-json/tribe/events/v1/
       x-tec-api-version: v1
-      x-timer: S1643400874.480104,VS0,VE22
+      x-timer: S1646420702.397758,VS0,VE1
     body:
       encoding: UTF-8
       file: no
@@ -1500,12 +1507,16 @@ http_interactions:
         type='text/css' media='all' />\n<link rel='stylesheet' id='main_style-css'
         \ href='https://www.templeton.org/wp-content/themes/push10custom/style.css?ver=0.3'
         type='text/css' media='all' />\n<link rel='stylesheet' id='maintenance-css'
-        \ href='https://www.templeton.org/wp-content/themes/push10custom/maintenance.css?ver=1643314842'
-        type='text/css' media='all' />\n<link rel='stylesheet' id='new-news-css'  href='https://www.templeton.org/wp-content/themes/push10custom/new-news.css?ver=1643314842'
+        \ href='https://www.templeton.org/wp-content/themes/push10custom/maintenance.css?ver=1646349797'
+        type='text/css' media='all' />\n<link rel='stylesheet' id='new-news-css'  href='https://www.templeton.org/wp-content/themes/push10custom/new-news.css?ver=1646349797'
         type='text/css' media='all' />\n<link rel='stylesheet' id='new-style-css'
-        \ href='https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/dist/main.min.css?ver=5.9'
+        \ href='https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/dist/main.min.css?ver=1646349797'
         type='text/css' media='all' />\n<link rel='stylesheet' id='cookieconsent-css'
         \ href='https://www.templeton.org/wp-content/themes/push10custom/cookieconsent.css?ver=0.3'
+        type='text/css' media='all' />\n<link rel='stylesheet' id='highlight-and-share-email-css'
+        \ href='https://www.templeton.org/wp-content/plugins/highlight-and-share/css/highlight-and-share-emails.css?ver=3.5.5'
+        type='text/css' media='all' />\n<link rel='stylesheet' id='highlight-and-share-css'
+        \ href='https://www.templeton.org/wp-content/plugins/highlight-and-share/css/highlight-and-share.css?ver=3.5.5'
         type='text/css' media='all' />\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
         id='jquery-core-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
         id='jquery-migrate-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-content/themes/push10custom/js/plugins/modernizr.js?ver=5.9'
@@ -1548,7 +1559,7 @@ http_interactions:
         height=\"1\" width=\"1\" style=\"display:none\" src=\"https://www.facebook.com/tr?id=2289050714693510&ev=PageView&noscript=1\"
         />\n\t</noscript>\n\t<!-- End Facebook Pixel Code -->\n</head>\n\n<body class=\"page-template
         page-template-template-grants-database page-template-template-grants-database-php
-        page page-id-1297 page-child parent-pageid-14 tribe-no-js language-en\">\n\t<!--
+        page page-id-1297 page-child parent-pageid-14 tribe-no-js language-en has-body\">\n\t<!--
         Google Tag Manager (noscript) -->\n\t<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-WZK2RWH\"
         height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\n\t<!--
         End Google Tag Manager (noscript) -->\n\t<!--[if lt IE 9]>\n\t\t<link rel=\"stylesheet\"
@@ -1573,9 +1584,10 @@ http_interactions:
         traduzidas para o seu idioma. As páginas restantes são apenas em Inglês.</span></p>\n\t\t\t\t\t<div
         id=\"close\">\n\t\t\t\t\t\t<div class=\"btn\">\n\t\t\t\t\t\t\t<div class=\"\">\n\t\t\t\t\t\t\t\tOK\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div
         class=\"meta\" data-language=\"ar\">\n\t\t\t\t\t<p><span class=\"s1\">أنت
-        تشاهد </span><span class=\"s2\">Templeton.org</span><span class=\"s1\"> باللغة
-        العربية. تتم ترجمة بعض صفحات الموقع فقط إلى لغتك. الصفحات المتبقية هي باللغة
-        الإنجليزية فقط.</span></p>\n\t\t\t\t\t<div id=\"close\">\n\t\t\t\t\t\t<div
+        تشاهد </span><span class=\"s2\">Templeton.org</span><span class=\"s1\">
+        باللغة العربية. تتم ترجمة بعض ص�\x81حات الموقع
+        �\x81قط إلى لغتك. الص�\x81حات المتبقية هي باللغة
+        الإنجليزية �\x81قط.</span></p>\n\t\t\t\t\t<div id=\"close\">\n\t\t\t\t\t\t<div
         class=\"btn\">\n\t\t\t\t\t\t\t<div class=\"\">\n\t\t\t\t\t\t\t\tOK\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t</div>\n\t\t<header
         class=\"scroll-watch\">\n\t\t\t<div class=\"util-toggle\" id=\"search-field\">\n\t\t\t\t<div>\n\t\t\t\t\t<div
         class=\"frame\">\n\t\t\t\t\t\t<form method=\"get\" id=\"searchform\" class=\"searchform\"
@@ -1587,9 +1599,9 @@ http_interactions:
         aria-label=\"Toggle Mobile Menu\" href=\"#\" id=\"m-menu-toggle\">\n\t\t\t\t\t\t\t<span
         class=\"bars\" id=\"bar-1\"></span>\n\t\t\t\t\t\t\t<span class=\"bars\" id=\"bar-2\"></span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<a
         href=\"https://www.templeton.org\" class=\"hidden-mobile-logo\">\n\t\t\t\t\t\t\t<img
-        \ alt=\"John Templeton Foundation Logo\" id=\"logo-main-mobile\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/new-jtf-logo.svg\"
+        \ alt=\"John Templeton Foundation Logo\" id=\"logo-main-mobile\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/imgs/JTF-Logo-Tagline-FullColor-CMYK.svg\"
         class=\"logo lazyload\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"
-        /><noscript><img src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/new-jtf-logo.svg\"
+        /><noscript><img src=\"https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/imgs/JTF-Logo-Tagline-FullColor-CMYK.svg\"
         alt=\"John Templeton Foundation Logo\" id=\"logo-main-mobile\" class=\"logo\"
         /></noscript>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<ul class=\"utility-nav\">\n\t\t\t\t\t\t\t<li
         id=\"menu-item-38\" class=\"no-open menu-item menu-item-type-post_type menu-item-object-page
@@ -1642,9 +1654,9 @@ http_interactions:
         class=\"dark-dark transition\"></div>\n\t\t\t\t<div class=\"frame\">\n\t\t\t\t\t<div
         class=\"nav-wrapper clearfix\">\n\t\t\t\t\t\t<div class=\"logo-wrapper\">\n\t\t\t\t\t\t\t<a
         href=\"https://www.templeton.org\" class=\"logo-link\" data-green=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/jtf-logo-green.svg\">\n\t\t\t\t\t\t\t\t<img
-        \ alt=\"John Templeton Foundation Logo\" id=\"logo-main\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/new-jtf-logo.svg\"
+        \ alt=\"John Templeton Foundation Logo\" id=\"logo-main\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/imgs/JTF-Logo-Tagline-FullColor-CMYK.svg\"
         class=\"logo lazyload\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"
-        /><noscript><img src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/new-jtf-logo.svg\"
+        /><noscript><img src=\"https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/imgs/JTF-Logo-Tagline-FullColor-CMYK.svg\"
         alt=\"John Templeton Foundation Logo\" id=\"logo-main\" class=\"logo\" /></noscript>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a
         href=\"https://www.templeton.org\" class=\"logo-link-sticky\" data-green=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/jtf-logo-green.svg\">\n\t\t\t\t\t\t\t\t<img
         \ alt=\"John Templeton Foundation Logo\" id=\"logo-main\"  data-src=\"https://www.templeton.org/wp-content/themes/push10custom/imgs/jtf-logo-symbol.svg\"
@@ -1666,11 +1678,13 @@ http_interactions:
         menu-item-705\"><a href=\"https://www.templeton.org/about/careers\">Careers</a></li>\n</ul></div>\n</li>\n<li
         id=\"menu-item-33\" class=\"menu-item menu-item-type-post_type menu-item-object-page
         menu-item-has-children menu-item-33\"><a href=\"https://www.templeton.org/funding-areas\">Funding
-        Areas</a>\n<div class='sub-menu-wrap'><ul class='sub-menu'>\n\t<li id=\"menu-item-75352\"
-        class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-75352\"><a
-        href=\"https://www.templeton.org/strategic-priorities\">Strategic Priorities</a></li>\n\t<li
-        id=\"menu-item-1049\" class=\"menu-item menu-item-type-post_type menu-item-object-page
-        menu-item-1049\"><a href=\"https://www.templeton.org/funding-areas/science-big-questions\">Science
+        Areas</a>\n<div class='sub-menu-wrap'><ul class='sub-menu'>\n\t<li id=\"menu-item-81008\"
+        class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-81008\"><a
+        href=\"https://www.templeton.org/funding-areas\">Funding<br>Areas</a></li>\n\t<li
+        id=\"menu-item-75352\" class=\"menu-item menu-item-type-post_type menu-item-object-page
+        menu-item-75352\"><a href=\"https://www.templeton.org/strategic-priorities\">Strategic
+        Priorities</a></li>\n\t<li id=\"menu-item-1049\" class=\"menu-item menu-item-type-post_type
+        menu-item-object-page menu-item-1049\"><a href=\"https://www.templeton.org/funding-areas/science-big-questions\">Science
         &#038; The Big Questions</a></li>\n\t<li id=\"menu-item-1047\" class=\"menu-item
         menu-item-type-post_type menu-item-object-page menu-item-1047\"><a href=\"https://www.templeton.org/funding-areas/character-virtue-development\">Character
         Virtue Development</a></li>\n\t<li id=\"menu-item-1046\" class=\"menu-item
@@ -1731,9 +1745,11 @@ http_interactions:
         class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children
         menu-item-33\"><a href=\"https://www.templeton.org/funding-areas\">Funding
         Areas</a>\n<div class='sub-menu-wrap'><ul class='sub-menu'>\n\t<li class=\"menu-item
-        menu-item-type-post_type menu-item-object-page menu-item-75352\"><a href=\"https://www.templeton.org/strategic-priorities\">Strategic
-        Priorities</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page
-        menu-item-1049\"><a href=\"https://www.templeton.org/funding-areas/science-big-questions\">Science
+        menu-item-type-post_type menu-item-object-page menu-item-81008\"><a href=\"https://www.templeton.org/funding-areas\">Funding<br>Areas</a></li>\n\t<li
+        class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-75352\"><a
+        href=\"https://www.templeton.org/strategic-priorities\">Strategic Priorities</a></li>\n\t<li
+        class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-1049\"><a
+        href=\"https://www.templeton.org/funding-areas/science-big-questions\">Science
         &#038; The Big Questions</a></li>\n\t<li class=\"menu-item menu-item-type-post_type
         menu-item-object-page menu-item-1047\"><a href=\"https://www.templeton.org/funding-areas/character-virtue-development\">Character
         Virtue Development</a></li>\n\t<li class=\"menu-item menu-item-type-post_type
@@ -1761,17 +1777,17 @@ http_interactions:
         href=\"https://www.templeton.org/grants/grant-database\" aria-current=\"page\">Grant
         Database</a></li>\n</ul></div>\n</li>\n<li class=\"menu-item menu-item-type-post_type
         menu-item-object-page menu-item-80195\"><a href=\"https://www.templeton.org/news\">News
-        &#038; Insights</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\t\t</header>\n
+        &#038; Insights</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\t\t</header>
         \       <div class=\"no-banner\">\n            <main id=\"grants-database\">\n\n
         \               <div class=\"frame\">\n\n                    <input type=\"hidden\"
         id=\"funding-areas-dd\" data-list=\"Character Virtue Development|Culture and
         Global Perspectives|Exceptional Cognitive Talent and Genius|Genetics|Human
-        Sciences|Individual Freedom and Free Markets|Life Sciences|Mathematics and
+        Sciences|Individual Freedom and Free Markets|Life Sciences|Mathematical and
         Physical Sciences|Natural Sciences|Philosophy and Theology|Public Engagement|Voluntary
         Family Planning\" data-placeholder=\"Funding Area(s)\"/><input type=\"hidden\"
         id=\"regions-dd\" data-list=\"Africa|Asia|Europe|North America|Oceania|South
         America|USA\" data-placeholder=\"Geographic Regions\"/><input type=\"hidden\"
-        id=\"years-dd\" data-list=\"2021|2022|2019|2018|2020|2017|2016|2012|2015|2013|2014|2011\"
+        id=\"years-dd\" data-list=\"2022|2021|2018|2014|2015|2019|2020|2017|2016|2012|2013|2011\"
         data-placeholder=\"Start Year\"/>\n                    <h1 class=\"extra-large\">Grant
         Database</h1>\n                    <div id=\"grants-table-outer-wrap\">\n
         \                       <table id=\"grants-table\">\n                            <thead>\n
@@ -1782,6 +1798,260 @@ http_interactions:
         Area</th>\n                                    <th>Region</th>\n                                    <th>Featured</th>\n
         \                               </tr>\n                            </thead>\n
         \                           <tbody>\n                                \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62320</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/the-spirit-of-democratic-capitalism-in-the-21st-century-honoring-and-extending-the-work-of-michael-novak\">The
+        Spirit of Democratic Capitalism in the 21st Century: Honoring and Extending
+        the Work of Michael Novak</a></td>\n                                            <td>Andreas
+        Widmer</td>\n                                            <td>The Catholic
+        University of America</td>\n                                            <td>$596,867</td>\n
+        \                                           <td>Individual Freedom and Free
+        Markets</td>\n                                            <td>USA</td>\n                                            <td>\n
+        \                                               No                                            </td>\n
+        \                                       </tr>\n\n                                \n
+        \                                       <tr>\n                                            <td>2022</td>\n
+        \                                           <td>62385</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/a-sociological-analysis-of-the-science-of-purpose-project\">A
+        Sociological Analysis of the Science of Purpose Project</a></td>\n                                            <td>James
+        Griesemer,<br> Elihu Gerson</td>\n                                            <td>Regents
+        of the University of California</td>\n                                            <td>$453,839</td>\n
+        \                                           <td>Culture and Global Perspectives</td>\n
+        \                                           <td>USA</td>\n                                            <td>\n
+        \                                               No                                            </td>\n
+        \                                       </tr>\n\n                                \n
+        \                                       <tr>\n                                            <td>2022</td>\n
+        \                                           <td>61925</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/a-workshop-to-integrate-three-disciplines-relevant-to-goal-directedness-in-abiogenesis\">A
+        workshop to integrate three disciplines relevant to goal directedness in abiogenesis</a></td>\n
+        \                                           <td>Stephen Freeland</td>\n                                            <td>University
+        of Maryland</td>\n                                            <td>$246,646</td>\n
+        \                                           <td>Life Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62314</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/where-are-we-going-addressing-measurements-of-peculiar-motions-in-our-nearby-universe-and-their-impact-on-the-hubble-tension\">Where
+        Are We Going: Addressing Measurements of Peculiar Motions In Our Nearby Universe
+        and their Impact on the Hubble Tension</a></td>\n                                            <td>Daniel
+        Scolnic</td>\n                                            <td>Duke University</td>\n
+        \                                           <td>$803,323</td>\n                                            <td>Mathematical
+        and Physical Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>61834</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/outcomes-of-life-span-development-of-religious-styles-changes-in-symbolizing-transcendence-and-in-responding-to-the-strange\">Outcomes
+        of Life-span Development of Religious Styles: Changes in Symbolizing Transcendence
+        and in Responding to the Strange</a></td>\n                                            <td>Heinz
+        Streib,<br> Ralph Hood</td>\n                                            <td>Universität
+        Bielefeld</td>\n                                            <td>$948,178</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>Europe</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62281</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/cultural-evolution-and-the-online-social-contract\">Cultural
+        Evolution and the Online Social Contract</a></td>\n                                            <td>Joshua
+        Plotkin,<br> Alexander Stewart</td>\n                                            <td>Trustees
+        of the University of Pennsylvania</td>\n                                            <td>$980,613</td>\n
+        \                                           <td>Culture and Global Perspectives</td>\n
+        \                                           <td>USA</td>\n                                            <td>\n
+        \                                               No                                            </td>\n
+        \                                       </tr>\n\n                                \n
+        \                                       <tr>\n                                            <td>2022</td>\n
+        \                                           <td>62375</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/world-science-festival-big-ideas-series\">World
+        Science Festival Big Ideas Series</a></td>\n                                            <td>Tracy
+        Day</td>\n                                            <td>World Science Foundation</td>\n
+        \                                           <td>$4,552,925</td>\n                                            <td>Public
+        Engagement</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62373</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/scientists-in-synagogues-expansion\">Scientists
+        in Synagogues Expansion</a></td>\n                                            <td>Geoffrey
+        Mitelman</td>\n                                            <td>CLAL - The
+        National Jewish Center for Learning and Leadership</td>\n                                            <td>$910,139</td>\n
+        \                                           <td>Public Engagement</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2021</td>\n                                            <td>62317</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/the-cultural-evolution-of-the-conscience-virtues-character-development-and-human-progress-2\">The
+        Cultural Evolution of the Conscience, Virtues, Character Development, and
+        Human Progress</a></td>\n                                            <td>Serah
+        Shani</td>\n                                            <td>Mercy College</td>\n
+        \                                           <td>$190,800</td>\n                                            <td>Culture
+        and Global Perspectives</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62295</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/uncovering-the-cognitive-and-cultural-foundations-of-gratitude\">Uncovering
+        the Cognitive and Cultural Foundations of Gratitude</a></td>\n                                            <td>Michael
+        McCullough</td>\n                                            <td>Regents of
+        The University of California at San Diego</td>\n                                            <td>$2,618,804</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62313</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/observing-the-big-bang-with-relic-neutrinos\">Observing
+        the Big Bang with Relic Neutrinos</a></td>\n                                            <td>Christopher
+        Tully</td>\n                                            <td>Trustees of Princeton
+        University</td>\n                                            <td>$1,023,990</td>\n
+        \                                           <td>Mathematical and Physical
+        Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62259</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/advancing-spiritual-care-spiritual-health-in-everyday-clinical-practice\">Advancing
+        Spiritual Care: Spiritual Health in Everyday Clinical Practice</a></td>\n
+        \                                           <td>Christina Puchalski,<br> Betty
+        Ferrell</td>\n                                            <td>George Washington
+        University</td>\n                                            <td>$3,062,497</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62264</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/writing-for-the-future-of-humanity-project\">Writing
+        for the Future of Humanity Project</a></td>\n                                            <td>Chip
+        Colwell</td>\n                                            <td>Wenner-Gren
+        Foundation for Anthropological Research</td>\n                                            <td>$893,056</td>\n
+        \                                           <td>Culture and Global Perspectives</td>\n
+        \                                           <td>USA</td>\n                                            <td>\n
+        \                                               No                                            </td>\n
+        \                                       </tr>\n\n                                \n
+        \                                       <tr>\n                                            <td>2022</td>\n
+        \                                           <td>62261</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/intellectual-humility-in-scientists\">Intellectual
+        Humility in Scientists</a></td>\n                                            <td>Thomas
+        Stapleford,<br> Daniel Lapsley</td>\n                                            <td>University
+        of Notre Dame</td>\n                                            <td>$229,102</td>\n
+        \                                           <td>Philosophy and Theology</td>\n
+        \                                           <td>USA</td>\n                                            <td>\n
+        \                                               No                                            </td>\n
+        \                                       </tr>\n\n                                \n
+        \                                       <tr>\n                                            <td>2022</td>\n
+        \                                           <td>62372</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/in-lumine-supporting-the-catholic-intellectual-tradition-on-campuses-nationwide\">In
+        Lumine: Supporting the Catholic Intellectual Tradition on Campuses Nationwide</a></td>\n
+        \                                           <td>Michael Le Chevallier,<br>
+        Peter Tierney</td>\n                                            <td>The Lumen
+        Christi Institute</td>\n                                            <td>$3,648,012</td>\n
+        \                                           <td>Public Engagement</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62248</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/prxs-big-questions-new-podcast-voices-in-science-and-the-big-questions\">PRX&#8217;s
+        Big Questions: New Podcast Voices in Science and the Big Questions</a></td>\n
+        \                                           <td>Jason Saldanha</td>\n                                            <td>PRX
+        Incorporated</td>\n                                            <td>$1,505,440</td>\n
+        \                                           <td>Public Engagement</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>61863</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/fostering-connections-between-science-and-theology-for-medical-track-muslim-students\">Fostering
+        Connections between Science and Theology for Medical Track Muslim  Students</a></td>\n
+        \                                           <td>Aasim Padela,<br> Abdurezak
+        Hashi</td>\n                                            <td>The Medical College
+        of Wisconsin, Inc</td>\n                                            <td>$798,998</td>\n
+        \                                           <td>Culture and Global Perspectives</td>\n
+        \                                           <td>USA</td>\n                                            <td>\n
+        \                                               No                                            </td>\n
+        \                                       </tr>\n\n                                \n
+        \                                       <tr>\n                                            <td>2021</td>\n
+        \                                           <td>61967</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/70-the-informals\">70% The Informals</a></td>\n
+        \                                           <td>Elena Panaritis</td>\n                                            <td>Panel
+        Group Thought for Action</td>\n                                            <td>$234,712</td>\n
+        \                                           <td>Individual Freedom and Free
+        Markets</td>\n                                            <td>USA</td>\n                                            <td>\n
+        \                                               No                                            </td>\n
+        \                                       </tr>\n\n                                \n
+        \                                       <tr>\n                                            <td>2022</td>\n
+        \                                           <td>62034</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/the-cognitive-neuroscience-of-religious-cognition\">The
+        Cognitive Neuroscience of Religious Cognition</a></td>\n                                            <td>Jordan
+        Grafman,<br> Patrick McNamara</td>\n                                            <td>Rehabilitation
+        Institute of Chicago</td>\n                                            <td>$6,315,463</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62287</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/pew-templeton-global-religious-futures-project-phase-vii\">Pew-Templeton
+        Global Religious Futures Project Phase VII</a></td>\n                                            <td>Alan
+        Cooperman</td>\n                                            <td>Pew Charitable
+        Trusts</td>\n                                            <td>$2,683,750</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>62318</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/developing-a-field-approach-to-cultural-evolution\">Developing
+        a Field Approach to Cultural Evolution</a></td>\n                                            <td>David
+        Wilson</td>\n                                            <td>Prosocial World</td>\n
+        \                                           <td>$3,130,761</td>\n                                            <td>Culture
+        and Global Perspectives</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2018</td>\n                                            <td>60831</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/a-planning-project-to-uncover-the-cognitive-and-cultural-foundations-of-gratitude-4\">A
+        Planning Project to Uncover the Cognitive and Cultural Foundations of Gratitude</a></td>\n
+        \                                           <td>Michael McCullough,<br> Eric
+        Pedersen</td>\n                                            <td>University
+        of Miami</td>\n                                            <td>$195,186</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2018</td>\n                                            <td>60738</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/certain-religious-beliefs-may-foster-resilience-in-the-face-of-economic-adversity-3\">Certain
+        \ Religious Beliefs May Foster Resilience in the Face of Economic Adversity</a></td>\n
+        \                                           <td>Jazmin Brown-Iannuzzi,<br>Will
+        Gervais</td>\n                                            <td>University of
+        Kentucky Research Foundation</td>\n                                            <td>$234,800</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2018</td>\n                                            <td>60919</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/what-shall-we-call-god-an-investigation-of-the-role-of-metaphor-in-religious-cognition-3\">What
+        shall we call God? An investigation of the role of metaphor in religious cognition.</a></td>\n
+        \                                           <td>Adam Fetterman,<br>Brian Meier</td>\n
+        \                                           <td>The University of Texas at
+        El Paso</td>\n                                            <td>$85,156</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2014</td>\n                                            <td>57676</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/the-neurostimulation-of-belief-the-role-of-cognitive-inhibition-and-the-right-inferior-frontal-gyrus-in-the-endorsement-of-supernatural-beliefs\">The
+        neurostimulation of belief: The role of cognitive inhibition and the right
+        inferior frontal gyrus in the endorsement of supernatural beliefs</a></td>\n
+        \                                           <td>Miguel Farias,<br>Riikka Mottonen</td>\n
+        \                                           <td>Coventry University (transferred
+        from University of Oxford)</td>\n                                            <td>$158,049</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>Europe</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2015</td>\n                                            <td>43288</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/modeling-religion-simulating-the-social-effects-of-religion-with-cognitively-complex-agents-3\">Modeling
+        Religion: Simulating the Social Effects of Religion with Cognitively Complex
+        Agents</a></td>\n                                            <td>Patrick McNamara,<br>Wesley
+        Wildman</td>\n                                            <td>Boston VA Research
+        Institute, Inc.</td>\n                                            <td>$1,365,875</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
         \                                           <td>2021</td>\n                                            <td>62228</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/roles-of-adaptive-suppression-of-endogenous-retroviruses-in-transgenerational-non-genetic-inheritance\">Roles
         of adaptive suppression of endogenous retroviruses in transgenerational non-genetic
@@ -2043,13 +2313,13 @@ http_interactions:
         Voids Using Artificial Intelligence</a></td>\n                                            <td>Michael
         Vogeley,<br> Miguel Aragon-Calvo</td>\n                                            <td>Drexel
         University</td>\n                                            <td>$234,263</td>\n
-        \                                           <td>Mathematics and Physical Sciences</td>\n
-        \                                           <td>USA</td>\n                                            <td>\n
-        \                                               No                                            </td>\n
-        \                                       </tr>\n\n                                \n
-        \                                       <tr>\n                                            <td>2021</td>\n
-        \                                           <td>62161</td>\n\n                                            <td><a
-        href=\"https://www.templeton.org/grant/religion-family-structure-and-the-origins-of-individual-freedom-and-economic-prosperity\">Religion,
+        \                                           <td>Mathematical and Physical
+        Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2021</td>\n                                            <td>62161</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/religion-family-structure-and-the-origins-of-individual-freedom-and-economic-prosperity\">Religion,
         Family Structure and the Origins of Individual Freedom and Economic Prosperity</a></td>\n
         \                                           <td>Joseph Henrich,<br> Jonathan
         Schulz</td>\n                                            <td>President and
@@ -2084,13 +2354,13 @@ http_interactions:
         information theory and quantum many-body physics</a></td>\n                                            <td>Yelena
         Guryanova,<br> Jörg Schmiedmayer</td>\n                                            <td>Austrian
         Academy of Sciences</td>\n                                            <td>$224,444</td>\n
-        \                                           <td>Mathematics and Physical Sciences</td>\n
-        \                                           <td>Europe</td>\n                                            <td>\n
-        \                                               No                                            </td>\n
-        \                                       </tr>\n\n                                \n
-        \                                       <tr>\n                                            <td>2022</td>\n
-        \                                           <td>61865</td>\n\n                                            <td><a
-        href=\"https://www.templeton.org/grant/the-open-science-of-religion-project-advancing-open-science-and-registered-reports-in-the-psychology-of-religion-and-spirituality\">The
+        \                                           <td>Mathematical and Physical
+        Sciences</td>\n                                            <td>Europe</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2022</td>\n                                            <td>61865</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/the-open-science-of-religion-project-advancing-open-science-and-registered-reports-in-the-psychology-of-religion-and-spirituality\">The
         Open Science of Religion Project: Advancing Open Science and Registered Reports
         in the Psychology of Religion and Spirituality</a></td>\n                                            <td>Edward
         Davis,<br> Jordan LaBouff,<br> Michiel Van Elk,<br> Kevin Ladd</td>\n                                            <td>Wheaton
@@ -2295,24 +2565,24 @@ http_interactions:
         the gravity related collapse models</a></td>\n                                            <td>Catalina
         Oana Curceanu,<br> Lajos Diosi</td>\n                                            <td>ISTITUTO
         NAZIONALE DI FISICA NUCLEARE - LABORATORI NAZIONALI DI FRASCATI</td>\n                                            <td>$224,305</td>\n
-        \                                           <td>Mathematics and Physical Sciences</td>\n
-        \                                           <td>Europe</td>\n                                            <td>\n
-        \                                               No                                            </td>\n
-        \                                       </tr>\n\n                                \n
-        \                                       <tr>\n                                            <td>2019</td>\n
-        \                                           <td>60827</td>\n\n                                            <td><a
-        href=\"https://www.templeton.org/grant/are-the-laws-of-nature-constant-the-first-1000-high-precision-measurements-in-the-early-universe\">Are
+        \                                           <td>Mathematical and Physical
+        Sciences</td>\n                                            <td>Europe</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2019</td>\n                                            <td>60827</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/are-the-laws-of-nature-constant-the-first-1000-high-precision-measurements-in-the-early-universe\">Are
         the laws of nature constant?  The first 1000 high precision measurements in
         the early universe.</a></td>\n                                            <td>John
         Webb</td>\n                                            <td>Clare Hall, University
         of Cambridge</td>\n                                            <td>$209,857</td>\n
-        \                                           <td>Mathematics and Physical Sciences</td>\n
-        \                                           <td>Europe</td>\n                                            <td>\n
-        \                                               No                                            </td>\n
-        \                                       </tr>\n\n                                \n
-        \                                       <tr>\n                                            <td>2021</td>\n
-        \                                           <td>62184</td>\n\n                                            <td><a
-        href=\"https://www.templeton.org/grant/sperm-amyloids-epigenetic-carriers-of-inheritance\">Sperm
+        \                                           <td>Mathematical and Physical
+        Sciences</td>\n                                            <td>Europe</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2021</td>\n                                            <td>62184</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/sperm-amyloids-epigenetic-carriers-of-inheritance\">Sperm
         Amyloids: Epigenetic Carriers of Inheritance</a></td>\n                                            <td>Gail
         Cornwall</td>\n                                            <td>Texas Tech
         University Health Sciences Center</td>\n                                            <td>$1,651,658</td>\n
@@ -2340,19 +2610,9 @@ http_interactions:
         \                                           <td></td>\n                                            <td>\n
         \                                               No                                            </td>\n
         \                                       </tr>\n\n                                \n
-        \                                       <tr>\n                                            <td>2018</td>\n
-        \                                           <td>60831</td>\n\n                                            <td><a
-        href=\"https://www.templeton.org/grant/a-planning-project-to-uncover-the-cognitive-and-cultural-foundations-of-gratitude-3\">A
-        Planning Project to Uncover the Cognitive and Cultural Foundations of Gratitude</a></td>\n
-        \                                           <td>Michael McCullough,<br> Eric
-        Pedersen</td>\n                                            <td>University
-        of Miami</td>\n                                            <td>$195,186</td>\n
-        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
-        \                                           <td>\n                                                No
-        \                                           </td>\n                                        </tr>\n\n
-        \                               \n                                        <tr>\n
-        \                                           <td>2021</td>\n                                            <td>61665</td>\n\n
-        \                                           <td><a href=\"https://www.templeton.org/grant/global-flourishing-study-piloting-and-waves-1-5\">Global
+        \                                       <tr>\n                                            <td>2021</td>\n
+        \                                           <td>61665</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/global-flourishing-study-piloting-and-waves-1-5\">Global
         Flourishing Study: Piloting and Waves 1-5</a></td>\n                                            <td>Byron
         Johnson,<br> Tyler VanderWeele</td>\n                                            <td>Baylor
         University</td>\n                                            <td>$11,120,475</td>\n
@@ -2374,7 +2634,7 @@ http_interactions:
         href=\"https://www.templeton.org/grant/establishing-a-templeton-lsst-early-career-research-fellowship\">Establishing
         a Templeton LSST Early-Career Research Fellowship</a></td>\n                                            <td>Jennifer
         Sokoloski</td>\n                                            <td>LSST Inc</td>\n
-        \                                           <td>$6,970,779</td>\n                                            <td>Mathematics
+        \                                           <td>$6,970,779</td>\n                                            <td>Mathematical
         and Physical Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
@@ -2383,8 +2643,8 @@ http_interactions:
         \                                           <td><a href=\"https://www.templeton.org/grant/expanding-the-philosophy-of-religion-by-engaging-with-afro-brazilian-traditions\">Expanding
         the Philosophy of Religion by Engaging with Afro-Brazilian Traditions</a></td>\n
         \                                           <td>José Eduardo Porcher</td>\n
-        \                                           <td>Associação Brasileira de Filosofia
-        da Religiao (ABFR)</td>\n                                            <td>$124,075</td>\n
+        \                                           <td>Associação Brasileira de
+        Filosofia da Religiao (ABFR)</td>\n                                            <td>$124,075</td>\n
         \                                           <td>Philosophy and Theology</td>\n
         \                                           <td>South America</td>\n                                            <td>\n
         \                                               No                                            </td>\n
@@ -2454,13 +2714,13 @@ http_interactions:
         \                                           <td>Jim Al-Khalili,<br> Andrea
         Rocco</td>\n                                            <td>University of
         Surrey</td>\n                                            <td>$2,983,531</td>\n
-        \                                           <td>Mathematics and Physical Sciences</td>\n
-        \                                           <td>Europe</td>\n                                            <td>\n
-        \                                               No                                            </td>\n
-        \                                       </tr>\n\n                                \n
-        \                                       <tr>\n                                            <td>2021</td>\n
-        \                                           <td>62202</td>\n\n                                            <td><a
-        href=\"https://www.templeton.org/grant/ad-majorem-the-faith-and-reason-digital-campaign\">Ad
+        \                                           <td>Mathematical and Physical
+        Sciences</td>\n                                            <td>Europe</td>\n
+        \                                           <td>\n                                                No
+        \                                           </td>\n                                        </tr>\n\n
+        \                               \n                                        <tr>\n
+        \                                           <td>2021</td>\n                                            <td>62202</td>\n\n
+        \                                           <td><a href=\"https://www.templeton.org/grant/ad-majorem-the-faith-and-reason-digital-campaign\">Ad
         Majorem: The Faith and Reason Digital Campaign</a></td>\n                                            <td>Joseph
         Miller,<br> Daniel Kuebler</td>\n                                            <td>Magis
         Institute</td>\n                                            <td>$1,764,000</td>\n
@@ -2608,8 +2868,8 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2021</td>\n                                            <td>61877</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/beyond-defensive-crouch-religious-freedom-religious-institutional-freedom-as-a-religious-and-social-good\">Beyond
-        “Defensive Crouch” Religious Freedom: Religious Institutional Freedom as a
-        Religious and Social Good</a></td>\n                                            <td>Helen
+        “Defensive Crouch�\x9D Religious Freedom: Religious Institutional Freedom
+        as a Religious and Social Good</a></td>\n                                            <td>Helen
         Alvare,<br> JoAnn Koob</td>\n                                            <td>George
         Mason University</td>\n                                            <td>$199,422</td>\n
         \                                           <td>Individual Freedom and Free
@@ -3065,7 +3325,8 @@ http_interactions:
         Cryogenic Methods for Fundamental Physics</a></td>\n                                            <td>Andrew
         Geraci</td>\n                                            <td>Northwestern
         University</td>\n                                            <td>$4,305,990</td>\n
-        \                                           <td>Natural Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>Mathematical and Physical
+        Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
@@ -3442,9 +3703,9 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2020</td>\n                                            <td>61346</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/theological-anthropology-fundamental-need-and-human-flourishing-a-women-scholars-project\">Theological
-        Anthropology, Fundamental Need, and Human Flourishing: A Women Scholar’s Project</a></td>\n
-        \                                           <td>Christa L. McKirland,<br>
-        Andrew Torrance</td>\n                                            <td>Carey
+        Anthropology, Fundamental Need, and Human Flourishing: A Women Scholar’s
+        Project</a></td>\n                                            <td>Christa
+        L. McKirland,<br> Andrew Torrance</td>\n                                            <td>Carey
         Baptist College</td>\n                                            <td>$226,308</td>\n
         \                                           <td>Philosophy and Theology</td>\n
         \                                           <td>Oceania</td>\n                                            <td>\n
@@ -3794,19 +4055,9 @@ http_interactions:
         \                                           <td>South America</td>\n                                            <td>\n
         \                                               No                                            </td>\n
         \                                       </tr>\n\n                                \n
-        \                                       <tr>\n                                            <td>2019</td>\n
-        \                                           <td>61604</td>\n\n                                            <td><a
-        href=\"https://www.templeton.org/grant/a-planning-project-to-uncover-the-cognitive-and-cultural-foundations-of-gratitude-2\">A
-        Planning Project to Uncover the Cognitive and Cultural Foundations of Gratitude</a></td>\n
-        \                                           <td>Michael McCullough,<br> Eric
-        Pedersen</td>\n                                            <td>Regents of
-        The University of California at San Diego</td>\n                                            <td>$39,614</td>\n
-        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
-        \                                           <td>\n                                                No
-        \                                           </td>\n                                        </tr>\n\n
-        \                               \n                                        <tr>\n
-        \                                           <td>2020</td>\n                                            <td>61907</td>\n\n
-        \                                           <td><a href=\"https://www.templeton.org/grant/global-flourishing-study-planning-grant\">Global
+        \                                       <tr>\n                                            <td>2020</td>\n
+        \                                           <td>61907</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/global-flourishing-study-planning-grant\">Global
         Flourishing Study Planning Grant</a></td>\n                                            <td>Byron
         Johnson,<br> Tyler VanderWeele</td>\n                                            <td>Baylor
         University</td>\n                                            <td>$201,327</td>\n
@@ -3992,9 +4243,9 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2020</td>\n                                            <td>61911</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/planning-grant-for-supporting-structures-innovative-partnerships-to-develop-the-future-of-bench-science-at-christian-liberal-arts-institutions\">Planning
-        Grant for ‘Supporting Structures: Innovative Partnerships to Develop the Future
-        of Bench Science at Christian Liberal Arts Institutions’</a></td>\n                                            <td>Stan
-        Rosenberg</td>\n                                            <td>CCCU-UK</td>\n
+        Grant for ‘Supporting Structures: Innovative Partnerships to Develop the
+        Future of Bench Science at Christian Liberal Arts Institutions’</a></td>\n
+        \                                           <td>Stan Rosenberg</td>\n                                            <td>CCCU-UK</td>\n
         \                                           <td>$234,797</td>\n                                            <td>Natural
         Sciences</td>\n                                            <td>Europe</td>\n
         \                                           <td>\n                                                No
@@ -4301,7 +4552,8 @@ http_interactions:
         Renewal</a></td>\n                                            <td>Sheperd
         Doeleman,<br> Abraham Loeb</td>\n                                            <td>President
         and Fellows of Harvard College</td>\n                                            <td>$3,599,996</td>\n
-        \                                           <td>Natural Sciences</td>\n                                            <td>USA</td>\n
+        \                                           <td>Mathematical and Physical
+        Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
@@ -4473,7 +4725,8 @@ http_interactions:
         Quantum Information Structure of Spacetime (QISS)</a></td>\n                                            <td>Carlo
         Rovelli,<br> Marios Christodoulou</td>\n                                            <td>SAMY
         MAROUN CENTER FOR RESEARCH ON SPACE, TIME AND THE QUANTUM</td>\n                                            <td>$2,228,621</td>\n
-        \                                           <td>Natural Sciences</td>\n                                            <td>Europe</td>\n
+        \                                           <td>Mathematical and Physical
+        Sciences</td>\n                                            <td>Europe</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
@@ -4489,10 +4742,10 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2019</td>\n                                            <td>61445</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/from-me-to-we-childrens-attention-to-kindness-caring-and-consideration-for-others-through-perspective-shifts-in-language\">From
-        “me” to “we”: Children’s attention to kindness, caring, and consideration
-        for others through perspective shifts in language</a></td>\n                                            <td>Susan
-        Gelman</td>\n                                            <td>Regents of the
-        University of Michigan</td>\n                                            <td>$232,778</td>\n
+        “me�\x9D to “we�\x9D: Children’s attention to kindness, caring, and
+        consideration for others through perspective shifts in language</a></td>\n
+        \                                           <td>Susan Gelman</td>\n                                            <td>Regents
+        of the University of Michigan</td>\n                                            <td>$232,778</td>\n
         \                                           <td>Character Virtue Development</td>\n
         \                                           <td>USA</td>\n                                            <td>\n
         \                                               No                                            </td>\n
@@ -4566,18 +4819,8 @@ http_interactions:
         \                                               No                                            </td>\n
         \                                       </tr>\n\n                                \n
         \                                       <tr>\n                                            <td>2019</td>\n
-        \                                           <td>61592</td>\n\n                                            <td><a
-        href=\"https://www.templeton.org/grant/what-shall-we-call-god-an-investigation-of-the-role-of-metaphor-in-religious-cognition-2\">What
-        shall we call God? An investigation of the role of metaphor in religious cognition.</a></td>\n
-        \                                           <td>Adam Fetterman,<br> Brian
-        Meier</td>\n                                            <td>University of
-        Houston</td>\n                                            <td>$135,705</td>\n
-        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
-        \                                           <td>\n                                                No
-        \                                           </td>\n                                        </tr>\n\n
-        \                               \n                                        <tr>\n
-        \                                           <td>2019</td>\n                                            <td>61335</td>\n\n
-        \                                           <td><a href=\"https://www.templeton.org/grant/universal-growth-laws-in-the-chemistry-of-life-processes\">Universal
+        \                                           <td>61335</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/universal-growth-laws-in-the-chemistry-of-life-processes\">Universal
         growth laws in the chemistry of life processes</a></td>\n                                            <td>Jason
         Green</td>\n                                            <td>University of
         Massachusetts</td>\n                                            <td>$234,800</td>\n
@@ -4670,16 +4913,6 @@ http_interactions:
         preregistration</a></td>\n                                            <td>Bethany
         Teachman</td>\n                                            <td>Rector & Visitors
         of the University of Virginia</td>\n                                            <td>$169,909</td>\n
-        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
-        \                                           <td>\n                                                No
-        \                                           </td>\n                                        </tr>\n\n
-        \                               \n                                        <tr>\n
-        \                                           <td>2019</td>\n                                            <td>61594</td>\n\n
-        \                                           <td><a href=\"https://www.templeton.org/grant/certain-religious-beliefs-may-foster-resilience-in-the-face-of-economic-adversity-2\">Certain
-        Religious Beliefs May Foster Resilience in the Face of Economic Adversity</a></td>\n
-        \                                           <td>Jazmin Brown-Iannuzzi,<br>
-        Will Gervais</td>\n                                            <td>Rector
-        & Visitors of the University of Virginia</td>\n                                            <td>$153,748</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
@@ -6044,7 +6277,7 @@ http_interactions:
         Planning Project to Uncover the Cognitive and Cultural Foundations of Gratitude</a></td>\n
         \                                           <td>Michael McCullough,<br> Eric
         Pedersen</td>\n                                            <td>University
-        of Miami/ University of San Diego</td>\n                                            <td>$0</td>\n
+        of Miami/ University of San Diego</td>\n                                            <td>$234,800</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
@@ -6389,14 +6622,15 @@ http_interactions:
         href=\"https://www.templeton.org/grant/does-self-giving-love-require-an-evolutionary-world-evolutionary-theodicy-in-light-of-the-mystical-tradition\">Does
         Self-Giving Love Require an Evolutionary World? Evolutionary Theodicy in Light
         of the Mystical Tradition</a></td>\n                                            <td>Mats
-        Wahlberg,<br></td>\n                                            <td>Umeå University</td>\n
-        \                                           <td>$133,130</td>\n                                            <td>Philosophy
-        and Theology</td>\n                                            <td>Europe</td>\n
-        \                                           <td>\n                                                 Yes
-        \                                           </td>\n                                        </tr>\n\n
-        \                               \n                                        <tr>\n
-        \                                           <td>2018</td>\n                                            <td>61221</td>\n\n
-        \                                           <td><a href=\"https://www.templeton.org/grant/character-strength-interventions-in-adolescents-engaging-scholars-and-practitioners-to-promote-virtue-development-3\">Character
+        Wahlberg,<br></td>\n                                            <td>Umeå
+        University</td>\n                                            <td>$133,130</td>\n
+        \                                           <td>Philosophy and Theology</td>\n
+        \                                           <td>Europe</td>\n                                            <td>\n
+        \                                                Yes                                            </td>\n
+        \                                       </tr>\n\n                                \n
+        \                                       <tr>\n                                            <td>2018</td>\n
+        \                                           <td>61221</td>\n\n                                            <td><a
+        href=\"https://www.templeton.org/grant/character-strength-interventions-in-adolescents-engaging-scholars-and-practitioners-to-promote-virtue-development-3\">Character
         Strength Interventions in Adolescents: Engaging Scholars and Practitioners
         to Promote Virtue Development</a></td>\n                                            <td>Sarah
         Schnitker,<br>Benjamin Houltberg</td>\n                                            <td>Baylor
@@ -6828,14 +7062,15 @@ http_interactions:
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
-        \                                           <td>2018</td>\n                                            <td>60738</td>\n\n
+        \                                           <td>2018</td>\n                                            <td>60738/61594</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/certain-religious-beliefs-may-foster-resilience-in-the-face-of-economic-adversity\">Certain
         \ Religious Beliefs May Foster Resilience in the Face of Economic Adversity</a></td>\n
         \                                           <td>Jazmin Brown-Iannuzzi,<br>Will
         Gervais</td>\n                                            <td>University of
-        Kentucky Research Foundation</td>\n                                            <td>$234,800</td>\n
+        Kentucky Research Foundation/ Rector & Visitors of the University of Virginia
+        (August 2019 - July 2021)</td>\n                                            <td>$388,548</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
-        \                                           <td>\n                                                No
+        \                                           <td>\n                                                 Yes
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
         \                                           <td>2017</td>\n                                            <td>60842</td>\n\n
@@ -6889,12 +7124,12 @@ http_interactions:
         \                                                Yes                                            </td>\n
         \                                       </tr>\n\n                                \n
         \                                       <tr>\n                                            <td>2018</td>\n
-        \                                           <td>60919</td>\n\n                                            <td><a
+        \                                           <td>60919/61592</td>\n\n                                            <td><a
         href=\"https://www.templeton.org/grant/what-shall-we-call-god-an-investigation-of-the-role-of-metaphor-in-religious-cognition\">What
         shall we call God? An investigation of the role of metaphor in religious cognition.</a></td>\n
         \                                           <td>Adam Fetterman,<br>Brian Meier</td>\n
         \                                           <td>The University of Texas at
-        El Paso</td>\n                                            <td>$85,156</td>\n
+        El Paso/ University of Houston (Sept. 2019 - May 2021)</td>\n                                            <td>$220,861</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
@@ -7096,8 +7331,8 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2017</td>\n                                            <td>60742</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/a-chance-to-equality-in-health-is-peoples-health-determined-by-ancestral-environmental-exposures\">A
-        chance to equality in health: Is people’s health determined by ancestral environmental
-        exposures?</a></td>\n                                            <td>Patrick
+        chance to equality in health: Is people’s health determined by ancestral
+        environmental exposures?</a></td>\n                                            <td>Patrick
         Allard,<br>Amander Clark</td>\n                                            <td>University
         of California, Los Angeles</td>\n                                            <td>$1,098,673</td>\n
         \                                           <td>Genetics</td>\n                                            <td>USA</td>\n
@@ -7771,7 +8006,7 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2014</td>\n                                            <td>51504</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/can-gm-crops-help-to-feed-the-world-next-steps-and-new-directions\">“Can
-        GM Crops Help to Feed the World?”: Next Steps and New Directions</a></td>\n
+        GM Crops Help to Feed the World?�\x9D: Next Steps and New Directions</a></td>\n
         \                                           <td>David Bennett,<br></td>\n
         \                                           <td>Cambridge Biomedical Consultants
         LTD.</td>\n                                            <td>$451,289</td>\n
@@ -8615,8 +8850,8 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2017</td>\n                                            <td>60677</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/integration-of-religion-and-spirituality-rs-in-psychiatric-care-patients-needs-treatment-alliance-ta-and-treatment-compliance-tc\">Integration
-        of religion and spirituality (R/S) in psychiatric care: patients’ needs, treatment
-        alliance (TA) and treatment compliance (TC)</a></td>\n                                            <td>Joke
+        of religion and spirituality (R/S) in psychiatric care: patients’ needs,
+        treatment alliance (TA) and treatment compliance (TC)</a></td>\n                                            <td>Joke
         van Nieuw Amerongen,<br> Arjan Braam</td>\n                                            <td>University
         of Humanistic Studies, Utrecht</td>\n                                            <td>$79,160</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>Europe</td>\n
@@ -9266,8 +9501,8 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2016</td>\n                                            <td>59213</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/long-term-effects-of-parentso-efforts-to-foster-childrenos-gratitude-on-health-well-being-and-character-development\">Long-term
-        Effects of Parents’ Efforts to Foster Children’s Gratitude on Health, Well-Being
-        and Character Development</a></td>\n                                            <td>Andrea
+        Effects of Parents’ Efforts to Foster Children’s Gratitude on Health,
+        Well-Being and Character Development</a></td>\n                                            <td>Andrea
         Hussong</td>\n                                            <td>University of
         North Carolina at Chapel Hill</td>\n                                            <td>$216,996</td>\n
         \                                           <td>Character Virtue Development</td>\n
@@ -9697,8 +9932,8 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2015</td>\n                                            <td>58158</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/hunt-for-the-impossible-atoms-the-quest-for-a-tiny-violation-of-the-pauli-exclusion-principle-implications-for-physics-cosmology-and-philosophy\">Hunt
-        for the “impossible atoms”: the quest for a tiny violation of the Pauli Exclusion
-        Principle. Implications for physics, cosmology and philosophy.</a></td>\n
+        for the “impossible atoms�\x9D: the quest for a tiny violation of the Pauli
+        Exclusion Principle. Implications for physics, cosmology and philosophy.</a></td>\n
         \                                           <td>Catalina Oana Curceanu,<br>Oscar
         Greenberg</td>\n                                            <td>Istituto Nazionale
         di Fisica Nucleare</td>\n                                            <td>$273,499</td>\n
@@ -9830,8 +10065,9 @@ http_interactions:
         the nature of quantum reality: a theoretical and experimental approach employing
         non-destructive weak measurements</a></td>\n                                            <td>Alexandre
         Matzkin,<br> Urbasi Sinha</td>\n                                            <td>Centre
-        national de la recherche scientifique (Délégation régionale 05)</td>\n                                            <td>$89,291</td>\n
-        \                                           <td>Natural Sciences</td>\n                                            <td>Europe</td>\n
+        national de la recherche scientifique (Délégation régionale 05)</td>\n
+        \                                           <td>$89,291</td>\n                                            <td>Natural
+        Sciences</td>\n                                            <td>Europe</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
@@ -9894,7 +10130,7 @@ http_interactions:
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
-        \                                           <td>2014</td>\n                                            <td>57676</td>\n\n
+        \                                           <td>2014</td>\n                                            <td>57676/48206</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/the-neurostimulation-of-belief-the-role-of-cognitive-inhibition-and-the-right-inferior-frontal-gyrus-in-the-endorsement-of-supernatural-beliefs-2\">The
         neurostimulation of belief: The role of cognitive inhibition and the right
         inferior frontal gyrus in the endorsement of supernatural beliefs</a></td>\n
@@ -10665,7 +10901,7 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2015</td>\n                                            <td>54983</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/hablando-del-espiritu-piloting-a-spanish-radio-series-for-spiritual-and-philosophical-inquiry-2\">“Hablando
-        del Espíritu:”  Piloting a Spanish Radio Series for Spiritual and Philosophical
+        del Espíritu:�\x9D  Piloting a Spanish Radio Series for Spiritual and Philosophical
         Inquiry</a></td>\n                                            <td>Jeff Kline,<br>Alliyah
         Noor</td>\n                                            <td>Pinyon Foundation</td>\n
         \                                           <td>$214,863</td>\n                                            <td>Public
@@ -11134,11 +11370,11 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2014</td>\n                                            <td>52185</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/a-social-cognitive-developmental-approach-to-folk-representations-of-gods-mind\">A
-        Social Cognitive Developmental Approach to Folk Representations of God’s Mind</a></td>\n
-        \                                           <td>Liane Young,<br>Adam Waytz</td>\n
-        \                                           <td>Trustees of Boston College</td>\n
-        \                                           <td>$261,130</td>\n                                            <td>Human
-        Sciences</td>\n                                            <td>USA</td>\n
+        Social Cognitive Developmental Approach to Folk Representations of God’s
+        Mind</a></td>\n                                            <td>Liane Young,<br>Adam
+        Waytz</td>\n                                            <td>Trustees of Boston
+        College</td>\n                                            <td>$261,130</td>\n
+        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                 Yes
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
@@ -11310,7 +11546,7 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2014</td>\n                                            <td>51933</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/everything-happens-for-a-reason-seeing-gods-handiwork-behind-life-events\">“Everything
-        Happens for a Reason”: Seeing God’s Handiwork Behind Life Events</a></td>\n
+        Happens for a Reason�\x9D: Seeing God’s Handiwork Behind Life Events</a></td>\n
         \                                           <td>Paul Bloom</td>\n                                            <td>Yale
         University</td>\n                                            <td>$232,488</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
@@ -11549,7 +11785,7 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2013</td>\n                                            <td>50695</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/establishing-an-imagination-institute\">Establishing
-        an “Imagination Institute”</a></td>\n                                            <td>Eileen
+        an “Imagination Institute�\x9D</a></td>\n                                            <td>Eileen
         Heisman</td>\n                                            <td>National Philanthropic
         Trust</td>\n                                            <td>$176,820</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
@@ -11569,8 +11805,9 @@ http_interactions:
         \                                       <tr>\n                                            <td>2014</td>\n
         \                                           <td>50696</td>\n\n                                            <td><a
         href=\"https://www.templeton.org/grant/advancing-the-science-of-imagination-toward-an-imagination-quotient\">Advancing
-        the Science of Imagination: Toward an “Imagination Quotient”</a></td>\n                                            <td>Martin
-        Seligman,<br>Scott Barry Kaufman</td>\n                                            <td>Imagination
+        the Science of Imagination: Toward an “Imagination Quotient�\x9D</a></td>\n
+        \                                           <td>Martin Seligman,<br>Scott
+        Barry Kaufman</td>\n                                            <td>Imagination
         Institute</td>\n                                            <td>$5,647,094</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                 Yes
@@ -11993,8 +12230,8 @@ http_interactions:
         \                                       <tr>\n                                            <td>2014</td>\n
         \                                           <td>48054</td>\n\n                                            <td><a
         href=\"https://www.templeton.org/grant/cognitive-processes-in-moral-elevation-counterfactual-if-only-thoughts-in-young-adults-intentions-to-emulate-moral-excellence\">Cognitive
-        processes in moral elevation: counterfactual ‘if only’ thoughts in young adults&#8217;
-        intentions to emulate moral excellence</a></td>\n                                            <td>Ruth
+        processes in moral elevation: counterfactual ‘if only’ thoughts in young
+        adults&#8217; intentions to emulate moral excellence</a></td>\n                                            <td>Ruth
         Byrne</td>\n                                            <td>Trinity College
         Dublin, University of Dublin, Ireland</td>\n                                            <td>$123,276</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>Europe</td>\n
@@ -12626,12 +12863,12 @@ http_interactions:
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
-        \                                           <td>2015</td>\n                                            <td>43288</td>\n\n
-        \                                           <td><a href=\"https://www.templeton.org/grant/modeling-religion-simulating-the-social-effects-of-religion-with-cognitively-complex-agents\">Modeling
+        \                                           <td>2015</td>\n                                            <td>43288/
+        61035</td>\n\n                                            <td><a href=\"https://www.templeton.org/grant/modeling-religion-simulating-the-social-effects-of-religion-with-cognitively-complex-agents\">Modeling
         Religion: Simulating the Social Effects of Religion with Cognitively Complex
         Agents</a></td>\n                                            <td>Patrick McNamara,<br>Wesley
         Wildman</td>\n                                            <td>Boston VA Research
-        Institute, Inc.</td>\n                                            <td>$1,365,875</td>\n
+        Institute, Inc./ Center For Mind and Culture</td>\n                                            <td>$1,365,875</td>\n
         \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
@@ -13002,8 +13239,8 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2013</td>\n                                            <td>40380</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/africas-next-harvest-ii-biotechnology-rd-driving-agriculture-productivity-and-economic-development\">Africa’s
-        Next Harvest II –Biotechnology R&amp;D driving agriculture productivity and
-        economic development</a></td>\n                                            <td>Judith
+        Next Harvest II –Biotechnology R&amp;D driving agriculture productivity
+        and economic development</a></td>\n                                            <td>Judith
         Chambers,<br>Jose Falck-Zepeda</td>\n                                            <td>International
         Food Policy Research Institute</td>\n                                            <td>$502,364</td>\n
         \                                           <td>Genetics</td>\n                                            <td>USA</td>\n
@@ -13620,7 +13857,7 @@ http_interactions:
         \                                           <td>2012</td>\n                                            <td>38673</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/a-most-unlikely-hero-the-man-behind-the-martyr-and-the-real-roots-of-the-arab-spring\">A
         Most Unlikely Hero: The Man Behind the Martyr and the Real Roots of the Arab
-        Spring”.</a></td>\n                                            <td>Thomas
+        Spring�\x9D.</a></td>\n                                            <td>Thomas
         Skinner</td>\n                                            <td>Free to Choose
         Network</td>\n                                            <td>$400,000</td>\n
         \                                           <td>Individual Freedom and Free
@@ -14059,10 +14296,11 @@ http_interactions:
         \                                           <td>2012</td>\n                                            <td>36103</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/does-complex-religion-make-good-people-the-relationship-between-the-complexity-of-religiousgod-beliefs-and-peoples-attitudes-and-behavior\">Does
         Complex Religion Make Good People?  The Relationship Between the Complexity
-        of Religious/God Beliefs and People’s Attitudes and Behavior</a></td>\n                                            <td>Azim
-        Shariff,<br>Carissa Sharp</td>\n                                            <td>UNIVERSITY
-        OF OREGON</td>\n                                            <td>$236,175</td>\n
-        \                                           <td>Human Sciences</td>\n                                            <td>USA</td>\n
+        of Religious/God Beliefs and People’s Attitudes and Behavior</a></td>\n
+        \                                           <td>Azim Shariff,<br>Carissa Sharp</td>\n
+        \                                           <td>UNIVERSITY OF OREGON</td>\n
+        \                                           <td>$236,175</td>\n                                            <td>Human
+        Sciences</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
         \                               \n                                        <tr>\n
@@ -14663,7 +14901,7 @@ http_interactions:
         \                               \n                                        <tr>\n
         \                                           <td>2012</td>\n                                            <td>28355</td>\n\n
         \                                           <td><a href=\"https://www.templeton.org/grant/new-insights-and-directions-for-religious-epistemology\">“New
-        Insights and Directions for Religious Epistemology”</a></td>\n                                            <td>John
+        Insights and Directions for Religious Epistemology�\x9D</a></td>\n                                            <td>John
         Hawthorne</td>\n                                            <td>University
         of Oxford</td>\n                                            <td>$2,161,280</td>\n
         \                                           <td>Philosophy and Theology</td>\n
@@ -16091,32 +16329,21 @@ http_interactions:
         \                                           <td>Public Engagement</td>\n                                            <td>USA</td>\n
         \                                           <td>\n                                                No
         \                                           </td>\n                                        </tr>\n\n
-        \                               \n                                        <tr>\n
-        \                                           <td>2019</td>\n                                            <td>61594</td>\n\n
-        \                                           <td><a href=\"https://www.templeton.org/grant/certain-religious-beliefs-may-foster-resilience-in-the-face-of-economic-adversity-2-2\">Certain
-        Religious Beliefs May Foster Resilience in the Face of Economic Adversity</a></td>\n
-        \                                           <td>Jazmin Brown-Iannuzzi,<br>
-        Will Gervais</td>\n                                            <td>Rector
-        & Visitors of the University of Virginia</td>\n                                            <td>$153,748</td>\n
-        \                                           <td></td>\n                                            <td>USA</td>\n
-        \                                           <td>\n                                                 Yes
-        \                                           </td>\n                                        </tr>\n\n
         \                               \n                            </tbody>\n                        </table>\n
         \                   </div>\n                </div>\n            </main>\n
         \       </div>\n<footer>\n    <div class=\"sticky-footer\">\n        <div
         class=\"phone-modal\">\n            <div class=\"close\"></div>\n            <script
         type=\"text/javascript\"></script>\n                <div class='gf_browser_safari
-        gf_browser_iphone gform_wrapper gform_legacy_markup_wrapper' id='gform_wrapper_3'
-        ><div id='gf_3' class='gform_anchor' tabindex='-1'></div>\n                        <div
-        class='gform_heading'>\n                            <h3 class=\"gform_title\">Receive
-        News from the John Templeton Foundation</h3>\n                        </div><form
-        method='post' enctype='multipart/form-data' target='gform_ajax_frame_3' id='gform_3'
-        \ action='/grants/grant-database#gf_3' >\n                        <div class='gform_body
-        gform-body'><ul id='gform_fields_3' class='gform_fields top_label form_sublabel_below
-        description_below'><li id=\"field_3_3\" class=\"gfield gfield_contains_required
-        field_sublabel_below field_description_below gfield_visibility_visible\" ><label
-        class='gfield_label' for='input_3_3' >Email<span class=\"gfield_required\"><span
-        class=\"gfield_required gfield_required_asterisk\">*</span></span></label><div
+        gform_wrapper gform_legacy_markup_wrapper' id='gform_wrapper_3' ><div id='gf_3'
+        class='gform_anchor' tabindex='-1'></div>\n                        <div class='gform_heading'>\n
+        \                           <h3 class=\"gform_title\">Receive News from the
+        John Templeton Foundation</h3>\n                        </div><form method='post'
+        enctype='multipart/form-data' target='gform_ajax_frame_3' id='gform_3'  action='/grants/grant-database#gf_3'
+        >\n                        <div class='gform_body gform-body'><ul id='gform_fields_3'
+        class='gform_fields top_label form_sublabel_below description_below'><li id=\"field_3_3\"
+        class=\"gfield gfield_contains_required field_sublabel_below field_description_below
+        gfield_visibility_visible\" ><label class='gfield_label' for='input_3_3' >Email<span
+        class=\"gfield_required\"><span class=\"gfield_required gfield_required_asterisk\">*</span></span></label><div
         class='ginput_container ginput_container_email'>\n                            <input
         name='input_3' id='input_3_3' type='text' value='' class='medium' tabindex='1000'
         \ placeholder='Email' aria-required=\"true\" aria-invalid=\"false\"  />\n
@@ -16180,7 +16407,7 @@ http_interactions:
         policy.&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_6.3'
         value='3' class='gform_hidden' /></div></li><li id=\"field_3_8\" class=\"gfield
         gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible\"
-        ><label class='gfield_label' for='input_3_8' >Phone</label><div class='ginput_container'><input
+        ><label class='gfield_label' for='input_3_8' >Comments</label><div class='ginput_container'><input
         name='input_8' id='input_3_8' type='text' value='' /></div><div class='gfield_description'
         id='gfield_description_3_8'>This field is for validation purposes and should
         be left unchanged.</div></li></ul></div>\n        <div class='gform_footer
@@ -16252,7 +16479,7 @@ http_interactions:
         id=\"menu-item-7267\" class=\"menu-item menu-item-type-post_type menu-item-object-page
         menu-item-7267\"><a target=\"_blank\" rel=\"noopener\" href=\"https://portal.templeton.org/#new_tab\">Login</a></li>\n
         \                           </ul>\n                            <!-- <div class=\"lang-switcher\">\n
-        \                                           <ul class=“lang-switcher”><select
+        \                                           <ul class=“lang-switcher�\x9D><select
         name=\"lang_choice_1\" id=\"lang_choice_1\">\n\t<option value=\"en\" selected='selected'>English</option>\n\t<option
         value=\"es\">Español</option>\n\t<option value=\"pt\">Português</option>\n\t<option
         value=\"ar\">العربية</option>\n\n</select>\n<script type=\"text/javascript\">\n\t\t\t\t\t//<![CDATA[\n\t\t\t\t\tvar
@@ -16405,7 +16632,7 @@ http_interactions:
         Approach Initiative</a></li>\n</ul>\n</li>\n<li id=\"menu-item-4349\" class=\"menu-item
         menu-item-type-post_type menu-item-object-page menu-item-4349\"><a target=\"_blank\"
         rel=\"noopener\" href=\"https://portal.templeton.org/#new_tab\">Login</a></li>\n\n
-        \       <!-- <ul class=“lang-switcher”>\t<li class=\"lang-item lang-item-107
+        \       <!-- <ul class=“lang-switcher�\x9D>\t<li class=\"lang-item lang-item-107
         lang-item-en current-lang lang-item-first\"><a  lang=\"en-US\" hreflang=\"en-US\"
         href=\"https://www.templeton.org/grants/grant-database\">English</a></li>\n\t<li
         class=\"lang-item lang-item-113 lang-item-es\"><a  lang=\"es-ES\" hreflang=\"es-ES\"
@@ -16417,8 +16644,8 @@ http_interactions:
         -->\n\n    </ul>\n</nav>\n\n</div><!-- close #site -->\n\n<div class=\"cookie-overlay\"
         style=\"display: none;\"></div>\n<div class=\"cookie-banner\" style=\"display:
         none;\">\n    <div class=\"frame\">\n        <p>\n            By clicking
-        “Accept All”, you agree to the storing of cookies on your device to enhance
-        site navigation, analyze site usage, and assist in our marketing efforts.\n
+        “Accept All�\x9D, you agree to the storing of cookies on your device to
+        enhance site navigation, analyze site usage, and assist in our marketing efforts.\n
         \           <a href=\"/privacy-policy\">Cookie policy</a>\n        </p>\n
         \       <p>\n            <button class=\"btn\">Accept All</button>\n        </p>\n\n
         \   </div>\n</div>\n\n\n\t\t<script>\n\t\t( function ( body ) {\n\t\t\t'use
@@ -16437,7 +16664,207 @@ http_interactions:
         items on this page were selected. \",\"select_all_link\":\"Select all pages\",\"clear_selection\":\"Clear
         Selection.\",\"pagination\":{\"all\":\"All\",\"next\":\"Next\",\"previous\":\"Previous\"},\"select\":{\"rows\":{\"0\":\"\",\"_\":\":
         Selected %d rows\",\"1\":\": Selected 1 row\"}},\"datepicker\":{\"dayNames\":[\"Sunday\",\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"],\"dayNamesShort\":[\"Sun\",\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\",\"Sat\"],\"dayNamesMin\":[\"S\",\"M\",\"T\",\"W\",\"T\",\"F\",\"S\"],\"monthNames\":[\"January\",\"February\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\"],\"monthNamesShort\":[\"January\",\"February\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\"],\"monthNamesMin\":[\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\"],\"nextText\":\"Next\",\"prevText\":\"Prev\",\"currentText\":\"Today\",\"closeText\":\"Done\",\"today\":\"Today\",\"clear\":\"Clear\"}};/*
-        ]]> */ </script><link rel='stylesheet' id='gforms_reset_css-css'  href='https://www.templeton.org/wp-content/plugins/gravityforms/legacy/css/formreset.min.css?ver=2.5.16'
+        ]]> */ </script><div class=\"highlight-and-share-wrapper-inline highlight-and-share-wrapper\"><div
+        class=\"has_twitter\" style=\"display: none;\" data-type=\"twitter\"><a href=\"https://twitter.com/intent/tweet?url=%url%&text=%prefix%%text%%suffix%\"
+        target=\"_blank\"><svg class=\"has-icon\"><use xlink:href=\"#has-twitter-icon\"></use></svg><span
+        class=\"has-text\">&nbsp;Tweet</span></a></div><div class=\"has_facebook\"
+        style=\"display: none;\" data-type=\"facebook\"><a href=\"https://www.facebook.com/dialog/share?app_id=1836143459901029&display=popup&amp;quote=%prefix%%text%%suffix%&href=%url%\"
+        target=\"_blank\"><svg class=\"has-icon\"><use xlink:href=\"#has-facebook-icon\"></use></svg><span
+        class=\"has-text\">&nbsp;Share</span></a></div></div><div class=\"highlight-and-share-wrapper-cts
+        highlight-and-share-wrapper\"><div class=\"has_twitter\" style=\"display:
+        none;\" data-type=\"twitter\"><a href=\"https://twitter.com/intent/tweet?url=%url%&text=%prefix%%text%%suffix%\"
+        target=\"_blank\"><svg class=\"has-icon\"><use xlink:href=\"#has-twitter-icon\"></use></svg><span
+        class=\"has-text\">&nbsp;Tweet</span></a></div><div class=\"has_facebook\"
+        style=\"display: none;\" data-type=\"facebook\"><a href=\"https://www.facebook.com/dialog/share?app_id=1836143459901029&display=popup&amp;quote=%prefix%%text%%suffix%&href=%url%\"
+        target=\"_blank\"><svg class=\"has-icon\"><use xlink:href=\"#has-facebook-icon\"></use></svg><span
+        class=\"has-text\">&nbsp;Share</span></a></div></div><div class=\"highlight-and-share-wrapper\"><div
+        class=\"has_twitter\" style=\"display: none;\" data-type=\"twitter\"><a href=\"https://twitter.com/intent/tweet?url=%url%&text=%prefix%%text%%suffix%\"
+        target=\"_blank\"><svg class=\"has-icon\"><use xlink:href=\"#has-twitter-icon\"></use></svg><span
+        class=\"has-text\">&nbsp;Tweet</span></a></div><div class=\"has_facebook\"
+        style=\"display: none;\" data-type=\"facebook\"><a href=\"https://www.facebook.com/dialog/share?app_id=1836143459901029&display=popup&amp;quote=%prefix%%text%%suffix%&href=%url%\"
+        target=\"_blank\"><svg class=\"has-icon\"><use xlink:href=\"#has-facebook-icon\"></use></svg><span
+        class=\"has-text\">&nbsp;Share</span></a></div></div><!-- #highlight-and-share-wrapper
+        -->\t\t<svg width=\"0\" height=\"0\" class=\"hidden\" style=\"display: none;\">\n\t\t\t<symbol
+        aria-hidden=\"true\" data-prefix=\"fas\" data-icon=\"twitter\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 512 512\" id=\"has-twitter-icon\">\n\t\t\t\t<path fill=\"currentColor\"
+        d=\"M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558
+        298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34
+        1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772
+        6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969
+        7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391
+        0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04
+        0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137
+        23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827
+        21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628
+        54.253z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol aria-hidden=\"true\" data-prefix=\"fas\"
+        data-icon=\"facebook\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0
+        320 512\" id=\"has-facebook-icon\">\n\t\t\t\t<path fill=\"currentColor\" d=\"M279.14
+        288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43
+        0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol
+        aria-hidden=\"true\" data-prefix=\"fas\" data-icon=\"at\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 512 512\" id=\"has-email-icon\">\n\t\t\t\t<path fill=\"currentColor\"
+        d=\"M256 8C118.941 8 8 118.919 8 256c0 137.059 110.919 248 248 248 48.154
+        0 95.342-14.14 135.408-40.223 12.005-7.815 14.625-24.288 5.552-35.372l-10.177-12.433c-7.671-9.371-21.179-11.667-31.373-5.129C325.92
+        429.757 291.314 440 256 440c-101.458 0-184-82.542-184-184S154.542 72 256 72c100.139
+        0 184 57.619 184 160 0 38.786-21.093 79.742-58.17 83.693-17.349-.454-16.91-12.857-13.476-30.024l23.433-121.11C394.653
+        149.75 383.308 136 368.225 136h-44.981a13.518 13.518 0 0 0-13.432 11.993l-.01.092c-14.697-17.901-40.448-21.775-59.971-21.775-74.58
+        0-137.831 62.234-137.831 151.46 0 65.303 36.785 105.87 96 105.87 26.984 0
+        57.369-15.637 74.991-38.333 9.522 34.104 40.613 34.103 70.71 34.103C462.609
+        379.41 504 307.798 504 232 504 95.653 394.023 8 256 8zm-21.68 304.43c-22.249
+        0-36.07-15.623-36.07-40.771 0-44.993 30.779-72.729 58.63-72.729 22.292 0 35.601
+        15.241 35.601 40.77 0 45.061-33.875 72.73-58.161 72.73z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol
+        aria-hidden=\"true\" data-prefix=\"fas\" data-icon=\"linkedin\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 448 512\" id=\"has-linkedin-icon\">\n\t\t\t\t<path fill=\"currentColor\"
+        d=\"M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79
+        53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29
+        0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3
+        87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol
+        aria-hidden=\"true\" data-prefix=\"fas\" data-icon=\"xing\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 384 512\" id=\"has-xing-icon\">\n\t\t\t\t<path fill=\"currentColor\"
+        d=\"M162.7 210c-1.8 3.3-25.2 44.4-70.1 123.5-4.9 8.3-10.8 12.5-17.7 12.5H9.8c-7.7
+        0-12.1-7.5-8.5-14.4l69-121.3c.2 0 .2-.1 0-.3l-43.9-75.6c-4.3-7.8.3-14.1 8.5-14.1H100c7.3
+        0 13.3 4.1 18 12.2l44.7 77.5zM382.6 46.1l-144 253v.3L330.2 466c3.9 7.1.2 14.1-8.5
+        14.1h-65.2c-7.6 0-13.6-4-18-12.2l-92.4-168.5c3.3-5.8 51.5-90.8 144.8-255.2
+        4.6-8.1 10.4-12.2 17.5-12.2h65.7c8 0 12.3 6.7 8.5 14.1z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol
+        aria-hidden=\"true\" data-prefix=\"fas\" data-icon=\"whatsapp\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 448 512\" id=\"has-whatsapp-icon\">\n\t\t\t\t<path fill=\"currentColor\"
+        d=\"M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1
+        10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0
+        224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8
+        18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5
+        49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6
+        184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7
+        5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8
+        5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7
+        0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8
+        3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4
+        4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol
+        aria-hidden=\"true\" data-prefix=\"fas\" data-icon=\"copy\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 448 512\" id=\"has-copy-icon\">\n\t\t\t\t<path fill=\"currentColor\"
+        d=\"M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255
+        10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24
+        10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2
+        0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24
+        24 0 0 0-7.029-16.97z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol aria-hidden=\"true\"
+        data-prefix=\"fas\" data-icon=\"share\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 448 512\" id=\"has-share-icon\">\n\t\t\t\t<path fill=\"currentColor\"
+        d=\"M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551
+        0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0
+        96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79
+        180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981
+        96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0
+        0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol
+        aria-hidden=\"true\" data-prefix=\"fab\" data-icon=\"reddit\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 512 512\" id=\"has-reddit-icon\">\n\t\t\t\t<path fill=\"currentColor\"
+        d=\"M440.3 203.5c-15 0-28.2 6.2-37.9 15.9-35.7-24.7-83.8-40.6-137.1-42.3L293
+        52.3l88.2 19.8c0 21.6 17.6 39.2 39.2 39.2 22 0 39.7-18.1 39.7-39.7s-17.6-39.7-39.7-39.7c-15.4
+        0-28.7 9.3-35.3 22l-97.4-21.6c-4.9-1.3-9.7 2.2-11 7.1L246.3 177c-52.9 2.2-100.5
+        18.1-136.3 42.8-9.7-10.1-23.4-16.3-38.4-16.3-55.6 0-73.8 74.6-22.9 100.1-1.8
+        7.9-2.6 16.3-2.6 24.7 0 83.8 94.4 151.7 210.3 151.7 116.4 0 210.8-67.9 210.8-151.7
+        0-8.4-.9-17.2-3.1-25.1 49.9-25.6 31.5-99.7-23.8-99.7zM129.4 308.9c0-22 17.6-39.7
+        39.7-39.7 21.6 0 39.2 17.6 39.2 39.7 0 21.6-17.6 39.2-39.2 39.2-22 .1-39.7-17.6-39.7-39.2zm214.3
+        93.5c-36.4 36.4-139.1 36.4-175.5 0-4-3.5-4-9.7 0-13.7 3.5-3.5 9.7-3.5 13.2
+        0 27.8 28.5 120 29 149 0 3.5-3.5 9.7-3.5 13.2 0 4.1 4 4.1 10.2.1 13.7zm-.8-54.2c-21.6
+        0-39.2-17.6-39.2-39.2 0-22 17.6-39.7 39.2-39.7 22 0 39.7 17.6 39.7 39.7-.1
+        21.5-17.7 39.2-39.7 39.2z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol aria-hidden=\"true\"
+        data-prefix=\"fab\" data-icon=\"telegram\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 448 512\" id=\"has-telegram-icon\">\n\t\t\t\t<path fill=\"currentColor\"
+        d=\"M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5
+        5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8
+        284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5
+        32.2z\"></path>\n\t\t\t</symbol>\n\t\t\t<symbol aria-hidden=\"true\" data-prefix=\"fab\"
+        data-icon=\"signal\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256
+        256\" id=\"has-signal-icon\">\n\t\t\t\t<g>\n\t\t\t\t\t<path d=\"M97.2800192,3.739673
+        L100.160021,15.3787704 C88.8306631,18.1647705 77.9879854,22.6484879 68.0000023,28.6777391
+        L61.8399988,18.3985363 C72.8467373,11.7537029 84.7951803,6.81153332 97.2800192,3.739673
+        Z M158.720055,3.739673 L155.840053,15.3787704 C167.169411,18.1647705 178.012089,22.6484879
+        188.000072,28.6777391 L194.200075,18.3985363 C183.180932,11.7499974 171.218739,6.80771878
+        158.720055,3.739673 L158.720055,3.739673 Z M18.3999736,61.8351679 C11.7546212,72.8410466
+        6.81206547,84.7885562 3.73996516,97.2724198 L15.3799719,100.152197 C18.1661896,88.8237238
+        22.6502573,77.981893 28.6799796,67.9946902 L18.3999736,61.8351679 Z M11.9999699,127.990038
+        C11.9961044,122.172725 12.4306685,116.363392 13.2999707,110.611385 L1.43996383,108.811525
+        C-0.479938607,121.525138 -0.479938607,134.454937 1.43996383,147.168551 L13.2999707,145.36869
+        C12.4306685,139.616684 11.9961044,133.807351 11.9999699,127.990038 L11.9999699,127.990038
+        Z M194.160075,237.581539 L188.000072,227.302336 C178.024494,233.327885 167.195565,237.811494
+        155.880053,240.601305 L158.760055,252.240403 C171.231048,249.164732 183.165742,244.222671
+        194.160075,237.581539 L194.160075,237.581539 Z M244.000104,127.990038 C244.00397,133.807351
+        243.569406,139.616684 242.700103,145.36869 L254.56011,147.168551 C256.480013,134.454937
+        256.480013,121.525138 254.56011,108.811525 L242.700103,110.611385 C243.569406,116.363392
+        244.00397,122.172725 244.000104,127.990038 Z M252.260109,158.707656 L240.620102,155.827879
+        C237.833884,167.156352 233.349817,177.998183 227.320094,187.985385 L237.6001,194.184905
+        C244.249159,183.166622 249.191823,171.205364 252.260109,158.707656 L252.260109,158.707656
+        Z M145.380047,242.701142 C133.858209,244.43447 122.141865,244.43447 110.620027,242.701142
+        L108.820026,254.560223 C121.534632,256.479975 134.465442,256.479975 147.180048,254.560223
+        L145.380047,242.701142 Z M221.380091,196.804701 C214.461479,206.174141 206.175877,214.452354
+        196.800077,221.362797 L203.920081,231.022048 C214.262958,223.418011 223.404944,214.303705
+        231.040097,203.984145 L221.380091,196.804701 Z M196.800077,34.6172785 C206.177345,41.5338058
+        214.463023,49.8188367 221.380091,59.1953726 L231.040097,51.9959309 C223.429284,41.6822474
+        214.31457,32.5682452 204.000081,24.9580276 L196.800077,34.6172785 Z M34.619983,59.1953726
+        C41.5370506,49.8188367 49.8227288,41.5338058 59.1999972,34.6172785 L51.9999931,24.9580276
+        C41.6855038,32.5682452 32.5707896,41.6822474 24.9599774,51.9959309 L34.619983,59.1953726
+        Z M237.6001,61.8351679 L227.320094,67.9946902 C233.346114,77.969489 237.830073,88.7975718
+        240.620102,100.1122 L252.260109,97.2324229 C249.184198,84.7624043 244.241751,72.8286423
+        237.6001,61.8351679 L237.6001,61.8351679 Z M110.620027,13.2989317 C122.141865,11.5656035
+        133.858209,11.5656035 145.380047,13.2989317 L147.180048,1.43985134 C134.465442,-0.479901112
+        121.534632,-0.479901112 108.820026,1.43985134 L110.620027,13.2989317 Z M40.7799866,234.201801
+        L15.9999722,239.981353 L21.7799756,215.203275 L10.0999688,212.463487 L4.3199655,237.241566
+        C3.3734444,241.28318 4.58320332,245.526897 7.51859925,248.462064 C10.4539952,251.39723
+        14.6980441,252.606895 18.7399738,251.660448 L43.4999881,245.980888 L40.7799866,234.201801
+        Z M12.5999703,201.764317 L24.279977,204.484106 L28.2799793,187.305438 C22.4496684,177.507146
+        18.1025197,166.899584 15.3799719,155.827879 L3.73996516,158.707656 C6.34937618,169.311891
+        10.3154147,179.535405 15.539972,189.125297 L12.5999703,201.764317 Z M68.6000027,227.762301
+        L51.4199927,231.761991 L54.1399943,243.441085 L66.7800016,240.501313 C76.3706428,245.725462
+        86.5949557,249.691191 97.2000192,252.300398 L100.080021,240.6613 C89.0307035,237.906432
+        78.4495684,233.532789 68.6800027,227.682307 L68.6000027,227.762301 Z M128.000037,23.9980665
+        C90.1565244,24.0177003 55.3105242,44.590631 37.01511,77.715217 C18.7196958,110.839803
+        19.8628631,151.287212 39.9999861,183.325747 L29.9999803,225.982439 L72.660005,215.983214
+        C110.077932,239.548522 158.307237,236.876754 192.892851,209.322653 C227.478464,181.768552
+        240.856271,135.358391 226.242944,93.6248278 C211.629616,51.8912646 172.221191,23.9617202
+        128.000037,23.9980665 Z\" fill=\"currentColor\"></path>\n\t\t\t\t</g>\n\t\t\t</symbol>\n\t\t\t<symbol
+        aria-hidden=\"true\" data-prefix=\"ok\" data-icon=\"logo\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 512 512\" id=\"has-ok-icon\">\n\t\t\t\t<g>\n\t\t\t\t\t<path
+        fill=\"currentColor\" d=\"M357.1,324.5c-24.1,15.3-57.2,21.4-79.1,23.6l18.4,18.1l67,67c24.5,25.1-15.4,64.4-40.2,40.2c-16.8-17-41.4-41.6-67-67.3\n\t\t\t\t\t\tl-67,67.2c-24.8,24.2-64.7-15.5-39.9-40.2c17-17,41.4-41.6,67-67l18.1-18.1c-21.6-2.3-55.3-8-79.6-23.6\n\t\t\t\t\t\tc-28.6-18.5-41.2-29.3-30.1-51.8c6.5-12.8,24.3-23.6,48-5c0,0,31.9,25.4,83.4,25.4s83.4-25.4,83.4-25.4c23.6-18.5,41.4-7.8,48,5\n\t\t\t\t\t\tC398.3,295.1,385.7,305.9,357.1,324.5L357.1,324.5z
+        M142,145c0-63,51.2-114,114-114s114,51,114,114c0,62.7-51.2,113.7-114,113.7\n\t\t\t\t\t\tS142,207.7,142,145L142,145z
+        M200,145c0,30.8,25.1,56,56,56s56-25.1,56-56c0-31.1-25.1-56.2-56-56.2S200,113.9,200,145z\"/>\n\t\t\t\t</g>\n\t\t\t</symbol>\n\t\t\t<symbol
+        aria-hidden=\"true\" data-prefix=\"vk\" data-icon=\"logo\" xmlns=\"http://www.w3.org/2000/svg\"
+        viewBox=\"0 0 700 700\" id=\"has-vk-icon\">\n\t\t\t\t<g\n\t\t\t\t\tstyle=\"fill:none;fill-rule:evenodd\"\n\t\t\t\t\ttransform=\"translate(0,664)\"\n\t\t\t\t>\n\t\t\t\t\t<path
+        fill=\"currentColor\" d=\"m 1073.3513,-606.40537 h 196.278 c 179.2103,0 221.8795,42.66915
+        221.8795,221.8795 v 196.27799 c 0,179.2103512 -42.6692,221.879451 -221.8795,221.879451
+        h -196.278 c -179.21038,0 -221.87951,-42.6691298 -221.87951,-221.879451 v
+        -196.27801 c 0,-179.21035 42.66913,-221.87946 221.87951,-221.87948 z\" />\n\t\t\t\t\t<path
+        fill=\"currentColor\" d=\"m 1375.0576,-393.98425 c 2.9513,-9.7072 0,-16.85429
+        -14.1342,-16.85429 h -46.6693 c -11.8763,0 -17.3521,6.16927 -20.3212,12.97854
+        0,0 -23.7347,56.82106 -57.3544,93.74763 -10.8806,10.66728 -15.8232,14.08081
+        -21.7613,14.08081 -2.969,0 -7.2715,-3.39577 -7.2715,-13.12075 v -90.83194
+        c 0,-11.66288 -3.4491,-16.85429 -13.3341,-16.85429 h -73.3553 c -7.4138,0
+        -11.8763,5.40476 -11.8763,10.54286 0,11.0406 16.8188,13.60078 18.5433,44.67814
+        v 67.52388 c 0,14.80973 -2.7202,17.49433 -8.6583,17.49433 -15.8231,0 -54.3143,-57.08773
+        -77.16,-122.40705 -4.4447,-12.71185 -8.9427,-17.83214 -20.8723,-17.83214 h
+        -46.68718 c -13.3341,0 -16.0009,6.16925 -16.0009,12.97852 0,12.12515 15.8232,72.35973
+        73.69318,152.02656 38.58,54.40315 92.8942,83.89819 142.3726,83.89819 29.6729,0
+        33.3353,-6.54262 33.3353,-17.83216 v -41.12238 c 0,-13.10297 2.809,-15.71646
+        12.214,-15.71646 6.9338,0 18.7922,3.41353 46.4916,29.63728 31.6463,31.09512
+        36.8555,45.03372 54.6698,45.03372 h 46.6694 c 13.3341,0 20.0189,-6.54262 16.1787,-19.46781
+        -4.2313,-12.88962 -19.3433,-31.57515 -39.38,-53.74532 -10.8807,-12.62294 -27.2016,-26.22375
+        -32.1441,-33.03302 -6.9338,-8.72941 -4.9603,-12.62294 0,-20.39227 0,0 56.8566,-78.68897
+        62.7947,-105.41058 z\" />\n\t\t\t\t\t<path fill=\"currentColor\" d=\"m 567.69877,-429.06912
+        c 3.15618,-10.38133 0,-18.0247 -15.11579,-18.0247 h -49.91013 c -12.70096,0
+        -18.55706,6.59763 -21.73232,13.87977 0,0 -25.38286,60.76685 -61.33724,100.25768
+        -11.63627,11.40806 -16.92197,15.05863 -23.27242,15.05863 -3.17519,0 -7.77644,-3.63156
+        -7.77644,-14.0319 v -97.13948 c 0,-12.47278 -3.68869,-18.0247 -14.26014,-18.0247
+        h -78.44923 c -7.92857,0 -12.70097,5.78005 -12.70097,11.27491 0,11.80736 17.98666,14.54527
+        19.83094,47.78071 v 72.21293 c 0,15.83815 -2.9091,18.70918 -9.25948,18.70918
+        -16.92197,0 -58.08598,-61.05206 -82.51817,-130.90731 -4.75337,-13.59458 -9.56381,-19.07042
+        -22.32175,-19.07042 h -49.92915 c -14.26014,0 -17.11213,6.59763 -17.11213,13.87977
+        0,12.96714 16.92197,77.38454 78.81059,162.58363 41.25909,58.18101 99.34506,89.72424
+        152.25931,89.72424 31.73343,0 35.65018,-6.99691 35.65018,-19.07043 v -43.978
+        c 0,-14.01288 3.00405,-16.80786 13.0622,-16.80786 7.41521,0 20.09716,3.65057
+        49.71998,31.69536 33.84387,33.25443 39.41486,48.16093 58.46622,48.16093 h
+        49.91026 c 14.26,0 21.40913,-6.99691 17.30216,-20.81966 -4.5252,-13.78473
+        -20.68653,-33.76783 -42.11468,-57.47752 -11.63621,-13.49953 -29.09043,-28.04479
+        -34.37631,-35.32694 -7.41508,-9.33557 -5.30458,-13.4995 0,-21.80835 0,0 60.80491,-84.15334
+        67.15549,-112.73048 z\" />\n\t\t\t\t</g>\n\t\t\t</symbol>\n\t\t</svg>\n\t\t<link
+        rel='stylesheet' id='gforms_reset_css-css'  href='https://www.templeton.org/wp-content/plugins/gravityforms/legacy/css/formreset.min.css?ver=2.5.16'
         type='text/css' media='all' />\n<link rel='stylesheet' id='gforms_formsmain_css-css'
         \ href='https://www.templeton.org/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css?ver=2.5.16'
         type='text/css' media='all' />\n<link rel='stylesheet' id='gforms_ready_class_css-css'
@@ -16471,16 +16898,32 @@ http_interactions:
         id='custom-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-content/themes/push10custom/maintenancejs.js?ver=5.9'
         id='maintenancejs-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-content/themes/push10custom/style_update/assets/dist/javascript.min.js?ver=5.9'
         id='new-custom-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.6'
-        id='page-links-to-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-content/plugins/wp-smush-pro/app/assets/js/smush-lazy-load.min.js?ver=3.9.5'
-        id='smush-lazy-load-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9'
+        id='page-links-to-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-content/plugins/highlight-and-share/js/sweetalert2.all.min.js?ver=7.28.4'
+        id='sweetalert2-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9'
         id='regenerator-runtime-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0'
-        id='wp-polyfill-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/dom-ready.min.js?ver=ecda74de0221e1c2ce5c57cbb5af09d5'
-        id='wp-dom-ready-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/hooks.min.js?ver=1e58c8c5a32b2e97491080c5b10dc71c'
+        id='wp-polyfill-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/hooks.min.js?ver=1e58c8c5a32b2e97491080c5b10dc71c'
         id='wp-hooks-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/i18n.min.js?ver=30fcecb428a0e8383d3776bcdd3a7834'
         id='wp-i18n-js'></script>\n<script type='text/javascript' id='wp-i18n-js-after'>\nwp.i18n.setLocaleData(
         { 'text direction\\u0004ltr': [ 'ltr' ] } );\n</script>\n<script type='text/javascript'
-        id='wp-a11y-js-translations'>\n( function( domain, translations ) {\n\tvar
-        localeData = translations.locale_data[ domain ] || translations.locale_data.messages;\n\tlocaleData[\"\"].domain
+        id='highlight-and-share-js-extra'>\n/* <![CDATA[ */\nvar highlight_and_share
+        = {\"show_facebook\":\"1\",\"show_twitter\":\"1\",\"show_linkedin\":\"\",\"show_ok\":\"\",\"show_vk\":\"\",\"show_email\":\"\",\"show_xing\":\"\",\"show_copy\":\"\",\"show_whatsapp\":\"\",\"twitter_username\":\"\",\"mobile\":\"\",\"content\":\".standard-text,.has-content-area,.has-excerpt-area\",\"tweet_text\":\"Tweet\",\"facebook_text\":\"Share\",\"linkedin_text\":\"LinkedIn\",\"ok_text\":\"Odnoklassniki\",\"vk_text\":\"VKontakte\",\"whatsapp_text\":\"WhatsApp\",\"xing_text\":\"Xing\",\"copy_text\":\"Copy\",\"email_text\":\"E-mail\",\"icons\":\"1\",\"facebook_app_id\":\"1836143459901029\",\"email_your_name_value\":\"\",\"email_from_value\":\"\",\"nonce\":\"ca7502a2f4\",\"ajax_url\":\"https:\\/\\/www.templeton.org\\/wp-admin\\/admin-ajax.php\",\"email_share\":\"Share
+        This Post Via Email\",\"email_subject\":\"Your Subject\",\"email_your_name\":\"Your
+        Name\",\"email_send_email\":\"Send to Email Address\",\"email_subject_text\":\"[Shared
+        Post] %title%\",\"email_from\":\"Your Email Address\",\"email_send\":\"Send
+        Email\",\"email_cancel\":\"Cancel\",\"email_close\":\"Close\",\"email_loading\":\"https:\\/\\/www.templeton.org\\/wp-content\\/plugins\\/highlight-and-share\\/img\\/loading.gif\",\"email_subject_error\":\"You
+        must fill in a subject.\",\"email_email_to\":\"Send to Email Address is blank.\",\"email_email_from\":\"Your
+        email address is blank.\",\"email_email_name\":\"Your name is blank.\",\"email_sending\":\"Sending...\",\"customizer_preview\":\"\",\"prefix\":\"\",\"suffix\":\"\"};\n/*
+        ]]> */\n</script>\n<script type='text/javascript' id='highlight-and-share-js-translations'>\n(
+        function( domain, translations ) {\n\tvar localeData = translations.locale_data[
+        domain ] || translations.locale_data.messages;\n\tlocaleData[\"\"].domain
+        = domain;\n\twp.i18n.setLocaleData( localeData, domain );\n} )( \"highlight-and-share\",
+        { \"locale_data\": { \"messages\": { \"\": {} } } } );\n</script>\n<script
+        type='text/javascript' src='https://www.templeton.org/wp-content/plugins/highlight-and-share/js/highlight-and-share.js?ver=3.5.5'
+        id='highlight-and-share-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-content/plugins/wp-smush-pro/app/assets/js/smush-lazy-load.min.js?ver=3.9.6'
+        id='smush-lazy-load-js'></script>\n<script type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/dom-ready.min.js?ver=ecda74de0221e1c2ce5c57cbb5af09d5'
+        id='wp-dom-ready-js'></script>\n<script type='text/javascript' id='wp-a11y-js-translations'>\n(
+        function( domain, translations ) {\n\tvar localeData = translations.locale_data[
+        domain ] || translations.locale_data.messages;\n\tlocaleData[\"\"].domain
         = domain;\n\twp.i18n.setLocaleData( localeData, domain );\n} )( \"default\",
         { \"locale_data\": { \"messages\": { \"\": {} } } } );\n</script>\n<script
         type='text/javascript' src='https://www.templeton.org/wp-includes/js/dist/a11y.min.js?ver=68e470cf840f69530e9db3be229ad4b6'
@@ -16550,6 +16993,6 @@ http_interactions:
         \   //         var s = d.getElementsByTagName(n)[0];\n    //         s.parentNode.insertBefore(e,
         s);\n    //     }\n    //     w.pdst('conf', {\n    //         key: '8d11c483717740469c4796eb631fefa8'\n
         \   //     })\n    //     w.pdst('view')\n    // })(window, document);\n</script>\n<script
-        type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"bam.nr-data.net\",\"licenseKey\":\"156398ea8b\",\"applicationID\":\"44072675\",\"transactionName\":\"b1ZbNRFSWktXB0APDVYceAIXWltWGRBRCxJUUk0ETlRGWVgQR0sGWUdYAwJAUQ==\",\"queueTime\":0,\"applicationTime\":4639,\"atts\":\"QxFYQ1lISUU=\",\"errorBeacon\":\"bam.nr-data.net\",\"agent\":\"\"}</script></body>\n\n</html>"
-  recorded_at: 2022-01-28 20:14:37 GMT
+        type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"bam.nr-data.net\",\"licenseKey\":\"156398ea8b\",\"applicationID\":\"44072675\",\"transactionName\":\"b1ZbNRFSWktXB0APDVYceAIXWltWGRBRCxJUUk0ETlRGWVgQR0sGWUdYAwJAUQ==\",\"queueTime\":0,\"applicationTime\":4712,\"atts\":\"QxFYQ1lISUU=\",\"errorBeacon\":\"bam.nr-data.net\",\"agent\":\"\"}</script></body>\n\n</html>"
+  recorded_at: 2022-03-04 19:05:03 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
