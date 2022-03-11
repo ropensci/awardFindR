@@ -16,7 +16,7 @@ http_interactions:
     headers:
       access-control-allow-origin: '*'
       content-type: application/xml; charset=utf-8
-      date: Fri, 04 Mar 2022 19:04:48 GMT
+      date: Fri, 04 Mar 2022 22:49:03 GMT
       server: Apache/2.4.3 (Unix) OpenSSL/1.0.2g
       transfer-encoding: chunked
       connection: keep-alive
@@ -30,7 +30,7 @@ http_interactions:
         <lst name="responseHeader">
           <bool name="zkConnected">true</bool>
           <int name="status">0</int>
-          <int name="QTime">0</int>
+          <int name="QTime">1</int>
           <lst name="params">
             <str name="q">qualitative</str>
             <str name="defType">edismax</str>
@@ -778,5 +778,5 @@ http_interactions:
             <long name="_version_">1689898170538000384</long></doc>
         </result>
         </response>
-  recorded_at: 2022-03-04 19:04:47 GMT
+  recorded_at: 2022-03-04 22:49:03 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0

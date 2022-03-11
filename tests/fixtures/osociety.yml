@@ -14,10 +14,8 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:04:54 GMT
+      date: Fri, 04 Mar 2022 22:49:08 GMT
       content-type: text/html; charset=UTF-8
-      transfer-encoding: chunked
-      connection: keep-alive
       vary: Accept-Encoding
       cache-control: public, max-age=3600
       x-frame-options: SAMEORIGIN
@@ -40,12 +38,12 @@ http_interactions:
         ''self''; report-uri https://opensociety.report-uri.com/r/d/csp/enforce; worker-src
         ''none'';'
       content-encoding: gzip
-      cf-cache-status: MISS
+      cf-cache-status: EXPIRED
       last-modified: Fri, 04 Mar 2022 19:04:54 GMT
       expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       strict-transport-security: max-age=15552000
       server: cloudflare
-      cf-ray: 6e6ce154aa2a8c2f-EWR
+      cf-ray: 6e6e29d40cfc8c27-EWR
     body:
       encoding: UTF-8
       file: no
@@ -240,8 +238,8 @@ http_interactions:
         type=\"submit\" id=\"newsletter_navigation_submit\" value=\"Submit\" data-newsletter-submit/>\n
         \                 </div>\n                </div>\n              </form>\n
         \           </div>\n            <div class=\"g-newsletterCta__col-full\">\n
-        \             <p>By entering your email address and clicking “Submit,�\x9D
-        you agree to receive updates from the Open Society Foundations about our work.
+        \             <p>By entering your email address and clicking “Submit,” you
+        agree to receive updates from the Open Society Foundations about our work.
         To learn more about how we use and protect your personal data, please view
         our <a href=\"/policies/privacy\">privacy policy</a>.</p>\n            </div>\n
         \         </div>\n\n        </div>\n      </div>\n    </div>\n\n  </div>\n\n
@@ -1064,8 +1062,8 @@ http_interactions:
         name=\"also_general_newsletter\" value=\"newsletter\">\n          <label for=\"newsletter\">Also
         send me the latest on Open Society’s work around the world</label>\n        </div>\n
         \     </div>\n    </form>\n  </div>\n  <div class=\"g-newsletterCta__col-full\">\n
-        \   <p>By entering your email address and clicking “Submit,�\x9D you agree
-        to receive updates from the Open Society Foundations about our work. To learn
+        \   <p>By entering your email address and clicking “Submit,” you agree to
+        receive updates from the Open Society Foundations about our work. To learn
         more about how we use and protect your personal data, please view our <a href=\"/policies/privacy\">privacy
         policy</a>.</p>\n  </div>\n</section>\n\n                  <footer class=\"g-footer\">\n\n
         \ <section class=\"g-footer__highlights row\">\n    <div class=\"g-footer__highlight\">\n
@@ -1136,5 +1134,5 @@ http_interactions:
         \ \n  <div class=\"pageLoader\">\n\t<div class=\"pageLoader__bar\"></div>\n</div>
         \     </div>\n      <script src=\"/dist/scripts/app-7f92fbcf66.js\"></script>\n
         \ </body>\n</html>\n"
-  recorded_at: 2022-03-04 19:04:53 GMT
+  recorded_at: 2022-03-04 22:49:09 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0

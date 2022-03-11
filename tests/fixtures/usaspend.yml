@@ -25,10 +25,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:05:05 GMT
+      date: Fri, 04 Mar 2022 22:49:18 GMT
       content-type: application/json
       content-length: '27383'
-      connection: keep-alive
       vary: Accept, Cookie, Origin
       allow: POST, OPTIONS
       cache-trace: hit-cache
@@ -297,7 +296,7 @@ http_interactions:
         date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
         Award Download feature on the website or one of our download or bulk_download
         API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
-  recorded_at: 2022-03-04 19:05:05 GMT
+  recorded_at: 2022-03-04 22:49:21 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -325,10 +324,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:05:05 GMT
+      date: Fri, 04 Mar 2022 22:49:19 GMT
       content-type: application/json
       content-length: '106893'
-      connection: keep-alive
       vary: Accept, Cookie, Origin
       allow: POST, OPTIONS
       cache-trace: hit-cache
@@ -1603,7 +1601,7 @@ http_interactions:
         date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
         Award Download feature on the website or one of our download or bulk_download
         API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
-  recorded_at: 2022-03-04 19:05:05 GMT
+  recorded_at: 2022-03-04 22:49:21 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -1631,10 +1629,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:05:06 GMT
+      date: Fri, 04 Mar 2022 22:49:19 GMT
       content-type: application/json
       content-length: '80171'
-      connection: keep-alive
       vary: Accept, Cookie, Origin
       allow: POST, OPTIONS
       cache-trace: hit-cache
@@ -2554,7 +2551,7 @@ http_interactions:
         date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
         Award Download feature on the website or one of our download or bulk_download
         API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
-  recorded_at: 2022-03-04 19:05:05 GMT
+  recorded_at: 2022-03-04 22:49:21 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -2582,10 +2579,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:05:06 GMT
+      date: Fri, 04 Mar 2022 22:49:20 GMT
       content-type: application/json
       content-length: '43144'
-      connection: keep-alive
       vary: Accept, Cookie, Origin
       allow: POST, OPTIONS
       cache-trace: hit-cache
@@ -3031,7 +3027,7 @@ http_interactions:
         date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
         Award Download feature on the website or one of our download or bulk_download
         API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
-  recorded_at: 2022-03-04 19:05:05 GMT
+  recorded_at: 2022-03-04 22:49:21 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -3059,10 +3055,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:05:06 GMT
+      date: Fri, 04 Mar 2022 22:49:20 GMT
       content-type: application/json
       content-length: '27243'
-      connection: keep-alive
       vary: Accept, Cookie, Origin
       allow: POST, OPTIONS
       cache-trace: hit-cache
@@ -3324,7 +3319,7 @@ http_interactions:
         date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
         Award Download feature on the website or one of our download or bulk_download
         API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
-  recorded_at: 2022-03-04 19:05:05 GMT
+  recorded_at: 2022-03-04 22:49:21 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -3352,10 +3347,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:05:06 GMT
+      date: Fri, 04 Mar 2022 22:49:20 GMT
       content-type: application/json
       content-length: '28020'
-      connection: keep-alive
       vary: Accept, Cookie, Origin
       allow: POST, OPTIONS
       cache-trace: hit-cache
@@ -3632,7 +3626,7 @@ http_interactions:
         date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
         Award Download feature on the website or one of our download or bulk_download
         API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
-  recorded_at: 2022-03-04 19:05:05 GMT
+  recorded_at: 2022-03-04 22:49:21 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -3660,10 +3654,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:05:06 GMT
+      date: Fri, 04 Mar 2022 22:49:20 GMT
       content-type: application/json
       content-length: '29863'
-      connection: keep-alive
       vary: Accept, Cookie, Origin
       allow: POST, OPTIONS
       cache-trace: hit-cache
@@ -3965,7 +3958,7 @@ http_interactions:
         date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
         Award Download feature on the website or one of our download or bulk_download
         API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
-  recorded_at: 2022-03-04 19:05:05 GMT
+  recorded_at: 2022-03-04 22:49:21 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -3993,10 +3986,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:05:06 GMT
+      date: Fri, 04 Mar 2022 22:49:21 GMT
       content-type: application/json
       content-length: '28357'
-      connection: keep-alive
       vary: Accept, Cookie, Origin
       allow: POST, OPTIONS
       cache-trace: hit-cache
@@ -4283,7 +4275,7 @@ http_interactions:
         date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
         Award Download feature on the website or one of our download or bulk_download
         API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
-  recorded_at: 2022-03-04 19:05:05 GMT
+  recorded_at: 2022-03-04 22:49:21 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: post
@@ -4311,10 +4303,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 04 Mar 2022 19:05:07 GMT
+      date: Fri, 04 Mar 2022 22:49:21 GMT
       content-type: application/json
       content-length: '13706'
-      connection: keep-alive
       vary: Accept, Cookie, Origin
       allow: POST, OPTIONS
       cache-trace: hit-cache
@@ -4457,5 +4448,5 @@ http_interactions:
         date of 2007-10-01.  For data going back to 2000-10-01, use either the Custom
         Award Download feature on the website or one of our download or bulk_download
         API endpoints as listed on https://api.usaspending.gov/docs/endpoints."]]}'
-  recorded_at: 2022-03-04 19:05:05 GMT
+  recorded_at: 2022-03-04 22:49:21 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0

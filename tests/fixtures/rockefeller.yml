@@ -18,11 +18,10 @@ http_interactions:
       access-control-allow-origin: '*'
       age: '0'
       cache-control: public, max-age=600
-      connection: keep-alive
-      content-disposition: attachment; filename="grant-filter-20220304-070455.csv"
+      content-disposition: attachment; filename="grant-filter-20220304-104910.csv"
       content-length: '16908'
       content-type: text/csv;charset=UTF-8
-      date: Fri, 04 Mar 2022 19:04:55 GMT
+      date: Fri, 04 Mar 2022 22:49:10 GMT
       expires: '0'
       link: <https://www.rockefellerfoundation.org/wp-json/>; rel="https://api.w.org/"
       pragma: no-cache
@@ -30,18 +29,18 @@ http_interactions:
       strict-transport-security:
       - max-age=31536000; includeSubDomains
       - max-age=300
-      traceparent: 00-0888d8c0fd7e4fdfac77313e9f154e31-94839d96417e94d4-00
+      traceparent: 00-b29dfa643afd476faafb5ebc55dd8f2a-cb00858e53843ab1-00
       vary: orig-host
-      via: 1.1 varnish, 1.1 varnish, 1.1 varnish, 1.1 varnish
-      x-cache: MISS, MISS, MISS, MISS
-      x-cache-hits: 0, 0, 0, 0
-      x-cloud-trace-context: 0888d8c0fd7e4fdfac77313e9f154e31/10701570408231900372;o=0
+      via: 1.1 varnish, 1.1 varnish, 1.1 varnish
+      x-cache: MISS, MISS, MISS
+      x-cache-hits: 0, 0, 0
+      x-cloud-trace-context: b29dfa643afd476faafb5ebc55dd8f2a/14627838436032395953;o=0
       x-content-type-options: nosniff
       x-frame-options: SAMEORIGIN
-      x-pantheon-styx-hostname: styx-fe2-b-f66bf767-lwlpw
-      x-served-by: cache-mdw17343-MDW, cache-lga21928-LGA, cache-lga21960-LGA, cache-lga21975-LGA
-      x-styx-req-id: fa0f9636-9bed-11ec-838b-0e58a11f3eb3
-      x-timer: S1646420695.629003,VS0,VE1285
+      x-pantheon-styx-hostname: styx-fe2-a-854c9bcdfb-956mp
+      x-served-by: cache-mdw17352-MDW, cache-mdw17367-MDW, cache-mdw17341-MDW
+      x-styx-req-id: 4dcdfe3c-9c0d-11ec-8683-6e19aa217a0b
+      x-timer: S1646434150.535667,VS0,VE1056
       x-xss-protection: 1; mode=block; report=https://www.rockefellerfoundation.org?gdsih-xxp-report;
     body:
       encoding: UTF-8
@@ -234,9 +233,9 @@ http_interactions:
         tools that will support action to reduce food waste at the municipal level
         in the U.S.\",\"Food Initiative\",\"Open\",\"40 West 20th Street, New York,
         NY 10011, United States\"\r\n\"Samhita Social Ventures Private Limited 2015\",\"253058.00\",\"2015-12-01\",\"2017-11-30\",\"in
-        support of a project to develop guidelines for implementing India’s new
-        Corporate Social Responsibility Mandate through building collaborative platforms
-        to address strategic social and development challenges and testing the feasibility
+        support of a project to develop guidelines for implementing India’s new Corporate
+        Social Responsibility Mandate through building collaborative platforms to
+        address strategic social and development challenges and testing the feasibility
         for such platforms in the energy access and rural enterprise promotion sector\",\"Comms
         Policy & Advocacy\",\"Open\",\"502, Atlanta Centre, Sonawala Cross Lane, Goregaon
         (East), Mumbai,  400063, India\"\r\n\"Premise Data Corporation 2015\",\"400000.00\",\"2015-08-01\",\"2016-12-31\",\"in
@@ -259,5 +258,5 @@ http_interactions:
         the conceptualization of Resilient Health Systems in West Africa in the wake
         of the Ebola crisis\",\"Ebola\",\"Open\",\"1350 Massachusetts Avenue, Massachusetts
         Hall, Cambridge, MA 02138, United States\""
-  recorded_at: 2022-03-04 19:04:54 GMT
+  recorded_at: 2022-03-04 22:49:10 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0

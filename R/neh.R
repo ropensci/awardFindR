@@ -2,7 +2,6 @@
 #' @param keyword Keyword to query
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
-#' @param agency Agencies, comma separated. Defaults to "usda,dod,nasa,epa".
 #' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return A raw data.frame with the relevant results from NEH
 #' @export
