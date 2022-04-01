@@ -8,40 +8,43 @@
 #' results <- usaspend_get(c("qualitative", "interview"),
 #'  "2019-01-01", "2020-01-01")
 #' }
-get_usaspend <- function(keywords, from_date, to_date, verbose) {
+get_usaspend <- function(keywords, from_date, to_date, verbose,
+                         payload=NULL) {
   url <- "https://api.usaspending.gov/api/v2/search/spending_by_award/"
 
-  payload <- list(
-    fields=c("Award ID", "Recipient Name", "Description",
-             "Start Date", "End Date", "Award Amount",
-             "Awarding Agency", "Awarding Sub Agency",
-             "Funding Agency", "Funding Sub Agency"),
-    filters=list(
-      agencies=list(
-        # These should be agencies that are not covered by:
-        # Federal Reporter, NIH RePORTER or NSF
-        # because the data is limited from USAspending compared to other sources
-        list(name="Department of Agriculture", tier="toptier", type="awarding"),
-        list(name="Department of Defense", tier="toptier", type="awarding"),
-        list(name="National Aeronautics and Space Administration", tier="toptier",
-             type="awarding"),
-        list(name="Environmental Protection Agency", tier="toptier",
-             type="awarding"),
-        list(name="Department of Education", tier="toptier", type="awarding"),
-        list(name="Institute of Museum and Library Services", tier="toptier",
-             type="awarding"),
-        list(name="Smithsonian Institution", tier="toptier", type="awarding"),
-        list(name="Department of Commerce", tier="toptier", type="awarding"),
-        list(name="Department of Education", tier="toptier", type="awarding"),
-        list(name="Department of the Interior", tier="toptier",
-             type="awarding")),
-      award_type_codes=c("02", "03", "04", "05"), # Only grants
-      keywords=as.list(keywords),
-      recipient_type_names=list("higher_education"),
-      # An array syntax quirk in the API demands this double list(list())
-      time_period=list(list(start_date=from_date, end_date=to_date))),
-    limit=50, page=1, order="desc", subawards="false"
-  )
+  if (is.null(payload)) {
+    payload <- list(
+      fields=c("Award ID", "Recipient Name", "Description",
+               "Start Date", "End Date", "Award Amount",
+               "Awarding Agency", "Awarding Sub Agency",
+               "Funding Agency", "Funding Sub Agency"),
+      filters=list(
+        agencies=list(
+          # These should be agencies that are not covered by:
+          # Federal Reporter, NIH RePORTER or NSF
+          # because the data is limited from USAspending compared to other sources
+          list(name="Department of Agriculture", tier="toptier", type="awarding"),
+          list(name="Department of Defense", tier="toptier", type="awarding"),
+          list(name="National Aeronautics and Space Administration", tier="toptier",
+               type="awarding"),
+          list(name="Environmental Protection Agency", tier="toptier",
+               type="awarding"),
+          list(name="Department of Education", tier="toptier", type="awarding"),
+          list(name="Institute of Museum and Library Services", tier="toptier",
+               type="awarding"),
+          list(name="Smithsonian Institution", tier="toptier", type="awarding"),
+          list(name="Department of Commerce", tier="toptier", type="awarding"),
+          list(name="Department of Education", tier="toptier", type="awarding"),
+          list(name="Department of the Interior", tier="toptier",
+               type="awarding")),
+        award_type_codes=c("02", "03", "04", "05"), # Only grants
+        keywords=as.list(keywords),
+        recipient_type_names=list("higher_education"),
+        # An array syntax quirk in the API demands this double list(list())
+        time_period=list(list(start_date=from_date, end_date=to_date))),
+      limit=50, page=1, order="desc", subawards="false"
+    )
+  }
 
   # query API
   response <- request(url, "post", verbose, payload)
