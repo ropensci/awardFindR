@@ -4,7 +4,7 @@
 \alias{get_sloan}
 \title{Search for a set of keywords in the Sloan grants database.}
 \usage{
-get_sloan(keyword, from_year, to_year, verbose = FALSE)
+get_sloan(keyword, from_year, to_year, verbose = FALSE, grantee = FALSE)
 }
 \arguments{
 \item{keyword}{Keyword to query}

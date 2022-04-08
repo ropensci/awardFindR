@@ -14,14 +14,14 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 25 Mar 2022 21:45:49 GMT
+      date: Fri, 08 Apr 2022 18:19:06 GMT
       server: Apache
-      last-modified: Fri, 18 Mar 2022 11:10:01 GMT
-      etag: '"1907-5da7c301c1447-gzip"'
+      last-modified: Wed, 30 Mar 2022 11:10:03 GMT
+      etag: '"18f5-5db6d964bc126-gzip"'
       accept-ranges: bytes
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '2490'
+      content-length: '2480'
       content-type: text/html
     body:
       encoding: UTF-8
@@ -51,14 +51,13 @@ http_interactions:
         href=\"/search.html\">Search</a></li>\n<li><a href=\"/mail.html\">Get Involved:
         Mailing Lists</a></li>\n<li><a href=\"https://contributor.r-project.org/\">Get
         Involved: Contributing</a></li>\n<li><a href=\"https://developer.R-project.org/\">Developer
-        Pages</a></li>\n<li><a href=\"https://developer.r-project.org/Blog/public/\">R
-        Blog</a></li>\n</ul>\n</div>\n<div class=\"col-xs-6 col-sm-12\">\n<h2 id=\"r-foundation\">R
-        Foundation</h2>\n<ul>\n<li><a href=\"/foundation/\">Foundation</a></li>\n<li><a
-        href=\"/foundation/board.html\">Board</a></li>\n<li><a href=\"/foundation/members.html\">Members</a></li>\n<li><a
-        href=\"/foundation/donors.html\">Donors</a></li>\n<li><a href=\"/foundation/donations.html\">Donate</a></li>\n</ul>\n<h2
-        id=\"help-with-r\">Help With R</h2>\n<ul>\n<li><a href=\"/help.html\">Getting
-        Help</a></li>\n</ul>\n<h2 id=\"documentation\">Documentation</h2>\n<ul>\n<li><a
-        href=\"https://cran.r-project.org/manuals.html\">Manuals</a></li>\n<li><a
+        Pages</a></li>\n<li><a href=\"https://blog.r-project.org/\">R Blog</a></li>\n</ul>\n</div>\n<div
+        class=\"col-xs-6 col-sm-12\">\n<h2 id=\"r-foundation\">R Foundation</h2>\n<ul>\n<li><a
+        href=\"/foundation/\">Foundation</a></li>\n<li><a href=\"/foundation/board.html\">Board</a></li>\n<li><a
+        href=\"/foundation/members.html\">Members</a></li>\n<li><a href=\"/foundation/donors.html\">Donors</a></li>\n<li><a
+        href=\"/foundation/donations.html\">Donate</a></li>\n</ul>\n<h2 id=\"help-with-r\">Help
+        With R</h2>\n<ul>\n<li><a href=\"/help.html\">Getting Help</a></li>\n</ul>\n<h2
+        id=\"documentation\">Documentation</h2>\n<ul>\n<li><a href=\"https://cran.r-project.org/manuals.html\">Manuals</a></li>\n<li><a
         href=\"https://cran.r-project.org/faqs.html\">FAQs</a></li>\n<li><a href=\"https://journal.r-project.org\">The
         R Journal</a></li>\n<li><a href=\"/doc/bib/R-books.html\">Books</a></li>\n<li><a
         href=\"/certification.html\">Certification</a></li>\n<li><a href=\"/other-docs.html\">Other</a></li>\n</ul>\n<h2
@@ -83,7 +82,7 @@ http_interactions:
         to the organisers of useR! 2020 for a successful online conference. Recorded
         tutorials and talks from the conference are available on the <a href=\"https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/playlists\">R
         Consortium YouTube channel</a>.</li>\n<li>You can support the R Foundation
-        with a renewable subscription as a <a href=\"https://www.r-project.org/foundation//donations.html\">supporting
+        with a renewable subscription as a <a href=\"https://www.r-project.org/foundation/donations.html\">supporting
         member</a></li>\n</ul>\n<h2 id=\"news-via-twitter\">News via Twitter</h2>\n<a
         class=\"twitter-timeline\"\n href=\"https://twitter.com/_R_Foundation?ref_src=twsrc%5Etfw\"\n
         data-width=\"400\"\n data-show-replies=\"false\"\n data-chrome=\"noheader,nofooter,noborders\"\n
@@ -102,7 +101,7 @@ http_interactions:
         Bootstrap's JavaScript plugins) -->\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>\n
         \   <!-- Include all compiled plugins (below), or include individual files
         as needed -->\n    <script src=\"/js/bootstrap.min.js\"></script>\n  </body>\n</html>\n"
-  recorded_at: 2022-03-25 21:45:50 GMT
+  recorded_at: 2022-04-08 18:19:07 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -119,14 +118,14 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 25 Mar 2022 21:45:50 GMT
+      date: Fri, 08 Apr 2022 18:19:06 GMT
       server: Apache
-      last-modified: Fri, 18 Mar 2022 11:10:01 GMT
-      etag: '"1907-5da7c301c1447-gzip"'
+      last-modified: Wed, 30 Mar 2022 11:10:03 GMT
+      etag: '"18f5-5db6d964bc126-gzip"'
       accept-ranges: bytes
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '2490'
+      content-length: '2480'
       content-type: text/html
     body:
       encoding: UTF-8
@@ -156,14 +155,13 @@ http_interactions:
         href=\"/search.html\">Search</a></li>\n<li><a href=\"/mail.html\">Get Involved:
         Mailing Lists</a></li>\n<li><a href=\"https://contributor.r-project.org/\">Get
         Involved: Contributing</a></li>\n<li><a href=\"https://developer.R-project.org/\">Developer
-        Pages</a></li>\n<li><a href=\"https://developer.r-project.org/Blog/public/\">R
-        Blog</a></li>\n</ul>\n</div>\n<div class=\"col-xs-6 col-sm-12\">\n<h2 id=\"r-foundation\">R
-        Foundation</h2>\n<ul>\n<li><a href=\"/foundation/\">Foundation</a></li>\n<li><a
-        href=\"/foundation/board.html\">Board</a></li>\n<li><a href=\"/foundation/members.html\">Members</a></li>\n<li><a
-        href=\"/foundation/donors.html\">Donors</a></li>\n<li><a href=\"/foundation/donations.html\">Donate</a></li>\n</ul>\n<h2
-        id=\"help-with-r\">Help With R</h2>\n<ul>\n<li><a href=\"/help.html\">Getting
-        Help</a></li>\n</ul>\n<h2 id=\"documentation\">Documentation</h2>\n<ul>\n<li><a
-        href=\"https://cran.r-project.org/manuals.html\">Manuals</a></li>\n<li><a
+        Pages</a></li>\n<li><a href=\"https://blog.r-project.org/\">R Blog</a></li>\n</ul>\n</div>\n<div
+        class=\"col-xs-6 col-sm-12\">\n<h2 id=\"r-foundation\">R Foundation</h2>\n<ul>\n<li><a
+        href=\"/foundation/\">Foundation</a></li>\n<li><a href=\"/foundation/board.html\">Board</a></li>\n<li><a
+        href=\"/foundation/members.html\">Members</a></li>\n<li><a href=\"/foundation/donors.html\">Donors</a></li>\n<li><a
+        href=\"/foundation/donations.html\">Donate</a></li>\n</ul>\n<h2 id=\"help-with-r\">Help
+        With R</h2>\n<ul>\n<li><a href=\"/help.html\">Getting Help</a></li>\n</ul>\n<h2
+        id=\"documentation\">Documentation</h2>\n<ul>\n<li><a href=\"https://cran.r-project.org/manuals.html\">Manuals</a></li>\n<li><a
         href=\"https://cran.r-project.org/faqs.html\">FAQs</a></li>\n<li><a href=\"https://journal.r-project.org\">The
         R Journal</a></li>\n<li><a href=\"/doc/bib/R-books.html\">Books</a></li>\n<li><a
         href=\"/certification.html\">Certification</a></li>\n<li><a href=\"/other-docs.html\">Other</a></li>\n</ul>\n<h2
@@ -188,7 +186,7 @@ http_interactions:
         to the organisers of useR! 2020 for a successful online conference. Recorded
         tutorials and talks from the conference are available on the <a href=\"https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/playlists\">R
         Consortium YouTube channel</a>.</li>\n<li>You can support the R Foundation
-        with a renewable subscription as a <a href=\"https://www.r-project.org/foundation//donations.html\">supporting
+        with a renewable subscription as a <a href=\"https://www.r-project.org/foundation/donations.html\">supporting
         member</a></li>\n</ul>\n<h2 id=\"news-via-twitter\">News via Twitter</h2>\n<a
         class=\"twitter-timeline\"\n href=\"https://twitter.com/_R_Foundation?ref_src=twsrc%5Etfw\"\n
         data-width=\"400\"\n data-show-replies=\"false\"\n data-chrome=\"noheader,nofooter,noborders\"\n
@@ -207,5 +205,5 @@ http_interactions:
         Bootstrap's JavaScript plugins) -->\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>\n
         \   <!-- Include all compiled plugins (below), or include individual files
         as needed -->\n    <script src=\"/js/bootstrap.min.js\"></script>\n  </body>\n</html>\n"
-  recorded_at: 2022-03-25 21:45:50 GMT
+  recorded_at: 2022-04-08 18:19:07 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
