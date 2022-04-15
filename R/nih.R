@@ -69,8 +69,9 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE, payload=NULL) {
   df
 }
 
-.standardize_nih <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, get_nih, from_date, to_date, verbose)
+.standardize_nih <- function(keywords, from_date, to_date, verbose,
+                             payload=NULL) {
+  raw <- lapply(keywords, get_nih, from_date, to_date, verbose, payload)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     message("No results from NIH")

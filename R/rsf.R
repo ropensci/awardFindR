@@ -7,7 +7,7 @@
 get_rsf <- function(keyword, verbose=FALSE) {
   # First we use the general search function to find potential awards
   url <- "https://www.russellsage.org"
-  path <- paste0("/search/node/", keyword)
+  path <- paste0("/search/node/", xml2::url_escape(keyword))
 
   # Collect all the links, looping through pages as necessary
   links <- c()
