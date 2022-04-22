@@ -3,6 +3,7 @@ NULL
 
 #' Search for a set of keywords in the Sloan grants database.
 #' @inheritParams get_neh
+#' @param grantee Use the web-based search function instead of an internal grep(), ideal for searching names
 #' @return A data.frame
 #' @export
 #' @examples
@@ -10,9 +11,17 @@ NULL
 #' \dontrun{
 #' sloan <- get_sloan("case studies", 2018, 2020)
 #' }
-get_sloan <- function(keyword, from_year, to_year, verbose=FALSE) {
-  url <- paste0("https://sloan.org/grants-database",
-  "?dynamic=1&order_by=approved_at&order_by_direction=desc&limit=3000")
+get_sloan <- function(keyword, from_year, to_year,
+                      verbose=FALSE, grantee=FALSE) {
+
+  if (grantee == TRUE) {
+    url <- paste0("https://sloan.org/grants-database?keywords=", xml2::url_escape(keyword),
+                  "&dynamic=1&order_by=approved_at&order_by_direction=desc&limit=3000")
+  } else {
+    url <- paste0("https://sloan.org/grants-database",
+                  "?dynamic=1&order_by=approved_at&order_by_direction=desc&limit=3000")
+
+  }
 
   response <- request(url, "get", verbose)
 
@@ -20,9 +29,13 @@ get_sloan <- function(keyword, from_year, to_year, verbose=FALSE) {
     rvest::html_nodes(response, "div.brief-description"), trim=TRUE)
 
   # this is the search function
-  hits <- grepl(keyword, descriptions, ignore.case=TRUE)
-  if (!any(hits)) {
-    return(NULL) # No results
+  if (grantee==FALSE) {
+    hits <- grepl(keyword, descriptions, ignore.case=TRUE)
+    if (!any(hits)) {
+      return(NULL) # No results
+    }
+  } else {
+    hits <- rep(TRUE, length(descriptions))
   }
 
   description <- descriptions[hits]
@@ -56,6 +69,9 @@ get_sloan <- function(keyword, from_year, to_year, verbose=FALSE) {
     extra <- rvest::html_nodes(entry, "ul.col > li") %>%
       rvest::html_nodes(xpath="./text()[normalize-space()]") %>%
       rvest::html_text(trim=TRUE)
+    if (length(extra)==0) {
+      data.frame(pi=NA, program=NA)
+    }
     data.frame(pi=extra[length(extra)], program=extra[1],
                stringsAsFactors = FALSE)
   })
@@ -64,14 +80,18 @@ get_sloan <- function(keyword, from_year, to_year, verbose=FALSE) {
   df <- cbind(df, extra) # End assemble
   year <- NULL
 
-  subset(df, year >= from_year, year <= to_year)
+  df <- subset(df, year >= from_year, year <= to_year)
+
+  df
+
 }
 
-.standardize_sloan <- function(keywords, from_date, to_date, verbose) {
+.standardize_sloan <- function(keywords, from_date, to_date,
+                               verbose, grantee=FALSE) {
   raw <- lapply(keywords, get_sloan,
                 as.integer(format.Date(from_date, "%Y")),
                 as.integer(format.Date(to_date, "%Y")),
-                verbose)
+                verbose, grantee)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     message("No results from Sloan")

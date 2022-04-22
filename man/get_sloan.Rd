@@ -14,6 +14,8 @@ get_sloan(keyword, from_year, to_year, verbose = FALSE, grantee = FALSE)
 \item{to_year}{Ending year to search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
+
+\item{grantee}{Use the web-based search function instead of an internal grep(), ideal for searching names}
 }
 \value{
 A data.frame
