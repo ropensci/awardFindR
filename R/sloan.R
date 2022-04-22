@@ -28,7 +28,7 @@ get_sloan <- function(keyword, from_year, to_year,
   descriptions <- rvest::html_text(
     rvest::html_nodes(response, "div.brief-description"), trim=TRUE)
 
-  # this is the search function
+  # this is the search function, unless we're using the web search
   if (grantee==FALSE) {
     hits <- grepl(keyword, descriptions, ignore.case=TRUE)
     if (!any(hits)) {
@@ -42,6 +42,10 @@ get_sloan <- function(keyword, from_year, to_year,
 
   results <- rvest::html_node(response, "ul.data-list")
   results <- rvest::html_children(results)[hits]
+
+  if (length(results)==0) {
+    return(NULL)
+  }
 
   grantee <- rvest::html_nodes(results, "div.grantee") %>%
     rvest::html_nodes(xpath="./text()[normalize-space()]") %>%
