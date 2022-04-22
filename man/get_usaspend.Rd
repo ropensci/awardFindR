@@ -4,7 +4,7 @@
 \alias{get_usaspend}
 \title{Search the USAspending database}
 \usage{
-get_usaspend(keywords, from_date, to_date, verbose)
+get_usaspend(keywords, from_date, to_date, verbose, payload = NULL)
 }
 \arguments{
 \item{keywords}{Vector of strings to search}
@@ -14,6 +14,8 @@ get_usaspend(keywords, from_date, to_date, verbose)
 \item{to_date}{Date object to end search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
+
+\item{payload}{A custom NIH search query object. Only for advanced purposes. default: null}
 }
 \value{
 a data.frame

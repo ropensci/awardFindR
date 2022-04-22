@@ -4,7 +4,7 @@
 \alias{get_neh}
 \title{Get relevant awards from NEH}
 \usage{
-get_neh(keyword, from_year, to_year, verbose = FALSE)
+get_neh(keyword, from_year, to_year, verbose = FALSE, payload = NULL)
 }
 \arguments{
 \item{keyword}{Keyword to query}
@@ -14,6 +14,8 @@ get_neh(keyword, from_year, to_year, verbose = FALSE)
 \item{to_year}{Ending year to search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
+
+\item{payload}{Custom payload, for internal use only. default: NULL}
 }
 \value{
 A raw data.frame with the relevant results from NEH

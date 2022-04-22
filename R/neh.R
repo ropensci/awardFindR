@@ -3,18 +3,21 @@
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
 #' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @param payload Custom payload, for internal use only. default: NULL
 #' @return A raw data.frame with the relevant results from NEH
 #' @export
 #' @examples
 #' \dontrun{neh <- get_neh("ethnography", 2018, 2020)}
-get_neh <- function(keyword, from_year, to_year, verbose=FALSE) {
+get_neh <- function(keyword, from_year, to_year, verbose=FALSE, payload=NULL) {
   base_url <- "https://securegrants.neh.gov"
-  query <- paste0("/publicquery/main.aspx?q=1&n=0&o=0&k=1&kv=",
-                  gsub(" ", "+", keyword),
-                  "&kj=phrase&w=1&f=0&s=0&cd=0&p=0&d=0&at=0&y=1&yf=",
-                  from_year, "&yt=", to_year,
-                  "&prd=0&cov=0&prz=0&wp=0&ca=0&or=DESC&ob=year")
-  url <- paste0(base_url, query)
+  if (is.null(payload)) {
+    payload <- paste0("/publicquery/main.aspx?q=1&n=0&o=0&k=1&kv=",
+                    gsub(" ", "+", keyword),
+                    "&kj=phrase&w=1&f=0&s=0&cd=0&p=0&d=0&at=0&y=1&yf=",
+                    from_year, "&yt=", to_year,
+                    "&prd=0&cov=0&prz=0&wp=0&ca=0&or=DESC&ob=year")
+  }
+  url <- paste0(base_url, payload)
 
   session <- rvest::session(base_url)
   if (verbose==TRUE) message(paste("GET", url, "... "), appendLF = FALSE)

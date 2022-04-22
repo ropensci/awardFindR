@@ -1,0 +1,377 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.openphilanthropy.org/giving/grants?keys=%22qualitative%22
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 08 Apr 2022 18:19:15 GMT
+      content-type: text/html; charset=utf-8
+      x-powered-by: PHP/7.4.28
+      x-drupal-cache: MISS
+      expires: Sun, 19 Nov 1978 05:00:00 GMT
+      cache-control: no-cache, must-revalidate
+      x-content-type-options: nosniff
+      content-language: en
+      x-frame-options: SAMEORIGIN
+      permissions-policy: interest-cohort=()
+      x-generator: Drupal 7 (http://drupal.org)
+      link: <https://www.openphilanthropy.org/giving/grants>; rel="canonical",<https://www.openphilanthropy.org/giving/grants>;
+        rel="shortlink"
+      vary: Accept-Encoding
+      cf-cache-status: DYNAMIC
+      expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      server: cloudflare
+      cf-ray: 6f8d0299acd41912-EWR
+      content-encoding: gzip
+    body:
+      encoding: UTF-8
+      file: no
+      string: "\uFEFF<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n  <title>Grants
+        Database | Open Philanthropy</title>\n  <meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=utf-8\" />\n<link rel=\"shortcut icon\" href=\"https://www.openphilanthropy.org/sites/all/themes/op_basic/favicon.ico\"
+        type=\"image/vnd.microsoft.icon\" />\n<meta name=\"description\" content=\"Open
+        Philanthropy’s mission is to give as effectively as we can and share our findings
+        openly so that anyone can build on our work. Through research and grantmaking,
+        we hope to learn how to make philanthropy go especially far in terms of improving
+        lives.\" />\n<meta name=\"generator\" content=\"Drupal 7 (http://drupal.org)\"
+        />\n<link rel=\"canonical\" href=\"https://www.openphilanthropy.org/giving/grants\"
+        />\n<link rel=\"shortlink\" href=\"https://www.openphilanthropy.org/giving/grants\"
+        />\n<meta property=\"og:site_name\" content=\"Open Philanthropy\" />\n<meta
+        property=\"og:type\" content=\"article\" />\n<meta property=\"og:url\" content=\"https://www.openphilanthropy.org/giving/grants\"
+        />\n<meta property=\"og:title\" content=\"Grants Database\" />\n<meta property=\"og:image\"
+        content=\"https://www.openphilanthropy.org/sites/default/files/openphil-screenshot.png\"
+        />\n<meta property=\"og:image:secure_url\" content=\"https://www.openphilanthropy.org/sites/default/files/openphil-screenshot.png\"
+        />\n<meta property=\"og:image:type\" content=\"image/png\" />\n<meta property=\"og:image:width\"
+        content=\"1200\" />\n<meta property=\"og:image:height\" content=\"630\" />\n<meta
+        name=\"twitter:card\" content=\"summary\" />\n<meta name=\"twitter:site\"
+        content=\"@open_phil\" />\n<meta name=\"twitter:image\" content=\"https://www.openphilanthropy.org/sites/default/files/OpenPhilanthropyProject.png\"
+        />\n  <style type=\"text/css\" media=\"all\">\n@import url(\"https://www.openphilanthropy.org/modules/system/system.base.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/modules/system/system.menus.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/modules/system/system.messages.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/modules/system/system.theme.css?r8tvhc\");\n</style>\n<style
+        type=\"text/css\" media=\"all\">\n@import url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.accordion.min.css?r8tvhc\");\n</style>\n<style
+        type=\"text/css\" media=\"all\">\n@import url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/comment_notify/comment_notify.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/modules/comment/comment.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/modules/field/theme/field.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/footnotes/footnotes.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/modules/custom/grants_summary/grants_summary.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/modules/node/node.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/modules/search/search.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/modules/user/user.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/views/css/views.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/caption_filter/caption-filter.css?r8tvhc\");\n</style>\n<style
+        type=\"text/css\" media=\"all\">\n@import url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/ctools/css/ctools.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/typogrify/typogrify.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/modules/contrib/content_type_extras/css/content_type_extras.css?r8tvhc\");\n</style>\n<style
+        type=\"text/css\" media=\"screen\">\n@import url(\"https://www.openphilanthropy.org/sites/all/themes/op_basic/styles/css/global/normalize.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/themes/op_basic/styles/css/global/op-fonts.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/themes/op_basic/styles/css/global/html.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/themes/op_basic/styles/css/global/meanmenu.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/themes/op_basic/styles/css/global/global.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/themes/op_basic/styles/css/pages/pages.css?r8tvhc\");\n@import
+        url(\"https://www.openphilanthropy.org/sites/all/themes/op_basic/styles/css/pages/custom.css?r8tvhc\");\n</style>\n<style
+        type=\"text/css\" media=\"all\">\n@import url(\"https://www.openphilanthropy.org/sites/all/themes/op_basic/styles/css/global/admin.css?r8tvhc\");\n</style>\n<link
+        type=\"text/css\" rel=\"stylesheet\" href=\"//fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic,900,900italic&amp;r8tvhc\"
+        media=\"all\" />\n  <script type=\"text/javascript\" src=\"//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js\"></script>\n<script
+        type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\nwindow.jQuery || document.write(\"<script
+        src='/sites/all/modules/contrib/jquery_update/replace/jquery/2.1/jquery.min.js'>\\x3C/script>\")\n//--><!]]>\n</script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/misc/jquery-extend-3.4.0.js?v=2.1.4\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/misc/jquery-html-prefilter-3.5.0-backport.js?v=2.1.4\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/misc/jquery.once.js?v=1.2\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/misc/drupal.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js\"></script>\n<script
+        type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\nwindow.jQuery.ui ||
+        document.write(\"<script src='/sites/all/modules/contrib/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\\x3C/script>\")\n//--><!]]>\n</script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/jquery_update/replace/jquery.form/4/jquery.form.min.js?v=4.2.1\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/misc/ajax.js?v=7.87\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/jquery_update/js/jquery_update.js?v=0.0.1\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/comment_notify/comment_notify.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/tablesorter/tablesortervar.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/caption_filter/js/caption-filter.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/resp_img/resp_img.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/better_exposed_filters/better_exposed_filters.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/views_selective_filters/js/attachBehaviours.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/views/js/base.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/misc/progress.js?v=7.87\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/views/js/ajax_view.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/libraries/tablesorter/jquery.tablesorter.min.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/libraries/tablesorter/jquery.metadata.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/libraries/tablesorter/addons/pager/jquery.tablesorter.pager.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/modules/contrib/google_analytics/googleanalytics.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\n(function(i,s,o,g,r,a,m){i[\"GoogleAnalyticsObject\"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+        Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\"script\",\"https://www.google-analytics.com/analytics.js\",\"ga\");ga(\"create\",
+        \"UA-52742292-1\", {\"cookieDomain\":\"auto\"});ga(\"set\", \"anonymizeIp\",
+        true);ga(\"send\", \"pageview\");\n//--><!]]>\n</script>\n<script type=\"text/javascript\"
+        src=\"https://www.openphilanthropy.org/sites/all/themes/op_basic/scripts/lib/jquery-migrate-1.0.0.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/themes/op_basic/scripts/lib/mean-menu/jquery.meanmenu.min.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/themes/op_basic/scripts/lib/jquery-validation/dist/jquery.validate.min.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/themes/op_basic/scripts/lib/multiselect/jquery.multiselect.min.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/themes/op_basic/scripts/lib/dropkick.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/themes/op_basic/scripts/lib/jquery.pep.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/themes/op_basic/scripts/lib/tableHeadFixer.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\" src=\"https://www.openphilanthropy.org/sites/all/themes/op_basic/scripts/main.js?r8tvhc\"></script>\n<script
+        type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\njQuery.extend(Drupal.settings,
+        {\"basePath\":\"\\/\",\"pathPrefix\":\"\",\"setHasJsCookie\":0,\"ajaxPageState\":{\"theme\":\"op_basic\",\"theme_token\":\"aJXohFmq41TfhGn7IMXenV6UTRdu1NYdb-9J_O2uHB0\",\"jquery_version\":\"2.1\",\"js\":{\"\\/\\/ajax.googleapis.com\\/ajax\\/libs\\/jquery\\/2.1.4\\/jquery.min.js\":1,\"0\":1,\"misc\\/jquery-extend-3.4.0.js\":1,\"misc\\/jquery-html-prefilter-3.5.0-backport.js\":1,\"misc\\/jquery.once.js\":1,\"misc\\/drupal.js\":1,\"\\/\\/ajax.googleapis.com\\/ajax\\/libs\\/jqueryui\\/1.10.2\\/jquery-ui.min.js\":1,\"1\":1,\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/ui\\/external\\/jquery.cookie.js\":1,\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/replace\\/jquery.form\\/4\\/jquery.form.min.js\":1,\"misc\\/ajax.js\":1,\"sites\\/all\\/modules\\/contrib\\/jquery_update\\/js\\/jquery_update.js\":1,\"sites\\/all\\/modules\\/contrib\\/comment_notify\\/comment_notify.js\":1,\"sites\\/all\\/modules\\/contrib\\/tablesorter\\/tablesortervar.js\":1,\"sites\\/all\\/modules\\/contrib\\/caption_filter\\/js\\/caption-filter.js\":1,\"sites\\/all\\/modules\\/contrib\\/resp_img\\/resp_img.js\":1,\"sites\\/all\\/modules\\/contrib\\/better_exposed_filters\\/better_exposed_filters.js\":1,\"sites\\/all\\/modules\\/contrib\\/views_selective_filters\\/js\\/attachBehaviours.js\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/js\\/base.js\":1,\"misc\\/progress.js\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/js\\/ajax_view.js\":1,\"sites\\/all\\/libraries\\/tablesorter\\/jquery.tablesorter.min.js\":1,\"sites\\/all\\/libraries\\/tablesorter\\/jquery.metadata.js\":1,\"sites\\/all\\/libraries\\/tablesorter\\/addons\\/pager\\/jquery.tablesorter.pager.js\":1,\"sites\\/all\\/modules\\/contrib\\/google_analytics\\/googleanalytics.js\":1,\"2\":1,\"sites\\/all\\/themes\\/op_basic\\/scripts\\/lib\\/jquery-migrate-1.0.0.js\":1,\"sites\\/all\\/themes\\/op_basic\\/scripts\\/lib\\/mean-menu\\/jquery.meanmenu.min.js\":1,\"sites\\/all\\/themes\\/op_basic\\/scripts\\/lib\\/jquery-validation\\/dist\\/jquery.validate.min.js\":1,\"sites\\/all\\/themes\\/op_basic\\/scripts\\/lib\\/multiselect\\/jquery.multiselect.min.js\":1,\"sites\\/all\\/themes\\/op_basic\\/scripts\\/lib\\/dropkick.js\":1,\"sites\\/all\\/themes\\/op_basic\\/scripts\\/lib\\/jquery.pep.js\":1,\"sites\\/all\\/themes\\/op_basic\\/scripts\\/lib\\/tableHeadFixer.js\":1,\"sites\\/all\\/themes\\/op_basic\\/scripts\\/main.js\":1},\"css\":{\"modules\\/system\\/system.base.css\":1,\"modules\\/system\\/system.menus.css\":1,\"modules\\/system\\/system.messages.css\":1,\"modules\\/system\\/system.theme.css\":1,\"misc\\/ui\\/jquery.ui.core.css\":1,\"misc\\/ui\\/jquery.ui.theme.css\":1,\"misc\\/ui\\/jquery.ui.accordion.css\":1,\"sites\\/all\\/modules\\/contrib\\/comment_notify\\/comment_notify.css\":1,\"modules\\/comment\\/comment.css\":1,\"modules\\/field\\/theme\\/field.css\":1,\"sites\\/all\\/modules\\/contrib\\/footnotes\\/footnotes.css\":1,\"sites\\/all\\/modules\\/custom\\/grants_summary\\/grants_summary.css\":1,\"modules\\/node\\/node.css\":1,\"modules\\/search\\/search.css\":1,\"modules\\/user\\/user.css\":1,\"sites\\/all\\/modules\\/contrib\\/views\\/css\\/views.css\":1,\"sites\\/all\\/modules\\/contrib\\/caption_filter\\/caption-filter.css\":1,\"sites\\/all\\/modules\\/contrib\\/ctools\\/css\\/ctools.css\":1,\"sites\\/all\\/modules\\/contrib\\/typogrify\\/typogrify.css\":1,\"sites\\/all\\/modules\\/contrib\\/content_type_extras\\/css\\/content_type_extras.css\":1,\"sites\\/all\\/themes\\/op_basic\\/styles\\/css\\/global\\/normalize.css\":1,\"sites\\/all\\/themes\\/op_basic\\/styles\\/css\\/global\\/op-fonts.css\":1,\"sites\\/all\\/themes\\/op_basic\\/styles\\/css\\/global\\/html.css\":1,\"sites\\/all\\/themes\\/op_basic\\/styles\\/css\\/global\\/meanmenu.css\":1,\"sites\\/all\\/themes\\/op_basic\\/styles\\/css\\/global\\/global.css\":1,\"sites\\/all\\/themes\\/op_basic\\/styles\\/css\\/pages\\/pages.css\":1,\"sites\\/all\\/themes\\/op_basic\\/styles\\/css\\/pages\\/custom.css\":1,\"sites\\/all\\/themes\\/op_basic\\/styles\\/css\\/global\\/admin.css\":1,\"\\/\\/fonts.googleapis.com\\/css?family=Merriweather:300,300italic,400,400italic,700,700italic,900,900italic\":1}},\"respImg\":{\"default_suffix\":\"_mobile\",\"current_suffix\":false,\"forceRedirect\":\"0\",\"forceResize\":\"0\",\"reloadOnResize\":\"0\",\"useDevicePixelRatio\":1,\"suffixes\":{\"_mobile\":1}},\"urlIsAjaxTrusted\":{\"\\/giving\\/grants\":true,\"\\/views\\/ajax\":true,\"\\/giving\\/grants?keys=%22qualitative%22\":true},\"better_exposed_filters\":{\"datepicker\":false,\"slider\":false,\"settings\":[],\"autosubmit\":false,\"views\":{\"grants_db\":{\"displays\":{\"page\":{\"filters\":{\"keys\":{\"required\":false},\"field_org_name_value_selective\":{\"required\":false},\"field_focus_area_target_id_selective\":{\"required\":false},\"field_date_value\":{\"required\":false}}}}}}},\"views\":{\"ajax_path\":\"\\/views\\/ajax\",\"ajaxViews\":{\"views_dom_id:c07584c66db98c1da21d3a75af381a03\":{\"view_name\":\"grants_db\",\"view_display_id\":\"page\",\"view_args\":\"\",\"view_path\":\"giving\\/grants\",\"view_base_path\":\"giving\\/grants\",\"view_dom_id\":\"c07584c66db98c1da21d3a75af381a03\",\"pager_element\":0}}},\"tablesorter\":{\"zebra\":1,\"odd\":\"odd\",\"even\":\"even\"},\"googleanalytics\":{\"trackOutbound\":1,\"trackMailto\":1,\"trackDownload\":1,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\"}});\n//--><!]]>\n</script>\n
+        \ <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0,
+        maximum-scale=2.0, user-scalable=1\" />\n</head>\n<body class=\"html not-front
+        not-logged-in no-sidebars page-giving page-giving-grants layout-generic\"
+        >\n  <div id=\"skip\">\n    <a href=\"#content\">Jump to Navigation</a>\n
+        \ </div>\n    <div id=\"page\" class=\"page\">\n\n  <header id=\"header\">\n
+        \   <div class=\"container\">\n\n              <a href=\"/\" title=\"Home\"
+        rel=\"home\" id=\"logo\">\n          <img src=\"https://www.openphilanthropy.org/sites/default/files/OP-logo_white%401200px.png\"
+        alt=\"Home\"/>\n        </a>\n      \n      \n              <div id=\"header-region\">\n
+        \           <div class=\"region region-header\">\n    <div id=\"block-system-main-menu\"
+        class=\"block block-system block-menu\">\n\n    \n  <div class=\"content\">\n
+        \   <ul class=\"menu\"><li class=\"first expanded\"><a href=\"/research\">Research
+        &amp; Ideas</a><ul class=\"menu\"><li class=\"first leaf\"><a href=\"/research/cause-selection\">Cause
+        Selection</a></li>\n<li class=\"leaf\"><a href=\"/notable-lessons\">Notable
+        Lessons</a></li>\n<li class=\"collapsed\"><a href=\"/research/cause-reports\">Cause
+        Reports</a></li>\n<li class=\"leaf\"><a href=\"/research/conversations\" title=\"Conversations\">Conversations</a></li>\n<li
+        class=\"last leaf\"><a href=\"/research/history-of-philanthropy\">History
+        of Philanthropy</a></li>\n</ul></li>\n<li class=\"expanded\"><a href=\"/focus\">Focus
+        Areas</a><ul class=\"menu\"><li class=\"first collapsed\"><a href=\"/focus/us-policy\"
+        style=\"font-weight: bold;\">U.S. Policy</a></li>\n<li class=\"collapsed\"><a
+        href=\"/focus/us-policy/criminal-justice-reform\" style=\"margin-left: 10px;\">Criminal
+        Justice Reform</a></li>\n<li class=\"leaf\"><a href=\"/focus/us-policy/farm-animal-welfare\"
+        style=\"margin-left: 10px;\">Farm Animal Welfare</a></li>\n<li class=\"leaf\"><a
+        href=\"/focus/us-policy/macroeconomic-policy\" style=\"margin-left: 10px;\">Macroeconomic
+        Stabilization Policy</a></li>\n<li class=\"leaf\"><a href=\"/focus/us-policy/immigration-policy\"
+        style=\"margin-left: 10px;\">Immigration Policy</a></li>\n<li class=\"leaf\"><a
+        href=\"/focus/us-policy/land-use-reform\" style=\"margin-left: 10px;\">Land
+        Use Reform</a></li>\n<li class=\"leaf\"><a href=\"/focus/global-catastrophic-risks\"
+        style=\"font-weight: bold;\">Global Catastrophic Risks</a></li>\n<li class=\"leaf\"><a
+        href=\"/focus/global-catastrophic-risks/biosecurity\" style=\"margin-left:
+        10px;\">Biosecurity and Pandemic Preparedness</a></li>\n<li class=\"leaf\"><a
+        href=\"/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence\"
+        style=\"margin-left: 10px;\">Potential Risks from Advanced Artificial Intelligence</a></li>\n<li
+        class=\"leaf\"><a href=\"/focus/scientific-research-archive\" style=\"font-weight:
+        bold;\">Scientific Research</a></li>\n<li class=\"leaf\"><a href=\"/focus/global-health-and-development\"
+        style=\"font-weight: bold;\">Global Health &amp; Development</a></li>\n<li
+        class=\"last leaf\"><a href=\"/focus/other-areas\" style=\"font-weight: bold;\">Other
+        areas</a></li>\n</ul></li>\n<li class=\"expanded active-trail\"><a href=\"/giving/grants\"
+        class=\"active-trail active\">Giving</a><ul class=\"menu\"><li class=\"first
+        leaf active-trail\"><a href=\"/giving/grants\" class=\"active-trail active\">Grants
+        Database</a></li>\n<li class=\"leaf\"><a href=\"/giving/current-priorities\">Current
+        Priorities</a></li>\n<li class=\"leaf\"><a href=\"/giving/guide-for-grant-seekers\">Guide
+        for Grant Seekers</a></li>\n<li class=\"last leaf\"><a href=\"/our-process-grantmaking-stages\">Grantmaking
+        Stages</a></li>\n</ul></li>\n<li class=\"expanded\"><a href=\"/about\">About
+        Us</a><ul class=\"menu\"><li class=\"first leaf\"><a href=\"/about/who-we-are\">Who
+        We Are</a></li>\n<li class=\"leaf\"><a href=\"/about/vision-and-values\">Vision
+        &amp; Values</a></li>\n<li class=\"leaf\"><a href=\"/what-open-means-us\">Openness</a></li>\n<li
+        class=\"leaf\"><a href=\"/about/progress-to-date\">Progress to Date</a></li>\n<li
+        class=\"leaf\"><a href=\"/about/team\">Team</a></li>\n<li class=\"last leaf\"><a
+        href=\"/about/press-kit\">Press Kit</a></li>\n</ul></li>\n<li class=\"collapsed\"><a
+        href=\"/blog\">Blog</a></li>\n<li class=\"last expanded\"><a href=\"/get-involved\">Get
+        Involved</a><ul class=\"menu\"><li class=\"first leaf\"><a href=\"/get-involved/contact-us\">Contact
+        Us</a></li>\n<li class=\"leaf\"><a href=\"/get-involved\">Stay Updated</a></li>\n<li
+        class=\"last leaf\"><a href=\"/get-involved/working-at-open-phil\">Working
+        at Open Phil</a></li>\n</ul></li>\n</ul>  </div>\n</div>\n<div id=\"block-search-form\"
+        class=\"block block-search\">\n\n    \n  <div class=\"content\">\n    <form
+        class=\"sitesearch-360\" action=\"/giving/grants?keys=%22qualitative%22\"
+        method=\"post\" id=\"search-block-form\" accept-charset=\"UTF-8\"><div><span
+        class=\"btn-open\"></span>\n<span class=\"search-arr\"></span>\n<div class=\"container-inline\">\n
+        \     <h2 class=\"element-invisible\">Search form</h2>\n    <div class=\"form-item
+        form-type-textfield form-item-search-block-form\">\n  <label class=\"element-invisible\"
+        for=\"edit-search-block-form--2\">Search </label>\n <input title=\"Enter the
+        terms you wish to search for.\" placeholder=\"Start typing your search\" type=\"text\"
+        id=\"edit-search-block-form--2\" name=\"search_block_form\" value=\"\" size=\"15\"
+        maxlength=\"128\" class=\"form-text\" />\n</div>\n<div class=\"form-actions
+        form-wrapper\" id=\"edit-actions\"><input type=\"submit\" id=\"edit-submit\"
+        name=\"op\" value=\"Go\" class=\"form-submit\" /></div><input type=\"hidden\"
+        name=\"form_build_id\" value=\"form-t62xMDpxmT4G02g5CUCrFJvbL8NbFbJNmcXIcBL_B6E\"
+        />\n<input type=\"hidden\" name=\"form_id\" value=\"search_block_form\" />\n
+        \ <span class=\"btn-close\"></span>\n</div>\n\n</div></form>  </div>\n</div>\n
+        \ </div>\n        </div>\n      \n    </div>\n  </header>\n  \n\n  \n  <div
+        id=\"main\">\n    <section id=\"content\">\n  \n            <div id=\"content-header\">\n
+        \       <div class=\"container\">\n\n                      <div class=\"tabs\"></div>\n
+        \                     <div itemscope class=\"easy-breadcrumb\" itemtype=\"https://schema.org/BreadcrumbList\">\n
+        \         <span itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n
+        \       <span><a href=\"/\" class=\"easy-breadcrumb_segment easy-breadcrumb_segment-front\"
+        itemtype=\"https://schema.org/Thing\" itemprop=\"item\" itemscope=\"\" itemid=\"https://www.openphilanthropy.org/\"><span
+        itemprop=\"name\">Home</span></a></span>        <meta itemprop=\"position\"
+        content=\"0\" />\n      </span>\n               <span class=\"easy-breadcrumb_segment-separator\">/</span>\n
+        \               <span itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n
+        \       <span class=\"easy-breadcrumb_segment easy-breadcrumb_segment-1\"
+        itemprop=\"name\">Giving</span>        <meta itemprop=\"position\" content=\"1\"
+        />\n      </span>\n            </div>\n          \n          <div class=\"messages
+        error\">\n<h2 class=\"element-invisible\">Error message</h2>\n<em class=\"placeholder\">Warning</em>:
+        Use of undefined constant openphil_social - assumed 'openphil_social' (this
+        will throw an Error in a future version of PHP) in <em class=\"placeholder\">openphil_social_block_block_view()</em>
+        (line <em class=\"placeholder\">90</em> of <em class=\"placeholder\">/var/www/html/openphil/live/sites/all/modules/custom/openphil_social_block/openphil_social_block.module</em>).</div>\n
+        \                   \n                                <h1 class=\"title\">Grants
+        Database\n\n</h1>\n                                          <aside id=\"header-sidebar\">
+        \ <div class=\"region region-content-header-sidebar\">\n    <div id=\"block-block-3\"
+        class=\"block block-openphil-social-block page-toolbar\">\n\n    \n  <div
+        class=\"content\">\n    <div class=\"social\"><ul><li class=\"facebook\"><a
+        href=\"http://www.facebook.com/sharer/sharer.php?u=https://www.openphilanthropy.org/giving/grants?keys=%22qualitative%22\"
+        target=\"_blank\" title=\"Share on Facebook\">Facebook</a></li><li class=\"twitter\"><a
+        href=\"http://www.twitter.com/share?url=https://www.openphilanthropy.org/giving/grants?keys=%22qualitative%22\"
+        target=\"_blank\" title=\"Share on Twitter\">Twitter</a></li><li class=\"print\"><a
+        href=\"?q=/print/giving/grants\" title=\"Printer-friendly version of this
+        page.\" target=\"_blank\">Print</a></li><li class=\"save\"><a href=\"?q=/printpdf/giving/grants\"
+        title=\"Save this page as a PDF.\">Save</a></li><li class=\"rss\"><a href=\"?q=RSS\"
+        title=\"Subscribe to this RSS feed.\">RSS</a></li><li class=\"email\"><a href=\"/forward?path=giving/grants\"
+        title=\"Send this page by email.\">Email</a></li></ul></div>  </div>\n</div>\n
+        \ </div>\n</aside>\n          \n        </div>\n      </div>\n      \n      <div
+        id=\"content-area\">\n      <div class=\"container\">\n                  <div
+        class=\"region region-content\">\n    <div id=\"block-system-main\" class=\"block
+        block-system\">\n\n    \n  <div class=\"content\">\n    <div class=\"view
+        view-grants-db view-id-grants_db view-display-id-page view-dom-id-c07584c66db98c1da21d3a75af381a03\">\n
+        \           <div class=\"view-header\">\n      <p> You can browse and search
+        the grants we&#8217;ve recommended below. Click through to read about the
+        reasoning behind each grant and, in some cases, view progress updates.</p><p>Note
+        that our grantmaking priorities are primarily driven by the focus areas we’ve
+        chosen. Read more about our <a href=\"/focus\">focus areas</a> and <a href=\"/giving/current-priorities\">current
+        priorities</a>. </p>\n\n    </div>\n  \n      <div class=\"view-filters\">\n
+        \     <form action=\"/giving/grants\" method=\"get\" id=\"views-exposed-form-grants-db-page\"
+        accept-charset=\"UTF-8\"><div><div class=\"views-exposed-form\">\n  <div class=\"views-exposed-widgets
+        clearfix\">\n          <div id=\"edit-keys-wrapper\" class=\"views-exposed-widget
+        views-widget-filter-keys\">\n                  <label for=\"edit-keys\">\n
+        \           Search Terms          </label>\n                        <div class=\"views-widget\">\n
+        \         <div class=\"form-item form-type-textfield form-item-keys\">\n <input
+        title=\"Enter the terms you wish to search for.\" type=\"text\" id=\"edit-keys\"
+        name=\"keys\" value=\"&quot;qualitative&quot;\" size=\"15\" maxlength=\"128\"
+        class=\"form-text\" />\n</div>\n        </div>\n                  <div class=\"description\">\n
+        \           Please enter between 3 and 128 characters          </div>\n              </div>\n
+        \         <div id=\"edit-field-org-name-value-selective-wrapper\" class=\"views-exposed-widget
+        views-widget-filter-field_org_name_value_selective\">\n                  <label
+        for=\"edit-field-org-name-value-selective\">\n            Organization          </label>\n
+        \                       <div class=\"views-widget\">\n          <div class=\"form-item
+        form-type-select form-item-field-org-name-value-selective\">\n <select id=\"edit-field-org-name-value-selective\"
+        name=\"field_org_name_value_selective\" class=\"form-select\"><option value=\"All\"
+        selected=\"selected\">‹ any ›</option><option value=\"Center for Popular Democracy\">Center
+        for Popular Democracy</option><option value=\"Pew Charitable Trusts\">Pew
+        Charitable Trusts</option><option value=\"Population Services International\">Population
+        Services International</option><option value=\"Georgetown University\">Georgetown
+        University</option></select>\n</div>\n        </div>\n              </div>\n
+        \         <div id=\"edit-field-focus-area-target-id-selective-wrapper\" class=\"views-exposed-widget
+        views-widget-filter-field_focus_area_target_id_selective\">\n                  <label
+        for=\"edit-field-focus-area-target-id-selective\">\n            Focus Area
+        \         </label>\n                        <div class=\"views-widget\">\n
+        \         <div class=\"form-item form-type-select form-item-field-focus-area-target-id-selective\">\n
+        <select id=\"edit-field-focus-area-target-id-selective\" name=\"field_focus_area_target_id_selective\"
+        class=\"form-select\"><option value=\"All\" selected=\"selected\">‹ any ›</option><option
+        value=\"726\">Criminal Justice Reform</option><option value=\"91\">Macroeconomic
+        Stabilization Policy</option><option value=\"631\">Other areas</option><option
+        value=\"532\">Potential Risks from Advanced Artificial Intelligence</option></select>\n</div>\n
+        \       </div>\n              </div>\n          <div id=\"date_views_exposed_filter-ecc013e95afa12f14763d55a4bf736ee-wrapper\"
+        class=\"views-exposed-widget views-widget-filter-field_date_value\">\n                  <label
+        for=\"date_views_exposed_filter-ecc013e95afa12f14763d55a4bf736ee\">\n            Year
+        \         </label>\n                        <div class=\"views-widget\">\n
+        \         <div id=\"date_views_exposed_filter-ecc013e95afa12f14763d55a4bf736ee\"
+        class=\"form-wrapper\"><div id=\"edit-field-date-value-value-wrapper\"><div
+        id=\"edit-field-date-value-value-inside-wrapper\"><div  class=\"container-inline-date\"><div
+        class=\"form-item form-type-date-select form-item-field-date-value-value\">\n
+        \ <label class=\"element-invisible\" for=\"edit-field-date-value-value\">Year
+        </label>\n <div id=\"edit-field-date-value-value\"  class=\"date-padding clearfix\"><div
+        class=\"form-item form-type-select form-item-field-date-value-value-year\">\n
+        \ <label class=\"element-invisible\" for=\"edit-field-date-value-value-year\">Year
+        </label>\n <div class=\"date-year\"><select class=\"date-year form-select\"
+        id=\"edit-field-date-value-value-year\" name=\"field_date_value[value][year]\"><option
+        value=\"\" selected=\"selected\">-Year</option><option value=\"2019\">2019</option><option
+        value=\"2020\">2020</option><option value=\"2021\">2021</option><option value=\"2022\">2022</option></select></div>\n</div>\n</div>\n</div>\n</div></div></div></div>
+        \       </div>\n              </div>\n                    <div class=\"views-exposed-widget
+        views-submit-button\">\n      <input type=\"submit\" id=\"edit-submit-grants-db\"
+        value=\"Apply\" class=\"form-submit\" />    </div>\n          <div class=\"views-exposed-widget
+        views-reset-button\">\n        <input type=\"submit\" id=\"edit-reset\" name=\"op\"
+        value=\"Reset\" class=\"form-submit\" />      </div>\n      </div>\n</div>\n</div></form>
+        \   </div>\n  \n  \n      <div class=\"view-content\">\n      <table  class=\"views-table
+        cols-5\">\n         <thead>\n      <tr>\n                  <th  class=\"views-field
+        views-field-title\" scope=\"col\">\n            <a href=\"/giving/grants?keys=%22qualitative%22&amp;field_org_name_value_selective=All&amp;field_focus_area_target_id_selective=All&amp;field_date_value%5Bvalue%5D&amp;order=title&amp;sort=asc\"
+        title=\"sort by Grant\" class=\"active\">Grant</a>          </th>\n                  <th
+        \ class=\"views-field views-field-field-org-name\" scope=\"col\">\n            <a
+        href=\"/giving/grants?keys=%22qualitative%22&amp;field_org_name_value_selective=All&amp;field_focus_area_target_id_selective=All&amp;field_date_value%5Bvalue%5D&amp;order=field_org_name&amp;sort=asc\"
+        title=\"sort by Organization Name\" class=\"active\">Organization Name</a>
+        \         </th>\n                  <th  class=\"views-field views-field-title-1\"
+        scope=\"col\">\n            <a href=\"/giving/grants?keys=%22qualitative%22&amp;field_org_name_value_selective=All&amp;field_focus_area_target_id_selective=All&amp;field_date_value%5Bvalue%5D&amp;order=title_1&amp;sort=asc\"
+        title=\"sort by Focus Area\" class=\"active\">Focus Area</a>          </th>\n
+        \                 <th  class=\"views-field views-field-field-grant-amount\"
+        scope=\"col\">\n            <a href=\"/giving/grants?keys=%22qualitative%22&amp;field_org_name_value_selective=All&amp;field_focus_area_target_id_selective=All&amp;field_date_value%5Bvalue%5D&amp;order=field_grant_amount&amp;sort=desc\"
+        title=\"sort by Amount\" class=\"active\">Amount</a>          </th>\n                  <th
+        \ class=\"views-field views-field-field-date-1 active\" scope=\"col\">\n            <a
+        href=\"/giving/grants?keys=%22qualitative%22&amp;field_org_name_value_selective=All&amp;field_focus_area_target_id_selective=All&amp;field_date_value%5Bvalue%5D&amp;order=field_date_1&amp;sort=asc\"
+        title=\"sort by Date\" class=\"active\">Date<img src=\"https://www.openphilanthropy.org/misc/arrow-asc.png\"
+        width=\"13\" height=\"13\" alt=\"sort ascending\" title=\"sort ascending\"
+        /></a>          </th>\n              </tr>\n    </thead>\n    <tbody>\n          <tr
+        >\n                  <td  class=\"views-field views-field-title\">\n            <a
+        href=\"/giving/grants/georgetown-university-center-security-and-emerging-technology\">Georgetown
+        University — Center for Security and Emerging Technology</a>          </td>\n
+        \                 <td  class=\"views-field views-field-field-org-name\">\n
+        \           <a href=\"https://cset.georgetown.edu/\" target=\"_blank\">Georgetown
+        University</a>          </td>\n                  <td  class=\"views-field
+        views-field-title-1\">\n            <a href=\"/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence\">Potential
+        Risks from Advanced Artificial Intelligence</a>          </td>\n                  <td
+        \ class=\"views-field views-field-field-grant-amount\">\n            $55,000,000
+        \         </td>\n                  <td  class=\"views-field views-field-field-date-1
+        active\">\n            <span class=\"date-display-single\">1/2019</span>          </td>\n
+        \             </tr>\n          <tr >\n                  <td  class=\"views-field
+        views-field-title\">\n            <a href=\"/focus/us-policy/macroeconomic-policy/center-popular-democracy-fed-campaign-2015\">Center
+        for Popular Democracy — Fed Up Campaign (2015)</a>          </td>\n                  <td
+        \ class=\"views-field views-field-field-org-name\">\n            <a href=\"http://populardemocracy.org/\"
+        target=\"_blank\">Center for Popular Democracy</a>          </td>\n                  <td
+        \ class=\"views-field views-field-title-1\">\n            <a href=\"/focus/us-policy/macroeconomic-policy\">Macroeconomic
+        Stabilization Policy</a>          </td>\n                  <td  class=\"views-field
+        views-field-field-grant-amount\">\n            $750,000          </td>\n                  <td
+        \ class=\"views-field views-field-field-date-1 active\">\n            <span
+        class=\"date-display-single\">1/2015</span>          </td>\n              </tr>\n
+        \         <tr >\n                  <td  class=\"views-field views-field-title\">\n
+        \           <a href=\"/focus/us-policy/criminal-justice-reform/pew-public-safety-performance-project\">Pew
+        Public Safety Performance Project</a>          </td>\n                  <td
+        \ class=\"views-field views-field-field-org-name\">\n            <a href=\"http://www.pewtrusts.org/en\"
+        target=\"_blank\">Pew Charitable Trusts</a>          </td>\n                  <td
+        \ class=\"views-field views-field-title-1\">\n            <a href=\"/focus/us-policy/criminal-justice-reform\">Criminal
+        Justice Reform</a>          </td>\n                  <td  class=\"views-field
+        views-field-field-grant-amount\">\n            $3,000,000          </td>\n
+        \                 <td  class=\"views-field views-field-field-date-1 active\">\n
+        \           <span class=\"date-display-single\">7/2014</span>          </td>\n
+        \             </tr>\n          <tr >\n                  <td  class=\"views-field
+        views-field-title\">\n            <a href=\"/focus/global-health-and-development/miscellaneous/containment-artemisinin-resistance-eastern-myanmar\">Containment
+        of Artemisinin Resistance in Eastern Myanmar</a>          </td>\n                  <td
+        \ class=\"views-field views-field-field-org-name\">\n            <a href=\"http://www.psi.org/\"
+        target=\"_blank\">Population Services International</a>          </td>\n                  <td
+        \ class=\"views-field views-field-title-1\">\n            <a href=\"/focus/other-areas\">Other
+        areas</a>          </td>\n                  <td  class=\"views-field views-field-field-grant-amount\">\n
+        \           $1,000,000          </td>\n                  <td  class=\"views-field
+        views-field-field-date-1 active\">\n            <span class=\"date-display-single\">8/2012</span>
+        \         </td>\n              </tr>\n      </tbody>\n</table>\n    </div>\n
+        \ \n  \n  \n  \n      <div class=\"view-footer\">\n      <div class=\"col-half\"><a
+        href=\"grants/spreadsheet\" class=\"download-link\">Download Database as .csv</a></div><div
+        class=\"col-half\"><em>Clicking the header of a column will sort by that selection</em></div>\n\n
+        \   </div>\n  \n  \n</div>  </div>\n</div>\n  </div>\n              </div>\n
+        \     </div>\n\n      \n      \n    </section>\n\n  </div>\n\n      <footer
+        id=\"footer\">\n      <div class=\"container\">\n            <div class=\"region
+        region-footer\">\n    <div id=\"block-block-1\" class=\"block block-block\">\n\n
+        \   \n  <div class=\"content\">\n    <ul class=\"menu\"><li><a href=\"/get-involved/contact-us\">contact
+        us</a></li><li><a href=\"/get-involved/jobs\">jobs</a></li><li><a href=\"/about/press-kit\">press
+        kit</a></li></ul><form action=\"https://openphilanthropy.us12.list-manage.com/subscribe/post?u=5f851555ed522f52a8cc7157f&amp;id=204e32798b\"
+        class=\"subscribe\" method=\"post\" target=\"_blank\"><input id=\"txt-email\"
+        name=\"EMAIL\" placeholder=\"Enter email to subscribe to updates\" type=\"text\"/><input
+        title=\"Submit\" type=\"submit\" value=\"Submit\"/></form><ul class=\"social\"><li><a
+        class=\"facebook\" href=\"https://www.facebook.com/openphilanthropy\" target=\"_blank\">facebook</a></li><li><a
+        class=\"twitter\" href=\"https://twitter.com/open_phil\" target=\"_blank\">twitter</a></li><li><a
+        class=\"rss\" href=\"/blog/rss\" target=\"_blank\">rss</a></li></ul><div class=\"copyright\">©
+        Open Philanthropy. Except as otherwise noted, this work is licensed under
+        a Creative Commons Attribution-Noncommercial-ShareAlike 3.0 United States
+        License. <br/>Some images may be copyrighted by others and not licensed for
+        re-use: see image captions or footnotes. <a href=\"/privacy-policy\">Privacy
+        policy</a></div>\n\n  </div>\n</div>\n  </div>\n      </div>\n    </footer>\n
+        \ \n</div>\n    <div class=\"region region-page-bottom\">\n    \n    <script
+        src=\"//static.getclicky.com/js\" type=\"text/javascript\"></script>\n    <script
+        type=\"text/javascript\">try { clicky.init(100914494); }catch(e){}</script>\n
+        \   <noscript><p><img alt=\"Clicky\" width=\"1\" height=\"1\" src=\"//in.getclicky.com/100914494ns.gif\"
+        /></p></noscript>\n\n  </div>\n</body>\n</html>\n"
+  recorded_at: 2022-04-08 18:19:15 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
