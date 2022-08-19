@@ -4,54 +4,36 @@
 #' @export
 #' @examples ophil <- get_ophil("qualitative", 2019, 2020)
 get_ophil <- function(keyword, from_year, to_year, verbose=FALSE) {
-  base_url <- "https://www.openphilanthropy.org/giving/grants?"
+  base_url <- "https://www.openphilanthropy.org/grants?"
   query_url <- paste0(base_url,
-                      "keys=\"", xml2::url_escape(keyword), "\"")
+                      "q=\"", xml2::url_escape(keyword), "\"&yr=",
+                      paste(from_year:to_year, collapse="&yr="))
 
   response <- request(query_url, "get", verbose)
 
-  # Everything important is a child of this table's tbody
-  results <- xml2::xml_children(
-    xml2::xml_find_first(response, "//div[@class='view-content']/table/tbody"))
+  title <- response %>% rvest::html_elements(".block-feed-post__title > a") %>%
+    rvest::html_text()
 
-  if (length(results)==0) {
-    return(NULL)  # No results?
-  }
+  dates <- response %>% rvest::html_elements(".block-feed-post__date") %>%
+    rvest::html_text2()
 
-  # Loop through each entry and extract details
-  df <- lapply(results, function(x) {
-    fields <- xml2::xml_children(x)
-    title <- xml2::xml_text(xml2::xml_find_all(fields[1], ".//a/text()"))
-    id <- xml2::xml_text(xml2::xml_find_all(fields[1], ".//a/@href"))
+  year <- unlist(lapply(strsplit(dates, " "), function(x) { x[2] }))
 
-    grantee <- xml2::xml_text(xml2::xml_find_all(fields[2], ".//a/text()"))
-    program <- xml2::xml_text(xml2::xml_find_all(fields[3], ".//a/text()"))
+  organization <- response %>% rvest::html_elements(".block-feed-post__organization-name > a") %>%
+    rvest::html_text()
 
-    amount <- xml2::xml_text(fields[4])
-    # Remove trailing and leading whitespace
-    amount <- gsub("^\\s+|\\s+$", "", amount)
-    # Remove $ and , in amounts (i.e. $1,000,000)
-    amount <- gsub("^\\$|,", "", amount)
+  program <- response %>% rvest::html_elements(".block-feed-post__focus-area > a") %>%
+    rvest::html_text()
 
-    date <- xml2::xml_text(xml2::xml_find_all(fields[5], ".//span/text()"))
+  amount <- response %>% rvest::html_elements(".block-feed-post__grant-amount") %>%
+    rvest::html_text()
+  amount <- gsub('\\$', '', amount)
+  amount <- gsub(',', '', amount)
 
-    data.frame(grantee, month=date, program,
-               amount=as.integer(amount), title, id,
-               stringsAsFactors = FALSE)
-  })
-  df <- do.call(rbind.data.frame, df)
+  link <- response %>% rvest::html_elements(".block-feed-post__link > a") %>%
+    rvest::html_attr("href")
 
-  # Subset to the years passed in the arguments
-  df$year <- as.integer(.substr_right(df$month, 4))
-  year <- NULL # For R CMD check
-  df <- subset(df, year >= from_year & year <= to_year)
-  if (nrow(df)==0) {
-    return(NULL) # No results in the date range?
-  }
-
-  df$keyword <- keyword
-
-  df
+  data.frame(organization, title, program, amount, year, link, keyword)
 }
 
 .standardize_ophil <- function(keywords, from_date, to_date, verbose) {
@@ -65,7 +47,9 @@ get_ophil <- function(keyword, from_year, to_year, verbose=FALSE) {
   }
 
   with(raw, data.frame(
-    institution=grantee, pi=NA, year, start=NA, end=NA, program, amount, id,
+    institution=organization, pi=NA,
+    year, start=NA, end=NA, program,
+    amount=as.integer(amount), id=link,
     title, abstract=NA, keyword, source="Open Philanthropy",
     stringsAsFactors = FALSE
   ))
