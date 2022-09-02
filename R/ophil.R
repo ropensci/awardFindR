@@ -14,6 +14,10 @@ get_ophil <- function(keyword, from_year, to_year, verbose=FALSE) {
   title <- response %>% rvest::html_elements(".block-feed-post__title > a") %>%
     rvest::html_text()
 
+  if (length(title)==0) {
+    return(NULL)
+  }
+
   dates <- response %>% rvest::html_elements(".block-feed-post__date") %>%
     rvest::html_text2()
 
