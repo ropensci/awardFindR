@@ -30,6 +30,7 @@ Imports:
     rvest,
     xml2,
     readxl,
+    readr,
     httr
 RoxygenNote: 7.1.2
 Suggests: 
