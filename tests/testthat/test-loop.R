@@ -1,4 +1,5 @@
 test_that("NIH and NSF multiple page query", {
+  skip_on_cran()
   suppressMessages(vcr::use_cassette("nih", serialize_with="json", record="new_episodes", {
     nih <- awardFindR::get_nih("qualitative data", "2019-01-01", "2019-01-02")
     nsf <- awardFindR::get_nsf("qualitative", "2019-01-01", "2019-02-25")

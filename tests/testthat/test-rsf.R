@@ -1,4 +1,5 @@
 test_that("RSF search", {
+  skip_on_cran()
   suppressMessages(vcr::use_cassette("rsf", serialize_with="json", record="new_episodes", {
     rsf <- .standardize_rsf("semi-structured interviews",
                             "2018-01-01", "2020-01-01", FALSE)

@@ -1,4 +1,5 @@
 test_that("Rockefeller returns expected results", {
+  skip_on_cran()
   suppressMessages(vcr::use_cassette("rockefeller", serialize_with="json", {
     one_result <- .standardize_rockefeller("testing",
                                            "2011-01-01", "2021-01-31",

@@ -1,4 +1,5 @@
 test_that("Incorrect date", {
+  skip_on_cran()
   expect_error(search_awards("test", "nsf", "foobar"), "date invalid")
   expect_error(search_awards("test", "nsf", "2018-01-01", "foobar"),
                "date invalid")
@@ -8,11 +9,13 @@ test_that("Incorrect date", {
 })
 
 test_that("Search that should return all empty", {
+  skip_on_cran()
   foobar <- search_awards("foobar", to_date="2021-01-01")
   expect_equal(data.frame(), foobar)
 })
 
 test_that("merging multiple sources and multiple keywords with spaces", {
+  skip_on_cran()
   keywords <- c("ethnography", "qualitative data")
   csv <- tempfile()
   writeLines(keywords, csv)
