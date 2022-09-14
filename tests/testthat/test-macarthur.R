@@ -1,5 +1,5 @@
 test_that("MacArthur returns expected result", {
-  suppressMessages(vcr::use_cassette("macarthur", {
+  suppressMessages(vcr::use_cassette("macarthur", serialize_with="json", {
     macarthur <-
       .standardize_macarthur("qualitative", "2018-01-01", "2019-01-01",
                              FALSE)
