@@ -50,7 +50,7 @@ get_neh <- function(keyword, from_year, to_year, verbose=FALSE) {
     }
 
   # This returns a binary xlsx file, which needs to be saved and loaded
-  xlsx_path <- tempfile()
+  xlsx_path <- withr::local_tempfile()
   writeBin(xlsx_response$response$content, xlsx_path)
 
   results <- readxl::read_xlsx(xlsx_path)
