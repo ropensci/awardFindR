@@ -10,6 +10,7 @@
 #' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @return a data.frame
 #' @export
+#' @importFrom readr read_csv
 #'
 #' @examples
 #' # Results for "ethnography" from NSF between 1/1 and 2/1 2020
