@@ -3,6 +3,8 @@
 #' @param from_year Beginning year to search
 #' @param to_year Ending year to search
 #' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @importFrom withr local_tempfile
+
 #' @return A raw data.frame with the relevant results from NEH
 #' @export
 #' @examples
