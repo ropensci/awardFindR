@@ -2,9 +2,10 @@
 % Please edit documentation in R/ssrc.R
 \name{get_ssrc}
 \alias{get_ssrc}
-\title{Search SSRC fellowships and grants by keyword and date}
+\title{Search SSRC fellowships and grants by keyword and date
+Note: API limitations prevent returning more than 1000 results.}
 \usage{
-get_ssrc(keyword, from_year, to_year, verbose = FALSE)
+get_ssrc(keyword, from_year, to_year, verbose = FALSE, totals = FALSE)
 }
 \arguments{
 \item{keyword}{Keyword to query}
@@ -14,12 +15,15 @@ get_ssrc(keyword, from_year, to_year, verbose = FALSE)
 \item{to_year}{Ending year to search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
+
+\item{totals}{Only return the total number of results, not a table}
 }
 \value{
 a data.frame
 }
 \description{
 Search SSRC fellowships and grants by keyword and date
+Note: API limitations prevent returning more than 1000 results.
 }
 \examples{
 \dontrun{ssrc <- get_ssrc("qualitative", 2015, 2016)}

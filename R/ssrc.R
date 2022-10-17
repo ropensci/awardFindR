@@ -6,11 +6,14 @@
                        program=related_competitions, description=content))
 }
 #' Search SSRC fellowships and grants by keyword and date
+#' Note: API limitations prevent returning more than 1000 results.
+#'
 #' @inheritParams get_neh
+#' @param totals Only return the total number of results, not a table
 #' @return a data.frame
 #' @export
 #' @examples \dontrun{ssrc <- get_ssrc("qualitative", 2015, 2016)}
-get_ssrc <- function(keyword, from_year, to_year, verbose=FALSE) {
+get_ssrc <- function(keyword, from_year, to_year, verbose=FALSE, totals=FALSE) {
 
   url <- "https://12786hbsdl-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(4.10.3)%3B%20Browser%20(lite)%3B%20instantsearch.js%20(4.25.2)%3B%20JS%20Helper%20(3.5.4)&x-algolia-api-key=cdd85ab4fc628277674bb5d9e375af2b&x-algolia-application-id=12786HBSDL"
 
@@ -32,6 +35,11 @@ get_ssrc <- function(keyword, from_year, to_year, verbose=FALSE) {
 
   response <- request(url, "post", verbose, payload) # Query API
   results <- response$results[[1]]
+
+  # If we only want the totals, return that now
+  if (totals==TRUE) {
+    return(results$nbHits)
+  }
 
   # No results?
   if (results$nbHits==0) {
