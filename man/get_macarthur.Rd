@@ -4,14 +4,14 @@
 \alias{get_macarthur}
 \title{Search MacArthur foundation for awards}
 \usage{
-get_macarthur(keyword, from_date, to_date, verbose = FALSE)
+get_macarthur(keyword, from_year, to_year, verbose = FALSE)
 }
 \arguments{
 \item{keyword}{Keyword to query}
 
-\item{from_date}{Date object to begin search}
+\item{from_year}{Beginning year to search}
 
-\item{to_date}{Date object to end search}
+\item{to_year}{Ending year to search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
 }
