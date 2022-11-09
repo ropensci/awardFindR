@@ -52,11 +52,11 @@ get_carnegie <- function(keyword, from_year, to_year, verbose=FALSE) {
 
     # Turn the div table into a real table
     details <- data.frame(
-      name=xml2::xml_text(
-        xml2::xml_find_all(details, ".//strong[@class='grant-detail--label']")),
+      name=rvest::html_text(
+        rvest::html_elements(details, "label.grant-detail--label")), #  ".//label[@class='grant-detail--label']")),
 
-      value=xml2::xml_text(
-        xml2::xml_find_all(details, ".//div[@class='grant-detail--text']")),
+      value=rvest::html_text(
+        rvest::html_elements(details, "div.grant-detail--text")), # .//div[@class='grant-detail--text']")),
 
       stringsAsFactors = FALSE)
 
