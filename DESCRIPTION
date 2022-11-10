@@ -29,9 +29,7 @@ LazyData: true
 Imports:
     rvest,
     xml2,
-    readxl,
     readr,
-    withr,
     jsonlite,
     httr
 RoxygenNote: 7.2.1
