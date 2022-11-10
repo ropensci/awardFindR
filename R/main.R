@@ -29,7 +29,7 @@
 search_awards <- function(keywords,
                       sources=c("arnold", "carnegie",
                                 "gates", "macarthur", "mellon",
-                                "neh", "nih", "nsf", "ophil",
+                                "nih", "nsf", "ophil",
                                 "osociety", "rockefeller", "rsf",
                                 "rwjf", "sloan", "ssrc", "templeton",
                                 "usaspend"),
