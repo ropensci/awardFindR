@@ -1,5 +1,5 @@
 #' Query and scrape Open Society foundation awards
-#' @inheritParams get_neh
+#' @inheritParams get_ssrc
 #' @return a data.frame
 #' @export
 #' @examples osociety <- get_osociety("qualitative", 2016, 2019)

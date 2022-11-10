@@ -8,7 +8,10 @@
 #' Search SSRC fellowships and grants by keyword and date
 #' Note: API limitations prevent returning more than 1000 results.
 #'
-#' @inheritParams get_neh
+#' @param keyword Keyword to query
+#' @param from_year Beginning year to search
+#' @param to_year Ending year to search
+#' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
 #' @param totals Only return the total number of results, not a table
 #' @return a data.frame
 #' @export

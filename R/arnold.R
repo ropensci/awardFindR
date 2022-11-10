@@ -1,5 +1,5 @@
 #' Get Arnold Foundations/Arnold Venture awards
-#' @inheritParams get_neh
+#' @inheritParams get_ssrc
 #' @return a data.frame
 #' @export
 #' @examples

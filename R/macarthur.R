@@ -1,5 +1,5 @@
 #' Search MacArthur foundation for awards
-#' @inheritParams get_neh
+#' @inheritParams get_ssrc
 #' @return a data.frame
 #' @importFrom jsonlite fromJSON
 #' @export

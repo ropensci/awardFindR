@@ -1,5 +1,5 @@
 #' Get Robert Wood Johnson foundation awards
-#' @inheritParams get_neh
+#' @inheritParams get_ssrc
 #' @return a data.frame
 #' @export
 #' @examples

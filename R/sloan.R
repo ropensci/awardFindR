@@ -2,7 +2,7 @@
 NULL
 
 #' Search for a set of keywords in the Sloan grants database.
-#' @inheritParams get_neh
+#' @inheritParams get_ssrc
 #' @return A data.frame
 #' @export
 #' @examples

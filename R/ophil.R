@@ -1,5 +1,5 @@
 #' Grab the Open Philanthropy grants data search for keyword-date combos
-#' @inheritParams get_neh
+#' @inheritParams get_ssrc
 #' @return A data.frame
 #' @export
 #' @examples ophil <- get_ophil("qualitative", 2019, 2020)
