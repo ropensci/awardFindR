@@ -3,29 +3,32 @@
 #' @param from_date Date object to begin search
 #' @param to_date Date object to end search
 #' @param verbose enable verbose HTTP messages. TRUE/FALSE, default: false
+#' @param payload A custom NIH search query object. Only for advanced purposes. default: null
 #' @return a data.frame
 #' @export
 #' @examples nih <- get_nih("ethnography", "2019-01-01", "2019-05-01")
-get_nih <- function(keyword, from_date, to_date, verbose=FALSE) {
+get_nih <- function(keyword, from_date, to_date, verbose=FALSE, payload=NULL) {
   url <- "https://api.reporter.nih.gov/v1/projects/Search"
 
-  # httr encodes all this into json for a POST request
-  payload <- list(criteria=list(
-    award=list(award_notice_date=list(
+  if (is.null(payload)) {
+    # httr encodes all this into json for a POST request
+    payload <- list(criteria=list(
+      award=list(award_notice_date=list(
         from_date=from_date,
         to_date=to_date)),
-    exclude_subprojects="true",
-    advanced_text_search=list(
-      search_text=paste0("\"", keyword, "\""),
-      operator="advanced",
-      search_field="abstracttext")
-  ),
-  include_fields=c("OrgName", "ProjectNum", "ProjectSerialNum",
-                   "FiscalYear", "ProjectStartDate", "ProjectEndDate",
-                   "ProjectTitle", "AgencyCode", "AbstractText",
-                   "ContactPiName", "AwardAmount", "AwardNoticeDate"),
-  #, "principle_investigators"))
-  limit=500, offset=0)
+      exclude_subprojects="true",
+      advanced_text_search=list(
+        search_text=paste0("\"", keyword, "\""),
+        operator="advanced",
+        search_field="abstracttext")
+    ),
+    include_fields=c("OrgName", "ProjectNum", "ProjectSerialNum",
+                     "FiscalYear", "ProjectStartDate", "ProjectEndDate",
+                     "ProjectTitle", "AgencyCode", "AbstractText",
+                     "ContactPiName", "AwardAmount", "AwardNoticeDate"),
+    #, "principle_investigators"))
+    limit=500, offset=0)
+  }
 
   response <- request(url, "post", verbose, payload) # Query API
   if (response$meta$total == 0) {
@@ -66,8 +69,9 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE) {
   df
 }
 
-.standardize_nih <- function(keywords, from_date, to_date, verbose) {
-  raw <- lapply(keywords, get_nih, from_date, to_date, verbose)
+.standardize_nih <- function(keywords, from_date, to_date, verbose,
+                             payload=NULL) {
+  raw <- lapply(keywords, get_nih, from_date, to_date, verbose, payload)
   raw <- do.call(rbind.data.frame, raw)
   if (nrow(raw)==0) {
     message("No results from NIH")
