@@ -6,7 +6,7 @@
 get_osociety <- function(keyword, from_year, to_year, verbose=FALSE) {
   base_url <- "https://www.opensocietyfoundations.org/grants/past?"
   query <- paste0("xhr=1&",
-                  "filter_keyword=", keyword,
+                  "filter_keyword=", gsub(" ", "%20", keyword),
                   "&filter_year=",
                   paste(from_year:to_year, collapse="%2C")) # URL escape
 

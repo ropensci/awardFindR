@@ -4,7 +4,7 @@
 \alias{get_nih}
 \title{Search NIH RePORTER}
 \usage{
-get_nih(keyword, from_date, to_date, verbose = FALSE)
+get_nih(keyword, from_date, to_date, verbose = FALSE, payload = NULL)
 }
 \arguments{
 \item{keyword}{Keyword to query}
@@ -14,6 +14,8 @@ get_nih(keyword, from_date, to_date, verbose = FALSE)
 \item{to_date}{Date object to end search}
 
 \item{verbose}{enable verbose HTTP messages. TRUE/FALSE, default: false}
+
+\item{payload}{A custom NIH search query object. Only for advanced purposes. default: null}
 }
 \value{
 a data.frame
