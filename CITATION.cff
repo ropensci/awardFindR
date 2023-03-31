@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "McCall"
+  given-names: "Michael"
+  orcid: "https://orcid.org/0000-0002-4668-4212"
+- family-names: "Karcher"
+  given-names: "Sebastian"
+  orcid: "https://orcid.org/0000-0001-8249-7388"
+title: "awardFindR"
+version: 1.0.1
+date-released:  2021-06-23
+url: "https://github.com/ropensci/awardFindR"
