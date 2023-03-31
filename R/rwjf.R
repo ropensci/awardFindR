@@ -5,7 +5,7 @@
 #' @examples
 #' rwjf <- get_rwjf("qualitative data analysis", 2014, 2014)
 get_rwjf <- function(keyword, from_year, to_year, verbose=FALSE) {
-  url <- paste0("https://www.rwjf.org/action/grants/database.json?",
+  url <- paste0("https://www.rwjf.org/content/rwjf-web/us/en/_jcr_content.grants.json?",
   "k=", gsub(" ", "%20", keyword) , "&start=", from_year, "&end=", to_year,
   # Extra junk
   "&amt=-1&active=true&closed=true&featured=true&t=&m=",
