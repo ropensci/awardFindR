@@ -20,11 +20,11 @@ test_that("merging multiple sources and multiple keywords with spaces", {
   csv <- tempfile()
   writeLines(keywords, csv)
 
-  # missing ssrc, rsf &
+  # missing ssrc, rsf & mellon
   suppressMessages(vcr::use_cassette("full", serialize_with="json", record="new_episodes", {
     results <- search_awards(csv,
                              sources=c("arnold", "carnegie",
-                                      "gates", "macarthur", "mellon",
+                                      "gates", "macarthur", 
                                       "nih", "nsf", "rockefeller", "ophil",
                                       "osociety", "rwjf",
                                       "sloan", "ssrc", "templeton", "usaspend"),

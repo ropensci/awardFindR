@@ -5,13 +5,14 @@
 #' @export
 #' @examples nsf <- get_nsf("ethnography", "2020-01-01", "2020-02-01")
 get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
-  base_url <- 'https://api.nsf.gov/services/v1/awards.json?'
+  base_url <- 'https://www.research.gov/awardapi-service/v1/awards.json?'
   output_data <- paste0("id,date,startDate,expDate,title,awardeeName,",
                         "piFirstName,piLastName,piEmail,cfdaNumber,",
                         "estimatedTotalAmt,fundProgramName,abstractText,",
                         "awardeeCounty") #,publicationResearch")
 
-  query <- paste0('keyword="', gsub(" ", "+", keyword), "\"")
+  query <- paste0('keyword=', gsub(" ", "%20", keyword))
+  
 
   # Add CFDA search term if defined
   if (!is.null(cfda)) query <- paste0(query, '&cfdaNumber=', cfda)

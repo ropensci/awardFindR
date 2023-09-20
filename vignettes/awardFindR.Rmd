@@ -23,13 +23,13 @@ library(awardFindR)
 
 ## Simple keyword search, single source
 ```{r, message=FALSE}
-nsf <- search_awards(keywords="ethnographies", sources="nsf")
+nsf <- search_awards(keywords="illicit", sources="nsf", from_date="2023-01-01")
 str(nsf)
 ```
 
 ## Multiple sources and keywords, specific date range
 ```{r, message=FALSE}
-nsf_and_nih <- search_awards(keywords=c("ethnography", "qualitative data"), sources=c("nsf", "nih"), from_date="2018-01-01", to_date="2018-05-01")
+nsf_and_nih <- search_awards(keywords=c("ontological", "audio recordings"), sources=c("nsf", "nih"), from_date="2018-01-01", to_date="2018-02-01")
 table(nsf_and_nih$source)
 unique(nsf_and_nih$keyword)
 ```

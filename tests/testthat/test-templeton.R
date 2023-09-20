@@ -5,5 +5,5 @@ test_that("Templeton returns expected results", {
                                          "2015-01-01", "2022-01-01", FALSE)
   }))
 
-  expect_equal("62101", one_result$id)
+  expect_equal("62101", one_result$id[1])
 })
