@@ -23,7 +23,7 @@ remotes::install_github("ropensci/awardFindR")
 
 - [Arnold Ventures](https://www.arnoldventures.org/grants-search) (`arnold`)
 - [Carnegie Corporation of New York](https://www.carnegie.org/grants/grants-database/) (`carnegie`)
-- [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/) (`gates`)
+<!--- [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/) (`gates`)-->
 - [MacArthur Foundation](https://www.macfound.org/grants/) (`macarthur`)
 - [Mellon Foundation](https://mellon.org/grants/grants-database/advanced-search/) (`mellon`)
 - [NIH RePORTER](https://projectreporter.nih.gov/reporter.cfm) (`nih`)
