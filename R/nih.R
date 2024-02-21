@@ -8,7 +8,7 @@
 #' @export
 #' @examples nih <- get_nih("ethnography", "2019-01-01", "2019-05-01")
 get_nih <- function(keyword, from_date, to_date, verbose=FALSE, payload=NULL) {
-  url <- "https://api.reporter.nih.gov/v1/projects/Search"
+  url <- "https://api.reporter.nih.gov/v2/projects/Search"
 
   if (is.null(payload)) {
     # httr encodes all this into json for a POST request
@@ -22,7 +22,7 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE, payload=NULL) {
         operator="advanced",
         search_field="abstracttext")
     ),
-    include_fields=c("OrgName", "ProjectNum", "ProjectSerialNum",
+    include_fields=c("Organization", "ProjectNum", "ProjectSerialNum",
                      "FiscalYear", "ProjectStartDate", "ProjectEndDate",
                      "ProjectTitle", "AgencyCode", "AbstractText",
                      "ContactPiName", "AwardAmount", "AwardNoticeDate"),
@@ -37,6 +37,13 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE, payload=NULL) {
     warning(paste0("NIH query for \"", keyword, "\" too large, returning empty"))
     return(NULL)
   }
+
+  # Extract OrgName, which is currently nested inside Organization
+  response$results <- lapply(response$results, function(x) {
+    x$org_name <- x$organization$org_name
+    x$organization <- NULL
+    x
+  })
 
   # change NULL values to NA
   df <- lapply(response$results, lapply, function(x)ifelse(is.null(x), NA, x))
@@ -53,6 +60,13 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE, payload=NULL) {
 
     response <- request(url, "post", verbose, payload) # Query again
     place <- response$meta$offset + response$meta$limit # New position
+
+    # Extract OrgName from Organization
+    response$results <- lapply(response$results, function(x) {
+      x$org_name <- x$organization$org_name
+      x$organization <- NULL
+      x
+    })
 
     # Bind everything together
     temp <- lapply(response$results, lapply,
