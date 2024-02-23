@@ -26,7 +26,7 @@ get_ophil <- function(keyword, from_year, to_year, verbose=FALSE) {
     prog <- x %>% rvest::html_element("div.block-feed-post__body > .block-feed-post__focus-area > a") %>% rvest::html_text()
     org <- x %>% rvest::html_element("div.block-feed-post__body > .block-feed-post__organization-name > a") %>% rvest::html_text()
     amount <- x %>% rvest::html_element("div.block-feed-post__body > .block-feed-post__grant-amount") %>% rvest::html_text()
-    link <- x %>% rvest::html_element("div.block-feed-post__body > .block-feed-post__link > a") %>% rvest::html_attr("href")
+    link <- x %>% rvest::html_element("div.block-feed-post__head > a") %>% rvest::html_attr("href")
 
 
     data.frame(organization=org, title, program=prog, amount, year, link)
