@@ -67,6 +67,15 @@ get_usaspend <- function(keywords, from_date, to_date, verbose) {
     awards <- rbind.data.frame(awards, temp)
   }
 
+  # Merge any awards that were granted by multiple subagencies under the same ID
+  award_sums <- stats::aggregate(Award.Amount ~ Award.ID, data=awards, FUN=sum) # Calculate total award amount
+  awards <- stats::aggregate(awards, by=list(awards$Award.ID),
+                             FUN=function(x) {paste(unique(x), collapse="; ")}) # Concatenate all fields
+  # Drop the concatenated award amount and merge to the summed up one
+  awards <- merge(awards[,-which(names(awards) %in% c("Group.1","Award.Amount"))],
+                  award_sums, by="Award.ID")
+
+
   #awards[] <- lapply(awards,
   #                   function(x) ifelse(is.factor(x),
   #                                      as.character(x), x)) # No factors
