@@ -4,47 +4,188 @@
 #' @export
 #' @examples
 #' mellon <- get_mellon("qualitative", 2013, 2021)
-get_mellon <- function(keyword, from_year, to_year, verbose=FALSE) {
-  base_url <- "https://mellon.org/grants/grants-database/advanced-search/?"
-  query_url <- paste0(base_url,
-                      "year-start=", from_year, "&year-end=", to_year,
-                      "&q=", xml2::url_escape(keyword),
-                      # Total grants are 17437 as of writing,
-                      # and this figure below seems to be arbitrarily flexible
-                      "&per_page=5000")
+get_mellon <- function(keyword, from_year, to_year, verbose = FALSE) {
+  base_url <- "https://www.mellon.org/api/graphql"
 
-  response <- request(query_url, "get", verbose)
+  # Set default response limit
+  RESPONSE_LIMIT <- 100
 
-  results <- xml2::xml_children(
-    xml2::xml_find_first(response, "//table[@class='grant-list']/tbody"))
-
-  # Loop through each entry
-  df <- lapply(results, function(entry) {
-    id <- xml2::xml_text(xml2::xml_find_all(xml2::xml_children(entry)[2],
-                                            ".//a/@href"))
-    text <- lapply(xml2::xml_children(entry), xml2::xml_text)
-    fields <- c("institution", "description",
-                "date", "amount",
-                "location", "program")
-    row <- as.data.frame(text, stringsAsFactors=FALSE)
-    names(row) <- fields
-    row$id <- id
-
-    row
-  })
-  df <- do.call(rbind.data.frame, df)
-  if (nrow(df)==0) {
-    return(NULL) # No results?
+  # Define bulk query statement for getting grants associated with a keyword
+  bulk_query_statement <- "
+  query GrantFilterQuery($term: String!, $limit: Int!, $offset: Int!, $sort: SearchSort, $amountRanges: [FilterRangeInput!], $grantMakingAreas: [String!], $country: [String!], $pastProgram: Boolean, $yearRange: FilterRangeInput, $years: [Int!], $state: [String!], $ideas: [String!], $features: [String!]) {
+      grantSearch(
+          term: $term
+          limit: $limit
+          offset: $offset
+          sort: $sort
+          filter: {pastProgram: $pastProgram, grantMakingAreas: $grantMakingAreas, country: $country, years: $years, yearRange: $yearRange, amountRanges: $amountRanges, state: $state, ideas: $ideas, features: $features}
+      ) {
+          ...GrantSearchResults
+      }
   }
 
-  # Remove $ and , in amounts (i.e. $1,000,000)
-  df$amount <- gsub("^\\$|,", "", df$amount)
-  df$amount <- as.integer(df$amount)
+  fragment GrantSearchResults on GrantSearchResultWithTotal {
+      entities {
+          data {
+              title
+              grantMakingArea
+              description
+              dateAwarded
+              id
+              grantee
+              country
+              state
+          }
+      }
+      totalCount
+  }
+  "
 
-  df$date <- as.Date(df$date, format="%m/%d/%y")
-  df$keyword <- keyword
+  # Create a default payload that we can later edit for making specific requests
+  # using the above query
+  default_bulk_payload <- list(
+    operationName = "GrantFilterQuery",
+    variables = list(
+      limit = RESPONSE_LIMIT,
+      offset = 0,
+      term = keyword,
+      sort = "MOST_RELEVANT",
+      years = as.list(from_year:to_year),
+      grantMakingAreas = list(),
+      ideas = list(),
+      pastProgram = FALSE,
+      amountRanges = list(),
+      country = list(),
+      state = list(),
+      features = list()
+    ),
+    "query" = bulk_query_statement
+  )
 
-  df
+
+  # Create a query statement for getting a specific grant's amount,
+  # which isn't available in the bulk query
+  single_query_statement <- "
+  query($grantId: String!) {
+      grantDetails(grantId: $grantId) {
+          grant {
+              amount
+          }
+      }
+  }
+  "
+
+  # Create a default payload for single-grant query
+  default_single_payload <- list(
+    variables = list(
+      grantId = ""
+    ),
+    "query" = single_query_statement
+  )
+
+  # Create a payload for getting total num grants
+  total_grants_payload <- default_bulk_payload
+  total_grants_payload$variables$limit <- 1
+
+  # Make request
+  total_grants_content <- request(
+    url = base_url,
+    method = "post",
+    payload = total_grants_payload,
+    verbose = verbose
+  )
+
+  # Get the count of total number of grants
+  total_grants <- total_grants_content$data$grantSearch$totalCount
+
+  # Check if there are no results, if so, return NULL now
+  if (total_grants == 0) {
+    return(NULL)
+  }
+
+  # Loop through and get results in batches
+  results <- list()
+  for (offset in seq(0, total_grants, by = RESPONSE_LIMIT)) {
+    # Make payload for the offset
+    offset_payload <- default_bulk_payload
+    offset_payload$variables$offset <- offset
+
+    # Make request
+    offset_content <- request(
+      url = base_url,
+      method = "post",
+      payload = offset_payload,
+      verbose = verbose
+    )
+
+    # Append to other results
+    results <- append(results, offset_content$data$grantSearch$entities)
+  }
+
+  # Combine responses
+  results <- do.call(
+    rbind,
+    lapply(
+      results,
+      function(entry) {
+        # Fill nulls
+        entry$data <- lapply(entry$data, function(x) if (is.null(x)) NA else x)
+
+        # Convert list to data.frame
+        data.frame(entry$data)
+      }
+    )
+  )
+
+  # Get the amount for each grant, which isn't available in the bulk query
+  results$amount <- unlist(
+    lapply(
+      results$id,
+      function(id) {
+        # Make payload for the ID
+        id_payload <- default_single_payload
+        id_payload$variables$grantId <- id
+
+        # Make request
+        id_content <- request(
+          url = base_url,
+          method = "post",
+          payload = id_payload,
+          verbose = verbose
+        )
+
+        # return the amount
+        id_content$data$grantDetails$grant$amount
+      }
+    )
+  )
+
+  # Normalize dates
+  results$dateAwarded <- as.Date(results$dateAwarded, format = "%Y-%m-%d")
+
+  # Add keyword
+  results$keyword <- keyword
+
+  # Condense location (checking for grants without states)
+  results$location <- ifelse(
+    results$state == "",
+    results$country,
+    paste(results$state, results$country, sep = ", ")
+  )
+
+  # Delete country and state columns
+  results$country <- NULL
+  results$state <- NULL
+
+  # Rename columns
+  names(results)[names(results) == "dateAwarded"] <- "date"
+  names(results)[names(results) == "grantee"] <- "institution"
+  names(results)[names(results) == "grantMakingArea"] <- "program"
+
+  # Append grant details to the ID, so it becomes a URL path
+  results$id <- paste0("/grant-details/", results$id)
+
+  results
 }
 
 .standardize_mellon <- function(keywords, from_date, to_date, verbose) {
@@ -59,7 +200,7 @@ get_mellon <- function(keyword, from_year, to_year, verbose=FALSE) {
 
   with(raw, data.frame(
     institution, pi=NA, year=format.Date(date, "%Y"), start=NA, end=NA,
-    program, amount, id, title=description, abstract=NA, keyword,
+    program, amount, id, title, abstract= description, keyword,
     source="Mellon", stringsAsFactors = FALSE
   ))
 }
