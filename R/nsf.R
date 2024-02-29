@@ -42,6 +42,12 @@ get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
     api <- request(paste0(query_url, '&offset=', offset), "get", verbose)
     api <- api$response$award
     temp <- Reduce(function(x, y) merge(x, y, all=TRUE), api)
+
+    # Make sure that the data have the same columns, as it appears that if a
+    # column is entirely NA, it will not be included in the API response
+    for (col in setdiff(names(df), names(temp))) temp[[col]] <- NA
+    for (col in setdiff(names(temp), names(df))) df[[col]] <- NA
+
     df <- rbind.data.frame(df, temp)
   }
 
