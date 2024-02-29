@@ -11,6 +11,14 @@
 get_usaspend <- function(keywords, from_date, to_date, verbose) {
   url <- "https://api.usaspending.gov/api/v2/search/spending_by_award/"
 
+  # Check if from date is prior to 2007-10-01, and if so raise a warning
+  # message. Earlier data is not available through this end point, but if you
+  # search for it the warning message from the API gets hidden.
+  if (from_date < "2007-10-01") {
+    warning("USAspending data only available from 2007-10-01. Please adjust the from_date.")
+    return(NULL)
+  }
+
   payload <- list(
     fields=c("Award ID", "Recipient Name", "Description",
              "Start Date", "End Date", "Award Amount",
