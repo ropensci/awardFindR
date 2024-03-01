@@ -106,6 +106,9 @@ get_mellon <- function(keyword, from_year, to_year, verbose = FALSE) {
   # Loop through and get results in batches
   results <- list()
   for (offset in seq(0, total_grants, by = RESPONSE_LIMIT)) {
+    # Be nice to the API
+    Sys.sleep(3)
+
     # Make payload for the offset
     offset_payload <- default_bulk_payload
     offset_payload$variables$offset <- offset
@@ -142,6 +145,9 @@ get_mellon <- function(keyword, from_year, to_year, verbose = FALSE) {
     lapply(
       results$id,
       function(id) {
+        # Be nice to the API
+        Sys.sleep(3)
+
         # Make payload for the ID
         id_payload <- default_single_payload
         id_payload$variables$grantId <- id
