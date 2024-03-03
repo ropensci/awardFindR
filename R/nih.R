@@ -13,9 +13,9 @@ get_nih <- function(keyword, from_date, to_date, verbose=FALSE, payload=NULL) {
   if (is.null(payload)) {
     # httr encodes all this into json for a POST request
     payload <- list(criteria=list(
-      award=list(award_notice_date=list(
+      award_notice_date=list(
         from_date=from_date,
-        to_date=to_date)),
+        to_date=to_date),
       exclude_subprojects="true",
       advanced_text_search=list(
         search_text=paste0("\"", keyword, "\""),
