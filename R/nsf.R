@@ -11,7 +11,7 @@ get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
                         "estimatedTotalAmt,fundProgramName,abstractText,",
                         "awardeeCounty") #,publicationResearch")
 
-  query <- paste0('keyword=', gsub(" ", "%20", keyword))
+  query <- paste0('keyword=%22', gsub(" ", "%20", keyword), '%22')
   
 
   # Add CFDA search term if defined
