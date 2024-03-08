@@ -139,9 +139,9 @@ get_usaspend <- function(keywords, from_date, to_date, verbose) {
   awards <- awards[!duplicated(awards),]
 
   # Merge any awards that were granted by multiple subagencies under the same Award.ID
-  award_sums <- stats::aggregate(Award.Amount ~ Award.ID, data = awards, FUN = sum, na.action = na.pass) # Calculate total award amount
-  award_mins <- stats::aggregate(Start.Date ~ Award.ID, data = awards, FUN = min, na.action = na.pass) # Start date is min start date for any sub-agency
-  award_maxes <- stats::aggregate(End.Date ~ Award.ID, data = awards, FUN = max, na.action = na.pass) # End date is max end date for any sub-agency
+  award_sums <- stats::aggregate(Award.Amount ~ Award.ID, data = awards, FUN = sum, na.action = stats::na.pass) # Calculate total award amount
+  award_mins <- stats::aggregate(Start.Date ~ Award.ID, data = awards, FUN = min, na.action = stats::na.pass) # Start date is min start date for any sub-agency
+  award_maxes <- stats::aggregate(End.Date ~ Award.ID, data = awards, FUN = max, na.action = stats::na.pass) # End date is max end date for any sub-agency
   awards <- stats::aggregate(awards, by=list(awards$Award.ID),
                              FUN=function(x) {paste(sort(unique(x)), collapse = "; ") }) # Concatenate all fields
   # Drop the concatenated award amounts/start dates/end dates and merge to the correct ones
