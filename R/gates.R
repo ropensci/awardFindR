@@ -7,14 +7,14 @@
 get_gates <- function(keyword, from_year, to_year, verbose=FALSE) {
  url <- "https://www.gatesfoundation.org/api/grantssearch"
 
- params <- paste0("?date=&displayedTaxonomy=&",
+ params <- paste0("?date&displayedTaxonomy&",
  "listingId=d2a41504-f557-4f1e-88d6-ea109d344feb",
  "&loadAllPages=true&page=1",
  "&pageId=31242fca-dcf8-466a-a296-d6411f85b0a5&perPage=999")
 
  params <- paste0(params, "&q=", xml2::url_escape(keyword),
                   "&sc_site=gfo&showContentTypes=false&showDates=false",
-                  "&showImages=&showSummaries=false&sortBy=date-desc",
+                  "&showImages&showSummaries=false&sortBy=date-desc",
                   "&sortOrder=desc")
 
  params <- paste0(params, "&yearAwardedEnd=", to_year,
