@@ -28,7 +28,7 @@
 #' }
 search_awards <- function(keywords,
                       sources=c("arnold", "carnegie",
-                                "macarthur", "mellon",
+                                "gates", "macarthur", "mellon",
                                 "nih", "nsf", "ophil",
                                 "osociety", "rockefeller", "rsf",
                                 "rwjf", "sloan", "ssrc", "templeton",

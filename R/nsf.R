@@ -6,12 +6,15 @@
 #' @examples nsf <- get_nsf("ethnography", "2020-01-01", "2020-02-01")
 get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
   base_url <- 'https://www.research.gov/awardapi-service/v1/awards.json?'
-  output_data <- paste0("id,date,startDate,expDate,title,awardeeName,",
-                        "piFirstName,piLastName,piEmail,cfdaNumber,",
-                        "estimatedTotalAmt,fundProgramName,abstractText,",
-                        "awardeeCounty") #,publicationResearch")
+  output_cols <- c(
+    "id", "date", "startDate", "expDate", "title", "awardeeName",
+    "piFirstName", "piLastName", "piEmail", "cfdaNumber",
+    "estimatedTotalAmt", "fundProgramName", "abstractText", "awardeeCounty"
+  )
+  #,publicationResearch")
+  output_data <- paste0(output_cols, collapse = ",")
 
-  query <- paste0('keyword=', gsub(" ", "%20", keyword))
+  query <- paste0('keyword=%22', gsub(" ", "%20", keyword), '%22')
   
 
   # Add CFDA search term if defined
@@ -33,6 +36,12 @@ get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
   df <- Reduce(function(x, y) merge(x, y, all=TRUE), api)
   df <- as.data.frame(df, stringsAsFactors=FALSE)
 
+  # Ensure all columns are in output data, as API doesn't return
+  # cols that are entirely NA
+  for (col in output_cols) {
+    if (!(col %in% names(df))) df[[col]] <- NA
+  }
+
   # Max results 25 per request. Do we need to loop the query?
   while (length(api)==25) {
     offset <- offset + 25
@@ -42,6 +51,12 @@ get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
     api <- request(paste0(query_url, '&offset=', offset), "get", verbose)
     api <- api$response$award
     temp <- Reduce(function(x, y) merge(x, y, all=TRUE), api)
+
+    # Make sure that the new data have the same columns
+    for (col in output_cols) {
+      if (!(col %in% names(temp))) temp[[col]] <- NA
+    }
+
     df <- rbind.data.frame(df, temp)
   }
 

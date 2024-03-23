@@ -2,7 +2,7 @@
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/ropensci/awardFindR/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/awardFindR/actions)
-[![Codecov test coverage](https://codecov.io/gh/ropensci/awardFindR/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/awardFindR?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/ropensci/awardFindR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ropensci/awardFindR?branch=master)
 [![](https://badges.ropensci.org/432_status.svg)](https://github.com/ropensci/software-review/issues/432)
 <!-- badges: end -->
 
@@ -23,11 +23,11 @@ remotes::install_github("ropensci/awardFindR")
 
 - [Arnold Ventures](https://www.arnoldventures.org/grants-search) (`arnold`)
 - [Carnegie Corporation of New York](https://www.carnegie.org/grants/grants-database/) (`carnegie`)
-<!--- [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/) (`gates`)-->
+- [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/) (`gates`)
 - [MacArthur Foundation](https://www.macfound.org/grants/) (`macarthur`)
-- [Mellon Foundation](https://mellon.org/grants/grants-database/advanced-search/) (`mellon`)
+- [Mellon Foundation](https://www.mellon.org/grant-database/) (`mellon`)
 - [NIH RePORTER](https://projectreporter.nih.gov/reporter.cfm) (`nih`)
-- [National Science Foundation](https://nsf.gov/awardsearch/) (`nsf`)
+- [National Science Foundation](https://www.nsf.gov/awardsearch/) (`nsf`)
 - [Open Philanthropy](https://www.openphilanthropy.org/giving/grants) (`ophil`)
 - [Open Society Foundations](https://www.opensocietyfoundations.org/grants/past) (`osociety`)
 - [Rockefeller Foundation](https://www.rockefellerfoundation.org/) (`rockefeller`)

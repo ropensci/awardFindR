@@ -6,8 +6,9 @@
 \usage{
 search_awards(
   keywords,
-  sources = c("arnold", "carnegie", "macarthur", "mellon", "nih", "nsf", "ophil",
-    "osociety", "rockefeller", "rsf", "rwjf", "sloan", "ssrc", "templeton", "usaspend"),
+  sources = c("arnold", "carnegie", "gates", "macarthur", "mellon", "nih", "nsf",
+    "ophil", "osociety", "rockefeller", "rsf", "rwjf", "sloan", "ssrc", "templeton",
+    "usaspend"),
   from_date = "2019-01-01",
   to_date = Sys.Date(),
   verbose = FALSE
