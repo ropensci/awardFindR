@@ -35,22 +35,63 @@ get_rsf <- function(keyword, verbose=FALSE) {
     award <- rvest::html_node(award, "div.content > header > div.u-nubbed")
     program <- rvest::html_children(award)[1] %>% rvest::html_text(trim=TRUE)
     program <- gsub("\t\t\t\t", "; ", program) # Separate with ;
-    title <- rvest::html_children(award)[2] %>% rvest::html_text(trim=TRUE)
+    title <- rvest::html_nodes(award, ".Post__titleGroup.u-margin__10") %>% rvest::html_text(trim = TRUE)
 
     # Extract data from these nasty unstructured divs
-    info <- rvest::html_children(rvest::html_children(award)[3])
+    info <- rvest::html_children(rvest::html_nodes(award, ".u-text--meta.u-margin__20"))
+
+    # Extract all strong nodes with relevant headings
+    strong_nodes <- rvest::html_nodes(info, "strong")
+
+    # Get the nodes for the relevant sections
+    awarded_scholars_node <- strong_nodes[rvest::html_text(strong_nodes) == "Awarded Scholars: "]
+    other_external_scholars_node <- strong_nodes[rvest::html_text(strong_nodes) == "Other External Scholars: "]
+
+    # Function to get siblings until the next strong tag
+    get_siblings_until_next_strong <- function(node) {
+      siblings <- xml2::xml_siblings(node)
+      siblings <- siblings[which(rvest::html_name(siblings) != "strong")]
+      return(siblings)
+    }
+
+    # Extract the relevant text underneath the strong tags
+    awarded_scholars_siblings <- get_siblings_until_next_strong(awarded_scholars_node)
+    other_external_scholars_siblings <- get_siblings_until_next_strong(other_external_scholars_node)
+
+    # Extract the text from each filtered node
+    awardees_institutions <- c(
+      sapply(awarded_scholars_siblings, rvest::html_text),
+      sapply(other_external_scholars_siblings, rvest::html_text)
+    )
+
+    # Remove whitespace
+    awardees_institutions <- trimws(awardees_institutions)
+    awardees_institutions <- awardees_institutions[awardees_institutions != ""]
+
+
+    # Function to split the text into awardee and institution
+    split_results <- lapply(awardees_institutions, function(text) {
+      # Find the position of the first comma
+      first_comma <- regexpr(",", text)
+
+      # Split the text into awardee and institution
+      awardee <- trimws(substr(text, 1, first_comma - 1))
+      institution <- trimws(substr(text, first_comma + 1, nchar(text)))
+
+
+      return(list(awardee = awardee, institution = institution))
+    })
+
+    # Separate awardees and institutions into two lists
+    awardees <- paste(sapply(split_results, function(x) x$awardee), collapse = "; ")
+    institutions <- paste(sapply(split_results, function(x) x$institution), collapse = "; ")
+
+    # Get date/amount
     info <- data.frame(
       label=rvest::html_text(rvest::html_nodes(info, "strong:first-child")),
       value=rvest::html_text(rvest::html_nodes(info, "strong + div, br + div")),
       stringsAsFactors = FALSE
     )
-    awardee <- strsplit(info$value[info$label=="Awarded Scholars: "], ",")
-    if (length(awardee)==0) # Try plan B
-      awardee <- strsplit(
-        info$value[info$label=="Other External Scholars: "], ",")
-
-    pi_name <- trimws(awardee[[1]][1])
-    institution <- trimws(awardee[[1]][2])
 
     year <- as.integer(
       .substr_right(info$value[info$label=="Project Date: "], 4))
@@ -58,7 +99,7 @@ get_rsf <- function(keyword, verbose=FALSE) {
     # Remove $ and , in amounts (i.e. $1,000,000)
     amount <- gsub("^\\$|,", "", info$value[info$label=="Award Amount: "])
 
-    data.frame(institution, pi_name, year, amount, title, program,
+    data.frame(institutions, awardees, year, amount, title, program,
                id=paste0("RSF", .text_hash(x))) # Return one df line
   })
   df <- do.call(rbind.data.frame, df) # Bind the df lines
