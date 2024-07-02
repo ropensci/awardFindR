@@ -83,8 +83,8 @@ get_rsf <- function(keyword, verbose=FALSE) {
     })
 
     # Separate awardees and institutions into two lists
-    awardees <- paste(sapply(split_results, function(x) x$awardee), collapse = "; ")
-    institutions <- paste(sapply(split_results, function(x) x$institution), collapse = "; ")
+    pi_names <- paste(sapply(split_results, function(x) x$awardee), collapse = "; ")
+    institution <- paste(sapply(split_results, function(x) x$institution), collapse = "; ")
 
     # Get date/amount
     info <- data.frame(
@@ -99,7 +99,7 @@ get_rsf <- function(keyword, verbose=FALSE) {
     # Remove $ and , in amounts (i.e. $1,000,000)
     amount <- gsub("^\\$|,", "", info$value[info$label=="Award Amount: "])
 
-    data.frame(institutions, awardees, year, amount, title, program,
+    data.frame(institution, pi_names, year, amount, title, program,
                id=paste0("RSF", .text_hash(x))) # Return one df line
   })
   df <- do.call(rbind.data.frame, df) # Bind the df lines
@@ -127,7 +127,7 @@ get_rsf <- function(keyword, verbose=FALSE) {
   }
 
   with(raw, data.frame(
-    institution, pi=pi_name, year, start=NA, end=NA, program, amount,
+    institution, pi=pi_names, year, start=NA, end=NA, program, amount,
     id, title, abstract=NA, keyword, source="RSF"
   ))
 }
