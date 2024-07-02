@@ -17,7 +17,7 @@ get_arnold <- function(keyword, from_year, to_year, verbose=FALSE) {
     years <- paste0(years, ',"years:', n, '"')
   years <- xml2::url_escape(years)
 
-  # Not includidng all the terms at the end gives a HTTP 400 error
+  # Not including all the terms at the end gives a HTTP 400 error
   page <- 0
   query <- paste0("query=", keyword,
                   "&maxValuesPerFacet=100&highlightPreTag=__ais-highlight__",
@@ -31,7 +31,8 @@ get_arnold <- function(keyword, from_year, to_year, verbose=FALSE) {
 
   response <- request(url, "post", verbose, payload)
   response <- unlist(response, recursive=FALSE)$results
-  if (response$nbHits==0) {
+  num_hits <- response$nbHits
+  if (num_hits==0) {
     return(NULL) # No results?
   }
 
@@ -53,7 +54,15 @@ get_arnold <- function(keyword, from_year, to_year, verbose=FALSE) {
     response <- unlist(response, recursive=FALSE)$results
   }
 
-  do.call(rbind.data.frame, full)
+
+  results <- do.call(rbind.data.frame, full)
+
+  if (nrow(results) < num_hits) {
+    message("Arnold can only return 1,000 results: not all results were loaded")
+  }
+
+  results
+
 }
 
 .standardize_arnold <- function(keywords, from_date, to_date, verbose) {
