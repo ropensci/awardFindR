@@ -5,11 +5,11 @@
 #' @examples
 #' gates <- get_gates("qualitative", 2018, 2020)
 get_gates <- function(keyword, from_year, to_year, verbose=FALSE) {
- url <- "https://www.gatesfoundation.org/api/grantssearch"
+ base_url <- "https://www.gatesfoundation.org/api/grantssearch"
 
  params <- paste0("?date&displayedTaxonomy&",
  "listingId=d2a41504-f557-4f1e-88d6-ea109d344feb",
- "&loadAllPages=true&page=1",
+ "&loadAllPages=false",
  "&pageId=31242fca-dcf8-466a-a296-d6411f85b0a5&perPage=999")
 
  params <- paste0(params, "&q=", xml2::url_escape(keyword),
@@ -20,21 +20,37 @@ get_gates <- function(keyword, from_year, to_year, verbose=FALSE) {
  params <- paste0(params, "&yearAwardedEnd=", to_year,
                   "&yearAwardedStart=", from_year)
 
- url <- paste0(url, params)
+ page <- 1
+ page_params <- paste0(params, "&page=", page)
 
- response <- request(url, "get", verbose)
+ page_url <- paste0(base_url, page_params)
+
+ response <- request(page_url, "get", verbose)
 
  # Did we get HTML back?
  if (class(response)[1]=="xml_document") {
     return(NULL)
  }
 
+ # Count total results
+ total_results <- response$totalResults
+
  # No results?
- if (response$totalResults==0) {
+ if (total_results==0) {
     return(NULL)
  }
 
- df <- lapply(response$results, function(x) {
+ all_results <- response$results
+
+ while (length(all_results) < total_results) {
+   page <- page + 1
+   page_params <- paste0(params, "&page=", page)
+   page_url <- paste0(base_url, page_params)
+   response <- request(page_url, "get", verbose)
+   all_results <- c(all_results, response$results)
+   Sys.sleep(3) # Be NICE to the API!
+ }
+ df <- lapply(all_results, function(x) {
    x <- unlist(x, recursive=FALSE)
    with(x, data.frame(
       awardedAmount, grantee, url, date, id,

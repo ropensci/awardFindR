@@ -18,41 +18,59 @@ get_osociety <- function(keyword, from_year, to_year, verbose=FALSE) {
     return(NULL) # No results?
   }
 
-  results <- lapply(results, function(entry) {
-    institution <- xml2::xml_text(xml2::xml_find_first(entry, ".//h2"))
-    # Remove trailing and leading whitespace
-    institution <- gsub("^\\s+|\\s+$", "", institution)
+  # Create object to iteratively add pages of results to
+  all_results <- list()
 
-    id <- xml2::xml_text(xml2::xml_find_first(entry, ".//@id"))
-    year <- xml2::xml_integer(
-      xml2::xml_find_first(entry, ".//span[@class='a-grantsDatabase__value']"))
+  # Iterate through pages
+  page <- 1
+  while (length(results) > 0) {
+    page_url <- paste0(url, '&page=', page)
 
-    amount_xpath <- paste0(".//span[@class='a-grantsDatabase__value ",
-                           "a-grantsDatabase__value--amount']")
-    amount <- xml2::xml_text(
-      xml2::xml_find_first(entry, amount_xpath))
-    # Remove $ and , in amounts (i.e. $1,000,000)
-    amount <- gsub("^\\$|,", "", amount)
+    response <- request(page_url, "get", verbose)
 
-    # Make a data.frame of the labels and values that we can query later
-    info <- data.frame(
-      name=xml2::xml_text(
-        xml2::xml_find_all(entry, ".//span[@class='a-grantsDatabase__label']")),
+    results <- xml2::xml_find_all(response, "//div[@data-grants-database-single]")
 
-      value=xml2::xml_text(
-        xml2::xml_find_all(entry, ".//p[@class='a-grantsDatabase__text']")))
+    results <- lapply(results, function(entry) {
+      institution <- xml2::xml_text(xml2::xml_find_first(entry, ".//h2"))
+      # Remove trailing and leading whitespace
+      institution <- gsub("^\\s+|\\s+$", "", institution)
 
-    # Remove trailing and leading whitespace
-    info$value <- gsub("^\\s+|\\s+$", "", info$value)
-    # Now query it
-    program <- info$value[info$name=="Referring Program"][1]
-    description <- info$value[info$name=="Description"][1]
+      id <- xml2::xml_text(xml2::xml_find_first(entry, ".//@id"))
+      year <- xml2::xml_integer(
+        xml2::xml_find_first(entry, ".//span[@class='a-grantsDatabase__value']"))
 
-    data.frame(institution, year, id, amount, program, description, keyword,
-               stringsAsFactors = FALSE)
-  })
+      amount_xpath <- paste0(".//span[@class='a-grantsDatabase__value ",
+                             "a-grantsDatabase__value--amount']")
+      amount <- xml2::xml_text(
+        xml2::xml_find_first(entry, amount_xpath))
+      # Remove $ and , in amounts (i.e. $1,000,000)
+      amount <- gsub("^\\$|,", "", amount)
 
-  do.call(rbind.data.frame, results)
+      # Make a data.frame of the labels and values that we can query later
+      info <- data.frame(
+        name = xml2::xml_text(
+          xml2::xml_find_all(entry, ".//span[@class='a-grantsDatabase__label']")),
+
+        value = xml2::xml_text(
+          xml2::xml_find_all(entry, ".//p[@class='a-grantsDatabase__text']")))
+
+      # Remove trailing and leading whitespace
+      info$value <- gsub("^\\s+|\\s+$", "", info$value)
+      # Now query it
+      program <- info$value[info$name == "Referring Program"][1]
+      description <- info$value[info$name == "Description"][1]
+
+      data.frame(institution, year, id, amount, program, description, keyword,
+                 stringsAsFactors = FALSE)
+    })
+    all_results <- append(all_results, results)
+
+    Sys.sleep(3)
+
+    page <- page + 1
+  }
+
+  do.call(rbind.data.frame, all_results)
 }
 
 .standardize_osociety <- function(keywords, from_date, to_date, verbose) {
