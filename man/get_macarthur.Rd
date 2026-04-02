@@ -22,6 +22,8 @@ a data.frame
 Search MacArthur foundation for awards
 }
 \examples{
+\dontrun{
 macarthur <- get_macarthur("qualitative",
 "1999-01-01", "2020-01-01")
+}
 }

@@ -4,8 +4,10 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 #' @examples
+#' \dontrun{
 #' macarthur <- get_macarthur("qualitative",
 #' "1999-01-01", "2020-01-01")
+#' }
 get_macarthur <- function(keyword, from_year, to_year, verbose=FALSE) {
   url <- "https://searchg2.crownpeak.net/live-macfound-redesign-rt/select?"
   parameters <- paste0("q=", xml2::url_escape(keyword),
@@ -20,6 +22,9 @@ get_macarthur <- function(keyword, from_year, to_year, verbose=FALSE) {
 
   query_url <- paste0(url, parameters, extra)
   response <- request(query_url, "get", verbose)
+  if (inherits(response, "xml_document")) {
+    return(NULL)  # Got HTML error page instead of JSON
+  }
   response <- jsonlite::fromJSON(
     rawToChar(
       as.raw(
