@@ -21,16 +21,18 @@ get_macarthur <- function(keyword, from_year, to_year, verbose=FALSE) {
   #"&indent=true&json.wrf=searchg2_5445608496089546")
 
   query_url <- paste0(url, parameters, extra)
-  response <- request(query_url, "get", verbose)
-  if (inherits(response, "xml_document")) {
-    return(NULL)  # Got HTML error page instead of JSON
+  if (verbose) message(paste("GET", query_url, "... "), appendLF=FALSE)
+  raw_response <- httr::GET(query_url,
+                            config = httr::config(connecttimeout = 300))
+  if (verbose) {
+    httr::message_for_status(raw_response)
+    message()
   }
+  httr::warn_for_status(raw_response)
+  if (httr::http_error(raw_response)) return(NULL)
+
   response <- jsonlite::fromJSON(
-    rawToChar(
-      as.raw(
-        strtoi(response, 16L)
-      )
-    )
+    httr::content(raw_response, as = "text", encoding = "UTF-8")
   )
 
   if (response$response$numFound==0) {

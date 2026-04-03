@@ -47,11 +47,16 @@ get_rsf <- function(keyword, verbose=FALSE) {
     awarded_scholars_node <- strong_nodes[rvest::html_text(strong_nodes) == "Awarded Scholars: "]
     other_external_scholars_node <- strong_nodes[rvest::html_text(strong_nodes) == "Other External Scholars: "]
 
-    # Function to get siblings until the next strong tag
+    # Get following siblings of a node, stopping at the next <strong> tag
     get_siblings_until_next_strong <- function(node) {
-      siblings <- xml2::xml_siblings(node)
-      siblings <- siblings[which(rvest::html_name(siblings) != "strong")]
-      return(siblings)
+      if (length(node) == 0) return(xml2::xml_nodeset(list()))
+      following <- xml2::xml_find_all(node, "following-sibling::*")
+      result <- list()
+      for (sib in following) {
+        if (rvest::html_name(sib) == "strong") break
+        result <- c(result, list(sib))
+      }
+      xml2::xml_nodeset(result)
     }
 
     # Extract the relevant text underneath the strong tags

@@ -41,6 +41,7 @@ get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
   for (col in output_cols) {
     if (!(col %in% names(df))) df[[col]] <- NA
   }
+  df <- df[, output_cols]
 
   # Max results 25 per request. Do we need to loop the query?
   while (length(api)==25) {
@@ -56,6 +57,7 @@ get_nsf <- function(keyword, from_date, to_date, verbose=FALSE, cfda=NULL) {
     for (col in output_cols) {
       if (!(col %in% names(temp))) temp[[col]] <- NA
     }
+    temp <- temp[, output_cols]
 
     df <- rbind.data.frame(df, temp)
   }

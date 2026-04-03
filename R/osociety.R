@@ -11,24 +11,17 @@ get_osociety <- function(keyword, from_year, to_year, verbose=FALSE) {
                   paste(from_year:to_year, collapse="%2C")) # URL escape
 
   url <- paste0(base_url, query)
-  response <- request(url, "get", verbose)
 
-  results <- xml2::xml_find_all(response, "//div[@data-grants-database-single]")
-  if (length(results)==0) {
-    return(NULL) # No results?
-  }
-
-  # Create object to iteratively add pages of results to
+  # Iterate through pages, collecting all results
   all_results <- list()
-
-  # Iterate through pages
   page <- 1
-  while (length(results) > 0) {
+
+  repeat {
     page_url <- paste0(url, '&page=', page)
-
     response <- request(page_url, "get", verbose)
-
     results <- xml2::xml_find_all(response, "//div[@data-grants-database-single]")
+
+    if (length(results) == 0) break
 
     results <- lapply(results, function(entry) {
       institution <- xml2::xml_text(xml2::xml_find_first(entry, ".//h2"))
@@ -66,9 +59,10 @@ get_osociety <- function(keyword, from_year, to_year, verbose=FALSE) {
     all_results <- append(all_results, results)
 
     Sys.sleep(3)
-
     page <- page + 1
   }
+
+  if (length(all_results) == 0) return(NULL)
 
   do.call(rbind.data.frame, all_results)
 }
