@@ -21,19 +21,20 @@ get_macarthur <- function(keyword, from_year, to_year, verbose=FALSE) {
   #"&indent=true&json.wrf=searchg2_5445608496089546")
 
   query_url <- paste0(url, parameters, extra)
-  if (verbose) message(paste("GET", query_url, "... "), appendLF=FALSE)
-  raw_response <- httr::GET(query_url,
-                            config = httr::config(connecttimeout = 300))
-  if (verbose) {
-    httr::message_for_status(raw_response)
-    message()
-  }
-  httr::warn_for_status(raw_response)
-  if (httr::http_error(raw_response)) return(NULL)
+  response <- request(query_url, "get", verbose)
 
-  response <- jsonlite::fromJSON(
-    httr::content(raw_response, as = "text", encoding = "UTF-8")
-  )
+  # request() returns xml_document for HTML error pages, NULL on failure
+  if (inherits(response, "xml_document") || is.null(response)) {
+    return(NULL)
+  }
+
+  # httr::content() returns raw bytes for text/plain, or a character string
+  # via VCR playback. Convert to parsed JSON list.
+  if (is.raw(response)) {
+    response <- jsonlite::fromJSON(rawToChar(response))
+  } else if (is.character(response)) {
+    response <- jsonlite::fromJSON(response)
+  }
 
   if (response$response$numFound==0) {
     return(NULL)

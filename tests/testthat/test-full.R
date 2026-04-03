@@ -10,7 +10,7 @@ test_that("Incorrect date", {
 
 test_that("Search that should return all empty", {
   skip_on_cran()
-  foobar <- search_awards("foobar", to_date="2021-01-01")
+  foobar <- suppressWarnings(search_awards("foobar", to_date="2021-01-01"))
   expect_equal(data.frame(), foobar)
 })
 

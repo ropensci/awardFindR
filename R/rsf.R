@@ -35,7 +35,7 @@ get_rsf <- function(keyword, verbose=FALSE) {
     award <- rvest::html_node(award, "div.content > header > div.u-nubbed")
     program <- rvest::html_children(award)[1] %>% rvest::html_text(trim=TRUE)
     program <- gsub("\t\t\t\t", "; ", program) # Separate with ;
-    title <- rvest::html_nodes(award, ".Post__titleGroup.u-margin__10") %>% rvest::html_text(trim = TRUE)
+    title <- rvest::html_node(award, ".Post__titleGroup.u-margin__10") %>% rvest::html_text(trim = TRUE)
 
     # Extract data from these nasty unstructured divs
     info <- rvest::html_children(rvest::html_nodes(award, ".u-text--meta.u-margin__20"))
@@ -49,14 +49,14 @@ get_rsf <- function(keyword, verbose=FALSE) {
 
     # Get following siblings of a node, stopping at the next <strong> tag
     get_siblings_until_next_strong <- function(node) {
-      if (length(node) == 0) return(xml2::xml_nodeset(list()))
+      if (length(node) == 0) return(list())
       following <- xml2::xml_find_all(node, "following-sibling::*")
       result <- list()
       for (sib in following) {
         if (rvest::html_name(sib) == "strong") break
         result <- c(result, list(sib))
       }
-      xml2::xml_nodeset(result)
+      result
     }
 
     # Extract the relevant text underneath the strong tags
@@ -76,20 +76,32 @@ get_rsf <- function(keyword, verbose=FALSE) {
 
     # Function to split the text into awardee and institution
     split_results <- lapply(awardees_institutions, function(text) {
-      # Find the position of the first comma
+      text <- trimws(text)
+
+      if (is.na(text) || text == "") {
+        return(list(awardee = NA_character_, institution = NA_character_))
+      }
+
       first_comma <- regexpr(",", text)
 
-      # Split the text into awardee and institution
+      if (first_comma == -1) {
+        return(list(awardee = text, institution = NA_character_))
+      }
+
       awardee <- trimws(substr(text, 1, first_comma - 1))
       institution <- trimws(substr(text, first_comma + 1, nchar(text)))
-
 
       return(list(awardee = awardee, institution = institution))
     })
 
     # Separate awardees and institutions into two lists
-    pi_names <- paste(sapply(split_results, function(x) x$awardee), collapse = "; ")
-    institution <- paste(sapply(split_results, function(x) x$institution), collapse = "; ")
+    if (length(split_results) == 0) {
+      pi_names <- NA_character_
+      institution <- NA_character_
+    } else {
+      pi_names <- paste(sapply(split_results, function(x) x$awardee), collapse = "; ")
+      institution <- paste(sapply(split_results, function(x) x$institution), collapse = "; ")
+    }
 
     # Get date/amount
     info <- data.frame(

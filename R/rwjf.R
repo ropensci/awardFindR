@@ -13,8 +13,9 @@ get_rwjf <- function(keyword, from_year, to_year, verbose=FALSE) {
 
   page <- 1
   response <- request(paste0(url, "&s=", page), "get", verbose)
-  if (response$totalResults==0) {
-    return(NULL) # No results?
+  if (!is.list(response) || is.null(response$totalResults) ||
+      response$totalResults == 0) {
+    return(NULL) # No results or error response?
   }
 
   full <- list() # Placeholder
