@@ -4,23 +4,37 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 #' @examples
+#' \dontrun{
 #' macarthur <- get_macarthur("qualitative",
 #' "1999-01-01", "2020-01-01")
+#' }
 get_macarthur <- function(keyword, from_year, to_year, verbose=FALSE) {
-  url <- "https://searchg2.crownpeak.net/live-macfound-rt/select?"
+  url <- "https://searchg2.crownpeak.net/live-macfound-redesign-rt/select?"
   parameters <- paste0("q=", xml2::url_escape(keyword),
                        "&wt=json&start=0&rows=25494")
 
   # I really don't know what most of this does below, but it was part of the
   # web interface's API query, so I'm leaving it in for now.
-  extra <- paste0("&echoParams=explicit&fl=%2A&defType=edismax",
-  "&fq=custom_s_template%3A%22grant%20detail%22&sort=score%20desc",
+  extra <- paste0("&echoParams=explicit&fl=*&defType=edismax",
+  "&fq=custom_s_template:%22grant%20detail%22&sort=score%20desc",
   "&qf=custom_t_title%20custom_t_description%20custom_t_name")
   #"&indent=true&json.wrf=searchg2_5445608496089546")
 
   query_url <- paste0(url, parameters, extra)
   response <- request(query_url, "get", verbose)
-  response <- jsonlite::fromJSON(response)
+
+  # request() returns xml_document for HTML error pages, NULL on failure
+  if (inherits(response, "xml_document") || is.null(response)) {
+    return(NULL)
+  }
+
+  # httr::content() returns raw bytes for text/plain, or a character string
+  # via VCR playback. Convert to parsed JSON list.
+  if (is.raw(response)) {
+    response <- jsonlite::fromJSON(rawToChar(response))
+  } else if (is.character(response)) {
+    response <- jsonlite::fromJSON(response)
+  }
 
   if (response$response$numFound==0) {
     return(NULL)
